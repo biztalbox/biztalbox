@@ -49,7 +49,7 @@ export default function ContactForm({ btnCls = "" }: IProps) {
 
   return (
     <>
-      <Toaster position="bottom-center" reverseOrder={false} />
+      <Toaster position="top-right" reverseOrder={false} />
       <form onSubmit={handleSubmit}>
         <div className="cn-contactform-input mb-25">
           <label>Name</label>
