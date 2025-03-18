@@ -1,0 +1,43 @@
+@import "~bootstrap/scss/bootstrap";
+@import 'node_modules/react-modal-video/scss/modal-video.scss';
+@import "swiper/css/bundle"; 
+@import '../../public/assets/scss/main.scss';
+
+#tsparticles{
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.vision-mission-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.ab-brand-title{
+    font-size: 45px !important;
+}
+.ab-brand-content p{
+    font-size: 25px !important;
+}
+@media (min-width: 768px) {
+    .vision-mission-wrapper{
+        flex-direction: row;
+        gap: 4rem;
+    }
+}
+
+.tp-project-3-meta {
+    line-height: 1.3;
+    text-transform: inherit;
+    margin-bottom: 50px;
+}
+.ab-about-shape-1{
+    bottom: -95px;
+}
+
+.project-details-1-right{
+    height: auto !important;
+}
