@@ -46,7 +46,7 @@ export default function AboutUsHero() {
                 About Us
               </h1>
               <p>
-              Our dynamic agency transforms brands from mere names to household icons. With a remarkable marketing strategy that embraces unlimited iterations until perfection, we guarantee that a business connects with its target audience at the speed of light.              </p>
+              Biztal Box is a marketing agency that enhances brands&apos; online presence through a range of services including SEO optimization, web development, graphic design, and more. Nestled in Delhi NCR, our dynamic agency morphs itself into every form required to manifest our clients&apos; unique perspectives.            </p>
             </div>
           </div>
         </div>

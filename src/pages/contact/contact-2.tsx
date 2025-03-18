@@ -15,6 +15,7 @@ import { charAnimation } from "@/utils/title-animation";
 import ContactForm from "@/components/form/contact-form";
 import ContactLocationTwo from "@/components/contact/contact-location-2";
 import Image from "next/image";
+import ParticleComponent from "@/components/ParticleComponent";
 
 const ContactTwoMain = () => {
   useScrollSmooth();
@@ -44,6 +45,7 @@ const ContactTwoMain = () => {
             <main>
               {/* hero area start */}
               <div className="tm-hero-area tm-hero-ptb p-relative">
+              <ParticleComponent />
                 <div className="container">
                   <div className="row">
                     <div className="col-xl-12">
@@ -73,7 +75,8 @@ const ContactTwoMain = () => {
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
                           ></iframe> */}
-                          <Image src='/assets/image/contact.svg' width={500} height={700} style={{margin: 'auto', display: 'block'}} alt="Contact Image"/>
+                          {/* <Image src='/assets/image/contact.svg' width={500} height={700} style={{margin: 'auto', display: 'block'}} alt="Contact Image"/> */}
+                          <video src="/location.webm" controls={false} autoPlay muted loop playsInline style={{margin: 'auto', display: 'block'}}/>
                         </div>
                       </div>
                       <div className="col-xl-6">

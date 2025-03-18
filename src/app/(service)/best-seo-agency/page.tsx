@@ -29,6 +29,10 @@ const PortfolioDetailsOneMain = () => {
     return () => clearTimeout(timer);
   });
 
+  
+  document.querySelector('.scroll_down_div')?.addEventListener('scroll', (e: any) => {
+    console.log(e.target.scrollTop);
+  });
   return (
     <Wrapper>
       {/* header area start */}
@@ -42,16 +46,16 @@ const PortfolioDetailsOneMain = () => {
             <div className="project-details-1-area project-details-1-pt">
                <div className="container-fluid p-0">
                   <div className="row g-0">
-                     <div className="col-xl-4">
+                     <div className="col-xl-6">
                         <div className="project-details-1-left">
                           {/* {port_images.map((imgSrc, i) => ( */}
                            <div className="project-details-1-thumb mb-10">
-                              <Image src='/assets/img/services/seo.webp' alt="port-img" width={800} height={400} style={{height:"auto"}}/>
+                              <Image src='/assets/img/services/seo.webp' alt="port-img" width={1000} height={600} style={{height:"auto"}}/>
                            </div>
                           {/* ))} */}
                         </div>
                      </div>
-                     <div className="col-xl-8">
+                     <div className="col-xl-6 scroll_down_div" >
                         {/* <div className="project-details-1-right-wrap"> */}
                            <div className="project-details-1-right p-relative">
                               <div className="project-details-1-title-box">
