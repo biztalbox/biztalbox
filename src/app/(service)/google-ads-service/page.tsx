@@ -49,6 +49,7 @@ const PortfolioDetailsOneMain = () => {
                         <Image
                           src="/assets/img/services/GOOGLE_ADS.webp"
                           alt="port-img"
+                          id="service_img"
                           width={800}
                           height={400}
                           style={{ height: "auto" }}

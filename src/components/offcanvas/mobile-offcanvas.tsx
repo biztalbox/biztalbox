@@ -59,13 +59,13 @@ export default function MobileOffcanvas({
             </div>
           </div>
           <div className="tp-offcanvas-main">
-            <div className="tp-offcanvas-content">
-              <h3 className="tp-offcanvas-title">Our Services</h3>
-              {/* <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, </p> */}
-            </div>
-            <div className="tp-main-menu-mobile d-xl-none">
+          <div className="tp-main-menu-mobile d-xl-none">
               <MobileMenus />
             </div>
+            <div className="tp-offcanvas-content">
+              <h3 className="tp-offcanvas-title">Services</h3>
+            </div>
+            
             <div className="tp-offcanvas-gallery">
               <div className="row gx-2">
                 {gallery_images.map((item, i) => (

@@ -49,6 +49,7 @@ const PortfolioDetailsOneMain = () => {
                         <Image
                           src="/assets/img/services/seo.webp"
                           alt="port-img"
+                          id="service_img"
                           width={1000}
                           height={600}
                           style={{ height: "auto" }}

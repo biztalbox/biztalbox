@@ -47,7 +47,7 @@ const PortfolioDetailsOneMain = () => {
                         <div className="project-details-1-left">
                           {/* {port_images.map((imgSrc, i) => ( */}
                            <div className="project-details-1-thumb mb-10">
-                              <Image src='/assets/img/services/CAPTAIN_CUT.webp' alt="port-img" width={800} height={400} style={{height:"auto"}}/>
+                              <Image src='/assets/img/services/CAPTAIN_CUT.webp' id="service_img" alt="port-img" width={800} height={400} style={{height:"auto"}}/>
                            </div>
                           {/* ))} */}
                         </div>

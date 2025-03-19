@@ -49,6 +49,7 @@ const App = () => {
                         <Image
                           src="/assets/img/services/social.webp"
                           alt="port-img"
+                          id="service_img"
                           width={800}
                           height={400}
                           style={{ height: "auto" }}
