@@ -104,7 +104,7 @@ const AwardOne = ({cls="pt-125 pb-125",abStyle=false}: IProps) => {
               </div>
             </div>
           </div>
-          <div className="col-xl-8 col-lg-8 col-md-12">
+          <div className="col-xl-8 col-lg-8 col-md-12 person_3d">
             <div className="tp-award-list-wrap">
               {award_data.map((item) => (
                 <div

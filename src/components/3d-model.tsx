@@ -47,6 +47,9 @@ const Model3D: React.FC<Model3DProps> = ({ className, modelPath }) => {
     controls.dampingFactor = 0.05;
     controls.autoRotate = true;
     controls.autoRotateSpeed = 2.0;
+    // Restrict zooming
+    controls.minDistance = 3;
+    controls.maxDistance = 7;
     controlsRef.current = controls;
 
     // Lighting
@@ -122,7 +125,7 @@ const Model3D: React.FC<Model3DProps> = ({ className, modelPath }) => {
     };
   }, [modelPath]);
 
-  return <div ref={containerRef} className={className} style={{ width: '100%', height: '100%' }} />;
+  return <div ref={containerRef} className={className} style={{ width: '100%', height: '100%', pointerEvents: 'none' }}/>;
 };
 
 export default Model3D; 

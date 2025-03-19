@@ -21,6 +21,7 @@ import { teamMarqueAnim } from "@/utils/scroll-marque";
 import FooterFour from "@/layouts/footers/footer-four";
 import VisionMission from "@/components/VisionMission";
 import ContactOne from "@/components/contact/contact-one";
+import CounterOne from "@/components/counter/counter-one";
 
 const AboutUsMain = () => {
   useScrollSmooth();
@@ -57,8 +58,8 @@ const AboutUsMain = () => {
             {/* <TeamOne spacing="" /> */}
             {/* team area */}
 
-
-            <VisionMission />
+            <CounterOne />
+            {/* <VisionMission /> */}
             
             {/* fun fact area */}
             <FunFactOne />

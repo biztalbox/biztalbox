@@ -75,8 +75,8 @@ const ContactPage = () => {
                             loading="lazy"
                             referrerPolicy="no-referrer-when-downgrade"
                           ></iframe> */}
-                          <Image src='/assets/image/contact.svg' width={500} height={700} style={{margin: 'auto', display: 'block'}} alt="Contact Image"/>
-                          {/* <video src="/location.webm" controls={false} autoPlay muted loop playsInline style={{margin: 'auto', display: 'block'}}/> */}
+                          {/* <Image src='/assets/image/contact.svg' width={500} height={700} style={{margin: 'auto', display: 'block'}} alt="Contact Image"/> */}
+                          <video src="/map.webm" controls={false} autoPlay muted loop playsInline style={{margin: 'auto', display: 'block'}}/>
                         </div>
                       </div>
                       <div className="col-xl-6">
