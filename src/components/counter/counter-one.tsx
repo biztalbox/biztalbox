@@ -186,7 +186,7 @@ export default function CounterOne() {
                     Satisfied Clients
                     {/* <CounterItem min={0} max={235} />+ */}
                   </h4>
-                  {/* <span>Satisfied Clients</span> */}
+                  <span>Turning trust into fruitful outcomes, one client at a time</span>
                 </div>
               </div>
               {/* <div className="col-xl-4 col-lg-4 col-md-4 mb-30">
