@@ -14,6 +14,7 @@ import { projectDetailsPin } from "@/utils/project-anim";
 // animation
 import {charAnimation,titleAnimation} from "@/utils/title-animation";
 import FooterFour from "@/layouts/footers/footer-four";
+import handleScrollService from "@/utils/handleScrollService";
 
 
 const PortfolioDetailsOneMain = () => {
@@ -42,7 +43,7 @@ const PortfolioDetailsOneMain = () => {
             <div className="project-details-1-area project-details-1-pt">
                <div className="container-fluid p-0">
                   <div className="row g-0">
-                     <div className="col-xl-4">
+                     <div className="col-xl-6">
                         <div className="project-details-1-left">
                           {/* {port_images.map((imgSrc, i) => ( */}
                            <div className="project-details-1-thumb mb-10">
@@ -51,8 +52,8 @@ const PortfolioDetailsOneMain = () => {
                           {/* ))} */}
                         </div>
                      </div>
-                     <div className="col-xl-8">
-                        {/* <div className="project-details-1-right-wrap"> */}
+                     <div className="col-xl-6" onScrollCapture={handleScrollService}>
+                     {/* <div className="project-details-1-right-wrap"> */}
                            <div className="project-details-1-right p-relative">
                               <div className="project-details-1-title-box">
                                  <span className="project-details-1-subtitle">Vector</span>

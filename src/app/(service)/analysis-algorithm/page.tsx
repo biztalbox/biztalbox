@@ -14,6 +14,7 @@ import { projectDetailsPin } from "@/utils/project-anim";
 // animation
 import {charAnimation,titleAnimation} from "@/utils/title-animation";
 import FooterFour from "@/layouts/footers/footer-four";
+import handleScrollService from "@/utils/handleScrollService";
 
 
 const PortfolioDetailsOneMain = () => {
@@ -51,8 +52,8 @@ const PortfolioDetailsOneMain = () => {
                           {/* ))} */}
                         </div>
                      </div>
-                     <div className="col-xl-8">
-                        {/* <div className="project-details-1-right-wrap"> */}
+                     <div className="col-xl-6" onScrollCapture={handleScrollService}>
+                     {/* <div className="project-details-1-right-wrap"> */}
                            <div className="project-details-1-right p-relative">
                               <div className="project-details-1-title-box">
                                  <span className="project-details-1-subtitle">ALGANIX</span>

@@ -17,7 +17,7 @@ import ContactLocationTwo from "@/components/contact/contact-location-2";
 import Image from "next/image";
 import ParticleComponent from "@/components/ParticleComponent";
 
-const ContactTwoMain = () => {
+const ContactPage = () => {
   useScrollSmooth();
 
   useGSAP(() => {
@@ -126,4 +126,4 @@ const ContactTwoMain = () => {
   );
 };
 
-export default ContactTwoMain;
+export default ContactPage;
