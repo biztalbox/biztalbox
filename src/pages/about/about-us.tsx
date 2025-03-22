@@ -19,9 +19,8 @@ import { charAnimation, fadeAnimation, titleAnimation } from "@/utils/title-anim
 import { hoverBtn } from "@/utils/hover-btn";
 import { teamMarqueAnim } from "@/utils/scroll-marque";
 import FooterFour from "@/layouts/footers/footer-four";
-import VisionMission from "@/components/VisionMission";
-import ContactOne from "@/components/contact/contact-one";
 import CounterOne from "@/components/counter/counter-one";
+import CounterOld from "@/components/counter/counter-old";
 
 const AboutUsMain = () => {
   useScrollSmooth();
@@ -58,7 +57,8 @@ const AboutUsMain = () => {
             {/* <TeamOne spacing="" /> */}
             {/* team area */}
 
-            <CounterOne />
+            {/* <CounterOne /> */}
+            <CounterOld />
             {/* <VisionMission /> */}
             
             {/* fun fact area */}

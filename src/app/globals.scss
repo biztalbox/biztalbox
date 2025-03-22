@@ -11,6 +11,14 @@
     height: 100% !important;
 }
 
+.hide-scrollbar {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 .vision-mission-wrapper{
     display: flex;
     flex-direction: column;
@@ -44,6 +52,95 @@
     display: flex;
     justify-content: center;
 }
-#service_img{
+#service_img, #service_details_container{
     transition: all 0.3s ease-in-out !important;
 }
+@media (min-width: 1025px) {
+    #service_details_container{
+        margin-bottom: -76rem !important;
+    }
+}
+@media (min-width: 1500px) {
+    #service_details_container{
+        margin-bottom: -13rem !important;
+    }
+}
+.slide-funfact-item h4{
+    font-family: var(--tp-ff-p) !important;
+}
+#longword_tooltip{
+    font-size: 30px !important;
+}
+
+.tooltip-text-main {
+    font-size: 35px !important;
+    position: relative;
+}
+
+.custom-tooltip {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url('/assets/image/cloud-invert.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px 40px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    width: 200px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.2;
+    margin-top: 10px;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -10px);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, 0);
+    }
+}
+
+@media (max-width: 768px) {
+    .tooltip-text-main {
+        font-size: 20px !important;
+    }
+    .custom-tooltip {
+        font-size: 14px;
+        width: 150px;
+        height: 80px;
+        padding: 15px 30px;
+    }
+}
+
+@media (min-width: 1024px) {
+//     .project-details-1-right{
+//         height: 100vh !important;
+//     }
+#service_img{
+    height: fit-content !important;
+}
+}
+// @media (max-width: 1024px) {
+//     .project-details-1-right{
+//         height: auto !important;
+//     }
+// }
+.project-details-1-right{
+    height: auto !important;
+}
+
+
+

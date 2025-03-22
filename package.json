@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "start:ip": "next start -H 192.168.1.18",
+    "start:ip": "next start -H 192.168.1.18 -p 3001",
     "lint": "next lint"
   },
   "dependencies": {

@@ -1,6 +1,6 @@
 "use client";
 import { gsap } from "gsap";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import useScrollSmooth from "@/hooks/use-scroll-smooth";
@@ -14,7 +14,6 @@ import { projectDetailsPin } from "@/utils/project-anim";
 // animation
 import { charAnimation, titleAnimation } from "@/utils/title-animation";
 import FooterFour from "@/layouts/footers/footer-four";
-import handleScrollService from "@/utils/handleScrollService";
 
 const App = () => {
   const [showSocial, setShowSocial] = React.useState(false);
@@ -29,6 +28,54 @@ const App = () => {
     return () => clearTimeout(timer);
   });
 
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    // Register the ScrollTrigger plugin
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Make sure all refs are available
+    if (!sectionRef.current || !imageRef.current || !textRef.current) return;
+
+    // Get the height of the text content to determine scroll distance
+    const textHeight = textRef.current.offsetHeight;
+   //  const viewportHeight = window.innerHeight;
+
+    // Create the scroll trigger animation
+    if (window.innerWidth >= 1025) { // Check if the device is tablet size or larger
+      const scrollTrigger = ScrollTrigger.create({
+        trigger: sectionRef.current,
+        start: "8% top", // Start when the top of the section hits the top of the viewport
+        end: `+=${textHeight}`, // End after scrolling the full height of the text content
+        pin: imageRef.current, // Pin the image
+        anticipatePin: 1, // Improves performance by preparing the pin before it happens
+        pinSpacing: true,
+        scrub: true, // Smooth scrubbing effect tied to scroll position
+        markers: false, // Set to true for debugging
+        onLeave: () => {
+          // When leaving the section, ensure the image is no longer pinned
+          ScrollTrigger.getById("imagePin")?.kill();
+        },
+        onUpdate: (self: ScrollTrigger) => {
+          // Scale down the imageRef to 0.8 with smooth animation
+          const scale = 1 - 0.2 * self.progress;
+          gsap.to(imageRef.current, { scale: scale, duration: 0.3, ease: "power1.out" });
+        },
+      });
+
+      // Clean up on component unmount
+      return () => {
+        scrollTrigger.kill();
+      };
+    }
+
+    // Clean up on component unmount
+    return () => {
+      ScrollTrigger.getById("imagePin")?.kill();
+    };
+  }, []);
+
   return (
     <Wrapper>
       {/* header area start */}
@@ -39,27 +86,30 @@ const App = () => {
         <div id="smooth-content">
           <main>
             {/* portfolio details area */}
-            <div className="project-details-1-area project-details-1-pt">
+            <div ref={sectionRef} className="project-details-1-area project-details-1-pt">
               <div className="container-fluid p-0">
-                <div className="row g-0">
-                  <div className="col-xl-6">
+                <div className="row flex-xl-nowrap" id="service_details_container">
+                  <div ref={imageRef} className="col-xl-5">
                     <div className="project-details-1-left">
                       {/* {port_images.map((imgSrc, i) => ( */}
                       <div className="project-details-1-thumb mb-10">
                         <Image
                           src="/assets/img/services/social.webp"
-                          alt="port-img"
                           id="service_img"
-                          width={800}
-                          height={400}
-                          style={{ height: "auto" }}
+                          alt="port-img"
+                          width={900}
+                          height={600}
+                          className="h-auto m-auto d-block"
                         />
                       </div>
                       {/* ))} */}
                     </div>
                   </div>
-                  <div className="col-xl-6" onScrollCapture={handleScrollService}>
-                    {/* <div className="project-details-1-right-wrap"> */}
+                  <div ref={textRef} className="col-xl-7 overflow-hidden hide-scrollbar" id="service_content" style={{ 
+                    overflowY: 'auto', 
+                    scrollbarWidth: 'none', 
+                    msOverflowStyle: 'none'
+                  }}>
                     <div className="project-details-1-right p-relative">
                       <div className="project-details-1-title-box">
                         <span className="project-details-1-subtitle">

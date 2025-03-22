@@ -1,6 +1,6 @@
 "use client";
 import { gsap } from "gsap";
-import React from "react";
+import React, { useState } from "react";
 import useScrollSmooth from "@/hooks/use-scroll-smooth";
 import { ScrollSmoother, ScrollTrigger, SplitText } from "@/plugins";
 import { useGSAP } from "@gsap/react";
@@ -16,8 +16,12 @@ import ContactForm from "@/components/form/contact-form";
 import ContactLocationTwo from "@/components/contact/contact-location-2";
 import Image from "next/image";
 import ParticleComponent from "@/components/ParticleComponent";
+import { OverlayTrigger, Tooltip } from "react-bootstrap";
+import ContactSection from "./ContactSection";
 
 const ContactPage = () => {
+  const [showTooltip, setShowTooltip] = useState(false);
+
   useScrollSmooth();
 
   useGSAP(() => {
@@ -45,7 +49,7 @@ const ContactPage = () => {
             <main>
               {/* hero area start */}
               <div className="tm-hero-area tm-hero-ptb p-relative">
-              <ParticleComponent />
+                <ParticleComponent />
                 <div className="container">
                   <div className="row">
                     <div className="col-xl-12">
@@ -61,58 +65,61 @@ const ContactPage = () => {
               </div>
               {/* hero area end */}
 
+              <ContactSection />
               {/* contact area */}
               <div className="cn-contactform-area cn-contactform-style p-relative pb-100">
-                <div className="container container-1840">
-                  <div className="cn-contactform-2-bg black-bg">
-                    <div className="row">
-                      <div className="col-xl-6">
-                        <div className="cn-contactform-2-map" style={{display: 'flex', alignItems: 'center'}}>
-                          {/* <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d37866.42024631252!2d90.04636289871837!3d23.823039160865342!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1699251079678!5m2!1sen!2sbd"
-                            style={{border:0}}
-                            allowFullScreen
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                          ></iframe> */}
-                          {/* <Image src='/assets/image/contact.svg' width={500} height={700} style={{margin: 'auto', display: 'block'}} alt="Contact Image"/> */}
-                          <video src="/map.webm" controls={false} autoPlay muted loop playsInline style={{margin: 'auto', display: 'block'}}/>
-                        </div>
-                      </div>
-                      <div className="col-xl-6">
-                        <div className="cn-contactform-wrap">
-                          <h4 className="cn-contactform-2-title">
-                            Send a Message
-                          </h4>
-                          <ContactForm btnCls="white-bg" />
+                <div className="container container-1530"></div>
+              </div>
+              {/* contact area */}
+
+              {/* about area start */}
+              <div className="cn-contactform-support-area mb-120">
+                <div className="container container-1530">
+                  <div className="row justify-content-center">
+                    <div className="col-xl-12">
+                      <div
+                        className="cn-contactform-support-bg d-flex align-items-center justify-content-center"
+                        style={{
+                          backgroundImage:
+                            "url(/assets/img/inner-contact/contact/contact-bg.png)",
+                        }}
+                      >
+                        <div className="cn-contactform-support-text text-center p-relative">
+                          <span
+                            style={{
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              flexWrap: "wrap",
+                              flexDirection: "column",
+                            }}
+                          >
+                            Reach out to us through the details below. We&apos;ll
+                            respond faster than you can say&nbsp;
+                            <span 
+                              className="tooltip-text-main" 
+                              style={{ cursor: 'pointer' }}
+                              onMouseEnter={() => setShowTooltip(true)}
+                              onMouseLeave={() => setShowTooltip(false)}
+                            >
+                              &quot;Hippopotomonstrosesquippedaliophobia&quot;
+                            </span>
+                            {showTooltip && (
+                              <div className="custom-tooltip">
+                                Fear of long words
+                              </div>
+                            )}
+                          </span>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              {/* contact area */}
-
-              {/* about area start */}
-               <div className="cn-contactform-support-area mb-120">
-                  <div className="container">
-                     <div className="row justify-content-center">
-                        <div className="col-xl-10">
-                           <div className="cn-contactform-support-bg d-flex align-items-center justify-content-center" style={{backgroundImage: "url(/assets/img/inner-contact/contact/contact-bg.png)"}}>
-                              <div className="cn-contactform-support-text text-center">
-                                 <span>Or, you can contact one of our studios
-                                    directly below. We aim to respond
-                                    within 24 hours.</span>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               {/* about area end */}
+              {/* about area end */}
 
               {/* contact location */}
-              <ContactLocationTwo/>
+              <ContactLocationTwo />
               {/* contact location */}
             </main>
 

@@ -136,7 +136,7 @@ export default function CounterOne() {
               />
             ))}
           </div>
-          <div className="box">
+          {/* <div className="box">
             {clients.map((client) => (
               <Image
                 key={client.src}
@@ -147,7 +147,7 @@ export default function CounterOne() {
                 height={100}
               />
             ))}
-          </div>
+          </div> */}
         </div>
         <div className="slide-img-right">
           <div className="box">
@@ -162,7 +162,7 @@ export default function CounterOne() {
               />
             ))}
           </div>
-          <div className="box">
+          {/* <div className="box">
             {clients.map((client) => (
               <Image
                 key={client.src}
@@ -173,7 +173,7 @@ export default function CounterOne() {
                 height={100}
               />
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="slide-funfact-wrap">

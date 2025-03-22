@@ -6,7 +6,7 @@ export async function POST(req: NextRequest) {
         const { name, email, message, number } = await req.json();
 
         if (!name || name.length < 3) {
-            throw new Error('Name is required');
+            throw new Error('Name is Invalid');
         }
         if (!number) throw new Error('Phone number is required');
 
@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
 
         // Check if the cleaned number is valid
         if (cleanedNumber.length < 10 || cleanedNumber.length > 15) {
-            throw new Error('A valid phone number is required');
+            throw new Error('Invalid phone number');
         }
 
         if (!message || message == '') {
@@ -46,7 +46,7 @@ export async function POST(req: NextRequest) {
         };
         await transporter.sendMail(mailOptions);
 
-        return NextResponse.json({ success: true, message: 'Thankyou, your message has been sent.' }, { status: 200 });
+        return NextResponse.json({ success: true, message: 'Your message sent successfully.' }, { status: 200 });
     } catch (error: any) {
         return NextResponse.json({ success: false, message: error.message }, { status: 500 });
     }
