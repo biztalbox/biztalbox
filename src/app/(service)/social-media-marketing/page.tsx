@@ -97,7 +97,7 @@ const SocialMediaMarketingPage = () => {
                   <div className="project-details-1-info">
                     <span>The Platform Prodigy</span>
                     <p>
-                      Multi-platform mastery- Whether it's Instagram,
+                      Multi-platform mastery- Whether it&apos;s Instagram,
                       LinkedIn, Twitter, or Facebook, his superpower
                       adapts
                     </p>

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { blog_data } from "@/data/blog-data";
-import BlogDetailsMain from "@/pages/blog/blog-details";
+import BlogDetailsMain from "@/demoPages/blog/blog-details";
 
 export const metadata: Metadata = {
   title: "Liko - Blog Details page",

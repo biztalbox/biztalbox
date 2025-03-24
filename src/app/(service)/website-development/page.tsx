@@ -87,7 +87,7 @@ const WebsiteDevelopmentPage = () => {
                   <div className="project-details-1-info">
                     <span>The Design Shapeshifter-</span>
                     <p>
-                      Dynamic Web Design- The ability to create flexible, adaptable, and dynamic web designs that evolve with the brand's needs.
+                      Dynamic Web Design- The ability to create flexible, adaptable, and dynamic web designs that evolve with the brand&apos;s needs.
                     </p>
                   </div>
                   <div className="project-details-1-info">
