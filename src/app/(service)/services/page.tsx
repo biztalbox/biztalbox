@@ -4,6 +4,7 @@ import PortfolioWrapperMain from "@/components/portfolio/portfolio-wrapper-main"
 
 export const metadata: Metadata = {
   title: "Our Services",
+  description: ""
 };
 
 const ServicePage = () => {

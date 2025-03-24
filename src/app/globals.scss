@@ -55,16 +55,19 @@
 #service_img, #service_details_container{
     transition: all 0.3s ease-in-out !important;
 }
-@media (min-width: 1025px) {
-    #service_details_container{
-        margin-bottom: -76rem !important;
-    }
-}
-@media (min-width: 1500px) {
-    #service_details_container{
-        margin-bottom: -13rem !important;
-    }
-}
+// @media (min-width: 1025px) {
+//     #service_details_container{
+//         // margin-bottom: -76rem !important;
+//         // overflow: hidden !important;
+//     }
+// }
+// @media (min-width: 1500px) {
+//     #service_details_container{
+//         // margin-bottom: -13rem !important;
+//         // overflow: hidden !important;
+//         // height: ;
+//     }
+// }
 .slide-funfact-item h4{
     font-family: var(--tp-ff-p) !important;
 }

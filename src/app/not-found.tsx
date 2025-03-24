@@ -1,12 +1,12 @@
 import { Metadata } from 'next';
-import ErrorMain from '@/pages/error/error-main'
+import ErrorPage from '@/components/ErrorPage';
  
 export const metadata: Metadata = {
-  title: "Liko - Not Found Page",
+  title: "Page Not Found",
 };
 
 export default function NotFound() {
   return (
-    <ErrorMain/>
+    <ErrorPage/>
   )
 }

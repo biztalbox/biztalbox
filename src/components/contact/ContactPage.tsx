@@ -12,11 +12,8 @@ import HeaderEleven from "@/layouts/headers/header-eleven";
 import FooterTwo from "@/layouts/footers/footer-two";
 // animation
 import { charAnimation } from "@/utils/title-animation";
-import ContactForm from "@/components/form/contact-form";
 import ContactLocationTwo from "@/components/contact/contact-location-2";
-import Image from "next/image";
 import ParticleComponent from "@/components/ParticleComponent";
-import { OverlayTrigger, Tooltip } from "react-bootstrap";
 import ContactSection from "./ContactSection";
 
 const ContactPage = () => {
@@ -48,7 +45,7 @@ const ContactPage = () => {
           >
             <main>
               {/* hero area start */}
-              <div className="tm-hero-area tm-hero-ptb p-relative">
+              <div className="ab-inner-hero-area ab-inner-hero-bg p-relative dark-bg partcle_bg">
                 <ParticleComponent />
                 <div className="container">
                   <div className="row">

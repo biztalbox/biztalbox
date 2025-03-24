@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import HomeFourMain from "@/pages/homes/home-4";
+import HomePage from "@/components/HomePage";
 
 export const metadata: Metadata = {
   title: "Biztal Box",
@@ -8,9 +8,6 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <>
-      {/* <HomePageFour /> */}
-      <HomeFourMain/>
-    </>
+      <HomePage/>
   );
 }

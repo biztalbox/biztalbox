@@ -1,14 +1,15 @@
 import React from "react";
 import { Metadata } from "next";
-import AboutUsMain from "@/pages/about/about-us";
+import AboutPage from "@/components/about/AboutPage";
 
 export const metadata: Metadata = {
-  title: "Liko - About us page",
+  title: "About us page",
+  description: ""
 };
 
 const AboutUsPage = () => {
   return (
-    <AboutUsMain/>
+    <AboutPage/>
   );
 };
 
