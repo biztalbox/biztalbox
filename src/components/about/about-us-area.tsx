@@ -5,7 +5,7 @@ import { Hand } from "../svg";
 // images
 import shape from "@/assets/img/inner-about/about/shape-1.png";
 import ab_1 from "@/assets/image/about_img_4.webp";
-import ab_2 from "@/assets/image/about_img_1.jpg";
+import ab_2 from "@/assets/image/about_img_2.jpg";
 import ab_3 from "@/assets/image/about_biztal.webp";
 
 export default function AboutUsArea() {
