@@ -116,7 +116,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 760px) {
     .tooltip-text-main {
         font-size: 20px !important;
     }
@@ -125,6 +125,10 @@
         width: 150px;
         height: 80px;
         padding: 15px 30px;
+    }
+    .tp-gallery-item {
+        height: 300px;
+        width: 200px;
     }
 }
 
