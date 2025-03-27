@@ -2,7 +2,7 @@ import { Metadata } from "next/types";
 import WebsiteDevelopmentPage from "./page";
 
 export const metadata: Metadata = {
-  title: "Website Development",
+  title: "Web Development & Design Agency | Build Great Websites",
   description: ""
 };
 
