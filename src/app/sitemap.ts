@@ -10,12 +10,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/services',
     '/portfolio',
     '/contact',
+    '/best-seo-agency',
+    '/graphic-designing',
+    '/website-development',
+    '/motion-graphics',
+    '/content-writing',
+    '/social-media-marketing',
     '/google-ads-service',
     '/facebook-ads-service',
-    '/content-marketing',
-    '/analysis-algorithm',
-    '/social-media-marketing',
-    '/best-seo-agency'
+    '/analysis-algorithm'
+    
+
   ].map((route) => ({
     // Construct the full URL for each route
     url: `${baseUrl}${route}`, // The full URL for the route
