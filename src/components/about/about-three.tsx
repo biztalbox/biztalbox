@@ -24,9 +24,9 @@ export default function AboutThree() {
                 </span>
               </span>
               <h4 className="tp-section-title-90 tp_text_invert tp_fade_bottom">
-                At Biztal, we don’t just build a brand’s reputation
+                We don’t just build a brand’s reputation
                 <span className="tp-section-title-90 tp_text_invert tp_fade_bottom">
-                  <br /> — we set brands ablaze.
+                 <br/> — we set brands ablaze.
                 </span>
               </h4>
             </div>
@@ -34,9 +34,9 @@ export default function AboutThree() {
         </div>
         <div className="row align-items-center">
           <div className="col-xl-6 col-lg-6 col-md-4">
-            {/* <div className="tp-about-3-shape text-lg-end">
+            <div className="tp-about-3-shape text-lg-end">
               <Image src={shape} alt="shape" style={{ height: "auto" }} />
-            </div> */}
+            </div>
           </div>
           <div className="col-xl-6 col-lg-6 col-md-8">
             <div className="tp-about-3-content">

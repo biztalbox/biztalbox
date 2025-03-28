@@ -13,7 +13,7 @@ export default function HeroBannerFour() {
               <div className="tp-hero-3-circle-shape">
                 <span></span>
               </div>
-              <h4 className="tp-hero-3-title tp_reveal_anim">
+              <h4 className="tp-hero-3-title ">
                 <span className="tp-reveal-line">{"biztalbox"}</span><br/>
                 <span className="tp-reveal-line"> Boost your brand with us! </span>
               </h4>
