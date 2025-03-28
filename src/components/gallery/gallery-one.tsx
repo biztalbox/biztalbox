@@ -42,7 +42,7 @@ export default function GalleryOne() {
           <div className="col-xl-12">
             <div className="tp-gallery-slider-wrap">
               <div className="swiper-container tp-gallery-slider-active">
-                <Marquee className="tp-gallery-titming" speed={300} direction='left'>
+                <Marquee className="tp-gallery-titming" speed={40} direction='left'>
 
                   {gallery_images.map((g, i) => (
 
