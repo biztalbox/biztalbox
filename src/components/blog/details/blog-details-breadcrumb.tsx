@@ -11,6 +11,13 @@ interface BlogDetailsBreadcrumbProps {
 }
 
 export default function BlogDetailsBreadcrumb({ title, image, date }: BlogDetailsBreadcrumbProps) {
+
+  const decodeHtmlEntities = (text: string): string => {
+    const textarea = document.createElement('textarea');
+    textarea.innerHTML = text;
+    return textarea.value;
+  };
+
   return (
     <div className="blog-details-area">
       <div
@@ -30,7 +37,7 @@ export default function BlogDetailsBreadcrumb({ title, image, date }: BlogDetail
                   <i>{date}</i>
                 </span>
                 <h1 className="blog-details-title tp-char-animation">
-                  {title}
+                  {decodeHtmlEntities(title)}
                 </h1>
                 {/* <div className="blog-details-top-author d-flex align-items-center">
                   <Image src={avatar} alt="avatar" />
