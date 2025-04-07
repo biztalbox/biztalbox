@@ -29,9 +29,9 @@ export default function MobileMenus() {
           <li className="has-dropdown">
             <Link href="/services">Services</Link>
           </li>
-          {/* <li className="has-dropdown">
-          <Link href="/blog-classic">Blog</Link>
-        </li> */}
+          <li className="has-dropdown">
+            <Link href="/blog">Blog</Link>
+          </li>
           <li className="has-dropdown">
             <Link href="/contact">contact</Link>
           </li>
