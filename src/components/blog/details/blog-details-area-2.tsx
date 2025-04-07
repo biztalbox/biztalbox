@@ -3,7 +3,7 @@ import Image from "next/image";
 import { QuoteThree, Share, Tag } from "@/components/svg";
 import BlogDetailsAuthor from "./blog-details-author";
 import BlogDetailsNavigation from "./blog-details-navigation";
-import BlogDetailsComments from "./blog-details-comments";
+import BlogDetailsCommentsApi from "./blog-details-comments-api";
 import BlogReplyForm from "@/components/form/blog-reply-form";
 
 // images
@@ -22,19 +22,19 @@ export default function BlogDetailsAreaTwo() {
                 <div className="col-xl-8">
                   <div className="blog-details-top-text tp_fade_bottom">
                     <p>
-                      The metaverse can be viewed as an evolution of today’s
+                      The metaverse can be viewed as an evolution of today&apos;s
                       internet, which in turn evolved from passive media that we
                       simply consumed. In the age of radio and television, the
-                      consumer’s only job was to listen and decide if they
+                      consumer&apos;s only job was to listen and decide if they
                       wanted to buy.{" "}
                     </p>
                   </div>
                   <div className="blog-details-left-content tp_fade_bottom">
                     <p className="pb-40">
-                      The metaverse can be viewed as an evolution of today’s
+                      The metaverse can be viewed as an evolution of today&apos;s
                       internet, which in turn evolved from passive media that we
                       simply consumed. In the age of radio and television, the
-                      consumer’s only job was to listen and decide if they
+                      consumer&apos;s only job was to listen and decide if they
                       wanted to buy. While the internet added active
                       participation and community-building, the metaverse adds
                       total immersion and the power to co-create, trade, promote
@@ -93,11 +93,12 @@ export default function BlogDetailsAreaTwo() {
                     <p>
                       But, like most politicians, he promised more than he could
                       deliver. Why not indeed! Daylight and everything. And then
-                      the battle’s not so bad? Hello, little man. I will destroy
-                      you! No, I’m Santa Claus! Kif might! Man, I’m sore all
-                      over. I feel like I just went ten rounds with mighty Thor.
-                      I found what I need. And it’s not friends, it’s things.
-                      Then we’ll go with that data file!
+                      the battle&apos;s not so bad? Hello, little man. I will
+                      destroy you! No, I&apos;m Santa Claus! Kif might! Man, I&apos;m
+                      sore all over. I feel like I just went ten rounds with
+                      mighty Thor. I found what I need. And it&apos;s not
+                      friends, it&apos;s things. Then we&apos;ll go with that
+                      data file!
                     </p>
                   </div>
                   <div className="blog-details-blockquote tp_fade_bottom">
@@ -179,16 +180,16 @@ export default function BlogDetailsAreaTwo() {
                     </div>
                   </div>
                   {/* blog details author */}
-                  <BlogDetailsAuthor />
+                  <BlogDetailsAuthor author="Biztal Box" />
                   {/* blog details author */}
 
                   {/* blog details navigation */}
                   <BlogDetailsNavigation />
                   {/* blog details navigation */}
                   <div className="postbox__comment mb-100">
-                    <h3 className="postbox__comment-title">3 Comments</h3>
+                    <h3 className="postbox__comment-title">Comments</h3>
                     {/* blog details comments */}
-                    <BlogDetailsComments />
+                    <BlogDetailsCommentsApi />
                     {/* blog details comments */}
                   </div>
                   <div className="tp-postbox-details-form">
@@ -200,7 +201,7 @@ export default function BlogDetailsAreaTwo() {
                       are marked *
                     </p>
                     {/* blog reply form */}
-                    <BlogReplyForm />
+                    <BlogReplyForm postId={undefined} />
                     {/* blog reply form */}
                   </div>
                 </div>

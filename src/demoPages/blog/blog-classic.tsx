@@ -36,9 +36,9 @@ const BlogClassicMain = () => {
 
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <main>
+          <main className="mt-3 mt-md-1 mt-lg-0">
             {/* blog classic hero start */}
-            <BlogClassicSlider />
+            {/* <BlogClassicSlider /> */}
             {/* blog classic hero end */}
 
             {/* blog classic area area */}
@@ -53,11 +53,11 @@ const BlogClassicMain = () => {
       </div>
 
       {/* video popup */}
-      <VideoPopup
+      {/* <VideoPopup
         isVideoOpen={isVideoOpen}
         setIsVideoOpen={setIsVideoOpen}
         videoId={videoId}
-      />
+      /> */}
       {/* video popup */}
     </Wrapper>
   );

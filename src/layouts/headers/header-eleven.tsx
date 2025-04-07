@@ -70,8 +70,9 @@ export default function HeaderEleven({transparent=false,cls=''}: IProps) {
                     <li>
                       <div className="tp-inner-bar tp-header-bar">
                         <button onClick={()=> setOpenOffCanvas(true)} className="tp-offcanvas-open-btn">
-                          <span style={{backgroundColor:'#fff'}}></span>
-                          <span style={{backgroundColor:'#fff'}}></span>
+                          <span style={{backgroundColor:'#808080'}}></span>
+                          <span style={{backgroundColor:'#808080'}}></span>
+                          <span style={{backgroundColor:'#808080'}}></span>
                         </button>
                       </div>
                     </li>

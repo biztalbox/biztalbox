@@ -130,6 +130,9 @@
         height: 300px;
         width: 200px;
     }
+    .blog-details-bg {
+        padding-bottom: 0;
+    }
     // .tp-section-title-90{
     //     font-size: 36px !important;
     // }
@@ -151,6 +154,61 @@
 .project-details-1-right{
     height: auto !important;
 }
+.blog-details-overlay::after{
+    background-color: rgba(0, 0, 0, 0.51) !important;
+}
 
+@media (max-width: 1024px) {
+    h3.postbox__title {
+        letter-spacing: normal !important;
+    }
+    .blog-details-title {
+        font-size: 50px !important;
+    }
+}
+.blog-details-content img{
+    height: auto !important;
+}
 
+[data-theme="dark"] .blog-details-content{
+    color: var(--tp-common-white);
+}
 
+[data-theme="dark"] .blog-details-content h1,
+[data-theme="dark"] .blog-details-content h2,
+[data-theme="dark"] .blog-details-content h3,
+[data-theme="dark"] .blog-details-content h4,
+[data-theme="dark"] .blog-details-content h5,
+[data-theme="dark"] .blog-details-content h6 {
+    color: var(--tp-common-white);
+}
+[data-theme="dark"] .blog-details-content p {
+    color: rgba(245,247,245,.6);
+  }
+
+.tp-blog-title-sm {
+    line-height: 1.2;
+}
+.postbox__comment-text {
+    width: 100%;
+  }
+
+// Alert styles for blog comment form
+.alert {
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  
+  &.alert-danger {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+  }
+  
+  &.alert-success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+  }
+}

@@ -1,12 +1,15 @@
 import { StaticImageData } from "next/image";
 
 export interface IBlogDT {
+  featuredImage: string;
   id: number;
+  slug?: string;
   img?: StaticImageData;
   images?: StaticImageData[];
   title: string;
   date: string;
   category: string;
+  categories?: number[];
   author: string;
   videoId?: string;
   avatar?: StaticImageData;

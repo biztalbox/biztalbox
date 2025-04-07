@@ -16,6 +16,7 @@ import BlogDetailsBreadcrumb from "@/components/blog/details/blog-details-breadc
 import BlogDetailsRelatedPosts from "@/components/blog/details/blog-details-related-posts";
 // animation
 import { charAnimation } from "@/utils/title-animation";
+import RelatedPostGrid from "@/components/blog/relatedpostgrid";
 
 // prop type
 type IProps = {
@@ -42,15 +43,22 @@ const BlogDetailsMain = ({ blog }: IProps) => {
         <div id="smooth-content">
           <main>
             {/* blog details hero */}
-            <BlogDetailsBreadcrumb />
+            <BlogDetailsBreadcrumb 
+              title={blog.title} 
+              image={blog.featuredImage || '/assets/img/inner-blog/blog-details/blog-details-1.jpg'} 
+              date={blog.date}
+            />
             {/* blog details hero */}
 
             {/* blog details area */}
-            <BlogDetailsArea/>
+            <BlogDetailsArea blog={blog} />
             {/* blog details area */}
 
             {/* related posts */}
-            <BlogDetailsRelatedPosts/>
+            <RelatedPostGrid 
+              currentPostId={blog.id}
+              currentPostCategories={blog.categories}
+            />
             {/* related posts */}
           </main>
 

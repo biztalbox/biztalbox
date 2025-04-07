@@ -42,6 +42,7 @@ export const blog_home_five: IBlogDT[] = [
     date: '01. FEB. 2023',
     category: 'Marketing / Strategy',
     author: 'John Doe',
+    featuredImage: blog_1.src,
   },
   {
     id: 2,
@@ -50,6 +51,7 @@ export const blog_home_five: IBlogDT[] = [
     date: '09. MAY. 2023',
     category: 'Marketing / Strategy',
     author: 'John Doe',
+    featuredImage: blog_2.src,
   },
   {
     id: 3,
@@ -58,6 +60,7 @@ export const blog_home_five: IBlogDT[] = [
     date: '30. AUG. 2023',
     category: 'Marketing / Strategy',
     author: 'John Doe',
+    featuredImage: blog_3.src,
   },
   {
     id: 4,
@@ -66,6 +69,7 @@ export const blog_home_five: IBlogDT[] = [
     date: '11. JAN. 2023',
     category: 'Marketing / Strategy',
     author: 'John Doe',
+    featuredImage: blog_4.src,
   }
 ];
 
@@ -78,6 +82,7 @@ export const blog_modern: IBlogDT[] = [
     date: '21. OCT. 2023',
     category: 'Marketing / Strategy',
     author: 'John Doe',
+    featuredImage: b_m_1.src,
   },
   {
     id: 6,
@@ -86,6 +91,7 @@ export const blog_modern: IBlogDT[] = [
     date: '01. FEB. 2022',
     category: 'Marketing / Strategy',
     author: 'John Doe',
+    featuredImage: b_m_2.src,
   },
   {
     id: 7,
@@ -94,6 +100,7 @@ export const blog_modern: IBlogDT[] = [
     date: '09. MAY. 2022',
     category: 'Branding / Creative',
     author: 'John Doe',
+    featuredImage: b_m_3.src,
   },
   {
     id: 8,
@@ -102,6 +109,7 @@ export const blog_modern: IBlogDT[] = [
     date: '30. AUG. 2022',
     category: 'Marketing / Strategy',
     author: 'John Doe',
+    featuredImage: b_m_4.src,
   },
   {
     id: 9,
@@ -110,6 +118,7 @@ export const blog_modern: IBlogDT[] = [
     date: '11. JAN. 2022',
     category: 'Branding / Creative',
     author: 'John Doe',
+    featuredImage: b_m_5.src,
   },
   {
     id: 10,
@@ -118,6 +127,7 @@ export const blog_modern: IBlogDT[] = [
     date: '15. OCT. 2023',
     category: 'Marketing / Strategy',
     author: 'John Doe',
+    featuredImage: b_m_6.src,
   },
   {
     id: 11,
@@ -126,7 +136,8 @@ export const blog_modern: IBlogDT[] = [
     date: '20. NOV. 2023',
     category: 'Branding / Strategy',
     author: 'John Doe',
-  },
+    featuredImage: b_m_7.src,
+      },
 
   {
     id: 12,
@@ -135,6 +146,7 @@ export const blog_modern: IBlogDT[] = [
     date: '01. FEB. 2022',
     category: 'Marketing / Strategy',
     author: 'John Doe',
+    featuredImage: b_m_2.src,
   },
   {
     id: 13,
@@ -143,6 +155,7 @@ export const blog_modern: IBlogDT[] = [
     date: '09. MAY. 2022',
     category: 'Branding / Creative',
     author: 'John Doe',
+    featuredImage: b_m_5.src,
   },
   {
     id: 14,
@@ -151,6 +164,7 @@ export const blog_modern: IBlogDT[] = [
     date: '30. AUG. 2022',
     category: 'Marketing / Strategy',
     author: 'John Doe',
+    featuredImage: b_m_4.src,
   },
 ];
 
@@ -164,6 +178,7 @@ export const blog_classic: IBlogDT[] = [
     author: 'Mark Hopkins',
     avatar: avatar,
     blogHeroSlider: true,
+    featuredImage: '',
   },
   {
     id: 16,
@@ -173,6 +188,7 @@ export const blog_classic: IBlogDT[] = [
     author: 'John Vincent',
     avatar: avatar,
     blogHeroSlider: true,
+    featuredImage: '',
   },
   {
     id: 17,
@@ -182,6 +198,7 @@ export const blog_classic: IBlogDT[] = [
     date: '01 DEC, 2022',
     category: 'WORK',
     author: 'Mark Hopkins',
+    featuredImage: blog_post_1.src,
   },
   {
     id: 18,
@@ -192,7 +209,8 @@ export const blog_classic: IBlogDT[] = [
     category: 'WORK',
     author: 'Mark Hopkins',
     video: true,
-    videoId: 'rVHxkxJM3rY'
+    videoId: 'rVHxkxJM3rY',
+    featuredImage: blog_post_2.src,
   },
   {
     id: 19,
@@ -202,6 +220,7 @@ export const blog_classic: IBlogDT[] = [
     date: '01 DEC, 2022',
     category: 'WORK',
     author: 'Mark Hopkins',
+    featuredImage: '',
   },
   {
     id: 20,
@@ -212,6 +231,7 @@ export const blog_classic: IBlogDT[] = [
     date: '08 NOV, 2023',
     category: 'WORK',
     author: 'Mark Hopkins',
+    featuredImage: blog_post_1.src,
   },
   {
     id: 21,
@@ -221,6 +241,7 @@ export const blog_classic: IBlogDT[] = [
     date: '12 OCT, 2023',
     category: 'WORK',
     author: 'Mark Hopkins',
+    featuredImage: '',
   },
   {
     id: 22,
@@ -230,6 +251,7 @@ export const blog_classic: IBlogDT[] = [
     date: '18 DEC, 2023',
     category: 'WORK',
     author: 'Mark Hopkins',
+    featuredImage: blog_post_4.src,
   },
 ];
 
@@ -242,6 +264,7 @@ export const blog_lists: IBlogDT[] = [
     date: '01 DEC, 2023',
     category: 'Marketing',
     author: 'John Doe',
+    featuredImage: blog_list_1.src,
   },
   {
     id: 24,
@@ -250,6 +273,7 @@ export const blog_lists: IBlogDT[] = [
     date: '09. MAY. 2023',
     category: 'Branding',
     author: 'John Doe',
+    featuredImage: blog_list_2.src,
   },
   {
     id: 25,
@@ -258,6 +282,7 @@ export const blog_lists: IBlogDT[] = [
     date: '20. NOV. 2023',
     category: 'Branding',
     author: 'John Doe',
+    featuredImage: blog_list_3.src,
   },
   {
     id: 26,
@@ -266,6 +291,7 @@ export const blog_lists: IBlogDT[] = [
     date: '30. AUG. 2023',
     category: 'Branding',
     author: 'John Doe',
+    featuredImage: blog_list_4.src,
   },
   {
     id: 27,
@@ -274,6 +300,7 @@ export const blog_lists: IBlogDT[] = [
     date: '09. MAY. 2023',
     category: 'Branding',
     author: 'John Doe',
+    featuredImage: blog_list_5.src,
   },
   {
     id: 28,
@@ -282,6 +309,7 @@ export const blog_lists: IBlogDT[] = [
     date: '12. JAN. 2023',
     category: 'Branding',
     author: 'John Doe',
+    featuredImage: blog_list_2.src,
   },
 ];
 
