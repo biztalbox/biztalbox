@@ -2,21 +2,24 @@ import { Metadata } from "next";
 import { getBlogPostBySlug } from "@/utils/api";
 import BlogDetailsMain from "@/demoPages/blog/blog-details";
 import { notFound } from "next/navigation";
+import { createMetadata } from "@/utils/metadata";
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   const blog = await getBlogPostBySlug(params.slug);
   
   if (!blog) {
-    return {
+    return createMetadata({
       title: 'Blog post not found',
       description: 'The requested blog post could not be found',
-    };
+    }, '/blog/not-found');
   }
   
-  return {
+  const baseMetadata = {
     title: blog.title.rendered,
     description: blog.excerpt.rendered.replace(/<[^>]*>/g, '').slice(0, 160),
   };
+  
+  return createMetadata(baseMetadata, `/blog/${params.slug}`);
 }
 
 export default async function BlogDetailsPage({params}:{params:{slug:string}}) {

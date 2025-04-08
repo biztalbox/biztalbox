@@ -1,15 +1,14 @@
 import React from "react";
 import { Metadata } from "next";
 import BlogClassicMain from "@/demoPages/blog/blog-classic";
+import { createMetadata } from "@/utils/metadata";
 
-export const metadata: Metadata = {
+const baseMetadata: Metadata = {
   title: "Blogs - Biztalbox",
 };
 
-const BlogClassicPage = () => {
-  return (
-    <BlogClassicMain/>
-  );
-};
+export const metadata = createMetadata(baseMetadata, '/blog');
 
-export default BlogClassicPage;
+export default function BlogPage() {
+  return <BlogClassicMain />;
+}

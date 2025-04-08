@@ -9,7 +9,7 @@ import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
 import "./globals.scss";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
-import { createMetadataWithCanonical } from "@/utils/metadata";
+import { createMetadata } from "@/utils/metadata";
 
 const gellery = localFont({
   src: [
@@ -76,7 +76,7 @@ const baseMetadata: Metadata = {
   }
 };
 
-export const metadata = createMetadataWithCanonical(baseMetadata);
+export const metadata = createMetadata(baseMetadata, '/');
 
 export default function RootLayout({
   children,
