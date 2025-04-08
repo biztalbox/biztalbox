@@ -5,7 +5,7 @@ import { ScrollTrigger } from '@/plugins';
 function projectThreeAnimation() {
   if (document.querySelectorAll(".tp-project-3-area").length > 0) {
     let pw = gsap.matchMedia();
-    pw.add("(min-width: 1200px)", () => {
+    pw.add("(min-width: 100px)", () => {
       gsap.set(".tp-project-3-wrap .pro-img-1 img", {
         x: "500",
       });
