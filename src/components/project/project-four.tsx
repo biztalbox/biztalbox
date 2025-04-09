@@ -102,7 +102,7 @@ export default function ProjectFour({ style_2 = false }: IProps) {
         style_2 ? "pt-60 pw-project-style" : "pt-130 black-bg"
       }`}
     >
-      <div className="container container-1720">
+      <div className="container container-1720 overflow-hidden">
         {!style_2 && (
           <div className="row justify-content-center">
             <div className="col-xl-7">

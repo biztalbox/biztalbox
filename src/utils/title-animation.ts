@@ -123,60 +123,64 @@ function charAnimation() {
 }
 
 // fade left animation
-function fadeAnimation() {
+function fadeAnimation(isMobile = false) {
   if ($(".tp_fade_bottom").length > 0) {
-    gsap.set(".tp_fade_bottom", { y: 100, opacity: 0 });
+    gsap.set(".tp_fade_bottom", { y: isMobile ? 50 : 100, opacity: 0 });
     const fadeArray = gsap.utils.toArray(".tp_fade_bottom");
     fadeArray.forEach((item: any, i) => {
       let fadeTl = gsap.timeline({
         scrollTrigger: {
           trigger: item,
           start: "top center+=400",
+          // Use lighter animation settings for mobile
+          toggleActions: isMobile ? "play none none none" : "play reverse play reverse",
         },
       });
       fadeTl.to(item, {
         y: 0,
         opacity: 1,
         ease: "power2.out",
-        duration: 1.5,
+        duration: isMobile ? 1 : 1.5,
       });
     });
   }
 
   if ($(".tp_fade_top").length > 0) {
-    gsap.set(".tp_fade_top", { y: -100, opacity: 0 });
+    gsap.set(".tp_fade_top", { y: isMobile ? -50 : -100, opacity: 0 });
     const fadetopArray = gsap.utils.toArray(".tp_fade_top");
     fadetopArray.forEach((item: any, i) => {
       let fadeTl = gsap.timeline({
         scrollTrigger: {
           trigger: item,
           start: "top center+=100",
+          toggleActions: isMobile ? "play none none none" : "play reverse play reverse",
         },
       });
       fadeTl.to(item, {
         y: 0,
         opacity: 1,
         ease: "power2.out",
-        duration: 2.5,
+        duration: isMobile ? 1.5 : 2.5,
       });
     });
   }
 
   if ($(".tp_fade_left").length > 0) {
-    gsap.set(".tp_fade_left", { x: -100, opacity: 0 });
+    gsap.set(".tp_fade_left", { x: isMobile ? -50 : -100, opacity: 0 });
     const fadeleftArray = gsap.utils.toArray(".tp_fade_left");
     fadeleftArray.forEach((item: any, i) => {
       let fadeTl = gsap.timeline({
         scrollTrigger: {
           trigger: item,
           start: "top center+=100",
+          toggleActions: isMobile ? "play none none none" : "play reverse play reverse",
         },
       });
       fadeTl.to(item, {
         x: 0,
         opacity: 1,
         ease: "power2.out",
-        duration: 2.5,
+        duration: isMobile ? 1.5 : 2.5,
       });
     });
   }

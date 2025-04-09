@@ -1,9 +1,10 @@
 "use client";
 import { gsap } from "gsap";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import useScrollSmooth from "@/hooks/use-scroll-smooth";
 import { ScrollSmoother, ScrollTrigger, SplitText } from "@/plugins";
 import { useGSAP } from "@gsap/react";
+import "../app/mobile-performance.css";
 gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 
 // internal imports
@@ -22,24 +23,47 @@ import WhyChooseUs from "@/components/about/why-choose-us";
 import HeaderEleven from "@/layouts/headers/header-eleven";
 
 const HomePage = () => {
+  const [isMobile, setIsMobile] = useState<boolean>(false);
+  
   useScrollSmooth();
+  
   useEffect(() => {
     document.body.classList.add("tp-smooth-scroll");
+    
+    // Check if device is mobile
+    const checkDevice = () => {
+      const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
+      const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream;
+      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+      setIsMobile(isIOS || isMobileDevice);
+    };
+    
+    checkDevice();
+    window.addEventListener('resize', checkDevice);
+    
     return () => {
       document.body.classList.remove("tp-smooth-scroll");
+      window.removeEventListener('resize', checkDevice);
     };
   }, []);
 
   useGSAP(() => {
     const timer = setTimeout(() => {
-      fadeAnimation();
-      revelAnimationOne();
-      projectThreeAnimation();
-      ctaAnimation();
-      textInvert();
+      // Apply lighter animations for mobile devices
+      if (isMobile) {
+        // Apply only essential animations with reduced complexity
+        fadeAnimation(true);
+      } else {
+        // Apply all animations for desktop
+        fadeAnimation(false);
+        revelAnimationOne();
+        projectThreeAnimation();
+        ctaAnimation();
+        textInvert();
+      }
     }, 100);
     return () => clearTimeout(timer);
-  });
+  }, [isMobile]);
 
   return (
     <Wrapper>

@@ -10,11 +10,12 @@ import { ThemeProvider } from "next-themes";
 import "./globals.scss";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { createMetadata } from "@/utils/metadata";
+import Script from "next/script";
 
 const gellery = localFont({
   src: [
     {
-      path: "../../public/assets/fonts/gallerymodern-webfont.ttf",
+      path: "../../public/assets/fonts/gallerymodern-webfont.woff2",
       weight: "400",
       style: "normal",
     },
@@ -23,49 +24,39 @@ const gellery = localFont({
       weight: "400",
       style: "normal",
     },
-    {
-      path: "../../public/assets/fonts/gallerymodern-webfont.woff2",
-      weight: "400",
-      style: "normal",
-    },
   ],
   variable: "--tp-ff-gallery",
+  display: "swap",
+  preload: true,
 });
 
 const aladin = Aladin({
   weight: ["400"],
   subsets: ["latin"],
   variable: "--tp-ff-aladin",
+  display: "swap",
 });
-const syne_body = Syne({
-  weight: ["400", "500", "600", "700", "800"],
-  subsets: ["latin"],
-  variable: "--tp-ff-body",
-});
-const syne_heading = Syne({
-  weight: ["400", "500", "600", "700", "800"],
-  subsets: ["latin"],
-  variable: "--tp-ff-heading",
-});
-const syne_p = Syne({
-  weight: ["400", "500", "600", "700", "800"],
-  subsets: ["latin"],
-  variable: "--tp-ff-p",
-});
+
+// Optimize Syne font by using a single definition with all weights
 const syne = Syne({
   weight: ["400", "500", "600", "700", "800"],
   subsets: ["latin"],
   variable: "--tp-ff-syne",
+  display: "swap",
 });
+
 const big_shoulders = Big_Shoulders_Display({
   weight: ["400", "500", "600", "700", "800"],
   subsets: ["latin"],
   variable: "--tp-ff-shoulders",
+  display: "swap",
 });
+
 const marcellus = Marcellus({
   weight: ["400"],
   subsets: ["latin"],
   variable: "--tp-ff-marcellus",
+  display: "swap",
 });
 
 const baseMetadata: Metadata = {
@@ -85,15 +76,72 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning={true}>
+      <head>
+        {/* Preload critical font */}
+        <link
+          rel="preload"
+          href="/assets/fonts/gallerymodern-webfont.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        
+        {/* Preconnect to external domains to reduce connection time */}
+        <link rel="preconnect" href="https://blog.biztalbox.com" />
+        <link rel="dns-prefetch" href="https://blog.biztalbox.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        
+        {/* Add resource hints */}
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
       <body
         id="body"
         suppressHydrationWarning={true}
-        className={`${gellery.variable} ${aladin.variable} ${syne_body.variable} ${syne_heading.variable} ${syne_p.variable} ${syne.variable} ${big_shoulders.variable} ${marcellus.variable}`}
+        className={`${gellery.variable} ${aladin.variable} ${syne.variable} ${big_shoulders.variable} ${marcellus.variable} font-optimization-applied`}
       >
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
         )}
         <ThemeProvider defaultTheme="dark">{children}</ThemeProvider>
+        
+        {/* Defer non-critical scripts */}
+        <Script
+          id="performance-monitoring"
+          strategy="lazyOnload"
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Performance monitoring
+              window.addEventListener('load', () => {
+                // Report Web Vitals
+                if ('performance' in window && 'measure' in window.performance) {
+                  try {
+                    // Measure LCP
+                    new PerformanceObserver((entryList) => {
+                      const entries = entryList.getEntries();
+                      if (entries.length > 0) {
+                        console.log('LCP:', entries[entries.length - 1].startTime);
+                      }
+                    }).observe({type: 'largest-contentful-paint', buffered: true});
+                    
+                    // Measure CLS
+                    new PerformanceObserver((entryList) => {
+                      let cls = 0;
+                      for (const entry of entryList.getEntries()) {
+                        if (!entry.hadRecentInput) {
+                          cls += entry.value;
+                        }
+                      }
+                      console.log('CLS:', cls);
+                    }).observe({type: 'layout-shift', buffered: true});
+                  } catch (e) {
+                    console.error('Error measuring performance:', e);
+                  }
+                }
+              });
+            `,
+          }}
+        />
       </body>
     </html>
   );

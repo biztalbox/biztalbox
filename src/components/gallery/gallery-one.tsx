@@ -61,7 +61,7 @@ export default function GalleryOne() {
               <div className="swiper-container tp-gallery-slider-active">
                 <Marquee 
                   className="tp-gallery-titming" 
-                  speed={isMobile ? 30 : 50} 
+                  speed={isMobile ? 40 : 100} 
                   direction='left'
                   pauseOnHover={true}
                   gradient={false}

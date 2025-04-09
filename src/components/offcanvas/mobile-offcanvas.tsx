@@ -5,15 +5,15 @@ import { CloseTwo, Facebook, InstagramTwo, Linkdin, Twitter } from "../svg";
 // images
 import logo_white from "@/assets/img/logo/white.png";
 // import black_logo from "@/assets/img/logo/black.png";
-import port_1 from "@/assets/img/services/ALGANIX.webp";
-import port_2 from "@/assets/img/services/CAPTAIN_CUT.webp";
+import port_1 from "@/assets/img/services/seo.webp";
+import port_2 from "@/assets/img/services/social.webp";
 import port_3 from "@/assets/img/services/WEBDEV.webp";
-import port_4 from "@/assets/img/services/seo.webp";
+import port_4 from "@/assets/img/services/CAPTAIN_CUT.webp";
 import port_5 from "@/assets/img/services/VECTOR.webp";
 import port_6 from "@/assets/img/services/CONTENT.webp";
-import port_7 from "@/assets/img/services/social.webp";
-import port_8 from "@/assets/img/services/GOOGLE_ADS.webp";
-import port_9 from "@/assets/img/services/META.webp";
+import port_7 from "@/assets/img/services/GOOGLE_ADS.webp";
+import port_8 from "@/assets/img/services/META.webp";
+import port_9 from "@/assets/img/services/ALGANIX.webp";
 import MobileMenus from "./mobile-menus";
 import Link from "next/link";
 
@@ -26,7 +26,7 @@ const gallery_images = [
   { img: port_6, slug: "content-marketing" },
   { img: port_7, slug: "google-ads-service" },
   { img: port_8, slug: "facebook-ads-service" },
-  { img: port_9, slug: "digital-marketing" },
+  { img: port_9, slug: "analysis-algorithm" },
 ];
 
 // prop type

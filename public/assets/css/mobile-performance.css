@@ -1,0 +1,44 @@
+/* Mobile Performance Optimizations */
+
+/* Add will-change hints for items that will animate */
+@media (max-width: 991px) {
+  .tp_fade_bottom, 
+  .tp_fade_top, 
+  .tp_fade_left {
+    will-change: transform, opacity;
+  }
+  
+  /* Reduce motion for smoother scrolling */
+  #smooth-content {
+    will-change: transform;
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  /* Reduce heavy animations impact */
+  .gsap-split-word, 
+  .gsap-split-chars,
+  .tp-reveal-line,
+  .tp-reveal-line-2 {
+    will-change: transform;
+  }
+  
+  /* Optimize for iPhone */
+  @supports (-webkit-touch-callout: none) {
+    body {
+      /* iOS-specific optimizations */
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Force hardware acceleration on iOS devices */
+    #smooth-wrapper,
+    #smooth-content,
+    .tp_fade_bottom, 
+    .tp_fade_top, 
+    .tp_fade_left {
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+  }
+} 
