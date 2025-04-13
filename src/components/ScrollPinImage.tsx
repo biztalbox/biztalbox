@@ -76,7 +76,7 @@ const ScrollPinImage: React.FC<ScrollPinImageProps> = ({
 
   return (
     <div ref={sectionRef} className={`project-details-1-area project-details-1-pt ${className}`}>
-      <div className="container-fluid p-0">
+      <div className="container-fluid">
         <div className="row flex-xl-nowrap" style={{height: isClient && window.innerWidth >= 1025 ? textHeight : 'auto'}}>
           <div ref={imageRef} className="col-xl-5">
             <div className="project-details-1-left">

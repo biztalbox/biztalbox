@@ -133,6 +133,7 @@
     .blog-details-bg {
         padding-bottom: 0;
     }
+    
     // .tp-section-title-90{
     //     font-size: 36px !important;
     // }
@@ -158,12 +159,16 @@
     background-color: rgba(0, 0, 0, 0.51) !important;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1023px) {
     h3.postbox__title {
         letter-spacing: normal !important;
     }
     .blog-details-title {
         font-size: 50px !important;
+    }
+    
+    .project-details-1-pt{
+        padding-top: 0 !important;
     }
 }
 .blog-details-content img{
