@@ -114,7 +114,7 @@ const AwardOne = ({cls="pt-125 pb-125",abStyle=false}: IProps) => {
                   rel={`tp-award-list-thumb-${item.id}`}
                 >
                   <div className="tp-award-list-content-left d-flex align-items-end" style={{justifyContent: 'space-between', gap: '20px'}}>
-                    <p>{item.title}</p>
+                    <p className="text-white">{item.title}</p>
                     <span style={{whiteSpace: 'nowrap'}}>{item.Author}</span>
                   </div>
                   {/* <div className="tp-award-list-content-right">

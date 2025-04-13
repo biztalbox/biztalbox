@@ -46,7 +46,7 @@ export default function FunFactOne() {
           </div>
           <div className="col-xl-8">
             <div className="ab-funfact-wrap">
-              <div className="row gx-75">
+              <div className="row">
                 {counter_data.map((item) => (
                   <div key={item.id} className="col-xl-6 col-lg-6 col-md-6">
                     <div className="ab-funfact-item mb-90">

@@ -168,7 +168,7 @@ export default function FooterTwo({ whiteFooter = false,topCls='footer-top' }: I
             </div>
           </div> */}
           <div className="">
-            <div className="tp-footer-3-widget text-md-center">
+            <div className="tp-footer-3-widget text-center">
               <div className="tp-footer-3-logo-box">
                 {/* <p className="mb-100">
                   Drop us a line sed id semper <br />

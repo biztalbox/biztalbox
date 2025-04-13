@@ -70,7 +70,7 @@ export default function MobileOffcanvas({
               <div className="row gx-2">
                 {gallery_images.map((item, i) => (
                   <div className="col-md-3 col-3" key={i}>
-                    <div className="tp-offcanvas-gallery-img fix">
+                    <div className="fix">
                       <Link href={`/${item.slug}`}>
                         <Image
                           src={item.img}

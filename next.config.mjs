@@ -1,7 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['blog.biztalbox.com', 'secure.gravatar.com'],
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'blog.biztalbox.com',
+            },
+            {
+                protocol: 'https',
+                hostname: 'secure.gravatar.com',
+            },
+        ],
     },
 };
 
