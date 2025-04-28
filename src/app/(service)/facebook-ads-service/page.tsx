@@ -44,9 +44,9 @@ const FacebookAdsServicePage = () => {
                   <span className="project-details-1-subtitle">
                     Meta Ads
                   </span>
-                  <h4 className="project-details-1-title">
+                  <h1 className="project-details-1-title">
                     Facebook & Meta Ads
-                  </h4>
+                  </h1>
                   <p>
                     Throughout its ecosystem, Meta Ads creates visually
                     striking ads with precise targeting, turning it into a

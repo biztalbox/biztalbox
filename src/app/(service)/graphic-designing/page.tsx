@@ -46,9 +46,9 @@ const PortfolioDetailsOneMain = () => {
                   <span className="project-details-1-subtitle">
                     Vector
                   </span>
-                  <h4 className="project-details-1-title">
+                  <h1 className="project-details-1-title">
                     Graphic Designing
-                  </h4>
+                  </h1>
                   <p>
                     GRAPHIC DESIGNINGA graphic designer is a creative force that turns concepts into recognised piece of art. They create appealing brand identities that attract and motivate by mastering colour, typography, and composition. They transform every idea into an entertaining tale of excellence with creativity and quality.
                   </p>

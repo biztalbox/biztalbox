@@ -47,9 +47,9 @@ const BestSeoAgencyPage = () => {
                   <span className="project-details-1-subtitle">
                     Seo Sticker
                   </span>
-                  <h4 className="project-details-1-title">
+                  <h1 className="project-details-1-title">
                     Search Engine Optimization
-                  </h4>
+                  </h1>
                   <p>
                     SEO is the key to make sure your website stands out
                     digitally. It enhances your website for search

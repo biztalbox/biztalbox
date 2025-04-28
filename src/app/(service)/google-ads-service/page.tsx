@@ -44,9 +44,9 @@ const GoogleAdsServicePage = () => {
                   <span className="project-details-1-subtitle">
                     Google Ads
                   </span>
-                  <h4 className="project-details-1-title">
+                  <h1 className="project-details-1-title">
                     Performance Marketing
-                  </h4>
+                  </h1>
                   <p>
                     Google Ads is a versatile tool that makes every click
                     an instant hit. It improves return on investment (ROI)

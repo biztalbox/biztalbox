@@ -44,9 +44,9 @@ const PortfolioWrapperMain = () => {
                   <div className="col-xl-12">
                     <div className="tm-hero-content">
                       <span className="tm-hero-subtitle">biztalbox</span>
-                      <h4 className="tm-hero-title tp-char-animation">
-                      Extraordinary Services With Legendary Results
-                      </h4>
+                      <h1 className="tm-hero-title tp-char-animation">
+                      Digital Marketing Services With Legendary Results
+                      </h1>
                     </div>
                     <div className="tm-hero-text">
                       <p className="tp_title_anim">

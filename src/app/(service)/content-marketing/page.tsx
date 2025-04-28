@@ -44,9 +44,9 @@ const ContentMarketingPage = () => {
                   <span className="project-details-1-subtitle">
                     Contenteena
                   </span>
-                  <h4 className="project-details-1-title">
+                  <h1 className="project-details-1-title">
                     Copy Writing
-                  </h4>
+                  </h1>
                   <p>
                     Content creation combines crafting high-quality, SEO-optimized material that engages users and search engines. It drives traffic, builds authority, and enhances trust, using the right mix of keywords, storytelling, and multimedia for digital success.
                   </p>

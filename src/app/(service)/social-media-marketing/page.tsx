@@ -47,9 +47,9 @@ const SocialMediaMarketingPage = () => {
                   <span className="project-details-1-subtitle">
                     Social Crawler
                   </span>
-                  <h4 className="project-details-1-title">
+                  <h1 className="project-details-1-title">
                     Social Media Marketing
-                  </h4>
+                  </h1>
                   <p>
                     Social media is the digital arena where brands
                     connect, captivate, and communicate with their

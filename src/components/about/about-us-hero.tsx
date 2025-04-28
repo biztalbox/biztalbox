@@ -21,7 +21,7 @@ export default function AboutUsHero() {
     >
       <ParticleComponent />
       <div className="breadcrumb-site d-none">
-        <h6>About Us</h6>
+        <h1>About Us</h1>
       </div>
       <div className="ab-inner-hero-scroll smooth">
         <a className="pointer" onClick={scrollTo}>

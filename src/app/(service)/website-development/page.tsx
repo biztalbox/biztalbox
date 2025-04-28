@@ -44,9 +44,9 @@ const WebsiteDevelopmentPage = () => {
                   <span className="project-details-1-subtitle">
                     Web Dev
                   </span>
-                  <h4 className="project-details-1-title">
+                  <h1 className="project-details-1-title">
                     Web Development
-                  </h4>
+                  </h1>
                   <p>
                     A Web Dev is a digital architect who builds, optimizes, and secures seamless websites. Mastering coding, debugging, and responsive design, they build a dynamic experiences that evolve with the brand. Through wireframing, security, and ongoing maintenance, 
                     they ensure websites thrive in the digital world. 

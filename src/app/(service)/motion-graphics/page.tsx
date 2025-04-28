@@ -44,9 +44,9 @@ const MotionGraphicsPage = () => {
                   <span className="project-details-1-subtitle">
                     CAPTAIN CUT
                   </span>
-                  <h4 className="project-details-1-title">
+                  <h1 className="project-details-1-title">
                     Video Editing / Motion Graphics
-                  </h4>
+                  </h1>
                   <p>
                     A video editor is a multimedia guru who turns in raw footage into cinematic masterpieces. Mastering transitions, color grading, and visual effects, they craft fascinating narratives with perfect audio-visual synchronisation and optimized standards.
                   </p>

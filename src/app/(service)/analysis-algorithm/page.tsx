@@ -44,9 +44,9 @@ const AnalysisAlgorithmPage = () => {
                   <span className="project-details-1-subtitle">
                     ALGANIX
                   </span>
-                  <h4 className="project-details-1-title">
+                  <h1 className="project-details-1-title">
                     Analysis-Alogorithm
-                  </h4>
+                  </h1>
                   <p>
                     An algorithm is a precision powerhouse that can
                     instantly analyse vast amount of data to find hidden
