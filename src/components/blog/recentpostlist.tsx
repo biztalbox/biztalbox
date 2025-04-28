@@ -191,7 +191,7 @@ export default function RecentPostList({ postsPerPage = 5, className = "" }: Rec
               className="rc__post mb-30 d-flex align-items-center"
             >
               <div className="rc__post-thumb mr-20">
-                <Link href={`/blog-details/${post.slug}`}>
+                <Link href={`/blog/${post.slug}`}>
                   {post._embedded?.['wp:featuredmedia']?.[0]?.source_url ? (
                     <Image
                       src={post._embedded['wp:featuredmedia'][0].source_url}
@@ -219,7 +219,7 @@ export default function RecentPostList({ postsPerPage = 5, className = "" }: Rec
                   <span>{formatDate(post.date)}</span>
                 </div>
                 <h3 className="rc__post-title">
-                  <Link href={`/blog-details/${post.slug}`}>
+                  <Link href={`/blog/${post.slug}`}>
                     {decodeHtml(post.title.rendered)}
                   </Link>
                 </h3>
