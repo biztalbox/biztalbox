@@ -2,29 +2,52 @@ import { scroller } from "react-scroll";
 import { ScrollDown } from "../svg";
 import ParticleComponent from "../ParticleComponent";
 import Link from "next/link";
+import { useEffect } from "react";
 
 
 export default function AboutUsHero() {
     const scrollTo = () => {
       scroller.scrollTo("about-info", {
-        duration: 800,
+        duration: 1000,
         delay: 0,
-        smooth: "easeInOutQuart",
+        smooth: "easeInOutQuint",
+        offset: -50, // Offset to account for any fixed headers
+        spy: true,
       });
     };
+
+    // Enable smooth scrolling behavior on all devices
+    useEffect(() => {
+      // Set CSS scroll behavior for the entire page
+      document.documentElement.style.scrollBehavior = "smooth";
+      
+      // Clean up when component unmounts
+      return () => {
+        document.documentElement.style.scrollBehavior = "";
+      };
+    }, []);
 
   return (
     <div
       className="ab-inner-hero-area ab-inner-hero-bg p-relative dark-bg partcle_bg "
       // id="tsparticles"
-      style={{position: "relative"}}
+      style={{
+        position: "relative",
+        willChange: "transform", // Performance optimization hint
+      }}
     >
       <ParticleComponent />
       <div className="breadcrumb-site d-none">
         <h1>About Us</h1>
       </div>
-      <div className="ab-inner-hero-scroll smooth">
-        <a className="pointer" onClick={scrollTo}>
+      <div className="ab-inner-hero-scroll smooth"
+        style={{ 
+          transition: "all 0.3s ease",
+          cursor: "pointer",
+          touchAction: "manipulation", // Improves touch response
+         }}>
+        <a className="pointer" onClick={scrollTo} role="button" tabIndex={0}
+          onKeyDown={(e) => e.key === 'Enter' && scrollTo()}>
           <span>
             Scroll to explore
             <ScrollDown />
@@ -42,7 +65,7 @@ export default function AboutUsHero() {
               <span className="ab-inner-hero-subtitle">
                 Creative <br /> Digital Agency
               </span>
-              <h1 className="ab-inner-hero-title tp-char-animation">
+              <h1 className="ab-inner-hero-title">
                 About Us
               </h1>
               <p>

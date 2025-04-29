@@ -1,0 +1,59 @@
+/* Optimized Marquee Animations */
+@keyframes bgshots {
+    from {
+        transform: translate3d(0%, 0, 0);
+    }
+    to {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+@keyframes bgshotsright {
+    from {
+        transform: translate3d(0%, 0, 0);
+    }
+    to {
+        transform: translate3d(100%, 0, 0);
+    }
+}
+
+/* Override existing animation properties for better performance */
+.slide-funfact .img-marq .slide-img-left .box,
+.slide-funfact .img-marq .slide-img-right .box {
+    animation-timing-function: linear !important;
+    animation-play-state: running !important;
+    animation-fill-mode: forwards !important;
+    animation-iteration-count: infinite !important;
+}
+
+/* Pause animations when not visible for better performance */
+@media (prefers-reduced-motion: reduce) {
+    .slide-funfact .img-marq .slide-img-left .box,
+    .slide-funfact .img-marq .slide-img-right .box {
+        animation-play-state: paused !important;
+    }
+}
+
+/* Optimize for touch devices */
+@media (hover: none) and (pointer: coarse) {
+    .slide-funfact .img-marq .slide-img-left .box,
+    .slide-funfact .img-marq .slide-img-right .box {
+        animation-duration: 35s !important;
+    }
+}
+
+/* Smooth rendering for all devices */
+.slide-funfact .img-marq img {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    will-change: transform;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* Optimize for visible viewport only */
+.slide-funfact {
+    contain: content;
+    content-visibility: auto;
+} 

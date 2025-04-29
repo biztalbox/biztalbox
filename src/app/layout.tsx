@@ -8,6 +8,7 @@ import {
 import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
 import "./globals.scss";
+import "@/styles/marquee.css";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { createMetadata } from "@/utils/metadata";
 import Script from "next/script";

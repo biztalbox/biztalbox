@@ -23,7 +23,7 @@ const counter_data = [
   },
   {
     id: 4,
-    title: "Cofee Beans Rosted",
+    title: "Coffee Beans Roasted",
     count: "∞",
     text: "%",
   },

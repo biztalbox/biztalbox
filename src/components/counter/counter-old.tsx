@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 // import CounterItem from "./counter-item";
 
@@ -40,37 +40,157 @@ const leftImages = marqueImages.slice(0, Math.ceil(marqueImages.length / 2));
 const rightImages = marqueImages.slice(Math.ceil(marqueImages.length / 2));
 
 function MarqueImage({ src }: { src: string }) {
-  return <Image src={src} alt="marque-img" style={{ height: "auto" }} width={100} height={100} />;
+  return (
+    <Image 
+      src={src} 
+      alt="marque-img" 
+      style={{ 
+        height: "auto",
+        willChange: "transform",
+        transform: "translateZ(0)",
+      }} 
+      width={100} 
+      height={100} 
+      loading="eager"
+      priority={true}
+    />
+  );
 }
 
 export default function CounterOld() {
+  // Use state to store the animation duration based on screen size
+  const [animDuration, setAnimDuration] = useState(45);
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Update animation duration based on screen size
+  useEffect(() => {
+    const handleResize = () => {
+      // Adjust animation speed based on screen width
+      if (window.innerWidth < 768) {
+        setAnimDuration(35); // Faster on mobile
+      } else if (window.innerWidth < 1024) {
+        setAnimDuration(40); // Medium speed on tablets
+      } else {
+        setAnimDuration(45); // Default speed on desktop
+      }
+    };
+
+    // Set initial value
+    handleResize();
+
+    // Add resize listener
+    window.addEventListener('resize', handleResize);
+
+    // Clean up
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  // Set up intersection observer to pause animations when not visible
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        setIsVisible(entry.isIntersecting);
+      });
+    }, options);
+
+    observer.observe(containerRef.current);
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current);
+      }
+    };
+  }, []);
+
   return (
-    <div className="slide-funfact-height slide-funfact p-relative d-flex align-items-center justify-content-center">
+    <div 
+      ref={containerRef}
+      className="slide-funfact-height slide-funfact p-relative d-flex align-items-center justify-content-center"
+      style={{ 
+        "--anim-duration": `${animDuration}s`,
+        "--anim-play-state": isVisible ? "running" : "paused"
+      } as React.CSSProperties}
+    >
       <div className="img-marq slide-funfact-overlay">
         <div className="middle-shadow">
           <span></span>
         </div>
-        <div className="slide-img-left">
-          <div className="box">
+        <div 
+          className="slide-img-left" 
+          style={{ 
+            willChange: "transform", 
+            backfaceVisibility: "hidden",
+            WebkitBackfaceVisibility: "hidden"
+          }}
+        >
+          <div 
+            className="box"
+            style={{ 
+              willChange: "transform", 
+              animationDuration: "var(--anim-duration, 45s)",
+              animationPlayState: "var(--anim-play-state, running)",
+              transform: "translateZ(0)" 
+            }}
+          >
             {leftImages.map((src, index) => (
-              <MarqueImage key={index} src={src} />
+              <MarqueImage key={`left-1-${index}`} src={src} />
             ))}
           </div>
-          <div className="box">
+          <div 
+            className="box"
+            style={{ 
+              willChange: "transform", 
+              animationDuration: "var(--anim-duration, 45s)",
+              animationPlayState: "var(--anim-play-state, running)",
+              transform: "translateZ(0)" 
+            }}
+          >
             {leftImages.map((src, index) => (
-              <MarqueImage key={index} src={src} />
+              <MarqueImage key={`left-2-${index}`} src={src} />
             ))}
           </div>
         </div>
-        <div className="slide-img-right">
-          <div className="box">
+        <div 
+          className="slide-img-right"
+          style={{ 
+            willChange: "transform", 
+            backfaceVisibility: "hidden",
+            WebkitBackfaceVisibility: "hidden"
+          }}
+        >
+          <div 
+            className="box"
+            style={{ 
+              willChange: "transform", 
+              animationDuration: "var(--anim-duration, 45s)",
+              animationPlayState: "var(--anim-play-state, running)",
+              transform: "translateZ(0)" 
+            }}
+          >
             {rightImages.map((src, index) => (
-              <MarqueImage key={index} src={src} />
+              <MarqueImage key={`right-1-${index}`} src={src} />
             ))}
           </div>
-          <div className="box">
+          <div 
+            className="box"
+            style={{ 
+              willChange: "transform", 
+              animationDuration: "var(--anim-duration, 45s)",
+              animationPlayState: "var(--anim-play-state, running)",
+              transform: "translateZ(0)" 
+            }}
+          >
             {rightImages.map((src, index) => (
-              <MarqueImage key={index} src={src} />
+              <MarqueImage key={`right-2-${index}`} src={src} />
             ))}
           </div>
         </div>
@@ -81,7 +201,7 @@ export default function CounterOld() {
             <div className="row">
               <div className="mb-30">
                 <div className="slide-funfact-item text-center">
-                  <h4>
+                  <h4 style={{fontSize: "60px"}}>
                     Satisfied Clients
                   </h4>
                   <span>
