@@ -63,7 +63,7 @@ const BlogDetailsMain = ({ blog }: IProps) => {
           </main>
 
           {/* footer area */}
-          <FooterFour background='black-bg' />
+          <FooterFour background='dark-bg' />
           {/* footer area */}
         </div>
       </div>
