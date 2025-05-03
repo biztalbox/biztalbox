@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -67,6 +68,9 @@ export default function RelatedPostGrid({
 
   // Add shimmer animation to document
   useEffect(() => {
+    // Check if in browser environment
+    if (typeof window === 'undefined') return;
+    
     // Add shimmer animation to document if it doesn't exist
     if (!document.getElementById('skeleton-animations')) {
       const style = document.createElement('style');
@@ -86,6 +90,8 @@ export default function RelatedPostGrid({
     
     return () => {
       // Clean up if needed
+      if (typeof window === 'undefined') return;
+      
       const style = document.getElementById('skeleton-animations');
       if (style) {
         style.remove();
@@ -166,6 +172,8 @@ export default function RelatedPostGrid({
 
   // Function to decode HTML entities
   const decodeHtml = (html: string) => {
+    if (typeof window === 'undefined') return html;
+    
     const txt = document.createElement('textarea');
     txt.innerHTML = html;
     return txt.value;

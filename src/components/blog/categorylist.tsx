@@ -1,3 +1,4 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
@@ -39,6 +40,9 @@ export default function CategoryList({ className = "" }: CategoryListProps) {
 
   // Add shimmer animation to document
   useEffect(() => {
+    // Check if in browser environment
+    if (typeof window === 'undefined') return;
+    
     // Add shimmer animation to document if it doesn't exist
     if (!document.getElementById('skeleton-animations')) {
       const style = document.createElement('style');
@@ -58,6 +62,8 @@ export default function CategoryList({ className = "" }: CategoryListProps) {
     
     return () => {
       // Clean up if needed
+      if (typeof window === 'undefined') return;
+      
       const style = document.getElementById('skeleton-animations');
       if (style) {
         style.remove();
