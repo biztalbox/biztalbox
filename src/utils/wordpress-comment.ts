@@ -81,6 +81,12 @@ function submitViaForm(commentData: {
 }): Promise<void> {
   return new Promise((resolve, reject) => {
     try {
+      // Check if we're in a browser environment
+      if (typeof window === 'undefined') {
+        reject(new Error('Cannot submit form on the server side'));
+        return;
+      }
+      
       // Create a hidden form and submit it programmatically
       const form = document.createElement('form');
       form.method = 'POST';

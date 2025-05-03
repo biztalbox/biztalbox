@@ -1,3 +1,4 @@
+"use client";
 import React, { useState, FormEvent } from "react";
 import { usePathname, } from "next/navigation";
 import { submitWordPressComment } from "@/utils/wordpress-comment";
@@ -98,7 +99,7 @@ export default function BlogReplyForm({ postId }: BlogReplyFormProps) {
       });
       
       // Save user info to localStorage if checkbox is checked
-      if (formData.saveInfo) {
+      if (formData.saveInfo && typeof window !== 'undefined') {
         localStorage.setItem('commentAuthor', formData.author);
         localStorage.setItem('commentEmail', formData.email);
         localStorage.setItem('commentUrl', formData.url);
@@ -130,6 +131,8 @@ export default function BlogReplyForm({ postId }: BlogReplyFormProps) {
 
   // Load saved user info on component mount
   React.useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     const savedAuthor = localStorage.getItem('commentAuthor');
     const savedEmail = localStorage.getItem('commentEmail');
     const savedUrl = localStorage.getItem('commentUrl');

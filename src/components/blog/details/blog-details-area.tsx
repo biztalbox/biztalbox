@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import BlogSidebar from "../blog-sidebar";
@@ -22,6 +23,9 @@ export default function BlogDetailsArea({ blog }: BlogDetailsAreaProps) {
 
   // Add WordPress block styles when component mounts
   useEffect(() => {
+    // Only run on the client side
+    if (typeof window === 'undefined') return;
+    
     const style = document.createElement('style');
     style.textContent = `
       .blog-details-content {

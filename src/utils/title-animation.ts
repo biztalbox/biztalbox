@@ -3,6 +3,9 @@ import $ from "jquery";
 import { SplitText } from "@/plugins";
 
 function heroTitleAnim() {
+  // Check if window is defined (client-side only)
+  if (typeof window === 'undefined') return;
+
   const heroArea = document.querySelector(".tp-hero-2-area");
   if (heroArea) {
     gsap.set(".tp-hero-2-title.text-1", { x: 300 });
@@ -41,6 +44,9 @@ function heroTitleAnim() {
 }
 
 function heroBgAnimation() {
+  // Check if window is defined (client-side only)
+  if (typeof window === 'undefined') return;
+
   const heroBg = document.querySelector(".tp-hero-bg-single");
   if (heroBg) {
     gsap.from(heroBg, {
@@ -52,6 +58,9 @@ function heroBgAnimation() {
 
 // bounce animation
 function bounceAnimation() {
+  // Check if window is defined (client-side only)
+  if (typeof window === 'undefined') return;
+
   const bounce = document.querySelectorAll(".tp-btn-bounce");
   if (bounce.length > 0) {
     gsap.from(bounce, { y: -100, opacity: 0 });
@@ -93,6 +102,9 @@ function bounceAnimation() {
 
 // char animation
 function charAnimation() {
+    // Check if window is defined (client-side only)
+    if (typeof window === 'undefined') return;
+    
     let char_come = gsap.utils.toArray(".tp-char-animation");
     char_come.forEach((splitTextLine: any) => {
       const tl = gsap.timeline({
@@ -124,6 +136,9 @@ function charAnimation() {
 
 // fade left animation
 function fadeAnimation(isMobile = false) {
+  // Check if window is defined (client-side only)
+  if (typeof window === 'undefined') return;
+
   if ($(".tp_fade_bottom").length > 0) {
     gsap.set(".tp_fade_bottom", { y: isMobile ? 50 : 100, opacity: 0 });
     const fadeArray = gsap.utils.toArray(".tp_fade_bottom");
@@ -298,6 +313,9 @@ function fadeAnimation(isMobile = false) {
 // revel animation
 // revel animation one
 function revelAnimationOne() {
+  // Check if window is defined (client-side only)
+  if (typeof window === 'undefined') return;
+
   const anim_reveal: NodeListOf<HTMLElement> =
     document.querySelectorAll(".tp_reveal_anim");
   if (anim_reveal.length > 0) {
@@ -355,6 +373,9 @@ function revelAnimationOne() {
 }
 // revel animation two
 function revelAnimationTwo() {
+  // Check if window is defined (client-side only)
+  if (typeof window === 'undefined') return;
+
   const anim_reveal2: NodeListOf<HTMLElement> =
     document.querySelectorAll(".tp_reveal_anim-2");
   if (anim_reveal2.length > 0) {
@@ -410,6 +431,9 @@ function revelAnimationTwo() {
 }
 
 function zoomAnimation() {
+  // Check if window is defined (client-side only)
+  if (typeof window === 'undefined') return;
+
   // zoom in
   if ($(".anim-zoomin").length > 0) {
     $(".anim-zoomin").each(function () {
@@ -441,6 +465,9 @@ function zoomAnimation() {
 };
 
 function titleAnimation() {
+  // Check if window is defined (client-side only)
+  if (typeof window === 'undefined') return;
+
   if ($('.tp_title_anim').length > 0) {
     let splitTitleLines = gsap.utils.toArray(".tp_title_anim");
     splitTitleLines.forEach((splitTextLine: any) => {
