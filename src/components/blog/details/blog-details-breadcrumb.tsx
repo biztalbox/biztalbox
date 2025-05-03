@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Image from "next/image";
 import overlay from "@/assets/img/inner-blog/blog-details/bg-shape/overly.png";
@@ -13,6 +14,8 @@ interface BlogDetailsBreadcrumbProps {
 export default function BlogDetailsBreadcrumb({ title, image, date }: BlogDetailsBreadcrumbProps) {
 
   const decodeHtmlEntities = (text: string): string => {
+    if (typeof window === 'undefined') return text;
+    
     const textarea = document.createElement('textarea');
     textarea.innerHTML = text;
     return textarea.value;

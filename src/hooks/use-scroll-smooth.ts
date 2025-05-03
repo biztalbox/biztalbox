@@ -9,6 +9,9 @@ export default function useScrollSmooth() {
   const [isMobile, setIsMobile] = useState<boolean>(false);
   
   useEffect(() => {
+    // Check if running in browser
+    if (typeof window === 'undefined') return;
+    
     // Check if the device is mobile/iPhone
     const checkDevice = () => {
       const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
@@ -25,6 +28,9 @@ export default function useScrollSmooth() {
   }, []);
   
   useGSAP(() => {
+    // Check if running in browser
+    if (typeof window === 'undefined') return;
+    
     const smoothWrapper = document.getElementById("smooth-wrapper");
     const smoothContent = document.getElementById("smooth-content");
 

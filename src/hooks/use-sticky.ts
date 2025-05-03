@@ -8,6 +8,8 @@ const useSticky = () => {
   const headerRef = useRef<HTMLDivElement | null>(null);
 
   const stickyHeader = (): void => {
+    if (typeof window === 'undefined') return;
+    
     if (window.scrollY > 200) {
       setSticky(true);
     } else {
@@ -17,6 +19,8 @@ const useSticky = () => {
 
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     const setHeaderHeight = headerRef.current?.offsetHeight;
 
     if (setHeaderHeight) {
@@ -29,6 +33,8 @@ const useSticky = () => {
   }, []);
 
   function headerFullWidth () {
+    if (typeof window === 'undefined') return;
+    
     const menuElements = document.querySelectorAll(".tp-menu-fullwidth");
     menuElements.forEach((element: Element) => {
       const previousDiv = element.parentElement?.parentElement;
@@ -39,6 +45,8 @@ const useSticky = () => {
   };
 
   function adjustMenuBackground() {
+    if (typeof window === 'undefined') return;
+    
     if ($('.tp-header-3-area').length > 0) {
       const menuBox = $('.tp-header-3-menu-box');
       const menuBoxWidth = menuBox.width()!;
@@ -54,9 +62,12 @@ const useSticky = () => {
 
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     window.addEventListener("scroll", stickyHeader);
 
     return (): void => {
+      if (typeof window === 'undefined') return;
       window.removeEventListener("scroll", stickyHeader);
     };
   }, []);

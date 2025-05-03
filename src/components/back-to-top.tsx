@@ -4,6 +4,8 @@ import React, { useEffect } from "react";
 export default function BackToTop() {
 
   function backToTop() {
+    if (typeof window === 'undefined') return;
+    
     const result = document.querySelector(".back-to-top-wrapper");
     if (result) {
       document.addEventListener("scroll", () => {
@@ -19,8 +21,11 @@ export default function BackToTop() {
     }
   }
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+    
     backToTop();
     return () => {
+      if (typeof window === 'undefined') return;
       window.removeEventListener("scroll", backToTop);
     }
   },[])

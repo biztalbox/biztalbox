@@ -1,3 +1,4 @@
+"use client";
 import { useRef } from "react";
 
 
@@ -5,6 +6,8 @@ export function useIsotop() {
   const isotopContainer = useRef<HTMLDivElement>(null);
 
   const initIsotop = async () => {
+    if (typeof window === 'undefined') return;
+    
     const Isotope = (await import("isotope-layout")).default;
     const imagesLoaded = (await import("imagesloaded")).default;
 

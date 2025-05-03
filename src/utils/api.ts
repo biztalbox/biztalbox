@@ -50,6 +50,11 @@ export async function getBlogPostBySlug(slug: string): Promise<WordPressPost | n
 
 export async function postComment(comment: WordPressComment): Promise<{ success: boolean; message: string }> {
   try {
+    // Check if we're in a browser environment
+    if (typeof window === 'undefined') {
+      throw new Error('Cannot submit form on the server side');
+    }
+    
     // Create a hidden form and submit it programmatically
     // This is a workaround for the authentication issue
     const form = document.createElement('form');
