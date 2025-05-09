@@ -76,6 +76,12 @@ export default function FooterFour({ background }: { background?: string }) {
                     >
                       <i className="fa-brands fa-linkedin-in"></i>
                     </a>
+                    <a
+                      href="https://m.youtube.com/@biztalboxofficial"
+                      target="_blank"
+                    >
+                      <i className="fa-brands fa-youtube"></i>
+                    </a>
                   </div>
                   <p className="tp-footer-3-copyright">
                     © biztalbox {new Date().getFullYear()} | All rights reserved

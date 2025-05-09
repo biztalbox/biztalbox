@@ -1,10 +1,13 @@
 import { Metadata } from "next/types";
 import FacebookAdsServicePage from "./page";
+import { createMetadata } from "@/utils/metadata";
 
-export const metadata: Metadata = {
-  title: "Facebook & Meta Ads Agency | Biztal Box",
-  description: "Looking to boost your online presence? Our Facebook and Meta ads agency specializes in creating effective ad campaigns that reach your target audience and drive conversions."
+const baseMetadata: Metadata = {
+  title: "Facebook & Instagram Ads Agency | Targeted Social Advertising",
+  description: "Need more customers from Facebook and Instagram? Our ads agency creates campaigns that reach the right people and drive sales. Let's grow your business with social ads!"
 };
+
+export const metadata = createMetadata(baseMetadata, '/facebook-ads-service');
 
 export default function FacebookAdsServiceLayout() {
   return <FacebookAdsServicePage />;

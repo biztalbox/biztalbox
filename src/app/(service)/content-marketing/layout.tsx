@@ -1,10 +1,13 @@
 import { Metadata } from "next/types";
 import ContentMarketingPage from "./page";
+import { createMetadata } from "@/utils/metadata";
 
-export const metadata: Metadata = {
-  title: "Copy & Content Marketing Services | Engage Your Audience",
-  description: "Boost your brand's visibility with our expert copy and content marketing services. From compelling website copy to engaging blog posts, we create content that resonates and drives results."
+const baseMetadata: Metadata = {
+  title: "Content Marketing Agency | Engage Your Audience",
+  description: "Looking for content that connects? Our content marketing agency creates blogs, social posts, and more that engage your audience and build your brand. Let's tell your story!"
 };
+
+export const metadata = createMetadata(baseMetadata, '/content-marketing');
 
 export default function ContentMarketingLayout() {
   return <ContentMarketingPage />;

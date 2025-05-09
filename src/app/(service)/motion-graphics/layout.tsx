@@ -1,10 +1,13 @@
 import { Metadata } from "next/types";
 import MotionGraphicsPage from "./page";
+import { createMetadata } from "@/utils/metadata";
 
-export const metadata: Metadata = {
-  title: "Motion Graphics and Video | Creative Visuals",
-  description: "Want to bring your ideas to life? We create fun motion graphics and videos that grab attention and tell your story. Let’s make your project shine!"
+const baseMetadata: Metadata = {
+  title: "Motion Graphics Design Agency | Bring Your Ideas to Life",
+  description: "Looking for eye-catching animations? Our motion graphics team creates captivating visuals that grab attention and explain your message clearly. Let's bring your ideas to life!"
 };
+
+export const metadata = createMetadata(baseMetadata, '/motion-graphics');
 
 export default function MotionGraphicsLayout() {
   return <MotionGraphicsPage />;

@@ -182,6 +182,7 @@ export default function FooterTwo({ whiteFooter = false,topCls='footer-top' }: I
                   <a href="https://www.facebook.com/BiztalBox" target='_blank'><i className="fa-brands fa-facebook-f"></i></a>
                   <a href="https://www.instagram.com/biztalbox" target='_blank'><i className="fa-brands fa-instagram"></i></a>
                   <a href="https://www.linkedin.com/company/biztal" target='_blank'><i className="fa-brands fa-linkedin-in"></i></a>
+                  <a href="https://m.youtube.com/@biztalboxofficial" target='_blank'><i className="fa-brands fa-youtube"></i></a>
                 </div>
                 <p className="tp-footer-3-copyright">
                 © biztalbox {new Date().getFullYear()} | All rights reserved

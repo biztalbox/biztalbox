@@ -5,6 +5,7 @@ import { createMetadata } from "@/utils/metadata";
 
 const baseMetadata: Metadata = {
   title: "Blogs - Biztalbox",
+  description: "Blogs - Biztalbox",
 };
 
 export const metadata = createMetadata(baseMetadata, '/blog');

@@ -1,10 +1,13 @@
 import { Metadata } from "next/types";
 import GraphicDesigningPage from "./page";
+import { createMetadata } from "@/utils/metadata";
 
-export const metadata: Metadata = {
-  title: "Professional Graphic Designer | Creative Solutions for Your Brand",
-  description: "Looking for a graphic designer? We create eye-catching designs for your brand, including logos, flyers, and more. Let's bring your ideas to life!"
+const baseMetadata: Metadata = {
+  title: "Graphic Design Agency | Professional Design Services",
+  description: "Need eye-catching visuals? Our graphic design agency creates stunning logos, website designs, and marketing materials that make your brand stand out. Let's design something amazing together!"
 };
+
+export const metadata = createMetadata(baseMetadata, '/graphic-designing');
 
 export default function GraphicDesigningLayout() {
   return <GraphicDesigningPage />;

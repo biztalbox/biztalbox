@@ -1,9 +1,13 @@
-import { Metadata } from 'next';
+import { Metadata } from "next";
 import ErrorPage from '@/components/ErrorPage';
- 
-export const metadata: Metadata = {
+import { createMetadata } from "@/utils/metadata";
+
+const baseMetadata: Metadata = {
   title: "Page Not Found",
+  description: "Page Not Found",
 };
+
+export const metadata = createMetadata(baseMetadata, '/404');
 
 export default function NotFound() {
   return (
