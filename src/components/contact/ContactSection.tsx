@@ -1,8 +1,10 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function ContactSection() {
+    const router = useRouter();
     const [isLoading, setIsLoading] = useState(false);
     const [formMessage, setFormMessage] = useState<string | null>(null);
     const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
@@ -41,6 +43,10 @@ export default function ContactSection() {
         setFormMessage("Thank you, your message has been sent.");
         setIsSuccess(true);
         form.reset();
+        
+        // Redirect to thank you page after a short delay
+        
+        router.push('/thank-you');
       } catch (error: any) {
         setFormMessage(error.message);
         setIsSuccess(false);
