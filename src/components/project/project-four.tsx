@@ -12,6 +12,7 @@ import port_6 from "@/assets/img/services/CONTENT.webp";
 import port_7 from "@/assets/img/services/social.webp";
 import port_8 from "@/assets/img/services/GOOGLE_ADS.webp";
 import port_9 from "@/assets/img/services/META.webp";
+import port_10 from "@/assets/img/services/app_dev.webp";
 
 import Link from "next/link";
 
@@ -43,6 +44,22 @@ const project_data = [
   },
   {
     id: 4,
+    // img_2: port_6,
+    img_2: port_10,
+    title: "App Development",
+    desc: "An App Developer is a mobile maestro who builds the next killer app and delivers unparalleled performance to keep users coming back for more.",
+    slug: "app-development",
+  },
+  {
+    id: 5,
+    img_1: port_1,
+    // img_2: port_2,
+    title: "Analysis Algorithm",
+    desc: "An algorithm is a precision powerhouse that can instantly analyse vast amount of data to find hidden patterns and insights.",
+    slug: "analysis-algorithm",
+  },
+  {
+    id: 6,
     // img_1: port_3,
     img_2: port_2,
     title: "Motion Graphics",
@@ -50,7 +67,7 @@ const project_data = [
     slug: "motion-graphics",
   },
   {
-    id: 5,
+    id: 7,
     img_1: port_5,
     // img_2: port_2,
     title: "Graphic Designing",
@@ -58,7 +75,7 @@ const project_data = [
     slug: "graphic-designing",
   },
   {
-    id: 6,
+    id: 8,
     // img_1: port_3,
     img_2: port_6,
     title: "Copy Writing",
@@ -66,7 +83,7 @@ const project_data = [
     slug: "content-marketing",
   },
   {
-    id: 7,
+    id: 9,
     img_1: port_8,
     // img_1: port_7,
     title: "Performance Marketing",
@@ -74,20 +91,12 @@ const project_data = [
     slug: "google-ads-service",
   },
   {
-    id: 8,
+    id: 10,
     // img_2: port_2,
     img_2: port_9,
     title: "Meta Ads",
     desc: "Throughout its ecosystem, Meta Ads creates visually striking ads with precise targeting, turning it into a digital powerhouse.",
     slug: "facebook-ads-service",
-  },
-  {
-    id: 9,
-    img_1: port_1,
-    // img_2: port_2,
-    title: "Analysis Algorithm",
-    desc: "An algorithm is a precision powerhouse that can instantly analyse vast amount of data to find hidden patterns and insights.",
-    slug: "analysis-algorithm",
   },
 ];
 
