@@ -96,6 +96,23 @@ export default function RootLayout({
         {/* Add resource hints */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+        {/* Google Ads (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17082987735"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17082987735');
+            gtag('config', 'AW-17082987735/HrrZCIistMoaENfp5tE_', {
+              'phone_conversion_number': '9485699709'
+            });
+          `}
+        </Script>
+
         {/* Google Tag Manager */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
