@@ -1,0 +1,135 @@
+.formRoot {
+  font-family: inherit;
+  background: transparent;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.formRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
+  align-items: end;
+}
+
+.formRow span {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #c9c9c9 !important;
+}
+
+/* .formGroup {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+} */
+
+
+.asterisk {
+  margin-left: 8px;
+  font-size: 1.2em;
+}
+.underline{
+  width: 250px;
+  border-bottom: 1px solid white !important;
+  margin-bottom: 2rem !important;
+  display: block !important;
+}
+
+.inputField, .inputField[type="email"] {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  font-weight: 400;
+  color: #fff;
+  width: auto !important;
+  padding: 0.5rem;
+  transition: border-color 0.2s;
+  font-size: 1.1rem;
+}
+
+.inputField:focus, .inputField[type="email"]:focus {
+  outline: none;
+  border-color: var(--form-color);
+}
+
+.inputField::placeholder, .inputField[type="email"]::placeholder {
+  color: #5e5c5c;
+  font-weight: bold;  
+  text-align:center;
+  text-transform: capitalize;
+}
+
+
+.buttonWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.submitBtn {
+  background: var(--form-color);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 8px;
+  padding: 1.2rem 3.5rem;
+  box-shadow: 0 2px 8px rgba(255,79,161,0.12);
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: background 0.2s;
+}
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.clickBadge {
+  font-size: 0.9rem;
+  background: #fff;
+  color: var(--form-color);
+  border-radius: 50%;
+  padding: 0.2rem 0.7rem;
+  font-weight: 700;
+  position: relative;
+  top: -2px;
+  margin-left: 8px;
+}
+
+.errorMsg {
+  color: var(--form-color);
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+.successMsg {
+  color: #00b894;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 900px) {
+  /* .formRow {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .inputField {
+    width: 100%;
+    font-size: 1.3rem;
+  } */
+  .formGroup, .labelText {
+    font-size: 1.3rem;
+  }
+} 

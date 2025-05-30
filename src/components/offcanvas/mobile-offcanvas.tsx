@@ -14,6 +14,7 @@ import port_6 from "@/assets/img/services/CONTENT.webp";
 import port_7 from "@/assets/img/services/GOOGLE_ADS.webp";
 import port_8 from "@/assets/img/services/META.webp";
 import port_9 from "@/assets/img/services/ALGANIX.webp";
+import port_10 from "@/assets/img/services/app_dev.webp";
 import MobileMenus from "./mobile-menus";
 import Link from "next/link";
 
@@ -27,6 +28,7 @@ const gallery_images = [
   { img: port_7, slug: "google-ads-service" },
   { img: port_8, slug: "facebook-ads-service" },
   { img: port_9, slug: "analysis-algorithm" },
+  { img: port_10, slug: "app-development" },
 ];
 
 // prop type

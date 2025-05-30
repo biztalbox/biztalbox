@@ -9,10 +9,10 @@ export default function Dots() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="17" cy="3" r="3" fill="currentcolor" />
-      <circle cx="3" cy="3" r="3" fill="currentcolor" />
-      <circle cx="3" cy="17" r="3" fill="currentcolor" />
-      <circle cx="17" cy="17" r="3" fill="currentcolor" />
+      <circle cx="15" cy="5" r="3" fill="currentcolor" />
+      <circle cx="5" cy="5" r="3" fill="currentcolor" />
+      <circle cx="5" cy="15" r="3" fill="currentcolor" />
+      <circle cx="15" cy="15" r="3" fill="currentcolor" />
     </svg>
   );
 }
