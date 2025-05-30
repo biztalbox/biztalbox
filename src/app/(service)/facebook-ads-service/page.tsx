@@ -14,8 +14,11 @@ import { projectDetailsPin } from "@/utils/project-anim";
 import { charAnimation, titleAnimation } from "@/utils/title-animation";
 import FooterFour from "@/layouts/footers/footer-four";
 import ScrollPinImage from "@/components/ScrollPinImage";
+import ServiceHighlights from "@/components/ashish/ServiceHighlights";
 
 const FacebookAdsServicePage = () => {
+  const highlightColor = "#46728c"; // You can change this color or make it a prop
+
   useGSAP(() => {
     const timer = setTimeout(() => {
       charAnimation();
@@ -24,6 +27,24 @@ const FacebookAdsServicePage = () => {
     }, 100);
     return () => clearTimeout(timer);
   });
+  const highlights = [
+    "Certified Meta Ads Specialists",
+    "100+ Successful Campaigns Delivered",
+    "Targeted Ads for Maximum Engagement",
+    "Ongoing Optimization for Best Results",
+
+  ];
+
+  const services = [
+    "Facebook Ads Campaigns",
+    "Instagram Ads Management",
+    "Custom Audience Targeting",
+    "Creative Ad Design & Copy",
+    "Conversion Tracking & Reporting",
+    "Budget Management & Scaling",
+    "Campaign Performance Analysis",
+
+  ];
 
   return (
     <Wrapper>
@@ -35,93 +56,108 @@ const FacebookAdsServicePage = () => {
         <div id="smooth-content">
           <main>
             {/* portfolio details area */}
-            <ScrollPinImage 
+            <ScrollPinImage
               imageSrc="/assets/img/services/META.webp"
               imageAlt="Meta Ads Facebook & Meta Ads"
             >
               <div className="project-details-1-right p-relative">
                 <div className="project-details-1-title-box">
-                  <span className="project-details-1-subtitle">
+                  <h1
+                    className="project-details-1-subtitle"
+                    style={{ lineHeight: 1.4 }}
+                  >
                     Meta Ads
-                  </span>
-                  <h1 className="project-details-1-title">
-                    Facebook & Meta Ads
                   </h1>
+                  <h2
+                    className="project-details-1"
+                    style={{
+                      color: "white",
+                      fontSize: "2.2rem",
+                      fontWeight: 700,
+                    }}
+                  >
+                    Facebook & Meta Ads
+                  </h2>
                   <p>
-                    Throughout its ecosystem, Meta Ads creates visually
-                    striking ads with precise targeting, turning it into a
-                    digital powerhouse. It ensures that your brand is
-                    persistent by integrating messaging across social
-                    media platforms like Facebook and Instagram. Meta Ads
-                    optimises each ad dollar while boosting engagement and
-                    conversions with real-time optimisation.
+                    Meta Ads redefines digital advertising with visually stunning ads that have a laser-sharp targeting.
+                    It&apo;s a performance powerhouse, connecting your brand to the most interested audiences on Facebook and
+                    Instagram. Real-time optimization, targeting insights, and creative show-stopping storytelling Meta Ads
+                    make an impact with every campaign. From carousel ads to reels, the versatility of formats allows brands
+                    to shine in every scroll. From raising awareness to boosting conversions, it makes every ad dollar count—effortlessly
+                    blending strategy, creativity, and data into scroll-stopping results. Behind every
+                    successful ad is a digital superhero making sure your message hits the bullseye every single time.
                   </p>
                 </div>
+                <ServiceHighlights color={highlightColor} highlights={highlights} services={services} />
+                <hr />
                 <div className="project-details-1-info-wrap">
                   <div className="project-details-1-info">
                     <span>The Meta Maestro </span>
                     <p>
-                      Meta Ads Mastery- The ability to plan and carry out
-                      strategically accurate and aesthetically appealing
-                      advertising campaigns within Meta&apos;s ecosystem.
+                      Meta Ads Mastery – Ability to make powerful and attractive ad campaigns through
+                      Meta&apo;s monster network! Deeply relationship-savvy with audiences and dazzlingly intuitive
+                      about the direction of campaign winds, they stage each launch like a symphony — timed, potent, unforgettable.
+                      This maestro isn&apo;t chasing clicks, but crafting whole-funnel success narratives.
+
                     </p>
                   </div>
                   <div className="project-details-1-info">
                     <span>The Social Synergist </span>
                     <p>
-                      Cross-Platform Integration-The power to balance
-                      messaging across several social media platforms and
-                      effectively integrate Meta ad campaigns into a
-                      larger digital ecosystem.
+                      Cross-Platform Integration – The ability to have a consistent and rich voice across all platforms.
+                      Like a maestro coordinating all the instruments, they fine-tune your messaging across Facebook and
+                      Instagram, so that every message hits the right note, every time.
                     </p>
                   </div>
                   <div className="project-details-1-info">
                     <span> The Targeting Titan</span>
                     <p>
-                      Precision Audience Targeting- Exhibiting laser-like
-                      accuracy in identifying and interacting with the
-                      ideal audience together.
+                      Accurate Audience Targeting – Never miss your mark again. The targeting titan doesn&apo;t
+                      just find people —they pinpoint the ones that matter the most. They choose the perfect
+                      audience and nail them with a laser-focus. They do this by narrowing in based on factors such as age,
+                      interests, behavior, similar audiences and ensuring that each campaign
+                      is spot on. Every impression is an intentional one, and every click has its price.
                     </p>
                   </div>
                   <div className="project-details-1-info">
                     <span> The Creative Conjurer </span>
                     <p>
-                      Innovative Creative Strategy- The potential for
-                      transforming brand messages into dynamic,
-                      eye-catching ad.
+                      Creative Strategy –  The power to turn core messages into killer visuals that drive action.
+                      Mixing design with psychology, this visual sorcerer&apo;s builds creatives that do more than look good—they convert.
+                      Every feature is intentional to convert a passive observer into an active one.
                     </p>
                   </div>
                   <div className="project-details-1-info">
                     <span>The Retargeting Renegade</span>
                     <p>
-                      Advanced Retargeting Techniques-The competence to
-                      re-engage visitors and convert their initial
-                      interest into persistent conversions.
+                      Advanced Retargeting Techniques – The ability to re-engage and bring lost leads back at the perfect time.
+                      They rekindle interest, and subtly nudge users back into the conversion path with a combination of great
+                      timing and targeted messaging. Second chances aren&apo;t lucky for them — they&apo;re calculated.
                     </p>
                   </div>
                   <div className="project-details-1-info">
                     <span>The Budget Balancer</span>
                     <p>
-                      Efficient Budget Management- The art of maximising
-                      performance while minimising expenses through ad
-                      spend planning.
+                      Effective Budgeting – The ability to get the maximum mileage out of each penny.
+                      This hero doesn&apo;t overspend, and is one of the most performance-focused as it manages budget and uses smart,
+                      efficient bidding strategies. They don&apo;t simply extend the budget — they rise above it.
                     </p>
                   </div>
                   <div className="project-details-1-info">
                     <span>The Engagement Evangelist</span>
                     <p>
-                      Audience Interaction Mastery- The power to create
-                      advertisements that not only grab viewers attention
-                      but also encourage continued engagement, creating an
-                      engaging discussion with them.
+                      Audience Interaction Mastery – The art of turning viewers into fans.
+                      This hero makes ads that drive actual conversations, incite emotions and provoke sharing.  This Generates
+                      interactions that are more than just impressions, and turning passive watchers into fans.
                     </p>
                   </div>
                   <div className="project-details-1-info">
                     <span>The Instant Innovator</span>
                     <p>
-                      Real-Time Adaptation- The ability to quickly modify
-                      and improve ad elements in response to real-time
-                      data and shifts in the market.
+                      Real-Time Adaptation –   The power of moving quickly (and thinking swiftly).
+                      They do so while keeping a close watch on performance metrics and making real-time
+                      adjustments to creatives, targeting and copy. Their power is in the ability to keep campaigns fresh, relevant and
+                      reactive in the digital world that never stops moving. Always agile, always ahead.
                     </p>
                   </div>
                 </div>
@@ -135,6 +171,11 @@ const FacebookAdsServicePage = () => {
           {/* footer area */}
         </div>
       </div>
+      <style jsx>{`
+        .project-details-1-info > span {
+          color: ${highlightColor} !important;
+        }
+      `}</style>
     </Wrapper>
   );
 };
