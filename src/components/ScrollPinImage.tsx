@@ -30,6 +30,11 @@ const ScrollPinImage: React.FC<ScrollPinImageProps> = ({
   }, []);
 
   useEffect(() => {
+    // Force scroll to top on mount
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     if (!isClient) return;
 
     // Register the ScrollTrigger plugin

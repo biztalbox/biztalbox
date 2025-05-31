@@ -1,10 +1,10 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 // import useScrollSmooth from "@/hooks/use-scroll-smooth";
-import { ScrollSmoother, ScrollTrigger, SplitText } from "@/plugins";
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+import { ScrollTrigger, SplitText } from "@/plugins";
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 // internal imports
 import Wrapper from "@/layouts/wrapper";
@@ -14,16 +14,12 @@ import { projectDetailsPin } from "@/utils/project-anim";
 import { charAnimation, titleAnimation } from "@/utils/title-animation";
 import FooterFour from "@/layouts/footers/footer-four";
 import ScrollPinImage from "@/components/ScrollPinImage";
-import EnquiryForm from "@/components/ashish/EnquiryForm";
-import SeoHighlights from "@/components/ashish/ServiceHighlights";
 import ServiceHighlights from "@/components/ashish/ServiceHighlights";
-// import SeoHighlights from "@/components/ashish/SeoHighlights";
 
 const BestSeoAgencyPage = () => {
   const [showSocial, setShowSocial] = React.useState(false);
   const highlightColor = "#6BCAB3"; // You can change this color or make it a prop
 
-  // useScrollSmooth();
 
   useGSAP(() => {
     const timer = setTimeout(() => {
@@ -92,7 +88,6 @@ const BestSeoAgencyPage = () => {
                     technical procedures, resulting in digital success.
                   </p>
                 </div>
-
                 <ServiceHighlights color={highlightColor} highlights={highlights} services={services} />
                 <hr />
                 <div className="project-details-1-info-wrap mt-40">
