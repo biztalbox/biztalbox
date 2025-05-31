@@ -10,7 +10,7 @@ const ServiceHighlights = ({color, highlights, services}: {color: string, highli
               Why Choose Us
             </span>
             <h5 className="tp-section-title tp_fade_bottom" style={{color: "#fff", fontWeight: 600, lineHeight: 1.1, fontSize: "1.8rem", marginBottom: 24}}>
-              Best SEO Agency for Real Results
+              Digital Marketing that drives real results
             </h5>
             <ul style={{listStyle: "none", padding: 0, margin: 0}}>
               {highlights.map((item, i) => (

@@ -14,8 +14,10 @@ import { projectDetailsPin } from "@/utils/project-anim";
 import { charAnimation, titleAnimation } from "@/utils/title-animation";
 import FooterFour from "@/layouts/footers/footer-four";
 import ScrollPinImage from "@/components/ScrollPinImage";
+import ServiceHighlights from "@/components/ashish/ServiceHighlights";
 
 const MotionGraphicsPage = () => {
+  const highlightColor = "#b5547a"; // You can change this color or make it a prop
   useGSAP(() => {
     const timer = setTimeout(() => {
       charAnimation();
@@ -24,6 +26,22 @@ const MotionGraphicsPage = () => {
     }, 100);
     return () => clearTimeout(timer);
   });
+  const highlights = [
+    "10+ Years of SEO Experience",
+    "150+ Happy Clients Across the Globe",
+    "100% Transparent Reporting",
+    "ROI-Focused Strategies",
+  ];
+
+  const services = [
+    "Technical SEO",
+    "Content Optimization",
+    "E-commerce SEO",
+    "Local SEO",
+    "B2B SEO",
+    "Enterprise SEO",
+    "White Label SEO",
+  ];
 
   return (
     <Wrapper>
@@ -35,63 +53,118 @@ const MotionGraphicsPage = () => {
         <div id="smooth-content">
           <main>
             {/* portfolio details area */}
-            <ScrollPinImage 
+            <ScrollPinImage
               imageSrc="/assets/img/services/CAPTAIN_CUT.webp"
               imageAlt="CAPTAIN CUT Video Editing / Motion Graphics"
             >
               <div className="project-details-1-right p-relative">
                 <div className="project-details-1-title-box">
-                  <span className="project-details-1-subtitle">
-                    CAPTAIN CUT
-                  </span>
-                  <h1 className="project-details-1-title">
-                    Video Editing / Motion Graphics
+                  <h1
+                    className="project-details-1-subtitle"
+                    style={{ lineHeight: 1.4 }}
+                  >
+                     Captivating Motion Graphics to Elevate Your Visual Content
+
                   </h1>
+                  <h2
+                    className="project-details-1"
+                    style={{
+                      color: "white",
+                      fontSize: "2.2rem",
+                      fontWeight: 700,
+                    }}
+                  >
+                    Video Editing / Motion Graphics
+                  </h2>
                   <p>
-                    A video editor is a multimedia guru who turns in raw footage into cinematic masterpieces. Mastering transitions, color grading, and visual effects, they craft fascinating narratives with perfect audio-visual synchronisation and optimized standards.
+                    A video editor is a multimedia magician who takes raw footage and makes it a cinematic wonder.
+                    They know transitions, color grading and vfx like the back of their hands, they put together
+                    stories with sharp audio-visual intuitiveness, and exceptional standards. With their tireless attention to
+                    detail and a storyteller&apos;s soul,
+                    they give life to on-screen disorder, they organize chaos into engaging stories.
                   </p>
                 </div>
+                <ServiceHighlights color={highlightColor} highlights={highlights} services={services} />
+                <hr />
                 <div className="project-details-1-info-wrap">
+                   <h3
+                    className="project-details-1-subtitle"
+                    style={{ lineHeight: 1.4, color: highlightColor }}
+                  >
+                    CAPTAIN CUT
+                  </h3>
+                  <h3
+                    className="project-details-1"
+                    style={{
+                      color: "white",
+                      fontSize: "2.5rem",
+                      fontWeight: 700,
+                    }}
+                  >
+                    Video Editing / Motion Graphics
+                  </h3>
+                  <h3
+                    className="project-details-1-subtitle"
+                    style={{ color: "lightgray", marginBottom: "20px" }}
+                  >
+                    SUPER POWERS :-
+                  </h3>
                   <div className="project-details-1-info">
                     <span>The Cut Commander- </span>
                     <p>
-                      Editing Mastery- The ability to precisely trim, rearrange, and combine raw footage into a seamless narrative.
+                      Editing Mastery – The skill to accurately trim,
+                      rearrange, and combine raw content, piecing together one cohesive story.
                     </p>
                   </div>
                   <div className="project-details-1-info">
                     <span>The Transition Titan- </span>
                     <p>
-                      Seamless Scene Transitions- The ability to put together visually appealing, seamless transitions that lead viewers from one scene to the next with ease.
+                      Scene-Shift Sorcery – An ability to produce intoxicating fades that have a magnetic
+                      pull and steer an audience from one scene to the next. Every small movement,
+                      whether its a smooth slide or a slow fade out, is choreographed to maintain the rhythm and
+                      he interest of the watcher.
                     </p>
                   </div>
                   <div className="project-details-1-info">
                     <span>The Color Curator- </span>
                     <p>
-                      Mastery of Color Grading- The power to transform ordinary footage into cinematic masterpieces through expert color correction and grading.
+                      Color Grading Expertise – The ability to turn an ordinary footage into a
+                      cinematic masterpiece with professional color correction and grading. Every
+                      frame is carefully tinted to set the mood, define the tone,
+                      and stir the viewer’s emotions—one shade at a time
                     </p>
                   </div>
                   <div className="project-details-1-info">
                     <span>The FX Wizard-</span>
                     <p>
-                      Visual Effects Mastery- The ability to expertly integrate cutting-edge visual effects to video projects, giving each frame an element of magic.
+                      Visual Effects Mastery – The ability to expertly integrate
+                      cutting-edge visual effects to video projects, giving each frame an element of magic.
+                      From subtle sparkles to explosive impact, the magic lies in the details.
                     </p>
                   </div>
                   <div className="project-details-1-info">
                     <span>The Sync Savior-</span>
                     <p>
-                      Perfect Audio-Visual Synchronization- The tendency to perfectly sync audio recordings with video footage, ensuring each sound effect, beat, and dialogue is in perfect balance.
+                      Perfect Audio-Visual Synchronization – The tendency to
+                      perfectly sync audio recordings with video footage, ensuring each
+                      sound effect, beat, and dialogue is in perfect balance. It’s where sound meets sight—flawlessly.
                     </p>
                   </div>
                   <div className="project-details-1-info">
                     <span>The Resolution Renegade-</span>
                     <p>
-                      Video Quality Enhancement- The ability to use advanced restoration and upscaling techniques to turn old or low-quality footage into clear, high-definition images.
+                      Video Quality Enhancement- This hero uses restoration
+                      spells and upscaling tools to resurrect grainy, old footage,
+                      and turning them into  crisp, high definition content. Visual
+                      clarity is not only aesthetic; it’s power.
                     </p>
                   </div>
                   <div className="project-details-1-info">
                     <span>The Format Flexer-</span>
                     <p>
-                      Cross-Platform Adaptation- The ease to effortlessly convert and adjust videos for multiple platforms and formats without sacrificing quality.
+                      Cross-Platform Adaptation –  No screen is off-limits for this quick-thinking fighter.
+                      Whether it&apos;s a vertical Instagram reel or a widescreen YouTube premiere,
+                      they tweak and tailor every frame to fit—without losing quality along the way.
                     </p>
                   </div>
                 </div>
@@ -105,6 +178,11 @@ const MotionGraphicsPage = () => {
           {/* footer area */}
         </div>
       </div>
+      <style jsx>{`
+        .project-details-1-info > span {
+          color: ${highlightColor} !important;
+        }
+      `}</style>
     </Wrapper>
   );
 };
