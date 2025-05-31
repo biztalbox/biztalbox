@@ -1,10 +1,10 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 // import useScrollSmooth from "@/hooks/use-scroll-smooth";
-import { ScrollSmoother, ScrollTrigger, SplitText } from "@/plugins";
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+import { ScrollTrigger, SplitText } from "@/plugins";
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 // internal imports
 import Wrapper from "@/layouts/wrapper";
@@ -20,7 +20,6 @@ const BestSeoAgencyPage = () => {
   const [showSocial, setShowSocial] = React.useState(false);
   const highlightColor = "#6BCAB3"; // You can change this color or make it a prop
 
-  // useScrollSmooth();
 
   useGSAP(() => {
     const timer = setTimeout(() => {
