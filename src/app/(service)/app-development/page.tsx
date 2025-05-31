@@ -17,7 +17,7 @@ import ScrollPinImage from "@/components/ScrollPinImage";
 import ServiceHighlights from "@/components/ashish/ServiceHighlights";
 
 const AppDevelopmentPage = () => {
-  const highlightColor = "#715a4b"; // You can change this color or make it a prop
+  const highlightColor = "#a58367"; // You can change this color or make it a prop
   useGSAP(() => {
     const timer = setTimeout(() => {
       charAnimation();
