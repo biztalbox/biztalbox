@@ -138,21 +138,20 @@ const EnquiryForm = ({ color }: { color: string }) => {
             <input
               className={styles.inputField}
               name="phone"
-              placeholder="type phone number here"
+              placeholder="type phone here"
               required
             />
             <div className={styles.inputBorder}></div>
           </div>
         </div>
         <span>and</span> <span>email</span> <span>address</span> <span>is</span>{" "}
-        <span className={styles.asterisk}>*</span>
+        {/* <span className={styles.asterisk}>*</span> */}
         <div className="field-wrapper" style={{ flexBasis: "30%" }}>
           <div className={styles.textField}>
             <input
               className={styles.inputField}
               name="email"
               placeholder="type email here"
-              required
               type="email"
             />
             
