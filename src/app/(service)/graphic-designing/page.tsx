@@ -29,20 +29,20 @@ const PortfolioDetailsOneMain = () => {
     return () => clearTimeout(timer);
   });
   const highlights = [
-    "10+ Years of SEO Experience",
-    "150+ Happy Clients Across the Globe",
-    "100% Transparent Reporting",
-    "ROI-Focused Strategies",
+    " 7+ Years of Creative Design Experience",
+    "500+ Projects for Brands Worldwide",
+    "Brand-Focused, Eye-Catching Designs",
+    "Unlimited Revisions Until You’re Happy",
   ];
 
   const services = [
-    "Technical SEO",
-    "Content Optimization",
-    "E-commerce SEO",
-    "Local SEO",
-    "B2B SEO",
-    "Enterprise SEO",
-    "White Label SEO",
+    "Logos",
+    "Social Media Creatives",
+    "Brochures & Flyers",
+    "Business Cards",
+    "Posters & Banners",
+    "Packaging Design",
+    "Brand Identity",
   ];
 
   return (
@@ -65,7 +65,7 @@ const PortfolioDetailsOneMain = () => {
                     className="project-details-1-subtitle"
                     style={{ lineHeight: 1.4 }}
                   >
-                    Vector
+                    Professional Graphic Design Services That Make You Stand Out
                   </h1>
                   <h2
                     className="project-details-1"
@@ -75,7 +75,8 @@ const PortfolioDetailsOneMain = () => {
                       fontWeight: 700,
                     }}
                   >
-                    Graphic Designing
+                    Top Graphic Designer Company
+
                   </h2>
                   <p>
                     A graphic designer is an individual who is responsible for the transformation of ideas into
@@ -88,7 +89,31 @@ const PortfolioDetailsOneMain = () => {
 
                   </p>
                 </div>
+                <ServiceHighlights color={highlightColor} highlights={highlights} services={services} />
+                <hr />
                 <div className="project-details-1-info-wrap">
+                  <h3
+                    className="project-details-1-subtitle"
+                    style={{ lineHeight: 1.4, color: highlightColor }}
+                  >
+                    Vector
+                  </h3>
+                  <h3
+                    className="project-details-1"
+                    style={{
+                      color: "white",
+                      fontSize: "2.5rem",
+                      fontWeight: 700,
+                    }}
+                  >
+                    Graphic Designing
+                  </h3>
+                  <h3
+                    className="project-details-1-subtitle"
+                    style={{ color: "lightgray", marginBottom: "20px" }}
+                  >
+                    SUPER POWERS :-
+                  </h3>
                   <div className="project-details-1-info">
                     <span>The Design Dynamo-</span>
                     <p>
@@ -96,8 +121,7 @@ const PortfolioDetailsOneMain = () => {
                       From wild brainstorming to refined execution, their creativity knows no bounds.
                     </p>
                   </div>
-                  <ServiceHighlights color={highlightColor} highlights={highlights} services={services} />
-                  <hr />
+
                   <div className="project-details-1-info">
                     <span>The Color Conductor- </span>
                     <p>
@@ -122,7 +146,7 @@ const PortfolioDetailsOneMain = () => {
                     <p>
                       Layout and Composition – The hero subtly organizes and places elements keeping the visual
                       importance in mind. Each layout they create is seamless and easy to follow, guiding the
-                      viewer&apo;s eye naturally from one element to the next.
+                      viewer&apos;s eye naturally from one element to the next.
                     </p>
                   </div>
                   <div className="project-details-1-info">

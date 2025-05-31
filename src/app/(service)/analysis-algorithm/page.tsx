@@ -64,7 +64,7 @@ const AnalysisAlgorithmPage = () => {
                   <h1
                     className="project-details-1-subtitle"
                     style={{ lineHeight: 1.4 }}>
-                    ALGANIX
+                     Data-Driven Algorithm Analysis for Smarter Business Decisions
                   </h1>
                   <h2
                     className="project-details-1"
@@ -90,6 +90,28 @@ const AnalysisAlgorithmPage = () => {
                 <ServiceHighlights color={highlightColor} highlights={highlights} services={services} />
                 <hr />
                 <div className="project-details-1-info-wrap">
+                  <h3
+                    className="project-details-1-subtitle"
+                    style={{ lineHeight: 1.4, color: highlightColor }}
+                  >
+                    ALGANIX
+                  </h3>
+                  <h3
+                    className="project-details-1"
+                    style={{
+                      color: "white",
+                      fontSize: "2.5rem",
+                      fontWeight: 700,
+                    }}
+                  >
+                    Analysis-Algorithm
+                  </h3>
+                  <h3
+                    className="project-details-1-subtitle"
+                    style={{ color: "lightgray", marginBottom: "20px" }}
+                  >
+                    SUPER POWERS :-
+                  </h3>
                   <div className="project-details-1-info">
                     <span>The Efficiency Enforcer </span>
                     <p>
@@ -110,7 +132,7 @@ const AnalysisAlgorithmPage = () => {
                     <span>The Predictive Prodigy </span>
                     <p>
                       Predictive Analytics – he capability to analyze both current and
-                      historical data to estimate future trends and outcomes. They don&apo;t just react—they anticipate.
+                      historical data to estimate future trends and outcomes. They don&apos;t just react—they anticipate.
                     </p>
                   </div>
                   <div className="project-details-1-info">
@@ -133,7 +155,7 @@ const AnalysisAlgorithmPage = () => {
                     <span>The Scalability Sage</span>
                     <p>
                       Dynamic Scaling – The power to effortlessly boost or drop operational capacity in response to evolving requirements.
-                      Ready to expand at a moment&apo;s notice, just like any true sidekick in action.
+                      Ready to expand at a moment&apos;s notice, just like any true sidekick in action.
                     </p>
                   </div>
                   <div className="project-details-1-info">

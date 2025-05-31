@@ -66,7 +66,7 @@ const FacebookAdsServicePage = () => {
                     className="project-details-1-subtitle"
                     style={{ lineHeight: 1.4 }}
                   >
-                    Meta Ads
+                    High-Converting Meta Ads Campaigns to Drive Real Results
                   </h1>
                   <h2
                     className="project-details-1"
@@ -76,11 +76,11 @@ const FacebookAdsServicePage = () => {
                       fontWeight: 700,
                     }}
                   >
-                    Facebook & Meta Ads
+                    Meta Ads Management Agency
                   </h2>
                   <p>
                     Meta Ads redefines digital advertising with visually stunning ads that have a laser-sharp targeting.
-                    It&apo;s a performance powerhouse, connecting your brand to the most interested audiences on Facebook and
+                    It&apos;s a performance powerhouse, connecting your brand to the most interested audiences on Facebook and
                     Instagram. Real-time optimization, targeting insights, and creative show-stopping storytelling Meta Ads
                     make an impact with every campaign. From carousel ads to reels, the versatility of formats allows brands
                     to shine in every scroll. From raising awareness to boosting conversions, it makes every ad dollar count—effortlessly
@@ -91,13 +91,35 @@ const FacebookAdsServicePage = () => {
                 <ServiceHighlights color={highlightColor} highlights={highlights} services={services} />
                 <hr />
                 <div className="project-details-1-info-wrap">
+                  <h3
+                    className="project-details-1-subtitle"
+                    style={{ lineHeight: 1.4, color: highlightColor }}
+                  >
+                    Meta Ads
+                  </h3>
+                  <h3
+                    className="project-details-1"
+                    style={{
+                      color: "white",
+                      fontSize: "2.5rem",
+                      fontWeight: 700,
+                    }}
+                  >
+                    Social Media Ads
+                  </h3>
+                  <h3
+                    className="project-details-1-subtitle"
+                    style={{ color: "lightgray", marginBottom: "20px" }}
+                  >
+                    SUPER POWERS :-
+                  </h3>
                   <div className="project-details-1-info">
                     <span>The Meta Maestro </span>
                     <p>
                       Meta Ads Mastery – Ability to make powerful and attractive ad campaigns through
-                      Meta&apo;s monster network! Deeply relationship-savvy with audiences and dazzlingly intuitive
+                      Meta&apos;s monster network! Deeply relationship-savvy with audiences and dazzlingly intuitive
                       about the direction of campaign winds, they stage each launch like a symphony — timed, potent, unforgettable.
-                      This maestro isn&apo;t chasing clicks, but crafting whole-funnel success narratives.
+                      This maestro isn&apos;t chasing clicks, but crafting whole-funnel success narratives.
 
                     </p>
                   </div>
@@ -112,7 +134,7 @@ const FacebookAdsServicePage = () => {
                   <div className="project-details-1-info">
                     <span> The Targeting Titan</span>
                     <p>
-                      Accurate Audience Targeting – Never miss your mark again. The targeting titan doesn&apo;t
+                      Accurate Audience Targeting – Never miss your mark again. The targeting titan doesn&apos;t
                       just find people —they pinpoint the ones that matter the most. They choose the perfect
                       audience and nail them with a laser-focus. They do this by narrowing in based on factors such as age,
                       interests, behavior, similar audiences and ensuring that each campaign
@@ -123,7 +145,7 @@ const FacebookAdsServicePage = () => {
                     <span> The Creative Conjurer </span>
                     <p>
                       Creative Strategy –  The power to turn core messages into killer visuals that drive action.
-                      Mixing design with psychology, this visual sorcerer&apo;s builds creatives that do more than look good—they convert.
+                      Mixing design with psychology, this visual sorcerer&apos;s builds creatives that do more than look good—they convert.
                       Every feature is intentional to convert a passive observer into an active one.
                     </p>
                   </div>
@@ -132,15 +154,15 @@ const FacebookAdsServicePage = () => {
                     <p>
                       Advanced Retargeting Techniques – The ability to re-engage and bring lost leads back at the perfect time.
                       They rekindle interest, and subtly nudge users back into the conversion path with a combination of great
-                      timing and targeted messaging. Second chances aren&apo;t lucky for them — they&apo;re calculated.
+                      timing and targeted messaging. Second chances aren&apos;t lucky for them — they&apos;re calculated.
                     </p>
                   </div>
                   <div className="project-details-1-info">
                     <span>The Budget Balancer</span>
                     <p>
                       Effective Budgeting – The ability to get the maximum mileage out of each penny.
-                      This hero doesn&apo;t overspend, and is one of the most performance-focused as it manages budget and uses smart,
-                      efficient bidding strategies. They don&apo;t simply extend the budget — they rise above it.
+                      This hero doesn&apos;t overspend, and is one of the most performance-focused as it manages budget and uses smart,
+                      efficient bidding strategies. They don&apos;t simply extend the budget — they rise above it.
                     </p>
                   </div>
                   <div className="project-details-1-info">
@@ -154,7 +176,7 @@ const FacebookAdsServicePage = () => {
                   <div className="project-details-1-info">
                     <span>The Instant Innovator</span>
                     <p>
-                      Real-Time Adaptation –   The power of moving quickly (and thinking swiftly).
+                      Real-Time Adaptation –   The power of moving quickly and thinking swiftly.
                       They do so while keeping a close watch on performance metrics and making real-time
                       adjustments to creatives, targeting and copy. Their power is in the ability to keep campaigns fresh, relevant and
                       reactive in the digital world that never stops moving. Always agile, always ahead.

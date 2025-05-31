@@ -63,7 +63,8 @@ const MotionGraphicsPage = () => {
                     className="project-details-1-subtitle"
                     style={{ lineHeight: 1.4 }}
                   >
-                    CAPTAIN CUT
+                     Captivating Motion Graphics to Elevate Your Visual Content
+
                   </h1>
                   <h2
                     className="project-details-1"
@@ -78,14 +79,36 @@ const MotionGraphicsPage = () => {
                   <p>
                     A video editor is a multimedia magician who takes raw footage and makes it a cinematic wonder.
                     They know transitions, color grading and vfx like the back of their hands, they put together
-                    stories with sharp audio-visual intuitiveness, and exceptional standards. With their tireless attention to
-                    detail and a storyteller’s soul,
+                    stories with sharp audio-visual intuitiveness, and exceptional standards. With their tireless attention to
+                    detail and a storyteller&apos;s soul,
                     they give life to on-screen disorder, they organize chaos into engaging stories.
                   </p>
                 </div>
                 <ServiceHighlights color={highlightColor} highlights={highlights} services={services} />
                 <hr />
                 <div className="project-details-1-info-wrap">
+                   <h3
+                    className="project-details-1-subtitle"
+                    style={{ lineHeight: 1.4, color: highlightColor }}
+                  >
+                    CAPTAIN CUT
+                  </h3>
+                  <h3
+                    className="project-details-1"
+                    style={{
+                      color: "white",
+                      fontSize: "2.5rem",
+                      fontWeight: 700,
+                    }}
+                  >
+                    Video Editing / Motion Graphics
+                  </h3>
+                  <h3
+                    className="project-details-1-subtitle"
+                    style={{ color: "lightgray", marginBottom: "20px" }}
+                  >
+                    SUPER POWERS :-
+                  </h3>
                   <div className="project-details-1-info">
                     <span>The Cut Commander- </span>
                     <p>
@@ -140,7 +163,7 @@ const MotionGraphicsPage = () => {
                     <span>The Format Flexer-</span>
                     <p>
                       Cross-Platform Adaptation –  No screen is off-limits for this quick-thinking fighter.
-                      Whether it&apo;s a vertical Instagram reel or a widescreen YouTube premiere,
+                      Whether it&apos;s a vertical Instagram reel or a widescreen YouTube premiere,
                       they tweak and tailor every frame to fit—without losing quality along the way.
                     </p>
                   </div>

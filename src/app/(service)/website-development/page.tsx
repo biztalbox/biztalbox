@@ -64,7 +64,7 @@ const WebsiteDevelopmentPage = () => {
                     className="project-details-1-subtitle"
                     style={{ lineHeight: 1.4 }}
                   >
-                    Web Dev
+                     Custom Web Development Solutions to Grow Your Online Presence
                   </h1>
                   <h2
                     className="project-details-1"
@@ -74,7 +74,7 @@ const WebsiteDevelopmentPage = () => {
                       fontWeight: 700,
                     }}
                   >
-                    Web Development
+                    Web Design & Development 
                   </h2>
                   <p>
                     A web developer is something akin to a digital builder – they construct, tweak,
@@ -89,6 +89,28 @@ const WebsiteDevelopmentPage = () => {
                 <ServiceHighlights color={highlightColor} highlights={highlights} services={services} />
                 <hr />
                 <div className="project-details-1-info-wrap">
+                   <h3
+                    className="project-details-1-subtitle"
+                    style={{ lineHeight: 1.4, color: highlightColor }}
+                  >
+                     Web Dev
+                  </h3>
+                  <h3
+                    className="project-details-1"
+                    style={{
+                      color: "white",
+                      fontSize: "2.5rem",
+                      fontWeight: 700,
+                    }}
+                  >
+                    Web Development
+                  </h3>
+                  <h3
+                    className="project-details-1-subtitle"
+                    style={{ color: "lightgray", marginBottom: "20px" }}
+                  >
+                    SUPER POWERS :-
+                  </h3>
                   <div className="project-details-1-info">
                     <span>The Code Titan-</span>
                     <p>
@@ -141,7 +163,7 @@ const WebsiteDevelopmentPage = () => {
                     <span>The Design Shapeshifter-</span>
                     <p>
                       Dynamic Web Design – The ability to create flexible, adaptable,
-                      and dynamic web designs that evolve with the brand&apo;s needs. Trends
+                      and dynamic web designs that evolve with the brand&apos;s needs. Trends
                       come and go, and the Shapeshifter moves
                       with them—blending usefulness and style to create designs that feel fresh today and still work tomorrow.
                     </p>

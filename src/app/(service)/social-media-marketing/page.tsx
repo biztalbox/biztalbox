@@ -68,7 +68,7 @@ const SocialMediaMarketingPage = () => {
                   <h1
                     className="project-details-1-subtitle"
                     style={{ lineHeight: 1.4 }}>
-                    Social Crawler
+                     Boost Your Brand with Expert Social Media Marketing Services
                   </h1>
                   <h2
                     className="project-details-1"
@@ -77,7 +77,7 @@ const SocialMediaMarketingPage = () => {
                       fontSize: "2.2rem",
                       fontWeight: 700,
                     }}>
-                    Social Media Marketing
+                    Top Social Media Marketing Agencies
                   </h2>
                   <p>
                     Social media is the digital arena where brands
@@ -93,6 +93,28 @@ const SocialMediaMarketingPage = () => {
                 <ServiceHighlights color={highlightColor} highlights={highlights} services={services} />
                 <hr />
                 <div className="project-details-1-info-wrap">
+                   <h3
+                    className="project-details-1-subtitle"
+                    style={{ lineHeight: 1.4, color: highlightColor }}
+                  >
+                   Social Crawler
+                  </h3>
+                  <h3
+                    className="project-details-1"
+                    style={{
+                      color: "white",
+                      fontSize: "2.5rem",
+                      fontWeight: 700,
+                    }}
+                  >
+                    Social Media Marketing
+                  </h3>
+                  <h3
+                    className="project-details-1-subtitle"
+                    style={{ color: "lightgray", marginBottom: "20px" }}
+                  >
+                    SUPER POWERS :-
+                  </h3>
                   <div className="project-details-1-info">
                     <span>The Content Commander</span>
                     <p>
@@ -131,7 +153,7 @@ const SocialMediaMarketingPage = () => {
                   <div className="project-details-1-info">
                     <span>The Platform Prodigy</span>
                     <p>
-                      Multi-platform mastery – Whether it&apo;s Instagram, LinkedIn, Twitter, or Facebook, his superpower adapts.
+                      Multi-platform mastery – Whether it&apos;s Instagram, LinkedIn, Twitter, or Facebook, his superpower adapts.
                       Each platform is a different world, and the Prodigy speaks all its languages fluently.
                     </p>
                   </div>

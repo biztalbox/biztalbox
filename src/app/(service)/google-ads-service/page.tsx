@@ -65,7 +65,7 @@ const GoogleAdsServicePage = () => {
                     className="project-details-1-subtitle"
                     style={{ lineHeight: 1.4 }}
                   >
-                    Google Ads
+                     ROI-Focused Performance Marketing to Maximize Your Growth
                   </h1>
                   <h2
                     className="project-details-1"
@@ -75,7 +75,8 @@ const GoogleAdsServicePage = () => {
                       fontWeight: 700,
                     }}
                   >
-                    Performance Marketing
+                    Performance Marketing Agency 
+
                   </h2>
                   <p>
                     Google Ads is a versatile tool and every click is an instant winner. It improves return on investment (ROI) and generates high-value leads through strategic bidding, precise targeting, and smart keyword execution. Its constant optimisation maintains it at the forefront of the digital scene.
@@ -88,7 +89,31 @@ const GoogleAdsServicePage = () => {
 
                   </p>
                 </div>
+                <ServiceHighlights color={highlightColor} highlights={highlights} services={services} />
+                <hr />
                 <div className="project-details-1-info-wrap">
+                    <h3
+                    className="project-details-1-subtitle"
+                    style={{ lineHeight: 1.4, color: highlightColor }}
+                  >
+                    Google Ads
+                  </h3>
+                  <h3
+                    className="project-details-1"
+                    style={{
+                      color: "white",
+                      fontSize: "2.5rem",
+                      fontWeight: 700,
+                    }}
+                  >
+                    Performance Marketing
+                  </h3>
+                  <h3
+                    className="project-details-1-subtitle"
+                    style={{ color: "lightgray", marginBottom: "20px" }}
+                  >
+                    SUPER POWERS :-
+                  </h3>
                   <div className="project-details-1-info">
                     <span>The Click Conqueror </span>
                     <p>
@@ -96,11 +121,8 @@ const GoogleAdsServicePage = () => {
                       campaigns that turn each click into measurable success.
                       Having the smarts to analyze trends and make the right moves, this hero
                       dominates the digital arena, converting possibilities into reality.
-
                     </p>
                   </div>
-                  <ServiceHighlights color={highlightColor} highlights={highlights} services={services} />
-                  <hr />
                   <div className="project-details-1-info">
                     <span> The Conversion Catalyst </span>
                     <p>

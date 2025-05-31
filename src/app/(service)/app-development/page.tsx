@@ -66,7 +66,8 @@ const AppDevelopmentPage = () => {
                     className="project-details-1-subtitle"
                     style={{ lineHeight: 1.4 }}
                   >
-                    App Dev
+                     End-to-End Development Services for Scalable Digital Solutions
+
                   </h1>
                   <h2
                     className="project-details-1"
@@ -76,11 +77,11 @@ const AppDevelopmentPage = () => {
                       fontWeight: 700,
                     }}
                   >
-                    App Development
+                    Best App Development Agency
                   </h2>
                   <p>
-                    An App Developer is a mobile maestro who builds the next killer app and d
-                    elivers unparalleled performance to keep users coming back for more. It knows all about
+                    An App Developer is a mobile maestro who builds the next killer app and delivers 
+                    unparalleled performance to keep users coming back for more. It knows all about
                     cross-platform development and performance optimization. From sleek UI/UX to powerful
                     back-end systems. Your app stays fast, scalable and one step
                     ahead with prototyping, integration, and continuous updates in a mobile-first world.
@@ -90,12 +91,34 @@ const AppDevelopmentPage = () => {
                 <ServiceHighlights color={highlightColor} highlights={highlights} services={services} />
                 <hr />
                 <div className="project-details-1-info-wrap">
+                  <h3
+                    className="project-details-1-subtitle"
+                    style={{ lineHeight: 1.4, color: highlightColor }}
+                  >
+                    Capitan code
+                  </h3>
+                  <h3
+                    className="project-details-1"
+                    style={{
+                      color: "white",
+                      fontSize: "2.5rem",
+                      fontWeight: 700,
+                    }}
+                  >
+                    App Development 
+                  </h3>
+                  <h3
+                    className="project-details-1-subtitle"
+                    style={{ color: "lightgray", marginBottom: "20px" }}
+                  >
+                    SUPER POWERS :-
+                  </h3>
                   <div className="project-details-1-info">
                     <span>UI/UX Mastery-</span>
                     <p>
                       Captain Code creates visually appealing, intuitive user interfaces
                       which let users fall in love at first tap.
-                      He doesn’t design screens — he choreographs journeys. Every
+                      He doesn&apos;t design screens — he choreographs journeys. Every
                       micro-interaction has a touch of magic that effortlessly guides users towards success.
                     </p>
                   </div>
