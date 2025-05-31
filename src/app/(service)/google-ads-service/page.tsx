@@ -17,7 +17,7 @@ import ScrollPinImage from "@/components/ScrollPinImage";
 import ServiceHighlights from "@/components/ashish/ServiceHighlights";
 
 const GoogleAdsServicePage = () => {
-  const highlightColor = "#f8b7c4"; // You can change this color or make it a prop
+  const highlightColor = "#b24342"; // You can change this color or make it a prop
   useGSAP(() => {
     const timer = setTimeout(() => {
       charAnimation();

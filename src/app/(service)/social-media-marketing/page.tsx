@@ -19,7 +19,7 @@ import ServiceHighlights from "@/components/ashish/ServiceHighlights";
 const SocialMediaMarketingPage = () => {
   const [showSocial, setShowSocial] = React.useState(false);
   // useScrollSmooth();
-  const highlightColor = "#e6abaa"; // You can change this color or make it a prop
+  const highlightColor = "#9d2b2c"; // You can change this color or make it a prop
 
 
   useGSAP(() => {

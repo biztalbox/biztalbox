@@ -17,7 +17,7 @@ import ScrollPinImage from "@/components/ScrollPinImage";
 import ServiceHighlights from "@/components/ashish/ServiceHighlights";
 
 const FacebookAdsServicePage = () => {
-  const highlightColor = "#46728c"; // You can change this color or make it a prop
+  const highlightColor = "#b4ffff"; // You can change this color or make it a prop
 
   useGSAP(() => {
     const timer = setTimeout(() => {
