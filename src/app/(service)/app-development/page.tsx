@@ -95,7 +95,7 @@ const AppDevelopmentPage = () => {
                     className="project-details-1-subtitle"
                     style={{ lineHeight: 1.4, color: highlightColor }}
                   >
-                    Capitan code
+                    Captain code
                   </h3>
                   <h3
                     className="project-details-1"
