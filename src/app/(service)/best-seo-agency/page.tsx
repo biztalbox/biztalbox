@@ -14,10 +14,7 @@ import { projectDetailsPin } from "@/utils/project-anim";
 import { charAnimation, titleAnimation } from "@/utils/title-animation";
 import FooterFour from "@/layouts/footers/footer-four";
 import ScrollPinImage from "@/components/ScrollPinImage";
-import EnquiryForm from "@/components/ashish/EnquiryForm";
-import SeoHighlights from "@/components/ashish/ServiceHighlights";
 import ServiceHighlights from "@/components/ashish/ServiceHighlights";
-// import SeoHighlights from "@/components/ashish/SeoHighlights";
 
 const BestSeoAgencyPage = () => {
   const [showSocial, setShowSocial] = React.useState(false);
@@ -92,7 +89,6 @@ const BestSeoAgencyPage = () => {
                     technical procedures, resulting in digital success.
                   </p>
                 </div>
-
                 <ServiceHighlights color={highlightColor} highlights={highlights} services={services} />
                 <hr />
                 <div className="project-details-1-info-wrap mt-40">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./EnquiryForm.module.css";
 import { ArrowBg } from "../svg";
 import { RightArrowTwo } from "../svg";
@@ -9,6 +9,37 @@ const EnquiryForm = ({ color }: { color: string }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [formMessage, setFormMessage] = useState<string | null>(null);
   const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const handleClick = (event: MouseEvent) => {
+      const wrapper = (event.target as HTMLElement).closest(".field-wrapper");
+      const allBorders = document.querySelectorAll(`.${styles.inputBorder}`);
+
+      if (wrapper) {
+        const inputBorder = wrapper.querySelector(`.${styles.inputBorder}`);
+
+        if (inputBorder) {
+          allBorders.forEach((border) => {
+            if (border !== inputBorder) {
+              border.classList.remove(styles.active);
+              border.classList.add(styles.inactive);
+            }
+          });
+
+          inputBorder.classList.add(styles.active);
+          inputBorder.classList.remove(styles.inactive);
+        }
+      } else {
+        allBorders.forEach((border) => {
+          border.classList.remove(styles.active);
+          border.classList.add(styles.inactive);
+        });
+      }
+    };
+
+    document.addEventListener("click", handleClick);
+    return () => document.removeEventListener("click", handleClick);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     try {
@@ -43,9 +74,6 @@ const EnquiryForm = ({ color }: { color: string }) => {
 
       setIsSuccess(true);
       form.reset();
-
-      // Redirect to thank you page after a short delay
-
       router.push("/thank-you");
     } catch (error: any) {
       setFormMessage(error.message);
@@ -61,7 +89,7 @@ const EnquiryForm = ({ color }: { color: string }) => {
       className={styles.formRoot}
       autoComplete="off"
     >
-      <h3 style={{ color: color, marginBottom: 24}}>
+      <h3 style={{ color: color, marginBottom: 24 }}>
         {/* Send us a message */}
         {/* Got something to say? */}
         Let&apos;s talk about your project
@@ -81,43 +109,73 @@ const EnquiryForm = ({ color }: { color: string }) => {
       >
         <span>Hello! I&apos;m</span>
         <span className={styles.asterisk}>*</span>
-        <input
-          className={styles.inputField}
-          name="name"
-          placeholder="your name here"
-          required
-        />
+        <div className="field-wrapper">
+          <div className={styles.textField}>
+            <input
+              className={styles.inputField}
+              name="name"
+              placeholder="your name here"
+              required
+            />
+            {/* <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1200 60"
+              preserveAspectRatio="none"
+            >
+              <path
+                fill="none"
+                stroke="#fff"
+                d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
+              ></path>
+            </svg> */}
+            <div className={styles.inputBorder}></div>
+          </div>
+        </div>
         <span>my</span> <span>phone</span> <span>number</span> <span>is</span>{" "}
         <span className={styles.asterisk}>*</span>
-        <input
-          className={styles.inputField}
-          name="phone"
-          placeholder="type phone number here"
-          required
-        />
+        <div className="field-wrapper">
+          <div className={styles.textField}>
+            <input
+              className={styles.inputField}
+              name="phone"
+              placeholder="type phone number here"
+              required
+            />
+            <div className={styles.inputBorder}></div>
+          </div>
+        </div>
         <span>and</span> <span>email</span> <span>address</span> <span>is</span>{" "}
         <span className={styles.asterisk}>*</span>
-        <input
-          className={styles.inputField}
-          name="email"
-          placeholder="type email here"
-          required
-          type="email"
-          style={{ flexBasis: "30%" }}
-        />
-        <span>I&apos;m</span> <span>looking</span> <span>to</span> <span>get</span>{" "}
-        <span>your</span> <span>help</span> <span>with</span>{" "}
+        <div className="field-wrapper" style={{ flexBasis: "30%" }}>
+          <div className={styles.textField}>
+            <input
+              className={styles.inputField}
+              name="email"
+              placeholder="type email here"
+              required
+              type="email"
+            />
+            
+            <div className={styles.inputBorder}></div>
+          </div>
+        </div>
+        <span>I&apos;m</span> <span>looking</span> <span>to</span>{" "}
+        <span>get</span> <span>your</span> <span>help</span> <span>with</span>{" "}
         <span className={styles.asterisk}>*</span>
-        <input
-          className={styles.inputField}
-          name="message"
-          placeholder="type your message here"
-          style={{ flexGrow: 10 }}
-          required
-        />
+        <div className="field-wrapper" style={{ flexGrow: 10 }}>
+          <div className={styles.textField}>
+            <input
+              className={styles.inputField}
+              name="message"
+              placeholder="type your message here"
+              required
+            />
+            <div className={styles.inputBorder}></div>
+          </div>
+        </div>
       </div>
       <div>
-      {formMessage && (
+        {formMessage && (
           <p
             className={`${
               isSuccess ? "text-success" : "text-danger"
@@ -138,14 +196,12 @@ const EnquiryForm = ({ color }: { color: string }) => {
             <ArrowBg />
           </span>
         </button>
-
-        
       </div>
 
       <style jsx>{`
-        input:focus {
-          border-color: ${color} !important;
-        }
+        // input:focus, .inputBorder{
+        //   border-color: ${color} !important;
+        // }
       `}</style>
     </form>
   );
