@@ -271,6 +271,9 @@ const EnquiryForm = ({ color }: { color: string }) => {
       </div>
 
       <style jsx>{`
+      .${styles.hoverMessage} {
+        background-color: ${color};
+      }
         @keyframes slideUp {
           0% {
             opacity: 0;

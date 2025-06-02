@@ -107,7 +107,6 @@
 
 .hoverMessage {
   position: fixed !important;
-  background-color: #ff69b4;
   color: white;
   padding: 0px 8px;
   border-radius: 4px;
