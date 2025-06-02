@@ -2,6 +2,7 @@
 import React from "react";
 import { ArrowBg, RightArrowTwo } from "../svg";
 import Link from "next/link";
+import EyeBall from "../ashish/EyeBall";
 
 export default function HeroBannerFour() {
   return (
@@ -11,6 +12,7 @@ export default function HeroBannerFour() {
           <div className="col-xl-12">
             <div className="tp-hero-3-content-box text-center p-relative">
               <div className="tp-hero-3-circle-shape">
+                {/* <EyeBall /> */}
                 <span></span>
               </div>
               {/* <h4 className="tp-hero-3-title"> */}
@@ -18,7 +20,6 @@ export default function HeroBannerFour() {
                 <span className="tp-reveal-line">{"biztalbox"}</span><br/>
                 <span className="tp-reveal-line"> Boost your brand with us! </span>
               </h4>
-              {/* <span className="tp-hero-3-category"> */}
               <h1 className="tp-hero-3-category tp_reveal_anim">
              Expert digital marketing, SEO, and web development tailored for your success.
               </h1>

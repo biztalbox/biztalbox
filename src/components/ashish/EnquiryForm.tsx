@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./EnquiryForm.module.css";
 import { ArrowBg } from "../svg";
 import { RightArrowTwo } from "../svg";
@@ -9,7 +9,8 @@ const EnquiryForm = ({ color }: { color: string }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [formMessage, setFormMessage] = useState<string | null>(null);
   const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
-
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [showMessage, setShowMessage] = useState(false);
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
       const wrapper = (event.target as HTMLElement).closest(".field-wrapper");
@@ -40,6 +41,37 @@ const EnquiryForm = ({ color }: { color: string }) => {
     document.addEventListener("click", handleClick);
     return () => document.removeEventListener("click", handleClick);
   }, []);
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      if (showMessage) {
+        setMousePosition({
+          x: e.pageX,
+          y: e.pageY + 10 // 10px below cursor
+        });
+      }
+    };
+
+    const handleScroll = () => {
+      if (showMessage) {
+        // Update position on scroll to maintain relative position
+        const lastEvent = window.event as MouseEvent;
+        if (lastEvent) {
+          setMousePosition({
+            x: lastEvent.pageX,
+            y: lastEvent.pageY + 10
+          });
+        }
+      }
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [showMessage]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     try {
@@ -83,12 +115,45 @@ const EnquiryForm = ({ color }: { color: string }) => {
     }
   };
 
+  const handleMouseEnter = () => {
+    console.log("mouse entered");
+    console.log(mousePosition);
+    setShowMessage(true);
+  };
+
+  const handleMouseLeave = () => {
+    console.log("mouse left");
+    console.log(mousePosition);
+    setShowMessage(false);
+  };
+  const handleMouseHover = () => {
+    console.log("mouse hovered");
+    console.log(mousePosition);
+    setShowMessage(true);
+  };
+
   return (
     <form
       onSubmit={handleSubmit}
       className={styles.formRoot}
       autoComplete="off"
     >
+      <div
+        className={`${styles.hoverMessage} ${
+          showMessage ? styles.visible : ""
+        }`}
+        style={{
+          left: mousePosition.x,
+          top: mousePosition.y,
+          transform: 'translateX(-50%)',
+        }}
+      >
+        <span style={{
+          display: 'inline-block',
+          animation: showMessage ? 'slideUp 0.6s ease-out forwards' : 'none'
+        }}>FILL IN</span>
+      </div>
+
       <h3 style={{ color: color, marginBottom: 24 }}>
         {/* Send us a message */}
         {/* Got something to say? */}
@@ -110,31 +175,30 @@ const EnquiryForm = ({ color }: { color: string }) => {
         <span>Hello! I&apos;m</span>
         <span className={styles.asterisk}>*</span>
         <div className="field-wrapper">
-          <div className={styles.textField}>
+          <div
+            className={styles.textField}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onMouseMove={handleMouseHover}
+          >
             <input
               className={styles.inputField}
               name="name"
               placeholder="your name here"
               required
             />
-            {/* <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 1200 60"
-              preserveAspectRatio="none"
-            >
-              <path
-                fill="none"
-                stroke="#fff"
-                d="M0,56.5c0,0,298.666,0,399.333,0C448.336,56.5,513.994,46,597,46c77.327,0,135,10.5,200.999,10.5c95.996,0,402.001,0,402.001,0"
-              ></path>
-            </svg> */}
             <div className={styles.inputBorder}></div>
           </div>
         </div>
         <span>my</span> <span>phone</span> <span>number</span> <span>is</span>{" "}
         <span className={styles.asterisk}>*</span>
         <div className="field-wrapper">
-          <div className={styles.textField}>
+          <div
+            className={styles.textField}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onMouseMove={handleMouseHover}
+          >
             <input
               className={styles.inputField}
               name="phone"
@@ -147,14 +211,18 @@ const EnquiryForm = ({ color }: { color: string }) => {
         <span>and</span> <span>email</span> <span>address</span> <span>is</span>{" "}
         {/* <span className={styles.asterisk}>*</span> */}
         <div className="field-wrapper" style={{ flexBasis: "30%" }}>
-          <div className={styles.textField}>
+          <div
+            className={styles.textField}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onMouseMove={handleMouseHover}
+          >
             <input
               className={styles.inputField}
               name="email"
               placeholder="type email here"
               type="email"
             />
-            
             <div className={styles.inputBorder}></div>
           </div>
         </div>
@@ -162,7 +230,12 @@ const EnquiryForm = ({ color }: { color: string }) => {
         <span>get</span> <span>your</span> <span>help</span> <span>with</span>{" "}
         <span className={styles.asterisk}>*</span>
         <div className="field-wrapper" style={{ flexGrow: 10 }}>
-          <div className={styles.textField}>
+          <div
+            className={styles.textField}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            onMouseMove={handleMouseHover}
+          >
             <input
               className={styles.inputField}
               name="message"
@@ -198,9 +271,16 @@ const EnquiryForm = ({ color }: { color: string }) => {
       </div>
 
       <style jsx>{`
-        // input:focus, .inputBorder{
-        //   border-color: ${color} !important;
-        // }
+        @keyframes slideUp {
+          0% {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
       `}</style>
     </form>
   );
