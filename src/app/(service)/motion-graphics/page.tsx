@@ -27,20 +27,21 @@ const MotionGraphicsPage = () => {
     return () => clearTimeout(timer);
   });
   const highlights = [
-    "10+ Years of SEO Experience",
-    "150+ Happy Clients Across the Globe",
-    "100% Transparent Reporting",
-    "ROI-Focused Strategies",
+    "12+ Years of Expert Motion Graphics Creation",
+    "200+ Engaging Videos Produced",
+    "Eye-Catching Animations That Tell Your Story",
+    "Unlimited Revisions for Perfect Results",
+
   ];
 
   const services = [
-    "Technical SEO",
-    "Content Optimization",
-    "E-commerce SEO",
-    "Local SEO",
-    "B2B SEO",
-    "Enterprise SEO",
-    "White Label SEO",
+    "Explainer Videos",
+    "Logo Animations",
+    "Social Media Motion Posts",
+    "Promotional Videos",
+    "Infographic Animations",
+    "Video Editing",
+    "Post-Production",
   ];
 
   return (
@@ -63,7 +64,7 @@ const MotionGraphicsPage = () => {
                     className="project-details-1-subtitle"
                     style={{ lineHeight: 1.4 }}
                   >
-                     Captivating Motion Graphics to Elevate Your Visual Content
+                    Captivating Motion Graphics to Elevate Your Visual Content
 
                   </h1>
                   <h2
@@ -87,7 +88,7 @@ const MotionGraphicsPage = () => {
                 <ServiceHighlights color={highlightColor} highlights={highlights} services={services} />
                 <hr />
                 <div className="project-details-1-info-wrap">
-                   <h3
+                  <h3
                     className="project-details-1-subtitle"
                     style={{ lineHeight: 1.4, color: highlightColor }}
                   >
