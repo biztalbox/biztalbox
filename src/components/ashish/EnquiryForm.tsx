@@ -4,7 +4,7 @@ import { ArrowBg } from "../svg";
 import { RightArrowTwo } from "../svg";
 import { useRouter } from "next/navigation";
 
-const EnquiryForm = ({ color }: { color: string }) => {
+const EnquiryForm = ({ color, textColor }: { color: string, textColor?: string }) => {
   const router = useRouter();
   const [isLoading, setIsLoading] = useState(false);
   const [formMessage, setFormMessage] = useState<string | null>(null);
@@ -273,6 +273,7 @@ const EnquiryForm = ({ color }: { color: string }) => {
       <style jsx>{`
       .${styles.hoverMessage} {
         background-color: ${color};
+        color: ${textColor ? textColor : "white"}; 
       }
         @keyframes slideUp {
           0% {

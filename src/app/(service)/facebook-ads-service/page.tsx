@@ -17,8 +17,8 @@ import ScrollPinImage from "@/components/ScrollPinImage";
 import ServiceHighlights from "@/components/ashish/ServiceHighlights";
 
 const FacebookAdsServicePage = () => {
-  const highlightColor = "#b4ffff"; // You can change this color or make it a prop
-
+  const highlightColor = "#b4ffff"; 
+  const textColor = "#000"; 
   useGSAP(() => {
     const timer = setTimeout(() => {
       charAnimation();
@@ -88,7 +88,7 @@ const FacebookAdsServicePage = () => {
                     successful ad is a digital superhero making sure your message hits the bullseye every single time.
                   </p>
                 </div>
-                <ServiceHighlights color={highlightColor} highlights={highlights} services={services} />
+                <ServiceHighlights color={highlightColor} textColor={textColor} highlights={highlights} services={services} />
                 <hr />
                 <div className="project-details-1-info-wrap">
                   <h3

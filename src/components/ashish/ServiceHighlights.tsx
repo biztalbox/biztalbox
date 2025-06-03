@@ -2,7 +2,7 @@ import React from "react";
 import Dots from "../svg/dots";
 import EnquiryForm from "./EnquiryForm";
 
-const ServiceHighlights = ({color, highlights, services}: {color: string, highlights: string[], services: string[]}) => {
+const ServiceHighlights = ({color, highlights, services, textColor}: {color: string, highlights: string[], services: string[], textColor?: string}) => {
   return (
     <section className="mb-40 tp-btn-trigger">
           <div className="mb-40">
@@ -55,7 +55,7 @@ const ServiceHighlights = ({color, highlights, services}: {color: string, highli
               ))}
             </div>
           </div>
-          <EnquiryForm color={color} />
+          <EnquiryForm color={color} textColor={textColor} />
     </section>
   );
 };
