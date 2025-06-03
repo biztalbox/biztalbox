@@ -96,23 +96,6 @@ export default function RootLayout({
         {/* Add resource hints */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        {/* Google Ads (gtag.js) */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17082987735"
-          strategy="afterInteractive"
-        />
-        <Script id="google-ads" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-17082987735');
-            gtag('config', 'AW-17082987735/HrrZCIistMoaENfp5tE_', {
-              'phone_conversion_number': '9485699709'
-            });
-          `}
-        </Script>
-
         {/* Google Tag Manager */}
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
@@ -120,7 +103,7 @@ export default function RootLayout({
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-KQ4NX3MM');
+            })(window,document,'script','dataLayer','GTM-ML2WZV95');
           `}
         </Script>
         {/* End Google Tag Manager */}
@@ -133,7 +116,7 @@ export default function RootLayout({
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-KQ4NX3MM"
+            src="https://www.googletagmanager.com/ns.html?id=GTM-ML2WZV95"
             height="0"
             width="0"
             style={{ display: 'none', visibility: 'hidden' }}
