@@ -107,6 +107,7 @@ export default function RootLayout({
           `}
         </Script>
         {/* End Google Tag Manager */}
+        <meta name="google-adsense-account" content="ca-pub-8490028444671399" />
       </head>
       <body
         id="body"
