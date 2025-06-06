@@ -89,6 +89,9 @@ export default function CounterOld() {
   // Set up intersection observer to pause animations when not visible
   useEffect(() => {
     if (!containerRef.current) return;
+    
+    // Capture current ref value to avoid stale closure in cleanup
+    const currentContainerRef = containerRef.current;
 
     const options = {
       root: null,
@@ -102,11 +105,11 @@ export default function CounterOld() {
       });
     }, options);
 
-    observer.observe(containerRef.current);
+    observer.observe(currentContainerRef);
 
     return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
+      if (currentContainerRef) {
+        observer.unobserve(currentContainerRef);
       }
     };
   }, []);
