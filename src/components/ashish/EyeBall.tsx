@@ -49,7 +49,7 @@ const getResponsiveSettings = () => {
   } else {
     // Desktop
     return {
-      modelScale: 60,
+      modelScale: 55,
       cameraZ: 3,
       cameraFOV: 50,
       modelY: 0
