@@ -74,11 +74,9 @@ export default function HeroBannerFour() {
             letterSpacing: "0px",
           }}
         >
-          For
+          Creativity? Yes.
           <br />
-          every
-          <br />
-          business
+          Calculated? Always.
         </h2>
         <h1
           className="tp-hero-3-title tp_reveal_anim"

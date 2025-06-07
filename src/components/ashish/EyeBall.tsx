@@ -222,7 +222,7 @@ const EyeBall = () => {
     const ambientLight = new THREE.AmbientLight(0xffffff, ambientLightIntensity);
     scene.add(ambientLight);
 
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.1);
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.15);
     directionalLight.position.set(0.1, 0.1, 2);
     directionalLight.castShadow = true;
     directionalLight.shadow.mapSize.width = width <= 767 ? 512 : 1024; // Lower resolution on mobile for performance
