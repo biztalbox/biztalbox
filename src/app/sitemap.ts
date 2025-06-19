@@ -14,7 +14,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '',
     '/about',
     '/services',
-    '/portfolio',
+    '/blog',
     '/contact',
     '/best-seo-agency',
     '/graphic-designing',
@@ -33,16 +33,60 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: route === '' ? 1 : 0.8, // The priority of the route
   }))
 
-  // Fetch blog posts from WordPress API
-  let blogPosts: WordPressPost[] = []
-  try {
-    const response = await fetch('https://blog.biztalbox.com/wp-json/wp/v2/posts?per_page=100')
-    if (response.ok) {
-      blogPosts = await response.json()
+  // Function to fetch all blog posts with pagination
+  async function fetchAllBlogPosts(): Promise<WordPressPost[]> {
+    const allPosts: WordPressPost[] = []
+    let page = 1
+    let hasMorePosts = true
+
+    while (hasMorePosts) {
+      try {
+        const response = await fetch(
+          `https://blog.biztalbox.com/wp-json/wp/v2/posts?per_page=100&page=${page}`,
+          {
+            // Disable caching to always fetch fresh data
+            cache: 'no-store',
+            // Add headers for better compatibility
+            headers: {
+              'User-Agent': 'Mozilla/5.0 (compatible; Next.js Sitemap)',
+              'Accept': 'application/json',
+            },
+            // Set timeout
+            signal: AbortSignal.timeout(10000), // 10 second timeout
+          }
+        )
+
+        if (!response.ok) {
+          console.error(`Error fetching blog posts: ${response.status} ${response.statusText}`)
+          break
+        }
+
+        const posts: WordPressPost[] = await response.json()
+        
+        if (posts.length === 0) {
+          hasMorePosts = false
+        } else {
+          allPosts.push(...posts)
+          page++
+          
+          // Safety check to prevent infinite loops
+          if (page > 50) { // Maximum 5000 posts (50 pages * 100 per page)
+            console.warn('Reached maximum page limit for blog posts')
+            break
+          }
+        }
+      } catch (error) {
+        console.error('Error fetching blog posts for sitemap:', error)
+        hasMorePosts = false
+      }
     }
-  } catch (error) {
-    console.error('Error fetching blog posts for sitemap:', error)
+
+    console.log(`Fetched ${allPosts.length} blog posts for sitemap`)
+    return allPosts
   }
+
+  // Fetch blog posts from WordPress API
+  const blogPosts = await fetchAllBlogPosts()
 
   // Add blog post routes to sitemap
   const blogRoutes = blogPosts.map((post) => ({
