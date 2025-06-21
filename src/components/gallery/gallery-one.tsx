@@ -4,8 +4,10 @@ import Marquee from 'react-fast-marquee';
 // images
 import shape_1 from '@/assets/img/home-03/gallery/gal-shape-1.png';
 import shape_d_1 from '@/assets/img/home-03/gallery/gal-shape-dark-1.png';
+// import shape_d_1 from '@/assets/image/top-1.png';
 import shape_2 from '@/assets/img/home-03/gallery/gal-shape-2.png';
 import shape_d_2 from '@/assets/img/home-03/gallery/gal-shape-dark-2.png';
+// import shape_d_2 from '@/assets/image/bottom.png';
 
 import g_1 from '@/assets/img/profile/Artboard 1.webp';
 import g_2 from '@/assets/img/profile/Artboard 2.webp';
@@ -41,7 +43,7 @@ export default function GalleryOne() {
     if (isMobile) {
       return { height: '300px', width: '250px' };
     }
-    return { height: '520px', width: '400px' };
+    return { height: '500px', width: '400px' };
   };
 
   return (

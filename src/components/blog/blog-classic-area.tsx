@@ -264,7 +264,7 @@ export default function BlogClassicArea({setIsVideoOpen,setVideoId}:IProps) {
     const fetchPosts = async () => {
       try {
         setLoading(true);
-        const response = await fetch('https://blog.biztalbox.com/wp-json/wp/v2/posts?_embed');
+        const response = await fetch('https://blog.biztalbox.com/wp-json/wp/v2/posts?_embed&per_page=100');
         
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);

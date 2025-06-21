@@ -42,17 +42,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     while (hasMorePosts) {
       try {
         const response = await fetch(
-          `https://blog.biztalbox.com/wp-json/wp/v2/posts?per_page=100&page=${page}`,
+          `https://blog.biztalbox.com/wp-json/wp/v2/posts?per_page=100&page=${page}&_fields=id,slug,date`,
           {
-            // Disable caching to always fetch fresh data
-            cache: 'no-store',
+            // Use force-cache for static generation during build time
+            cache: 'force-cache',
             // Add headers for better compatibility
             headers: {
               'User-Agent': 'Mozilla/5.0 (compatible; Next.js Sitemap)',
               'Accept': 'application/json',
             },
             // Set timeout
-            signal: AbortSignal.timeout(10000), // 10 second timeout
+            signal: AbortSignal.timeout(15000), // 15 second timeout for build
           }
         )
 
@@ -77,6 +77,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         }
       } catch (error) {
         console.error('Error fetching blog posts for sitemap:', error)
+        // Don't break the build, just stop fetching more posts
         hasMorePosts = false
       }
     }
@@ -85,8 +86,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     return allPosts
   }
 
-  // Fetch blog posts from WordPress API
-  const blogPosts = await fetchAllBlogPosts()
+  // Fetch blog posts from WordPress API with error handling
+  let blogPosts: WordPressPost[] = []
+  try {
+    blogPosts = await fetchAllBlogPosts()
+  } catch (error) {
+    console.error('Failed to fetch blog posts for sitemap, continuing with static routes only:', error)
+    // Continue with empty blog posts array if fetch fails completely
+    blogPosts = []
+  }
 
   // Add blog post routes to sitemap
   const blogRoutes = blogPosts.map((post) => ({

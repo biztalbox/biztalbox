@@ -8,8 +8,13 @@ type IProps = {
 export default function FaqItem({ item }: IProps) {
   return (
     <div className="accordion-items">
-      <h2 className="accordion-header">
+      <h6 
+        className="accordion-header"        
+      >
         <button
+        style={{
+          fontSize: "1.2rem !important",
+        }}
           className="accordion-buttons collapsed"
           type="button"
           data-bs-toggle="collapse"
@@ -20,14 +25,16 @@ export default function FaqItem({ item }: IProps) {
           {item.question}
           <span className="accordion-icon"></span>
         </button>
-      </h2>
+      </h6>
       <div
         id={`collapse-${item.id}`}
         className="accordion-collapse collapse"
         data-bs-parent="#accordionExample"
       >
-        <div className="accordion-body">
-          <p>{item.answer}</p>
+        <div className="accordion-body" style={{paddingLeft: "30px", paddingBottom: "20px"}}>
+          <p style={{
+            fontSize: "1rem !important",
+          }}>{item.answer}</p>
         </div>
       </div>
     </div>
