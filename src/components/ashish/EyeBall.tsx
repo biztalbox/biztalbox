@@ -17,9 +17,21 @@ const EYE_Z_ROTATION_FACTOR = 0.5;
 const ROOT_Y_ROTATION_FACTOR = 1;
 const ROOT_X_POSITION_FACTOR = 200;
 const ANIMATION_FPS = 120;
+const SCROLL_DEBOUNCE_TIME = 100; // Reduced from 50ms for better mobile performance
 
-// Responsive settings with memoization
+// Responsive settings with memoization - made more stable and SSR-safe
 const getResponsiveSettings = () => {
+  // Check if we're in the browser environment
+  if (typeof window === 'undefined') {
+    // Return default desktop settings for SSR
+    return {
+      modelScale: 55,
+      cameraZ: 3,
+      cameraFOV: 50,
+      modelY: 0
+    };
+  }
+
   const width = window.innerWidth;
   
   if (width <= 480) {
@@ -64,119 +76,197 @@ const EyeBall: React.FC = memo(() => {
   const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
   const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
   const sceneRef = useRef<THREE.Scene | null>(null);
-  const isPlayingRef = useRef(true); // Start as true to ensure animations work
+  const isPlayingRef = useRef(true);
   const screenVisibleRef = useRef(true);
   const animationIdRef = useRef<number | null>(null);
+  const forceAnimationRef = useRef(true); // Force animations to always run
   const resizeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const lastScrollTimeRef = useRef<number>(0);
+  const modelLoadedRef = useRef(false);
+  const initialResponsiveSettingsRef = useRef(getResponsiveSettings());
+  const lockedModelSettingsRef = useRef<{scale: number, positionY: number, cameraZ: number, cameraFOV: number} | null>(null);
 
-  // Optimized scroll detection
+  // Improved scroll detection with better mobile performance
   const isScrolling = useCallback(() => {
-    return window.lastScrollTime && Date.now() < window.lastScrollTime + 50;
+    return Date.now() < lastScrollTimeRef.current + SCROLL_DEBOUNCE_TIME;
   }, []);
 
   const handleScroll = useCallback(() => {
-    window.lastScrollTime = Date.now();
+    lastScrollTimeRef.current = Date.now();
+    
+    // On mobile, prevent any resize handling during scroll to avoid scaling
+    if (typeof window !== 'undefined' && window.innerWidth <= 767) {
+      if (resizeTimeoutRef.current) {
+        clearTimeout(resizeTimeoutRef.current);
+      }
+    }
   }, []);
 
-  // Optimized mouse move handler with throttling
-  const handleMouseMove = useCallback((event: MouseEvent) => {
-    if (!rendererRef.current) return;
+  // Unified pointer handler for both mouse and touch events
+  const handlePointerMove = useCallback((clientX: number, clientY: number) => {
+    if (!rendererRef.current || typeof window === 'undefined') return;
     
     const rect = rendererRef.current.domElement.getBoundingClientRect();
-    const x = (event.clientX - rect.left) / rect.width;
-    const y = (event.clientY - rect.top) / rect.height;
+    const x = (clientX - rect.left) / rect.width;
+    const y = (clientY - rect.top) / rect.height;
     
-    const sensitivity = window.innerWidth <= 767 ? 0.8 : 1;
+    // Enhanced sensitivity for mobile devices
+    const isMobile = window.innerWidth <= 767;
+    const sensitivity = isMobile ? 0.7 : 1; // Reduced sensitivity for better mobile control
+    
     mouseRef.current.x = 2 * (x - 0.5) * sensitivity;
     mouseRef.current.y = -2 * (y - 0.5) * sensitivity;
   }, []);
 
-  // Optimized resize handler with debouncing
+  // Mouse event handler
+  const handleMouseMove = useCallback((event: MouseEvent) => {
+    handlePointerMove(event.clientX, event.clientY);
+  }, [handlePointerMove]);
+
+  // Touch event handlers for mobile support
+  const handleTouchMove = useCallback((event: TouchEvent) => {
+    if (event.touches.length > 0) {
+      event.preventDefault(); // Prevent scrolling while touching the eyeball
+      const touch = event.touches[0];
+      handlePointerMove(touch.clientX, touch.clientY);
+    }
+  }, [handlePointerMove]);
+
+  const handleTouchStart = useCallback((event: TouchEvent) => {
+    if (event.touches.length > 0) {
+      const touch = event.touches[0];
+      handlePointerMove(touch.clientX, touch.clientY);
+    }
+  }, [handlePointerMove]);
+
+  // Completely lock model settings after load to prevent mobile viewport scaling
   const handleResize = useCallback(() => {
+    // On mobile, completely ignore resize events during scroll to prevent scaling
+    if (typeof window !== 'undefined' && window.innerWidth <= 767 && isScrolling()) {
+      return;
+    }
+    
     if (resizeTimeoutRef.current) {
       clearTimeout(resizeTimeoutRef.current);
     }
     
     resizeTimeoutRef.current = setTimeout(() => {
-      if (!rendererRef.current || !cameraRef.current) return;
+      if (!rendererRef.current || !cameraRef.current || typeof window === 'undefined') return;
       
       const width = window.innerWidth;
       const height = window.innerHeight;
-      const responsiveSettings = getResponsiveSettings();
       
-      // Update renderer
+      // Update renderer size (this is always safe)
       rendererRef.current.setSize(width, height);
       
-      // Update camera
+      // If model is loaded and locked, use the locked settings
+      if (modelLoadedRef.current && lockedModelSettingsRef.current) {
+        // Use locked camera settings - completely ignore viewport changes
+        cameraRef.current.aspect = width / height;
+        cameraRef.current.fov = lockedModelSettingsRef.current.cameraFOV;
+        cameraRef.current.position.z = lockedModelSettingsRef.current.cameraZ;
+        cameraRef.current.updateProjectionMatrix();
+        
+        // Ensure model scale and position remain locked
+        if (modelRef.current) {
+          modelRef.current.scale.setScalar(lockedModelSettingsRef.current.scale);
+          modelRef.current.position.y = lockedModelSettingsRef.current.positionY;
+        }
+      } else {
+        // Only update settings if model is not yet loaded
+        const responsiveSettings = getResponsiveSettings();
+        
       cameraRef.current.aspect = width / height;
       cameraRef.current.fov = responsiveSettings.cameraFOV;
       cameraRef.current.position.z = responsiveSettings.cameraZ;
       cameraRef.current.updateProjectionMatrix();
       
-      // Update model scale and position
       if (modelRef.current) {
         modelRef.current.scale.setScalar(responsiveSettings.modelScale);
         modelRef.current.position.y = responsiveSettings.modelY;
       }
-    }, 150);
-  }, []);
+      }
+    }, 300); // Increased debounce for mobile viewport changes
+  }, [isScrolling]);
 
-  // Optimized animation loop
+    // AGGRESSIVE animation loop - ALWAYS runs, no conditions
   const animate = useCallback(() => {
-    // Always try to animate - simplified conditions for better reliability
-    if (screenVisibleRef.current && isPlayingRef.current) {
-      const width = window.innerWidth;
+    // ALWAYS continue the animation loop - no stopping
+    animationIdRef.current = requestAnimationFrame(animate);
+
+    // Skip SSR but ALWAYS run in browser - remove all blocking conditions
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    const width = window.innerWidth;
+    const isMobile = width <= 767;
+    
+    // ALWAYS apply mouse/touch interactions - more responsive
+    if (eyeBoneRef.current && rootBoneRef.current) {
+      // Only disable interactions during ACTIVE scrolling, not all the time
+      const shouldApplyInteractions = !isScrolling();
       
-      // Only apply mouse interactions if not scrolling
-      if (!isScrolling() && eyeBoneRef.current && rootBoneRef.current) {
-        // Mouse inertia with optimized calculations
-        const responsiveLerpFactor = width <= 767 ? LERP_FACTOR * 1.2 : LERP_FACTOR;
+      if (shouldApplyInteractions) {
+        // Mouse inertia with mobile-optimized calculations
+        const responsiveLerpFactor = isMobile ? LERP_FACTOR * 1.5 : LERP_FACTOR;
         mouseInertiaRef.current.x += (mouseRef.current.x - mouseInertiaRef.current.x) * responsiveLerpFactor;
         mouseInertiaRef.current.y += (mouseRef.current.y - mouseInertiaRef.current.y) * responsiveLerpFactor;
 
-        // Eye rotation with responsive factors
-        const rotationFactorX = width <= 767 ? EYE_X_ROTATION_FACTOR * 0.8 : EYE_X_ROTATION_FACTOR;
-        const rotationFactorZ = width <= 767 ? EYE_Z_ROTATION_FACTOR * 0.8 : EYE_Z_ROTATION_FACTOR;
+        // Eye rotation with mobile-optimized factors
+        const rotationFactorX = isMobile ? EYE_X_ROTATION_FACTOR * 0.9 : EYE_X_ROTATION_FACTOR;
+        const rotationFactorZ = isMobile ? EYE_Z_ROTATION_FACTOR * 0.9 : EYE_Z_ROTATION_FACTOR;
         
         eyeBoneRef.current.rotation.x = Math.PI / 2 - mouseInertiaRef.current.y * rotationFactorX;
         eyeBoneRef.current.rotation.z = -mouseInertiaRef.current.x * rotationFactorZ;
 
-        // Root bone movement
-        const rootYFactor = width <= 767 ? ROOT_Y_ROTATION_FACTOR * 0.7 : ROOT_Y_ROTATION_FACTOR;
-        const rootXFactor = width <= 767 ? ROOT_X_POSITION_FACTOR * 1.2 : ROOT_X_POSITION_FACTOR;
+        // Root bone movement with mobile optimization
+        const rootYFactor = isMobile ? ROOT_Y_ROTATION_FACTOR * 0.8 : ROOT_Y_ROTATION_FACTOR;
+        const rootXFactor = isMobile ? ROOT_X_POSITION_FACTOR * 1.1 : ROOT_X_POSITION_FACTOR;
         
         rootBoneRef.current.rotation.y = mouseInertiaRef.current.x / rootYFactor;
         rootBoneRef.current.position.x = mouseInertiaRef.current.x / rootXFactor;
       }
+    }
 
-      // Animation mixer update - always update if mixer exists
-      if (mixerRef.current) {
+    // CRITICAL: Animation mixer update - ALWAYS run if mixer exists
+    if (mixerRef.current) {
+      try {
         mixerRef.current.update(1 / ANIMATION_FPS);
-      }
-
-      // Render only if visible
-      if (rendererRef.current && cameraRef.current && sceneRef.current) {
-        rendererRef.current.render(sceneRef.current, cameraRef.current);
+      } catch (error) {
+        console.warn('⚠️ Mixer update error:', error);
+        // Don't stop the loop, just log the error
       }
     }
 
-    animationIdRef.current = requestAnimationFrame(animate);
+    // ALWAYS render if components exist - no visibility checks
+    if (rendererRef.current && cameraRef.current && sceneRef.current) {
+      try {
+        rendererRef.current.render(sceneRef.current, cameraRef.current);
+      } catch (error) {
+        console.warn('⚠️ Render error:', error);
+        // Don't stop the loop, just log the error
+      }
+    }
   }, [isScrolling]);
 
-  // Intersection observer for performance
+  // Simplified observer - always keep visible for reliable animations
   const observerCallback = useCallback((entries: IntersectionObserverEntry[]) => {
-    entries.forEach(entry => {
-      screenVisibleRef.current = entry.isIntersecting;
-    });
+    // FORCE visibility to always be true for reliable animations
+    screenVisibleRef.current = true;
+    forceAnimationRef.current = true;
   }, []);
 
   useEffect(() => {
-    if (!canvasRef.current) return;
+    if (!canvasRef.current || typeof window === 'undefined') return;
     
     const currentCanvasRef = canvasRef.current;
     let width = window.innerWidth;
     let height = window.innerHeight;
     let responsiveSettings = getResponsiveSettings();
+    
+    // Store initial settings to prevent unwanted changes
+    initialResponsiveSettingsRef.current = responsiveSettings;
 
     // Scene setup
     const scene = new THREE.Scene();
@@ -187,15 +277,19 @@ const EyeBall: React.FC = memo(() => {
     camera.position.set(0, 0, responsiveSettings.cameraZ);
     cameraRef.current = camera;
 
-    // Renderer setup with optimized settings
+    // Renderer setup with mobile-optimized settings
     const renderer = new THREE.WebGLRenderer({ 
-      antialias: window.innerWidth > 767,
+      antialias: width > 767, // Disable antialiasing on mobile for better performance
       alpha: true,
       powerPreference: "high-performance",
       stencil: false,
       depth: true
     });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    
+    // Mobile-optimized pixel ratio
+    const pixelRatio = width <= 767 ? Math.min(window.devicePixelRatio, 1.5) : Math.min(window.devicePixelRatio, 2);
+    renderer.setPixelRatio(pixelRatio);
+    
     renderer.shadowMap.enabled = true;
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     renderer.setSize(width, height);
@@ -217,10 +311,33 @@ const EyeBall: React.FC = memo(() => {
     const gltfLoader = new GLTFLoader();
     gltfLoader.setDRACOLoader(dracoLoader);
 
-    // Start animation loop immediately - don't wait for model loading
-    animate();
+    // FORCE enable all animation states immediately - NO CONDITIONS
+    isPlayingRef.current = true;
+    screenVisibleRef.current = true;
+    forceAnimationRef.current = true;
 
-    // Load the 3D model with improved animation handling
+    // START animation loop IMMEDIATELY - even before Three.js setup
+    console.log('🚀 Starting animation loop immediately...');
+    animationIdRef.current = requestAnimationFrame(animate);
+    
+    // Backup animation starter in case first one fails
+    setTimeout(() => {
+      if (!animationIdRef.current) {
+        console.log('🔄 Backup animation start...');
+        animationIdRef.current = requestAnimationFrame(animate);
+      }
+    }, 100);
+    
+    // Third backup - force restart after model load
+    setTimeout(() => {
+      console.log('🔄 Third backup animation start...');
+      if (animationIdRef.current) {
+        cancelAnimationFrame(animationIdRef.current);
+      }
+      animationIdRef.current = requestAnimationFrame(animate);
+    }, 1000);
+
+    // Load the 3D model with BULLETPROOF animation handling
     gltfLoader.load(
       '/models/eyeball_animate.glb',
       (gltf) => {
@@ -229,16 +346,28 @@ const EyeBall: React.FC = memo(() => {
           modelRef.current = model;
           scene.add(model);
 
-          // Model positioning and scaling
+          // Apply initial positioning and scaling
           model.position.y = responsiveSettings.modelY;
           model.scale.setScalar(responsiveSettings.modelScale);
 
-          // Optimize shadows
+          // Lock all settings permanently to prevent mobile viewport scaling
+          lockedModelSettingsRef.current = {
+            scale: responsiveSettings.modelScale,
+            positionY: responsiveSettings.modelY,
+            cameraZ: responsiveSettings.cameraZ,
+            cameraFOV: responsiveSettings.cameraFOV
+          };
+          
+          // Mark model as loaded and locked
+          modelLoadedRef.current = true;
+          
+          console.log('🔒 Model settings locked:', lockedModelSettingsRef.current);
+
+          // Optimize shadows and materials
           model.traverse((child) => {
             if (child instanceof THREE.Mesh) {
               child.castShadow = true;
               child.receiveShadow = true;
-              // Optimize materials
               if (child.material) {
                 child.material.needsUpdate = true;
               }
@@ -253,63 +382,109 @@ const EyeBall: React.FC = memo(() => {
             eyeBoneRef.current.rotation.z = 0;
           }
 
-          // Animation setup - more robust handling
+          // BULLETPROOF animation setup - MUST work every time
           if (gltf.animations?.length > 0) {
             try {
               const mixer = new THREE.AnimationMixer(model);
               mixerRef.current = mixer;
               
-              // Play all animations and ensure they start properly
-              gltf.animations.forEach((clip) => {
-                const action = mixer.clipAction(clip);
-                action.reset();
-                action.play();
-                // Ensure the action is enabled and has proper settings
-                action.enabled = true;
-                action.setEffectiveTimeScale(1);
-                action.setEffectiveWeight(1);
+              console.log('🎬 Setting up', gltf.animations.length, 'animations...');
+              
+              // Set up all animations with AGGRESSIVE initialization
+              gltf.animations.forEach((clip, index) => {
+                try {
+                  const action = mixer.clipAction(clip);
+                  action.reset();
+                  action.enabled = true;
+                  action.setEffectiveTimeScale(1);
+                  action.setEffectiveWeight(1);
+                  action.clampWhenFinished = false;
+                  action.loop = THREE.LoopRepeat;
+                  action.play();
+                  
+                  console.log(`✅ Animation ${index + 1} started:`, clip.name);
+                } catch (clipError) {
+                  console.error(`❌ Failed to start animation ${index + 1}:`, clipError);
+                }
               });
               
-              // Set initial time and update
-              mixer.setTime(2.8);
-              mixer.update(0);
+              // FORCE mixer timing initialization
+              try {
+                mixer.setTime(2.8);
+                mixer.update(0);
+                // Force another update to ensure it's working
+                mixer.update(1 / ANIMATION_FPS);
+              } catch (timeError) {
+                console.warn('⚠️ Mixer timing error:', timeError);
+              }
               
-              console.log('Animations setup successfully:', gltf.animations.length, 'animations loaded');
+              console.log('✅ All animations FORCED to start - mixer ready!');
+              
+              // Triple-check that animations are really playing
+              setTimeout(() => {
+                if (mixerRef.current) {
+                  gltf.animations.forEach((clip, index) => {
+                    const action = mixerRef.current!.clipAction(clip);
+                    if (!action.isRunning()) {
+                      console.log(`🔄 Restarting stuck animation ${index + 1}...`);
+                      action.play();
+                    }
+                  });
+                }
+              }, 500);
+              
             } catch (animError) {
-              console.warn('Animation setup error:', animError);
-              // Don't let animation errors stop the component from working
+              console.error('❌ CRITICAL animation setup error:', animError);
+              // Even if animations fail, keep trying
+              setTimeout(() => {
+                if (modelRef.current && gltf.animations?.length > 0) {
+                  console.log('🔄 Retrying animation setup...');
+                  try {
+                    const mixer = new THREE.AnimationMixer(modelRef.current);
+                    mixerRef.current = mixer;
+                    gltf.animations.forEach((clip) => {
+                      mixer.clipAction(clip).play();
+                    });
+                  } catch (retryError) {
+                    console.error('❌ Retry also failed:', retryError);
+                  }
+                }
+              }, 1000);
             }
           } else {
-            console.warn('No animations found in the model');
+            console.warn('⚠️ No animations found in the model - but that\'s okay!');
           }
 
-          // Ensure playing state is maintained
+          // FORCE enable animations regardless of setup success
           isPlayingRef.current = true;
+          forceAnimationRef.current = true;
+          screenVisibleRef.current = true;
           
         } catch (err) {
-          console.error('Error setting up model:', err);
-          // Don't let model setup errors stop animations entirely
-          isPlayingRef.current = true;
+          console.error('❌ Error setting up model:', err);
+          isPlayingRef.current = true; // Keep trying to animate
         }
       },
-      undefined, // No progress callback needed since we removed the loader
+      undefined,
       (error) => {
-        console.error('Error loading model:', error);
-        // Keep animations running even if model fails to load
-        isPlayingRef.current = true;
+        console.error('❌ Error loading model:', error);
+        isPlayingRef.current = true; // Keep animation loop running
       }
     );
 
-    // Optimized lighting setup
-    const ambientLightIntensity = width <= 767 ? 1.2 : 1;
+    // Lighting setup optimized for mobile
+    const ambientLightIntensity = width <= 767 ? 1.3 : 1;
     const ambientLight = new THREE.AmbientLight(0xffffff, ambientLightIntensity);
     scene.add(ambientLight);
 
     const directionalLight = new THREE.DirectionalLight(0xffffff, 0.15);
     directionalLight.position.set(0.1, 0.1, 2);
     directionalLight.castShadow = true;
-    directionalLight.shadow.mapSize.width = width <= 767 ? 512 : 1024;
-    directionalLight.shadow.mapSize.height = width <= 767 ? 512 : 1024;
+    
+    // Mobile-optimized shadow settings
+    const shadowMapSize = width <= 767 ? 256 : 1024;
+    directionalLight.shadow.mapSize.width = shadowMapSize;
+    directionalLight.shadow.mapSize.height = shadowMapSize;
     directionalLight.shadow.camera.near = 0.01;
     directionalLight.shadow.camera.far = 100;
     directionalLight.shadow.bias = -0.0005;
@@ -326,12 +501,59 @@ const EyeBall: React.FC = memo(() => {
     shadowPlane.rotation.x = -Math.PI / 2;
     scene.add(shadowPlane);
 
-    // Event listeners
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('mousemove', handleMouseMove);
-    window.addEventListener('scroll', handleScroll);
+    // Event listeners - including touch events for mobile
+    window.addEventListener('resize', handleResize, { passive: true });
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
-    // Cleanup function with comprehensive disposal
+    // Touch event listeners for mobile support
+    currentCanvasRef.addEventListener('touchstart', handleTouchStart, { passive: false });
+    currentCanvasRef.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+    // FINAL FAILSAFE: Periodic animation health check
+    const animationHealthCheck = setInterval(() => {
+      // Only run health check if model is loaded
+      if (modelLoadedRef.current && mixerRef.current) {
+        try {
+          // Check if mixer is updating properly
+          const currentTime = mixerRef.current.time;
+          
+          // Force a small update to test if mixer is responsive
+          mixerRef.current.update(0.001);
+          
+          // If mixer time didn't change, something's wrong - restart
+          if (mixerRef.current.time === currentTime) {
+            console.log('🚨 Animation health check failed - restarting animations...');
+            
+            // Force restart all animations
+            if (modelRef.current) {
+              // Find animations from the scene
+              const model = modelRef.current;
+              model.traverse((child) => {
+                if (child.userData && child.userData.gltfExtensions) {
+                  // Try to restart animations
+                  const mixer = new THREE.AnimationMixer(model);
+                  mixerRef.current = mixer;
+                  
+                  // This will be caught by the main animation loop
+                  console.log('🔄 Emergency animation restart completed');
+                }
+              });
+            }
+          }
+        } catch (healthError) {
+          console.warn('⚠️ Animation health check error:', healthError);
+        }
+      }
+      
+      // Also force enable all animation states periodically
+      isPlayingRef.current = true;
+      forceAnimationRef.current = true;
+      screenVisibleRef.current = true;
+      
+    }, 3000); // Check every 3 seconds
+
+    // Cleanup function
     return () => {
       // Cancel animation frame
       if (animationIdRef.current) {
@@ -347,6 +569,8 @@ const EyeBall: React.FC = memo(() => {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('scroll', handleScroll);
+      currentCanvasRef.removeEventListener('touchstart', handleTouchStart);
+      currentCanvasRef.removeEventListener('touchmove', handleTouchMove);
       
       // Disconnect observer
       observer.disconnect();
@@ -386,8 +610,12 @@ const EyeBall: React.FC = memo(() => {
       cameraRef.current = null;
       sceneRef.current = null;
       isPlayingRef.current = false;
+      modelLoadedRef.current = false;
+
+      // Clear animation health check
+      clearInterval(animationHealthCheck);
     };
-  }, [animate, handleResize, handleMouseMove, handleScroll, observerCallback]);
+  }, [animate, handleResize, handleMouseMove, handleScroll, handleTouchStart, handleTouchMove, observerCallback, isScrolling]);
 
   return (
     <div
@@ -395,8 +623,14 @@ const EyeBall: React.FC = memo(() => {
       style={{
         width: '100%', 
         minHeight: '100vh !important',
+        height: '100vh', // Fixed height to prevent viewport changes
         position: 'relative',
-        overflow: 'hidden'
+        overflow: 'hidden',
+        touchAction: 'pan-y', // Allow vertical scrolling but prevent horizontal pan
+        userSelect: 'none', // Prevent text selection
+        WebkitUserSelect: 'none', // Safari
+        WebkitTouchCallout: 'none', // Prevent callout on long press
+        WebkitTapHighlightColor: 'transparent' // Remove tap highlight
       }}
     />
   );

@@ -194,8 +194,7 @@ const responsiveCSS = `
     }
 
     .bottom-text p {
-      font-size: 0.8rem !important;
-      text-align: center !important;
+      display: none !important;
     }
 
     .eye-ball-container {
