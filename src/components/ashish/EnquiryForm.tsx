@@ -155,11 +155,7 @@ const EnquiryForm = ({ color, textColor }: { color: string, textColor?: string }
       </div>
 
       <h3 style={{ color: color, marginBottom: 24 }}>
-        {/* Send us a message */}
-        {/* Got something to say? */}
         Let&apos;s talk about your project
-        {/* Let's Begin this Journey  */}
-        {/* Reach out to us */}
       </h3>
       {/* <span className={styles.underline}></span> */}
 

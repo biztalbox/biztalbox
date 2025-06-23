@@ -1,9 +1,10 @@
 "use client";
-import React from "react";
+import React, { useEffect, useMemo, useCallback } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollSmoother, ScrollTrigger, SplitText } from "@/plugins";
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+// import useScrollSmooth from "@/hooks/use-scroll-smooth";
+import { ScrollTrigger, SplitText } from "@/plugins";
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 // internal imports
 import Wrapper from "@/layouts/wrapper";
@@ -14,9 +15,41 @@ import { charAnimation, titleAnimation } from "@/utils/title-animation";
 import FooterFour from "@/layouts/footers/footer-four";
 import ScrollPinImage from "@/components/ScrollPinImage";
 import ServiceHighlights from "@/components/ashish/ServiceHighlights";
+import { faq_data, powers, servicesData } from "./data";
 
 const ContentMarketingPage = () => {
+  const [activePower, setActivePower] = React.useState<number | null>(1);
   const highlightColor = "#707a80"; // You can change this color or make it a prop
+  // Memoize RGB values to prevent repeated parsing
+  const colorRGB = useMemo(() => {
+    const r = parseInt(highlightColor.slice(1, 3), 16);
+    const g = parseInt(highlightColor.slice(3, 5), 16);
+    const b = parseInt(highlightColor.slice(5, 7), 16);
+    return { r, g, b };
+  }, [highlightColor]);
+
+  // Memoize highlights array to prevent unnecessary re-renders
+  const highlights = useMemo(
+    () => [
+      "12+ Years of Professional Writing Experience",
+      "Compelling Content That Converts",
+      "SEO-Friendly & Brand-Aligned Copy",
+      "Tailored Messaging for Your Audience",
+    ],
+    []
+  );
+  // Memoize active power data to avoid repeated array searches
+  const activePowerData = useMemo(() => {
+    return activePower ? powers.find((p) => p.id === activePower) : null;
+  }, [activePower]);
+
+  // Memoize power click handler
+  const handlePowerClick = useCallback(
+    (powerId: number) => {
+      setActivePower(activePower === powerId ? null : powerId);
+    },
+    [activePower]
+  );
 
   useGSAP(() => {
     const timer = setTimeout(() => {
@@ -26,23 +59,6 @@ const ContentMarketingPage = () => {
     }, 100);
     return () => clearTimeout(timer);
   });
-  const highlights = [
-    "12+ Years of Professional Writing Experience",
-    "Compelling Content That Converts",
-    "SEO-Friendly & Brand-Aligned Copy",
-    "Tailored Messaging for Your Audience",
-  ];
-
-  const services = [
-    "Website Content",
-    "Blog & Article Writing",
-    "Product Descriptions",
-    "Social Media Captions",
-    "Email Campaigns",
-    "Press Releases",
-    " Ad Copy & Slogans",
-
-  ];
 
   return (
     <Wrapper>
@@ -75,94 +91,74 @@ const ContentMarketingPage = () => {
                     }}
                   >
                     Professional Copywriting Services
-
                   </h2>
                   <p>
-                    Copywriting is a balance between writing good quality, SEO-friendly content that captures both the hearts and clicks of people and search engines. It increases traffic, establishes authority, and fosters trust, with the right combination of keywords, storytelling, and multimedia to drive digital traction.
-
-
-                    Good copywriters don&apos;t just make things sound pretty — they do the heavy lifting.
-
-                    It is the voice behind a brand, the hook that captures you in an ad, and the warmth that greets you in an email. Copywriters aren&apos;t ust writers, they&apos;re strategists who can spin browsers into buyers. Their words lead, woo, convert. Every sentence on websites, campaigns, social media moves the reader a step closer to action.
+                    Copywriting is a balance between writing good quality,
+                    SEO-friendly content that captures both the hearts and
+                    clicks of people and search engines. It increases traffic,
+                    establishes authority, and fosters trust, with the right
+                    combination of keywords, storytelling, and multimedia to
+                    drive digital traction. Good copywriters don&apos;t
+                    just make things sound pretty — they do the heavy lifting.
+                    It is the voice behind a brand, the hook that captures you
+                    in an ad, and the warmth that greets you in an email.
+                    Copywriters aren&apos;t ust writers, they&apos;re
+                    strategists who can spin browsers into buyers. Their words
+                    lead, woo, convert. Every sentence on websites, campaigns,
+                    social media moves the reader a step closer to action.
                   </p>
-                </div>
-                <ServiceHighlights color={highlightColor} highlights={highlights} services={services} />
-                <hr />
-                <div className="project-details-1-info-wrap">
-                  <h3
-                    className="project-details-1-subtitle"
-                    style={{ lineHeight: 1.4, color: highlightColor }}
-                  >
-                    Contenteena
-                  </h3>
-                  <h3
-                    className="project-details-1"
-                    style={{
-                      color: "white",
-                      fontSize: "2.5rem",
-                      fontWeight: 700,
-                    }}
-                  >
-                    Copy Writing
-                  </h3>
-                  <h3
-                    className="project-details-1-subtitle"
-                    style={{ color: "lightgray", marginBottom: "20px" }}
-                  >
-                    SUPER POWERS :-
-                  </h3>
-                  <div className="project-details-1-info">
-                    <span>The Wordsmith- </span>
-                    <p>
-                      Content –  The skill of writing the perfect, SEO-friendly content that humans and search engines adore.
-                      They don&apos;t write content; they calibrate words, tone, cadence and structure to make every word count.
-                    </p>
-                  </div>
+                  <div className="super-powers-section mt-40">
+                    <h3
+                      className="super-powers-title"
+                      style={{
+                        color: highlightColor,
+                        fontSize: "1.4rem",
+                        fontWeight: 700,
+                        marginBottom: "20px",
+                        letterSpacing: "2px",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      SUPER POWERS
+                    </h3>
 
-                  <div className="project-details-1-info">
-                    <span>The Content Alchemist- </span>
-                    <p>
-                      Content Transformation – .Ability to excavate gold from the driest of ideas —
-                      it&apos;s just a matter of finding the right voice, the right angle, and a little magic.
-                    </p>
-                  </div>
-                  <div className="project-details-1-info">
-                    <span>The Idea Incubator-</span>
-                    <p>
-                      Idea Generation – The ability to create new, trending and ground-breaking ideas for engaging content.
-                      They can spin magic from just one keyword or phrase.
-                    </p>
-                  </div>
-                  <div className="project-details-1-info">
-                    <span>The Copy Commander- </span>
-                    <p>
-                      Persuasive Writing – The skill to write persuasive, compelling content that turns
-                      lurking readers into fans – and fans into buyers. The weapon is word play, with a personal edge.
-                    </p>
-                  </div>
-                  <div className="project-details-1-info">
-                    <span>The Trend Whisperer-</span>
-                    <p>
-                      Trendspotting & Adaptation –  Trendspotting & Adaptation – The savviness to spot
-                      whats&apos;s trending and being able to instantly render it into content that&apos;s smart, fast and just impossible to ignore.
-                    </p>
-                  </div>
-                  <div className="project-details-1-info">
-                    <span>The Grammar Guardian-</span>
-                    <p>
-                      Error-Free Content – The power to remove typos and omissions, rewriting every sentence until it&apos;s free of errors.
-                      Proofreading is, after all, a nonnegotiable part of the job — it&apos;s that final layer of polish that makes strong copy shine.
-                    </p>
-                  </div>
-                  <div className="project-details-1-info">
-                    <span>Social Butterfly-</span>
-                    <p>
-                      Social Media Content Strategy – The ability to create content that thrives on social media platforms,
-                      driving viral engagement and shares. They understand the vibe of each platform, and they tailor content
-                      according to their individual rhythm.
-                    </p>
+                    {/* Compact Power Pills */}
+                    <div className="powers-pills-container">
+                      {powers.map((power) => (
+                        <button
+                          key={power.id}
+                          className={`power-pill ${
+                            activePower === power.id ? "active" : ""
+                          }`}
+                          onClick={() => handlePowerClick(power.id)}
+                        >
+                          <span className="power-pill-name">{power.name}</span>
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* Active Power Description */}
+                    {activePowerData && (
+                      <div className="active-power-description">
+                        <div className="description-content">
+                          <h4 className="description-title">
+                            {activePowerData.name}
+                          </h4>
+                          <p className="description-text">
+                            {activePowerData.description}
+                          </p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
+                <ServiceHighlights
+                  faq_data={faq_data}
+                  color={highlightColor}
+                  highlights={highlights}
+                  servicesData={servicesData}
+                />
+                {/* <hr /> */}
               </div>
             </ScrollPinImage>
             {/* portfolio details area */}
@@ -173,9 +169,129 @@ const ContentMarketingPage = () => {
           {/* footer area */}
         </div>
       </div>
+
       <style jsx>{`
         .project-details-1-info > span {
           color: ${highlightColor} !important;
+        }
+
+        /* Super Powers Styles */
+        .super-powers-section {
+          margin-top: 30px;
+        }
+
+        .powers-pills-container {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+          margin-bottom: 20px;
+        }
+
+        .power-pill {
+          display: inline-flex;
+          align-items: center;
+          background: rgba(255, 255, 255, 0.08);
+          border: 2px solid
+            rgba(${colorRGB.r}, ${colorRGB.g}, ${colorRGB.b}, 0.4);
+          border-radius: 50px;
+          padding: 8px 16px;
+          color: #e0e0e0;
+          font-size: 0.9rem;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          backdrop-filter: blur(10px);
+          white-space: nowrap;
+        }
+
+        .power-pill:hover {
+          background: rgba(${colorRGB.r}, ${colorRGB.g}, ${colorRGB.b}, 0.15);
+          border-color: ${highlightColor};
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px
+            rgba(${colorRGB.r}, ${colorRGB.g}, ${colorRGB.b}, 0.3);
+        }
+
+        .power-pill.active {
+          background: ${highlightColor};
+          border-color: ${highlightColor};
+          color: #000;
+          font-weight: 600;
+        }
+
+        .power-pill-name {
+          font-size: 0.85rem;
+          letter-spacing: 0.5px;
+        }
+
+        .active-power-description {
+          margin-top: 20px;
+          padding: 20px;
+          background: linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.08),
+            rgba(255, 255, 255, 0.04)
+          );
+          border: 1px solid
+            rgba(${colorRGB.r}, ${colorRGB.g}, ${colorRGB.b}, 0.3);
+          border-radius: 15px;
+          backdrop-filter: blur(10px);
+          animation: slideDown 0.3s ease;
+        }
+
+        .description-content {
+          max-width: 100%;
+        }
+
+        .description-title {
+          color: ${highlightColor};
+          font-size: 1.2rem;
+          font-weight: 700;
+          margin-bottom: 12px;
+        }
+
+        .description-text {
+          color: #e0e0e0;
+          font-size: 0.95rem;
+          line-height: 1.6;
+          margin: 0;
+        }
+
+        @keyframes slideDown {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+            max-height: 0;
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+            max-height: 300px;
+          }
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+          .powers-pills-container {
+            gap: 8px;
+          }
+
+          .power-pill {
+            padding: 6px 12px;
+            font-size: 0.8rem;
+          }
+
+          .power-pill-name {
+            font-size: 0.75rem;
+          }
+
+          .description-title {
+            font-size: 1.1rem;
+          }
+
+          .description-text {
+            font-size: 0.9rem;
+          }
         }
       `}</style>
     </Wrapper>

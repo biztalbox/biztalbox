@@ -1,10 +1,10 @@
 "use client";
-import React from "react";
+import React, { useEffect, useMemo, useCallback } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 // import useScrollSmooth from "@/hooks/use-scroll-smooth";
-import { ScrollSmoother, ScrollTrigger, SplitText } from "@/plugins";
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+import { ScrollTrigger, SplitText } from "@/plugins";
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 // internal imports
 import Wrapper from "@/layouts/wrapper";
@@ -15,9 +15,38 @@ import { charAnimation, titleAnimation } from "@/utils/title-animation";
 import FooterFour from "@/layouts/footers/footer-four";
 import ScrollPinImage from "@/components/ScrollPinImage";
 import ServiceHighlights from "@/components/ashish/ServiceHighlights";
+import { faq_data, powers, servicesData } from "./data";
 
 const GoogleAdsServicePage = () => {
+  const [activePower, setActivePower] = React.useState<number | null>(1);
   const highlightColor = "#b24342"; // You can change this color or make it a prop
+
+  // Memoize RGB values to prevent repeated parsing
+  const colorRGB = useMemo(() => {
+    const r = parseInt(highlightColor.slice(1, 3), 16);
+    const g = parseInt(highlightColor.slice(3, 5), 16);
+    const b = parseInt(highlightColor.slice(5, 7), 16);
+    return { r, g, b };
+  }, [highlightColor]);
+
+  // Memoize highlights array to prevent unnecessary re-renders
+  const highlights = useMemo(() => [
+    "5+ Years of Data-Driven Marketing Expertise",
+    "Proven ROI Improvement Across Campaigns",
+    "Multi-Channel Strategy & Execution",
+    "Transparent Reporting & Analytics",
+  ], []);
+
+  // Memoize active power data to avoid repeated array searches
+  const activePowerData = useMemo(() => {
+    return activePower ? powers.find(p => p.id === activePower) : null;
+  }, [activePower]);
+
+  // Memoize power click handler
+  const handlePowerClick = useCallback((powerId: number) => {
+    setActivePower(activePower === powerId ? null : powerId);
+  }, [activePower]);
+
   useGSAP(() => {
     const timer = setTimeout(() => {
       charAnimation();
@@ -26,24 +55,6 @@ const GoogleAdsServicePage = () => {
     }, 100);
     return () => clearTimeout(timer);
   });
-  const highlights = [
-    "5+ Years of Data-Driven Marketing Expertise",
-    "Proven ROI Improvement Across Campaigns",
-    "Multi-Channel Strategy & Execution",
-    "Transparent Reporting & Analytics",
-
-  ];
-
-  const services = [
-    "PPC Campaign Management",
-    "Conversion Rate Optimization",
-    "Google Ads Management",
-    "Retargeting Campaigns",
-    "Analytics & Performance Tracking",
-    "A/B Testing",
-    "Lead Generation Strategies",
-
-  ];
 
   return (
     <Wrapper>
@@ -65,7 +76,7 @@ const GoogleAdsServicePage = () => {
                     className="project-details-1-subtitle"
                     style={{ lineHeight: 1.4 }}
                   >
-                     ROI-Focused Performance Marketing to Maximize Your Growth
+                    ROI-Focused Performance Marketing to Maximize Your Growth
                   </h1>
                   <h2
                     className="project-details-1"
@@ -76,113 +87,64 @@ const GoogleAdsServicePage = () => {
                     }}
                   >
                     Performance Marketing Agency 
-
                   </h2>
                   <p>
                     Google Ads is a versatile tool and every click is an instant winner. It improves return on investment (ROI) and generates high-value leads through strategic bidding, precise targeting, and smart keyword execution. Its constant optimisation maintains it at the forefront of the digital scene.
-
-
                     Enter the realm of digital advertising where heroes rise, wielding data and creativity to conquer the market.
-
-
                     They fight the battle of the internet with every campaign, so your brand can reign supreme over the competition.
-
                   </p>
-                </div>
-                <ServiceHighlights color={highlightColor} highlights={highlights} services={services} />
-                <hr />
-                <div className="project-details-1-info-wrap">
+
+                  {/* Super Powers Section */}
+                  <div className="super-powers-section mt-40">
                     <h3
-                    className="project-details-1-subtitle"
-                    style={{ lineHeight: 1.4, color: highlightColor }}
-                  >
-                    Google Ads
-                  </h3>
-                  <h3
-                    className="project-details-1"
-                    style={{
-                      color: "white",
-                      fontSize: "2.5rem",
-                      fontWeight: 700,
-                    }}
-                  >
-                    Performance Marketing
-                  </h3>
-                  <h3
-                    className="project-details-1-subtitle"
-                    style={{ color: "lightgray", marginBottom: "20px" }}
-                  >
-                    SUPER POWERS :-
-                  </h3>
-                  <div className="project-details-1-info">
-                    <span>The Click Conqueror </span>
-                    <p>
-                      Google Ads Mastery – The capacity to create, implement, and refine precise advertising
-                      campaigns that turn each click into measurable success.
-                      Having the smarts to analyze trends and make the right moves, this hero
-                      dominates the digital arena, converting possibilities into reality.
-                    </p>
-                  </div>
-                  <div className="project-details-1-info">
-                    <span> The Conversion Catalyst </span>
-                    <p>
-                      Conversion Optimization – The aptitude to execute effective strategies to
-                      convert traffic into high-value leads and sales.
-                      With the elegance of a master alchemist, they turn visitors into
-                      loyal customers, forging meaningful journeys that stick.
+                      className="super-powers-title"
+                      style={{
+                        color: highlightColor,
+                        fontSize: "1.4rem",
+                        fontWeight: 700,
+                        marginBottom: "20px",
+                        letterSpacing: "2px",
+                        textTransform: "uppercase"
+                      }}
+                    >
+                    SUPER POWERS
+                    </h3>
+                    
+                    {/* Compact Power Pills */}
+                    <div className="powers-pills-container">
+                      {powers.map((power) => (
+                        <button
+                          key={power.id}
+                          className={`power-pill ${activePower === power.id ? 'active' : ''}`}
+                          onClick={() => handlePowerClick(power.id)}
+                        >
+                          <span className="power-pill-name">{power.name}</span>
+                        </button>
+                      ))}
+                    </div>
 
-                    </p>
-                  </div>
-                  <div className="project-details-1-info">
-                    <span>The Bid Boss</span>
-                    <p>
-                      Automated Bidding Excellence – Mastered with bidding strategies
-                      that enhance efficiency and reduce expenses.
-                      This strategist commands the auction arena, deploying smart
-                      bids that outmaneuver rivals and maximize returns.
-
-                    </p>
-                  </div>
-                  <div className="project-details-1-info">
-                    <span>The Keyword King </span>
-                    <p>
-                      Keyword Research & Targeting – Ability to find and leverage the most powerful
-                      keywords that are rank worthy.
-                      Armed with an arsenal of influence, they use it to unlock the words that open
-                      doors and connect your brand to the audience it seeks.
-
-                    </p>
-                  </div>
-                  <div className="project-details-1-info">
-                    <span>The Data Dominator</span>
-                    <p>
-                      Ability to decipher complicated data into meaningful insight that increases with greater
-                      campaign performances.
-                      With a mind like a supercomputer, they interpret the numbers, revealing paths to success
-                      hidden in plain sight.
-                    </p>
-                  </div>
-                  <div className="project-details-1-info">
-                    <span>The ROI Renegade</span>
-                    <p>
-                      Return on Investment Optimization – The know how to maximize ROI
-                      by controlling ad spend and returns with intelligent campaign management.
-                      Rebelling against the standards, they go beyond limits and make sure every single penny
-                      counts in taking your brand to the next level.
-
-                    </p>
-                  </div>
-                  <div className="project-details-1-info">
-                    <span>The Audience Amplifier </span>
-                    <p>
-                      Remarketing & Audience Targeting – The power of finding, retargeting and building your
-                      audience with high accuracy, data-driven campaigns.
-                      They tune into the frequencies of consumer behavior and amplify
-                      your message, so that it resonates where it matters most.
-
-                    </p>
+                    {/* Active Power Description */}
+                    {activePowerData && (
+                      <div className="active-power-description">
+                        <div className="description-content">
+                          <h4 className="description-title">
+                            {activePowerData.name}
+                          </h4>
+                          <p className="description-text">
+                            {activePowerData.description}
+                          </p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
+                <ServiceHighlights
+                  faq_data={faq_data}
+                  color={highlightColor}
+                  highlights={highlights}
+                  servicesData={servicesData}
+                />
+                {/* <hr /> */}
               </div>
             </ScrollPinImage>
             {/* portfolio details area */}
@@ -193,9 +155,122 @@ const GoogleAdsServicePage = () => {
           {/* footer area */}
         </div>
       </div>
+
       <style jsx>{`
         .project-details-1-info > span {
           color: ${highlightColor} !important;
+        }
+
+        /* Super Powers Styles */
+        .super-powers-section {
+          margin-top: 30px;
+        }
+
+        .powers-pills-container {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+          margin-bottom: 20px;
+        }
+
+        .power-pill {
+          display: inline-flex;
+          align-items: center;
+          background: rgba(255, 255, 255, 0.08);
+          border: 2px solid rgba(${colorRGB.r}, ${colorRGB.g}, ${colorRGB.b}, 0.4);
+          border-radius: 50px;
+          padding: 8px 16px;
+          color: #e0e0e0;
+          font-size: 0.9rem;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          backdrop-filter: blur(10px);
+          white-space: nowrap;
+        }
+
+        .power-pill:hover {
+          background: rgba(${colorRGB.r}, ${colorRGB.g}, ${colorRGB.b}, 0.15);
+          border-color: ${highlightColor};
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(${colorRGB.r}, ${colorRGB.g}, ${colorRGB.b}, 0.3);
+        }
+
+        .power-pill.active {
+          background: ${highlightColor};
+          border-color: ${highlightColor};
+          color: #000;
+          font-weight: 600;
+        }
+
+        .power-pill-name {
+          font-size: 0.85rem;
+          letter-spacing: 0.5px;
+        }
+
+        .active-power-description {
+          margin-top: 20px;
+          padding: 20px;
+          background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+          border: 1px solid rgba(${colorRGB.r}, ${colorRGB.g}, ${colorRGB.b}, 0.3);
+          border-radius: 15px;
+          backdrop-filter: blur(10px);
+          animation: slideDown 0.3s ease;
+        }
+
+        .description-content {
+          max-width: 100%;
+        }
+
+        .description-title {
+          color: ${highlightColor};
+          font-size: 1.2rem;
+          font-weight: 700;
+          margin-bottom: 12px;
+        }
+
+        .description-text {
+          color: #e0e0e0;
+          font-size: 0.95rem;
+          line-height: 1.6;
+          margin: 0;
+        }
+
+        @keyframes slideDown {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+            max-height: 0;
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+            max-height: 300px;
+          }
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+          .powers-pills-container {
+            gap: 8px;
+          }
+          
+          .power-pill {
+            padding: 6px 12px;
+            font-size: 0.8rem;
+          }
+          
+          .power-pill-name {
+            font-size: 0.75rem;
+          }
+
+          .description-title {
+            font-size: 1.1rem;
+          }
+
+          .description-text {
+            font-size: 0.9rem;
+          }
         }
       `}</style>
     </Wrapper>

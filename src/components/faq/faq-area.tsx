@@ -52,11 +52,11 @@ export const faq_data:IFaq[] = [
 
 export default function FaqArea() {
   return (
-    <div className="fq-faq-area fq-faq-bdr pt-80 pb-140">
-      <div className="container">
+    <div className="fq-faq-area fq-faq-bdr">
+      {/* <div className="container">
         <div className="row">
-          <div className="col-xl-8 col-lg-8">
-            <div className="fq-faq-wrapper">
+          <div className="col-xl-8 col-lg-8"> */}
+            {/* <div className="fq-faq-wrapper"> */}
               <div className="tp-service-2-accordion-box">
                 <div className="accordion" id="accordionExample">
                   {faq_data.map((item) => (
@@ -64,9 +64,9 @@ export default function FaqArea() {
                   ))}
                 </div>
               </div>
-            </div>
-          </div>
-          <div className="col-xl-4 col-lg-4">
+            {/* </div> */}
+          {/* </div> */}
+          {/* <div className="col-xl-4 col-lg-4">
             <div className="fq-faq-sidebar">
               <div className="fq-faq-sidebar-content">
                 <h4 className="fq-faq-sidebar-title">Q&A</h4>
@@ -90,9 +90,9 @@ export default function FaqArea() {
                 </button>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </div> */}
+        {/* </div> */}
+      {/* </div> */}
     </div>
   );
 }

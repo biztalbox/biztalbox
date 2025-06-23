@@ -1,10 +1,10 @@
 "use client";
-import React from "react";
+import React, { useEffect, useMemo, useCallback } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 // import useScrollSmooth from "@/hooks/use-scroll-smooth";
-import { ScrollSmoother, ScrollTrigger, SplitText } from "@/plugins";
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother, SplitText);
+import { ScrollTrigger, SplitText } from "@/plugins";
+gsap.registerPlugin(ScrollTrigger, SplitText);
 
 // internal imports
 import Wrapper from "@/layouts/wrapper";
@@ -15,9 +15,38 @@ import { charAnimation, titleAnimation } from "@/utils/title-animation";
 import FooterFour from "@/layouts/footers/footer-four";
 import ScrollPinImage from "@/components/ScrollPinImage";
 import ServiceHighlights from "@/components/ashish/ServiceHighlights";
+import { faq_data, powers, servicesData } from "./data";
 
 const WebsiteDevelopmentPage = () => {
+  const [activePower, setActivePower] = React.useState<number | null>(1);
   const highlightColor = "#49cb66"; // You can change this color or make it a prop
+
+  // Memoize RGB values to prevent repeated parsing
+  const colorRGB = useMemo(() => {
+    const r = parseInt(highlightColor.slice(1, 3), 16);
+    const g = parseInt(highlightColor.slice(3, 5), 16);
+    const b = parseInt(highlightColor.slice(5, 7), 16);
+    return { r, g, b };
+  }, [highlightColor]);
+
+  // Memoize highlights array to prevent unnecessary re-renders
+  const highlights = useMemo(() => [
+    "12+ Years of Web Development Experience",
+    "70+ Websites Delivered",
+    "SEO-Optimized & Mobile-Responsive",
+    "Fast, Secure, and Scalable Solutions",
+  ], []);
+
+  // Memoize active power data to avoid repeated array searches
+  const activePowerData = useMemo(() => {
+    return activePower ? powers.find(p => p.id === activePower) : null;
+  }, [activePower]);
+
+  // Memoize power click handler
+  const handlePowerClick = useCallback((powerId: number) => {
+    setActivePower(activePower === powerId ? null : powerId);
+  }, [activePower]);
+
   useGSAP(() => {
     const timer = setTimeout(() => {
       charAnimation();
@@ -26,23 +55,6 @@ const WebsiteDevelopmentPage = () => {
     }, 100);
     return () => clearTimeout(timer);
   });
-  const highlights = [
-    "12+ Years of Web Development Experience",
-    "70+ Websites Delivered",
-    "SEO-Optimized & Mobile-Responsive",
-    "Fast, Secure, and Scalable Solutions",
-
-  ];
-
-  const services = [
-    "WordPress Websites",
-    "E-commerce Development",
-    "Landing Pages",
-    "Website Redesign",
-    "Speed Optimization",
-    "Website Maintenance",
-    "Custom UI/UX Design",
-  ];
 
   return (
     <Wrapper>
@@ -64,7 +76,7 @@ const WebsiteDevelopmentPage = () => {
                     className="project-details-1-subtitle"
                     style={{ lineHeight: 1.4 }}
                   >
-                     Custom Web Development Solutions to Grow Your Online Presence
+                    Custom Web Development Solutions to Grow Your Online Presence
                   </h1>
                   <h2
                     className="project-details-1"
@@ -77,117 +89,67 @@ const WebsiteDevelopmentPage = () => {
                     Web Design & Development 
                   </h2>
                   <p>
-                    A web developer is something akin to a digital builder – they construct, tweak,
+                    A web developer is something akin to a digital builder – they construct, tweak,
                     and safeguard websites to ensure that they are in good working order.
-                    They’re experts in coding, debugging and creating designs and create responsive designs that look great on any screen. From sketching wireframes to managing security and updates, they help keep websites at their best as the brand grows and evolves.
+                    They&apos;re experts in coding, debugging and creating designs and create responsive designs that look great on any screen. From sketching wireframes to managing security and updates, they help keep websites at their best as the brand grows and evolves.
                     A web developer combines creativity with logic and design with data,
-                    from the first click to the final launch. They build more than just websites — they
-                    build experiences that continue to grow and evolve. Each update makes your digital
+                    from the first click to the final launch. They build more than just websites — they
+                    build experiences that continue to grow and evolve. Each update makes your digital
                     footprint stronger and smarter.
                   </p>
-                </div>
-                <ServiceHighlights color={highlightColor} highlights={highlights} services={services} />
-                <hr />
-                <div className="project-details-1-info-wrap">
-                   <h3
-                    className="project-details-1-subtitle"
-                    style={{ lineHeight: 1.4, color: highlightColor }}
-                  >
-                     Web Dev
-                  </h3>
-                  <h3
-                    className="project-details-1"
-                    style={{
-                      color: "white",
-                      fontSize: "2.5rem",
-                      fontWeight: 700,
-                    }}
-                  >
-                    Web Development
-                  </h3>
-                  <h3
-                    className="project-details-1-subtitle"
-                    style={{ color: "lightgray", marginBottom: "20px" }}
-                  >
-                    SUPER POWERS :-
-                  </h3>
-                  <div className="project-details-1-info">
-                    <span>The Code Titan-</span>
-                    <p>
-                      Mastery of Coding Languages –  Mastery in writing, optimizing,
-                      and debugging codes in a variety of programming languages in order
-                      to deliver error-free, high-quality  functionality. Like a linguistic
-                      wizard of the digital world, the Code Titan speaks the language of the web,
-                      bringing ideas to life and turning them into smooth, engaging online experiences.
-                    </p>
-                  </div>
-                  <div className="project-details-1-info">
-                    <span>The Flowmaster- </span>
-                    <p>
-                      Flowchart Creation – The skill to simplify
-                      complex systems and processes into understandable, logical flowcharts used to enhance decision-making
-                      and to improve the user experience. The Flowmaster brings clarity to chaos—turning complex ideas into
-                      simple, easy-to-follow charts that help everyone understand the path forward.
 
-                    </p>
-                  </div>
-                  <div className="project-details-1-info">
-                    <span>The Blueprint Weaver- </span>
-                    <p>
-                      Wireframing – The ability to develop precise, intuitive wireframes
-                      that lay the perfect foundation for any user interface. Every screen begins as a
-                      thought in the Weaver’s mind—clear, purposeful, and made for the user.
-                      Their wireframes don’t just guide design; they help create smooth, intuitive experiences.
-                    </p>
-                  </div>
-                  <div className="project-details-1-info">
-                    <span>The Bug Buster- </span>
-                    <p>
-                      Bug Fixing and Troubleshooting – The ability to examine, debug,
-                      and eliminate issues in the code, ensuring smooth and error-free execution.
-                      They quietly save the day behind the scenes— spotting what’s broken, fixing what’s
-                      not working, and keep everything running like it should.
-                    </p>
-                  </div>
-                  <div className="project-details-1-info">
-                    <span>The Security Sentinel-</span>
-                    <p>
-                      Web Security – The ability to protect websites with high level security,
-                      protecting from threats and minimizing vulnerabilities. The Sentinel is
-                      vigilant—ensuring your website is secure, your data is private, and your visitors
-                      feel secure no matter what comes your way.
 
-                    </p>
-                  </div>
-                  <div className="project-details-1-info">
-                    <span>The Design Shapeshifter-</span>
-                    <p>
-                      Dynamic Web Design – The ability to create flexible, adaptable,
-                      and dynamic web designs that evolve with the brand&apos;s needs. Trends
-                      come and go, and the Shapeshifter moves
-                      with them—blending usefulness and style to create designs that feel fresh today and still work tomorrow.
-                    </p>
-                  </div>
-                  <div className="project-details-1-info">
-                    <span>The Mobile Maestro-</span>
-                    <p>
-                      Responsive Design – The ability to design websites that automatically
-                      adapt and function perfectly across all mobile devices and screen sizes.
-                      Whether it’s on a phone, tablet, or smartwatch,
-                      the Maestro makes sure every tap, swipe, and scroll feels smooth and effortless.
-                    </p>
-                  </div>
-                  <div className="project-details-1-info">
-                    <span>The Maintenance Master- </span>
-                    <p>
-                      Ongoing Support & Maintenance –
-                      The ability to assure websites run smoothly and
-                      are kept up to date with regular maintenance and timely updates. Behind
-                      every site that runs smoothly is the maintenance master, bearing all the weight of
-                      work without making you feel the difference—keeping things quick, clean, and easy.
-                    </p>
+                  {/* Super Powers Section */}
+                  <div className="super-powers-section mt-40">
+                    <h3
+                      className="super-powers-title"
+                      style={{
+                        color: highlightColor,
+                        fontSize: "1.4rem",
+                        fontWeight: 700,
+                        marginBottom: "20px",
+                        letterSpacing: "2px",
+                        textTransform: "uppercase"
+                      }}
+                    >
+                    SUPER POWERS
+                    </h3>
+                    
+                    {/* Compact Power Pills */}
+                    <div className="powers-pills-container">
+                      {powers.map((power) => (
+                        <button
+                          key={power.id}
+                          className={`power-pill ${activePower === power.id ? 'active' : ''}`}
+                          onClick={() => handlePowerClick(power.id)}
+                        >
+                          <span className="power-pill-name">{power.name}</span>
+                        </button>
+                      ))}
+                    </div>
+
+                    {/* Active Power Description */}
+                    {activePowerData && (
+                      <div className="active-power-description">
+                        <div className="description-content">
+                          <h4 className="description-title">
+                            {activePowerData.name}
+                          </h4>
+                          <p className="description-text">
+                            {activePowerData.description}
+                          </p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
+                <ServiceHighlights
+                  faq_data={faq_data}
+                  color={highlightColor}
+                  highlights={highlights}
+                  servicesData={servicesData}
+                />
+                {/* <hr /> */}
               </div>
             </ScrollPinImage>
             {/* portfolio details area */}
@@ -198,9 +160,122 @@ const WebsiteDevelopmentPage = () => {
           {/* footer area */}
         </div>
       </div>
+
       <style jsx>{`
         .project-details-1-info > span {
           color: ${highlightColor} !important;
+        }
+
+        /* Super Powers Styles */
+        .super-powers-section {
+          margin-top: 30px;
+        }
+
+        .powers-pills-container {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+          margin-bottom: 20px;
+        }
+
+        .power-pill {
+          display: inline-flex;
+          align-items: center;
+          background: rgba(255, 255, 255, 0.08);
+          border: 2px solid rgba(${colorRGB.r}, ${colorRGB.g}, ${colorRGB.b}, 0.4);
+          border-radius: 50px;
+          padding: 8px 16px;
+          color: #e0e0e0;
+          font-size: 0.9rem;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          backdrop-filter: blur(10px);
+          white-space: nowrap;
+        }
+
+        .power-pill:hover {
+          background: rgba(${colorRGB.r}, ${colorRGB.g}, ${colorRGB.b}, 0.15);
+          border-color: ${highlightColor};
+          transform: translateY(-2px);
+          box-shadow: 0 8px 25px rgba(${colorRGB.r}, ${colorRGB.g}, ${colorRGB.b}, 0.3);
+        }
+
+        .power-pill.active {
+          background: ${highlightColor};
+          border-color: ${highlightColor};
+          color: #000;
+          font-weight: 600;
+        }
+
+        .power-pill-name {
+          font-size: 0.85rem;
+          letter-spacing: 0.5px;
+        }
+
+        .active-power-description {
+          margin-top: 20px;
+          padding: 20px;
+          background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+          border: 1px solid rgba(${colorRGB.r}, ${colorRGB.g}, ${colorRGB.b}, 0.3);
+          border-radius: 15px;
+          backdrop-filter: blur(10px);
+          animation: slideDown 0.3s ease;
+        }
+
+        .description-content {
+          max-width: 100%;
+        }
+
+        .description-title {
+          color: ${highlightColor};
+          font-size: 1.2rem;
+          font-weight: 700;
+          margin-bottom: 12px;
+        }
+
+        .description-text {
+          color: #e0e0e0;
+          font-size: 0.95rem;
+          line-height: 1.6;
+          margin: 0;
+        }
+
+        @keyframes slideDown {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+            max-height: 0;
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+            max-height: 300px;
+          }
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+          .powers-pills-container {
+            gap: 8px;
+          }
+          
+          .power-pill {
+            padding: 6px 12px;
+            font-size: 0.8rem;
+          }
+          
+          .power-pill-name {
+            font-size: 0.75rem;
+          }
+
+          .description-title {
+            font-size: 1.1rem;
+          }
+
+          .description-text {
+            font-size: 0.9rem;
+          }
         }
       `}</style>
     </Wrapper>
