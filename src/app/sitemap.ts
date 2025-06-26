@@ -33,15 +33,45 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: route === '' ? 1 : 0.8, // The priority of the route
   }))
 
-  // Fetch blog posts from WordPress API
+  // Fetch blog posts from WordPress API with cache busting
   let blogPosts: WordPressPost[] = []
   try {
-    const response = await fetch('https://blog.biztalbox.com/wp-json/wp/v2/posts?per_page=100')
+    console.log('Fetching blog posts for sitemap...')
+    
+    // Add cache busting and force fresh data
+    const cacheBuster = new Date().getTime()
+    const apiUrl = `https://blog.biztalbox.com/wp-json/wp/v2/posts?per_page=100&_=${cacheBuster}`
+    
+    const response = await fetch(apiUrl, {
+      method: 'GET',
+      headers: {
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Pragma': 'no-cache',
+        'Expires': '0',
+      },
+      // Force fresh data, no caching
+      cache: 'no-store',
+      next: { revalidate: 0 }
+    })
+    
+    console.log(`API Response Status: ${response.status}`)
+    
     if (response.ok) {
       blogPosts = await response.json()
+      console.log(`Successfully fetched ${blogPosts.length} blog posts for sitemap`)
+    } else {
+      console.error(`WordPress API returned status ${response.status}`)
+      const errorText = await response.text()
+      console.error('Error response:', errorText)
     }
   } catch (error) {
     console.error('Error fetching blog posts for sitemap:', error)
+    
+    // Log more detailed error information
+    if (error instanceof Error) {
+      console.error('Error message:', error.message)
+      console.error('Error stack:', error.stack)
+    }
   }
 
   // Add blog post routes to sitemap
@@ -52,5 +82,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }))
 
+  console.log(`Generated sitemap with ${routes.length} static routes and ${blogRoutes.length} blog routes`)
+
   return [...routes, ...blogRoutes]
-} 
+}
+
+// Force the sitemap to be dynamically generated on each request
+export const dynamic = 'force-dynamic'
+export const revalidate = 0 
