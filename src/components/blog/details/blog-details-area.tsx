@@ -38,7 +38,7 @@ export default function BlogDetailsArea({ blog }: BlogDetailsAreaProps) {
         h1, h2, h3, h4, h5, h6 {
           color: var(--tp-common-black);
           margin-bottom: 1em;
-          font-weight: 600;
+          font-weight: 700 !important;
         }
         
         h1 { font-size: 2.5em; }

@@ -15,8 +15,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   }
   
   const baseMetadata = {
-    title: blog.title.rendered,
-    description: blog.excerpt.rendered.replace(/<[^>]*>/g, '').slice(0, 160),
+    title: blog.yoast_head_json.title || blog.title.rendered,
+    description: blog.yoast_head_json.description || blog.excerpt.rendered.replace(/<[^>]*>/g, '').slice(0, 160),
   };
   
   return createMetadata(baseMetadata, `/blog/${params.slug}`);
