@@ -1,4 +1,5 @@
 export interface WordPressPost {
+  yoast_head_json: any;
   id: number;
   date: string;
   slug: string;
