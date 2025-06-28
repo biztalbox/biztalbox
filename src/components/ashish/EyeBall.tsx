@@ -107,6 +107,20 @@ const EyeBall: React.FC = memo(() => {
     if (!rendererRef.current || typeof window === 'undefined') return;
     
     const rect = rendererRef.current.domElement.getBoundingClientRect();
+    
+    // Check if mouse is within canvas bounds
+    const isWithinCanvas = clientX >= rect.left && 
+                          clientX <= rect.right && 
+                          clientY >= rect.top && 
+                          clientY <= rect.bottom;
+    
+    if (!isWithinCanvas) {
+      // If mouse is outside canvas, reset to neutral position
+      mouseRef.current.x = 0;
+      mouseRef.current.y = 0;
+      return;
+    }
+    
     const x = (clientX - rect.left) / rect.width;
     const y = (clientY - rect.top) / rect.height;
     
@@ -138,6 +152,8 @@ const EyeBall: React.FC = memo(() => {
       handlePointerMove(touch.clientX, touch.clientY);
     }
   }, [handlePointerMove]);
+
+
 
   // Completely lock model settings after load to prevent mobile viewport scaling
   const handleResize = useCallback(() => {
@@ -501,14 +517,14 @@ const EyeBall: React.FC = memo(() => {
     shadowPlane.rotation.x = -Math.PI / 2;
     scene.add(shadowPlane);
 
-    // Event listeners - including touch events for mobile
+    // Event listeners - window events with bounds checking in handler
     window.addEventListener('resize', handleResize, { passive: true });
     window.addEventListener('mousemove', handleMouseMove, { passive: true });
     window.addEventListener('scroll', handleScroll, { passive: true });
 
-    // Touch event listeners for mobile support
-    currentCanvasRef.addEventListener('touchstart', handleTouchStart, { passive: false });
-    currentCanvasRef.addEventListener('touchmove', handleTouchMove, { passive: false });
+    // Touch event listeners on canvas element for mobile support
+    renderer.domElement.addEventListener('touchstart', handleTouchStart, { passive: false });
+    renderer.domElement.addEventListener('touchmove', handleTouchMove, { passive: false });
 
     // FINAL FAILSAFE: Periodic animation health check
     const animationHealthCheck = setInterval(() => {
@@ -569,8 +585,10 @@ const EyeBall: React.FC = memo(() => {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('scroll', handleScroll);
-      currentCanvasRef.removeEventListener('touchstart', handleTouchStart);
-      currentCanvasRef.removeEventListener('touchmove', handleTouchMove);
+      if (renderer.domElement) {
+        renderer.domElement.removeEventListener('touchstart', handleTouchStart);
+        renderer.domElement.removeEventListener('touchmove', handleTouchMove);
+      }
       
       // Disconnect observer
       observer.disconnect();
