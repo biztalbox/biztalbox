@@ -25,14 +25,14 @@ export async function POST(req: NextRequest) {
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
-                user: 'info@biztalbox.com', // replace with your email
-                pass: 'gpuy xrkl urbp mjxo', // replace with your email password
+                user: process.env.EMAIL_USER, // replace with your email
+                pass: process.env.EMAIL_PASSWORD, // replace with your email password
             },
         });
 
         const mailOptions = {
             from: email,
-            to: 'info@biztalbox.com',
+            to: process.env.EMAIL_USER,
             subject: `Contact Form Submission from ${name}`,
             text: `
             You have received a new message from your website contact form.
