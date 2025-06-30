@@ -21,7 +21,7 @@ const ThankYouPage = () => {
                 ></i>
               </div>
               <h1 className="tp-thank-you-title mb-20">Thank You!</h1>
-              <p className="tp-thank-you-text mb-40">
+              <p className="tp-thank-you-text mb-40 relative">
                 Your message has been received. We appreciate you reaching out
                 to us and We&apos;ll respond faster than you can say 
                 <span 
