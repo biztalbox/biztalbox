@@ -6,9 +6,20 @@ import { Search } from "../svg";
 import Link from "next/link";
 import RecentPostList from "./recentpostlist";
 import CategoryList from "./categorylist";
-
+import { useRouter } from "next/navigation";
 
 export default function BlogSidebar() {
+  const router = useRouter();
+
+  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const searchQuery = (e.target as HTMLFormElement).search.value;
+    if (searchQuery) {
+      router.push(`/blog?search=${searchQuery}`);
+      e.currentTarget.reset();
+    }
+  };
+
   return (
     <div className="sidebar__wrapper">
       {/* <div className="sidebar__widget mb-45">
@@ -22,12 +33,12 @@ export default function BlogSidebar() {
           </div>
         </div>
       </div> */}
-      {/* <div className="sidebar__widget mb-65">
+      <div className="sidebar__widget mb-65">
         <div className="sidebar__widget-content">
           <div className="sidebar__search">
-            <form action="#">
+            <form onSubmit={handleSearch}>
               <div className="sidebar__search-input-2">
-                <input type="text" placeholder="Search product" />
+                <input type="text" placeholder="Search" name="search" />
                 <button type="submit">
                   <Search />
                 </button>
@@ -35,24 +46,24 @@ export default function BlogSidebar() {
             </form>
           </div>
         </div>
-      </div> */}
-       {/* Recent Posts */}
-       <div className="sidebar__widget mb-65">
+      </div>
+
+      {/* Category list */}
+      <div className="sidebar__widget mb-65">
+        <h3 className="sidebar__widget-title">Category</h3>
+        <div className="sidebar__widget-content">
+          <CategoryList />
+        </div>
+      </div>
+
+      {/* Recent Posts */}
+      <div className="sidebar__widget mb-65">
         <h3 className="sidebar__widget-title">Recent Post</h3>
         <div className="sidebar__widget-content">
           <RecentPostList />
         </div>
       </div>
 
-      {/* Category list */}
-      {/* <div className="sidebar__widget mb-65">
-        <h3 className="sidebar__widget-title">Category</h3>
-        <div className="sidebar__widget-content">
-          <CategoryList />
-        </div>
-      </div> */}
-
-     
       {/* <div className="sidebar__widget mb-65">
         <h3 className="sidebar__widget-title">Tags</h3>
         <div className="sidebar__widget-content">

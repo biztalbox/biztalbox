@@ -109,7 +109,7 @@ export default function CategoryList({ className = "" }: CategoryListProps) {
         <ul>
           {categories.map((category) => (
             <li key={category.id}>
-              <Link href={`/blog-modern?category=${category.slug}`}>
+              <Link href={`/blog?category=${category.slug}`}>
                 {category.name} ({category.count})
               </Link>
             </li>

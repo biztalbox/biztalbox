@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { SwiperOptions } from "swiper/types";
+import { useSearchParams } from "next/navigation";
 
 import BlogSidebar from "./blog-sidebar";
 import { blog_classic } from "@/data/blog-data";
@@ -36,6 +37,14 @@ interface WordPressPost {
       name: string;
     }>>;
   };
+}
+
+// WordPress Category interface
+interface WordPressCategory {
+  id: number;
+  name: string;
+  slug: string;
+  count: number;
 }
 
 // Helper function to decode HTML entities
@@ -245,6 +254,10 @@ export default function BlogClassicArea({setIsVideoOpen,setVideoId}:IProps) {
   const [wordpressPosts, setWordpressPosts] = useState<IBlogDT[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [currentCategory, setCurrentCategory] = useState<WordPressCategory | null>(null);
+  const searchParams = useSearchParams();
+  const categorySlug = searchParams.get('category');
+  const searchQuery = searchParams.get('search');
   
   // Add shimmer animation to document
   useEffect(() => {
@@ -264,7 +277,45 @@ export default function BlogClassicArea({setIsVideoOpen,setVideoId}:IProps) {
     const fetchPosts = async () => {
       try {
         setLoading(true);
-        const response = await fetch('https://blog.biztalbox.com/wp-json/wp/v2/posts?_embed&per_page=100');
+        
+        // If category is specified, fetch category info first
+        if (categorySlug) {
+          try {
+            const categoryResponse = await fetch(`https://blog.biztalbox.com/wp-json/wp/v2/categories?slug=${categorySlug}`);
+            if (categoryResponse.ok) {
+              const categories: WordPressCategory[] = await categoryResponse.json();
+              if (categories.length > 0) {
+                setCurrentCategory(categories[0]);
+              }
+            }
+          } catch (err) {
+            console.error('Failed to fetch category info:', err);
+          }
+        } else {
+          setCurrentCategory(null);
+        }
+        
+        // Build API URL with category filter and search if specified
+        let apiUrl = 'https://blog.biztalbox.com/wp-json/wp/v2/posts?_embed&per_page=100';
+        
+        // Add category filter
+        if (categorySlug) {
+          // First get category ID by slug, then filter posts
+          const categoryResponse = await fetch(`https://blog.biztalbox.com/wp-json/wp/v2/categories?slug=${categorySlug}`);
+          if (categoryResponse.ok) {
+            const categories: WordPressCategory[] = await categoryResponse.json();
+            if (categories.length > 0) {
+              apiUrl += `&categories=${categories[0].id}`;
+            }
+          }
+        }
+        
+        // Add search query
+        if (searchQuery) {
+          apiUrl += `&search=${encodeURIComponent(searchQuery)}`;
+        }
+        
+        const response = await fetch(apiUrl);
         
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -328,7 +379,7 @@ export default function BlogClassicArea({setIsVideoOpen,setVideoId}:IProps) {
     };
     
     fetchPosts();
-  }, []);
+  }, [categorySlug, searchQuery]);
   
   const { currentItems, handlePageClick, pageCount } = usePagination<IBlogDT>(wordpressPosts, 4);
 
@@ -346,6 +397,26 @@ export default function BlogClassicArea({setIsVideoOpen,setVideoId}:IProps) {
         <div className="row">
           <div className="col-xxl-8 col-xl-8 col-lg-8">
             <div className="postbox__wrapper">
+              {(currentCategory || searchQuery) && (
+                <div className="postbox__category-header mb-50">
+                  <div className="postbox__category-title">
+                    <h2 className="category-page-title text-white">
+                      {searchQuery ? (
+                        `Search Results for "${searchQuery}"`
+                      ) : (
+                        currentCategory?.name
+                      )}
+                    </h2>
+                    <p className="category-description">
+                      {searchQuery ? (
+                        `Found ${wordpressPosts.length} posts matching "${searchQuery}"`
+                      ) : (
+                        `Found ${wordpressPosts.length} posts in "${currentCategory?.name}" category`
+                      )}
+                    </p>
+                  </div>
+                </div>
+              )}
               {loading ? (
                 <>
                   <BlogSkeleton />
@@ -419,7 +490,7 @@ export default function BlogClassicArea({setIsVideoOpen,setVideoId}:IProps) {
                       <div className="postbox__content">
                         <div className="postbox__meta">
                           <span>
-                            {item.category} | {item.date}
+                            <Link href={`/blog?category=${item.category}`}>{item.category}</Link> | {item.date}
                           </span>
                         </div>
                         <h3 className="postbox__title">

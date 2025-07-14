@@ -1,6 +1,6 @@
 "use client";
 import { gsap } from "gsap";
-import React from "react";
+import React, { Suspense } from "react";
 import useScrollSmooth from "@/hooks/use-scroll-smooth";
 import { ScrollSmoother, ScrollTrigger, SplitText } from "@/plugins";
 import { useGSAP } from "@gsap/react";
@@ -42,7 +42,26 @@ const BlogClassicMain = () => {
             {/* blog classic hero end */}
 
             {/* blog classic area area */}
-            <BlogClassicArea setIsVideoOpen={setIsVideoOpen} setVideoId={setVideoId} />
+            <Suspense fallback={
+              <section className="postbox__area tp-blog-sidebar-sticky-area pt-120 pb-80">
+                <div className="container">
+                  <div className="row">
+                    <div className="col-xxl-8 col-xl-8 col-lg-8">
+                      <div className="postbox__wrapper">
+                        <div className="text-center py-5">
+                          <div className="spinner-border" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                          </div>
+                          <p className="mt-3">Loading blog posts...</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            }>
+              <BlogClassicArea setIsVideoOpen={setIsVideoOpen} setVideoId={setVideoId} />
+            </Suspense>
             {/* blog classic area area */}
           </main>
 
