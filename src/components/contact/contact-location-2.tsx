@@ -113,7 +113,7 @@ const ContactLocationTwo = () => {
                     textAlign: "center",
                   }}
                 >
-                  A-11, 2nd Floor, sector 8 Dwarka 110075 New Delhi</p>
+                  A-11, 2nd Floor, sector 8 Dwarka 110077 New Delhi</p>
               </div>
             </div>
           </div>
