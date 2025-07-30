@@ -10,9 +10,11 @@ import { useRouter } from "next/navigation";
 
 export default function BlogSidebar() {
   const router = useRouter();
-  const [subscribeLoading, setSubscribeLoading] = useState(false);
-  const [subscribeMessage, setSubscribeMessage] = useState("");
-  const [subscribeSuccess, setSubscribeSuccess] = useState(false);
+  const [isSubscribing, setIsSubscribing] = useState(false);
+  const [subscribeMessage, setSubscribeMessage] = useState<string>("");
+  const [subscribeStatus, setSubscribeStatus] = useState<
+    "success" | "error" | ""
+  >("");
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -25,42 +27,53 @@ export default function BlogSidebar() {
 
   const handleSubscribe = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const form = e.target as HTMLFormElement;
-    const subscribeEmail = form.email.value;
+    const form = e.currentTarget; // Store form reference before async operation
+    const subscribeEmail = (e.target as HTMLFormElement).email.value;
 
-    if (!subscribeEmail) return;
+    if (!subscribeEmail || !subscribeEmail.includes("@")) {
+      setSubscribeStatus("error");
+      setSubscribeMessage("Please enter a valid email address");
+      return;
+    }
 
-    setSubscribeLoading(true);
+    setIsSubscribing(true);
     setSubscribeMessage("");
+    setSubscribeStatus("");
 
     try {
-      const response = await fetch('/api/newsletter/subscribe', {
-        method: 'POST',
+      const response = await fetch("/api/newsletter/subscribe", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({ email: subscribeEmail }),
       });
 
       const result = await response.json();
-      
-      setSubscribeMessage(result.message);
-      setSubscribeSuccess(result.success);
-      
-      if (result.success) {
-        form.reset();
-        // Clear success message after 5 seconds
-        setTimeout(() => {
-          setSubscribeMessage("");
-          setSubscribeSuccess(false);
-        }, 5000);
+      console.log("API Response:", result);
+      console.log("Response Status:", response.status);
+      console.log("Response OK:", response.ok);
+
+      // Check both HTTP status and result.success
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Failed to subscribe");
       }
+
+      setSubscribeStatus("success");
+      setSubscribeMessage(result.message);
+      form.reset(); // Use stored form reference
     } catch (error) {
-      console.error('Subscription error:', error);
-      setSubscribeMessage('Subscription failed. Please try again.');
-      setSubscribeSuccess(false);
+      console.log("Error caught:", error);
+      setSubscribeStatus("error");
+      setSubscribeMessage(error instanceof Error ? error.message : "An error occurred"); 
     } finally {
-      setSubscribeLoading(false);
+      setIsSubscribing(false);
+
+      // Clear message after 5 seconds
+      setTimeout(() => {
+        setSubscribeMessage("");
+        setSubscribeStatus("");
+      }, 5000);
     }
   };
 
@@ -131,39 +144,52 @@ export default function BlogSidebar() {
         <h4 className="tp-footer-2-widget-title">
           Subscribe to our newsletter
         </h4>
-        <form onSubmit={handleSubscribe} className="tp-footer-3-input-box d-flex align-items-center">
-          <input 
-            type="email" 
-            name="email" 
-            placeholder="Enter Address..." 
+        <form
+          onSubmit={handleSubscribe}
+          className="tp-footer-3-input-box d-flex align-items-center"
+        >
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter Address..."
+            disabled={isSubscribing}
             required
-            disabled={subscribeLoading}
           />
-          <button 
-            type="submit" 
+          <button
+            type="submit"
             className="tp-footer-3-btn p-relative"
-            disabled={subscribeLoading}
+            disabled={isSubscribing}
           >
-            <span className="icon-1">
-              <RightArrow clr="#19191A" />
-            </span>
-            <span className="icon-2">
-              <SvgBgSm />
-            </span>
+            {isSubscribing ? (
+              <span style={{ fontSize: "12px", padding: "0 5px" }}>...</span>
+            ) : (
+              <>
+                <span className="icon-1">
+                  <RightArrow clr="#19191A" />
+                </span>
+                <span className="icon-2">
+                  <SvgBgSm />
+                </span>
+              </>
+            )}
           </button>
         </form>
         {subscribeMessage && (
-          <div className={`mt-2 p-2 text-sm rounded ${
-            subscribeSuccess 
-              ? 'bg-green-100 text-green-800 border border-green-200' 
-              : 'bg-red-100 text-red-800 border border-red-200'
-          }`}>
+          <div
+            style={{
+              marginTop: "10px",
+              padding: "4px 8px",
+              borderRadius: "4px",
+              fontSize: "14px",
+              backgroundColor:
+                subscribeStatus === "success" ? "#d4edda" : "#f8d7da",
+              color: subscribeStatus === "success" ? "#155724" : "#721c24",
+              border: `1px solid ${
+                subscribeStatus === "success" ? "#c3e6cb" : "#f5c6cb"
+              }`,
+            }}
+          >
             {subscribeMessage}
-          </div>
-        )}
-        {subscribeLoading && (
-          <div className="mt-2 text-sm text-gray-600">
-            Subscribing...
           </div>
         )}
       </div>
