@@ -23,10 +23,12 @@ export async function POST(req: NextRequest) {
         }
 
         const transporter = nodemailer.createTransport({
-            service: 'gmail',
+            host: process.env.SMTP_HOST || 'smtp.gmail.com',
+            port: parseInt(process.env.SMTP_PORT || '587'),
+            secure: process.env.SMTP_SECURE === 'true',
             auth: {
-                user: 'info@biztalbox.com', // replace with your email
-                pass: 'rwdp cubk cmkq iozt', // replace with your email password
+                user: process.env.SMTP_USER || 'info@biztalbox.com',
+                pass: process.env.SMTP_PASS || 'rwdp cubk cmkq iozt',
             },
         });
 

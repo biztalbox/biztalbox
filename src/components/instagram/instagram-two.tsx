@@ -18,7 +18,7 @@ export default function InstagramTwo() {
             <div className="tp-shop-insta-title-box mb-70 text-center">
               <span>Follow Us</span>
               <h4 className="tp-shop-insta-title">
-                <a href="mailto:@liko.shoes">@liko.shoes</a>
+                <a href="https://www.instagram.com/biztalbox">@biztalbox</a>
               </h4>
             </div>
           </div>

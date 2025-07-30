@@ -19,6 +19,7 @@ import banner_img from "@/assets/img/inner-shop/banner/banner-3.jpg";
 import InstagramTwo from "@/components/instagram/instagram-two";
 import BrandFour from "@/components/brand/brand-four";
 import FooterSix from "@/layouts/footers/footer-six";
+import FooterTwo from "@/layouts/footers/footer-two";
 // animation
 
 const HomeSixMain = () => {
@@ -92,7 +93,8 @@ const HomeSixMain = () => {
           </main>
 
           {/* footer area */}
-          <FooterSix/>
+          <FooterTwo topCls="" />
+          {/* <FooterSix/> */}
           {/* footer area */}
         </div>
       </div>

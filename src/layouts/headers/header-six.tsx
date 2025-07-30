@@ -5,7 +5,7 @@ import Link from 'next/link';
 import HeaderMenus from './header-menus';
 import useSticky from '@/hooks/use-sticky';
 import { Menu, Search, Wishlist, Zero } from '@/components/svg';
-import logo from '@/assets/img/logo/logo-white.png';
+import logo from '@/assets/img/logo/white.png';
 import CartOffcanvas from '@/components/offcanvas/cart-offcanvas';
 import MobileOffcanvas from '@/components/offcanvas/mobile-offcanvas';
 
@@ -41,7 +41,7 @@ export default function HeaderSix() {
               </div>
               <div className="col-xl-5 col-lg-8 col-md-8 col-8">
                 <div className="tp-inner-header-2-right d-flex align-items-center justify-content-end">
-                  <div className="tp-inner-header-2-search p-relative d-none d-lg-block">
+                  {/* <div className="tp-inner-header-2-search p-relative d-none d-lg-block">
                     <input type="text" placeholder="Search" />
                     <span>
                       <Search/>
@@ -51,7 +51,7 @@ export default function HeaderSix() {
                     <span>
                     <Search/>
                     </span>
-                  </button>
+                  </button> */}
                   <Link className="tp-inner-header-2-wishlist p-relative" href="/wishlist">
                     <i>o</i>
                     <span>
