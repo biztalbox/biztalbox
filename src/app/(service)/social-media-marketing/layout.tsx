@@ -1,6 +1,7 @@
 import { Metadata } from "next/types";
 import SocialMediaMarketingPage from "./page";
-import { createMetadata } from "@/utils/metadata";
+import { createMetadata, createSchemaProps, createFullUrl } from "@/utils/metadata";
+import SchemaProvider from "@/components/schema/SchemaProvider";
 
 const baseMetadata: Metadata = {
   title: "Social Media Marketing Agency | Grow Your Online Presence",
@@ -10,5 +11,16 @@ const baseMetadata: Metadata = {
 export const metadata = createMetadata(baseMetadata, '/social-media-marketing');
 
 export default function SocialMediaMarketingLayout() {
-  return <SocialMediaMarketingPage />;
+  const schemaProps = createSchemaProps('service', '/social-media-marketing');
+
+  return (
+    <SchemaProvider 
+      schemaProps={schemaProps}
+      currentUrl={createFullUrl('/social-media-marketing')}
+      title={baseMetadata.title as string}
+      description={baseMetadata.description as string}
+    >
+      <SocialMediaMarketingPage />
+    </SchemaProvider>
+  );
 } 

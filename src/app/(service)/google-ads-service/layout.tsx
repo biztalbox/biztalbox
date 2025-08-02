@@ -1,6 +1,7 @@
 import { Metadata } from "next/types";
 import GoogleAdsServicePage from "./page";
-import { createMetadata } from "@/utils/metadata";
+import { createMetadata, createSchemaProps, createFullUrl } from "@/utils/metadata";
+import SchemaProvider from "@/components/schema/SchemaProvider";
 
 const baseMetadata: Metadata = {
   title: "Performance Marketing Agency | Boost Your Results",
@@ -10,5 +11,16 @@ const baseMetadata: Metadata = {
 export const metadata = createMetadata(baseMetadata, '/google-ads-service');
 
 export default function GoogleAdsServiceLayout() {
-  return <GoogleAdsServicePage />;
+  const schemaProps = createSchemaProps('service', '/google-ads-service');
+
+  return (
+    <SchemaProvider 
+      schemaProps={schemaProps}
+      currentUrl={createFullUrl('/google-ads-service')}
+      title={baseMetadata.title as string}
+      description={baseMetadata.description as string}
+    >
+      <GoogleAdsServicePage />
+    </SchemaProvider>
+  );
 } 

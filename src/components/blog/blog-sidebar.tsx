@@ -112,34 +112,7 @@ export default function BlogSidebar() {
           <CategoryList />
         </div>
       </div>
-
-      {/* Recent Posts */}
-      <div className="sidebar__widget mb-65">
-        <h3 className="sidebar__widget-title">Recent Post</h3>
-        <div className="sidebar__widget-content">
-          <RecentPostList />
-        </div>
-      </div>
-
-      {/* <div className="sidebar__widget mb-65">
-        <h3 className="sidebar__widget-title">Tags</h3>
-        <div className="sidebar__widget-content">
-          <div className="tagcloud">
-            <a href="#">Creative</a>
-            <a href="#">Vision</a>
-            <a href="#">Popular</a>
-            <a href="#">Photography</a>
-            <a href="#">Lifestyle</a>
-          </div>
-        </div>
-      </div> */}
-      {/* <div className="sidebar__widget mb-65">
-        <div className="sidebar__widget-content">
-          <div className="sidebar__banner-img">
-            <Image src={banner} alt="banner" style={{ height: "auto" }} />
-          </div>
-        </div>
-      </div> */}
+      
       <div className="tp-footer-3-widget mb-65">
         <h4 className="tp-footer-2-widget-title">
           Subscribe to our newsletter
@@ -193,6 +166,34 @@ export default function BlogSidebar() {
           </div>
         )}
       </div>
+
+      {/* Recent Posts */}
+      <div className="sidebar__widget mb-65">
+        <h3 className="sidebar__widget-title">Recent Post</h3>
+        <div className="sidebar__widget-content">
+          <RecentPostList />
+        </div>
+      </div>
+
+      {/* <div className="sidebar__widget mb-65">
+        <h3 className="sidebar__widget-title">Tags</h3>
+        <div className="sidebar__widget-content">
+          <div className="tagcloud">
+            <a href="#">Creative</a>
+            <a href="#">Vision</a>
+            <a href="#">Popular</a>
+            <a href="#">Photography</a>
+            <a href="#">Lifestyle</a>
+          </div>
+        </div>
+      </div> */}
+      {/* <div className="sidebar__widget mb-65">
+        <div className="sidebar__widget-content">
+          <div className="sidebar__banner-img">
+            <Image src={banner} alt="banner" style={{ height: "auto" }} />
+          </div>
+        </div>
+      </div> */}
 
       <div className="sidebar__widget mb-65">
         <h3 className="sidebar__widget-title">Follow Us</h3>

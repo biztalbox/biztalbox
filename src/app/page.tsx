@@ -1,6 +1,8 @@
 import { Metadata } from "next";
 import HomePage from "@/components/HomePage";
-import { createMetadata } from "@/utils/metadata";
+import { createMetadata, createSchemaProps, createFullUrl } from "@/utils/metadata";
+import SchemaProvider from "@/components/schema/SchemaProvider";
+import { mainReviews, mainAggregateRating } from "@/data/schema-data";
 
 const baseMetadata: Metadata = {
   title: "Best Digital Marketing Agency | Website Development",
@@ -10,7 +12,19 @@ const baseMetadata: Metadata = {
 export const metadata = createMetadata(baseMetadata, '/');
 
 export default function Home() {
+  const schemaProps = createSchemaProps('home', '/', {
+    reviews: mainReviews,
+    aggregateRating: mainAggregateRating
+  });
+
   return (
+    <SchemaProvider 
+      schemaProps={schemaProps}
+      currentUrl={createFullUrl('/')}
+      title={baseMetadata.title as string}
+      description={baseMetadata.description as string}
+    >
       <HomePage/>
+    </SchemaProvider>
   );
 }

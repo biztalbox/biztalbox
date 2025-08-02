@@ -1,6 +1,7 @@
 import { Metadata } from "next/types";
 import GraphicDesigningPage from "./page";
-import { createMetadata } from "@/utils/metadata";
+import { createMetadata, createSchemaProps, createFullUrl } from "@/utils/metadata";
+import SchemaProvider from "@/components/schema/SchemaProvider";
 
 const baseMetadata: Metadata = {
   title: "Graphic Design Agency | Professional Design Services",
@@ -10,5 +11,16 @@ const baseMetadata: Metadata = {
 export const metadata = createMetadata(baseMetadata, '/graphic-designing');
 
 export default function GraphicDesigningLayout() {
-  return <GraphicDesigningPage />;
+  const schemaProps = createSchemaProps('service', '/graphic-designing');
+
+  return (
+    <SchemaProvider 
+      schemaProps={schemaProps}
+      currentUrl={createFullUrl('/graphic-designing')}
+      title={baseMetadata.title as string}
+      description={baseMetadata.description as string}
+    >
+      <GraphicDesigningPage />
+    </SchemaProvider>
+  );
 } 

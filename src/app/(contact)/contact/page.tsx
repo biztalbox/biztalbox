@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import ContactPage from "@/components/contact/ContactPage";
-import { createMetadata } from "@/utils/metadata";
+import { createMetadata, createSchemaProps, createFullUrl } from "@/utils/metadata";
+import SchemaProvider from "@/components/schema/SchemaProvider";
 
 const baseMetadata: Metadata = {
   title: "Contact Us - Biztal Box",
@@ -10,8 +11,17 @@ const baseMetadata: Metadata = {
 export const metadata = createMetadata(baseMetadata, '/contact');
 
 const ContactTwoPage = () => {
+  const schemaProps = createSchemaProps('contact', '/contact');
+
   return (
-    <ContactPage/>
+    <SchemaProvider 
+      schemaProps={schemaProps}
+      currentUrl={createFullUrl('/contact')}
+      title={baseMetadata.title as string}
+      description={baseMetadata.description as string}
+    >
+      <ContactPage/>
+    </SchemaProvider>
   );
 };
 

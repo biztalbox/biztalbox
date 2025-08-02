@@ -1,6 +1,7 @@
 import { Metadata } from "next/types";
 import ContentMarketingPage from "./page";
-import { createMetadata } from "@/utils/metadata";
+import { createMetadata, createSchemaProps, createFullUrl } from "@/utils/metadata";
+import SchemaProvider from "@/components/schema/SchemaProvider";
 
 const baseMetadata: Metadata = {
   title: "Content Marketing Agency | Engage Your Audience",
@@ -10,5 +11,16 @@ const baseMetadata: Metadata = {
 export const metadata = createMetadata(baseMetadata, '/content-marketing');
 
 export default function ContentMarketingLayout() {
-  return <ContentMarketingPage />;
+  const schemaProps = createSchemaProps('service', '/content-marketing');
+
+  return (
+    <SchemaProvider 
+      schemaProps={schemaProps}
+      currentUrl={createFullUrl('/content-marketing')}
+      title={baseMetadata.title as string}
+      description={baseMetadata.description as string}
+    >
+      <ContentMarketingPage />
+    </SchemaProvider>
+  );
 } 
