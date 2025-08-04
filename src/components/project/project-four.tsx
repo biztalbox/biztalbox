@@ -25,6 +25,7 @@ const project_data = [
     title: "SEO",
     desc: "Search Engine Optimization (SEO) is the key to make sure your website stands out digitally. It enhances your website for search engines, resulting in improved ranks and increased visibility.",
     slug:"best-seo-agency",
+    alt:" SEO expert analyzing website performance at a USA-based agency"
   },
   {
     id: 2,
@@ -33,6 +34,7 @@ const project_data = [
     title: "Social Media",
     desc: "Social media Marketing is the digital arena where brands connect, captivate, and communicate with their audience.",
     slug: "social-media-marketing",
+    alt:"Social media marketing team creating content strategy at a US agency"
   },
   {
     id: 3,
@@ -41,6 +43,7 @@ const project_data = [
     title: "Web Development",
     desc: "A Web Development is a digital architect who builds, optimizes, and secures seamless websites.",
     slug: "website-development",
+    alt:" Professional web development team working in a USA-based agency office"
   },
   {
     id: 4,
@@ -49,6 +52,7 @@ const project_data = [
     title: "App Development",
     desc: "An App Developer is a mobile maestro who builds the next killer app and delivers unparalleled performance to keep users coming back for more.",
     slug: "app-development",
+    alt:"USA-based app development team collaborating on a mobile project"
   },
   {
     id: 5,
@@ -57,6 +61,7 @@ const project_data = [
     title: "Analysis Algorithm",
     desc: "An algorithm is a precision powerhouse that can instantly analyse vast amount of data to find hidden patterns and insights.",
     slug: "analysis-algorithm",
+    alt:"Data analysis algorithm designed by a USA-based tech agency"
   },
   {
     id: 6,
@@ -65,6 +70,7 @@ const project_data = [
     title: "Motion Graphics",
     desc: "A video editing is a multimedia guru who turns in raw footage into cinematic masterpieces.",
     slug: "motion-graphics",
+    alt:"Motion graphics animation created by a USA-based design agency"
   },
   {
     id: 7,
@@ -73,6 +79,7 @@ const project_data = [
     title: "Graphic Designing",
     desc: "A graphic designing is a creative force that turns concepts into recognised piece of art.",
     slug: "graphic-designing",
+    alt:"Creative graphic design services by a USA-based design agency"
   },
   {
     id: 8,
@@ -81,6 +88,7 @@ const project_data = [
     title: "Copy Writing",
     desc: "Content creation combines crafting high-quality, SEO-optimized material that engages users and search engines.",
     slug: "content-marketing",
+    alt:" SEO copywriting services provided by a USA-based marketing agency"
   },
   {
     id: 9,
@@ -89,6 +97,7 @@ const project_data = [
     title: "Performance Marketing",
     desc: "Google Ads is a versatile tool that makes every click an instant hit. It improves return on investment (ROI) and generates high-value leads through strategic bidding.",
     slug: "google-ads-service",
+    alt:"Experts in PPC and performance marketing working at a USA agency"
   },
   {
     id: 10,
@@ -97,6 +106,7 @@ const project_data = [
     title: "Meta Ads",
     desc: "Throughout its ecosystem, Meta Ads creates visually striking ads with precise targeting, turning it into a digital powerhouse.",
     slug: "facebook-ads-service",
+    alt:" Meta Ads campaign setup by a USA-based performance marketing agency"
   },
 ];
 
@@ -145,7 +155,7 @@ export default function ProjectFour({ style_2 = false }: IProps) {
                       {item.img_1 && (
                         <Image
                           src={item.img_1}
-                          alt="port-img"
+                          alt={item.alt}
                           style={{ height: "auto" }}
                         />
                       )}
@@ -175,7 +185,7 @@ export default function ProjectFour({ style_2 = false }: IProps) {
                       {item.img_2 && (
                         <Image
                           src={item.img_2}
-                          alt="port-img"
+                           alt={item.alt}
                           style={{ height: "auto" }}
                         />
                       )}
