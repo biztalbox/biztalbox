@@ -34,7 +34,7 @@ const project_data = [
     title: "Social Media",
     desc: "Social media Marketing is the digital arena where brands connect, captivate, and communicate with their audience.",
     slug: "social-media-marketing",
-    alt:""
+    alt:"Social media marketing team creating content strategy at a US agency"
   },
   {
     id: 3,
