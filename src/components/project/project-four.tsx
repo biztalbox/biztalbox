@@ -185,7 +185,7 @@ export default function ProjectFour({ style_2 = false }: IProps) {
                       {item.img_2 && (
                         <Image
                           src={item.img_2}
-                          alt="port-img"
+                           alt={item.alt}
                           style={{ height: "auto" }}
                         />
                       )}
