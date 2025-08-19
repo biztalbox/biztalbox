@@ -130,7 +130,65 @@ export default function RootLayout({
         )}
         <ThemeProvider defaultTheme="dark">{children}</ThemeProvider>
         
-        {/* Defer non-critical scripts */}
+        {/* Mobile Performance Optimizer */}
+        <Script
+          id="mobile-optimizer"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              // Mobile performance optimization
+              (function() {
+                // Detect device capabilities
+                const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+                const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !window.MSStream;
+                const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+                const isIpadOS = (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+                const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+                
+                const isMobile = isIOS || isMobileDevice || isIpadOS || isTouchDevice;
+                const deviceMemory = navigator.deviceMemory;
+                const hardwareConcurrency = navigator.hardwareConcurrency;
+                const isLowEnd = (deviceMemory || 4) <= 4 || (hardwareConcurrency || 4) <= 4;
+                
+                // Apply optimizations for mobile/low-end devices
+                if (isMobile || isLowEnd) {
+                  // Disable smooth scrolling
+                  document.body.classList.remove('tp-smooth-scroll');
+                  
+                  // Disable heavy animations
+                  const heavyElements = document.querySelectorAll('.gsap-split-word, .gsap-split-chars, .tp-reveal-line');
+                  heavyElements.forEach(function(element) {
+                    element.style.willChange = 'auto';
+                    element.style.transform = 'none';
+                    element.style.animation = 'none';
+                  });
+                  
+                  // iOS-specific optimizations
+                  if (isIOS) {
+                    const smoothWrapper = document.getElementById('smooth-wrapper');
+                    const smoothContent = document.getElementById('smooth-content');
+                    if (smoothWrapper) smoothWrapper.style.overflow = 'visible';
+                    if (smoothContent) {
+                      smoothContent.style.transform = 'none';
+                      smoothContent.style.willChange = 'auto';
+                      smoothContent.style.position = 'static';
+                    }
+                  }
+                  
+                  // Hide heavy 3D elements on mobile
+                  const threeElements = document.querySelectorAll('.three-js-container, .eye-ball-container, .webgl-container');
+                  threeElements.forEach(function(element) {
+                    element.style.display = 'none';
+                  });
+                  
+                  console.log('Mobile optimizations applied for', isIOS ? 'iOS' : 'mobile device');
+                }
+              })();
+            `,
+          }}
+        />
+        
+        {/* Performance monitoring */}
         <Script
           id="performance-monitoring"
           strategy="lazyOnload"

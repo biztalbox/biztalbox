@@ -33,7 +33,7 @@ export default function AboutThree() {
           </div>
         </div>
         <div className="row align-items-center">
-          <div className="col-xl-6 col-lg-6 col-md-4">
+          <div className="col-xl-6 col-lg-6 col-md-4 d-none d-md-block">
             <div className="tp-about-3-shape text-lg-end">
               <Image src={shape} alt="shape" style={{ height: "auto" }} />
             </div>

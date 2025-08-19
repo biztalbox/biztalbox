@@ -14,7 +14,7 @@ export default function WhyChooseUs() {
                 <Hand />
                 Hi!
               </span>
-              <p className="tp-dropcap">
+              <p className="tp-dropcap" style={{fontSize: 35, color: 'white'}}>
               We believe every brand without a voice is just a name — and we&apos;re here to make yours heard! No shortcuts or gimmicks, just pure creativity and authentic marketing.
               </p>
             </div>
