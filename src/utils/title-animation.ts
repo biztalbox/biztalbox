@@ -140,81 +140,106 @@ function fadeAnimation(isMobile = false) {
   if (typeof window === 'undefined') return;
 
   if ($(".tp_fade_bottom").length > 0) {
-    gsap.set(".tp_fade_bottom", { y: isMobile ? 50 : 100, opacity: 0 });
+    gsap.set(".tp_fade_bottom", { y: isMobile ? 30 : 100, opacity: 0 }); // Reduced mobile offset
     const fadeArray = gsap.utils.toArray(".tp_fade_bottom");
     fadeArray.forEach((item: any, i) => {
       let fadeTl = gsap.timeline({
         scrollTrigger: {
           trigger: item,
-          start: "top center+=400",
+          start: "top center+=200", // Reduced trigger distance for mobile
           // Use lighter animation settings for mobile
           toggleActions: isMobile ? "play none none none" : "play reverse play reverse",
+          // Performance optimizations
+          fastScrollEnd: true, // Optimize for fast scrolling
+          preventOverlaps: true, // Prevent overlapping triggers
         },
       });
       fadeTl.to(item, {
         y: 0,
         opacity: 1,
         ease: "power2.out",
-        duration: isMobile ? 1 : 1.5,
+        duration: isMobile ? 0.8 : 1.5, // Reduced duration for mobile
+        // Performance optimizations
+        force3D: true, // Force hardware acceleration
+        clearProps: isMobile ? "all" : "none", // Clear props on mobile for better performance
       });
     });
   }
 
   if ($(".tp_fade_top").length > 0) {
-    gsap.set(".tp_fade_top", { y: isMobile ? -50 : -100, opacity: 0 });
+    gsap.set(".tp_fade_top", { y: isMobile ? -30 : -100, opacity: 0 }); // Reduced mobile offset
     const fadetopArray = gsap.utils.toArray(".tp_fade_top");
     fadetopArray.forEach((item: any, i) => {
       let fadeTl = gsap.timeline({
         scrollTrigger: {
           trigger: item,
-          start: "top center+=100",
+          start: "top center+=50", // Reduced trigger distance
           toggleActions: isMobile ? "play none none none" : "play reverse play reverse",
+          // Performance optimizations
+          fastScrollEnd: true,
+          preventOverlaps: true,
         },
       });
       fadeTl.to(item, {
         y: 0,
         opacity: 1,
         ease: "power2.out",
-        duration: isMobile ? 1.5 : 2.5,
+        duration: isMobile ? 1.2 : 2.5, // Reduced duration for mobile
+        // Performance optimizations
+        force3D: true,
+        clearProps: isMobile ? "all" : "none",
       });
     });
   }
 
   if ($(".tp_fade_left").length > 0) {
-    gsap.set(".tp_fade_left", { x: isMobile ? -50 : -100, opacity: 0 });
+    gsap.set(".tp_fade_left", { x: isMobile ? -30 : -100, opacity: 0 }); // Reduced mobile offset
     const fadeleftArray = gsap.utils.toArray(".tp_fade_left");
     fadeleftArray.forEach((item: any, i) => {
       let fadeTl = gsap.timeline({
         scrollTrigger: {
           trigger: item,
-          start: "top center+=100",
+          start: "top center+=200", // Reduced trigger distance
           toggleActions: isMobile ? "play none none none" : "play reverse play reverse",
+          // Performance optimizations
+          fastScrollEnd: true,
+          preventOverlaps: true,
         },
       });
       fadeTl.to(item, {
         x: 0,
         opacity: 1,
         ease: "power2.out",
-        duration: isMobile ? 1.5 : 2.5,
+        duration: isMobile ? 1 : 2, // Reduced duration for mobile
+        // Performance optimizations
+        force3D: true,
+        clearProps: isMobile ? "all" : "none",
       });
     });
   }
 
   if ($(".tp_fade_right").length > 0) {
-    gsap.set(".tp_fade_right", { x: 100, opacity: 0 });
+    gsap.set(".tp_fade_right", { x: isMobile ? 30 : 100, opacity: 0 }); // Reduced mobile offset
     const faderightArray = gsap.utils.toArray(".tp_fade_right");
     faderightArray.forEach((item: any, i) => {
       let fadeTl = gsap.timeline({
         scrollTrigger: {
           trigger: item,
-          start: "top center+=100",
+          start: "top center+=200", // Reduced trigger distance
+          toggleActions: isMobile ? "play none none none" : "play reverse play reverse",
+          // Performance optimizations
+          fastScrollEnd: true,
+          preventOverlaps: true,
         },
       });
       fadeTl.to(item, {
         x: 0,
         opacity: 1,
         ease: "power2.out",
-        duration: 2.5,
+        duration: isMobile ? 1 : 2, // Reduced duration for mobile
+        // Performance optimizations
+        force3D: true,
+        clearProps: isMobile ? "all" : "none",
       });
     });
   }

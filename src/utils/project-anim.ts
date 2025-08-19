@@ -6,11 +6,14 @@ function projectThreeAnimation() {
   if (document.querySelectorAll(".tp-project-3-area").length > 0) {
     let pw = gsap.matchMedia();
     pw.add("(min-width: 100px)", () => {
+      // Check if device is mobile for performance optimization
+      const isMobile = window.innerWidth <= 768;
+      
       gsap.set(".tp-project-3-wrap .pro-img-1 img", {
-        x: "500",
+        x: isMobile ? "200" : "500", // Reduced offset for mobile
       });
       gsap.set(".tp-project-3-wrap .pro-img-2 img", {
-        x: "-500",
+        x: isMobile ? "-200" : "-500", // Reduced offset for mobile
       });
 
       let projects: any = gsap.utils.toArray(".tp-project-3-wrap");
@@ -24,9 +27,15 @@ function projectThreeAnimation() {
             trigger: $this,
             start: "top 96%",
             end: "bottom 65%",
-            scrub: 1,
+            scrub: isMobile ? 0.5 : 1, // Reduced scrub for mobile
             transformOrigin: "50% 50%" as any,
+            // Performance optimizations
+            fastScrollEnd: true,
+            preventOverlaps: true,
           } as any,
+          // Performance optimizations
+          force3D: true,
+          duration: isMobile ? 0.8 : 1.2, // Reduced duration for mobile
         });
 
         gsap.to($this.find(".pro-img-2 img"), {
@@ -35,9 +44,15 @@ function projectThreeAnimation() {
             trigger: $this,
             start: "top 96%",
             end: "bottom 65%",
-            scrub: 1,
+            scrub: isMobile ? 0.5 : 1, // Reduced scrub for mobile
             transformOrigin: "50% 50%" as any,
+            // Performance optimizations
+            fastScrollEnd: true,
+            preventOverlaps: true,
           } as any,
+          // Performance optimizations
+          force3D: true,
+          duration: isMobile ? 0.8 : 1.2, // Reduced duration for mobile
         });
       });
     });

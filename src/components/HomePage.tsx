@@ -1,7 +1,8 @@
 "use client";
 import { gsap } from "gsap";
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, useCallback } from "react";
 import useScrollSmooth from "@/hooks/use-scroll-smooth";
+import { usePerformanceOptimization } from "@/hooks/use-performance-optimization";
 import { ScrollSmoother, ScrollTrigger, SplitText } from "@/plugins";
 import { useGSAP } from "@gsap/react";
 import "../app/mobile-performance.css";
@@ -21,69 +22,62 @@ import { projectThreeAnimation } from "@/utils/project-anim";
 import { ctaAnimation } from "@/utils/cta-anim";
 import WhyChooseUs from "@/components/about/why-choose-us";
 import HeaderEleven from "@/layouts/headers/header-eleven";
+import PerformanceMonitor from "@/components/PerformanceMonitor";
 
 const HomePage = () => {
-  const [isMobile, setIsMobile] = useState<boolean>(false);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [componentsLoaded, setComponentsLoaded] = useState<number>(0);
   const loadingRef = useRef<HTMLDivElement>(null);
+  const animationInitializedRef = useRef<boolean>(false);
+  
+  // Use performance optimization hook
+  const performanceConfig = usePerformanceOptimization();
   
   // Total number of main components to wait for
   const totalComponents = 8; // HeaderEleven, HeroBannerFour, GalleryOne, AboutThree, ProjectFour, WhyChooseUs, ContactOne, FooterFour
   
   useScrollSmooth();
   
+  // Add smooth scroll class to body
   useEffect(() => {
     document.body.classList.add("tp-smooth-scroll");
     
-    // Check if device is mobile
-    const checkDevice = () => {
-      const userAgent = navigator.userAgent || navigator.vendor || (window as any).opera;
-      const isIOS = /iPad|iPhone|iPod/.test(userAgent) && !(window as any).MSStream;
-      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
-      setIsMobile(isIOS || isMobileDevice);
-    };
-    
-    checkDevice();
-    window.addEventListener('resize', checkDevice);
-    
     return () => {
       document.body.classList.remove("tp-smooth-scroll");
-      window.removeEventListener('resize', checkDevice);
     };
   }, []);
-
-  // Check if all components are loaded
+  
+  // Optimized loading completion check
   useEffect(() => {
     if (componentsLoaded >= totalComponents) {
-      // Add a small delay to ensure smooth transition
+      // Reduced delay for better performance
       const hideLoader = setTimeout(() => {
         if (loadingRef.current) {
           loadingRef.current.style.opacity = '0';
-          loadingRef.current.style.transition = 'opacity 0.5s ease-out';
+          loadingRef.current.style.transition = 'opacity 0.3s ease-out';
           
           setTimeout(() => {
             setIsLoading(false);
-          }, 500);
+          }, 300); // Reduced from 500ms
         }
-      }, 800); // Wait a bit longer to ensure everything is rendered
+      }, 400); // Reduced from 800ms
       
       return () => clearTimeout(hideLoader);
     }
   }, [componentsLoaded, totalComponents]);
 
-  // Simulate component loading completion
+  // Optimized component loading simulation
   useEffect(() => {
-    // Simulate individual component loading
+    // Faster component loading simulation
     const loadingTimers = [
-      setTimeout(() => setComponentsLoaded(prev => prev + 1), 200),
-      setTimeout(() => setComponentsLoaded(prev => prev + 1), 400),
-      setTimeout(() => setComponentsLoaded(prev => prev + 1), 600),
-      setTimeout(() => setComponentsLoaded(prev => prev + 1), 800),
-      setTimeout(() => setComponentsLoaded(prev => prev + 1), 1000),
-      setTimeout(() => setComponentsLoaded(prev => prev + 1), 1200),
-      setTimeout(() => setComponentsLoaded(prev => prev + 1), 1400),
-      setTimeout(() => setComponentsLoaded(prev => prev + 1), 1600),
+      setTimeout(() => setComponentsLoaded(prev => prev + 1), 100), // Reduced from 200ms
+      setTimeout(() => setComponentsLoaded(prev => prev + 1), 200), // Reduced from 400ms
+      setTimeout(() => setComponentsLoaded(prev => prev + 1), 300), // Reduced from 600ms
+      setTimeout(() => setComponentsLoaded(prev => prev + 1), 400), // Reduced from 800ms
+      setTimeout(() => setComponentsLoaded(prev => prev + 1), 500), // Reduced from 1000ms
+      setTimeout(() => setComponentsLoaded(prev => prev + 1), 600), // Reduced from 1200ms
+      setTimeout(() => setComponentsLoaded(prev => prev + 1), 700), // Reduced from 1400ms
+      setTimeout(() => setComponentsLoaded(prev => prev + 1), 800), // Reduced from 1600ms
     ];
     
     return () => {
@@ -91,27 +85,45 @@ const HomePage = () => {
     };
   }, []);
 
+  // Optimized animation initialization with performance considerations
   useGSAP(() => {
+    // Prevent multiple initializations
+    if (animationInitializedRef.current) return;
+    
     const timer = setTimeout(() => {
-      // Apply lighter animations for mobile devices
-      if (isMobile) {
-        // Apply only essential animations with reduced complexity
+      // Apply optimized animations based on device and preferences
+      if (performanceConfig.prefersReducedMotion) {
+        // Skip all animations for users who prefer reduced motion
+        return;
+      }
+      
+      if (performanceConfig.isMobile || performanceConfig.isLowPowerMode) {
+        // Mobile-optimized animations - only essential ones
         fadeAnimation(true);
+        // Skip heavy animations on mobile for better performance
       } else {
-        // Apply all animations for desktop
+        // Desktop animations with performance optimizations
         fadeAnimation(false);
         revelAnimationOne();
         projectThreeAnimation();
         ctaAnimation();
         textInvert();
       }
-    }, 100);
-    return () => clearTimeout(timer);
-  }, [isMobile]);
+      
+      animationInitializedRef.current = true;
+    }, 50); // Reduced from 100ms
+    
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [performanceConfig]);
 
   return (
     <>
-      {/* Loading UI */}
+      {/* Performance Monitor (Development Only) */}
+      {/* <PerformanceMonitor /> */}
+      
+      {/* Optimized Loading UI */}
       {isLoading && (
         <div 
           ref={loadingRef}
@@ -127,10 +139,10 @@ const HomePage = () => {
             justifyContent: 'center',
             alignItems: 'center',
             zIndex: 9999,
-            transition: 'opacity 0.5s ease-out'
+            transition: 'opacity 0.3s ease-out'
           }}
         >
-          {/* Loading Spinner */}
+          {/* Optimized Loading Spinner */}
           <div 
             style={{
               width: '50px',
@@ -139,7 +151,8 @@ const HomePage = () => {
               borderTop: '3px solid #fff',
               borderRadius: '50%',
               animation: 'spin 1s linear infinite',
-              marginBottom: '20px'
+              marginBottom: '20px',
+              willChange: 'transform' // Performance hint
             }}
           />
           
@@ -170,7 +183,7 @@ const HomePage = () => {
                 width: `${Math.min((componentsLoaded / totalComponents) * 100, 100)}%`,
                 height: '100%',
                 backgroundColor: '#fff',
-                transition: 'width 0.3s ease-out'
+                transition: 'width 0.2s ease-out' // Reduced from 0.3s
               }}
             />
           </div>
@@ -188,7 +201,7 @@ const HomePage = () => {
         </div>
       )}
 
-      {/* Add keyframe animation for spinner */}
+      {/* Optimized keyframe animation for spinner */}
       <style jsx>{`
         @keyframes spin {
           0% { transform: rotate(0deg); }

@@ -5,11 +5,11 @@ import shape from '@/assets/img/inner-about/about/shape-1.png';
 
 export default function WhyChooseUs() {
   return (
-    <div className="ab-about-area pb-90 z-index-5 why_choose_us_wrapper pt-120">
+    <div className="ab-about-area pb-90 z-index-5 why_choose_us_wrapper pt-90">
       <div className="container">
         <div className="row">
           <div className="col-xl-12">
-            <div className="ab-about-content p-relative tp_fade_bottom">
+            <div className="ab-about-content p-relative mt-80">   {/* add this class for animation tp_fade_bottom */}
               <span>
                 <Hand />
                 Hi!
