@@ -3,10 +3,17 @@ import { getBlogPostBySlug } from "@/utils/api";
 import BlogDetailsMain from "@/demoPages/blog/blog-details";
 import { notFound } from "next/navigation";
 import { createMetadata } from "@/utils/metadata";
+import { fetchRankMathData, createMetadataFromRankMath } from "@/utils/rankmath";
+import RankMathSchema from "@/components/schema/RankMathSchema";
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
   try {
-    const blog = await getBlogPostBySlug(params.slug);
+    // Fetch both blog post data and RankMath data in parallel
+    const [blog, rankMathData] = await Promise.all([
+      getBlogPostBySlug(params.slug),
+      fetchRankMathData(params.slug)
+      // fetchRankMathData('what-are-kappa-board-boxes')
+    ]);
     
     if (!blog) {
       console.warn(`Blog post not found for slug: ${params.slug}`);
@@ -16,14 +23,17 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       }, '/blog/not-found');
     }
     
-    const baseMetadata = {
-      title: blog.yoast_head_json?.title || blog.title?.rendered || `Blog Post - Biztal Box`,
-      description: blog.yoast_head_json?.description || 
-                  (blog.excerpt?.rendered ? blog.excerpt.rendered.replace(/<[^>]*>/g, '').slice(0, 160) : 
-                  'Read this blog post on Biztal Box - Your digital marketing partner'),
-    };
+    // Use RankMath data if available, otherwise fall back to blog post data
+    const baseMetadata = rankMathData.title || rankMathData.description 
+      ? createMetadataFromRankMath(rankMathData, blog.title?.rendered || 'Blog Post - Biztal Box')
+      : {
+          title: blog.title?.rendered || `Blog Post - Biztal Box`,
+          description: blog.excerpt?.rendered ? blog.excerpt.rendered.replace(/<[^>]*>/g, '').slice(0, 160) : 
+                      'Read this blog post on Biztal Box - Your digital marketing partner'
+        };
     
     return createMetadata(baseMetadata, `/blog/${params.slug}`);
+    // return createMetadataFromRankMath(rankMathData, blog.title?.rendered || 'Blog Post - Biztal Box');
   } catch (error) {
     console.error(`Error generating metadata for blog post ${params.slug}:`, error);
     
@@ -37,7 +47,11 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
 export default async function BlogDetailsPage({params}:{params:{slug:string}}) {
   try {
-    const blog = await getBlogPostBySlug(params.slug);
+    // Fetch both blog post data and RankMath data in parallel
+    const [blog, rankMathData] = await Promise.all([
+      getBlogPostBySlug(params.slug),
+      fetchRankMathData(params.slug)
+    ]);
     
     if (!blog) {
       console.warn(`Blog post not found for slug: ${params.slug}`);
@@ -76,7 +90,13 @@ export default async function BlogDetailsPage({params}:{params:{slug:string}}) {
       categories: blog.categories || []
     };
 
-    return <BlogDetailsMain blog={transformedBlog} />;
+    return (
+      <>
+        {/* Render RankMath schema if available */}
+        <RankMathSchema schemaData={rankMathData.schema} />
+        <BlogDetailsMain blog={transformedBlog} />
+      </>
+    );
   } catch (error) {
     console.error(`Error loading blog post ${params.slug}:`, error);
     
