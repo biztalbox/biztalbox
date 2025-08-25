@@ -90,10 +90,14 @@ export default async function BlogDetailsPage({params}:{params:{slug:string}}) {
       categories: blog.categories || []
     };
 
+
+
     return (
       <>
-        {/* Render RankMath schema if available */}
-        <RankMathSchema schemaData={rankMathData.schema} />
+        {/* Render RankMath schema only if available */}
+        {rankMathData.schema && (
+          <RankMathSchema schemaData={rankMathData.schema} />
+        )}
         <BlogDetailsMain blog={transformedBlog} />
       </>
     );

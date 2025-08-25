@@ -38,7 +38,7 @@ export async function fetchRankMathData(
   try {
     const apiUrl = `${baseUrl}/wp-json/rankmath/v1/getHead?url=${baseUrl}/${postSlug}`;
     
-    console.log(`Fetching RankMath data for: ${apiUrl}`);
+
     
     const response = await fetch(apiUrl, {
       headers: {
@@ -156,12 +156,14 @@ export function formatRankMathData(headHtml: string): FormattedRankMathData {
       formattedData.canonical = canonicalMatch[1];
     }
 
-    // Extract JSON-LD schema
-    const schemaMatch = decodedHtml.match(/<script[^>]*type=["']application\/ld\+json["'][^>]*>([^<]+)<\/script>/i);
+    // Extract JSON-LD schema - improved regex to handle multiline content
+    const schemaMatch = decodedHtml.match(/<script[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/i);
     
     if (schemaMatch) {
       try {
-        const schemaData = JSON.parse(schemaMatch[1]);
+        const schemaContent = schemaMatch[1].trim();
+        const schemaData = JSON.parse(schemaContent);
+        
         // Update URLs in schema to use new domain
         formattedData.schema = updateSchemaUrls(schemaData);
         
@@ -170,6 +172,7 @@ export function formatRankMathData(headHtml: string): FormattedRankMathData {
         if (originalScriptTag) {
           formattedData.originalSchemaScript = originalScriptTag[0];
         }
+        
       } catch (parseError) {
         console.warn('Failed to parse JSON-LD schema:', parseError);
       }
@@ -219,6 +222,52 @@ export function updateSchemaUrls(schemaData: any): any {
   };
   
   return updateUrls(schemaData);
+}
+
+/**
+ * Creates a default Article schema for blog posts
+ * @param title - Article title
+ * @param description - Article description
+ * @param url - Article URL
+ * @param image - Article image URL
+ * @param author - Article author
+ * @param datePublished - Publication date
+ * @returns Article schema object
+ */
+export function createDefaultArticleSchema(
+  title: string,
+  description: string,
+  url: string,
+  image?: string,
+  author: string = 'Biztal Box',
+  datePublished?: string
+): any {
+  return {
+    '@type': 'Article',
+    headline: title,
+    description: description,
+    url: url,
+    image: image || 'https://biztalbox.com/logo.png',
+    author: {
+      '@type': 'Organization',
+      name: author,
+      url: 'https://biztalbox.com'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Biztal Box',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://biztalbox.com/logo.png'
+      }
+    },
+    datePublished: datePublished || new Date().toISOString(),
+    dateModified: new Date().toISOString(),
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': url
+    }
+  };
 }
 
 /**

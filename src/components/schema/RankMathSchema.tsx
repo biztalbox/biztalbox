@@ -17,6 +17,7 @@ export default function RankMathSchema({ schemaData }: RankMathSchemaProps) {
     <Script
       id="rankmath-schema"
       type="application/ld+json"
+      strategy="beforeInteractive"
       dangerouslySetInnerHTML={{
         __html: JSON.stringify(schemaData, null, 2)
       }}
