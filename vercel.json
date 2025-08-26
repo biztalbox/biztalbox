@@ -1,0 +1,16 @@
+{
+    "redirects": [
+      {
+        "source": "/(.*)",
+        "has": [
+          {
+            "type": "host",
+            "value": "www.biztalbox.com"
+          }
+        ],
+        "destination": "https://biztalbox.com/:1",
+        "permanent": true
+      }
+    ]
+  }
+  
