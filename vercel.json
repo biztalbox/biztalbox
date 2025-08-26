@@ -1,15 +1,12 @@
 {
     "redirects": [
       {
-        "source": "/(.*)",
+        "source": "/:path*",
         "has": [
-          {
-            "type": "host",
-            "value": "www.biztalbox.com"
-          }
+          { "type": "host", "value": "www.biztalbox.com" }
         ],
-        "destination": "https://biztalbox.com/:1",
-        "permanent": true
+        "destination": "https://biztalbox.com/:path*",
+        "statusCode": 301
       }
     ]
   }
