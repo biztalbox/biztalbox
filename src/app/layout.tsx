@@ -92,7 +92,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://blog.biztalbox.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
+        <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
         {/* Add resource hints */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
