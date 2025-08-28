@@ -4,9 +4,10 @@ import ReactPaginate from "react-paginate";
 type IProps = {
   pageCount: number;
   handlePageClick: (event: { selected: number }) => void;
+  currentPage?: number;
 };
 
-const Pagination = ({ handlePageClick, pageCount }: IProps) => {
+const Pagination = ({ handlePageClick, pageCount, currentPage }: IProps) => {
   return (
     <ReactPaginate
       className="pagination list-wrap"
@@ -18,6 +19,7 @@ const Pagination = ({ handlePageClick, pageCount }: IProps) => {
       pageCount={pageCount}
       previousLabel={<i className="fa-regular fa-arrow-left icon"></i>}
       renderOnZeroPageCount={null}
+      forcePage={currentPage ? currentPage - 1 : undefined}
     />
   );
 };

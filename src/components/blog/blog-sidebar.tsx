@@ -6,10 +6,12 @@ import { RightArrow, Search, SvgBgSm } from "../svg";
 import Link from "next/link";
 import RecentPostList from "./recentpostlist";
 import CategoryList from "./categorylist";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
+import { validateSearchQuery, buildBlogUrl } from "@/utils/blog-utils";
 
 export default function BlogSidebar() {
   const router = useRouter();
+  const pathname = usePathname();
   const [isSubscribing, setIsSubscribing] = useState(false);
   const [subscribeMessage, setSubscribeMessage] = useState<string>("");
   const [subscribeStatus, setSubscribeStatus] = useState<
@@ -19,9 +21,14 @@ export default function BlogSidebar() {
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const searchQuery = (e.target as HTMLFormElement).search.value;
-    if (searchQuery) {
-      router.push(`/blog?search=${searchQuery}`);
-      e.currentTarget.reset();
+    
+    if (searchQuery && searchQuery.trim()) {
+      const validatedQuery = validateSearchQuery(searchQuery);
+      if (validatedQuery) {
+        const searchUrl = buildBlogUrl(pathname, { search: validatedQuery });
+        router.push(searchUrl);
+        e.currentTarget.reset();
+      }
     }
   };
 
@@ -95,7 +102,14 @@ export default function BlogSidebar() {
           <div className="sidebar__search">
             <form onSubmit={handleSearch}>
               <div className="sidebar__search-input-2">
-                <input type="text" placeholder="Search" name="search" />
+                <input 
+                  type="text" 
+                  placeholder="Search" 
+                  name="search" 
+                  maxLength={100}
+                  pattern="[^<>]*"
+                  title="Search query cannot contain < or > characters"
+                />
                 <button type="submit">
                   <Search />
                 </button>

@@ -16,7 +16,13 @@ import BlogClassicSlider from "@/components/blog/slider/blog-classic-slider";
 import BlogClassicArea from "@/components/blog/blog-classic-area";
 import VideoPopup from "@/components/modal/video-popup";
 
-const BlogClassicMain = () => {
+type SearchParams = {
+  page?: string;
+  category?: string;
+  search?: string;
+};
+
+const BlogClassicMain = ({ searchParams }: { searchParams?: SearchParams }) => {
   const [isVideoOpen, setIsVideoOpen] = React.useState(false);
   const [videoId, setVideoId] = React.useState("rVHxkxJM3rY");
   useScrollSmooth();
@@ -60,7 +66,11 @@ const BlogClassicMain = () => {
                 </div>
               </section>
             }>
-              <BlogClassicArea setIsVideoOpen={setIsVideoOpen} setVideoId={setVideoId} />
+              <BlogClassicArea 
+                setIsVideoOpen={setIsVideoOpen} 
+                setVideoId={setVideoId} 
+                searchParams={searchParams}
+              />
             </Suspense>
             {/* blog classic area area */}
           </main>

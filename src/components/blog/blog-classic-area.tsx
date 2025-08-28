@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { SwiperOptions } from "swiper/types";
-import { useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
 
 import BlogSidebar from "./blog-sidebar";
 import { blog_classic } from "@/data/blog-data";
@@ -12,6 +12,12 @@ import { Quote, QuoteTwo, RightArrow, SvgBgSm } from "../svg";
 import usePagination from "@/hooks/use-pagination";
 import { IBlogDT } from "@/types/blog-d-t";
 import PaginationCom from "../ui/pagination";
+import { 
+  BlogSearchParams, 
+  parseAndValidateSearchParams, 
+  buildBlogUrl, 
+  handleApiError 
+} from "@/utils/blog-utils";
 
 // WordPress API response interface
 interface WordPressPost {
@@ -285,25 +291,32 @@ const slider_setting: SwiperOptions = {
 type IProps = {
   setIsVideoOpen: React.Dispatch<React.SetStateAction<boolean>>;
   setVideoId: React.Dispatch<React.SetStateAction<string>>;
+  searchParams?: BlogSearchParams;
 };
 
 export default function BlogClassicArea({
   setIsVideoOpen,
   setVideoId,
+  searchParams,
 }: IProps) {
   const [wordpressPosts, setWordpressPosts] = useState<IBlogDT[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const [currentCategory, setCurrentCategory] =
     useState<WordPressCategory | null>(null);
-  const searchParams = useSearchParams();
-  const categorySlug = searchParams.get("category");
-  const searchQuery = searchParams.get("search");
   const [isSubscribing, setIsSubscribing] = useState(false);
   const [subscribeMessage, setSubscribeMessage] = useState<string>("");
   const [subscribeStatus, setSubscribeStatus] = useState<
     "success" | "error" | ""
   >("");
+
+  const router = useRouter();
+  const pathname = usePathname();
+  const urlSearchParams = useSearchParams();
+
+  // Parse and validate search parameters
+  const { page: currentPage, category: validatedCategorySlug, search: validatedSearchQuery } = 
+    parseAndValidateSearchParams(urlSearchParams, searchParams);
 
   // Add shimmer animation to document
   useEffect(() => {
@@ -323,12 +336,13 @@ export default function BlogClassicArea({
     const fetchPosts = async () => {
       try {
         setLoading(true);
+        setError(null);
 
         // If category is specified, fetch category info first
-        if (categorySlug) {
+        if (validatedCategorySlug) {
           try {
             const categoryResponse = await fetch(
-              `https://blog.biztalbox.com/wp-json/wp/v2/categories?slug=${categorySlug}`
+              `https://blog.biztalbox.com/wp-json/wp/v2/categories?slug=${validatedCategorySlug}`
             );
             if (categoryResponse.ok) {
               const categories: WordPressCategory[] =
@@ -349,10 +363,10 @@ export default function BlogClassicArea({
           "https://blog.biztalbox.com/wp-json/wp/v2/posts?_embed&per_page=100";
 
         // Add category filter
-        if (categorySlug) {
+        if (validatedCategorySlug) {
           // First get category ID by slug, then filter posts
           const categoryResponse = await fetch(
-            `https://blog.biztalbox.com/wp-json/wp/v2/categories?slug=${categorySlug}`
+            `https://blog.biztalbox.com/wp-json/wp/v2/categories?slug=${validatedCategorySlug}`
           );
           if (categoryResponse.ok) {
             const categories: WordPressCategory[] =
@@ -364,8 +378,8 @@ export default function BlogClassicArea({
         }
 
         // Add search query
-        if (searchQuery) {
-          apiUrl += `&search=${encodeURIComponent(searchQuery)}`;
+        if (validatedSearchQuery) {
+          apiUrl += `&search=${encodeURIComponent(validatedSearchQuery)}`;
         }
 
         const response = await fetch(apiUrl);
@@ -423,23 +437,44 @@ export default function BlogClassicArea({
         });
 
         setWordpressPosts(mappedPosts);
-        setError(null);
-      } catch (err) {
-        setError("Failed to load blog posts. Please try again later.");
-        // Fallback to static data if API fails
-        setWordpressPosts([...blog_classic.filter((b) => !b.blogHeroSlider)]);
-      } finally {
-        setLoading(false);
-      }
+              } catch (err) {
+          const errorMessage = handleApiError(err);
+          setError(errorMessage);
+          console.error("Error fetching posts:", err);
+          // Fallback to static data if API fails
+          setWordpressPosts([...blog_classic.filter((b) => !b.blogHeroSlider)]);
+        } finally {
+          setLoading(false);
+        }
     };
 
     fetchPosts();
-  }, [categorySlug, searchQuery]);
+  }, [validatedCategorySlug, validatedSearchQuery]);
 
-  const { currentItems, handlePageClick, pageCount } = usePagination<IBlogDT>(
+  // URL-based pagination hook
+  const { currentItems, pageCount, handlePageClick } = usePagination<IBlogDT>(
     wordpressPosts,
-    4
+    4,
+    currentPage
   );
+
+  // Enhanced page click handler with URL updates
+  const handlePageClickWithURL = (event: { selected: number }) => {
+    const newPage = event.selected + 1;
+    
+    // Build new URL with current search params
+    const newUrl = buildBlogUrl(pathname, {
+      page: newPage > 1 ? newPage : undefined,
+      category: validatedCategorySlug || undefined,
+      search: validatedSearchQuery || undefined,
+    });
+    
+    // Update URL without page reload
+    router.push(newUrl, { scroll: false });
+    
+    // Scroll to top smoothly
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   function handleVideoModal(id: string) {
     setIsVideoOpen(true);
@@ -504,17 +539,17 @@ export default function BlogClassicArea({
         <div className="row">
           <div className="col-xxl-8 col-xl-8 col-lg-8">
             <div className="postbox__wrapper">
-              {(currentCategory || searchQuery) && (
+              {(currentCategory || validatedSearchQuery) && (
                 <div className="postbox__category-header mb-50">
                   <div className="postbox__category-title">
                     <h2 className="category-page-title text-white">
-                      {searchQuery
-                        ? `Search Results for "${searchQuery}"`
+                      {validatedSearchQuery
+                        ? `Search Results for "${validatedSearchQuery}"`
                         : currentCategory?.name}
                     </h2>
                     <p className="category-description">
-                      {searchQuery
-                        ? `Found ${wordpressPosts.length} posts matching "${searchQuery}"`
+                      {validatedSearchQuery
+                        ? `Found ${wordpressPosts.length} posts matching "${validatedSearchQuery}"`
                         : `Found ${wordpressPosts.length} posts in "${currentCategory?.name}" category`}
                     </p>
                   </div>
@@ -641,10 +676,16 @@ export default function BlogClassicArea({
                 <div className="basic-pagination">
                   <nav>
                     <PaginationCom
-                      handlePageClick={handlePageClick}
+                      handlePageClick={handlePageClickWithURL}
                       pageCount={pageCount}
+                      currentPage={currentPage}
                     />
                   </nav>
+                  {/* <div className="pagination-info text-center mt-3">
+                    <small className="">
+                      Showing {((currentPage - 1) * 4) + 1} to {Math.min(currentPage * 4, wordpressPosts.length)} of {wordpressPosts.length} posts
+                    </small>
+                  </div> */}
                 </div>
               )}
 
