@@ -6,12 +6,11 @@ import { RightArrow, Search, SvgBgSm } from "../svg";
 import Link from "next/link";
 import RecentPostList from "./recentpostlist";
 import CategoryList from "./categorylist";
-import { useRouter, usePathname } from "next/navigation";
+import { useRouter} from "next/navigation";
 import { validateSearchQuery, buildBlogUrl } from "@/utils/blog-utils";
 
 export default function BlogSidebar() {
   const router = useRouter();
-  const pathname = usePathname();
   const [isSubscribing, setIsSubscribing] = useState(false);
   const [subscribeMessage, setSubscribeMessage] = useState<string>("");
   const [subscribeStatus, setSubscribeStatus] = useState<
@@ -25,7 +24,7 @@ export default function BlogSidebar() {
     if (searchQuery && searchQuery.trim()) {
       const validatedQuery = validateSearchQuery(searchQuery);
       if (validatedQuery) {
-        const searchUrl = buildBlogUrl(pathname, { search: validatedQuery });
+        const searchUrl = buildBlogUrl('/blog', { search: validatedQuery });
         router.push(searchUrl);
         e.currentTarget.reset();
       }
