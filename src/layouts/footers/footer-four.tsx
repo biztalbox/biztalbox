@@ -56,7 +56,7 @@ export default function FooterFour({ background }: { background?: string }) {
                   </Link> */}
                   <div className="tp-footer-3-social mb-20">
                     <a href="https://x.com/BiztalBox" target="_blank">
-                      <i className="fa-brands fa-twitter"></i>
+                      <i className="fa-brands fa-x"></i>
                     </a>
                     <a
                       href="https://www.facebook.com/BiztalBox"

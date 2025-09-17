@@ -178,7 +178,7 @@ export default function FooterTwo({ whiteFooter = false,topCls='footer-top' }: I
                   <Image src={logo} alt="logo" />
                 </Link> */}
                 <div className="tp-footer-3-social mb-20">
-                  <a href="https://x.com/BiztalBox" target='_blank'><i className="fa-brands fa-twitter"></i></a>
+                  <a href="https://x.com/BiztalBox" target='_blank'><i className="fa-brands fa-x"></i></a>
                   <a href="https://www.facebook.com/BiztalBox" target='_blank'><i className="fa-brands fa-facebook-f"></i></a>
                   <a href="https://www.instagram.com/biztalbox" target='_blank'><i className="fa-brands fa-instagram"></i></a>
                   <a href="https://www.linkedin.com/company/biztal" target='_blank'><i className="fa-brands fa-linkedin-in"></i></a>
