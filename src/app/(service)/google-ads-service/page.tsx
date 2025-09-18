@@ -21,7 +21,7 @@ const GoogleAdsServicePage = () => {
   const [activePower, setActivePower] = React.useState<number | null>(1);
   const highlightColor = "#b24342"; // You can change this color or make it a prop
 
-  // Memoize RGB values to prevent repeated parsing
+  // Memoize RGB values to prevent repeated parsing 
   const colorRGB = useMemo(() => {
     const r = parseInt(highlightColor.slice(1, 3), 16);
     const g = parseInt(highlightColor.slice(3, 5), 16);
@@ -69,6 +69,7 @@ const GoogleAdsServicePage = () => {
             <ScrollPinImage
               imageSrc="/assets/img/services/GOOGLE_ADS.webp"
               imageAlt="Google Ads Performance Marketing"
+              videoSrc="https://res.cloudinary.com/djoiovkr1/video/upload/Google_Ads_2_x1yw7a.webm"
             >
               <div className="project-details-1-right p-relative">
                 <div className="project-details-1-title-box">

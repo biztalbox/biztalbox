@@ -69,6 +69,7 @@ const WebsiteDevelopmentPage = () => {
             <ScrollPinImage
               imageSrc="/assets/img/services/WEBDEV.webp"
               imageAlt="Web Dev Web Development"
+              videoSrc="https://res.cloudinary.com/djoiovkr1/video/upload/Web_Dev_wsjxnk.webm"
             >
               <div className="project-details-1-right p-relative">
                 <div className="project-details-1-title-box">

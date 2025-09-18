@@ -69,6 +69,7 @@ const BestSeoAgencyPage = () => {
             <ScrollPinImage
               imageSrc="/assets/img/services/seo.webp"
               imageAlt="Search Engine Optimization"
+              videoSrc="https://res.cloudinary.com/djoiovkr1/video/upload/SEO_Stricker_2_aqk6qd.webm"
             >
               <div className="project-details-1-right p-relative">
                 <div className="project-details-1-title-box">

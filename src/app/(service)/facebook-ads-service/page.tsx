@@ -70,6 +70,7 @@ const FacebookAdsServicePage = () => {
             <ScrollPinImage
               imageSrc="/assets/img/services/META.webp"
               imageAlt="Meta Ads Facebook & Meta Ads"
+              videoSrc="https://res.cloudinary.com/djoiovkr1/video/upload/Meta_Ads_2_x1yw7a.webm"
             >
               <div className="project-details-1-right p-relative">
                 <div className="project-details-1-title-box">

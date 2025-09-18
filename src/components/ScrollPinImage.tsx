@@ -10,16 +10,18 @@ interface ScrollPinImageProps {
   imageAlt: string;
   children: React.ReactNode;
   className?: string;
+  videoSrc?: string;
 }
 
 const ScrollPinImage: React.FC<ScrollPinImageProps> = ({
   imageSrc,
   imageAlt,
   children,
+  videoSrc,
   className = "",
 }) => {
   useScrollSmooth();
-  const [textHeight, setTextHeight] = useState<any>('auto');
+  const [textHeight, setTextHeight] = useState<any>("auto");
   const [isClient, setIsClient] = useState(false);
   const [isCalculated, setIsCalculated] = useState(false);
   const [isHydrated, setIsHydrated] = useState(false);
@@ -34,20 +36,20 @@ const ScrollPinImage: React.FC<ScrollPinImageProps> = ({
     const hydrationTimer = setTimeout(() => {
       setIsHydrated(true);
     }, 300);
-    
+
     return () => clearTimeout(hydrationTimer);
   }, []);
 
   useEffect(() => {
     // Force scroll to top on mount
-    if (typeof window !== 'undefined') {
+    if (typeof window !== "undefined") {
       window.scrollTo(0, 0);
     }
   }, []);
 
   useEffect(() => {
     // Only proceed if we're on client, hydrated, and have all refs
-    if (!isClient || !isHydrated || typeof window === 'undefined') return;
+    if (!isClient || !isHydrated || typeof window === "undefined") return;
     if (!sectionRef.current || !imageRef.current || !textRef.current) return;
 
     // Register the ScrollTrigger plugin
@@ -56,23 +58,30 @@ const ScrollPinImage: React.FC<ScrollPinImageProps> = ({
     // Calculate proper height with buffer for all screen sizes
     const calculateHeight = () => {
       const textElement = textRef.current;
-      if (!textElement) return 'auto';
+      if (!textElement) return "auto";
 
       // Get viewport height
       const viewportHeight = window.innerHeight;
-      
+
       // Use scrollHeight for more consistent measurements
       const textScrollHeight = textElement.scrollHeight;
-      
+
       // Add buffer to ensure no content is cut off (10% of viewport height)
       const bufferHeight = Math.max(50, viewportHeight * 0.1);
       const calculatedHeight = textScrollHeight + bufferHeight;
-      
+
       // Ensure minimum height is at least viewport height for small screens
       const finalHeight = Math.max(calculatedHeight, viewportHeight);
-      
-      console.log('Production Height Calc - Viewport:', viewportHeight, 'Text:', textScrollHeight, 'Final:', finalHeight);
-      
+
+      console.log(
+        "Production Height Calc - Viewport:",
+        viewportHeight,
+        "Text:",
+        textScrollHeight,
+        "Final:",
+        finalHeight
+      );
+
       return finalHeight;
     };
 
@@ -81,26 +90,29 @@ const ScrollPinImage: React.FC<ScrollPinImageProps> = ({
       let frameCount = 0;
       let lastHeight = 0;
       const maxFrames = 8; // Increased for production stability
-      
+
       const checkHeight = () => {
         const currentHeight = calculateHeight();
-        
-        if (typeof currentHeight === 'number') {
+
+        if (typeof currentHeight === "number") {
           // If height is stable across frames or we've reached max frames
-          if (Math.abs(currentHeight - lastHeight) < 10 || frameCount >= maxFrames) {
+          if (
+            Math.abs(currentHeight - lastHeight) < 10 ||
+            frameCount >= maxFrames
+          ) {
             setTextHeight(currentHeight);
             setIsCalculated(true);
             return;
           }
-          
+
           lastHeight = currentHeight;
           frameCount++;
         }
-        
+
         // Continue checking in next frame
         requestAnimationFrame(checkHeight);
       };
-      
+
       // Start checking after a delay to ensure content is loaded (increased for production)
       setTimeout(() => {
         requestAnimationFrame(checkHeight);
@@ -115,13 +127,21 @@ const ScrollPinImage: React.FC<ScrollPinImageProps> = ({
         scrollTriggerRef.current.kill();
         scrollTriggerRef.current = null;
       }
-      ScrollTrigger.getAll().forEach((trigger: ScrollTrigger) => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger: ScrollTrigger) =>
+        trigger.kill()
+      );
     };
   }, [isClient, isHydrated]);
 
   // Separate effect for ScrollTrigger to ensure it runs after height calculation
   useEffect(() => {
-    if (!isClient || !isHydrated || !isCalculated || typeof window === 'undefined') return;
+    if (
+      !isClient ||
+      !isHydrated ||
+      !isCalculated ||
+      typeof window === "undefined"
+    )
+      return;
     if (!sectionRef.current || !imageRef.current || !textRef.current) return;
 
     // Create the scroll trigger animation only after height is calculated
@@ -148,17 +168,17 @@ const ScrollPinImage: React.FC<ScrollPinImageProps> = ({
               if (imageRef.current) {
                 const scale = 1 - 0.2 * self.progress;
                 const translateY = 3 * self.progress;
-                gsap.to(imageRef.current, { 
-                  scale: scale, 
-                  yPercent: translateY, 
-                  duration: 0.3, 
-                  ease: "power1.out" 
+                gsap.to(imageRef.current, {
+                  scale: scale,
+                  yPercent: translateY,
+                  duration: 0.3,
+                  ease: "power1.out",
                 });
               }
             },
             onRefresh: () => {
-              console.log('ScrollTrigger refreshed in production');
-            }
+              console.log("ScrollTrigger refreshed in production");
+            },
           });
 
           // Force a refresh after creation
@@ -183,7 +203,7 @@ const ScrollPinImage: React.FC<ScrollPinImageProps> = ({
         setTimeout(() => {
           if (textRef.current && sectionRef.current && imageRef.current) {
             const newHeight = calculateHeight();
-            if (typeof newHeight === 'number') {
+            if (typeof newHeight === "number") {
               setTextHeight(newHeight);
               setIsCalculated(true);
             }
@@ -194,7 +214,7 @@ const ScrollPinImage: React.FC<ScrollPinImageProps> = ({
 
     const calculateHeight = () => {
       const textElement = textRef.current;
-      if (!textElement) return 'auto';
+      if (!textElement) return "auto";
       const viewportHeight = window.innerHeight;
       const textScrollHeight = textElement.scrollHeight;
       const bufferHeight = Math.max(50, viewportHeight * 0.1);
@@ -202,43 +222,63 @@ const ScrollPinImage: React.FC<ScrollPinImageProps> = ({
       return Math.max(calculatedHeight, viewportHeight);
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       if (scrollTriggerRef.current) {
         scrollTriggerRef.current.kill();
         scrollTriggerRef.current = null;
       }
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
       clearTimeout(resizeTimeout);
     };
   }, [isClient, isHydrated, isCalculated]);
 
   return (
-    <div ref={sectionRef} className={`project-details-1-area project-details-1-pt ${className}`}>
+    <div
+      ref={sectionRef}
+      className={`project-details-1-area project-details-1-pt ${className}`}
+    >
       <div className="container-fluid">
-        <div className="row flex-xl-nowrap" style={{height: isClient && isHydrated && window.innerWidth >= 1025 && isCalculated ? textHeight : 'auto'}}>
+        <div
+          className="row flex-xl-nowrap"
+          style={{
+            height:
+              isClient &&
+              isHydrated &&
+              window.innerWidth >= 1025 &&
+              isCalculated
+                ? textHeight
+                : "auto",
+          }}
+        >
           <div ref={imageRef} className="col-xl-5">
             <div className="project-details-1-left">
               <div className="project-details-1-thumb mb-10">
-                <Image
+                {/* <Image
                   src={imageSrc}
                   alt={imageAlt}
                   width={900}
                   height={600}
                   className="h-auto m-auto d-block"
                   priority
-                />
+                /> */}
+                <video
+                  src={videoSrc}
+                  autoPlay  
+                  loop
+                  muted
+                  style={{width: "100%", height: "auto"}}></video>
               </div>
             </div>
           </div>
-          <div 
-            ref={textRef} 
-            className="col-xl-7 overflow-hidden hide-scrollbar" 
-            style={{ 
-              overflowY: 'auto', 
-              scrollbarWidth: 'none', 
-              msOverflowStyle: 'none',
+          <div
+            ref={textRef}
+            className="col-xl-7 overflow-hidden hide-scrollbar"
+            style={{
+              overflowY: "auto",
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
             }}
           >
             {children}
@@ -249,4 +289,4 @@ const ScrollPinImage: React.FC<ScrollPinImageProps> = ({
   );
 };
 
-export default ScrollPinImage; 
+export default ScrollPinImage;

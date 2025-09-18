@@ -69,6 +69,7 @@ const SocialMediaMarketingPage = () => {
             <ScrollPinImage
               imageSrc="/assets/img/services/social.webp"
               imageAlt="Social Media Marketing"
+              videoSrc="https://res.cloudinary.com/djoiovkr1/video/upload/Social_Crawler-_2_iy5n53.webm"
             >
               <div className="project-details-1-right p-relative">
                 <div className="project-details-1-title-box">

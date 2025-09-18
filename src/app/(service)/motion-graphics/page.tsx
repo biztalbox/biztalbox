@@ -69,6 +69,7 @@ const MotionGraphicsPage = () => {
             <ScrollPinImage
               imageSrc="/assets/img/services/CAPTAIN_CUT.webp"
               imageAlt="CAPTAIN CUT Video Editing / Motion Graphics"
+              videoSrc="https://res.cloudinary.com/djoiovkr1/video/upload/CAPTAIN_CUT_2_x1yw7a.webm"
             >
               <div className="project-details-1-right p-relative">
                 <div className="project-details-1-title-box">
