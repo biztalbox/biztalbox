@@ -167,7 +167,7 @@ const ScrollPinImage: React.FC<ScrollPinImageProps> = ({
             onUpdate: (self: ScrollTrigger) => {
               if (imageRef.current) {
                 const scale = 1 - 0.2 * self.progress;
-                const translateY = 3 * self.progress;
+                const translateY = 2 * self.progress;
                 gsap.to(imageRef.current, {
                   scale: scale,
                   yPercent: translateY,
