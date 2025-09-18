@@ -69,7 +69,7 @@ const GoogleAdsServicePage = () => {
             <ScrollPinImage
               imageSrc="/assets/img/services/GOOGLE_ADS.webp"
               imageAlt="Google Ads Performance Marketing"
-              videoSrc="https://res.cloudinary.com/djoiovkr1/video/upload/Google_Ads_2_x1yw7a.webm"
+              videoSrc="https://res.cloudinary.com/djoiovkr1/video/upload/Performance_Marketing_fxerql.webm"
             >
               <div className="project-details-1-right p-relative">
                 <div className="project-details-1-title-box">

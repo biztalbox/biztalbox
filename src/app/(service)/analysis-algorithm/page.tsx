@@ -69,7 +69,7 @@ const AnalysisAlgorithmPage = () => {
             <ScrollPinImage
               imageSrc="/assets/img/services/ALGANIX.webp"
               imageAlt="ALGANIX Analysis Algorithm"
-              videoSrc="https://res.cloudinary.com/djoiovkr1/video/upload/ALGANIX_2_x1yw7a.webm"
+              videoSrc="https://res.cloudinary.com/djoiovkr1/video/upload/Alganix_3_cwiltk.webm"
             >
               <div className="project-details-1-right p-relative">
                 <div className="project-details-1-title-box">

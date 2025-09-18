@@ -73,7 +73,7 @@ const ContentMarketingPage = () => {
             <ScrollPinImage
               imageSrc="/assets/img/services/CONTENT.webp"
               imageAlt="Contenteena Copy Writing"
-              videoSrc="https://res.cloudinary.com/djoiovkr1/video/upload/Content_Crawler-_2_x1yw7a.webm"
+              videoSrc="https://res.cloudinary.com/djoiovkr1/video/upload/Copy_Writing_r1iho0.webm"
             >
               <div className="project-details-1-right p-relative">
                 <div className="project-details-1-title-box">
