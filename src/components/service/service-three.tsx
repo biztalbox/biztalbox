@@ -49,44 +49,81 @@ const service_data = [
   {
     id: 1,
     icon: sv_1,
-    title: "Website design",
-    subtitle: "You’re ready to take your business to higher ground.",
+    title: "SEO Services",
+    desc: "Search Engine Optimization (SEO) is the key to make sure your website stands out digitally. It enhances your website for search engines, resulting in improved ranks and increased visibility.",
+    slug:"best-seo-agency"
   },
   {
     id: 2,
     icon: sv_2,
     title: "Web development",
-    subtitle: "You’re ready to take your business to higher ground.",
+    desc: "A Web Development is a digital architect who builds, optimizes, and secures seamless websites.",
+    slug: "website-development",
   },
   {
     id: 3,
     icon: sv_3,
-    title: "UI/UX Design",
-    subtitle: "You’re ready to take your business to higher ground.",
+    title: "Social Media Marketing",
+    desc: "Social media Marketing is the digital arena where brands connect, captivate, and communicate with their audience.",
+    slug: "social-media-marketing"
   },
   {
     id: 4,
     icon: sv_4,
-    title: "Growth",
-    subtitle: "You’re ready to take your business to higher ground.",
+    title: "App development",
+    desc: "An App Developer is a mobile maestro who builds the next killer app and delivers unparalleled performance to keep users coming back for more.",
+    slug: "app-development",
   },
   {
     id: 5,
     icon: sv_2,
-    title: "App development",
-    subtitle: "You’re ready to take your business to higher ground.",
+    title: "Graphic Designing",
+    desc: "A graphic designing is a creative force that turns concepts into recognised piece of art.",
+    slug: "graphic-designing",
+
   },
   {
     id: 6,
     icon: sv_4,
-    title: "Marketing",
-    subtitle: "You’re ready to take your business to higher ground.",
+    title: "Video Editing",
+    desc: "A video editing is a multimedia guru who turns in raw footage into cinematic masterpieces.",
+    slug: "motion-graphics",
+
+  },
+  {
+    id: 7,
+    icon: sv_4,
+    title: "Copy Writing",
+    desc: "Content creation combines crafting high-quality, SEO-optimized material that engages users and search engines.",
+    slug: "content-marketing",
+  },
+  {
+    id: 8,
+    icon: sv_4,
+    title: "Google Ads",
+    desc: "Google Ads is a versatile tool that makes every click an instant hit. It improves return on investment (ROI) and generates high-value leads through strategic bidding.",
+    slug: "google-ads-service",
+  },
+  {
+    id: 9,
+    icon: sv_4,
+    title: "Meta Ads",
+    desc: "Throughout its ecosystem, Meta Ads creates visually striking ads with precise targeting, turning it into a digital powerhouse.",
+    slug: "facebook-ads-service",
+  },
+  {
+    id: 10,
+    icon: sv_4,
+    title: "Algorithm Analysis",
+    desc: "An algorithm is a precision powerhouse that can instantly analyse vast amount of data to find hidden patterns and insights.",
+    slug: "analysis-algorithm",
+
   },
 ];
 export default function ServiceThree() {
   return (
     <div
-      className="tp-service-4-area pt-120 pb-170 fix"
+      className="tp-service-4-area pt-60 pb-120 fix"
       data-background="assets/img/home-04/brand/overly.png"
       style={{ backgroundImage: "url(/assets/img/home-04/brand/overly.png)" }}
     >
@@ -94,11 +131,10 @@ export default function ServiceThree() {
         <div className="tp-service-4-title-wrap">
           <div className="row align-items-end">
             <div className="col-xl-9 col-lg-9 col-md-9">
-              <div className="tp-service-4-title-box tp_fade_bottom">
-                <h4 className="tp-service-4-title">
-                  We work with select service providers in the disability sector
-                  to develop inclusive products tailored to their needs.
-                </h4>
+              <div className="tp-service-4-title-box">
+                <h2 className="tp-service-4-title">
+                Digital Marketing Services With Legendary Results
+                </h2>
               </div>
             </div>
             <div className="col-xl-3 col-lg-3 col-md-3">
@@ -131,11 +167,11 @@ export default function ServiceThree() {
                 </div>
                 <div className="tp-service-4-content">
                   <h4 className="tp-service-4-title-sm">
-                    <Link href="/service">{item.title}</Link>
+                    <Link href={`/${item.slug}`}>{item.title}</Link>
                   </h4>
-                  <p>{item.subtitle}</p>
-                  <Link className="tp-service-4-link" href="/service">
-                    Read more
+                  <p>{item.desc}</p>
+                  <Link className="tp-service-4-link" href={`/${item.slug}`}>
+                    Explore
                   </Link>
                 </div>
               </div>

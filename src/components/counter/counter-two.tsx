@@ -22,11 +22,6 @@ const counter_data = [
     title: "Awards",
     count: 86,
   },
-  {
-    id: 5,
-    title: "Offices",
-    count: 4,
-  },
 ];
 export default function CounterTwo() {
   return (

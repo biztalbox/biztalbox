@@ -25,6 +25,9 @@ import sv_2 from "@/assets/img/inner-service/sercive-details/sv-details-2.jpg";
 import sv_3 from "@/assets/img/inner-service/sercive-details/sv-details-3.jpg";
 import hero_star from "@/assets/img/home-04/hero/hero-star.png";
 import hero_star_2 from "@/assets/img/home-04/hero/hero-star-2.png";
+import shape_1 from "@/assets/img/home-01/team/team-details-shape-1.png";
+import team_shape_2 from "@/assets/img/home-01/team/team-details-shape-2.png";
+import { ITeamDT } from "@/types/team-d-t";
 
 // animation
 import {
@@ -41,8 +44,61 @@ import TeamDetailsArea from "@/components/team/team-details-area";
 import StudioPanelFour from "@/components/studio-panels/studio-panel-4";
 import FaqArea from "@/components/faq/faq-area";
 import Image from "next/image";
+import LeadForm from "@/components/landingPage/LeadForm";
+import faq_banner from '@/assets/img/inner-faq/faq/banner-faq.jpg';
+import FaqItem from "@/components/faq/faq-item";
 
-const HomeThreeMain = () => {
+// type 
+type IFaq = {
+  id: number;
+  question: string;
+  answer: string;
+}
+// faq data
+export const faq_data:IFaq[] = [
+  {
+    id: 1,
+    question: "What does SEO actually do for Indianapolis businesses?",
+    answer: "Our SEO Company Indianapolis does not simply make minor changes to your website. We refine content, structure, backlinks, and local listings so your Indianapolis business is found where it counts—right in front of your customers." 
+   },
+  {
+    id: 2,
+    question: "When should I expect to see SEO results for my Indianapolis business?",
+    answer: "SEO is a marathon, not a sprint. The majority of Indianapolis companies experience improvement within 3-6 months and continue to improve over the long run."
+  },
+  {
+    id: 3,
+    question: "Can SEO really increase my traffic and sales?",
+    answer: "Yes—our SEO Services Indiana focus on quality traffic that converts. We aim for visitors who are ready to take action, not just click."
+  },
+  {
+    id: 4,
+    question: "Do you provide keyword research tailored to Indianapolis?",
+    answer: "Absolutely. Our SEO Consultants Indiana identify high-intent keywords that connect with customers in Indianapolis and across Indiana, ensuring your strategy is local and highly targeted."
+  },
+  {
+    id: 5,
+    question: "Are your SEO methods safe and Google-compliant?",
+    answer: "Always. We follow ethical, white-hat SEO practices, so your rankings grow sustainably without risking penalties."
+  },
+  {
+    id: 6,
+    question: "Will you SEO optimize my existing website content?",
+    answer: "Yes. Our SEO Experts Indiana optimize your website copy and blogs to get the right message across and help you connect with your audience, without losing your voice."
+  },
+  {
+    id: 7,
+    question: "Is SEO worth it for small businesses in Indianapolis?",
+    answer: "Absolutely. Even small businesses can compete effectively with larger competitors if their strategy is well-defined. Our local expertise ensures your investment drives real results."
+  },
+  {
+    id: 8,
+    question: "Do you work with specialized industries?",
+    answer: "Yes! Whether you’re looking for a manufacturing SEO agency or SaaS SEO services, we tailor our strategies to help your business grow online."
+  }
+];
+
+export default function Page() {
   useScrollSmooth();
   useEffect(() => {
     document.body.classList.add("tp-smooth-scroll");
@@ -75,68 +131,70 @@ const HomeThreeMain = () => {
           <main>
             {/* hero area start */}
             <div className="tp-hero-4-area tp-btn-trigger">
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-xl-12">
-            <div className="tp-hero-4-content-wrap">
-              <div className="p-relative">
-                <div className="tp-hero-4-content p-relative col-md-9">
-                  <h1 className="text-white tp-char-animation">
-                    Professional SEO Agency in <br/> Indianapolis
-                  </h1>
-                  <p>
-                    Getting clicks is easy; turning them into clients is an art.
-                    At Biztalbox, we combine data, creativity, and local
-                    insights to make your Indianapolis business impossible to
-                    ignore online.
-                  </p>
-                  <p>As a premier Indiana SEO agency we
-                    incorporate significant industry expertise to ensure your
-                    organization is visible and memorable. Our customized
-                    strategy will generate real growth and future value
-                    regardless of whether you're an established business
-                    downtown or a startup in Broad Ripple.
-                  </p>
-                  <div className="tp-hero-4-text tp_fade_right">
-                    <span>
-                      <Image
-                        className="tp-zoom-in-out"
-                        src={hero_star}
-                        alt="star"
-                      />
-                    </span>
-                    {/* <p>Drive Traffic & Grow Sales</p> */}
-                  </div>
-                </div>
-                <div className="tp-hero-4-achievement tp-btn-bounce d-none d-md-block">
-                  <div className="tp-hero-4-star-1">
-                    <Image
-                      className="tp-zoom-in-out"
-                      src={hero_star_2}
-                      alt="star"
-                    />
-                  </div>
-                  <div className="tp-hero-4-star-2">
-                    <Image
-                      className="tp-zoom-in-out-2"
-                      src={hero_star_2}
-                      alt="star"
-                    />
-                  </div>
-                  <span>
-                    <i
-                      data-purecounter-duration="1"
-                      data-purecounter-end="18"
-                      className="purecounter"
-                    >
-                      12
-                    </i>
-                    k+
-                  </span>
-                  <p>
-                    Projects completed <br /> successfully
-                  </p>
-                  {/* <div className="tp-footer-2-widget-newslatter">
+              <div className="container-fluid">
+                <div className="row">
+                  <div className="col-xl-12">
+                    <div className="tp-hero-4-content-wrap">
+                      <div className="p-relative">
+                        <div className="tp-hero-4-content p-relative col-md-9">
+                          <h1 className="text-white tp-char-animation">
+                            Professional SEO Agency in <br /> Indianapolis
+                          </h1>
+                          <p>
+                            Getting clicks is easy; turning them into clients is
+                            an art. At Biztalbox, we combine data, creativity,
+                            and local insights to make your Indianapolis
+                            business impossible to ignore online.
+                          </p>
+                          <p>
+                            As a premier Indiana SEO agency we incorporate
+                            significant industry expertise to ensure your
+                            organization is visible and memorable. Our
+                            customized strategy will generate real growth and
+                            future value regardless of whether you're an
+                            established business downtown or a startup in Broad
+                            Ripple.
+                          </p>
+                          <div className="tp-hero-4-text tp_fade_right">
+                            <span>
+                              <Image
+                                className="tp-zoom-in-out"
+                                src={hero_star}
+                                alt="star"
+                              />
+                            </span>
+                            {/* <p>Drive Traffic & Grow Sales</p> */}
+                          </div>
+                        </div>
+                        <div className="tp-hero-4-achievement tp-btn-bounce d-none d-md-block">
+                          <div className="tp-hero-4-star-1">
+                            <Image
+                              className="tp-zoom-in-out"
+                              src={hero_star_2}
+                              alt="star"
+                            />
+                          </div>
+                          <div className="tp-hero-4-star-2">
+                            <Image
+                              className="tp-zoom-in-out-2"
+                              src={hero_star_2}
+                              alt="star"
+                            />
+                          </div>
+                          <span>
+                            <i
+                              data-purecounter-duration="1"
+                              data-purecounter-end="18"
+                              className="purecounter"
+                            >
+                              12
+                            </i>
+                            k+
+                          </span>
+                          <p>
+                            Projects completed <br /> successfully
+                          </p>
+                          {/* <div className="tp-footer-2-widget-newslatter">
                     <h4 className="tp-footer-2-widget-title">
                       Get a call back
                     </h4>
@@ -149,17 +207,57 @@ const HomeThreeMain = () => {
                       </div>
                     </form>
                   </div> */}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
             {/* hero area end */}
 
             {/* CTA */}
-            <TeamDetailsArea />
+            <div className="tm-details-wrapper p-relative">
+              <div className="tm-details-shape-1">
+                <Image src={shape_1} alt="shape" />
+              </div>
+              <div className="tm-details-shape-2">
+                <Image src={team_shape_2} alt="shape" />
+              </div>
+              <div className="container">
+                <div className="row align-items-center align-items-xxl-end">
+                  <div className="col-xl-6 col-lg-6 col-md-7">
+                    <div className="tm-details-content-wrap z-index-5">
+                      <div className="tm-details-title-box mb-20">
+                        <span className="tm-hero-subtitle">
+                          Ready to Grow Your Business in
+                        </span>
+                        <h4 className="tm-details-title">Indianapolis?</h4>
+                      </div>
+                      <div className="tm-details-text">
+                        <p>
+                          If you’re waiting for clients to stumble across your
+                          website, you’re already behind. Let Biztalbox, your
+                          trusted SEO Agency Indiana, craft a strategy that
+                          makes your Indianapolis business unavoidable
+                          online—get your free consultation now.
+                        </p>
+                      </div>
+                      <div className="tm-details-portfolio mb-50">
+                        <span className="tm-details-social-title">
+                          Get in Touch:
+                        </span>
+                        <a href="tel:+919485699709">+91 9485699709</a>
+                        <a href="mailto:info@biztalbox.com">
+                          info@biztalbox.com
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <LeadForm />
+                </div>
+              </div>
+            </div>
 
             <div
               className="tp-overlay-bg black-bg-2"
@@ -361,8 +459,49 @@ const HomeThreeMain = () => {
                 </div>
               </div>
             </div>
+
             {/* CTA */}
-            <TeamDetailsArea />
+            <div className="tm-details-wrapper p-relative">
+              <div className="tm-details-shape-1">
+                <Image src={shape_1} alt="shape" />
+              </div>
+              <div className="tm-details-shape-2">
+                <Image src={team_shape_2} alt="shape" />
+              </div>
+              <div className="container">
+                <div className="row align-items-center align-items-xxl-end">
+                  <div className="col-xl-6 col-lg-6 col-md-7">
+                    <div className="tm-details-content-wrap z-index-5">
+                      <div className="tm-details-title-box mb-20">
+                        <span className="tm-hero-subtitle">
+                          Ready to Grow Your Business in
+                        </span>
+                        <h4 className="tm-details-title">Indianapolis?</h4>
+                      </div>
+                      <div className="tm-details-text">
+                        <p>
+                          If you’re waiting for clients to stumble across your
+                          website, you’re already behind. Let Biztalbox, your
+                          trusted SEO Agency Indiana, craft a strategy that
+                          makes your Indianapolis business unavoidable
+                          online—get your free consultation now.
+                        </p>
+                      </div>
+                      <div className="tm-details-portfolio mb-50">
+                        <span className="tm-details-social-title">
+                          Get in Touch:
+                        </span>
+                        <a href="tel:+919485699709">+91 9485699709</a>
+                        <a href="mailto:info@biztalbox.com">
+                          info@biztalbox.com
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <LeadForm />
+                </div>
+              </div>
+            </div>
 
             {/* service area start */}
             <ServiceThree />
@@ -451,10 +590,84 @@ const HomeThreeMain = () => {
             </div>
 
             {/* CTA */}
-            <TeamDetailsArea />
+            <div className="tm-details-wrapper p-relative">
+              <div className="tm-details-shape-1">
+                <Image src={shape_1} alt="shape" />
+              </div>
+              <div className="tm-details-shape-2">
+                <Image src={team_shape_2} alt="shape" />
+              </div>
+              <div className="container">
+                <div className="row align-items-center align-items-xxl-end">
+                  <div className="col-xl-6 col-lg-6 col-md-7">
+                    <div className="tm-details-content-wrap z-index-5">
+                      <div className="tm-details-title-box mb-20">
+                        <span className="tm-hero-subtitle">
+                          Ready to Grow Your Business in
+                        </span>
+                        <h4 className="tm-details-title">Indianapolis?</h4>
+                      </div>
+                      <div className="tm-details-text">
+                        <p>
+                          If you’re waiting for clients to stumble across your
+                          website, you’re already behind. Let Biztalbox, your
+                          trusted SEO Agency Indiana, craft a strategy that
+                          makes your Indianapolis business unavoidable
+                          online—get your free consultation now.
+                        </p>
+                      </div>
+                      <div className="tm-details-portfolio mb-50">
+                        <span className="tm-details-social-title">
+                          Get in Touch:
+                        </span>
+                        <a href="tel:+919485699709">+91 9485699709</a>
+                        <a href="mailto:info@biztalbox.com">
+                          info@biztalbox.com
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <LeadForm />
+                </div>
+              </div>
+            </div>
 
-            {/* marquee text */}
-            <FaqArea />
+            {/* FAQs */}
+            <div className="fq-faq-area fq-faq-bdr">
+              <div className="container">
+                <div className="row">
+                  <div className="col-xl-8 col-lg-8">
+                    <div className="fq-faq-wrapper">
+                      <div className="tp-service-2-accordion-box">
+                        <div className="accordion" id="accordionExample">
+                          {faq_data.map((item) => (
+                            <FaqItem key={item.id} item={item} />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-xl-4 col-lg-4">
+                    <div className="fq-faq-sidebar">
+                      <div className="fq-faq-sidebar-content">
+                        <h4 className="fq-faq-sidebar-title">Q&A</h4>
+                        <p>
+                        FAQs – SEO Services in Indianapolis
+                        </p>
+                      </div>
+                      <div className="fq-faq-sidebar-thumb">
+                        <Image
+                          className="w-100"
+                          src={faq_banner}
+                          alt="faq-banner"
+                          style={{ height: "auto" }}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </main>
 
           {/* footer area */}
@@ -464,6 +677,4 @@ const HomeThreeMain = () => {
       </div>
     </Wrapper>
   );
-};
-
-export default HomeThreeMain;
+}

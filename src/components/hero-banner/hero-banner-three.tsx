@@ -4,6 +4,7 @@ import Image from "next/image";
 import hero_star from "@/assets/img/home-04/hero/hero-star.png";
 import hero_star_2 from "@/assets/img/home-04/hero/hero-star-2.png";
 import hero_img from "@/assets/img/home-04/hero/hero-1.jpg";
+import { RightArrow } from "../svg";
 
 // imgStyle
 const imgStyle: CSSProperties = { height: "auto" };
@@ -15,10 +16,23 @@ export default function HeroBannerThree() {
           <div className="col-xl-12">
             <div className="tp-hero-4-content-wrap">
               <div className="p-relative">
-                <div className="tp-hero-4-content p-relative">
-                  <h1 className="tp-section-title-200 tp-char-animation">
-                    Digital <br /> Experiences
+                <div className="tp-hero-4-content p-relative col-md-9">
+                  <h1 className="text-white tp-char-animation">
+                    Professional SEO Agency in <br/> Indianapolis
                   </h1>
+                  <p>
+                    Getting clicks is easy; turning them into clients is an art.
+                    At Biztalbox, we combine data, creativity, and local
+                    insights to make your Indianapolis business impossible to
+                    ignore online.
+                  </p>
+                  <p>As a premier Indiana SEO agency we
+                    incorporate significant industry expertise to ensure your
+                    organization is visible and memorable. Our customized
+                    strategy will generate real growth and future value
+                    regardless of whether you're an established business
+                    downtown or a startup in Broad Ripple.
+                  </p>
                   <div className="tp-hero-4-text tp_fade_right">
                     <span>
                       <Image
@@ -27,7 +41,7 @@ export default function HeroBannerThree() {
                         alt="star"
                       />
                     </span>
-                    <p>Great design services without the pretentiousness.!</p>
+                    {/* <p>Drive Traffic & Grow Sales</p> */}
                   </div>
                 </div>
                 <div className="tp-hero-4-achievement tp-btn-bounce d-none d-md-block">
@@ -51,22 +65,27 @@ export default function HeroBannerThree() {
                       data-purecounter-end="18"
                       className="purecounter"
                     >
-                      18
+                      12
                     </i>
-                    k
+                    k+
                   </span>
                   <p>
                     Projects completed <br /> successfully
                   </p>
+                  {/* <div className="tp-footer-2-widget-newslatter">
+                    <h4 className="tp-footer-2-widget-title">
+                      Get a call back
+                    </h4>
+                    <form action="#">
+                      <div className="tp-footer-2-input p-relative">
+                        <input type="text" placeholder="Mobile No..." />
+                        <button>
+                          <RightArrow />
+                        </button>
+                      </div>
+                    </form>
+                  </div> */}
                 </div>
-              </div>
-              <div className="tp-hero-4-thumb text-end">
-                <Image
-                  data-speed=".7"
-                  src={hero_img}
-                  alt="hero-img"
-                  style={imgStyle}
-                />
               </div>
             </div>
           </div>

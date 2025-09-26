@@ -25,23 +25,37 @@ const testimonial_data = [
   {
     id: 1,
     logo: logo,
-    name: "Chris Hughes",
-    designation: "CEO | Gemini Skincare",
-    desc: `"Our office is something we are pleased with. We consider it the little magnet; it is wanting to come here and afterward difficult to leave it. Our office is additionally a big name."`,
+    name: "Sarah M.",
+    designation: "Local Retailer",
+    desc: `"We were buried on page three before working with Biztalbox. Within months, our site started showing up for searches that actually mattered. The extra traffic from Indianapolis alone has been a game-changer for our sales pipeline."`,
   },
   {
     id: 2,
     logo: logo,
-    name: "Daniel Smith",
-    designation: "CEO | Gemini Skincare",
-    desc: `"Our office is something we are pleased with. We consider it the little magnet; it is wanting to come here and afterward difficult to leave it. Our office is additionally a big name."`,
+    name: "James R.",
+    designation: "SaaS Founder",
+    desc: `"If I had to single out one thing that stood out to me the most, it was how the team at Biztalbox explained everything without jargon. Our team now has a clear understanding of what drivers leads to our success. It's refreshing to work with an organization who acts like a partner and truly cares about our growth as much as we do."`,
   },
   {
     id: 3,
     logo: logo,
-    name: "Brandon Smith",
-    designation: "CEO | Gemini Skincare",
-    desc: `"Our office is something we are pleased with. We consider it the little magnet; it is wanting to come here and afterward difficult to leave it. Our office is additionally a big name."`,
+    name: "Linda T.",
+    designation: "Small Business Owner",
+    desc: `"I run a small plumbing business, and I honestly thought SEO was just for big companies. Biztalbox proved me wrong. Now my phone rings every week with new leads from nearby customers."`,
+  },
+  {
+    id: 4,
+    logo: logo,
+    name: "Daniel P.",
+    designation: "Marketing Director",
+    desc: `"The transparency blew me away. Every report showed what was working and where we could improve. We’ve seen steady growth month after month—no shady shortcuts, just solid strategy."`,
+  },
+  {
+    id: 5,
+    logo: logo,
+    name: "Priya K.",
+    designation: "Café Owner",
+    desc: `"Being a new café in Indianapolis, we needed people to find us quickly. Biztalbox got us showing up in Google Maps searches almost immediately. We see more foot traffic and regulars now than ever before."`,
   },
 ];
 
@@ -86,7 +100,7 @@ export default function StudioPanelFour({style_2=false}: IProps) {
                         <SwiperSlide key={item.id}>
                           <div className="tp-studio-testimonial-item">
                             <div className="tp-studio-testimonial-text">
-                              <p>{item.desc}</p>
+                              <p style={{fontSize: "25px"}}>{item.desc}</p>
                             </div>
                             <div className="tp-studio-testimonial-user-info-box d-flex align-items-center">
                               <div className="tp-studio-testimonial-user-info">
@@ -98,9 +112,9 @@ export default function StudioPanelFour({style_2=false}: IProps) {
                               <div className="tp-studio-testimonial-line d-none d-md-block">
                                 <span></span>
                               </div>
-                              <div className="tp-studio-testimonial-logo">
+                              {/* <div className="tp-studio-testimonial-logo">
                                 <Image src={item.logo} alt="logo" />
-                              </div>
+                              </div> */}
                             </div>
                           </div>
                         </SwiperSlide>
