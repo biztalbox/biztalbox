@@ -5,23 +5,21 @@ const counter_data = [
   {
     id: 1,
     title: "Experts",
-    count: 54,
+    count: 20,
+    suffix: "+",
   },
   {
     id: 2,
     title: "Projects",
-    count: 21,
+    count: 5,
+    suffix: "k+",
   },
   {
     id: 3,
     title: "Years in business",
-    count: 17,
-  },
-  {
-    id: 4,
-    title: "Awards",
-    count: 86,
-  },
+    count: 8,
+    suffix: "",
+  }
 ];
 export default function CounterTwo() {
   return (
@@ -30,13 +28,19 @@ export default function CounterTwo() {
         <div key={item.id} className="col-xl col-lg col-md col-sm-4 col-6">
           <div className="tp-studio-funfact-item text-start text-md-center">
             <h4 className="tp-studio-funfact-title">
-              <span>+</span>
-              <CounterItem min={0} max={item.count} />
+              <CounterItem min={0} max={item.count} suffix={item.suffix} />
+              {/* <span>{item.suffix}</span> */}
             </h4>
             <span>{item.title}</span>
           </div>
         </div>
       ))}
+      <div className="col-xl col-lg col-md col-sm-4 col-6">
+        <div className="tp-studio-funfact-item text-start text-md-center">
+          <h4 className="tp-studio-funfact-title text-white"><i style={{fontSize: "120px",lineHeight: "0.1"}}>∞</i></h4>
+          <span>Coffee Beans Roasted</span>
+        </div>
+      </div>
     </div>
   );
 }

@@ -6,8 +6,8 @@ const counter_data = [
   {
     id: 1,
     title: "PROJECTS COMPLETED",
-    count: 200,
-    text: "+",
+    count: 2,
+    text: "k+",
   },
   {
     id: 2,
@@ -55,8 +55,7 @@ export default function FunFactOne() {
                           <i>{item.count}</i>
                         ) : (
                           <>
-                            <CounterItem min={0} max={typeof item.count === 'number' ? item.count : 0} />
-                            {item.text}
+                            <CounterItem min={0} max={typeof item.count === 'number' ? item.count : 0} suffix={item.text} />
                           </>
                         )}
                       </span>

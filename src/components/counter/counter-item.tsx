@@ -3,9 +3,10 @@ import { useEffect, useRef, useState } from "react";
 type CounterProps = {
   min: number;
   max: number;
+  suffix?: string;
 }
 
-export default function CounterItem({ min, max }: CounterProps) {
+export default function CounterItem({ min, max, suffix = "" }: CounterProps) {
   const [counted, setCounted] = useState<number>(min);
   const targetElement = useRef<HTMLSpanElement>(null); // Add type annotation for useRef
 
@@ -55,5 +56,5 @@ export default function CounterItem({ min, max }: CounterProps) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return <i ref={targetElement}>{counted}</i>;
+  return <i ref={targetElement}>{counted}{suffix}</i>;
 }

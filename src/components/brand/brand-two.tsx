@@ -129,11 +129,10 @@ const BrandTwo = () => {
                 <span>
                   <Leaf />
                 </span>
-                Our Clients
+                Our Awards
               </span>
               <h4 className="tp-section-title-40 font-style-2">
-                We love to work with clients to develop unique, innovative
-                websites.
+                Celebrating Excellence: Our Award-Winning Achievements
               </h4>
             </div>
           </div>

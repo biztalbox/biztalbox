@@ -29,7 +29,7 @@ import {
 import { serviceMarqueAnim } from "@/utils/scroll-marque";
 import { panelTwoAnimation } from "@/utils/panel-animation";
 import { hoverBtn } from "@/utils/hover-btn";
-import HeaderSix from "@/layouts/headers/header-six";
+import HeaderEleven from "@/layouts/headers/header-eleven";
 import StudioPanelFour from "@/components/studio-panels/studio-panel-4";
 import Image from "next/image";
 import LeadForm from "@/components/landingPage/LeadForm";
@@ -64,7 +64,7 @@ export default function Page() {
   return (
     <Wrapper>
       {/* header area start */}
-      <HeaderSix />
+      <HeaderEleven transparent={true} />
       {/* header area end */}
 
       <div id="smooth-wrapper">
@@ -128,7 +128,7 @@ export default function Page() {
                               data-purecounter-end="18"
                               className="purecounter"
                             >
-                              12
+                              5
                             </i>
                             k+
                           </span>
