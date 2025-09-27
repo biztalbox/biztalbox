@@ -30,7 +30,7 @@ export default function HeroBannerThree() {
                     incorporate significant industry expertise to ensure your
                     organization is visible and memorable. Our customized
                     strategy will generate real growth and future value
-                    regardless of whether you're an established business
+                    regardless of whether you&apos;re an established business
                     downtown or a startup in Broad Ripple.
                   </p>
                   <div className="tp-hero-4-text tp_fade_right">

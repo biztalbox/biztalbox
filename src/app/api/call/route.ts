@@ -5,12 +5,11 @@ export async function POST(req: NextRequest) {
     try {
         const { 
             name, 
+            website,
             email, 
             phone, 
-            website, 
-            budget, 
-            service, 
-            message, 
+            date,
+            time,
             pageUrl, 
             userAgent, 
             timestamp 
@@ -25,18 +24,6 @@ export async function POST(req: NextRequest) {
             throw new Error('Valid email address is required');
         }
 
-        if (!budget) {
-            throw new Error('Budget selection is required');
-        }
-
-        if (!service) {
-            throw new Error('Service selection is required');
-        }
-
-        if (!message || message.trim() === '') {
-            throw new Error('Message is required');
-        }
-
         const transporter = nodemailer.createTransport({
             service: 'gmail',
             auth: {
@@ -48,23 +35,18 @@ export async function POST(req: NextRequest) {
         const mailOptions = {
             from: email,
             to: 'info@biztalbox.com',
-            subject: `New Lead Form Submission from ${name}`,
+            subject: `Consultation Request from ${name}`,
             html: `
-            <h2>New Lead Form Submission</h2>
-            <p>You have received a new lead from your website.</p>
+            <h2>Consultation Call Request</h2>
+            <p>You have received a new consultation request from your website.</p>
             <hr>
             <h3>Contact Information:</h3>
             <p><strong>Name:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Phone:</strong> ${phone}</p>
-            <p><strong>Website:</strong> ${website || 'Not provided'}</p>
-            <hr>
-            <h3>Service Details:</h3>
-            <p><strong>Service:</strong> ${service}</p>
-            <p><strong>Budget:</strong> ${budget}</p>
-            <hr>
-            <h3>Message:</h3>
-            <p>${message.replace(/\n/g, '<br>')}</p>
+            <p><strong>Website:</strong> ${website}</p>
+            <p><strong>Preferred Date:</strong> ${date}</p>
+            <p><strong>Preferred Time:</strong> ${time}</p>
             <hr>
             <h3>Technical Information:</h3>
             <p><strong>Page URL:</strong> ${pageUrl || 'Not available'}</p>
@@ -77,7 +59,7 @@ export async function POST(req: NextRequest) {
 
         return NextResponse.json({ 
             success: true, 
-            message: 'We have recieved your enquiry. We will contact you soon!' 
+            message: 'We have recieved your request. We will contact you soon!' 
         }, { status: 200 });
 
     } catch (error: any) {

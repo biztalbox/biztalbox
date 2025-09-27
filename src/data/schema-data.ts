@@ -394,7 +394,7 @@ export const servicesData = {
         answer: "We recommend a minimum monthly ad budget of ₹20,000 to ₹50,000 for effective Meta Ads campaigns."
       }
     ]
-  }
+  },
 };
 
 // Main organization reviews for homepage
@@ -440,7 +440,7 @@ export const serviceUrlMap = {
   'graphic-designing': 'graphicDesign',
   'content-marketing': 'contentMarketing',
   'google-ads-service': 'performanceMarketing',
-  'facebook-ads-service': 'metaAds'
+  'facebook-ads-service': 'metaAds',
 } as const;
 
 export type ServiceUrlKey = keyof typeof serviceUrlMap;

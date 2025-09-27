@@ -8,26 +8,16 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 
 // internal imports
 import Wrapper from "@/layouts/wrapper";
-import HeaderThree from "@/layouts/headers/header-three";
-import HeroBannerThree from "@/components/hero-banner/hero-banner-three";
-import AboutTwo from "@/components/about/about-two";
 import ServiceThree from "@/components/service/service-three";
 import LineTextTwo from "@/components/line-text/line-text-2";
-import ProjectThree from "@/components/project/project-three";
 import BrandTwo from "@/components/brand/brand-two";
-import TeamTwo from "@/components/team/team-two";
 import FooterThree from "@/layouts/footers/footer-three";
 import shape from "@/assets/img/home-04/about/about-shape-2.png";
 import shape_2 from "@/assets/img/home-04/about/about-shape-1.png";
-import Link from "next/link";
-import sv_1 from "@/assets/img/inner-service/sercive-details/sv-details-1.jpg";
-import sv_2 from "@/assets/img/inner-service/sercive-details/sv-details-2.jpg";
-import sv_3 from "@/assets/img/inner-service/sercive-details/sv-details-3.jpg";
 import hero_star from "@/assets/img/home-04/hero/hero-star.png";
 import hero_star_2 from "@/assets/img/home-04/hero/hero-star-2.png";
 import shape_1 from "@/assets/img/home-01/team/team-details-shape-1.png";
 import team_shape_2 from "@/assets/img/home-01/team/team-details-shape-2.png";
-import { ITeamDT } from "@/types/team-d-t";
 
 // animation
 import {
@@ -40,63 +30,14 @@ import { serviceMarqueAnim } from "@/utils/scroll-marque";
 import { panelTwoAnimation } from "@/utils/panel-animation";
 import { hoverBtn } from "@/utils/hover-btn";
 import HeaderSix from "@/layouts/headers/header-six";
-import TeamDetailsArea from "@/components/team/team-details-area";
 import StudioPanelFour from "@/components/studio-panels/studio-panel-4";
-import FaqArea from "@/components/faq/faq-area";
 import Image from "next/image";
 import LeadForm from "@/components/landingPage/LeadForm";
-import faq_banner from '@/assets/img/inner-faq/faq/banner-faq.jpg';
+import BookCallForm from "@/components/landingPage/BookCallForm";
+import faq_banner from "@/assets/image/faq.webp";
 import FaqItem from "@/components/faq/faq-item";
+import { faq_data } from "./faq";
 
-// type 
-type IFaq = {
-  id: number;
-  question: string;
-  answer: string;
-}
-// faq data
-export const faq_data:IFaq[] = [
-  {
-    id: 1,
-    question: "What does SEO actually do for Indianapolis businesses?",
-    answer: "Our SEO Company Indianapolis does not simply make minor changes to your website. We refine content, structure, backlinks, and local listings so your Indianapolis business is found where it counts—right in front of your customers." 
-   },
-  {
-    id: 2,
-    question: "When should I expect to see SEO results for my Indianapolis business?",
-    answer: "SEO is a marathon, not a sprint. The majority of Indianapolis companies experience improvement within 3-6 months and continue to improve over the long run."
-  },
-  {
-    id: 3,
-    question: "Can SEO really increase my traffic and sales?",
-    answer: "Yes—our SEO Services Indiana focus on quality traffic that converts. We aim for visitors who are ready to take action, not just click."
-  },
-  {
-    id: 4,
-    question: "Do you provide keyword research tailored to Indianapolis?",
-    answer: "Absolutely. Our SEO Consultants Indiana identify high-intent keywords that connect with customers in Indianapolis and across Indiana, ensuring your strategy is local and highly targeted."
-  },
-  {
-    id: 5,
-    question: "Are your SEO methods safe and Google-compliant?",
-    answer: "Always. We follow ethical, white-hat SEO practices, so your rankings grow sustainably without risking penalties."
-  },
-  {
-    id: 6,
-    question: "Will you SEO optimize my existing website content?",
-    answer: "Yes. Our SEO Experts Indiana optimize your website copy and blogs to get the right message across and help you connect with your audience, without losing your voice."
-  },
-  {
-    id: 7,
-    question: "Is SEO worth it for small businesses in Indianapolis?",
-    answer: "Absolutely. Even small businesses can compete effectively with larger competitors if their strategy is well-defined. Our local expertise ensures your investment drives real results."
-  },
-  {
-    id: 8,
-    question: "Do you work with specialized industries?",
-    answer: "Yes! Whether you’re looking for a manufacturing SEO agency or SaaS SEO services, we tailor our strategies to help your business grow online."
-  }
-];
 
 export default function Page() {
   useScrollSmooth();
@@ -136,7 +77,7 @@ export default function Page() {
                   <div className="col-xl-12">
                     <div className="tp-hero-4-content-wrap">
                       <div className="p-relative">
-                        <div className="tp-hero-4-content p-relative col-md-9">
+                        <div className="tp-hero-4-content p-relative col-md-9" style={{marginBottom: "0"}}>
                           <h1 className="text-white tp-char-animation">
                             Professional SEO Agency in <br /> Indianapolis
                           </h1>
@@ -151,7 +92,7 @@ export default function Page() {
                             significant industry expertise to ensure your
                             organization is visible and memorable. Our
                             customized strategy will generate real growth and
-                            future value regardless of whether you're an
+                            future value regardless of whether you&apos;re an
                             established business downtown or a startup in Broad
                             Ripple.
                           </p>
@@ -194,19 +135,6 @@ export default function Page() {
                           <p>
                             Projects completed <br /> successfully
                           </p>
-                          {/* <div className="tp-footer-2-widget-newslatter">
-                    <h4 className="tp-footer-2-widget-title">
-                      Get a call back
-                    </h4>
-                    <form action="#">
-                      <div className="tp-footer-2-input p-relative">
-                        <input type="text" placeholder="Mobile No..." />
-                        <button>
-                          <RightArrow />
-                        </button>
-                      </div>
-                    </form>
-                  </div> */}
                         </div>
                       </div>
                     </div>
@@ -217,7 +145,7 @@ export default function Page() {
             {/* hero area end */}
 
             {/* CTA */}
-            <div className="tm-details-wrapper p-relative">
+            <div className="p-relative pt-80">
               <div className="tm-details-shape-1">
                 <Image src={shape_1} alt="shape" />
               </div>
@@ -225,9 +153,9 @@ export default function Page() {
                 <Image src={team_shape_2} alt="shape" />
               </div>
               <div className="container">
-                <div className="row align-items-center align-items-xxl-end">
+                <div className="row align-items-center">
                   <div className="col-xl-6 col-lg-6 col-md-7">
-                    <div className="tm-details-content-wrap z-index-5">
+                    <div className="tm-details-content-wrap z-index-5" style={{padding: "30px 0"}}>
                       <div className="tm-details-title-box mb-20">
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Business in
@@ -243,7 +171,7 @@ export default function Page() {
                           online—get your free consultation now.
                         </p>
                       </div>
-                      <div className="tm-details-portfolio mb-50">
+                      <div className="tm-details-portfolio">
                         <span className="tm-details-social-title">
                           Get in Touch:
                         </span>
@@ -259,28 +187,39 @@ export default function Page() {
               </div>
             </div>
 
+             {/* Clients */}
+             <StudioPanelFour style_2={true} />
+
+{/* Book a free callback */}
+    <BookCallForm />
+
+
             <div
               className="tp-overlay-bg black-bg-2"
               style={{
                 backgroundImage: "url(/assets/img/home-04/hero/overly.png)",
               }}
             >
-              {/* Clients */}
-              <StudioPanelFour style_2={true} />
+             
+                  <BrandTwo />
 
-              <BrandTwo />
-
-              {/* Benefits */}
-              <div className="tm-details-wrapper p-relative pt-80">
+                  {/* Benefits */}
+              <div className="tm-details-wrapper p-relative pt-80 pb-80" style={{height: "auto"}}>
                 <div className="container">
                   <div className="row">
                     <div className="col-xl-7 col-lg-7">
                       <div className="service-details__left-wrap">
-                        <div className="service-details__left-text pb-20">
-                          <h3 className="text-1 tp_title_anim">
-                            Benefits of SEO Services in Indianapolis
-                          </h3>
-                        </div>
+                      <div className="tm-details-title-box mb-20">
+                        <h3 className="text-white">
+                        Benefits of SEO Services in
+                                                </h3>
+                        <h2 className="tm-details-title">Indianapolis?</h2>
+                      </div>
+                        {/* <div className="service-details__left-text pb-20">
+                          <h2 className="text-1 tp_title_anim">
+                            
+                          </h2>
+                        </div> */}
                         <div className="service-details__fea-list">
                           <ul>
                             <li>
@@ -305,53 +244,12 @@ export default function Page() {
                             </li>
                           </ul>
                         </div>
-                        {/* <div className="service-details__sm-thumb-wrap mb-60">
-                      <div className="row">
-                        <div className="col-xl-6 col-lg-6 col-md-6 mb-20">
-                          <div className="service-details__sm-thumb">
-                            <Image
-                              src={sv_2}
-                              alt="service-img"
-                              style={{ height: "auto" }}
-                            />
-                          </div>
-                        </div>
-                        <div className="col-xl-6 col-lg-6 col-md-6 mb-20">
-                          <div className="service-details__sm-thumb">
-                            <Image
-                              src={sv_3}
-                              alt="service-img"
-                              style={{ height: "auto" }}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div> */}
-                        {/* <div className="service-details__left-text">
-                      <p>
-                        Great user experience design lets users focus on the
-                        task they have to complete & evokes emotion without
-                        distracting them. Bonus points for when it also looks &
-                        feels aesthetically pleasing!{" "}
-                      </p>
-                    </div> */}
                       </div>
                     </div>
                     <div className="col-xl-5 col-lg-5">
-                      <div className="service-details__right-wrap fix p-relative">
-                        {/* <div className="service-details__rotate-text">
-                      <span>Full list of services</span>
-                    </div>
-                    <div className="service-details__right-category">
-                      <a href="#">Strategy</a>
-                      <a className="active" href="#">
-                        Logo Design
-                      </a>
-                      <a href="#">Graphic identity</a>
-                      <a href="#">Web Design</a>
-                      <a href="#">Development</a>
-                    </div> */}
-                        <div className="service-details__right-text-box">
+                      <div style={{height: "500px", overflow: "hidden"}}>
+                        <video src="https://res.cloudinary.com/djoiovkr1/video/upload/SEO_Stricker_2_aqk6qd.webm" autoPlay loop muted></video>
+                        {/* <div className="service-details__right-text-box">
                           <h4>
                             Get a <br /> Callback
                           </h4>
@@ -361,30 +259,8 @@ export default function Page() {
                             activity will allow you to differentiate yourself
                             and mark your audience.
                           </p>
-                          <form>
-                            <input
-                              type="tel"
-                              className="form-control mb-20"
-                              id="phone"
-                              style={{
-                                backgroundColor: "transparent",
-                                borderColor: "black",
-                                color: "black",
-                                fontSize: "20px",
-                                borderRadius: "40px",
-                              }}
-                              minLength={7}
-                              maxLength={15}
-                              placeholder="Enter Phone No."
-                            />
-                            <button
-                              type="submit"
-                              className="tp-btn-white background-black"
-                            >
-                              Submit
-                            </button>
-                          </form>
-                        </div>
+                          <Callback />
+                        </div> */}
                       </div>
                     </div>
                   </div>
@@ -461,7 +337,7 @@ export default function Page() {
             </div>
 
             {/* CTA */}
-            <div className="tm-details-wrapper p-relative">
+             <div className="p-relative pt-80">
               <div className="tm-details-shape-1">
                 <Image src={shape_1} alt="shape" />
               </div>
@@ -469,9 +345,9 @@ export default function Page() {
                 <Image src={team_shape_2} alt="shape" />
               </div>
               <div className="container">
-                <div className="row align-items-center align-items-xxl-end">
+                <div className="row align-items-center">
                   <div className="col-xl-6 col-lg-6 col-md-7">
-                    <div className="tm-details-content-wrap z-index-5">
+                    <div className="tm-details-content-wrap z-index-5" style={{padding: "30px 0"}}>
                       <div className="tm-details-title-box mb-20">
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Business in
@@ -487,7 +363,7 @@ export default function Page() {
                           online—get your free consultation now.
                         </p>
                       </div>
-                      <div className="tm-details-portfolio mb-50">
+                      <div className="tm-details-portfolio">
                         <span className="tm-details-social-title">
                           Get in Touch:
                         </span>
@@ -590,7 +466,7 @@ export default function Page() {
             </div>
 
             {/* CTA */}
-            <div className="tm-details-wrapper p-relative">
+             <div className="p-relative pt-80">
               <div className="tm-details-shape-1">
                 <Image src={shape_1} alt="shape" />
               </div>
@@ -598,9 +474,9 @@ export default function Page() {
                 <Image src={team_shape_2} alt="shape" />
               </div>
               <div className="container">
-                <div className="row align-items-center align-items-xxl-end">
+                <div className="row align-items-center">
                   <div className="col-xl-6 col-lg-6 col-md-7">
-                    <div className="tm-details-content-wrap z-index-5">
+                    <div className="tm-details-content-wrap z-index-5" style={{padding: "30px 0"}}>
                       <div className="tm-details-title-box mb-20">
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Business in
@@ -616,7 +492,7 @@ export default function Page() {
                           online—get your free consultation now.
                         </p>
                       </div>
-                      <div className="tm-details-portfolio mb-50">
+                      <div className="tm-details-portfolio">
                         <span className="tm-details-social-title">
                           Get in Touch:
                         </span>
@@ -651,9 +527,7 @@ export default function Page() {
                     <div className="fq-faq-sidebar">
                       <div className="fq-faq-sidebar-content">
                         <h4 className="fq-faq-sidebar-title">Q&A</h4>
-                        <p>
-                        FAQs – SEO Services in Indianapolis
-                        </p>
+                        <p>FAQs – SEO Services in Indianapolis</p>
                       </div>
                       <div className="fq-faq-sidebar-thumb">
                         <Image

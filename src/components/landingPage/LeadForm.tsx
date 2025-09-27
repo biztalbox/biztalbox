@@ -1,10 +1,66 @@
-import React from "react";
+import { useState } from "react";
+import { Badge } from "react-bootstrap";
 
 const LeadForm = () => {
+  const [loading, setLoading] = useState(false);
+  const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    try {
+      e.preventDefault();
+      setLoading(true);
+      setErrorMessage(null);
+      setSuccessMessage(null);
+
+      const formData = new FormData(e.currentTarget);
+      const formObject = Object.fromEntries(formData.entries());
+
+      // Get browser and page information
+      const pageUrl = window.location.href;
+      const userAgent = navigator.userAgent;
+      const timestamp = new Date().toLocaleString("en-IN");
+
+      // Prepare data for API
+      const apiData = {
+        ...formObject,
+        pageUrl,
+        userAgent,
+        timestamp,
+      };
+
+      // Send to API
+      const response = await fetch("/api/lead", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(apiData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSuccessMessage(result.message);
+        // Reset form after successful submission
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setErrorMessage(
+          result.message ||
+            "Sorry, there was an error submitting your enquiry. Please try again."
+        );
+      }
+    } catch (error: any) {
+      setErrorMessage(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <div className="col-xl-6 col-lg-6 col-md-5" style={{ zIndex: 100 }}>
-      <div className="tm-details-cta-form pl-40">
-        <form>
+    <div className="col-xl-6 col-lg-6 col-md-5 pl-md-40 pb-80" style={{ zIndex: 100 }}>
+      <div className="tm-details-cta-form">
+        <form onSubmit={handleSubmit} encType="multipart/form-data">
           <div className="row">
             <div className="mb-3 col-md-6">
               <label htmlFor="name" className="form-label text-white">
@@ -14,6 +70,7 @@ const LeadForm = () => {
                 type="text"
                 className="form-control"
                 id="name"
+                name="name"
                 style={{
                   backgroundColor: "transparent",
                   borderColor: "white",
@@ -30,9 +87,10 @@ const LeadForm = () => {
                 Website
               </label>
               <input
-                type="text"
+                type="url"
                 className="form-control"
                 id="website"
+                name="website"
                 style={{
                   backgroundColor: "transparent",
                   borderColor: "white",
@@ -52,6 +110,7 @@ const LeadForm = () => {
                 type="email"
                 className="form-control"
                 id="email"
+                name="email"
                 style={{
                   backgroundColor: "transparent",
                   borderColor: "white",
@@ -70,13 +129,14 @@ const LeadForm = () => {
                 type="tel"
                 className="form-control"
                 id="phone"
+                name="phone"
                 style={{
                   backgroundColor: "transparent",
                   borderColor: "white",
                   color: "white",
                   padding: "0 10px",
                 }}
-                minLength={7}
+                minLength={10}
                 maxLength={15}
                 placeholder="Enter Phone No."
               />
@@ -91,6 +151,7 @@ const LeadForm = () => {
               <select
                 className="form-control"
                 id="budget"
+                name="budget"
                 style={{
                   backgroundColor: "#121212",
                   borderColor: "white",
@@ -113,13 +174,14 @@ const LeadForm = () => {
               <select
                 className="form-control"
                 id="service"
+                name="service"
                 style={{
                   backgroundColor: "#121212",
                   borderColor: "white",
                   color: "white",
                 }}
                 required
-                defaultValue="Under $500"
+                defaultValue="SEO"
               >
                 <option value="SEO">SEO</option>
                 <option value="Web Development">Web Development</option>
@@ -142,6 +204,7 @@ const LeadForm = () => {
             <textarea
               className="form-control"
               id="message"
+              name="message"
               placeholder="Type Your Message here"
               rows={2}
               style={{
@@ -155,10 +218,26 @@ const LeadForm = () => {
           <button
             type="submit"
             className="btn mr-0"
-            style={{ backgroundColor: "#FF5722", color: "white" }}
+            disabled={loading}
+            style={{
+              backgroundColor: loading ? "#ccc" : "#FF5722",
+              color: "white",
+              opacity: loading ? 0.7 : 1,
+            }}
           >
-            Submit Enquiry
+            {loading ? "Submitting..." : "Submit Enquiry"}
           </button>
+
+          {successMessage && (
+            <h5 className="mt-2">
+              <Badge bg="success">{successMessage}</Badge>
+            </h5>
+          )}
+          {errorMessage && (
+            <h5 className="mt-2">
+              <Badge bg="danger">{errorMessage}</Badge>
+            </h5>
+          )}
         </form>
       </div>
     </div>

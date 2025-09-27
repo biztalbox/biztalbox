@@ -7,10 +7,18 @@ import Image from "next/image";
 
 // internal imports
 import star_icon from "@/assets/img/home-04/service/sv-star-1.png";
-import sv_1 from "@/assets/img/home-04/service/sv-icon-1.png";
-import sv_2 from "@/assets/img/home-04/service/sv-icon-2.png";
-import sv_3 from "@/assets/img/home-04/service/sv-icon-3.png";
-import sv_4 from "@/assets/img/home-04/service/sv-icon-4.png";
+import seo from '@/assets/service-icons/seo.webp';
+import webdev from '@/assets/service-icons/webdev.webp';
+import smm from '@/assets/service-icons/smm.webp';
+import appdev from '@/assets/service-icons/appdev.webp';
+import graphic from '@/assets/service-icons/graphics.webp';
+import motion from '@/assets/service-icons/motion.webp';
+import content from '@/assets/service-icons/content.webp';
+import googleads from '@/assets/service-icons/googleads.webp';
+import meta from '@/assets/service-icons/meta.webp';
+import algorithm from '@/assets/service-icons/algorithm.webp';
+
+
 
 
 // slider setting
@@ -48,35 +56,35 @@ const slider_setting: SwiperOptions = {
 const service_data = [
   {
     id: 1,
-    icon: sv_1,
+    icon: seo,
     title: "SEO Services",
     desc: "Search Engine Optimization (SEO) is the key to make sure your website stands out digitally. It enhances your website for search engines, resulting in improved ranks and increased visibility.",
     slug:"best-seo-agency"
   },
   {
     id: 2,
-    icon: sv_2,
+    icon: webdev,
     title: "Web development",
     desc: "A Web Development is a digital architect who builds, optimizes, and secures seamless websites.",
     slug: "website-development",
   },
   {
     id: 3,
-    icon: sv_3,
+    icon: smm,
     title: "Social Media Marketing",
     desc: "Social media Marketing is the digital arena where brands connect, captivate, and communicate with their audience.",
     slug: "social-media-marketing"
   },
   {
     id: 4,
-    icon: sv_4,
+    icon: appdev,
     title: "App development",
     desc: "An App Developer is a mobile maestro who builds the next killer app and delivers unparalleled performance to keep users coming back for more.",
     slug: "app-development",
   },
   {
     id: 5,
-    icon: sv_2,
+    icon: graphic,
     title: "Graphic Designing",
     desc: "A graphic designing is a creative force that turns concepts into recognised piece of art.",
     slug: "graphic-designing",
@@ -84,7 +92,7 @@ const service_data = [
   },
   {
     id: 6,
-    icon: sv_4,
+    icon: motion,
     title: "Video Editing",
     desc: "A video editing is a multimedia guru who turns in raw footage into cinematic masterpieces.",
     slug: "motion-graphics",
@@ -92,28 +100,28 @@ const service_data = [
   },
   {
     id: 7,
-    icon: sv_4,
+    icon: content,
     title: "Copy Writing",
     desc: "Content creation combines crafting high-quality, SEO-optimized material that engages users and search engines.",
     slug: "content-marketing",
   },
   {
     id: 8,
-    icon: sv_4,
+    icon: googleads,
     title: "Google Ads",
     desc: "Google Ads is a versatile tool that makes every click an instant hit. It improves return on investment (ROI) and generates high-value leads through strategic bidding.",
     slug: "google-ads-service",
   },
   {
     id: 9,
-    icon: sv_4,
+    icon: meta,
     title: "Meta Ads",
     desc: "Throughout its ecosystem, Meta Ads creates visually striking ads with precise targeting, turning it into a digital powerhouse.",
     slug: "facebook-ads-service",
   },
   {
     id: 10,
-    icon: sv_4,
+    icon: algorithm,
     title: "Algorithm Analysis",
     desc: "An algorithm is a precision powerhouse that can instantly analyse vast amount of data to find hidden patterns and insights.",
     slug: "analysis-algorithm",
@@ -157,13 +165,14 @@ export default function ServiceThree() {
           {service_data.map((item) => (
             <SwiperSlide key={item.id}>
               <div
-                className="tp-service-4-item"
+                className=""
                 style={{
                   backgroundImage: "url(/assets/img/home-04/hero/overly.png)",
+                  padding: "0 40px 40px 40px"
                 }}
               >
                 <div className="tp-service-4-icon">
-                  <Image src={item.icon} alt="icon" />
+                  <Image src={item.icon} alt="icon" width={200} height={200} />
                 </div>
                 <div className="tp-service-4-content">
                   <h4 className="tp-service-4-title-sm">

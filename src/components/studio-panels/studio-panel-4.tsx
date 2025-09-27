@@ -67,7 +67,7 @@ export default function StudioPanelFour({style_2=false}: IProps) {
   return (
     <div className={`${style_2?'':'panel-2 tp-studio-height'}`}>
       <div className={`tp-studio-testimonial-area tp-studio-plr black-bg p-relative fix tp-studio-testimonial-xs-space ${style_2?'tm-testimonial-height':'tp-studio-height'}`}>
-        <div className="tp-studio-testimonial-title-box d-none d-md-block">
+        <div className="tp-studio-testimonial-title-box d-none d-md-block" style={{bottom: "7%"}}>
           <h4 className="tp-studio-testimonial-title">What Our Clients Say</h4>
         </div>
         <div className="container container-1330">

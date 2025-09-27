@@ -2,14 +2,14 @@ import React from "react";
 import Image from "next/image";
 import { Leaf } from "../svg";
 // images
-import b_1 from "@/assets/img/home-04/brand/brand-1.png";
-import b_2 from "@/assets/img/home-04/brand/brand-2.png";
-import b_3 from "@/assets/img/home-04/brand/brand-3.png";
-import b_4 from "@/assets/img/home-04/brand/brand-4.png";
-import b_5 from "@/assets/img/home-04/brand/brand-5.png";
-import b_6 from "@/assets/img/home-04/brand/brand-6.png";
-import b_7 from "@/assets/img/home-04/brand/brand-7.png";
-import b_8 from "@/assets/img/home-04/brand/brand-8.png";
+import b_1 from "@/assets/partners/google.webp";
+import b_2 from "@/assets/partners/meta.webp";
+import b_3 from "@/assets/partners/clutch.webp";
+import b_4 from "@/assets/partners/digital.webp";
+import b_5 from "@/assets/partners/hubspot.webp";
+import b_6 from "@/assets/partners/microsoft.webp";
+import b_7 from "@/assets/partners/seo.webp";
+import b_8 from "@/assets/partners/designrush.webp";
 
 // brand_data
 const brand_data = [
@@ -17,96 +17,80 @@ const brand_data = [
     id: 1,
     brand: b_1,
     texts: [
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
+      "Google Partner",
+      "Google Partner",
+      "Google Partner",
+      "Google Partner",
     ],
   },
   {
     id: 2,
     brand: b_2,
     texts: [
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
+      "Meta Ads Partner",
+      "Meta Ads Partner",
+      "Meta Ads Partner",
+      "Meta Ads Partner",
     ],
   },
   {
     id: 3,
     brand: b_3,
     texts: [
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
+      "Clutch Partner",
+      "Clutch Partner",
+      "Clutch Partner",
+      "Clutch Partner",
     ],
   },
   {
     id: 4,
     brand: b_4,
     texts: [
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
+      "Digital Agency Network",
+      "Digital Agency Network",
+      "Digital Agency Network",
+      "Digital Agency Network",
     ],
   },
   {
     id: 5,
     brand: b_5,
     texts: [
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
+      "Hubspot Partner",
+      "Hubspot Partner",
+      "Hubspot Partner",
+      "Hubspot Partner",
     ],
   },
   {
     id: 6,
     brand: b_6,
     texts: [
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
+      "Microsoft Partner",
+      "Microsoft Partner",
+      "Microsoft Partner",
+      "Microsoft Partner",
     ],
   },
   {
     id: 7,
     brand: b_7,
     texts: [
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
+      "Top 10 SEO Company",
+      "Top 10 SEO Company",
+      "Top 10 SEO Company",
+      "Top 10 SEO Company",
     ],
   },
   {
     id: 8,
     brand: b_8,
     texts: [
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
-      "TopoChico.com",
+      "Designrush Partner",
+      "Designrush Partner",
+      "Designrush Partner",
+      "Designrush Partner",
     ],
   },
 ];
@@ -117,7 +101,7 @@ export function BrandItems() {
     <>
       {brand_data.map((item) => (
         <div key={item.id} className="col-xl-3 col-lg-3 col-md-6">
-          <div className="tp-brand-4-item p-relative">
+          <div className="tp-brand-4-item p-relative" style={{padding: "0", height: "auto"}}>
             <Image src={item.brand} alt="brand" style={{ height: "auto" }} />
             <div className="tp-brand-4-line-text d-flex align-items-center">
               {item.texts.map((text, index) => (
@@ -134,8 +118,8 @@ export function BrandItems() {
 const BrandTwo = () => {
   return (
     <div
-      className="tp-brand-4-area mt-20 pt-120 pb-120 grey-bg-3"
-      style={{ backgroundImage: "url(/assets/img/home-04/brand/overly.png)" }}
+      className="tp-brand-4-area grey-bg-3"
+      style={{ backgroundImage: "url(/assets/img/home-04/brand/overly.png)", padding: "80px 0" }}
     >
       <div className="container">
         <div className="row">
