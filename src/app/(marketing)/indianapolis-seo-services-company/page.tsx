@@ -36,7 +36,7 @@ import LeadForm from "@/components/landingPage/LeadForm";
 import BookCallForm from "@/components/landingPage/BookCallForm";
 import faq_banner from "@/assets/image/faq.webp";
 import FaqItem from "@/components/faq/faq-item";
-import { faq_data } from "./faq";
+import { faq_data } from "./data";
 
 
 export default function Page() {

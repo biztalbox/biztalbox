@@ -5,7 +5,8 @@ import {
 } from "@/utils/metadata";
 import MarketingPageSchema from "@/components/schema/MarketingPageSchema";
 import { createMarketingPageData } from "@/utils/marketing-page-data";
-import { faq_data } from "./faq";
+import { faq_data } from "./data";
+import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
   title: "Marketing Agency in Indianapolis",
@@ -30,23 +31,11 @@ export default function RootLayout({
       question: faq.question,
       answer: faq.answer
     })),
-    reviews: [
-      {
-        author: "Sarah Johnson",
-        rating: 5,
-        text: "Biztalbox transformed our online presence in Indianapolis. Their local SEO expertise and understanding of the Indiana market helped us rank higher and attract more local customers."
-      },
-      {
-        author: "Mike Chen",
-        rating: 5,
-        text: "As a small business owner in Indianapolis, I was skeptical about digital marketing. But Biztalbox delivered real results - our website traffic increased by 300% in just 6 months."
-      },
-      {
-        author: "Jennifer Martinez",
-        rating: 5,
-        text: "The team at Biztalbox understands the Indianapolis market better than any agency we've worked with. Their strategies are tailored specifically for local businesses and they deliver on their promises."
-      }
-    ],
+    reviews: testimonial.map(review => ({
+      author: review.name,
+      rating: review.rating,
+      text: review.desc
+    })),
     aggregateRating: {
       rating: 4.9,
       reviewCount: 156,

@@ -62,8 +62,9 @@ const testimonial_data = [
 // prop type
 type IProps = {
   style_2?: boolean;
+  testimonials?: any[];
 }
-export default function StudioPanelFour({style_2=false}: IProps) {
+export default function StudioPanelFour({style_2=false, testimonials=[]}: IProps) {
   return (
     <div className={`${style_2?'':'panel-2 tp-studio-height'}`}>
       <div className={`tp-studio-testimonial-area tp-studio-plr black-bg p-relative fix tp-studio-testimonial-xs-space ${style_2?'tm-testimonial-height':'tp-studio-height'}`}>
@@ -96,7 +97,7 @@ export default function StudioPanelFour({style_2=false}: IProps) {
                       modules={[Navigation]}
                       className="swiper-container tp-studio-testimonial-active fix"
                     >
-                      {testimonial_data.map((item, i) => (
+                      {testimonials.map((item, i) => (
                         <SwiperSlide key={item.id}>
                           <div className="tp-studio-testimonial-item">
                             <div className="tp-studio-testimonial-text">
