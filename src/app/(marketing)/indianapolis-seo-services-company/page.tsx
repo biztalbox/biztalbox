@@ -37,6 +37,7 @@ import BookCallForm from "@/components/landingPage/BookCallForm";
 import faq_banner from "@/assets/image/faq.webp";
 import FaqItem from "@/components/faq/faq-item";
 import { faq_data } from "./data";
+import { testimonial } from "./data";
 
 
 export default function Page() {
@@ -188,10 +189,10 @@ export default function Page() {
             </div>
 
              {/* Clients */}
-             <StudioPanelFour style_2={true} />
-
-{/* Book a free callback */}
-    <BookCallForm />
+             <StudioPanelFour testimonials={testimonial} style_2={true} />
+            
+            {/* Book a free callback */}
+                <BookCallForm />
 
 
             <div
@@ -247,7 +248,7 @@ export default function Page() {
                       </div>
                     </div>
                     <div className="col-xl-5 col-lg-5">
-                      <div style={{height: "500px", overflow: "hidden"}}>
+                      <div style={{height: "600px", overflow: "hidden"}}>
                         <video src="https://res.cloudinary.com/djoiovkr1/video/upload/SEO_Stricker_2_aqk6qd.webm" autoPlay loop muted></video>
                         {/* <div className="service-details__right-text-box">
                           <h4>
@@ -337,7 +338,7 @@ export default function Page() {
             </div>
 
             {/* CTA */}
-             <div className="p-relative pt-80">
+            <div className="p-relative pt-80">
               <div className="tm-details-shape-1">
                 <Image src={shape_1} alt="shape" />
               </div>

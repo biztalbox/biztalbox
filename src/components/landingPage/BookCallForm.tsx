@@ -57,7 +57,7 @@ const BookCallForm = () => {
   };
 
   return (
-    <div className="tm-details-wrapper p-relative pt-20 pb-120">
+    <div className="p-relative pt-20 pb-80">
       {/* Background shapes similar to team details */}
       <div
         className="tm-details-shape-1"
@@ -189,7 +189,7 @@ const BookCallForm = () => {
           </Col>
 
           <Col xl={6} lg={6} md={5} style={{ zIndex: 100 }}>
-            <div className="tm-details-cta-form pl-40">
+            <div className="tm-details-cta-form pl-md-40">
               <div
                 style={{
                   background: "#1E1E1E",

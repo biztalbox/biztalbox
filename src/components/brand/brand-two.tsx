@@ -100,7 +100,7 @@ export function BrandItems() {
   return (
     <>
       {brand_data.map((item) => (
-        <div key={item.id} className="col-xl-3 col-lg-3 col-md-6">
+        <div key={item.id} className="col-6 col-xl-3 col-lg-3">
           <div className="tp-brand-4-item p-relative" style={{padding: "0", height: "auto"}}>
             <Image src={item.brand} alt="brand" style={{ height: "auto" }} />
             <div className="tp-brand-4-line-text d-flex align-items-center">
