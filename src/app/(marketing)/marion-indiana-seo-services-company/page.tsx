@@ -76,6 +76,7 @@ export default function Page() {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main style={{overflow: "hidden"}}>
+            
             {/* hero area start */}
             <div className="tp-hero-4-area tp-btn-trigger">
               <div className="container-fluid">
@@ -88,22 +89,13 @@ export default function Page() {
                           style={{ marginBottom: "0" }}
                         >
                           <h1 className="text-white tp-char-animation">
-                            Professional SEO Agency in <br /> Indianapolis
+                            Professional SEO Agency in Marion - Build Visibility, Attract Customers
                           </h1>
                           <p>
-                            Getting clicks is easy; turning them into clients is
-                            an art. At Biztalbox, we combine data, creativity,
-                            and local insights to make your Indianapolis
-                            business impossible to ignore online.
+                          In today’s market, having a website alone won’t suffice. Your customers are searching right now, and if they don’t find you, they’ll end up with a competitor. At Biztalbox, a trusted SEO Agency Marion and full-service marketing agency serving the Marion area, we create strategies that put your business in front of the right audience.
                           </p>
                           <p>
-                            As a premier Indiana SEO agency we incorporate
-                            significant industry expertise to ensure your
-                            organization is visible and memorable. Our
-                            customized strategy will generate real growth and
-                            future value regardless of whether you&apos;re an
-                            established business downtown or a startup in Broad
-                            Ripple.
+                          Whether you run a manufacturing company, a SaaS startup, or a local store, our SEO Services Marion help you rank higher, attract qualified leads, and convert them into paying customers.
                           </p>
                           <div className="tp-hero-4-text tp_fade_right">
                             <span>
@@ -172,13 +164,13 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Business in
                         </span>
-                        <h4 className="tm-details-title">Indianapolis?</h4>
+                        <h4 className="tm-details-title">Marion?</h4>
                       </div>
                       <div className="tm-details-text">
                         <p>
                           If you’re waiting for clients to stumble across your
                           website, you’re already behind. Let Biztalbox, your
-                          trusted SEO Agency Indiana, craft a strategy that
+                          trusted SEO Agency, craft a strategy that
                           makes your Indianapolis business unavoidable
                           online—get your free consultation now.
                         </p>
@@ -226,34 +218,21 @@ export default function Page() {
                           <h3 className="text-white">
                             Benefits of SEO Services in
                           </h3>
-                          <h2 className="tm-details-title">Indianapolis?</h2>
+                          <h2 className="tm-details-title">Marion?</h2>
                         </div>
-                        {/* <div className="service-details__left-text pb-20">
-                          <h2 className="text-1 tp_title_anim">
-                            
-                          </h2>
-                        </div> */}
                         <div className="service-details__fea-list">
                           <ul>
                             <li>
-                              Higher visibility, real results: Our SEO Services
-                              Indiana help you rank for the keywords that matter
-                              and attract audiences ready to convert.
+                              Traffic That Converts – We focus on buyer-intent keywords that bring real customers, not just clicks.
                             </li>
                             <li>
-                              Local advantage: Engage customers in Indianapolis
-                              and across Indiana who are actively searching for
-                              your services.
+                              Local Advantage – We position your business in front of Marion residents who are seeking your services.
                             </li>
                             <li>
-                              Enhanced website experience: Faster pages,
-                              intuitive navigation, and content that resonates
-                              with humans, not just algorithms.
+                              Better Website Performance – By optimizing your website for users, you receive a fast-loading time, smooth user experience, and seamless navigation to help keep your visitors on your site.
                             </li>
                             <li>
-                              Measurable growth: Every strategy comes with
-                              data-backed insights, so you know exactly what
-                              works.
+                              Clear, Measurable Growth – From rankings to leads and sales, you can track every step of your progress.
                             </li>
                           </ul>
                         </div>
@@ -299,7 +278,7 @@ export default function Page() {
                         }`}
                       >
                         <h4 className="tp-about-4-title">
-                          Why Biztalbox is Your Trusted SEO Partner
+                        Why Biztalbox is the Right Partner
                         </h4>
                       </div>
                     </div>
@@ -319,10 +298,9 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">Local Insight </h4>
+                              <h4 className="text-white">Local Insight</h4>
                               <p>
-                                We understand the Indiana market and what works
-                                in Indianapolis.
+                                Our SEO Company Marion knows the competitive landscape and what it takes to win here.
                               </p>
                             </div>
                           </div>
@@ -332,10 +310,9 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">Custom Strategies</h4>
+                              <h4 className="text-white">Tailored Strategies</h4>
                               <p>
-                                No cookie-cutter plans — every campaign fits
-                                your goals.
+                                No one-size-fits-all solutions — every plan is customized to your business goals.
                               </p>
                             </div>
                           </div>
@@ -347,10 +324,9 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">Proven Results</h4>
+                              <h4 className="text-white">Industry Experience</h4>
                               <p>
-                                From startups to established brands, we’ve
-                                driven real growth.
+                                From projects as a manufacturing SEO agency to providing SaaS SEO services in Marion, we’ve delivered measurable results for a variety of industries.
                               </p>
                             </div>
                           </div>
@@ -360,9 +336,9 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">Ethical SEO</h4>
+                              <h4 className="text-white">White-Hat SEO Practices</h4>
                               <p>
-                                100% white-hat methods for sustainable rankings.
+                                We follow Google-approved, sustainable methods so your growth is risk-free.
                               </p>
                             </div>
                           </div>
@@ -393,13 +369,13 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Business in
                         </span>
-                        <h4 className="tm-details-title">Indianapolis?</h4>
+                        <h4 className="tm-details-title">Marion?</h4>
                       </div>
                       <div className="tm-details-text">
                         <p>
                           If you’re waiting for clients to stumble across your
                           website, you’re already behind. Let Biztalbox, your
-                          trusted SEO Agency Indiana, craft a strategy that
+                          trusted SEO Agency, craft a strategy that
                           makes your Indianapolis business unavoidable
                           online—get your free consultation now.
                         </p>
@@ -438,8 +414,7 @@ export default function Page() {
                       }`}
                     >
                       <h3 className="tp-about-4-title">
-                        We believe SEO isn’t one-size-fits-all. Here’s how we
-                        make it work for you:
+                      How Our SEO Services Work
                       </h3>
                       <p
                         className="tp-about-4-title"
@@ -449,12 +424,12 @@ export default function Page() {
                   </div>
                 </div>
                 <div className="row align-items-center">
-                  <div className="col-xl-3 col-lg-2 col-md-3">
+                  <div className="col-xl-2 col-lg-2 col-md-2">
                     <div className="tp-about-4-shape-1">
                       <Image src={shape_2} alt="shape-2" />
                     </div>
                   </div>
-                  <div className="col-xl-9 col-lg-10 col-md-9">
+                  <div className="col-xl-10 col-lg-10 col-md-10">
                     <div className="tp-about-4-content-wrap">
                       <div className="row">
                         <div className="col-xl-6 col-lg-6">
@@ -467,8 +442,7 @@ export default function Page() {
                               Website Audit & Analysis
                             </h4>
                             <p>
-                              Our SEO Consultants Indiana uncover gaps,
-                              opportunities, and growth potential.
+                              Our experienced SEO Consultant Marion team inspects your website’s structure, technical health, and missed opportunities for growth.
                             </p>
                           </div>
                         </div>
@@ -479,12 +453,10 @@ export default function Page() {
                             }`}
                           >
                             <h4 className="text-white">
-                              Keyword Research & Strategy
+                              Keyword Research
                             </h4>
                             <p>
-                              Not just popular keywords, but the right ones that
-                              connect you with your ideal audience in
-                              Indianapolis and throughout Indiana.
+                              Rather than chasing after general terms, we identify the search phrases that your Marion customers actually use.
                             </p>
                           </div>
                         </div>
@@ -498,9 +470,7 @@ export default function Page() {
                           >
                             <h4 className="text-white">On-Page Optimization</h4>
                             <p>
-                              Whether it’s meta tags, content structure, or
-                              improving everything for users and search engines,
-                              we love to fine-tune it.
+                              From meta tags and headers to content flow and overall structure, our SEO Experts Marion will ensure that your site is both search engine friendly and user friendly.
                             </p>
                           </div>
                         </div>
@@ -511,11 +481,36 @@ export default function Page() {
                             }`}
                           >
                             <h4 className="text-white">
-                              Off-Page SEO & Link Building
+                              Link Building and Authority Building
                             </h4>
                             <p>
-                              High-quality links to build authority and online
-                              presence through our SEO Experts Indiana.
+                              Quality backlinks from credible websites help improve rankings and establish trust with search engines.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="row mt-30">
+                        <div className="col-xl-6 col-lg-6">
+                          <div
+                            className={`tp-about-4-content item-1 ${
+                              !isMobile ? "tp_fade_bottom" : ""
+                            }`}
+                          >
+                            <h4 className="text-white">Local SEO</h4>
+                            <p>
+                              Want to appear first on Google Maps and local searches? We make sure your business stands out when Marion residents search for what you offer.
+                            </p>
+                          </div>
+                        </div>
+                        <div className="col-xl-6 col-lg-6">
+                          <div
+                            className={`tp-about-4-content item-1 ${
+                              !isMobile ? "tp_fade_bottom" : ""
+                            }`}
+                          >
+                            <h4 className="text-white">Ongoing Reporting & Adjustments</h4>
+                            <p>
+                            You’ll receive clear reports showing what’s working, plus regular updates to keep your SEO strategy effective as trends change.
                             </p>
                           </div>
                         </div>
@@ -545,13 +540,13 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Business in
                         </span>
-                        <h4 className="tm-details-title">Indianapolis?</h4>
+                        <h4 className="tm-details-title">Marion?</h4>
                       </div>
                       <div className="tm-details-text">
                         <p>
                           If you’re waiting for clients to stumble across your
                           website, you’re already behind. Let Biztalbox, your
-                          trusted SEO Agency Indiana, craft a strategy that
+                          trusted SEO Agency, craft a strategy that
                           makes your Indianapolis business unavoidable
                           online—get your free consultation now.
                         </p>
@@ -591,7 +586,7 @@ export default function Page() {
                     <div className="fq-faq-sidebar">
                       <div className="fq-faq-sidebar-content">
                         <h4 className="fq-faq-sidebar-title">Q&A</h4>
-                        <p>FAQs – SEO Services in Indianapolis</p>
+                        <p>FAQs – SEO Services in Marion</p>
                       </div>
                       <div className="fq-faq-sidebar-thumb">
                         <Image

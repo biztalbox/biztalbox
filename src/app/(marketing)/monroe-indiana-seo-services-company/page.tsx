@@ -76,6 +76,7 @@ export default function Page() {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <main style={{overflow: "hidden"}}>
+            
             {/* hero area start */}
             <div className="tp-hero-4-area tp-btn-trigger">
               <div className="container-fluid">
@@ -88,22 +89,12 @@ export default function Page() {
                           style={{ marginBottom: "0" }}
                         >
                           <h1 className="text-white tp-char-animation">
-                            Professional SEO Agency in <br /> Indianapolis
+                          Professional SEO Services in Monroe – Drive Traffic & Grow Sales
                           </h1>
                           <p>
-                            Getting clicks is easy; turning them into clients is
-                            an art. At Biztalbox, we combine data, creativity,
-                            and local insights to make your Indianapolis
-                            business impossible to ignore online.
-                          </p>
+                          In Monroe’s competitive market, having a website isn’t enough—you need to be visible to the right audience. At Biztalbox, we help businesses rank higher, attract targeted leads, and convert them into loyal customers.                          </p>
                           <p>
-                            As a premier Indiana SEO agency we incorporate
-                            significant industry expertise to ensure your
-                            organization is visible and memorable. Our
-                            customized strategy will generate real growth and
-                            future value regardless of whether you&apos;re an
-                            established business downtown or a startup in Broad
-                            Ripple.
+                          Being one of Monroe's top SEO Agencies, we develop strategies for manufacturers, SaaS startups, and local businesses that enable them to achieve measurable growth.
                           </p>
                           <div className="tp-hero-4-text tp_fade_right">
                             <span>
@@ -172,13 +163,13 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Business in
                         </span>
-                        <h4 className="tm-details-title">Indianapolis?</h4>
+                        <h4 className="tm-details-title">Monroe?</h4>
                       </div>
                       <div className="tm-details-text">
                         <p>
                           If you’re waiting for clients to stumble across your
                           website, you’re already behind. Let Biztalbox, your
-                          trusted SEO Agency Indiana, craft a strategy that
+                          trusted SEO Agency, craft a strategy that
                           makes your Indianapolis business unavoidable
                           online—get your free consultation now.
                         </p>
@@ -226,34 +217,21 @@ export default function Page() {
                           <h3 className="text-white">
                             Benefits of SEO Services in
                           </h3>
-                          <h2 className="tm-details-title">Indianapolis?</h2>
+                          <h2 className="tm-details-title">Monroe?</h2>
                         </div>
-                        {/* <div className="service-details__left-text pb-20">
-                          <h2 className="text-1 tp_title_anim">
-                            
-                          </h2>
-                        </div> */}
                         <div className="service-details__fea-list">
                           <ul>
                             <li>
-                              Higher visibility, real results: Our SEO Services
-                              Indiana help you rank for the keywords that matter
-                              and attract audiences ready to convert.
+                              Rank higher on Google: Find customers searching for the services you offer.
                             </li>
                             <li>
-                              Local advantage: Engage customers in Indianapolis
-                              and across Indiana who are actively searching for
-                              your services.
+                              Local visibility: Get Monroe residents actively seeking businesses like yours.
                             </li>
                             <li>
-                              Enhanced website experience: Faster pages,
-                              intuitive navigation, and content that resonates
-                              with humans, not just algorithms.
+                              Enhanced website experience: Quick, intuitive, and engaging pages that convert visitors.
                             </li>
                             <li>
-                              Measurable growth: Every strategy comes with
-                              data-backed insights, so you know exactly what
-                              works.
+                              Measurable growth: Clear reporting demonstrates exactly how SEO affects your business.
                             </li>
                           </ul>
                         </div>
@@ -299,7 +277,7 @@ export default function Page() {
                         }`}
                       >
                         <h4 className="tp-about-4-title">
-                          Why Biztalbox is Your Trusted SEO Partner
+                        Why Biztalbox is the Right Partner
                         </h4>
                       </div>
                     </div>
@@ -319,10 +297,9 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">Local Insight </h4>
+                              <h4 className="text-white">Local Expertise</h4>
                               <p>
-                                We understand the Indiana market and what works
-                                in Indianapolis.
+                                Our SEO Company Monroe understands the Monroe business landscape.
                               </p>
                             </div>
                           </div>
@@ -334,8 +311,7 @@ export default function Page() {
                             >
                               <h4 className="text-white">Custom Strategies</h4>
                               <p>
-                                No cookie-cutter plans — every campaign fits
-                                your goals.
+                                Each plan is tailored to your industry and target market.
                               </p>
                             </div>
                           </div>
@@ -347,10 +323,9 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">Proven Results</h4>
+                              <h4 className="text-white">Industry-Specific Solutions</h4>
                               <p>
-                                From startups to established brands, we’ve
-                                driven real growth.
+                                From manufacturing SEO agency in Monroe to SaaS SEO agency, we deliver proven results.
                               </p>
                             </div>
                           </div>
@@ -362,7 +337,7 @@ export default function Page() {
                             >
                               <h4 className="text-white">Ethical SEO</h4>
                               <p>
-                                100% white-hat methods for sustainable rankings.
+                                We follow white-hat strategies for sustainable, risk-free growth.
                               </p>
                             </div>
                           </div>
@@ -393,13 +368,13 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Business in
                         </span>
-                        <h4 className="tm-details-title">Indianapolis?</h4>
+                        <h4 className="tm-details-title">Monroe?</h4>
                       </div>
                       <div className="tm-details-text">
                         <p>
                           If you’re waiting for clients to stumble across your
                           website, you’re already behind. Let Biztalbox, your
-                          trusted SEO Agency Indiana, craft a strategy that
+                          trusted SEO Agency, craft a strategy that
                           makes your Indianapolis business unavoidable
                           online—get your free consultation now.
                         </p>
@@ -438,8 +413,7 @@ export default function Page() {
                       }`}
                     >
                       <h3 className="tp-about-4-title">
-                        We believe SEO isn’t one-size-fits-all. Here’s how we
-                        make it work for you:
+                      How Our SEO Services Work
                       </h3>
                       <p
                         className="tp-about-4-title"
@@ -449,12 +423,12 @@ export default function Page() {
                   </div>
                 </div>
                 <div className="row align-items-center">
-                  <div className="col-xl-3 col-lg-2 col-md-3">
+                  <div className="col-xl-2 col-lg-2 col-md-2">
                     <div className="tp-about-4-shape-1">
                       <Image src={shape_2} alt="shape-2" />
                     </div>
                   </div>
-                  <div className="col-xl-9 col-lg-10 col-md-9">
+                  <div className="col-xl-10 col-lg-10 col-md-10">
                     <div className="tp-about-4-content-wrap">
                       <div className="row">
                         <div className="col-xl-6 col-lg-6">
@@ -467,8 +441,7 @@ export default function Page() {
                               Website Audit & Analysis
                             </h4>
                             <p>
-                              Our SEO Consultants Indiana uncover gaps,
-                              opportunities, and growth potential.
+                              Our SEO Consultants Monroe examine your website for technical gaps, broken links, and optimization opportunities.
                             </p>
                           </div>
                         </div>
@@ -479,12 +452,10 @@ export default function Page() {
                             }`}
                           >
                             <h4 className="text-white">
-                              Keyword Research & Strategy
+                              Keyword Research
                             </h4>
                             <p>
-                              Not just popular keywords, but the right ones that
-                              connect you with your ideal audience in
-                              Indianapolis and throughout Indiana.
+                              We identify the high-intent keywords your Monroe customers are searching for.
                             </p>
                           </div>
                         </div>
@@ -498,9 +469,7 @@ export default function Page() {
                           >
                             <h4 className="text-white">On-Page Optimization</h4>
                             <p>
-                              Whether it’s meta tags, content structure, or
-                              improving everything for users and search engines,
-                              we love to fine-tune it.
+                              Our SEO Experts from Monroe optimize meta tags, headings, and content for the highest search visibility and user experience.
                             </p>
                           </div>
                         </div>
@@ -514,8 +483,33 @@ export default function Page() {
                               Off-Page SEO & Link Building
                             </h4>
                             <p>
-                              High-quality links to build authority and online
-                              presence through our SEO Experts Indiana.
+                              We acquire quality backlinks to increase your domain authority and credibility.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="row mt-30">
+                        <div className="col-xl-6 col-lg-6">
+                          <div
+                            className={`tp-about-4-content item-1 ${
+                              !isMobile ? "tp_fade_bottom" : ""
+                            }`}
+                          >
+                            <h4 className="text-white">Local SEO</h4>
+                            <p>
+                              Be it Google Maps or local citations, we ensure your business is easy to find for Monroe customers.
+                            </p>
+                          </div>
+                        </div>
+                        <div className="col-xl-6 col-lg-6">
+                          <div
+                            className={`tp-about-4-content item-1 ${
+                              !isMobile ? "tp_fade_bottom" : ""
+                            }`}
+                          >
+                            <h4 className="text-white">Reporting & Continuous Improvement</h4>
+                            <p>
+                              Biztalbox provides detailed reports and tweaks the ongoing strategy to keep your SEO efforts on track for continued success.
                             </p>
                           </div>
                         </div>
@@ -545,13 +539,13 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Business in
                         </span>
-                        <h4 className="tm-details-title">Indianapolis?</h4>
+                        <h4 className="tm-details-title">Monroe?</h4>
                       </div>
                       <div className="tm-details-text">
                         <p>
                           If you’re waiting for clients to stumble across your
                           website, you’re already behind. Let Biztalbox, your
-                          trusted SEO Agency Indiana, craft a strategy that
+                          trusted SEO Agency, craft a strategy that
                           makes your Indianapolis business unavoidable
                           online—get your free consultation now.
                         </p>
@@ -591,7 +585,7 @@ export default function Page() {
                     <div className="fq-faq-sidebar">
                       <div className="fq-faq-sidebar-content">
                         <h4 className="fq-faq-sidebar-title">Q&A</h4>
-                        <p>FAQs – SEO Services in Indianapolis</p>
+                        <p>FAQs – SEO Services in Monroe</p>
                       </div>
                       <div className="fq-faq-sidebar-thumb">
                         <Image

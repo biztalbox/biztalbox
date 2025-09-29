@@ -88,22 +88,14 @@ export default function Page() {
                           style={{ marginBottom: "0" }}
                         >
                           <h1 className="text-white tp-char-animation">
-                            Professional SEO Agency in <br /> Indianapolis
+                            Professional SEO Agency in <br /> Hamilton 
                           </h1>
                           <p>
-                            Getting clicks is easy; turning them into clients is
-                            an art. At Biztalbox, we combine data, creativity,
-                            and local insights to make your Indianapolis
-                            business impossible to ignore online.
+                          If your customers can’t find you online, they’re probably finding someone else. At Biztalbox, we help local businesses turn that around. Our SEO Services Hamilton are designed to do more than boost rankings—they bring you leads that convert. Whether you’re a boutique shop, a manufacturer, or a SaaS startup, our strategies put you in front of the right audience at the right time.
+
                           </p>
                           <p>
-                            As a premier Indiana SEO agency we incorporate
-                            significant industry expertise to ensure your
-                            organization is visible and memorable. Our
-                            customized strategy will generate real growth and
-                            future value regardless of whether you&apos;re an
-                            established business downtown or a startup in Broad
-                            Ripple.
+                          As a leading SEO Agency Hamilton, we build custom campaigns that actually move the needle. If you’ve been searching for a results-driven marketing agency Hamilton that understands the local market, you’ve just found your partner.
                           </p>
                           <div className="tp-hero-4-text tp_fade_right">
                             <span>
@@ -172,13 +164,13 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Business in
                         </span>
-                        <h4 className="tm-details-title">Indianapolis?</h4>
+                        <h4 className="tm-details-title">Hamilton?</h4>
                       </div>
                       <div className="tm-details-text">
                         <p>
                           If you’re waiting for clients to stumble across your
                           website, you’re already behind. Let Biztalbox, your
-                          trusted SEO Agency Indiana, craft a strategy that
+                          trusted SEO Agency, craft a strategy that
                           makes your Indianapolis business unavoidable
                           online—get your free consultation now.
                         </p>
@@ -226,34 +218,21 @@ export default function Page() {
                           <h3 className="text-white">
                             Benefits of SEO Services in
                           </h3>
-                          <h2 className="tm-details-title">Indianapolis?</h2>
+                          <h2 className="tm-details-title">Hamilton?</h2>
                         </div>
-                        {/* <div className="service-details__left-text pb-20">
-                          <h2 className="text-1 tp_title_anim">
-                            
-                          </h2>
-                        </div> */}
                         <div className="service-details__fea-list">
                           <ul>
                             <li>
-                              Higher visibility, real results: Our SEO Services
-                              Indiana help you rank for the keywords that matter
-                              and attract audiences ready to convert.
+                              Higher rankings and better leads – More of the right customers visiting your site.
                             </li>
                             <li>
-                              Local advantage: Engage customers in Indianapolis
-                              and across Indiana who are actively searching for
-                              your services.
+                              Improved local visibility – Win the clicks that matter most in Hamilton.
                             </li>
                             <li>
-                              Enhanced website experience: Faster pages,
-                              intuitive navigation, and content that resonates
-                              with humans, not just algorithms.
+                              Better user experience – Fast-loading, well-structured pages that keep visitors engaged.
                             </li>
                             <li>
-                              Measurable growth: Every strategy comes with
-                              data-backed insights, so you know exactly what
-                              works.
+                              Measurable results – Clear reports that show exactly where growth is coming from.
                             </li>
                           </ul>
                         </div>
@@ -299,7 +278,7 @@ export default function Page() {
                         }`}
                       >
                         <h4 className="tp-about-4-title">
-                          Why Biztalbox is Your Trusted SEO Partner
+                        Why Hamilton Businesses Choose Biztalbox
                         </h4>
                       </div>
                     </div>
@@ -319,10 +298,10 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">Local Insight </h4>
+                              <h4 className="text-white">Local Expertise</h4>
                               <p>
-                                We understand the Indiana market and what works
-                                in Indianapolis.
+                                As an experienced SEO Company Hamilton, we know
+                                the competition and how to outsmart it.
                               </p>
                             </div>
                           </div>
@@ -334,8 +313,8 @@ export default function Page() {
                             >
                               <h4 className="text-white">Custom Strategies</h4>
                               <p>
-                                No cookie-cutter plans — every campaign fits
-                                your goals.
+                                No cookie-cutter templates—your campaign is
+                                built around your business goals.
                               </p>
                             </div>
                           </div>
@@ -347,10 +326,12 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">Proven Results</h4>
+                              <h4 className="text-white">Industry-Specific Focus</h4>
                               <p>
-                                From startups to established brands, we’ve
-                                driven real growth.
+                                We’ve partnered with a wide range of businesses—manufacturers
+                                who needed a trusted manufacturing SEO company Hamilton and tech
+                                firms searching for effective SaaS SEO services Hamilton—so we
+                                know what works in every niche.
                               </p>
                             </div>
                           </div>
@@ -360,9 +341,10 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">Ethical SEO</h4>
+                              <h4 className="text-white">Safe, White-Hat Practices</h4>
                               <p>
-                                100% white-hat methods for sustainable rankings.
+                                Our work adheres to Google-approved methods for achieving
+                                sustainable results.
                               </p>
                             </div>
                           </div>
@@ -393,13 +375,13 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Business in
                         </span>
-                        <h4 className="tm-details-title">Indianapolis?</h4>
+                        <h4 className="tm-details-title">Hamilton?</h4>
                       </div>
                       <div className="tm-details-text">
                         <p>
                           If you’re waiting for clients to stumble across your
                           website, you’re already behind. Let Biztalbox, your
-                          trusted SEO Agency Indiana, craft a strategy that
+                          trusted SEO Agency, craft a strategy that
                           makes your Indianapolis business unavoidable
                           online—get your free consultation now.
                         </p>
@@ -438,8 +420,7 @@ export default function Page() {
                       }`}
                     >
                       <h3 className="tp-about-4-title">
-                        We believe SEO isn’t one-size-fits-all. Here’s how we
-                        make it work for you:
+                      Our Proven SEO Process
                       </h3>
                       <p
                         className="tp-about-4-title"
@@ -467,8 +448,7 @@ export default function Page() {
                               Website Audit & Analysis
                             </h4>
                             <p>
-                              Our SEO Consultants Indiana uncover gaps,
-                              opportunities, and growth potential.
+                              Our experienced SEO Consultant Hamilton team reviews your site’s design, content, and technical setup. We look for what’s slowing you down—and what can help you grow.
                             </p>
                           </div>
                         </div>
@@ -479,12 +459,10 @@ export default function Page() {
                             }`}
                           >
                             <h4 className="text-white">
-                              Keyword Research & Strategy
+                              Targeted Keyword Research
                             </h4>
                             <p>
-                              Not just popular keywords, but the right ones that
-                              connect you with your ideal audience in
-                              Indianapolis and throughout Indiana.
+                              We uncover the exact search terms your Hamilton audience uses, so you show up when they’re ready to buy.
                             </p>
                           </div>
                         </div>
@@ -498,9 +476,7 @@ export default function Page() {
                           >
                             <h4 className="text-white">On-Page Optimization</h4>
                             <p>
-                              Whether it’s meta tags, content structure, or
-                              improving everything for users and search engines,
-                              we love to fine-tune it.
+                              From meta tags to headings, we make sure every page is aligned with Google’s standards and designed for a smooth user experience.
                             </p>
                           </div>
                         </div>
@@ -511,11 +487,10 @@ export default function Page() {
                             }`}
                           >
                             <h4 className="text-white">
-                              Off-Page SEO & Link Building
+                              Link Building & Off-Page SEO
                             </h4>
                             <p>
-                              High-quality links to build authority and online
-                              presence through our SEO Experts Indiana.
+                              We earn high-quality backlinks that boost your authority and get you noticed.
                             </p>
                           </div>
                         </div>
@@ -545,13 +520,13 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Business in
                         </span>
-                        <h4 className="tm-details-title">Indianapolis?</h4>
+                        <h4 className="tm-details-title">Hamilton?</h4>
                       </div>
                       <div className="tm-details-text">
                         <p>
                           If you’re waiting for clients to stumble across your
                           website, you’re already behind. Let Biztalbox, your
-                          trusted SEO Agency Indiana, craft a strategy that
+                          trusted SEO Agency, craft a strategy that
                           makes your Indianapolis business unavoidable
                           online—get your free consultation now.
                         </p>
@@ -591,7 +566,7 @@ export default function Page() {
                     <div className="fq-faq-sidebar">
                       <div className="fq-faq-sidebar-content">
                         <h4 className="fq-faq-sidebar-title">Q&A</h4>
-                        <p>FAQs – SEO Services in Indianapolis</p>
+                        <p>FAQs – SEO Services in Hamilton</p>
                       </div>
                       <div className="fq-faq-sidebar-thumb">
                         <Image

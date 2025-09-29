@@ -6,7 +6,8 @@ import Marquee from "react-fast-marquee";
 export default function LineTextTwo({title}: {title: string}) {
   // marquee text
   const marquee_text = [
-    title,
+    "How Our SEO Services Work",
+    "We've Got The Strategy"
   ];
   return (
     <div

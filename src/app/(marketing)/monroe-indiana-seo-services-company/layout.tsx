@@ -1,20 +1,19 @@
 import { Metadata } from "next";
-import {
-  createMetadata,
-  createFullUrl,
-} from "@/utils/metadata";
+import { createMetadata, createFullUrl } from "@/utils/metadata";
 import MarketingPageSchema from "@/components/schema/MarketingPageSchema";
 import { createMarketingPageData } from "@/utils/marketing-page-data";
 import { faq_data } from "./data";
 import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
-  title: "Marketing Agency in Indianapolis",
+  title: "SEO Services Agency Monroe | Best SEO Company in Monroe",
   description:
-    "Discover our comprehensive range of digital marketing and web development services designed to help your business grow online. Marketing Agency in Indianapolis",
-};
+"Looking for top SEO services in Monroe? Our expert SEO company in Monroe, Indiana delivers proven strategies to boost your website traffic and rankings."};
 
-export const metadata = createMetadata(baseMetadata, "/indianapolis-seo-services-company");
+export const metadata = createMetadata(
+  baseMetadata,
+  "/monroe-indiana-seo-services-companyy"
+);
 
 export default function RootLayout({
   children,
@@ -25,30 +24,31 @@ export default function RootLayout({
   const pageData = createMarketingPageData({
     title: baseMetadata.title as string,
     description: baseMetadata.description as string,
-    path: "/indianapolis-seo-services-company",
+    path: "/monroe-indiana-seo-services-companyy",
     serviceType: "Digital Marketing Agency",
-    faqs: faq_data.map(faq => ({
+    faqs: faq_data.map((faq) => ({
       question: faq.question,
-      answer: faq.answer
+      answer: faq.answer,
     })),
-    reviews: testimonial.map(review => ({
+    reviews: testimonial.map((review) => ({
       author: review.name,
       rating: review.rating,
-      text: review.desc
+      text: review.desc,
     })),
     aggregateRating: {
       rating: 4.9,
       reviewCount: 156,
-      bestRating: 5
+      bestRating: 5,
     },
-    image: "https://biztalbox.com/_next/image?url=%2Fassets%2Fimg%2Fservices%2Fseo.webp&w=1080&q=75"
+    image:
+      "https://biztalbox.com/_next/image?url=%2Fassets%2Fimg%2Fservices%2Fseo.webp&w=1080&q=75",
   });
 
   return (
     <>
-      <MarketingPageSchema 
+      <MarketingPageSchema
         pageData={pageData}
-        currentUrl={createFullUrl("/indianapolis-seo-services-company")}
+        currentUrl={createFullUrl("/monroe-indiana-seo-services-companyy")}
       />
       {children}
     </>
