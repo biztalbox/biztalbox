@@ -55,7 +55,7 @@ export default function FooterThree() {
                 </div>
                 <div className="tp-footer-2-widget-text">
                   <p>
-                    Igniting your brand's potential with out-of-the-box
+                    Igniting your brand&apos;s potential with out-of-the-box
                     Marketing Solutions
                   </p>
                 </div>
