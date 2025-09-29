@@ -23,7 +23,7 @@ export default function HeaderEleven({transparent=false,cls=''}: IProps) {
   }, []);
   return (
     <>
-      <header className="tp-header-height z-index-5" ref={headerRef}>  
+      <header className="tp-header-height" ref={headerRef} style={{zIndex: 1000}}>  
         <div
           id="header-sticky"
           className={`tp-inner-header-area ${cls} ${transparent?'transparent':'tp-inner-header-style-2'} tp-inner-header-mob-space ${sticky ? "header-sticky" : ""}`}
