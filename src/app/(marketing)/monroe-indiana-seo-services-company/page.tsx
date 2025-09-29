@@ -65,7 +65,7 @@ export default function Page() {
   useEffect(() => {
     const isMobile = window.innerWidth < 768;
     setIsMobile(isMobile);
-  }, [window.innerWidth]);
+  }, []);
 
   return (
     <Wrapper>
@@ -92,9 +92,9 @@ export default function Page() {
                           Professional SEO Services in Monroe – Drive Traffic & Grow Sales
                           </h1>
                           <p>
-                          In Monroe’s competitive market, having a website isn’t enough—you need to be visible to the right audience. At Biztalbox, we help businesses rank higher, attract targeted leads, and convert them into loyal customers.                          </p>
+                          In Monroe&apos;s competitive market, having a website isn&apos;t enough—you need to be visible to the right audience. At Biztalbox, we help businesses rank higher, attract targeted leads, and convert them into loyal customers.                          </p>
                           <p>
-                          Being one of Monroe's top SEO Agencies, we develop strategies for manufacturers, SaaS startups, and local businesses that enable them to achieve measurable growth.
+                          Being one of Monroe&apos;s top SEO Agencies, we develop strategies for manufacturers, SaaS startups, and local businesses that enable them to achieve measurable growth.
                           </p>
                           <div className="tp-hero-4-text tp_fade_right">
                             <span>
@@ -167,8 +167,8 @@ export default function Page() {
                       </div>
                       <div className="tm-details-text">
                         <p>
-                          If you’re waiting for clients to stumble across your
-                          website, you’re already behind. Let Biztalbox, your
+                          If you&apos;re waiting for clients to stumble across your
+                          website, you&apos;re already behind. Let Biztalbox, your
                           trusted SEO Agency, craft a strategy that
                           makes your Indianapolis business unavoidable
                           online—get your free consultation now.
@@ -372,8 +372,8 @@ export default function Page() {
                       </div>
                       <div className="tm-details-text">
                         <p>
-                          If you’re waiting for clients to stumble across your
-                          website, you’re already behind. Let Biztalbox, your
+                          If you&apos;re waiting for clients to stumble across your
+                          website, you&apos;re already behind. Let Biztalbox, your
                           trusted SEO Agency, craft a strategy that
                           makes your Indianapolis business unavoidable
                           online—get your free consultation now.
@@ -543,8 +543,8 @@ export default function Page() {
                       </div>
                       <div className="tm-details-text">
                         <p>
-                          If you’re waiting for clients to stumble across your
-                          website, you’re already behind. Let Biztalbox, your
+                          If you&apos;re waiting for clients to stumble across your
+                          website, you&apos;re already behind. Let Biztalbox, your
                           trusted SEO Agency, craft a strategy that
                           makes your Indianapolis business unavoidable
                           online—get your free consultation now.

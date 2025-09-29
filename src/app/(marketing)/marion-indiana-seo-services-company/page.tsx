@@ -65,7 +65,7 @@ export default function Page() {
   useEffect(() => {
     const isMobile = window.innerWidth < 768;
     setIsMobile(isMobile);
-  }, [window.innerWidth]);
+  }, []);
 
   return (
     <Wrapper>
