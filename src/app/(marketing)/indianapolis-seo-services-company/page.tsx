@@ -1,6 +1,6 @@
 "use client";
 import { gsap } from "gsap";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import useScrollSmooth from "@/hooks/use-scroll-smooth";
 import { ScrollSmoother, ScrollTrigger, SplitText } from "@/plugins";
 import { useGSAP } from "@gsap/react";
@@ -39,9 +39,9 @@ import FaqItem from "@/components/faq/faq-item";
 import { faq_data } from "./data";
 import { testimonial } from "./data";
 
-
 export default function Page() {
   useScrollSmooth();
+  const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     document.body.classList.add("tp-smooth-scroll");
     return () => {
@@ -62,6 +62,11 @@ export default function Page() {
     return () => clearTimeout(timer);
   });
 
+  useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    setIsMobile(isMobile);
+  }, [window.innerWidth]);
+
   return (
     <Wrapper>
       {/* header area start */}
@@ -78,7 +83,10 @@ export default function Page() {
                   <div className="col-xl-12">
                     <div className="tp-hero-4-content-wrap">
                       <div className="p-relative">
-                        <div className="tp-hero-4-content p-relative col-md-9" style={{marginBottom: "0"}}>
+                        <div
+                          className="tp-hero-4-content p-relative col-md-9"
+                          style={{ marginBottom: "0" }}
+                        >
                           <h1 className="text-white tp-char-animation">
                             Professional SEO Agency in <br /> Indianapolis
                           </h1>
@@ -156,7 +164,10 @@ export default function Page() {
               <div className="container">
                 <div className="row align-items-center">
                   <div className="col-xl-6 col-lg-6 col-md-7">
-                    <div className="tm-details-content-wrap z-index-5" style={{padding: "30px 0"}}>
+                    <div
+                      className="tm-details-content-wrap z-index-5"
+                      style={{ padding: "30px 0" }}
+                    >
                       <div className="tm-details-title-box mb-20">
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Business in
@@ -188,12 +199,11 @@ export default function Page() {
               </div>
             </div>
 
-             {/* Clients */}
-             <StudioPanelFour testimonials={testimonial} style_2={true} />
-            
-            {/* Book a free callback */}
-                <BookCallForm />
+            {/* Clients */}
+            <StudioPanelFour testimonials={testimonial} style_2={true} />
 
+            {/* Book a free callback */}
+            <BookCallForm />
 
             <div
               className="tp-overlay-bg black-bg-2"
@@ -201,21 +211,23 @@ export default function Page() {
                 backgroundImage: "url(/assets/img/home-04/hero/overly.png)",
               }}
             >
-             
-                  <BrandTwo />
+              <BrandTwo />
 
-                  {/* Benefits */}
-              <div className="tm-details-wrapper p-relative pt-80 pb-80" style={{height: "auto"}}>
+              {/* Benefits */}
+              <div
+                className="tm-details-wrapper p-relative pt-80 pb-80"
+                style={{ height: "auto" }}
+              >
                 <div className="container">
                   <div className="row">
                     <div className="col-xl-7 col-lg-7">
                       <div className="service-details__left-wrap">
-                      <div className="tm-details-title-box mb-20">
-                        <h3 className="text-white">
-                        Benefits of SEO Services in
-                                                </h3>
-                        <h2 className="tm-details-title">Indianapolis?</h2>
-                      </div>
+                        <div className="tm-details-title-box mb-20">
+                          <h3 className="text-white">
+                            Benefits of SEO Services in
+                          </h3>
+                          <h2 className="tm-details-title">Indianapolis?</h2>
+                        </div>
                         {/* <div className="service-details__left-text pb-20">
                           <h2 className="text-1 tp_title_anim">
                             
@@ -248,8 +260,13 @@ export default function Page() {
                       </div>
                     </div>
                     <div className="col-xl-5 col-lg-5">
-                      <div style={{height: "600px", overflow: "hidden"}}>
-                        <video src="https://res.cloudinary.com/djoiovkr1/video/upload/SEO_Stricker_2_aqk6qd.webm" autoPlay loop muted></video>
+                      <div style={{ height: "600px", overflow: "hidden" }}>
+                        <video
+                          src="https://res.cloudinary.com/djoiovkr1/video/upload/SEO_Stricker_2_aqk6qd.webm"
+                          autoPlay
+                          loop
+                          muted
+                        ></video>
                         {/* <div className="service-details__right-text-box">
                           <h4>
                             Get a <br /> Callback
@@ -276,7 +293,11 @@ export default function Page() {
                 <div className="container">
                   <div className="row">
                     <div className="col-xl-10 col-md-10">
-                      <div className="tp-about-4-title-box tp_fade_bottom">
+                      <div
+                        className={`tp-about-4-title-box ${
+                          !isMobile ? "tp_fade_bottom" : ""
+                        }`}
+                      >
                         <h4 className="tp-about-4-title">
                           Why Biztalbox is Your Trusted SEO Partner
                         </h4>
@@ -293,7 +314,11 @@ export default function Page() {
                       <div className="tp-about-4-content-wrap">
                         <div className="row">
                           <div className="col-xl-6 col-lg-6">
-                            <div className="tp-about-4-content item-1 tp_fade_bottom">
+                            <div
+                              className={`tp-about-4-content item-1 ${
+                                !isMobile ? "tp_fade_bottom" : ""
+                              }`}
+                            >
                               <h4 className="text-white">Local Insight </h4>
                               <p>
                                 We understand the Indiana market and what works
@@ -302,7 +327,11 @@ export default function Page() {
                             </div>
                           </div>
                           <div className="col-xl-6 col-lg-6">
-                            <div className="tp-about-4-content item-2 tp_fade_bottom">
+                            <div
+                              className={`tp-about-4-content item-2 ${
+                                !isMobile ? "tp_fade_bottom" : ""
+                              }`}
+                            >
                               <h4 className="text-white">Custom Strategies</h4>
                               <p>
                                 No cookie-cutter plans — every campaign fits
@@ -313,7 +342,11 @@ export default function Page() {
                         </div>
                         <div className="row mt-30">
                           <div className="col-xl-6 col-lg-6">
-                            <div className="tp-about-4-content item-1 tp_fade_bottom">
+                            <div
+                              className={`tp-about-4-content item-1 ${
+                                !isMobile ? "tp_fade_bottom" : ""
+                              }`}
+                            >
                               <h4 className="text-white">Proven Results</h4>
                               <p>
                                 From startups to established brands, we’ve
@@ -322,7 +355,11 @@ export default function Page() {
                             </div>
                           </div>
                           <div className="col-xl-6 col-lg-6">
-                            <div className="tp-about-4-content item-2 tp_fade_bottom">
+                            <div
+                              className={`tp-about-4-content item-2 ${
+                                !isMobile ? "tp_fade_bottom" : ""
+                              }`}
+                            >
                               <h4 className="text-white">Ethical SEO</h4>
                               <p>
                                 100% white-hat methods for sustainable rankings.
@@ -348,7 +385,10 @@ export default function Page() {
               <div className="container">
                 <div className="row align-items-center">
                   <div className="col-xl-6 col-lg-6 col-md-7">
-                    <div className="tm-details-content-wrap z-index-5" style={{padding: "30px 0"}}>
+                    <div
+                      className="tm-details-content-wrap z-index-5"
+                      style={{ padding: "30px 0" }}
+                    >
                       <div className="tm-details-title-box mb-20">
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Business in
@@ -392,7 +432,11 @@ export default function Page() {
               <div className="container">
                 <div className="row">
                   <div className="col-xl-10 col-md-10">
-                    <div className="tp-about-4-title-box tp_fade_bottom">
+                    <div
+                      className={`tp-about-4-title-box ${
+                        !isMobile ? "tp_fade_bottom" : ""
+                      }`}
+                    >
                       <h3 className="tp-about-4-title">
                         We believe SEO isn’t one-size-fits-all. Here’s how we
                         make it work for you:
@@ -414,7 +458,11 @@ export default function Page() {
                     <div className="tp-about-4-content-wrap">
                       <div className="row">
                         <div className="col-xl-6 col-lg-6">
-                          <div className="tp-about-4-content item-1 tp_fade_bottom">
+                          <div
+                            className={`tp-about-4-content item-1 ${
+                              !isMobile ? "tp_fade_bottom" : ""
+                            }`}
+                          >
                             <h4 className="text-white">
                               Website Audit & Analysis
                             </h4>
@@ -425,7 +473,11 @@ export default function Page() {
                           </div>
                         </div>
                         <div className="col-xl-6 col-lg-6">
-                          <div className="tp-about-4-content item-2 tp_fade_bottom">
+                          <div
+                            className={`tp-about-4-content item-2 ${
+                              !isMobile ? "tp_fade_bottom" : ""
+                            }`}
+                          >
                             <h4 className="text-white">
                               Keyword Research & Strategy
                             </h4>
@@ -439,7 +491,11 @@ export default function Page() {
                       </div>
                       <div className="row mt-30">
                         <div className="col-xl-6 col-lg-6">
-                          <div className="tp-about-4-content item-1 tp_fade_bottom">
+                          <div
+                            className={`tp-about-4-content item-1 ${
+                              !isMobile ? "tp_fade_bottom" : ""
+                            }`}
+                          >
                             <h4 className="text-white">On-Page Optimization</h4>
                             <p>
                               Whether it’s meta tags, content structure, or
@@ -449,7 +505,11 @@ export default function Page() {
                           </div>
                         </div>
                         <div className="col-xl-6 col-lg-6">
-                          <div className="tp-about-4-content item-2 tp_fade_bottom">
+                          <div
+                            className={`tp-about-4-content item-2 ${
+                              !isMobile ? "tp_fade_bottom" : ""
+                            }`}
+                          >
                             <h4 className="text-white">
                               Off-Page SEO & Link Building
                             </h4>
@@ -467,7 +527,7 @@ export default function Page() {
             </div>
 
             {/* CTA */}
-             <div className="p-relative pt-80">
+            <div className="p-relative pt-80">
               <div className="tm-details-shape-1">
                 <Image src={shape_1} alt="shape" />
               </div>
@@ -477,7 +537,10 @@ export default function Page() {
               <div className="container">
                 <div className="row align-items-center">
                   <div className="col-xl-6 col-lg-6 col-md-7">
-                    <div className="tm-details-content-wrap z-index-5" style={{padding: "30px 0"}}>
+                    <div
+                      className="tm-details-content-wrap z-index-5"
+                      style={{ padding: "30px 0" }}
+                    >
                       <div className="tm-details-title-box mb-20">
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Business in
