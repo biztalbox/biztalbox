@@ -241,6 +241,7 @@ export default function Page() {
                     <div className="col-xl-5 col-lg-5">
                       <div style={{ height: "600px", overflow: "hidden" }}>
                         <video
+                        className="videoby_ashish"
                           src="https://res.cloudinary.com/djoiovkr1/video/upload/SEO_Stricker_2_aqk6qd.webm"
                           autoPlay
                           loop
