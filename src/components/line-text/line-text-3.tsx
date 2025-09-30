@@ -4,8 +4,8 @@ import { StarSquare } from "../svg";
 
 // marquee text
 const marquee_text = [
-  "Have A Great Project ?",
-  "We've Got The Strategy"
+  " Have A Great Project ? ",
+  "We've Got you Covered "
 ];
 const marquee_text_2 = [
   "See more",

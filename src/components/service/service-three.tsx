@@ -2,6 +2,7 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { SwiperOptions } from "swiper/types";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -23,11 +24,24 @@ import algorithm from '@/assets/service-icons/algorithm.webp';
 
 // slider setting
 const slider_setting: SwiperOptions = {
+  modules: [Navigation, Pagination, Autoplay],
   slidesPerView: 4,
   loop: true,
-  autoplay: false,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
   spaceBetween: 60,
   speed: 1000,
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+    dynamicBullets: true,
+  },
   breakpoints: {
     "1400": {
       slidesPerView: 4,
@@ -157,7 +171,7 @@ export default function ServiceThree() {
           </div>
         </div>
       </div>
-      <div className="tp-service-4-wrap">
+      <div className="tp-service-4-wrap position-relative">
         <Swiper
           {...slider_setting}
           className="swiper-container tp-service-4-slider-active"
@@ -187,6 +201,17 @@ export default function ServiceThree() {
             </SwiperSlide>
           ))}
         </Swiper>
+        
+        {/* Navigation Buttons */}
+        <div className="swiper-button-next tp-service-4-next">
+          <i className="fa-light fa-arrow-right"></i>
+        </div>
+        <div className="swiper-button-prev tp-service-4-prev">
+          <i className="fa-light fa-arrow-left" style={{position: "absolute", left: "25px"}}></i>
+        </div>
+        
+        {/* Pagination */}
+        {/* <div className="swiper-pagination tp-service-4-pagination"></div> */}
       </div>
     </div>
   );
