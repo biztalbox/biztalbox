@@ -37,7 +37,7 @@ export default function CounterTwo() {
       ))}
       <div className="col-xl col-lg col-md col-sm-4 col-6">
         <div className="tp-studio-funfact-item text-start text-md-center">
-          <h4 className="tp-studio-funfact-title text-white"><i style={{fontSize: "120px",lineHeight: "0.1"}}>∞</i></h4>
+          <h4 className="tp-studio-funfact-title text-white"><i className="infinity_ashish">∞</i></h4>
           <span>Coffee Beans Roasted</span>
         </div>
       </div>
