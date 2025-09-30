@@ -6,7 +6,9 @@ import Marquee from "react-fast-marquee";
 export default function LineTextTwo({title}: {title: string}) {
   // marquee text
   const marquee_text = [
-    title
+    " Every step designed. ",
+"Every result delivered. "
+    // title
   ];
   return (
     <div
