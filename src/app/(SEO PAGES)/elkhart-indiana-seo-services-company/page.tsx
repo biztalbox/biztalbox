@@ -91,7 +91,7 @@ export default function Page() {
                           <h1 className="text-white tp-char-animation">
                           Professional SEO Services in Elkhart – Drive Traffic & Grow Sales                          </h1>
                           <p>
-                          Simply having a website in Elkhart isn't enough anymore. Your customers are searching online, and if they can't find you, they're likely clicking on a competitor instead. At Biztalbox, a trusted marketing agency Elkhart, we help local businesses improve their visibility, attract qualified leads, and turn interest into paying customers.                          </p>
+                          Simply having a website in Elkhart isn&apos;t enough anymore. Your customers are searching online, and if they can&apos;t find you, they&apos;re likely clicking on a competitor instead. At Biztalbox, a trusted marketing agency Elkhart, we help local businesses improve their visibility, attract qualified leads, and turn interest into paying customers.                          </p>
                           <p>
                           Our campaigns are tailored for all kinds of businesses ranging from manufacturers, SaaS companies, and other growing businesses. The goal? Make sure your ideal clients find you first.
                           </p>
@@ -325,7 +325,7 @@ export default function Page() {
                             >
                               <h4 className="text-white">Industry experience</h4>
                               <p>
-                                We've partnered with a wide range of businesses, from manufacturing SEO company in Elkhart projects to tech clients seeking a reliable SaaS SEO agency in Elkhart.
+                                We&apos;ve partnered with a wide range of businesses, from manufacturing SEO company in Elkhart projects to tech clients seeking a reliable SaaS SEO agency in Elkhart.
                               </p>
                             </div>
                           </div>
@@ -441,7 +441,7 @@ export default function Page() {
                               Website Audit & Analysis
                             </h4>
                             <p>
-                              Understanding your website's strengths and weaknesses is the first step toward meaningful growth. Our Elkhart SEO Consultants thoroughly review your website to identify technical issues, slow-loading pages, and content gaps.
+                              Understanding your website&apos;s strengths and weaknesses is the first step toward meaningful growth. Our Elkhart SEO Consultants thoroughly review your website to identify technical issues, slow-loading pages, and content gaps.
                             </p>
                           </div>
                         </div>
@@ -495,7 +495,7 @@ export default function Page() {
                           >
                             <h4 className="text-white">Local SEO</h4>
                             <p>
-                              From Google Maps listings to local search results, we make sure Elkhart residents find your business first. Local visibility is one of the strongest tools in SEO Company Elkhart's toolkit.
+                              From Google Maps listings to local search results, we make sure Elkhart residents find your business first. Local visibility is one of the strongest tools in SEO Company Elkhart&apos;s toolkit.
                             </p>
                           </div>
                         </div>
@@ -509,7 +509,7 @@ export default function Page() {
                               Reporting & Continuous Improvement
                             </h4>
                             <p>
-                              Transparent and easy-to-read reports demonstrate what's working and where we are striving for further growth. This approach ensures ongoing improvement and measurable results.
+                              Transparent and easy-to-read reports demonstrate what&apos;s working and where we are striving for further growth. This approach ensures ongoing improvement and measurable results.
                             </p>
                           </div>
                         </div>

@@ -91,7 +91,7 @@ export default function Page() {
                           <h1 className="text-white tp-char-animation">
                           B2B SEO Services in Indianapolis – Attract the Clients That Matter                          </h1>
                           <p>
-                          In Indianapolis, B2B businesses don't just need a website—they need to be seen by the right people at the right time. That's where Biztalbox comes in. We help businesses expand their online presence and convert website visitors into genuine business prospects. As a trusted B2B SEO Agency Indianapolis, we don't just chase rankings; we focus on strategies that actually drive growth and meaningful results.                          </p>
+                          In Indianapolis, B2B businesses don&apos;t just need a website—they need to be seen by the right people at the right time. That&apos;s where Biztalbox comes in. We help businesses expand their online presence and convert website visitors into genuine business prospects. As a trusted B2B SEO Agency Indianapolis, we don&apos;t just chase rankings; we focus on strategies that actually drive growth and meaningful results.                          </p>
                           <p>
                           Our campaigns are tailored for all kinds of businesses ranging from manufacturers, SaaS companies, and other growing businesses. The goal? Make sure your ideal clients find you first.
                           </p>
@@ -223,10 +223,10 @@ export default function Page() {
                               Make Your Brand Unmissable – In a competitive Indianapolis market, we help your business stand out and become the obvious choice for local customers.
                             </li>
                             <li>
-                              Better Experience, Better Results – A smooth, fast website keeps people around longer and makes it easier for them to take the next step — whether that's calling you, filling out a form, or making a purchase.
+                              Better Experience, Better Results – A smooth, fast website keeps people around longer and makes it easier for them to take the next step — whether that&apos;s calling you, filling out a form, or making a purchase.
                             </li>
                             <li>
-                              Clarity Through Data – We don't guess. You'll see exactly what's working, what isn't, and where to adjust for steady growth.
+                              Clarity Through Data – We don&apos;t guess. You&apos;ll see exactly what&apos;s working, what isn&apos;t, and where to adjust for steady growth.
                             </li>
                           </ul>
                         </div>
@@ -321,7 +321,7 @@ export default function Page() {
                             >
                               <h4 className="text-white">Real Results Across Industries</h4>
                               <p>
-                                From local service providers to SaaS startups, we've helped businesses turn visibility into revenue.
+                                From local service providers to SaaS startups, we&apos;ve helped businesses turn visibility into revenue.
                               </p>
                             </div>
                           </div>
@@ -433,7 +433,7 @@ export default function Page() {
                               Website Audit & Analysis
                             </h4>
                             <p>
-                              Our B2B SEO Consultants Indianapolis dig into your website to uncover technical issues, content gaps, and missed opportunities. It's the first step to a smarter, more effective strategy.
+                              Our B2B SEO Consultants Indianapolis dig into your website to uncover technical issues, content gaps, and missed opportunities. It&apos;s the first step to a smarter, more effective strategy.
                             </p>
                           </div>
                         </div>
@@ -473,7 +473,7 @@ export default function Page() {
                               Off-Page SEO & Link Building
                             </h4>
                             <p>
-                              We build authority backlinks that not only increase your rankings, but show prospects you're the real deal.
+                              We build authority backlinks that not only increase your rankings, but show prospects you&apos;re the real deal.
                             </p>
                           </div>
                         </div>

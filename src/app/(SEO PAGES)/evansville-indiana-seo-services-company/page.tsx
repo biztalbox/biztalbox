@@ -442,7 +442,7 @@ export default function Page() {
                               Website Audit & Analysis
                             </h4>
                             <p>
-                              We begin by thoroughly reviewing your site to identify technical issues, missing pages and content, and areas for improvement. It's a health check before we create your growth plan.
+                              We begin by thoroughly reviewing your site to identify technical issues, missing pages and content, and areas for improvement. It&apos;s a health check before we create your growth plan.
                             </p>
                           </div>
                         </div>
@@ -496,7 +496,7 @@ export default function Page() {
                           >
                             <h4 className="text-white">Local SEO</h4>
                             <p>
-                              We are confident that all Evansville businesses can be easily found by potential customers using Google Maps, local directory services, and relevant local search terms like "near me."
+                              We are confident that all Evansville businesses can be easily found by potential customers using Google Maps, local directory services, and relevant local search terms like &quot;near me.&quot;
                             </p>
                           </div>
                         </div>
