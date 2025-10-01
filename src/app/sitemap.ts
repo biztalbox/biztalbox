@@ -82,9 +82,17 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }))
 
-  console.log(`Generated sitemap with ${routes.length} static routes and ${blogRoutes.length} blog routes`)
+  // Add USA sitemap reference
+  const usaSitemapRoute = {
+    url: `${baseUrl}/usa-sitemap.xml`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: 0.9,
+  }
 
-  return [...routes, ...blogRoutes]
+  console.log(`Generated sitemap with ${routes.length} static routes, ${blogRoutes.length} blog routes, and 1 USA sitemap reference`)
+
+  return [...routes, ...blogRoutes, usaSitemapRoute]
 }
 
 // Force the sitemap to be dynamically generated on each request
