@@ -92,7 +92,7 @@ export default function Page() {
                           Marketing Agency in Nashville – Build Your Brand & Attract Customers
                           </h1>
                           <p>
-                          Nashville is full of businesses competing for attention — but only the ones with a clear message and a strong presence actually stand out. At Biztalbox, we go beyond "just helping you get noticed." We make your brand memorable.
+                          Nashville is full of businesses competing for attention — but only the ones with a clear message and a strong presence actually stand out. At Biztalbox, we go beyond &quot;just helping you get noticed.&quot; We make your brand memorable.
                           </p>
                           <p>
                           Brands all around the city rely on us as their go-to Nashville Marketing Agency because we merge strategy and content into campaigns that actually drive results. Whether you are looking for powerful branding that sticks, social media that gets noticed, or SEO that actually works, we create a plan designed to position your business in front of relevant customers.
