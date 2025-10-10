@@ -586,7 +586,7 @@ export default function Page() {
                     <div className="fq-faq-sidebar">
                       <div className="fq-faq-sidebar-content">
                         <h4 className="fq-faq-sidebar-title">Q&A</h4>
-                        <p>FAQs – SEO Services in Monroe</p>
+                        <h2>FAQs – SEO Services in Monroe</h2>
                       </div>
                       <div className="fq-faq-sidebar-thumb">
                         <Image
