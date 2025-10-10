@@ -8,7 +8,7 @@ type IProps = {
 export default function FaqItem({ item }: IProps) {
   return (
     <div className="accordion-items">
-      <h6 
+      <h3 
         className="accordion-header"        
       >
         <button
@@ -25,7 +25,7 @@ export default function FaqItem({ item }: IProps) {
           {item.question}
           <span className="accordion-icon"></span>
         </button>
-      </h6>
+      </h3>
       <div
         id={`collapse-${item.id}`}
         className="accordion-collapse collapse"

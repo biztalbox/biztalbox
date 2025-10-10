@@ -163,7 +163,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Business in
                         </span>
-                        <h4 className="tm-details-title">vansville?</h4>
+                        <h4 className="tm-details-title">Evansville?</h4>
                       </div>
                       <div className="tm-details-text">
                         <p>
@@ -586,7 +586,7 @@ export default function Page() {
                     <div className="fq-faq-sidebar">
                       <div className="fq-faq-sidebar-content">
                         <h4 className="fq-faq-sidebar-title">Q&A</h4>
-                        <p>FAQs – SEO Services in Evansville</p>
+                        <h2>FAQs – SEO Services in Evansville</h2>
                       </div>
                       <div className="fq-faq-sidebar-thumb">
                         <Image
