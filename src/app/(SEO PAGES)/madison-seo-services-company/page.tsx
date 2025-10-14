@@ -92,7 +92,7 @@ export default function Page() {
                           Professional SEO Services in Madison – Drive Traffic & Grow Sales
                           </h1>
                           <p>
-                          Having a website in Madison isn't enough anymore. If your business can't be found when people search, your competitors will gladly take that spot. That's where Biztalbox comes in. Our goal as a reputable SEO agency Madison is to help B2B organizations, eCommerce brands, and small businesses reach their target audience at the right time. Whether you require a full-service SEO Company Madison or specialized consulting, our methods are designed to yield quantifiable growth and sustained visibility.
+                          Having a website in Madison isn&apos;t enough anymore. If your business can&apos;t be found when people search, your competitors will gladly take that spot. That&apos;s where Biztalbox comes in. Our goal as a reputable SEO agency Madison is to help B2B organizations, eCommerce brands, and small businesses reach their target audience at the right time. Whether you require a full-service SEO Company Madison or specialized consulting, our methods are designed to yield quantifiable growth and sustained visibility.
                           </p>
                           <div className="tp-hero-4-text tp_fade_right">
                             <span>
@@ -164,7 +164,7 @@ export default function Page() {
                       </div>
                       <div className="tm-details-text">
                         <p>
-                          Don't let your competitors take the spotlight. With Biztalbox, your business can rank higher, capture more leads, and convert more customers. Our SEO Experts Madison are ready to create a strategy that delivers real results — more traffic, more visibility, and more revenue.
+                          Don&apos;t let your competitors take the spotlight. With Biztalbox, your business can rank higher, capture more leads, and convert more customers. Our SEO Experts Madison are ready to create a strategy that delivers real results — more traffic, more visibility, and more revenue.
                         </p>
                       </div>
                       <div className="tm-details-portfolio">
@@ -281,7 +281,7 @@ export default function Page() {
                             >
                               <h4 className="text-white">Local Expertise</h4>
                               <p>
-                                Our SEO Consultants Madison know the city's competitive landscape inside and out.
+                                Our SEO Consultants Madison know the city&apos;s competitive landscape inside and out.
                               </p>
                             </div>
                           </div>
@@ -307,7 +307,7 @@ export default function Page() {
                             >
                               <h4 className="text-white">Proven Results</h4>
                               <p>
-                                From small startups to established companies, we've delivered measurable ROI across industries.
+                                From small startups to established companies, we&apos;ve delivered measurable ROI across industries.
                               </p>
                             </div>
                           </div>
@@ -354,7 +354,7 @@ export default function Page() {
                       </div>
                       <div className="tm-details-text">
                         <p>
-                          Don't let your competitors take the spotlight. With Biztalbox, your business can rank higher, capture more leads, and convert more customers. Our SEO Experts Madison are ready to create a strategy that delivers real results — more traffic, more visibility, and more revenue.
+                          Don&apos;t let your competitors take the spotlight. With Biztalbox, your business can rank higher, capture more leads, and convert more customers. Our SEO Experts Madison are ready to create a strategy that delivers real results — more traffic, more visibility, and more revenue.
                         </p>
                       </div>
                       <div className="tm-details-portfolio">
@@ -483,7 +483,7 @@ export default function Page() {
                           >
                             <h4 className="text-white">Reporting & Continuous Improvement</h4>
                             <p>
-                              You'll never be left guessing. We provide transparent reports and keep adjusting strategies as your business grows.
+                              You&apos;ll never be left guessing. We provide transparent reports and keep adjusting strategies as your business grows.
                             </p>
                           </div>
                         </div>
@@ -517,7 +517,7 @@ export default function Page() {
                       </div>
                       <div className="tm-details-text">
                         <p>
-                          Don't let your competitors take the spotlight. With Biztalbox, your business can rank higher, capture more leads, and convert more customers. Our SEO Experts Madison are ready to create a strategy that delivers real results — more traffic, more visibility, and more revenue.
+                          Don&apos;t let your competitors take the spotlight. With Biztalbox, your business can rank higher, capture more leads, and convert more customers. Our SEO Experts Madison are ready to create a strategy that delivers real results — more traffic, more visibility, and more revenue.
                         </p>
                       </div>
                       <div className="tm-details-portfolio">

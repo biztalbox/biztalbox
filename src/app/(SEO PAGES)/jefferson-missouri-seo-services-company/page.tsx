@@ -92,7 +92,7 @@ export default function Page() {
                           Professional SEO Services in Jefferson – Drive Traffic & Grow Sales
                           </h1>
                           <p>
-                          In Jefferson, online competition is fierce, and visibility is everything. If your website isn't showing up where your customers are searching, you're losing leads to competitors. At Biztalbox, we make your business the obvious choice. As a respected SEO Agency Jefferson trusts, we combine technical and local knowledge with tried-and-true techniques to improve rankings, drive quality leads, and increase revenue. Our customized SEO Services Jefferson ensure your site works better, ranks higher, and drives measurable results.
+                          In Jefferson, online competition is fierce, and visibility is everything. If your website isn&apos;t showing up where your customers are searching, you&apos;re losing leads to competitors. At Biztalbox, we make your business the obvious choice. As a respected SEO Agency Jefferson trusts, we combine technical and local knowledge with tried-and-true techniques to improve rankings, drive quality leads, and increase revenue. Our customized SEO Services Jefferson ensure your site works better, ranks higher, and drives measurable results.
                           </p>
                           <div className="tp-hero-4-text tp_fade_right">
                             <span>
@@ -164,7 +164,7 @@ export default function Page() {
                       </div>
                       <div className="tm-details-text">
                         <p>
-                          Your competition isn't holding back—and neither should you. Join forces with Biztalbox, the SEO Experts Jefferson relies on, and make your site a lead machine. Schedule your free consultation now, receive your customized SEO plan, and begin generating more traffic, leads, and sales immediately.
+                          Your competition isn&apos;t holding back—and neither should you. Join forces with Biztalbox, the SEO Experts Jefferson relies on, and make your site a lead machine. Schedule your free consultation now, receive your customized SEO plan, and begin generating more traffic, leads, and sales immediately.
                         </p>
                       </div>
                       <div className="tm-details-portfolio">
@@ -307,7 +307,7 @@ export default function Page() {
                             >
                               <h4 className="text-white">Success Record</h4>
                               <p>
-                                We've grown businesses in Jefferson from having little online presence to ranking above the competition.
+                                We&apos;ve grown businesses in Jefferson from having little online presence to ranking above the competition.
                               </p>
                             </div>
                           </div>
@@ -354,7 +354,7 @@ export default function Page() {
                       </div>
                       <div className="tm-details-text">
                         <p>
-                          Your competition isn't holding back—and neither should you. Join forces with Biztalbox, the SEO Experts Jefferson relies on, and make your site a lead machine. Schedule your free consultation now, receive your customized SEO plan, and begin generating more traffic, leads, and sales immediately.
+                          Your competition isn&apos;t holding back—and neither should you. Join forces with Biztalbox, the SEO Experts Jefferson relies on, and make your site a lead machine. Schedule your free consultation now, receive your customized SEO plan, and begin generating more traffic, leads, and sales immediately.
                         </p>
                       </div>
                       <div className="tm-details-portfolio">
@@ -463,7 +463,7 @@ export default function Page() {
                               Off-Page SEO & Link Building
                             </h4>
                             <p>
-                              We establish authoritative, quality backlinks that boost your site's authority and drive rankings.
+                              We establish authoritative, quality backlinks that boost your site&apos;s authority and drive rankings.
                             </p>
                           </div>
                         </div>
@@ -489,7 +489,7 @@ export default function Page() {
                           >
                             <h4 className="text-white">Reporting & Continuous Improvement</h4>
                             <p>
-                              You'll get regular, clear reports and actionable recommendations to keep your SEO strategy growing stronger over time.
+                              You&apos;ll get regular, clear reports and actionable recommendations to keep your SEO strategy growing stronger over time.
                             </p>
                           </div>
                         </div>
@@ -523,7 +523,7 @@ export default function Page() {
                       </div>
                       <div className="tm-details-text">
                         <p>
-                          Your competition isn't holding back—and neither should you. Join forces with Biztalbox, the SEO Experts Jefferson relies on, and make your site a lead machine. Schedule your free consultation now, receive your customized SEO plan, and begin generating more traffic, leads, and sales immediately.
+                          Your competition isn&apos;t holding back—and neither should you. Join forces with Biztalbox, the SEO Experts Jefferson relies on, and make your site a lead machine. Schedule your free consultation now, receive your customized SEO plan, and begin generating more traffic, leads, and sales immediately.
                         </p>
                       </div>
                       <div className="tm-details-portfolio">
