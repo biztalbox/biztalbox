@@ -14,7 +14,7 @@ const baseMetadata: Metadata = {
     "Biztalbox – the leading SEO services agency in Indianapolis, helping businesses boost visibility, drive traffic, and achieve top Google rankings.",
 };
 
-export const metadata = createMetadata(baseMetadata, "/indianapolis-seo-services-company");
+export const metadata = createMetadata(baseMetadata, "/indianapolis-seo-company");
 
 export default function RootLayout({
   children,
@@ -25,7 +25,7 @@ export default function RootLayout({
   const pageData = createMarketingPageData({
     title: baseMetadata.title as string,
     description: baseMetadata.description as string,
-    path: "/indianapolis-seo-services-company",
+    path: "/indianapolis-seo-company",
     serviceType: "Digital Marketing Agency",
     faqs: faq_data.map(faq => ({
       question: faq.question,
@@ -48,7 +48,7 @@ export default function RootLayout({
     <>
       <MarketingPageSchema 
         pageData={pageData}
-        currentUrl={createFullUrl("/indianapolis-seo-services-company")}
+        currentUrl={createFullUrl("/indianapolis-seo-company")}
       />
       {children}
     </>
