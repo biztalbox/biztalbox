@@ -12,7 +12,7 @@ const baseMetadata: Metadata = {
 
 export const metadata = createMetadata(
   baseMetadata,
-  "/indianapolis-marketing-services-company"
+  "/indianapolis-marketing-services"
 );
 
 export default function RootLayout({
@@ -24,7 +24,7 @@ export default function RootLayout({
   const pageData = createMarketingPageData({
     title: baseMetadata.title as string,
     description: baseMetadata.description as string,
-    path: "/indianapolis-marketing-services-company",
+    path: "/indianapolis-marketing-services",
     serviceType: "Digital Marketing Agency",
     faqs: faq_data.map((faq) => ({
       question: faq.question,
@@ -48,7 +48,7 @@ export default function RootLayout({
     <>
       <MarketingPageSchema
         pageData={pageData}
-        currentUrl={createFullUrl("/indianapolis-marketing-services-company")}
+        currentUrl={createFullUrl("/indianapolis-marketing-services")}
       />
       {children}
     </>
