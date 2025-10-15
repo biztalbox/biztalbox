@@ -75,8 +75,8 @@ export default function Page() {
 
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <main style={{overflow: "hidden"}}>
-            
+          <main style={{ overflow: "hidden" }}>
+
             {/* hero area start */}
             <div className="tp-hero-4-area tp-btn-trigger">
               <div className="container-fluid">
@@ -89,13 +89,13 @@ export default function Page() {
                           style={{ marginBottom: "0" }}
                         >
                           <h1 className="text-white tp-char-animation">
-                          Professional SEO Services in Wisconsin – Drive Traffic & Grow Sales
+                            Professional SEO Services in El Paso – Drive Traffic & Grow Sales
                           </h1>
                           <p>
-                          Growing your business online in Wisconsin takes more than just a good-looking website — you need to be found by the right audience at the right time. At Biztalbox, we help make that happen.
+                            El Paso is more than a border city — it’s a hub for manufacturing, cross-border trade, healthcare, and emerging SaaS startups. With such a dynamic economy, businesses can’t stay hidden online. A great website is only the first step; if it isn’t visible when customers search, you’re already losing ground.
                           </p>
                           <p>
-                          As a reputable SEO Agency Wisconsin, we work to get you on the first page so that you can garner more online traffic and generate quality leads. Whether you&apos;re a local shop or a B2B SEO Agency in Wisconsin, our strategies are built to deliver measurable growth.
+                            That's where Biztalbox steps in. As a top SEO Agency in El Paso, we assist local businesses in acquiring the visibility necessary to compete and excel. If you're a manufacturer selling across the border, a SaaS provider reaching clients nationally, or a community-serving small business, our SEO Services El Paso create quantifiable growth.
                           </p>
                           <div className="tp-hero-4-text tp_fade_right">
                             <span>
@@ -163,7 +163,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Business in
                         </span>
-                        <h4 className="tm-details-title">Wisconsin?</h4>
+                        <h4 className="tm-details-title">El Paso?</h4>
                       </div>
                       <div className="tm-details-text">
                         <p>
@@ -211,23 +211,26 @@ export default function Page() {
                       <div className="service-details__left-wrap">
                         <div className="tm-details-title-box mb-20">
                           <h3 className="text-white">
-                            Benefits of SEO Services in
+                            Benefits of SEO Services in El Paso
                           </h3>
                           <h2 className="tm-details-title">Wisconsin</h2>
                         </div>
                         <div className="service-details__fea-list">
                           <ul>
                             <li>
-                              Improved Google Ranking – Appear where your customers are looking.
+                              Increased Online Visibility – Get discovered when El Paso customers and partners look for your services.
                             </li>
                             <li>
-                              Increased Local Exposure – Appear when Wisconsinites search for what you have.
+
+                              Industry-Specific Strategies – Whether you require a manufacturing SEO agency in El Paso or SaaS SEO services in El Paso, campaigns are tailored to your industry.
+
                             </li>
                             <li>
-                              Enhanced Website Experience – A faster, easier site results in greater engagement and improved conversions.
+                              Improved User Experience – Fast, intuitive sites retain visitors and generate more conversions.
                             </li>
                             <li>
-                              Measurable Growth – Ongoing reporting allows you to actually see real growth in traffic, leads, and sales.
+                              Long-Term Growth – Contrary to short-term ads, SEO provides long-term results with quantifiable ROI.
+
                             </li>
                           </ul>
                         </div>
@@ -236,7 +239,7 @@ export default function Page() {
                     <div className="col-xl-5 col-lg-5">
                       <div style={{ height: "500px", overflow: "hidden" }}>
                         <video
-                        className="videoby_ashish"
+                          className="videoby_ashish"
                           src="https://res.cloudinary.com/djoiovkr1/video/upload/SEO_Stricker_2_aqk6qd.webm"
                           autoPlay
                           loop
@@ -257,12 +260,11 @@ export default function Page() {
                   <div className="row">
                     <div className="col-xl-10 col-md-10">
                       <div
-                        className={`tp-about-4-title-box ${
-                          !isMobile ? "tp_fade_bottom" : ""
-                        }`}
+                        className={`tp-about-4-title-box ${!isMobile ? "tp_fade_bottom" : ""
+                          }`}
                       >
                         <h4 className="tp-about-4-title">
-                        Why Biztalbox is Your Trusted SEO Partner
+                          Why Choose Biztalbox in El Paso?
                         </h4>
                       </div>
                     </div>
@@ -278,25 +280,23 @@ export default function Page() {
                         <div className="row">
                           <div className="col-xl-6 col-lg-6">
                             <div
-                              className={`tp-about-4-content item-1 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
+                              className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
+                                }`}
                             >
-                              <h4 className="text-white">Local Market Insight</h4>
+                              <h4 className="text-white">Local Insight</h4>
                               <p>
-                                Our team of SEO Consultants Wisconsin knows the competitive landscape and customer behavior in the state, giving you a strategy that fits your market.
+                               We understand what makes El Paso business tick, from cross-border trade to startup growth in the local market.
                               </p>
                             </div>
                           </div>
                           <div className="col-xl-6 col-lg-6">
                             <div
-                              className={`tp-about-4-content item-2 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
+                              className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""
+                                }`}
                             >
-                              <h4 className="text-white">Custom strategies</h4>
+                              <h4 className="text-white">Customized Campaigns </h4>
                               <p>
-                                There&apos;s no generic approach; each is designed specifically for your sector, audience and business goals.
+                                Each plan is custom-made for your objectives and market, never reused templates.
                               </p>
                             </div>
                           </div>
@@ -304,25 +304,23 @@ export default function Page() {
                         <div className="row mt-30">
                           <div className="col-xl-6 col-lg-6">
                             <div
-                              className={`tp-about-4-content item-1 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
+                              className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
+                                }`}
                             >
-                              <h4 className="text-white">Proven Growth</h4>
+                              <h4 className="text-white">Our Proven Expertise</h4>
                               <p>
-                                With years of experience as a Wisconsin SEO agency, we&apos;ve assisted numerous clients across various industries in achieving unprecedented levels of visibility, traffic, and sales.
+                                 As SEO Experts El Paso who have been around, we've assisted companies increase rankings, generate leads, and boost revenue.
                               </p>
                             </div>
                           </div>
                           <div className="col-xl-6 col-lg-6">
                             <div
-                              className={`tp-about-4-content item-2 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
+                              className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""
+                                }`}
                             >
-                              <h4 className="text-white">Ethical Approach</h4>
+                              <h4 className="text-white">Our White-Hat Practices</h4>
                               <p>
-                                We use transparent, white-hat SEO practices that build long-term rankings without risking penalties.
+                                Ethical search engine optimization techniques safeguard your brand and build long-term success.
                               </p>
                             </div>
                           </div>
@@ -389,12 +387,11 @@ export default function Page() {
                 <div className="row">
                   <div className="col-xl-10 col-md-10">
                     <div
-                      className={`tp-about-4-title-box ${
-                        !isMobile ? "tp_fade_bottom" : ""
-                      }`}
+                      className={`tp-about-4-title-box ${!isMobile ? "tp_fade_bottom" : ""
+                        }`}
                     >
                       <h3 className="tp-about-4-title">
-                      How Our SEO Services Work
+                        How Our El Paso SEO Services Operate
                       </h3>
                     </div>
                   </div>
@@ -410,29 +407,27 @@ export default function Page() {
                       <div className="row">
                         <div className="col-xl-6 col-lg-6">
                           <div
-                            className={`tp-about-4-content item-1 ${
-                              !isMobile ? "tp_fade_bottom" : ""
-                            }`}
+                            className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
+                              }`}
                           >
                             <h4 className="text-white">
                               Website Audit & Analysis
                             </h4>
                             <p>
-                              We examine your site structure, content, and on-site performance to pinpoint opportunities and gaps.
+                              All businesses have their own special challenges, so our approach is never a cookie-cutter solution:
                             </p>
                           </div>
                         </div>
                         <div className="col-xl-6 col-lg-6">
                           <div
-                            className={`tp-about-4-content item-2 ${
-                              !isMobile ? "tp_fade_bottom" : ""
-                            }`}
+                            className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""
+                              }`}
                           >
                             <h4 className="text-white">
-                              Keyword Research
+                              Website Audit & Analysis
                             </h4>
                             <p>
-                              We uncover high traffic keywords that Wisconsin consumers are actually using to find services like yours.
+                              Our El Paso SEO Consultants examine your website for technical problems, page speed, and lost opportunities.
                             </p>
                           </div>
                         </div>
@@ -440,27 +435,25 @@ export default function Page() {
                       <div className="row mt-30">
                         <div className="col-xl-6 col-lg-6">
                           <div
-                            className={`tp-about-4-content item-1 ${
-                              !isMobile ? "tp_fade_bottom" : ""
-                            }`}
+                            className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
+                              }`}
                           >
-                            <h4 className="text-white">On-Page Optimization</h4>
+                            <h4 className="text-white">Keyword Research with Local Awareness</h4>
                             <p>
-                              By optimizing everything from meta tags to content structure, our SEO Experts Wisconsin ensure your site is search-engine-friendly and easy to navigate for users.
+                              We identify the very words El Paso customers, B2B purchasers, and SaaS users use when searching so you're discovered where it counts.
                             </p>
                           </div>
                         </div>
                         <div className="col-xl-6 col-lg-6">
                           <div
-                            className={`tp-about-4-content item-2 ${
-                              !isMobile ? "tp_fade_bottom" : ""
-                            }`}
+                            className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""
+                              }`}
                           >
                             <h4 className="text-white">
-                              Off-Page SEO & Link Building
+                              On-Page Optimization
                             </h4>
                             <p>
-                              We create high-quality backlinks and establish your website&apos;s authority on reputable platforms.
+                              From page structure and content flow to meta tags and titles, our SEO Experts El Paso make your site clear and user-friendly.
                             </p>
                           </div>
                         </div>
@@ -468,25 +461,23 @@ export default function Page() {
                       <div className="row mt-30">
                         <div className="col-xl-6 col-lg-6">
                           <div
-                            className={`tp-about-4-content item-1 ${
-                              !isMobile ? "tp_fade_bottom" : ""
-                            }`}
+                            className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
+                              }`}
                           >
-                            <h4 className="text-white">Local SEO</h4>
+                            <h4 className="text-white">Authority Building & Backlinks</h4>
                             <p>
-                              Be discovered on Google Maps and in local search so that customers nearby find you first.
+                              As an established SEO Company El Paso, we achieve high-quality backlinks that build credibility in your niche.
                             </p>
                           </div>
                         </div>
                         <div className="col-xl-6 col-lg-6">
                           <div
-                            className={`tp-about-4-content item-1 ${
-                              !isMobile ? "tp_fade_bottom" : ""
-                            }`}
+                            className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
+                              }`}
                           >
-                            <h4 className="text-white">Reporting & Continuous Improvement</h4>
+                            <h4 className="text-white">Local & Industry-Specific SEO </h4>
                             <p>
-                              You&apos;ll receive clear performance reports and ongoing updates to keep your SEO strategy effective.
+                              From visibility on Google Maps to establishing you as an industry leader in manufacturing or SaaS, we customize approaches for your industry.
                             </p>
                           </div>
                         </div>

@@ -6,13 +6,13 @@ import { faq_data } from "./data";
 import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
-  title: "SEO Services Agency Wisconsin | top SEO Company Wisconsin",
+  title: "SEO Services Company El Paso | Best SEO Agency in El Paso",
   description:
-"Boost your online presence with Biztalbox — a top SEO services agency in Wisconsin. Increase rankings, drive traffic, and grow your business effectively."};
+"Boost your online presence with Biztalbox — El Paso&apos;s trusted SEO company. Improve search rankings, attract quality traffic, and grow your business with expert SEO services."};
 
 export const metadata = createMetadata(
   baseMetadata,
-  "/wisconsin-seo-company"
+  "/el-paso-seo-company"
 );
 
 export default function RootLayout({
@@ -24,7 +24,7 @@ export default function RootLayout({
   const pageData = createMarketingPageData({
     title: baseMetadata.title as string,
     description: baseMetadata.description as string,
-    path: "/wisconsin-seo-company",
+    path: "/el-paso-seo-company",
     serviceType: "Digital Marketing Agency",
     faqs: faq_data.map((faq) => ({
       question: faq.question,
@@ -48,7 +48,7 @@ export default function RootLayout({
     <>
       <MarketingPageSchema
         pageData={pageData}
-        currentUrl={createFullUrl("/wisconsin-seo-company")}
+        currentUrl={createFullUrl("/el-paso-seo-company")}
       />
       {children}
     </>
