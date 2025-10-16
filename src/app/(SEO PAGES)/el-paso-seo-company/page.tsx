@@ -92,10 +92,10 @@ export default function Page() {
                             Professional SEO Services in El Paso – Drive Traffic & Grow Sales
                           </h1>
                           <p>
-                            El Paso is more than a border city — it’s a hub for manufacturing, cross-border trade, healthcare, and emerging SaaS startups. With such a dynamic economy, businesses can’t stay hidden online. A great website is only the first step; if it isn’t visible when customers search, you’re already losing ground.
+                            El Paso is more than a border city — it&apos;s a hub for manufacturing, cross-border trade, healthcare, and emerging SaaS startups. With such a dynamic economy, businesses can&apos;t stay hidden online. A great website is only the first step; if it isn&apos;t visible when customers search, you&apos;re already losing ground.
                           </p>
                           <p>
-                            That's where Biztalbox steps in. As a top SEO Agency in El Paso, we assist local businesses in acquiring the visibility necessary to compete and excel. If you're a manufacturer selling across the border, a SaaS provider reaching clients nationally, or a community-serving small business, our SEO Services El Paso create quantifiable growth.
+                            That&apos;s where Biztalbox steps in. As a top SEO Agency in El Paso, we assist local businesses in acquiring the visibility necessary to compete and excel. If you&apos;re a manufacturer selling across the border, a SaaS provider reaching clients nationally, or a community-serving small business, our SEO Services El Paso create quantifiable growth.
                           </p>
                           <div className="tp-hero-4-text tp_fade_right">
                             <span>
@@ -309,7 +309,7 @@ export default function Page() {
                             >
                               <h4 className="text-white">Our Proven Expertise</h4>
                               <p>
-                                 As SEO Experts El Paso who have been around, we've assisted companies increase rankings, generate leads, and boost revenue.
+                                 As SEO Experts El Paso who have been around, we&apos;ve assisted companies increase rankings, generate leads, and boost revenue.
                               </p>
                             </div>
                           </div>
@@ -440,7 +440,7 @@ export default function Page() {
                           >
                             <h4 className="text-white">Keyword Research with Local Awareness</h4>
                             <p>
-                              We identify the very words El Paso customers, B2B purchasers, and SaaS users use when searching so you're discovered where it counts.
+                              We identify the very words El Paso customers, B2B purchasers, and SaaS users use when searching so you&apos;re discovered where it counts.
                             </p>
                           </div>
                         </div>
