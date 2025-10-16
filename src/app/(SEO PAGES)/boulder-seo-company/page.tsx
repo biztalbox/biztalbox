@@ -354,7 +354,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Business in
                         </span>
-                        <h4 className="tm-details-title">Arapahoe?</h4>
+                        <h4 className="tm-details-title">Boulder?</h4>
                       </div>
                       <div className="tm-details-text">
                         <p>
