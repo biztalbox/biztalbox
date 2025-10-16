@@ -57,14 +57,14 @@ export const testimonial = [
   rating: 5,
   name: "Ethan Ramirez",
   designation: "Small Business Owner",
-  desc: `"Biztalbox isn’t just a vendor — they’re a partner. Their SEO and content strategy got us on page one for local searches, and we’re now getting more leads every single month. Highly recommend for any business in Indianapolis."`,
+  desc: `"Biztalbox isn&apos;t just a vendor — they&apos;re a partner. Their SEO and content strategy got us on page one for local searches, and we&apos;re now getting more leads every single month. Highly recommend for any business in Indianapolis."`,
 },
 {
   id: 3,
   rating: 5,
   name: "Maya Patel",
   designation: "Marketing Specialist",
-  desc: `"From branding to motion graphics, Biztalbox handled it all. They nailed our brand voice and made our campaigns stand out. Social engagement went up 60% within three months — something we’d never seen before."`,
+  desc: `"From branding to motion graphics, Biztalbox handled it all. They nailed our brand voice and made our campaigns stand out. Social engagement went up 60% within three months — something we&apos;d never seen before."`,
 },
 {
   id: 4,
@@ -78,6 +78,6 @@ export const testimonial = [
   rating: 5,
   name: "Isabella Clarke",
   designation: "Local Business Owner",
-  desc: `"I’ve worked with other agencies, but Biztalbox is very responsive, creative, and data-driven. Our exposure throughout Indianapolis has grown exponentially since we have been working with them."`,
+  desc: `"I&apos;ve worked with other agencies, but Biztalbox is very responsive, creative, and data-driven. Our exposure throughout Indianapolis has grown exponentially since we have been working with them."`,
 },
 ];
