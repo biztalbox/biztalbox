@@ -213,7 +213,7 @@ export default function Page() {
                           <h3 className="text-white">
                             Benefits of SEO Services in El Paso
                           </h3>
-                          <h2 className="tm-details-title">Wisconsin</h2>
+                          <h2 className="tm-details-title">El Paso</h2>
                         </div>
                         <div className="service-details__fea-list">
                           <ul>
