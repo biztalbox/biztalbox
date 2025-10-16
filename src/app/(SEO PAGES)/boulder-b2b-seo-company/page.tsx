@@ -92,7 +92,7 @@ export default function Page() {
                             B2B SEO Services Boulder – Get Discovered by the Businesses That Count
                           </h1>
                           <p>
-                            Boulder’s B2B scene is a mix of innovation and competition — from tech startups and sustainability firms to professional services. In a city this dynamic, having a website isn’t enough. You need visibility, credibility, and the right message reaching the right audience. That’s where Biztalbox comes in.
+                            Boulder&apos;s B2B scene is a mix of innovation and competition — from tech startups and sustainability firms to professional services. In a city this dynamic, having a website isn&apos;t enough. You need visibility, credibility, and the right message reaching the right audience. That&apos;s where Biztalbox comes in.
                           </p>
                           <p>
                             As a reliable B2B SEO Company Boulder, we assist local companies in amplifying their online presence, generating qualified leads, and driving online visibility into measurable growth. Our strategy integrates strategy, analytics, and creativity to make your brand shine where it counts the most.
@@ -221,16 +221,16 @@ export default function Page() {
                               Get to the Right Audience – We target connecting you to businesses looking for your services actively, not just generating random traffic.
                             </li>
                             <li>
-                              Keyword Research – We don't merely locate high-traffic keywords — we determine the precise keywords your prospective customers are looking for within Boulder's B2B market. This way, your content reaches decision-makers who are ready to act
+                              Keyword Research – We don&apos;t merely locate high-traffic keywords — we determine the precise keywords your prospective customers are looking for within Boulder&apos;s B2B market. This way, your content reaches decision-makers who are ready to act
                             </li>
                             <li>
-                              Strengthen Your Brand Presence – Boulder’s business environment is competitive. Our tailored SEO and B2B Online Marketing Boulder campaigns make your brand recognizable and trusted.
+                              Strengthen Your Brand Presence – Boulder&apos;s business environment is competitive. Our tailored SEO and B2B Online Marketing Boulder campaigns make your brand recognizable and trusted.
                             </li>
                             <li>
                               Better User Experience – A faster, well-structured website not only ranks better but keeps visitors engaged — turning interest into action.
                             </li>
                             <li>
-                              Data That Drives Decisions – With Biztalbox, you’ll always know what’s working. Our reports provide clarity and direction for continued growth.
+                              Data That Drives Decisions – With Biztalbox, you&apos;ll always know what&apos;s working. Our reports provide clarity and direction for continued growth.
                             </li>
                           </ul>
                         </div>
@@ -477,7 +477,7 @@ export default function Page() {
                           >
                             <h4 className="text-white">Transparent Reporting</h4>
                             <p>
-                              You’ll receive straightforward updates that show improvements in rankings, leads, and conversions.
+                              You&apos;ll receive straightforward updates that show improvements in rankings, leads, and conversions.
                             </p>
                           </div>
                         </div>
