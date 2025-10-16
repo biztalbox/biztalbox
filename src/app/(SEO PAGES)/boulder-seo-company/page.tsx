@@ -311,7 +311,7 @@ export default function Page() {
                             >
                               <h4 className="text-white">Proven Expertise</h4>
                               <p>
-                                As experienced SEO Experts Boulder, we've assisted companies in improving rankings, attracting high-quality leads, and driving revenue.
+                                As experienced SEO Experts Boulder, we&apos;ve assisted companies in improving rankings, attracting high-quality leads, and driving revenue.
                               </p>
                             </div>
                           </div>
