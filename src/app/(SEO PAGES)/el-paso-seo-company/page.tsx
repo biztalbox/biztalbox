@@ -167,7 +167,7 @@ export default function Page() {
                       </div>
                       <div className="tm-details-text">
                         <p>
-                          Your customers are searching — make sure they find you first. Partner with Biztalbox, the SEO Consultant Wisconsin businesses trust, and start driving real results. Contact us today for a free consultation.
+                          Your customers are searching — make sure they find you first. Partner with Biztalbox, the SEO Consultant El Paso businesses trust, and start driving real results. Contact us today for a free consultation.
                         </p>
                       </div>
                       <div className="tm-details-portfolio">
@@ -351,11 +351,11 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Business in
                         </span>
-                        <h4 className="tm-details-title">Wisconsin?</h4>
+                        <h4 className="tm-details-title">El Paso?</h4>
                       </div>
                       <div className="tm-details-text">
                         <p>
-                          Your customers are searching — make sure they find you first. Partner with Biztalbox, the SEO Consultant Wisconsin businesses trust, and start driving real results. Contact us today for a free consultation.
+                          Your customers are searching — make sure they find you first. Partner with Biztalbox, the SEO Consultant El Paso businesses trust, and start driving real results. Contact us today for a free consultation.
                         </p>
                       </div>
                       <div className="tm-details-portfolio">
@@ -507,11 +507,11 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Business in
                         </span>
-                        <h4 className="tm-details-title">Wisconsin?</h4>
+                        <h4 className="tm-details-title">El Paso?</h4>
                       </div>
                       <div className="tm-details-text">
                         <p>
-                          Your customers are searching — make sure they find you first. Partner with Biztalbox, the SEO Consultant Wisconsin businesses trust, and start driving real results. Contact us today for a free consultation.
+                          Your customers are searching — make sure they find you first. Partner with Biztalbox, the SEO Consultant El Paso businesses trust, and start driving real results. Contact us today for a free consultation.
                         </p>
                       </div>
                       <div className="tm-details-portfolio">
@@ -549,7 +549,7 @@ export default function Page() {
                     <div className="fq-faq-sidebar">
                       <div className="fq-faq-sidebar-content">
                         <h4 className="fq-faq-sidebar-title">Q&A</h4>
-                        <h2>FAQs – SEO Services in Wisconsin</h2>
+                        <h2>FAQs – SEO Services in El Paso</h2>
                       </div>
                       <div className="fq-faq-sidebar-thumb">
                         <Image

@@ -8,33 +8,33 @@ type IFaq = {
 export const faq_data: IFaq[] = [
 {
   id: 1,
-  question: "What marketing services do you offer?",
+  question: "How long before I realize an effect?",
   answer:
-    "At Biztalbox, we offer branding, content marketing, SEO, social media, advertising, copywriting, graphic design, and motion graphics — all optimized for Mesa businesses.",
+    "Most Fort Collins clients experience an improvement within three to six months, with positive gains building over time.",
 },
 {
   id: 2,
-  question: "Is this appropriate for small businesses?",
+  question: "Can SEO boost my sales?",
   answer:
-    "Absolutely. Local campaigns enable small Mesa businesses to compete and grow efficiently.",
+    "Yes. With the right keywords and user intent in mind, SEO delivers qualified leads ready to convert.",
 },
 {
   id: 3,
-  question: "Do you provide SEO that targets Mesa?",
+  question: "Is SEO good for Fort Collins small businesses?",
   answer:
-    " Brand visibility can improve quickly, but SEO and content marketing usually yield measurable results in 3–6 months.",
+    "Absolutely. Local SEO allows small businesses to compete with the big boys through greater local search visibility.",
 },
 {
   id: 4,
-  question: "How soon can I expect to see results?",
+  question: "Ready to Grow Your Fort Collins Business?",
   answer:
-    "With Biztalbox's marketing services, your Brand visibility can improve quickly, while SEO and content marketing typically show measurable results within 3–6 months.",
+    "Fort Collins is an up-and-coming city — your company should grow with it. Don't let competitors hijack online searches. Partner with Biztalbox, the Fort Collins SEO agency companies rely on, and let us craft a strategy tailored for measurable growth. If you require a manufacturing SEO agency in Fort Collins or SaaS SEO services in Fort Collins, we'll help you get in front of the right audience and convert visibility into sales.",
 },
 {
   id: 5,
   question: "Do you work on paid ads and social media campaigns?",
   answer:
-    "Yes. Our Mesa Online Marketing Agency services ads, social media, and creative campaigns for lead generation, engagement, and conversions.",
+    "Yes. Our Fort Collins Online Marketing Agency services ads, social media, and creative campaigns for lead generation, engagement, and conversions.",
 },
 ];
 
