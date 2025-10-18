@@ -6,9 +6,9 @@ import { faq_data } from "./data";
 import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
-  title: "SEO Services Agency Chattanooga | Best SEO Company in Chattanooga",
+  title: "SEO Company in Chattanooga | Best SEO Services Chattanooga | SEO Agency",
   description:
-"Boost your Chattanooga business with expert SEO services. Improve rankings, drive traffic, and increase sales with the best SEO company in Chattanooga."};
+"Boost your online visibility with Biztalbox, the top SEO company in Chattanooga. Get expert SEO services from a trusted Chattanooga SEO agency to grow your business."};
 
 export const metadata = createMetadata(
   baseMetadata,

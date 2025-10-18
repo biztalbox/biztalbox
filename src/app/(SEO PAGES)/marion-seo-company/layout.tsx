@@ -6,9 +6,9 @@ import { faq_data } from "./data";
 import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
-  title: "SEO Services Agency Marion | Best SEO Company in Marion",
+  title: "SEO Company in Marion | Best SEO Services Marion | SEO Agency",
   description:
-"Looking for top SEO services in Marion? Our expert SEO company in Marion, Indiana delivers proven strategies to boost your website traffic and rankings."};
+" Boost your online presence with Biztalbox, the leading SEO company in Marion. Get powerful SEO services from a trusted Marion SEO agency to grow your business."};
 
 export const metadata = createMetadata(
   baseMetadata,

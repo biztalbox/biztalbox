@@ -6,9 +6,9 @@ import { faq_data } from "./data";
 import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
-  title: "SEO Services Agency Boone | Best SEO Company in Boone",
+  title: "SEO Company in Boone | Best SEO Services Boone | SEO Agency",
   description:
-"Looking for professional SEO services in Boone? Our expert SEO company in Boone delivers proven strategies to boost your website traffic, rankings, and online visibility."};
+"Boost your digital presence with Biztalbox, the top SEO company in Boone. Get expert SEO services from a trusted Boone SEO agency to grow traffic and sales."};
 
 export const metadata = createMetadata(
   baseMetadata,

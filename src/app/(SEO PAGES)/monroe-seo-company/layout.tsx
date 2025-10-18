@@ -6,9 +6,9 @@ import { faq_data } from "./data";
 import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
-  title: "SEO Services Agency Monroe | Best SEO Company in Monroe",
+  title: "SEO Company in Monroe | Best SEO Services Monroe | SEO Agency",
   description:
-"Looking for top SEO services in Monroe? Our expert SEO company in Monroe, Indiana delivers proven strategies to boost your website traffic and rankings."};
+" Increase your online visibility with Biztalbox, the leading SEO company in Monroe. Get expert SEO services from a trusted Monroe SEO agency to drive more leads."};
 
 export const metadata = createMetadata(
   baseMetadata,

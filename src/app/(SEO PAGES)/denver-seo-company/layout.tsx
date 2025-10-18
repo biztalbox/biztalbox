@@ -6,9 +6,9 @@ import { faq_data } from "./data";
 import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
-  title: "SEO Services Agency Denver | Best SEO Company in Denver",
+  title: "SEO Company in Denver | Best SEO Services Denver | SEO Agency",
   description:
-"Boost your online visibility with Biztalbox — Denver’s trusted SEO services agency. Get higher rankings, quality traffic, and measurable business growth with our expert SEO solutions."};
+"Enhance your online presence with Biztalbox, the leading SEO company in Denver. Get expert SEO services from a trusted Denver SEO agency to grow your business."};
 
 export const metadata = createMetadata(
   baseMetadata,

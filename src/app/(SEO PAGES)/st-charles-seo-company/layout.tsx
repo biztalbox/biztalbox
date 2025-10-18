@@ -6,9 +6,9 @@ import { faq_data } from "./data";
 import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
-  title: "SEO Services Agency St. Charles | Best SEO Company in St. Charles",
+  title: "SEO Company in ST Charles | Best SEO Services ST Charles | SEO Agency",
   description:
-"Looking for professional SEO services in St. Charles? Our expert SEO company in St. Charles delivers proven strategies to boost website traffic, improve rankings, and grow your business online."};
+" Boost your online visibility with Biztalbox, the top SEO company in St. Charles. Get expert SEO services from a trusted St. Charles SEO agency to grow your business."};
 
 export const metadata = createMetadata(
   baseMetadata,

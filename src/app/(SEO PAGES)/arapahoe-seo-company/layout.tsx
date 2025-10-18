@@ -6,9 +6,9 @@ import { faq_data } from "./data";
 import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
-  title: "SEO Services Company Arapahoe | Best SEO Agency in Arapahoe",
+  title: " SEO Company in Arapahoe | Best SEO Services Arapahoe | SEO Agency",
   description:
-" Enhance your online visibility with Biztalbox — Arapahoe’s trusted SEO company. Drive traffic, improve rankings, and grow your business with expert SEO solutions."};
+"Boost your online growth with Biztalbox, the top SEO company in Arapahoe. Get expert SEO services from a trusted Arapahoe SEO agency to drive traffic and leads."};
 
 export const metadata = createMetadata(
   baseMetadata,

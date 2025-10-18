@@ -6,9 +6,9 @@ import { faq_data } from "./data";
 import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
-  title: "SEO Services Agency Racine| Best SEO Company Racine",
+  title: "SEO Company in Racine | Best SEO Services Racine | SEO Agency",
   description:
-"Enhance your online visibility with Biztalbox — a leading SEO services agency in Racine. Drive traffic, improve rankings, and grow your business successfully."};
+" Boost your online visibility with Biztalbox, the top SEO company in Racine. Get expert SEO services from a trusted Racine SEO agency to grow traffic and leads."};
 
 export const metadata = createMetadata(
   baseMetadata,

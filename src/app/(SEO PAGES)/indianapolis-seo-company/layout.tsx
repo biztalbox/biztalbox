@@ -9,9 +9,9 @@ import { faq_data } from "./data";
 import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
-  title: "SEO Services Agency Indianapolis | Best SEO Company in Indianapolis",
+  title: " SEO Company In Indianapolis | Best SEO Services Indianapolis ",
   description:
-    "Biztalbox – the leading SEO services agency in Indianapolis, helping businesses boost visibility, drive traffic, and achieve top Google rankings.",
+    "Boost your rankings with Biztalbox, the leading SEO company in Indianapolis. Get expert SEO services in Indianapolis to grow traffic, leads, and sales.",
 };
 
 export const metadata = createMetadata(baseMetadata, "/indianapolis-seo-company");

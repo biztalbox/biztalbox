@@ -6,9 +6,9 @@ import { faq_data } from "./data";
 import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
-  title: "SEO Services Agency Jackson | Best SEO Company in Jackson",
+  title: "SEO Company in Jackson | Best SEO Services Jackson | SEO Agency",
   description:
-"Looking for professional SEO services in Jackson? Our expert SEO company in Jackson helps drive traffic, boost online visibility, and grow sales with proven SEO strategies."};
+"Grow your online presence with Biztalbox, the leading SEO company in Jackson. Get professional SEO services from a trusted Jackson SEO agency for real results."};
 
 export const metadata = createMetadata(
   baseMetadata,

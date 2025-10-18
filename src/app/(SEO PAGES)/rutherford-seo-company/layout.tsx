@@ -6,9 +6,9 @@ import { faq_data } from "./data";
 import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
-  title: "SEO Services Agency Rutherford | Best SEO Company in Rutherford",
+  title: "SEO Company in Rutherford | Best SEO Services Rutherford | SEO Agency",
   description:
-"Top SEO services in Rutherford, Tennessee. Boost your online visibility, drive traffic, and grow your business with the best SEO company in Rutherford."};
+"Boost your online growth with Biztalbox, the top SEO company in Rutherford. Get expert SEO services from a trusted Rutherford SEO agency to increase traffic and leads."};
 
 export const metadata = createMetadata(
   baseMetadata,

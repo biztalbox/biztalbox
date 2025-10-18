@@ -6,9 +6,9 @@ import { faq_data } from "./data";
 import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
-  title: "SEO Services Agency Jefferson | Best SEO Company in Jefferson",
+  title: "SEO Company in Jefferson | Best SEO Services Jefferson | SEO Agency",
   description:
-    "Looking for professional SEO services in Jefferson? Our expert SEO company in Jefferson provides tailored strategies to increase website traffic, improve rankings, and grow your business online.",
+    " Boost your online visibility with Biztalbox, the top SEO company in Jefferson. Get expert SEO services from a trusted Jefferson SEO agency to grow your business.",
 };
 
 export const metadata = createMetadata(

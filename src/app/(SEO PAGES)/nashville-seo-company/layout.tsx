@@ -6,9 +6,9 @@ import { faq_data } from "./data";
 import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
-  title: "SEO Services Agency Nashville | Best SEO Company in Nashville",
+  title: "SEO Company in Nashville | Best SEO Services Nashville | SEO Agency",
   description:
-"Grow your Nashville business with expert SEO services. Boost website traffic, improve rankings, and increase sales with the best SEO company in Nashville."};
+"Grow your online presence with Biztalbox, the leading SEO company in Nashville. Get expert SEO services from a trusted Nashville SEO agency to drive traffic and leads."};
 
 export const metadata = createMetadata(
   baseMetadata,

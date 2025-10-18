@@ -6,9 +6,9 @@ import { faq_data } from "./data";
 import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
-  title: "SEO Services in Evansville | Best SEO Company in Evansville",
+  title: "SEO Company in Evansville | Best SEO Services Evansville | SEO Agency",
   description:
-"Seeking top SEO services in Evansville? Our expert SEO company in Evansville, Indiana delivers proven strategies to boost your website traffic and rankings."
+"Enhance your online growth with Biztalbox, the leading SEO company in Evansville. Get expert SEO services from a trusted Evansville SEO agency to drive results."
 }
 
 export const metadata = createMetadata(

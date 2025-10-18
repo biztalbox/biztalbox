@@ -6,9 +6,9 @@ import { faq_data } from "./data";
 import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
-  title: "SEO Services Agency Elkhart | Best SEO Company in Elkhart",
+  title: "SEO Company in Elkhart | Best SEO Services Elkhart | SEO Agency",
   description:
-"Looking for top SEO services in Elkhart? Our expert SEO company in Elkhart, Indiana delivers proven strategies to boost your website traffic and rankings."
+"Grow your business with Biztalbox, the top SEO company in Elkhart. Get expert SEO services from a trusted Elkhart SEO agency and boost your online visibility."
 }
 
 export const metadata = createMetadata(

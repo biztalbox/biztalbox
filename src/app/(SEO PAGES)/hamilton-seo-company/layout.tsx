@@ -6,9 +6,9 @@ import { faq_data } from "./data";
 import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
-  title: "SEO Services Agency Hamilton | Best SEO Company Hamilton",
+  title: "SEO Company in Hamilton | Best SEO Services Hamilton | SEO Agency",
   description:
-"Looking for top SEO services in Hamilton? Our expert SEO company in Hamilton, Indiana delivers proven strategies to boost your website traffic and rankings."};
+"Drive more traffic and sales with Biztalbox, the top SEO company in Hamilton. Get expert SEO services from a trusted Hamilton SEO agency for lasting growth."};
 
 export const metadata = createMetadata(
   baseMetadata,

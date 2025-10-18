@@ -6,9 +6,9 @@ import { faq_data } from "./data";
 import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
-  title: "SEO Services Company Mesa | Best SEO Agency in Mesa",
+  title: "SEO Company in Mesa | Best SEO Services Mesa | SEO Agency",
   description:
-" SEO Services Company Mesa | Best SEO Agency in Mesa — Partner with Biztalbox to boost your online presence, improve rankings, and grow your business with expert SEO services."};
+"Boost your online visibility with Biztalbox, the top SEO company in Mesa. Get expert SEO services from a trusted Mesa SEO agency to drive traffic and grow your business."};
 
 export const metadata = createMetadata(
   baseMetadata,

@@ -6,9 +6,9 @@ import { faq_data } from "./data";
 import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
-  title: "SEO Services Agency Eau Claire| Best SEO Company Eau Claire",
+  title: "SEO Company in  Eau Claire | Best SEO Services Eau Claire | SEO Agency",
   description:
-"Boost your business with Biztalbox — leading SEO services agency in Eau Claire. Improve search rankings, drive traffic, and achieve measurable online growth."};
+"Grow your online presence with Biztalbox, the leading SEO company in Eau Claire. Get expert SEO services from a trusted Eau Claire SEO agency to boost traffic and leads."};
 
 export const metadata = createMetadata(
   baseMetadata,

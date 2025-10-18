@@ -6,9 +6,9 @@ import { faq_data } from "./data";
 import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
-  title: "SEO Services Agency St. Louis | Best SEO Company in St. Louis",
+  title: "SEO Company in ST Louis | Best SEO Services ST Louis | SEO Agency",
   description:
-"Looking for professional SEO services in St. Louis? Our expert SEO company in St. Louis provides effective strategies to increase website traffic, improve search rankings, and grow your business online."};
+"Increase your online presence with Biztalbox, the leading SEO company in St. Louis. Get expert SEO services from a trusted St. Louis SEO agency to drive growth."};
 
 export const metadata = createMetadata(
   baseMetadata,

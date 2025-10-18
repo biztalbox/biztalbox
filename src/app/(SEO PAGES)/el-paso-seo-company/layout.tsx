@@ -6,9 +6,9 @@ import { faq_data } from "./data";
 import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
-  title: "SEO Services Company El Paso | Best SEO Agency in El Paso",
+  title: "SEO Company in El Paso | Best SEO Services El Paso | SEO Agency",
   description:
-"Boost your online presence with Biztalbox — El Paso&apos;s trusted SEO company. Improve search rankings, attract quality traffic, and grow your business with expert SEO services."};
+"Boost your online visibility with Biztalbox, the top SEO company in El Paso. Get expert SEO services from a trusted El Paso SEO agency to drive traffic and leads."};
 
 export const metadata = createMetadata(
   baseMetadata,

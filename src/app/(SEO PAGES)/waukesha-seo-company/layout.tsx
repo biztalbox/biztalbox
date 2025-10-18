@@ -6,9 +6,9 @@ import { faq_data } from "./data";
 import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
-  title: "SEO Services Agency Waukesha|top SEO Company Waukesha",
+  title: "SEO Company in Waukesha | Best SEO Services Waukesha | SEO Agency",
   description:
-"Enhance your online presence with Biztalbox — Waukesha's trusted SEO experts. Drive traffic, boost rankings, and grow your business with proven SEO strategies."};
+"Grow your online presence with Biztalbox, the leading SEO company in Waukesha. Get expert SEO services from a trusted Waukesha SEO agency to drive results."};
 
 export const metadata = createMetadata(
   baseMetadata,

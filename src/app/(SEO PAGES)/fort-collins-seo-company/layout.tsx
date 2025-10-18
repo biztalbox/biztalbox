@@ -6,9 +6,9 @@ import { faq_data } from "./data";
 import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
-  title: "SEO Services Company Fort Collins | Best SEO Agency in Fort Collins",
+  title: "SEO Company in Fort Collins | Best SEO Services Fort Collins | SEO Agency",
   description:
-"Boost your online presence with Biztalbox — Fort Collins&apos; trusted SEO company. Improve search rankings, drive traffic, and grow your business with expert SEO services."};
+"Enhance your online presence with Biztalbox, the leading SEO company in Fort Collins. Get expert SEO services from a trusted Fort Collins SEO agency to grow your business."};
 
 export const metadata = createMetadata(
   baseMetadata,

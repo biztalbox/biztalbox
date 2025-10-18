@@ -6,9 +6,9 @@ import { faq_data } from "./data";
 import { testimonial } from "./data";
 
 const baseMetadata: Metadata = {
-  title: " B2B SEO Company in Boulder | Expert B2B SEO Services Agency",
+  title: " SEO Company in Boulder | Best SEO Services Boulder | SEO Agency",
   description:
-" Scale your B2B business with Biztalbox — Boulder&apos;s leading B2B SEO company. Drive qualified leads, boost visibility, and achieve measurable growth online."};
+"Grow your online presence with Biztalbox, the leading SEO company in Boulder. Get expert SEO services from a trusted Boulder SEO agency to increase traffic and leads."};
 
 export const metadata = createMetadata(
   baseMetadata,
