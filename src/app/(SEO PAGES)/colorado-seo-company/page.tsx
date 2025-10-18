@@ -89,13 +89,13 @@ export default function Page() {
                           style={{ marginBottom: "0" }}
                         >
                           <h1 className="text-white tp-char-animation">
-                            Digital Marketing Agency in Arapahoe – Establish Your Brand & Win Over Customers
+                            Professional SEO Services in Colorado – Drive Visibility, Leads & Growth
                           </h1>
                           <p>
-                            Arapahoe&apos;s business sector is booming, ranging from new-age startups to long-standing local businesses. With such competitiveness, merely possessing a website or social media channels is not sufficient — your customers must be able to locate, interact with, and recall your brand. 
+                            Colorado isn&apos;t only known for its scenery — it&apos;s got a rapidly growing business environment. From SaaS companies in Denver to manufacturing giants in Colorado Springs, the competition online is fierce. In this environment, having a website doesn&apos;t cut it anymore — your customers need to find you first. That&apos;s where Biztalbox, the go-to SEO Agency in Colorado, comes in.
                           </p>
                           <p>
-                            This is where Biztalbox, the leading Digital Marketing Agency Arapahoe steps in. We blend strategy, creativity, and analytics to develop campaigns that drive measurable results. From acclaimed branding, SEO that brings leads, or social media that drives engagement, we develop strategies that put your business face-to-face with the right audience.
+                            We assist companies in transforming search visibility into tangible growth. Whether you&apos;re trying to reach local consumers or national B2B buyers, our Colorado SEO Services integrate analytics, innovation, and established techniques to provide stable, conversion-based traffic.
                           </p>
                           <div className="tp-hero-4-text tp_fade_right">
                             <span>
@@ -163,11 +163,11 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Business in
                         </span>
-                        <h4 className="tm-details-title">Arapahoe?</h4>
+                        <h4 className="tm-details-title">Colorado?</h4>
                       </div>
                       <div className="tm-details-text">
                         <p>
-                          Don&apos;t let competitors get ahead. Partner with Biztalbox – the Marketing Consultant Arapahoe businesses trust – to increase visibility, attract leads, and drive measurable growth. Book your free consultation today and get a custom marketing plan built to deliver results.
+                          Your customers are searching — make sure they find you first. Partner with Biztalbox, the SEO Consultant Arapahoe businesses trust, and start driving real results. Contact us today for a free consultation.
                         </p>
                       </div>
                       <div className="tm-details-portfolio">
@@ -211,23 +211,26 @@ export default function Page() {
                       <div className="service-details__left-wrap">
                         <div className="tm-details-title-box mb-20">
                           <h3 className="text-white">
-                            The Results You Can Expect
+                            Benefits of SEO for Colorado Businesses
                           </h3>
-                          <h2 className="tm-details-title">Arapahoe</h2>
+                          <h2 className="tm-details-title">Colorado</h2>
                         </div>
                         <div className="service-details__fea-list">
                           <ul>
                             <li>
-                              Stronger Brand Presence – Memorable messaging and visuals that linger with customers.
+                              Improved Visibility – Be seen where Colorado consumers and B2B shoppers are actively looking.
                             </li>
                             <li>
-                              Improved Online Visibility – Show up where Arapahoe customers are searching actively.
+                             Specific Industry Growth – We customize SEO to align with your industry — from manufacturing and SaaS to  healthcare and retail.
                             </li>
                             <li>
-                              Increased Engagement – Social content that ignites conversation and loyalty.
+                              Improved Experience – A faster, seamless website that keeps visitors engaged and ready to convert.
                             </li>
                             <li>
-                              Measurable Growth – Clear, actionable reports reveal exactly what&apos;s working.
+                              Long-Term ROI – SEO provides sustained visibility and steady lead flow, not temporary spikes.
+                            </li>
+                            <li>
+                              White-Hat SEO – 100% ethical, Google-approved techniques that build and defend your brand authority.
                             </li>
                           </ul>
                         </div>
@@ -261,7 +264,7 @@ export default function Page() {
                           }`}
                       >
                         <h4 className="tp-about-4-title">
-                          Why Arapahoe Businesses Choose Biztalbox
+                          Why Partner with Biztalbox
                         </h4>
                       </div>
                     </div>
@@ -280,9 +283,9 @@ export default function Page() {
                               className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
                                 }`}
                             >
-                              <h4 className="text-white">Arapahoe-Focused Expertise</h4>
+                              <h4 className="text-white">Colorado-Centric Knowledge</h4>
                               <p>
-                                From new ventures to retail and professional businesses, we comprehend the local competitive environment.
+                                 Being a top SEO Agency Colorado, we understand the local market — Denver&apos;s SaaS community to Colorado Springs&apos; industrial network.
                               </p>
                             </div>
                           </div>
@@ -291,9 +294,9 @@ export default function Page() {
                               className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""
                                 }`}
                             >
-                              <h4 className="text-white">Customized Strategy</h4>
+                              <h4 className="text-white">ROI-Based Implementation </h4>
                               <p>
-                                 All of our campaigns are customized for your specific outcomes and are never taken from a template. 
+                                Our SEO Specialists Colorado craft campaigns that drive quality leads, improve conversions, and drive revenue
                               </p>
                             </div>
                           </div>
@@ -304,9 +307,9 @@ export default function Page() {
                               className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
                                 }`}
                             >
-                              <h4 className="text-white">Creative + Data-Driven </h4>
+                              <h4 className="text-white">Ethical & Transparent Process </h4>
                               <p>
-                               Storytelling and data come together to bring measurable results.
+                                 Being an ethical SEO Company Colorado, we apply white-hat techniques supported by transparent reporting.
                               </p>
                             </div>
                           </div>
@@ -315,9 +318,9 @@ export default function Page() {
                               className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""
                                 }`}
                             >
-                              <h4 className="text-white">Transparent Communication</h4>
+                              <h4 className="text-white">Industry-Specific Strategies</h4>
                               <p>
-                                You will never be left wondering what is happening or why it matters.
+                                 Whether you require a Manufacturing SEO Agency Colorado or SaaS SEO Services Colorado, we design campaigns that are niche and goal-specific for you.
                               </p>
                             </div>
                           </div>
@@ -352,7 +355,7 @@ export default function Page() {
                       </div>
                       <div className="tm-details-text">
                         <p>
-                          Don&apos;t let competitors get ahead. Partner with Biztalbox – the Marketing Consultant Arapahoe businesses trust – to increase visibility, attract leads, and drive measurable growth. Book your free consultation today and get a custom marketing plan built to deliver results.
+                          Your customers are searching — make sure they find you first. Partner with Biztalbox, the SEO Consultant Arapahoe businesses trust, and start driving real results. Contact us today for a free consultation.
                         </p>
                       </div>
                       <div className="tm-details-portfolio">
@@ -375,7 +378,7 @@ export default function Page() {
             <ServiceThree />
 
             {/* How We Work*/}
-            <LineTextTwo title="Our Marketing Process" />
+            <LineTextTwo title="Our SEO Process" />
             <div className="tp-about-4-area pt-100 pb-110 p-relative">
               <div className="tp-about-4-shape-2">
                 <Image className="tp-zoom-in-out" src={shape} alt="shape" />
@@ -388,14 +391,8 @@ export default function Page() {
                         }`}
                     >
                       <h3 className="tp-about-4-title">
-                       How Our Marketing Services Work
+                        How Our SEO Process Functions
                       </h3>
-                      <p
-                        className="tp-about-4-title"
-                        style={{ fontSize: "25px" }}
-                      >
-                        Each Arapahoe business is different, so we steer clear of generic solutions. Here&apos;s how our Arapahoe Digital Marketing Company works with you:
-                      </p>
                     </div>
                   </div>
                 </div>
@@ -414,10 +411,10 @@ export default function Page() {
                               }`}
                           >
                             <h4 className="text-white">
-                              Brand Discovery & Strategy 
+                              Website Review
                             </h4>
                             <p>
-                             We start with an understanding of your vision, your clients, and your position within the Arapahoe marketplace, and develop a plan to guide all of your marketing activities.
+                              Our SEO Consultant Colorado reviews site speed, architecture, and content to determine performance holes constricting visibility.
                             </p>
                           </div>
                         </div>
@@ -427,10 +424,10 @@ export default function Page() {
                               }`}
                           >
                             <h4 className="text-white">
-                              Branding & Design 
+                              Keyword Research
                             </h4>
                             <p>
-                              Logos, full visual identities, we produce designs that make your business immediately recognizable.
+                              We determine how your users search — from SaaS providers to industrial distributors — and optimize high-intent terms that drive actual business outcomes.
                             </p>
                           </div>
                         </div>
@@ -441,9 +438,9 @@ export default function Page() {
                             className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
                               }`}
                           >
-                            <h4 className="text-white">Copywriting & Content</h4>
+                            <h4 className="text-white">Optimization On-Page</h4>
                             <p>
-                              Blogging, website content, email campaigns — written to captivate Arapahoe customers and inspire meaningful action.
+                              Our SEO Experts Colorado optimize meta tags, content flow, and architecture to enhance both search rankings and user experience.
                             </p>
                           </div>
                         </div>
@@ -453,10 +450,10 @@ export default function Page() {
                               }`}
                           >
                             <h4 className="text-white">
-                              Social Media Management
+                              Authority Building
                             </h4>
                             <p>
-                              We develop a plan, schedule out posts and engage to build brand loyalty and drive engagement.
+                              As a seasoned SEO Company Colorado, we obtain high-quality backlinks to build your site&apos;s domain authority.
                             </p>
                           </div>
                         </div>
@@ -467,9 +464,9 @@ export default function Page() {
                             className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
                               }`}
                           >
-                            <h4 className="text-white">Motion Graphics & Creative Assets</h4>
+                            <h4 className="text-white">Local & Industry SEO</h4>
                             <p>
-                               Video and animation that grabs attention and visually tells your story.
+                               From Manufacturing SEO Agency Colorado to SaaS SEO Services Colorado, our methods are tailored for your industry and customer base.
                             </p>
                           </div>
                         </div>
@@ -478,9 +475,9 @@ export default function Page() {
                             className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
                               }`}
                           >
-                            <h4 className="text-white">Advertising Campaigns</h4>
+                            <h4 className="text-white">Performance Tracking </h4>
                             <p>
-                               As Arapahoe&apos;s full-service Advertising Agency, we create marketing campaigns that drive leads, clicks and brand awareness.
+                              You&apos;ll have clear reports displaying your ranking, traffic, and ROI — No technical jargon, just quantifiable improvement.
                             </p>
                           </div>
                         </div>
@@ -514,7 +511,7 @@ export default function Page() {
                       </div>
                       <div className="tm-details-text">
                         <p>
-                          Don&apos;t let competitors get ahead. Partner with Biztalbox – the Marketing Consultant Arapahoe businesses trust – to increase visibility, attract leads, and drive measurable growth. Book your free consultation today and get a custom marketing plan built to deliver results.
+                          Your customers are searching — make sure they find you first. Partner with Biztalbox, the SEO Consultant Arapahoe businesses trust, and start driving real results. Contact us today for a free consultation.
                         </p>
                       </div>
                       <div className="tm-details-portfolio">
@@ -552,7 +549,7 @@ export default function Page() {
                     <div className="fq-faq-sidebar">
                       <div className="fq-faq-sidebar-content">
                         <h4 className="fq-faq-sidebar-title">Q&A</h4>
-                        <p>FAQs – Marketing Agency Arapahoe</p>
+                        <h2>FAQs – SEO Services in Arapahoe</h2>
                       </div>
                       <div className="fq-faq-sidebar-thumb">
                         <Image
