@@ -89,13 +89,13 @@ export default function Page() {
                           style={{ marginBottom: "0" }}
                         >
                           <h1 className="text-white tp-char-animation">
-                            Drive Real Growth with Our B2B SEO Company in Arapahoe
+                            El Paso Digital Marketing Agency – Get Your Brand Noticed & Win Over Customers
                           </h1>
                           <p>
-                            With Arapahoe&apos;s thriving business environment, every B2B brand is fighting to be noticed, trusted, and selected. Having an excellent website is only the first step — what truly matters is whether your business appears in front of the right decision-makers when they&apos;re searching for what you offer. That&apos;s where Biztalbox, a leading B2B SEO Company Arapahoe, comes in.
+                            El Paso&apos;s economy is vibrant, ranging from technology start-ups downtown to long-time retailers on Mesa Street. In this highly competitive city, having an internet site or being active on social media just isn&apos;t sufficient — your customers have to see you, remember you, and engage with your brand.
                           </p>
                           <p>
-                            We assist Arapahoe&apos;s local businesses to enhance their online presence, generate qualified leads, and convert traffic into concrete growth. With our B2B SEO Arapahoe services, your brand doesn&apos;t merely exist on the internet — it stands out with purpose, authenticity, and consistency.
+                            That&apos;s where Biztalbox steps in. We are a Digital Marketing Agency in El Paso that fuses strategy with creativity and just a smidge of data-driven intuition, creating campaigns so distinctive they leave a lasting impression. Whether it&apos;s building a memorable brand identity, boosting your search rankings, or sparking conversations on social media, we help your business get seen by the right people — and stay on their minds.
                           </p>
                           <div className="tp-hero-4-text tp_fade_right">
                             <span>
@@ -163,11 +163,11 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Business in
                         </span>
-                        <h4 className="tm-details-title">Arapahoe?</h4>
+                        <h4 className="tm-details-title">El Paso?</h4>
                       </div>
                       <div className="tm-details-text">
                         <p>
-                          Your customers are searching — make sure they find you first. Partner with Biztalbox, the B2B SEO Experts Arapahoe businesses trust, and start driving real results. Contact us today for a free consultation.
+                          Your competition is already targeting your customers. Hire Biztalbox — the Marketing Consultant in El Paso that local businesses trust — and convert online visibility into tangible growth. Get a free consultation today and start capturing your market.
                         </p>
                       </div>
                       <div className="tm-details-portfolio">
@@ -211,26 +211,23 @@ export default function Page() {
                       <div className="service-details__left-wrap">
                         <div className="tm-details-title-box mb-20">
                           <h3 className="text-white">
-                            Why Choose Biztalbox As Your B2B SEO Company in Arapahoe?
+                            The Results You Can Expect
                           </h3>
-                          <h2 className="tm-details-title">Arapahoe</h2>
+                          <h2 className="tm-details-title">El Paso</h2>
                         </div>
                         <div className="service-details__fea-list">
                           <ul>
                             <li>
-                              <strong>Arapahoe Localized SEO for Arapahoe Businesses</strong> - Our B2B Online Marketing Arapahoe makes your brand visible to local businesses actively searching for your product or service. From Google Business Profile optimization to local citations and geo-specific words, we ensure that your brand is visible where it counts the most — locally.
+                              <strong>Stronger Brand Presence</strong> – Visuals and messaging that linger in people&apos;s minds.
                             </li>
                             <li>
-                              <strong>Industry-Specific Keyword Strategy</strong> - We extract the most lucrative keywords driving high-intent traffic in your sector. By blending technical SEO with content optimization, we make sure your website generates attention from decision-makers — not clicks.
+                              <strong>Better Online Visibility</strong> – Appear where El Paso customers are searching.
                             </li>
                             <li>
-                              <strong>On-Page & Technical SEO Mastery</strong> - From internal linking and meta tags to page speed and schema, our B2B SEO Experts Arapahoe guarantee that your site adheres to Google&apos;s guidelines while offering a seamless user experience that drives conversions.
+                              <strong>Higher Engagement</strong> – Social content that ignites conversation and loyalty.
                             </li>
                             <li>
-                              <strong>Quality Content That Converts</strong> - We create optimized content — blogs, web copy, and landing pages — that make your company a thought leader in your industry. Each word is written to interest, educate, and persuade your B2B target audience.
-                            </li>
-                            <li>
-                              <strong>Transparent Reporting & Measurable ROI</strong> - We stand for transparent communication and measurable results. You&apos;ll receive comprehensive reports indicating rankings, leads, and ROI increases, so you always know where your investment stands.
+                              <strong>Trackable Growth</strong> – Transparent, actionable reports reveal what&apos;s working.
                             </li>
                           </ul>
                         </div>
@@ -264,7 +261,7 @@ export default function Page() {
                           }`}
                       >
                         <h4 className="tp-about-4-title">
-                          What Makes Biztalbox Different
+                          Why El Paso Companies Should Choose Biztalbox
                         </h4>
                       </div>
                     </div>
@@ -283,9 +280,9 @@ export default function Page() {
                               className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
                                 }`}
                             >
-                              <h4 className="text-white">Strategic Growth Focus</h4>
+                              <h4 className="text-white">El Paso-Centric Insight</h4>
                               <p>
-                                As a B2B SEO Agency Arapahoe, we don&apos;t just focus on visibility — we&apos;re driven by growth. We aim to create a long-term online presence for your business so you can continually acquire high-value clients.
+                                From tech ventures to retail and hospitality, we understand the city&apos;s competitive landscape.
                               </p>
                             </div>
                           </div>
@@ -294,9 +291,9 @@ export default function Page() {
                               className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""
                                 }`}
                             >
-                              <h4 className="text-white">Local & National Expertise</h4>
+                              <h4 className="text-white">Custom Strategies</h4>
                               <p>
-                                We blend local understanding with nation-level SEO expertise, making you accessible to both Arapahoe businesses and beyond. From established players to growing startups, our strategies adapt to your unique journey.
+                                Each plan is designed to match your objectives, not copied from a template.
                               </p>
                             </div>
                           </div>
@@ -307,9 +304,9 @@ export default function Page() {
                               className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
                                 }`}
                             >
-                              <h4 className="text-white">Customized Approach</h4>
+                              <h4 className="text-white">Creative + Data-Driven</h4>
                               <p>
-                                Our SEO strategy is strategic, data-informed, and highly tailored to the B2B sector. We don&apos;t employ a one-size-fits-all approach. Each business we partner with receives a custom plan to fit its particular industry, objectives and target demographic.
+                                Storytelling and analytics collaborate to provide measurable results.
                               </p>
                             </div>
                           </div>
@@ -318,9 +315,22 @@ export default function Page() {
                               className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""
                                 }`}
                             >
-                              <h4 className="text-white">Ethical SEO Practices</h4>
+                              <h4 className="text-white">Clear Communication</h4>
                               <p>
-                                Being a professional B2B SEO Agency Arapahoe, we use only white-hat, Google-approved techniques to develop lasting rankings and sustainable growth.
+                                You&apos;ll always know what&apos;s going on and why you should care.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="row mt-30">
+                          <div className="col-xl-6 col-lg-6">
+                            <div
+                              className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
+                                }`}
+                            >
+                              <h4 className="text-white">Trusted Partner</h4>
+                              <p>
+                                Numerous companies trust us as their go-to Marketing Consultant in El Paso for growth and visibility.
                               </p>
                             </div>
                           </div>
@@ -349,13 +359,13 @@ export default function Page() {
                     >
                       <div className="tm-details-title-box mb-20">
                         <span className="tm-hero-subtitle">
-                          Build Your B2B Success Story with Biztalbox
+                          Ready to Grow Your Business in
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h4 className="tm-details-title">El Paso?</h4>
                       </div>
                       <div className="tm-details-text">
                         <p>
-                          If you&apos;re ready to strengthen your digital footprint and attract qualified B2B leads, Biztalbox is your trusted partner. Our B2B SEO Experts Arapahoe deliver strategies that not only rank — they perform, engage, and grow your business for the long run.
+                          Your competition is already targeting your customers. Hire Biztalbox — the Marketing Consultant in El Paso that local businesses trust — and convert online visibility into tangible growth. Get a free consultation today and start capturing your market.
                         </p>
                       </div>
                       <div className="tm-details-portfolio">
@@ -378,7 +388,7 @@ export default function Page() {
             <ServiceThree />
 
             {/* How We Work*/}
-            <LineTextTwo title="Our SEO Process" />
+            <LineTextTwo title="Our Marketing Process" />
             <div className="tp-about-4-area pt-100 pb-110 p-relative">
               <div className="tp-about-4-shape-2">
                 <Image className="tp-zoom-in-out" src={shape} alt="shape" />
@@ -391,8 +401,14 @@ export default function Page() {
                         }`}
                     >
                       <h3 className="tp-about-4-title">
-                        How Our B2B SEO Services in Arapahoe Work
+                        How We Approach Marketing
                       </h3>
+                      <p
+                        className="tp-about-4-title"
+                        style={{ fontSize: "25px" }}
+                      >
+                        Each El Paso business is different, so we never resort to one-size-fits-all. Here&apos;s how our El Paso Digital Marketing Company works with you:
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -411,10 +427,10 @@ export default function Page() {
                               }`}
                           >
                             <h4 className="text-white">
-                              Website Audit & Analysis
+                              Brand Discovery & Strategy
                             </h4>
                             <p>
-                              Our Arapahoe SEO Consultants analyze your website for technical problems, site speed, and lost opportunities that may stifle growth.
+                              We start by getting to know your objectives, target market, and market position in El Paso, and develop a plan to direct all marketing initiatives.
                             </p>
                           </div>
                         </div>
@@ -424,10 +440,10 @@ export default function Page() {
                               }`}
                           >
                             <h4 className="text-white">
-                              Keyword Research with Local Insight
+                              Branding & Design
                             </h4>
                             <p>
-                              We learn what terms Arapahoe customers, B2B buyers, and business users search for to make your business appear where it counts.
+                              Logos, complete visual identities, we create the elements that will make your business recognizable at a glance.
                             </p>
                           </div>
                         </div>
@@ -438,9 +454,9 @@ export default function Page() {
                             className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
                               }`}
                           >
-                            <h4 className="text-white">On-Page Optimization</h4>
+                            <h4 className="text-white">Copywriting & Content</h4>
                             <p>
-                              From title and meta tags to content movement and site navigation, our SEO Experts Arapahoe make your site easy to understand and navigate for both users and search engines.
+                              Web content, email campaigns, and blog posts — written to capture El Paso customers and motivate action.
                             </p>
                           </div>
                         </div>
@@ -450,10 +466,10 @@ export default function Page() {
                               }`}
                           >
                             <h4 className="text-white">
-                              Authority Building & Backlinks
+                              Social Media Management
                             </h4>
                             <p>
-                              As a reliable SEO Company in Arapahoe, we acquire high-quality backlinks that enhance your credibility and authority in your niche.
+                              At Biztalbox, planning, scheduling and posting are just the beginning. Our team builds social calendars that actually start conversations and grow communities.
                             </p>
                           </div>
                         </div>
@@ -464,9 +480,9 @@ export default function Page() {
                             className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
                               }`}
                           >
-                            <h4 className="text-white">Local & Industry-Specific SEO</h4>
+                            <h4 className="text-white">Motion Graphics & Creative Assets</h4>
                             <p>
-                              From Google Maps rankings to establishing your company as a go-to supplier in your industry, we build strategies specific to your business needs.
+                              Attention-grabbing videos and animations that represent your story in a visual form.
                             </p>
                           </div>
                         </div>
@@ -475,9 +491,33 @@ export default function Page() {
                             className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
                               }`}
                           >
-                            <h4 className="text-white">Transparent Reporting</h4>
+                            <h4 className="text-white">SEO & Online Visibility</h4>
                             <p>
-                              You&apos;ll receive straightforward updates that show improvements in rankings, leads, and conversions with clear ROI metrics.
+                              Our experts make sure local clients locate your company before the competition does.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="row mt-30">
+                        <div className="col-xl-6 col-lg-6">
+                          <div
+                            className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
+                              }`}
+                          >
+                            <h4 className="text-white">Advertising Campaigns</h4>
+                            <p>
+                              As a complete Service Advertising Agency in El Paso, we execute campaigns that generate brand awareness, clicks, and leads.
+                            </p>
+                          </div>
+                        </div>
+                        <div className="col-xl-6 col-lg-6">
+                          <div
+                            className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
+                              }`}
+                          >
+                            <h4 className="text-white">Ongoing Reporting & Optimization</h4>
+                            <p>
+                              Clear reporting with actionable information keeps your marketing running at maximum performance.
                             </p>
                           </div>
                         </div>
@@ -507,11 +547,11 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Business in
                         </span>
-                        <h4 className="tm-details-title">Arapahoe?</h4>
+                        <h4 className="tm-details-title">El Paso?</h4>
                       </div>
                       <div className="tm-details-text">
                         <p>
-                          Your customers are searching — make sure they find you first. Partner with Biztalbox, the B2B SEO Experts Arapahoe businesses trust, and start driving real results. Contact us today for a free consultation.
+                          Your competition is already targeting your customers. Hire Biztalbox — the Marketing Consultant in El Paso that local businesses trust — and convert online visibility into tangible growth. Get a free consultation today and start capturing your market.
                         </p>
                       </div>
                       <div className="tm-details-portfolio">
@@ -548,7 +588,8 @@ export default function Page() {
                   <div className="col-xl-4 col-lg-4">
                     <div className="fq-faq-sidebar">
                       <div className="fq-faq-sidebar-content">
-                        <h4 className="fq-faq-sidebar-title">FAQs</h4>
+                        <h4 className="fq-faq-sidebar-title">Q&A</h4>
+                        <p>FAQs – El Paso Digital Marketing Company</p>
                       </div>
                       <div className="fq-faq-sidebar-thumb">
                         <Image

@@ -39,6 +39,9 @@ strong{
     font-size: 25px !important;
 }
 @media (min-width: 768px) {
+  .initial-child-container {
+    line-height: 7rem;
+}
     .vision-mission-wrapper{
         flex-direction: row;
         gap: 4rem;
