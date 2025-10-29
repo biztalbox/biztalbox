@@ -138,6 +138,20 @@
     <priority>0.8</priority>
   </url>
   
+  <!-- Minnesota SEO Services Pages -->
+  <url>
+    <loc>https://biztalbox.com/ramsey-marketing-company</loc>
+    <lastmod>2025-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://biztalbox.com/saint-paul-seo-company</loc>
+    <lastmod>2025-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
   <!-- Tennessee SEO Services Pages -->
   <url>
     <loc>https://biztalbox.com/chattanooga-seo-company</loc>
@@ -289,5 +303,18 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-</urlset>
+  
+  <!-- Minnesota Digital Marketing Services Pages -->
+  <url>
+    <loc>https://biztalbox.com/minneapolis-digital-marketing-company</loc>
+    <lastmod>2025-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://biztalbox.com/saint-paul-digital-marketing-company</loc>
+    <lastmod>2025-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
