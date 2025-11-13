@@ -1,0 +1,59 @@
+@use '../utils' as *;
+
+/*----------------------------------------*/
+/*  WhatsApp Button
+/*----------------------------------------*/
+
+.whatsapp-wrapper {
+	position: fixed;
+    right: 48px;
+    bottom: 0;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    display: block;
+    border-radius: 50%;
+    z-index: 99;
+	opacity: 0;
+	visibility: hidden;
+	@extend %transition;
+   @media #{$xs}{
+		right: 18px;
+	}
+	&.whatsapp-btn-show{
+		visibility: visible;
+		opacity: 1;
+		bottom: 110px; // Position above the back-to-top button
+
+		@media #{$xs}{
+			bottom: 100px;
+		}
+	}
+}
+
+.whatsapp-btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 46px;
+	height: 46px;
+	background: #25D366; // WhatsApp brand color
+	box-shadow: 0px 8px 16px rgba(37, 211, 102, 0.4);
+	color: var(--tp-common-white);
+	border-radius: 50%;
+	text-decoration: none;
+	@include transition(all, .3s);
+
+	& svg {
+		width: 26px;
+		height: 26px;
+	}
+
+	&:hover {
+		@include transform(translateY(-4px) scale(1.05));
+		box-shadow: 0px 12px 20px rgba(37, 211, 102, 0.5);
+		background: #128C7E; // Darker WhatsApp green on hover
+		color: var(--tp-common-white);
+	}
+}
+
