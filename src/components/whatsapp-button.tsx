@@ -19,17 +19,17 @@ export default function WhatsAppButton() {
     }
   }
 
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
+//   useEffect(() => {
+//     if (typeof window === 'undefined') return;
     
-    document.addEventListener("scroll", handleScroll);
-    return () => {
-      document.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+//     document.addEventListener("scroll", handleScroll);
+//     return () => {
+//       document.removeEventListener("scroll", handleScroll);
+//     };
+//   }, []);
 
   return (
-    <div className="whatsapp-wrapper">
+    <div className="whatsapp-wrapper whatsapp-btn-show">
       <a
         href={whatsappUrl}
         target="_blank"
