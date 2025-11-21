@@ -25,10 +25,25 @@ export default function BlogDetailsBreadcrumb({ title, image, date }: BlogDetail
     <div className="blog-details-area">
       <div
         className="blog-details-bg blog-details-bg-height blog-details-overlay p-relative d-flex align-items-end pt-170 pb-30"
-        style={{
-          backgroundImage: `url(${image})`, backgroundSize: 'cover', backgroundPosition: 'center'
-        }}
       >
+        {/* Blurred background layer */}
+        <div
+          className="blog-details-bg-blurred"
+          style={{
+            backgroundImage: `url(${image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            // filter: 'blur(4px)',
+            opacity: 0.38,
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            zIndex: 0,
+            pointerEvents: 'none'
+          }}
+        />
         <div className="blog-details-overlay-shape">
           <Image src={overlay} alt="overlay" />
         </div>
