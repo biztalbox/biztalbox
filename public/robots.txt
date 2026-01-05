@@ -4,3 +4,4 @@ Allow: /
 # Sitemaps
 Sitemap: https://biztalbox.com/sitemap.xml
 Sitemap: https://biztalbox.com/usa-sitemap.xml
+Sitemap: https://biztalbox.com/industry.xml

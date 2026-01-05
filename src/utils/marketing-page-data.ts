@@ -5,11 +5,11 @@ interface CreateMarketingPageDataProps {
   description: string;
   path: string;
   serviceType: string;
-  faqs: Array<{
+  faqs?: Array<{
     question: string;
     answer: string;
   }>;
-  reviews: Array<{
+  reviews?: Array<{
     author: string;
     rating: number;
     text: string;
@@ -27,8 +27,8 @@ export function createMarketingPageData({
   description,
   path,
   serviceType,
-  faqs,
-  reviews,
+  faqs = [],
+  reviews = [],
   aggregateRating,
   image
 }: CreateMarketingPageDataProps): MarketingPageData {
