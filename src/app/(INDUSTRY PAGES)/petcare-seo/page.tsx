@@ -1207,7 +1207,7 @@ export default function Page() {
             </div>
 
             {/* service area start */}
-            <ServiceThree />
+            <ServiceThree showIndustry={false} />
 
             {/* Why Choose BiztalBox */}
             <LineTextTwo title="Why Choose BiztalBox" />

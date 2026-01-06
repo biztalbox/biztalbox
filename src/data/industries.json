@@ -1,0 +1,62 @@
+[
+        {
+            "id": 1,
+            "name": "Healthcare",
+            "link": "healthcare-seo",
+            "description": "Healthcare is the practice of maintaining and improving health through the prevention, diagnosis, and treatment of disease, injury, and other physical and mental impairments."
+        },
+        {
+            "id": 2,
+            "name": "Education",
+            "link": "education-seo",
+            "description": "Education is the process of facilitating learning, or the acquisition of knowledge, skills, values, beliefs, and habits. Educational methods include teaching, training, storytelling, discussion, and directed research."
+        },
+        {
+            "id": 3,
+            "name": "Finance",
+            "link": "healthcare-seo",
+            "description": "Finance is the study of money, banking, credit, investment, and the management of financial assets."
+        },
+        {
+            "id": 4,
+            "name": "Technology",
+            "link": "petcare-seo",
+            "description": "Technology is the application of scientific knowledge for practical purposes, especially in industry."
+        },
+        {
+            "id": 5,
+            "name": "Manufacturing",
+            "link": "petcare-seo",
+            "description": "Manufacturing is the process of converting raw materials into finished goods."
+        },
+        {
+            "id": 6,
+            "name": "Retail",
+            "link": "petcare-seo",
+            "description": "Retail is the process of selling goods to consumers."
+        },
+        {
+            "id": 7,
+            "name": "Transportation",
+            "link": "petcare-seo",
+            "description": "Transportation is the movement of people and goods from one place to another."
+        },
+        {
+            "id": 8,
+            "name": "Energy",
+            "link": "petcare-seo",
+            "description": "Energy is the ability to do work."
+        },
+        {
+            "id": 9,
+            "name": "Agriculture",
+            "link": "petcare-seo",
+            "description": "Agriculture is the production of food, fiber, and other products from plants and animals."
+        },
+        {
+            "id": 10,
+            "name": "Mining",
+            "link": "petcare-seo",
+            "description": "Mining is the extraction of minerals and other geological materials from the earth."
+        }
+]

@@ -521,7 +521,7 @@ export default function Page() {
             </div>
 
             {/* service area start */}
-            <ServiceThree />
+            <ServiceThree showIndustry={false} />
 
             {/* How We Work*/}
             <LineTextTwo title="Our Hotel SEO Process" />

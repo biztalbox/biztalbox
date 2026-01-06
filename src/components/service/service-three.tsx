@@ -1,10 +1,12 @@
 "use client";
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { SwiperOptions } from "swiper/types";
+import { Swiper as SwiperType } from "swiper";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Link from "next/link";
 import Image from "next/image";
+import industriesData from "@/data/industries.json";
 
 // internal imports
 import star_icon from "@/assets/img/home-04/service/sv-star-1.png";
@@ -142,8 +144,68 @@ const service_data = [
 
   },
 ];
-export default function ServiceThree() {
+
+// Industry carousel settings for mobile - 4 items per slide
+const industry_carousel_setting: SwiperOptions = {
+  modules: [Navigation, Pagination],
+  slidesPerView: 1,
+  slidesPerGroup: 1,
+  spaceBetween: 20,
+  speed: 500,
+  pagination: {
+    el: '.industry-mobile-pagination',
+    clickable: true,
+    bulletClass: 'industry-pagination-bullet',
+    bulletActiveClass: 'industry-pagination-bullet-active',
+  },
+};
+
+export default function ServiceThree({ showService = true, showIndustry = true }: { showService?: boolean, showIndustry?: boolean }) {
+  const industrySwiperRef = useRef<SwiperType | null>(null);
+
+  // Add styles for pagination bullets
+  useEffect(() => {
+    const styleId = 'industry-pagination-styles';
+    if (!document.getElementById(styleId)) {
+      const style = document.createElement('style');
+      style.id = styleId;
+      style.textContent = `
+        .industry-pagination-bullet {
+          width: 10px !important;
+          height: 10px !important;
+          background: rgba(255, 255, 255, 0.25) !important;
+          border-radius: 50% !important;
+          opacity: 1 !important;
+          margin: 0 3px !important;
+          cursor: pointer !important;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+          position: relative !important;
+          border: 1px solid rgba(255, 255, 255, 0.15) !important;
+        }
+        .industry-pagination-bullet:hover {
+          background: rgba(255, 255, 255, 0.4) !important;
+          transform: scale(1.2) !important;
+        }
+        .industry-pagination-bullet-active {
+          background: rgba(255, 255, 255, 0.95) !important;
+          width: 28px !important;
+          height: 10px !important;
+          border-radius: 5px !important;
+          border-color: rgba(255, 255, 255, 0.3) !important;
+          box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3) !important;
+        }
+        .industry-pagination-bullet-active:hover {
+          transform: scale(1.05) !important;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+  }, []);
+
   return (
+    <section>
+      {/* Services */}
+      {showService && (
     <div
       className="tp-service-4-area pt-60 pb-120 fix"
       data-background="assets/img/home-04/brand/overly.png"
@@ -212,7 +274,268 @@ export default function ServiceThree() {
         
         {/* Pagination */}
         {/* <div className="swiper-pagination tp-service-4-pagination"></div> */}
+        </div>
+      </div>
+      )}
+
+    {/* Industry */}
+    {showIndustry && (
+    <div className="tp-industry-area pt-40 pb-80">
+      <div className="container">
+        <div className="row align-items-center mb-40">
+          <div className="col-xl-12">
+            <div className="tp-industry-title-wrapper d-flex align-items-center justify-content-between">
+              <h3 className="tp-service-4-title text-white">Industry Served</h3>
+              {/* Mobile Navigation Buttons */}
+              <div className="industry-title-nav d-flex d-md-none gap-2">
+                <button
+                  type="button"
+                  className="industry-swiper-button-prev industry-mobile-nav-prev"
+                  style={{
+                    padding: "0",
+                    borderRadius: "50%",
+                    background: "rgba(255, 255, 255, 0.12)",
+                    border: "1px solid rgba(255, 255, 255, 0.25)",
+                    color: "white",
+                    fontSize: "14px",
+                    width: "36px",
+                    height: "36px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    cursor: "pointer",
+                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                    outline: "none",
+                    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.15)",
+                    WebkitTapHighlightColor: "transparent",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "rgba(255, 255, 255, 0.2)";
+                    e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.4)";
+                    e.currentTarget.style.transform = "scale(1.05)";
+                    e.currentTarget.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.25)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "rgba(255, 255, 255, 0.12)";
+                    e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.25)";
+                    e.currentTarget.style.transform = "scale(1)";
+                    e.currentTarget.style.boxShadow = "0 2px 8px rgba(0, 0, 0, 0.15)";
+                  }}
+                  onMouseDown={(e) => {
+                    e.currentTarget.style.transform = "scale(0.95)";
+                  }}
+                  onMouseUp={(e) => {
+                    e.currentTarget.style.transform = "scale(1.05)";
+                  }}
+                  onTouchStart={(e) => {
+                    e.currentTarget.style.transform = "scale(0.95)";
+                    e.currentTarget.style.background = "rgba(255, 255, 255, 0.2)";
+                  }}
+                  onTouchEnd={(e) => {
+                    e.currentTarget.style.transform = "scale(1)";
+                    e.currentTarget.style.background = "rgba(255, 255, 255, 0.12)";
+                  }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if (industrySwiperRef.current) {
+                      industrySwiperRef.current.slidePrev();
+                    }
+                  }}
+                  aria-label="Previous slide"
+                >
+                  <i className="fa-light fa-arrow-left"></i>
+                </button>
+                <button 
+                  type="button"
+                  className="industry-swiper-button-next industry-mobile-nav-next"
+                  style={{
+                    padding: "0",
+                    borderRadius: "50%",
+                    background: "rgba(255, 255, 255, 0.12)",
+                    border: "1px solid rgba(255, 255, 255, 0.25)",
+                    color: "white",
+                    fontSize: "14px",
+                    width: "36px",
+                    height: "36px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    cursor: "pointer",
+                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
+                    outline: "none",
+                    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.15)",
+                    WebkitTapHighlightColor: "transparent",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "rgba(255, 255, 255, 0.2)";
+                    e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.4)";
+                    e.currentTarget.style.transform = "scale(1.05)";
+                    e.currentTarget.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.25)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "rgba(255, 255, 255, 0.12)";
+                    e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.25)";
+                    e.currentTarget.style.transform = "scale(1)";
+                    e.currentTarget.style.boxShadow = "0 2px 8px rgba(0, 0, 0, 0.15)";
+                  }}
+                  onMouseDown={(e) => {
+                    e.currentTarget.style.transform = "scale(0.95)";
+                  }}
+                  onMouseUp={(e) => {
+                    e.currentTarget.style.transform = "scale(1.05)";
+                  }}
+                  onTouchStart={(e) => {
+                    e.currentTarget.style.transform = "scale(0.95)";
+                    e.currentTarget.style.background = "rgba(255, 255, 255, 0.2)";
+                  }}
+                  onTouchEnd={(e) => {
+                    e.currentTarget.style.transform = "scale(1)";
+                    e.currentTarget.style.background = "rgba(255, 255, 255, 0.12)";
+                  }}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if (industrySwiperRef.current) {
+                      industrySwiperRef.current.slideNext();
+                    }
+                  }}
+                  aria-label="Next slide"
+                >
+                  <i className="fa-light fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Desktop/Tablet Grid - 4 columns x 4 rows (16 items) */}
+        <div className="industry-grid-wrapper d-none d-md-block">
+          <div className="industry-grid" style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(4, 1fr)',
+            gap: '24px',
+            rowGap: '24px'
+          }}>
+            {industriesData.slice(0, 16).map((industry:any) => (
+              <div key={industry.id} className="industry-grid-item">
+                <Link href={industry.link} className="industry-card" style={{
+                  display: 'block',
+                  height: '100%',
+                  padding: '10px',
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  borderRadius: '8px',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  transition: 'all 0.3s ease',
+                  textDecoration: 'none'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+                  e.currentTarget.style.transform = 'translateY(-4px)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                }}
+                >
+                  <div className="industry-card-inner">
+                    <h4 className="industry-card-title" style={{
+                      color: '#fff',
+                      fontSize: '18px',
+                      fontWeight: '600',
+                      marginBottom: '12px',
+                      lineHeight: '1.4'
+                    }}>{industry.name}</h4>
+                    <p className="industry-card-desc" style={{
+                      color: 'rgba(255, 255, 255, 0.7)',
+                      fontSize: '14px',
+                      lineHeight: '1.6',
+                      margin: 0,
+                      display: '-webkit-box',
+                      WebkitLineClamp: 3,
+                      WebkitBoxOrient: 'vertical',
+                      overflow: 'hidden'
+                    }}>{industry.description}</p>
+                  </div>
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Mobile Carousel - 4 items per slide */}
+        <div className="industry-mobile-wrapper d-block d-md-none position-relative">
+          <Swiper
+            {...industry_carousel_setting}
+            className="industry-mobile-swiper"
+            onSwiper={(swiper) => {
+              industrySwiperRef.current = swiper;
+            }}
+            onInit={(swiper) => {
+              industrySwiperRef.current = swiper;
+            }}
+          >
+            {Array.from({ length: Math.ceil(industriesData.length / 4) }, (_, slideIndex) => (
+              <SwiperSlide key={slideIndex}>
+                <div className="industry-mobile-slide-grid" style={{
+                  display: 'grid',
+                  gridTemplateColumns: 'repeat(2, 1fr)',
+                  gap: '16px'
+                }}>
+                  {industriesData.slice(slideIndex * 4, slideIndex * 4 + 4).map((industry:any) => (
+                    <div key={industry.id} className="industry-mobile-slide-item">
+                      <Link href={industry.link} className="industry-card" style={{
+                        display: 'block',
+                        height: '100%',
+                        padding: '10px',
+                        background: 'rgba(255, 255, 255, 0.05)',
+                        borderRadius: '8px',
+                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        transition: 'all 0.3s ease',
+                        textDecoration: 'none'
+                      }}>
+                        <div className="industry-card-inner">
+                          <h4 className="industry-card-title" style={{
+                            color: '#fff',
+                            fontSize: '16px',
+                            fontWeight: '600',
+                            marginBottom: '8px',
+                            lineHeight: '1.4'
+                          }}>{industry.name}</h4>
+                          <p className="industry-card-desc" style={{
+                            color: 'rgba(255, 255, 255, 0.7)',
+                            fontSize: '13px',
+                            lineHeight: '1.5',
+                            margin: 0,
+                            display: '-webkit-box',
+                            WebkitLineClamp: 3,
+                            WebkitBoxOrient: 'vertical',
+                            overflow: 'hidden'
+                          }}>{industry.description}</p>
+                        </div>
+                      </Link>
+                    </div>
+                  ))}
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          
+          {/* Pagination Dots */}
+          <div className="industry-mobile-pagination" style={{
+            marginTop: '32px',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            gap: '6px',
+            padding: '8px 0',
+          }}></div>
+        </div>
       </div>
     </div>
+    )}
+    </section>
   );
 }
