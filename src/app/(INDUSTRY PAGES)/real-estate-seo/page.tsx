@@ -295,7 +295,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Build Your Real Estate Success Story with Biztalbox
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>
@@ -542,9 +542,9 @@ export default function Page() {
                           trust, boosting visibility and all while supporting
                           sustainable business growth.
                         </p>
-                        <h4 className="mt-30 mb-20 text-white">
+                        <h3 className="mt-30 mb-20 text-white">
                           1. How AI Influences Real Estate Searches
-                        </h4>
+                        </h3>
                         <p>
                           In 2026, buyers do more than scroll search results.
                           They ask questions, compare options, and expect
@@ -585,10 +585,10 @@ export default function Page() {
                           first impressions, garner trust, and establish
                           visibility long before a buyer reaches out.
                         </p>
-                        <h4 className="mt-30 mb-20 text-white">
+                        <h3 className="mt-30 mb-20 text-white">
                           2. Real Estate Buyers Conduct Extensive Online
                           Research
-                        </h4>
+                        </h3>
                         <p>
                           Most property journeys start independently. Buyers spend
                           weeks, in some cases months, doing research on
@@ -604,10 +604,10 @@ export default function Page() {
                           become the reliable guide in a saturated digital
                           market.
                         </p>
-                        <h4 className="mt-30 mb-20 text-white">
+                        <h3 className="mt-30 mb-20 text-white">
                           3. Real Estate Portals Dominate, but Opportunities
                           Remain
-                        </h4>
+                        </h3>
                         <p>
                           Large property portals occupy much of the top search
                           visibility, especially for broad property searches.
@@ -622,9 +622,9 @@ export default function Page() {
                           These are the searches where buyers look for expertise,
                           not just listings, giving agents a competitive edge.
                         </p>
-                        <h4 className="mt-30 mb-20 text-white">
+                        <h3 className="mt-30 mb-20 text-white">
                           4. Search Intent Is Fragmented and Micro-Targeted
-                        </h4>
+                        </h3>
                         <p>
                           All Buyers don&apos;t take the same route. Families are
                           concerned with schools and safety, investors examine
@@ -640,9 +640,9 @@ export default function Page() {
                           strengthens your authority and relevance in the eyes of
                           search engines.
                         </p>
-                        <h4 className="mt-30 mb-20 text-white">
+                        <h3 className="mt-30 mb-20 text-white">
                           5. Cross-Border Real Estate Buying Remains Strong
-                        </h4>
+                        </h3>
                         <p>
                           International buyers increasingly rely on online research
                           because they cannot physically visit every market. They
@@ -657,10 +657,10 @@ export default function Page() {
                           remote investors. This expands your reach far beyond
                           local advertising channels.
                         </p>
-                        <h4 className="mt-30 mb-20 text-white">
+                        <h3 className="mt-30 mb-20 text-white">
                           6. Trust and Credibility Are More Critical Than Ever
                           in the Real Estate Industry
-                        </h4>
+                        </h3>
                         <p>
                           There is a great deal of misinformation, fake listings
                           and low-quality content online. Real estate SEO strategy
@@ -698,11 +698,11 @@ export default function Page() {
                           !isMobile ? "tp_fade_bottom" : ""
                         }`}
                       >
-                        <h4 className="tp-about-4-title">
+                        <h3 className="tp-about-4-title">
                           What Real Estate SEO Strategies Do Real Estate SEO
                           Consultants and Agencies Use to Deliver Sustainable
                           Growth?
-                        </h4>
+                        </h3>
                       </div>
                     </div>
                   </div>
@@ -721,9 +721,9 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white mb-20">
+                              <h3 className="text-white mb-20">
                                 Content Strategy for Real Estate SEO
-                              </h4>
+                              </h3>
                               <p>
                                 It goes without saying that good content is the
                                 foundation of any real estate SEO strategy. It
@@ -854,10 +854,10 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 E-E-A-T: How Expertise Drives Real Estate
                                 Visibility
-                              </h4>
+                              </h3>
                               <p>
                                 Google no longer ranks content purely on keywords
                                 or backlinks. Today, it prioritizes pages that
@@ -902,10 +902,10 @@ export default function Page() {
                                 also inspires confidence in buyers and sellers,
                                 making you the go-to real estate expert.
                               </p>
-                              <h4 className="text-white mt-30">
+                              <h3 className="text-white mt-30">
                                 YMYL and Real Estate SEO: Building Trust Where
                                 It Matters Most
-                              </h4>
+                              </h3>
                               <p>
                                 There&apos;s a lot on the line when it comes to
                                 transactions involving real estate. Every
@@ -970,10 +970,10 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Keyword Strategy for a High-Impact Real Estate
                                 SEO Strategy
-                              </h4>
+                              </h3>
                               <p>
                                 <Link
                                   href="https://biztalbox.com/blog/google-search-console-keyword-research"
@@ -1101,10 +1101,10 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Off-Page SEO: Building Authority Beyond Your Real
                                 Estate Website
-                              </h4>
+                              </h3>
                               <p>
                                 Off-page SEO builds your website authority by
                                 creating signals that tell Google you&apos;re a
@@ -1129,10 +1129,10 @@ export default function Page() {
                                 reinforce your real estate SEO strategies, and
                                 drive higher-intent traffic that converts.
                               </p>
-                              <h4 className="text-white mt-30">
+                              <h3 className="text-white mt-30">
                                 Technical SEO: Making Your Real Estate Website
                                 Fast, Clear, and Search-Friendly
-                              </h4>
+                              </h3>
                               <p>
                                 Through technical SEO, your page runs smoothly
                                 and is easily understood by search engine
@@ -1169,10 +1169,10 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Local SEO for Real Estate: Connecting with
                                 Buyers Where It Matters
-                              </h4>
+                              </h3>
                               <p>
                                 Real estate decisions are rooted in geography,
                                 which is what makes local SEO for real estate
@@ -1277,7 +1277,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Scale Your Real Estate Business?
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>
@@ -1382,10 +1382,10 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               1. Market-Grade Search Intelligence That Goes
                               Beyond Keywords
-                            </h4>
+                            </h3>
                             <p>
                               We treat search behaviour like market behaviour.
                               Our approach blends pricing trends, buyer
@@ -1396,10 +1396,10 @@ export default function Page() {
                               actual demand and deliver results that compound
                               over time.
                             </p>
-                            <h4 className="text-white mt-30">
+                            <h3 className="text-white mt-30">
                               2. Lead Quality Optimisation Instead of Chasing
                               Traffic
-                            </h4>
+                            </h3>
                             <p>
                               We measure success by enquiry quality. Our
                               optimisation framework filters out irrelevant
@@ -1408,10 +1408,10 @@ export default function Page() {
                               your inventory. The result is a pipeline that
                               grows in value, not noise.
                             </p>
-                            <h4 className="text-white mt-30">
+                            <h3 className="text-white mt-30">
                               3. Global Search Understanding With Local
                               Execution
-                            </h4>
+                            </h3>
                             <p>
                               Property search patterns are global, but decisions
                               are always local. Whether it is luxury buyers
@@ -1431,9 +1431,9 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               4. Continuous Monitoring and Real-Time Adaptation
-                            </h4>
+                            </h3>
                             <p>
                               Real estate changes fast. The introduction of new
                               projects, policy changes or interest rate
@@ -1450,10 +1450,10 @@ export default function Page() {
                               </Link>{" "}
                               have moved ahead.
                             </p>
-                            <h4 className="text-white mt-30">
+                            <h3 className="text-white mt-30">
                               5. A Deep Understanding of Evolving Real Estate
                               Behaviour
-                            </h4>
+                            </h3>
                             <p>
                               The market today is not the market of five years
                               ago. Buyers are more informed, more cautious, and
@@ -1465,9 +1465,9 @@ export default function Page() {
                               our strategies age well instead of breaking every
                               time the market changes.
                             </p>
-                            <h4 className="text-white mt-30">
+                            <h3 className="text-white mt-30">
                               6. Extension of Your Marketing and Sales Team
-                            </h4>
+                            </h3>
                             <p>
                               We work like an internal search and content
                               intelligence team. You get the advantage of a
@@ -1476,9 +1476,9 @@ export default function Page() {
                               is to strengthen your market perception and help
                               your team close faster with better informed leads.
                             </p>
-                            <h4 className="text-white mt-30">
+                            <h3 className="text-white mt-30">
                               Why This Level of Real Estate Expertise Matters
-                            </h4>
+                            </h3>
                             <p>
                               General SEO providers do not understand how
                               property decisions are made. They do not understand
@@ -1557,7 +1557,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Scale Your Real Estate Business?
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>

@@ -277,10 +277,10 @@ export default function Page() {
                         strategies to recognize how travellers search before and
                         during a trip and how Google reads this behaviour.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         How Travel SEO Works in a Search Landscape Dominated by
                         High-Intent Travel Queries
-                      </h4>
+                      </h3>
                       <p>
                         Travel queries work quite differently from typical
                         consumer searches in general. Travel searches are packed
@@ -305,10 +305,10 @@ export default function Page() {
                         become part of the booking conversation early, long
                         before a competitor or OTA is even in the picture.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         Why Travel SEO Services Matter in 2026 for Agencies,
                         Tour Operators, and Bloggers
-                      </h4>
+                      </h3>
                       <p>
                         The travel category is one of the most competitive
                         digital verticals in 2026. OTAs, metasearch platforms,
@@ -348,10 +348,10 @@ export default function Page() {
                         who are already researching the destinations, products,
                         and experiences you offer.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         Why a Travel SEO Company Is Now Essential to Compete
                         With OTAs and AI-Led Search
-                      </h4>
+                      </h3>
                       <p>
                         OTAs have built unbeatable authority through years of
                         structured content, internal linking, and data-rich pages.
@@ -415,7 +415,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Build Your Travel Success Story with Biztalbox
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>
@@ -702,10 +702,10 @@ export default function Page() {
                         </h2>
                       </div>
                       <div className="tm-details-text">
-                        <h4 className="mb-20 text-white">
+                        <h3 className="mb-20 text-white">
                           Booking.com: A Scalable SEO Model Built on Trust and
                           Keyword Coverage
-                        </h4>
+                        </h3>
                         <p>
                           Booking.com is one of the most powerful forces in
                           travel search, and a big part of the reason is its
@@ -755,10 +755,10 @@ export default function Page() {
                           and adding depth to content can make organic search a
                           revenue source for the long-term.
                         </p>
-                        <h4 className="mt-30 mb-20 text-white">
+                        <h3 className="mt-30 mb-20 text-white">
                           Expedia: Strategic SEO That Scaled with Post-Pandemic
                           Demand
-                        </h4>
+                        </h3>
                         <p>
                           <Link
                             href="https://www.researchgate.net/publication/390366918_The_Impact_of_Search_Engine_Optimization_on_Consumer_Purchasing_Decisions_in_the_Travel_Industry_A_Case_Study_of_5_The_Most_Popular_Booking_Accommodation_sites_in_United_States"
@@ -840,10 +840,10 @@ export default function Page() {
                           !isMobile ? "tp_fade_bottom" : ""
                         }`}
                       >
-                        <h4 className="tp-about-4-title">
+                        <h3 className="tp-about-4-title">
                           The Ultimate Travel SEO Strategy to Increase Bookings
                           and Visibility
-                        </h4>
+                        </h3>
                       </div>
                     </div>
                   </div>
@@ -885,11 +885,11 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Keyword Research for Travel Websites: Building
                                 the Foundation of Effective SEO for Travel
                                 Companies
-                              </h4>
+                              </h3>
                               <p>
                                 <Link
                                   href="https://biztalbox.com/blog/google-search-console-keyword-research"
@@ -940,10 +940,10 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Travel SEO Content That Converts: Why Depth,
                                 Experience, and Intent Matter
-                              </h4>
+                              </h3>
                               <p>
                                 <Link
                                   href="https://biztalbox.com/blog/what-is-e-e-a-t-vs-e-a-t"
@@ -997,10 +997,10 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Technical SEO for Travel Sites: Ensuring Speed,
                                 Structure, and Mobile Performance
-                              </h4>
+                              </h3>
                               <p>
                                 Travellers are always looking for information
                                 while on the move, which in turn makes the
@@ -1037,10 +1037,10 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Authority and Link Building: Strengthening Trust
                                 for Travel SEO Agencies and Companies
-                              </h4>
+                              </h3>
                               <p>
                                 Links from local tourism boards, top travel
                                 blogs, local guides, or popular media not only
@@ -1066,10 +1066,10 @@ export default function Page() {
                                 can strategically rebuild with the right
                                 partnerships.
                               </p>
-                              <h4 className="text-white mt-30">
+                              <h3 className="text-white mt-30">
                                 Data-Driven Travel SEO Marketing: Using Behaviour
                                 and Search Insights to Improve ROI
-                              </h4>
+                              </h3>
                               <p>
                                 A modern travel{" "}
                                 <Link
@@ -1145,9 +1145,9 @@ export default function Page() {
                         measurable traffic, more inquiries and increased
                         conversions.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         1. Europe Is Easier to Explore Than Ever
-                      </h4>
+                      </h3>
                       <p>
                         The advent of budget airlines and the Schengen Area has
                         made it possible for travellers to move from one country
@@ -1162,10 +1162,10 @@ export default function Page() {
                         Europe, travel companies can show up right when users
                         are planning their adventures.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         2. Asia-Pacific&apos;s Rising Middle Class Is Driving
                         Outbound Travel
-                      </h4>
+                      </h3>
                       <p>
                         Countries like India, China, and parts of Southeast Asia
                         are seeing more disposable income, which is turning into
@@ -1179,9 +1179,9 @@ export default function Page() {
                         India&quot; or &quot;luxury China vacation
                         packages,&quot; work really well here.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         3. Domestic Travel Is Gaining Momentum
-                      </h4>
+                      </h3>
                       <p>
                         More travellers are choosing local destinations for
                         weekend getaways, short trips, or road trips.{" "}
@@ -1206,10 +1206,10 @@ export default function Page() {
                         domestic trips but also direct them to make bookings
                         with you.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         More 2026 Travel Trends That Every SEO Strategy for
                         Travel Companies Should Adapt To
-                      </h4>
+                      </h3>
                       <h5 className="mt-20 mb-15 text-white">
                         Experiential Travel Is Gaining Popularity
                       </h5>
@@ -1363,7 +1363,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Scale Your Travel Business?
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>
@@ -1496,9 +1496,9 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               What to Look for When Choosing a Travel SEO Agency
-                            </h4>
+                            </h3>
                             <p>
                               <strong>Travel-specific Knowledge</strong> -
                               Compared to other sectors, the travel industry
@@ -1562,10 +1562,10 @@ export default function Page() {
                               individuals are travelling and actively seeking
                               immediate options.
                             </p>
-                            <h4 className="text-white mt-30">
+                            <h3 className="text-white mt-30">
                               Why Travel Agencies and Tour Operators Choose
                               Biztalbox
-                            </h4>
+                            </h3>
                             <p>
                               Here&apos;s where Biztalbox makes a noticeable
                               difference. We do not measure success by vanity
@@ -1660,7 +1660,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Scale Your Travel Business?
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>

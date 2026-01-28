@@ -404,9 +404,9 @@ export default function Page() {
                       </h2>
                     </div>
                     <div className="tm-details-text">
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         Changing Diner Behaviour
-                      </h4>
+                      </h3>
                       <p>
                         Consumers​‍​‌‍​‍‌ are very thoughtful and
                         research-oriented nowadays. They no longer choose
@@ -418,9 +418,9 @@ export default function Page() {
                         opportunity to be first choice before competitors even
                         enter the picture.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         Search-Based Restaurant Discovery
-                      </h4>
+                      </h3>
                       <p>
                         The majority of the diners today rely on search engines
                         more than on personal references or printed
@@ -432,9 +432,9 @@ export default function Page() {
                         in these searches. This results in reservations and
                         direct traffic without intermediaries.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         Google Maps Dominance
-                      </h4>
+                      </h3>
                       <p>
                         Google Maps has become the primary discovery tool for
                         restaurants and cafés. Appearing in local pack results
@@ -452,9 +452,9 @@ export default function Page() {
                         difference between a customer finding your restaurant or
                         picking a different place ​‍​‌‍​‍‌nearby.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         &quot;Near Me&quot; and Voice Search Growth
-                      </h4>
+                      </h3>
                       <p>
                         Voice search and &quot;near me&quot; searches are
                         changing the way consumers find places to dine.
@@ -465,9 +465,9 @@ export default function Page() {
                         advantage, appearing in answers delivered by smart
                         assistants and mobile search.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         The Collapse of Organic Social Reach
-                      </h4>
+                      </h3>
                       <p>
                         Organic social media reach has dropped drastically on all
                         platforms. Brands can no longer rely on free social
@@ -477,9 +477,9 @@ export default function Page() {
                         potential customers from search engines regardless of what
                         changes the social media algorithms make.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         Aggregator Platforms Eating Margins
-                      </h4>
+                      </h3>
                       <p>
                         One of the major problems with third-party platforms such
                         as Zomato, Swiggy, and DoorDash is that they not only
@@ -498,9 +498,9 @@ export default function Page() {
                         encourage customers to visit their own e-commerce
                         ​‍​‌‍​‍‌platforms.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         AI Overviews and Appearing in AI Tools
-                      </h4>
+                      </h3>
                       <p>
                         Powered​‍​‌‍​‍‌ by AI, platforms such as Google{" "}
                         <Link
@@ -575,7 +575,7 @@ export default function Page() {
                           Build Your Food & Beverage Success Story with
                           Biztalbox
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>
@@ -639,10 +639,10 @@ export default function Page() {
                         </div>
                         <div className="service-details__fea-list row">
                           <div className="col-xl-6 col-lg-6">
-                            <h4 className="mb-20 text-white">
+                            <h3 className="mb-20 text-white">
                               Restaurant SEO Strategy: Optimizing Keywords for
                               Discovery
-                            </h4>
+                            </h3>
                             <p>
                               An effective{" "}
                               <Link
@@ -689,10 +689,10 @@ export default function Page() {
                             </p>
                           </div>
                           <div className="col-xl-6 col-lg-6">
-                            <h4 className="mb-20 text-white">
+                            <h3 className="mb-20 text-white">
                               Building a Content Strategy That Supports
                               Restaurant Website SEO
-                            </h4>
+                            </h3>
                             <p>
                               Content is a core part of restaurant website SEO
                               because customers search for more than a menu or a
@@ -740,9 +740,9 @@ export default function Page() {
                         </div>
                         <div className="row mt-40">
                           <div className="col-xl-6 col-lg-6">
-                            <h4 className="mb-20 text-white">
+                            <h3 className="mb-20 text-white">
                               SEO Tips for Restaurants: Mastering Technical SEO
-                            </h4>
+                            </h3>
                             <p>
                               Technical{" "}
                               <Link
@@ -790,10 +790,10 @@ export default function Page() {
                             </p>
                           </div>
                           <div className="col-xl-6 col-lg-6">
-                            <h4 className="mb-20 text-white">
+                            <h3 className="mb-20 text-white">
                               Local SEO for Restaurants – Boost Your Local
                               Visibility
-                            </h4>
+                            </h3>
                             <p>
                               If you are a restaurant or café owner, it&apos;s
                               imperative that you have strong local SEO in place
@@ -856,10 +856,10 @@ export default function Page() {
                         </div>
                         <div className="row mt-40">
                           <div className="col-xl-12">
-                            <h4 className="mb-20 text-white">
+                            <h3 className="mb-20 text-white">
                               Ongoing Optimization – Sustaining Your SEO Strategy
                               for Restaurants
-                            </h4>
+                            </h3>
                             <p>
                               All business owners must understand that SEO is not
                               a one-time effort. Search engines change algorithms,{" "}
@@ -938,10 +938,10 @@ export default function Page() {
                           !isMobile ? "tp_fade_bottom" : ""
                         }`}
                       >
-                        <h4 className="tp-about-4-title">
+                        <h3 className="tp-about-4-title">
                           How Professional Restaurant SEO Services Drive Real
                           Impact
-                        </h4>
+                        </h3>
                       </div>
                     </div>
                   </div>
@@ -960,9 +960,9 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Menu Optimization That Boosts Visibility
-                              </h4>
+                              </h3>
                               <p>
                                 Menus are more than just a list of food items;
                                 they are often the first impression on customers.
@@ -987,10 +987,10 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Maximizing Local Discovery with Google Business
                                 Profile
-                              </h4>
+                              </h3>
                               <p>
                                 Your Google Business Profile can make or break
                                 local discovery. A strong agency doesn&apos;t
@@ -1014,10 +1014,10 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 How a Franchise Restaurant SEO Agency Drives
                                 Multi-Location Growth
-                              </h4>
+                              </h3>
                               <p>
                                 Chains and multi-location restaurants face a
                                 unique challenge: how can each individual
@@ -1043,9 +1043,9 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Content Marketing and Visibility
-                              </h4>
+                              </h3>
                               <p>
                                 Content is more than just words on a page;
                                 it&apos;s an opportunity to attract, educate and
@@ -1113,7 +1113,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Scale Your Food & Beverage Brand?
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>
@@ -1179,9 +1179,9 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               Deep Experience with Cafés and Restaurants
-                            </h4>
+                            </h3>
                             <p>
                               From small diners to large-scale restaurants, our
                               restaurant SEO agency experience enables us to
@@ -1197,9 +1197,9 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               Data-Driven Strategies That Deliver
-                            </h4>
+                            </h3>
                             <p>
                               We build our campaigns on insights, not instincts.
                               By studying competitors, search trends and audience
@@ -1218,9 +1218,9 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               Scaling SEO for Multi-Location Brands
-                            </h4>
+                            </h3>
                             <p>
                               For growing restaurant chains, our SEO strategy is
                               carefully crafted maximise your local presence and
@@ -1236,9 +1236,9 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               Insights That Drive Real Results
-                            </h4>
+                            </h3>
                             <p>
                               Working with BiztalBox as your restaurant SEO
                               agency means you get insights beyond just numbers.
@@ -1258,9 +1258,9 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               Long-Term Growth Focus
-                            </h4>
+                            </h3>
                             <p>
                               As a top restaurant SEO service, we continuously
                               adapt strategies to evolving digital trends and
@@ -1275,9 +1275,9 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               A True Extension of Your Team
-                            </h4>
+                            </h3>
                             <p>
                               We work alongside your team, offering hands-on
                               guidance, strategic input, and rapid support. With
@@ -1330,7 +1330,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Food & Beverage Business?
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>

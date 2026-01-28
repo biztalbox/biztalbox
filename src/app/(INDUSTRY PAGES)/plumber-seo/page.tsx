@@ -246,9 +246,9 @@ export default function Page() {
                         online visibility. Without it, even more established
                         businesses struggle to be found.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         How Search Engines Surface Plumbing Companies Online
-                      </h4>
+                      </h3>
                       <p>
                         Plumbing searches are inherently purposeful. With
                         emergency service situations, short and
@@ -276,9 +276,9 @@ export default function Page() {
                         search engines can confidently present the business.
                         When it is not, demand exists but visibility does not.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         Visibility During Emergencies and Planned Work
-                      </h4>
+                      </h3>
                       <p>
                         Searching behaviors vary based on the circumstances.
                         Emergency searches prioritize speed, proximity, and easy
@@ -295,9 +295,9 @@ export default function Page() {
                         Visibility is, in the end, more determined by context
                         and relevance rather than promotional messaging.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         The Role of Local Visibility in Plumbing SEO
-                      </h4>
+                      </h3>
                       <p>
                         Local relevance plays a defining role in plumbing
                         visibility. Search engines depend on accurate business
@@ -346,7 +346,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Build Your Plumbing Success Story with Biztalbox
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>
@@ -589,10 +589,10 @@ export default function Page() {
                           !isMobile ? "tp_fade_bottom" : ""
                         }`}
                       >
-                        <h4 className="tp-about-4-title">
+                        <h3 className="tp-about-4-title">
                           How a Plumbing SEO Strategy Transforms Online Searches
                           Into Business Growth
-                        </h4>
+                        </h3>
                       </div>
                     </div>
                   </div>
@@ -633,9 +633,9 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Keyword Strategy: Mapping Real Plumbing Demand
-                              </h4>
+                              </h3>
                               <p>
                                 <Link
                                   href="https://biztalbox.com/blog/how-many-types-of-keywords"
@@ -734,10 +734,10 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Conversion-Focused Content Strategy for Plumbing
                                 SEO
-                              </h4>
+                              </h3>
                               <p>
                                 In plumbing SEO, content determines who gets the
                                 call. When people face a problem with their
@@ -848,10 +848,10 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Off-Page SEO for Plumbing Businesses That Builds
                                 Authority and Trust
-                              </h4>
+                              </h3>
                               <p>
                                 Off-page SEO involves everything that builds trust
                                 for your plumbing company outside of your
@@ -954,10 +954,10 @@ export default function Page() {
                                 add-on. It shapes credibility, trust, and
                                 selection itself.
                               </p>
-                              <h4 className="text-white mt-30">
+                              <h3 className="text-white mt-30">
                                 Technical SEO for Plumbing Websites Built for
                                 Search Performance
-                              </h4>
+                              </h3>
                               <p>
                                 <Link
                                   href="https://biztalbox.com/blog/seo-for-website-redesign"
@@ -1009,10 +1009,10 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Local SEO for Plumbing Businesses Designed for
                                 Local Market Dominance
-                              </h4>
+                              </h3>
                               <p>
                                 Local SEO exists because plumbing demand is
                                 geographically constrained. A plumbing business
@@ -1163,7 +1163,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Scale Your Plumbing Business?
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>
@@ -1246,10 +1246,10 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               Deep Plumbing Industry Understanding, Not Generic
                               SEO Templates
-                            </h4>
+                            </h3>
                             <p>
                               Plumbing is a real-world, time-sensitive service –
                               it&apos;s not something that people shop for
@@ -1270,10 +1270,10 @@ export default function Page() {
                               your business shows up when customers are ready to
                               call, not just when they are researching.
                             </p>
-                            <h4 className="text-white mt-30">
+                            <h3 className="text-white mt-30">
                               Ongoing Optimization: Staying Ahead of Shifting
                               Demand in The Plumbing Industry
-                            </h4>
+                            </h3>
                             <p>
                               Search behavior in plumbing is never static.
                               Seasonal spikes, urgent repairs, and evolving
@@ -1305,9 +1305,9 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               Tailored SEO Services for Plumbing Contractors
-                            </h4>
+                            </h3>
                             <p>
                               At Biztalbox, our plumbing company SEO services are
                               tailored to the specific challenges and
@@ -1334,9 +1334,9 @@ export default function Page() {
                               long-term results rather than chasing short-lived
                               ranking spikes.
                             </p>
-                            <h4 className="text-white mt-30">
+                            <h3 className="text-white mt-30">
                               Transparency and Reporting
-                            </h4>
+                            </h3>
                             <p>
                               At Biztalbox, every action we take is fully visible
                               to our clients. We offer detailed reporting for
@@ -1378,9 +1378,9 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               Expert Plumbing SEO That Respects Your Budget
-                            </h4>
+                            </h3>
                             <p>
                               SEO should fuel growth, not drain resources. At
                               Biztalbox, our SEO services for plumbing contractors
@@ -1397,10 +1397,10 @@ export default function Page() {
                               achieve steady, sustainable growth without
                               unnecessary spend or distractions.
                             </p>
-                            <h4 className="text-white mt-30">
+                            <h3 className="text-white mt-30">
                               Ready to Turn Search Demand into Real Plumbing
                               Leads?
-                            </h4>
+                            </h3>
                             <p>
                               Search visibility without tangible results is
                               wasted effort. Biztalbox turns every search into a
@@ -1443,7 +1443,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Scale Your Plumbing Business?
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>

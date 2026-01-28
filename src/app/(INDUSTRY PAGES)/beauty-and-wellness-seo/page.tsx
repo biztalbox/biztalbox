@@ -154,10 +154,10 @@ export default function Page() {
                         industry both emotional weight and lasting economic
                         power.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         What&apos;s Driving Demand in the Beauty and Wellness
                         Industry
-                      </h4>
+                      </h3>
                       <p>
                         The demand in the segment is driven mostly by sustained
                         lifestyle changes, not short-term cycles. Urbanisation
@@ -308,10 +308,10 @@ export default function Page() {
                         powerful: it converts searchers into paying clients
                         without depending on ads or heavy promotions.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         Why Google Maps matters more than ever for Beauty Salons
                         and Spas
-                      </h4>
+                      </h3>
                       <p>
                         More than half of beauty and wellness decisions start
                         with a simple &quot;near me&quot; search. Showing up
@@ -323,10 +323,10 @@ export default function Page() {
                         customers, Google Maps has replaced the traditional
                         storefront.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         Building Authority: The Core of Every Med Spa SEO
                         Strategy
-                      </h4>
+                      </h3>
                       <p>
                         Medical aesthetics require more proof, more clarity, and
                         more authority. Google looks for consistent expertise
@@ -336,10 +336,10 @@ export default function Page() {
                         consultation and helps you stand out in a category where
                         credibility decides the booking.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         Capturing Demand for High-Intent Services and
                         Treatments
-                      </h4>
+                      </h3>
                       <p>
                         Every service—from balayage to Swedish massage to
                         chemical peels, has its own search demand and its own
@@ -350,9 +350,9 @@ export default function Page() {
                         for clinics offering lasers, injectables, or advanced
                         skin treatments.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         Reducing Dependency on Aggregators and Paid Platforms
-                      </h4>
+                      </h3>
                       <p>
                         Aggregators such as Fresha, Urban Company and StyleSeat
                         are convenient to use, but have drawbacks: They also take
@@ -363,9 +363,9 @@ export default function Page() {
                         direct client relationships that last beyond a single
                         appointment.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         Sustainable Growth Through Compounding Search Visibility
-                      </h4>
+                      </h3>
                       <p>
                         <Link
                           href="https://biztalbox.com/blog/why-my-ppc-ads-get-clicks-but-no-conversions"
@@ -406,7 +406,7 @@ export default function Page() {
                           Build Your Beauty & Wellness Success Story with
                           Biztalbox
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>
@@ -733,10 +733,10 @@ export default function Page() {
                           !isMobile ? "tp_fade_bottom" : ""
                         }`}
                       >
-                        <h4 className="tp-about-4-title">
+                        <h3 className="tp-about-4-title">
                           The Best SEO Strategy for Salons, Spas, and Med Spas
                           in 2026
-                        </h4>
+                        </h3>
                       </div>
                     </div>
                   </div>
@@ -786,10 +786,10 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Local SEO for Salons and Spas: How to Capture
                                 Nearby Clients
-                              </h4>
+                              </h3>
                               <p>
                                 Local visibility is the starting point of modern
                                 discovery. Most clients perform &quot;near
@@ -816,10 +816,10 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Keyword and Content Strategy for Hair Salons,
                                 Beauty Salons, and Spas
-                              </h4>
+                              </h3>
                               <p>
                                 Effective SEO starts with understanding what
                                 clients are searching for. Every service related
@@ -885,10 +885,10 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Technical SEO for Salons, Spas, and Med Spas
                                 That Converts
-                              </h4>
+                              </h3>
                               <p>
                                 Even the best content and keywords won&apos;t
                                 perform without a solid technical foundation.
@@ -926,10 +926,10 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Ongoing SEO Optimization and AI Adaptation for
                                 Beauty and Wellness Businesses
-                              </h4>
+                              </h3>
                               <p>
                                 SEO in 2026 is far from static. With
                                 AI-generated overviews, evolving search
@@ -1018,7 +1018,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Scale Your Beauty & Wellness Business?
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>
@@ -1111,10 +1111,10 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               1. Industry Intelligence That Shapes Smart
                               Strategy
-                            </h4>
+                            </h3>
                             <p>
                               Most SEO agencies focus on mechanics; we focus on
                               meaning. The beauty and wellness space is built on
@@ -1132,10 +1132,10 @@ export default function Page() {
                               relevant, and perfectly aligned with how your ideal
                               clients make decisions.
                             </p>
-                            <h4 className="text-white mt-30">
+                            <h3 className="text-white mt-30">
                               2. A Trust-Driven Approach Designed for High-Intent
                               Clients
-                            </h4>
+                            </h3>
                             <p>
                               For salons and spas, visibility is important. For
                               med spas, trust is everything. People need
@@ -1161,9 +1161,9 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               3. Precision for Every Service You Offer
-                            </h4>
+                            </h3>
                             <p>
                               No salon or med spa succeeds with a one-size-fits-all
                               SEO plan. Balayage clients search differently from
@@ -1180,10 +1180,10 @@ export default function Page() {
                               becomes its own traffic and revenue driver,
                               instead of getting lost in broad local SEO efforts.
                             </p>
-                            <h4 className="text-white mt-30">
+                            <h3 className="text-white mt-30">
                               4. Optimization Built Around How People Book in
                               2026
-                            </h4>
+                            </h3>
                             <p>
                               Client journeys today are nonlinear. Someone might
                               discover you on Google Maps, verify credibility on
@@ -1210,9 +1210,9 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               5. A Long-Term Growth System, Not One-Off Tasks
-                            </h4>
+                            </h3>
                             <p>
                               The best med spa{" "}
                               <Link
@@ -1237,9 +1237,9 @@ export default function Page() {
                               and then accelerates when your brand becomes the
                               one clients trust first.
                             </p>
-                            <h4 className="text-white mt-30">
+                            <h3 className="text-white mt-30">
                               Why Waiting Costs More Than Investing
-                            </h4>
+                            </h3>
                             <p>
                               Your{" "}
                               <Link
@@ -1306,9 +1306,9 @@ export default function Page() {
                         seasoned SEO partner transforms online visibility into
                         tangible business growth.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         Deep Understanding of Your Customers and Services
-                      </h4>
+                      </h3>
                       <p>
                         Not all clients behave the same way. A hair salon client
                         looking for balayage is driven by style and convenience,
@@ -1326,9 +1326,9 @@ export default function Page() {
                         thoughtfully, they ensure each service reaches the right
                         audience at the right time.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         Technical Expertise That Drives Results
-                      </h4>
+                      </h3>
                       <p>
                         Beyond keywords, experienced SEO teams optimize websites
                         for speed, mobile usability, structured data, and YMYL
@@ -1339,9 +1339,9 @@ export default function Page() {
                         authority, making your business more discoverable and
                         credible.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         Strategic Content and Authority Building
-                      </h4>
+                      </h3>
                       <p>
                         High-quality backlinks, local citations, and
                         well-targeted content separate generic listings from
@@ -1352,9 +1352,9 @@ export default function Page() {
                         Over time, this authority drives more organic traffic,
                         higher appointment intent, and long-term visibility.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         Continuous Monitoring, Optimization, and AI Adaptation
-                      </h4>
+                      </h3>
                       <p>
                         The{" "}
                         <Link
@@ -1378,9 +1378,9 @@ export default function Page() {
                         your business remains the preferred choice, even as
                         competition intensifies.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         Measurable ROI and Business Impact
-                      </h4>
+                      </h3>
                       <p>
                         Expert SEO isn&apos;t a vague marketing expense, but
                         forms the foundation of a successful business. From
@@ -1392,10 +1392,10 @@ export default function Page() {
                         recommendations that make the investment accountable and
                         profitable.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         Why Choosing the Right Salon, Spa, and Med Spa SEO
                         Partner Matters
-                      </h4>
+                      </h3>
                       <p>
                         Choosing the right SEO partner goes far beyond improving
                         rankings. It is about aligning with experts who
@@ -1439,7 +1439,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Scale Your Beauty & Wellness Business?
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>
