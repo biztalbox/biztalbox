@@ -278,6 +278,9 @@ export default function ServiceThree({ showService = true, showIndustry = true }
       </div>
       )}
 
+
+
+
     {/* Industry */}
     {showIndustry && (
     <div className="tp-industry-area pt-40 pb-80">

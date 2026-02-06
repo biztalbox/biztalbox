@@ -78,7 +78,7 @@ export default function Page() {
                     <div className="tp-hero-4-content-wrap">
                       <div className="p-relative">
                         <div
-                          className="tp-hero-4-content p-relative col-md-11"
+                          className="tp-hero-4-content p-relative col-md-11 ps-5"
                           style={{ marginBottom: "0" }}
                         >
                           <h1 className="text-white tp-char-animation">

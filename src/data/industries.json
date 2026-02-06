@@ -1,62 +1,62 @@
 [
-        {
-            "id": 1,
-            "name": "Healthcare",
-            "link": "healthcare-seo",
-            "description": "Healthcare is the practice of maintaining and improving health through the prevention, diagnosis, and treatment of disease, injury, and other physical and mental impairments."
-        },
-        {
-            "id": 2,
-            "name": "Education",
-            "link": "education-seo",
-            "description": "Education is the process of facilitating learning, or the acquisition of knowledge, skills, values, beliefs, and habits. Educational methods include teaching, training, storytelling, discussion, and directed research."
-        },
-        {
-            "id": 3,
-            "name": "Finance",
-            "link": "healthcare-seo",
-            "description": "Finance is the study of money, banking, credit, investment, and the management of financial assets."
-        },
-        {
-            "id": 4,
-            "name": "Technology",
-            "link": "petcare-seo",
-            "description": "Technology is the application of scientific knowledge for practical purposes, especially in industry."
-        },
-        {
-            "id": 5,
-            "name": "Manufacturing",
-            "link": "petcare-seo",
-            "description": "Manufacturing is the process of converting raw materials into finished goods."
-        },
-        {
-            "id": 6,
-            "name": "Retail",
-            "link": "petcare-seo",
-            "description": "Retail is the process of selling goods to consumers."
-        },
-        {
-            "id": 7,
-            "name": "Transportation",
-            "link": "petcare-seo",
-            "description": "Transportation is the movement of people and goods from one place to another."
-        },
-        {
-            "id": 8,
-            "name": "Energy",
-            "link": "petcare-seo",
-            "description": "Energy is the ability to do work."
-        },
-        {
-            "id": 9,
-            "name": "Agriculture",
-            "link": "petcare-seo",
-            "description": "Agriculture is the production of food, fiber, and other products from plants and animals."
-        },
-        {
-            "id": 10,
-            "name": "Mining",
-            "link": "petcare-seo",
-            "description": "Mining is the extraction of minerals and other geological materials from the earth."
-        }
+    {
+        "id": 1,
+        "name": "Healthcare",
+        "link": "healthcare-seo",
+        "description": "Healthcare is the practice of maintaining and improving health through the prevention, diagnosis, and treatment of disease, injury, and other physical and mental impairments."
+    },
+    {
+        "id": 2,
+        "name": "Education",
+        "link": "education-seo",
+        "description": "Education is the process of facilitating learning, or the acquisition of knowledge, skills, values, beliefs, and habits. Educational methods include teaching, training, storytelling, discussion, and directed research."
+    },
+    {
+        "id": 3,
+        "name": "Beauty and wellness",
+        "link": "beauty-and-wellness-seo",
+        "description": "The wellness and beauty industry is expanding at an unprecedented rate, driven by a growing desire professional treatment, outlets for self-expression,as well as holistic wellness." 
+    },
+    {
+        "id": 4,
+        "name": "Home services",
+        "link": "home-services-seo",
+        "description": "Home service demand doesn&apos;t build gradually. It appears suddenly, when a problem needs immediate action. A pipe bursts, an AC fails, and a renovation reaches the decision stage. In those moments,homeowners are not exploring options. They are filtering for trust, proximity, and proof of competence. Search is where that filtering happens."
+    },
+    {
+        "id": 5,
+        "name": "Hotel",
+        "link": "hotel-seo",
+        "description": "Winning Direct Demand in a Competitive Hospitality Market."
+    },
+    {
+        "id": 6,
+        "name": "Petcare",
+        "link": "petcare-seo",
+        "description": "For pet owners today, research is part of responsible care, not just a preliminary step leading to a purchase."
+    },
+    {
+        "id": 7,
+        "name": "Plumber",
+        "link": "plumber-seo",
+        "description": " Plumbing is no longer a background trade that people notice only when something breaks. It has become a fast-moving, high-demand service industry tied closely to urban growth, infrastructure spending, a changing consumer expectations."
+    },
+    {
+        "id": 8,
+        "name": "Real estate",
+        "link": "real-estate-seo",
+        "description": "SEO is often considered a technical and complicated task. But in reality, the core idea is remarkably simple."
+    },
+    {
+        "id": 9,
+        "name": "Seo for food and beverage",
+        "link": "seo-for-food-and-beverage",
+        "description": "Scale your food and beverage ecommerce brand with advanced SEO strategies. Boost Google rankings, drive high-intent traffic, and increase online sales."
+    },
+    {
+        "id": 10,
+        "name": "travel",
+        "link": "travel-seo",
+        "description": "SEO for Travel Websites: The Complete Travel Industry SEO Guide for Brands Seeking Consistent Rankings and Revenue rials from the earth."
+    }
 ]

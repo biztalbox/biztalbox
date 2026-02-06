@@ -209,7 +209,7 @@ export default function BlogSidebar() {
       </div> */}
 
       <div className="sidebar__widget mb-65">
-        <h3 className="sidebar__widget-title">Follow Us</h3>
+        <h3 className="sidebar__widget-title">Follow More</h3>
         <div className="sidebar__widget-content">
           <div className="sidebar__social">
             <a href="https://www.facebook.com/BiztalBox" target="_blank">
@@ -227,6 +227,62 @@ export default function BlogSidebar() {
           </div>
         </div>
       </div>
-    </div>
+
+      <div className="sidebar__widget mb-65">
+  <h3 className="sidebar__widget-title"></h3>
+
+  <div
+    style={{
+      display: 'flex',
+      gap: '12px'
+    }}
+  >
+    <a
+      href="https://biztalbox.com/usa-sitemap.xml"
+      style={{
+        flex: 1,
+        padding: '12px 18px',
+        textAlign: 'center',
+        opacity: 0, // default invisible
+        backgroundColor: '#004240',
+        color: '#ffffff',
+        textDecoration: 'none',
+        borderRadius: '6px',
+        fontWeight: '500',
+        cursor: 'pointer',
+        transition: 'opacity 0.25s ease'
+      }}
+      onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.25')}
+      onMouseLeave={(e) => (e.currentTarget.style.opacity = '0')}
+    >
+      USA County
+    </a>
+
+    <a
+      href="https://biztalbox.com/industry.xml"
+      style={{
+        flex: 1,
+        padding: '12px 18px',
+        textAlign: 'center',
+        opacity: 0, // default invisible
+        backgroundColor: '#004240',
+        color: '#ffffff',
+        textDecoration: 'none',
+        borderRadius: '6px',
+        fontWeight: '500',
+        cursor: 'pointer',
+        transition: 'opacity 0.25s ease'
+      }}
+      onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.25')}
+      onMouseLeave={(e) => (e.currentTarget.style.opacity = '0')}
+    >
+      Industry
+    </a>
+  </div>
+</div>
+
+
+</div>
+
   );
 }
