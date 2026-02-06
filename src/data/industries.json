@@ -25,7 +25,7 @@
     },
     {
         "id": 5,
-        "name": "Hotel",
+        "name": "Hotel Industries",
         "link": "hotel-seo",
         "description": "Winning Direct Demand in a Competitive Hospitality Market."
     },
@@ -37,7 +37,7 @@
     },
     {
         "id": 7,
-        "name": "Plumber",
+        "name": "Plumbing",
         "link": "plumber-seo",
         "description": " Plumbing is no longer a background trade that people notice only when something breaks. It has become a fast-moving, high-demand service industry tied closely to urban growth, infrastructure spending, a changing consumer expectations."
     },
@@ -49,13 +49,13 @@
     },
     {
         "id": 9,
-        "name": "Seo for food and beverage",
+        "name": "food and beverage",
         "link": "seo-for-food-and-beverage",
         "description": "Scale your food and beverage ecommerce brand with advanced SEO strategies. Boost Google rankings, drive high-intent traffic, and increase online sales."
     },
     {
         "id": 10,
-        "name": "travel",
+        "name": "Travel",
         "link": "travel-seo",
         "description": "SEO for Travel Websites: The Complete Travel Industry SEO Guide for Brands Seeking Consistent Rankings and Revenue rials from the earth."
     }
