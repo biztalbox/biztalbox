@@ -185,7 +185,7 @@ export default function Page() {
                       <p>
                         SEO also focuses on making your website faster, clearer, more helpful, and easier for search engines to understand. And when your website is well-optimised, Google considers it more relevant, increasing the likelihood of your rooms, services, and location appearing in front of the most suitable travellers.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">How Exactly Does Hotel SEO Work?</h4>
+                      <h3 className="mt-30 mb-20 text-white">How Exactly Does Hotel SEO Work?</h3>
                       <p>
                         Hotel SEO makes your property easier to discover. It is basically the alignment of your content, layout, and technical details in a way that search engines can easily figure out what your hotel has to offer. These are actions taken to ensure that your pages are at their best, speeding up the site, producing helpful content, enhancing local signals, and gaining trust via reviews and authoritative mentions.
                       </p>
@@ -221,7 +221,7 @@ export default function Page() {
                       <p>
                         This means hotels, resorts, and restaurants cannot rely on outdated visibility. They need a stronger, optimised presence to stay competitive.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">Here&apos;s what has changed:</h4>
+                      <h3 className="mt-30 mb-20 text-white">Here&apos;s what has changed:</h3>
                       <ul className="list-unstyled">
                         <li>• <Link href="https://biztalbox.com/blog/ai-in-advertising" className="text-primary">AI</Link> summaries often appear before traditional results</li>
                         <li>• More travellers use voice search to check availability or find places nearby</li>
@@ -257,7 +257,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Build Your Hotel&apos;s Success Story with Biztalbox
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>
@@ -420,9 +420,9 @@ export default function Page() {
                           !isMobile ? "tp_fade_bottom" : ""
                         }`}
                       >
-                        <h4 className="tp-about-4-title">
+                        <h3 className="tp-about-4-title">
                           What Makes Biztalbox Different
-                        </h4>
+                        </h3>
                       </div>
                     </div>
                   </div>
@@ -441,9 +441,9 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Hospitality Industry Expertise
-                              </h4>
+                              </h3>
                               <p>
                                 As a hotel SEO agency, we don&apos;t just focus
                                 on visibility — we understand booking windows,
@@ -460,9 +460,9 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Revenue-Focused Strategy
-                              </h4>
+                              </h3>
                               <p>
                                 We connect SEO outcomes to booking KPIs rather
                                 than vanity metrics. Our strategies focus on ADR
@@ -480,9 +480,9 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Customized Approach
-                              </h4>
+                              </h3>
                               <p>
                                 Our SEO strategy is strategic, data-informed,
                                 and highly tailored to hotels, resorts, and
@@ -500,9 +500,9 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Ethical SEO Practices
-                              </h4>
+                              </h3>
                               <p>
                                 Being a professional hotel SEO agency, we use
                                 only white-hat, Google-approved techniques to
@@ -558,9 +558,9 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               Intent-Based Keyword Mapping
-                            </h4>
+                            </h3>
                             <p>
                               We focus on high-intent search behavior like
                               &quot;best hotels in ___&quot; and &quot;boutique
@@ -576,9 +576,9 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               Fixing Technical SEO Barriers
-                            </h4>
+                            </h3>
                             <p>
                               We strengthen core technical components such as
                               mobile speed, crawl depth, schema markup, and core
@@ -595,9 +595,9 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               Building Destination-Driven Content Clusters
-                            </h4>
+                            </h3>
                             <p>
                               We produce highly contextual destination content
                               to elevate topical authority and gain better
@@ -613,9 +613,9 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               Optimizing Google Business and Local SEO Signals
-                            </h4>
+                            </h3>
                             <p>
                               This includes category optimization, photo
                               relevance, review strategies, and structured data
@@ -632,9 +632,9 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               Enhancing E-E-A-T and Competitive Positioning
-                            </h4>
+                            </h3>
                             <p>
                               We ensure your hotel&apos;s content ecosystem
                               demonstrates expertise, authority, and trust,
@@ -649,9 +649,9 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               Transparent Reporting
-                            </h4>
+                            </h3>
                             <p>
                               You&apos;ll receive straightforward updates that
                               show improvements in rankings, direct bookings,
@@ -686,7 +686,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Build Your Hotel&apos;s Success Story with Biztalbox
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>
@@ -733,7 +733,7 @@ export default function Page() {
                 <div className="row mt-40">
                   <div className="col-xl-6 col-lg-6">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">Hotel Website SEO That Matches Real Guest Intent</h4>
+                      <h3 className="mb-20">Hotel Website SEO That Matches Real Guest Intent</h3>
                       <p>
                         Effective hotel website SEO starts by understanding how travellers search. Guests don&apos;t always type broad terms, but are looking for particular experiences e.g. business hotels near airports, beachfront resorts with attached spa facilities or boutique places for couples to stay or restaurants inside hotels.
                       </p>
@@ -744,7 +744,7 @@ export default function Page() {
                   </div>
                   <div className="col-xl-6 col-lg-6">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">Technical SEO for Hotels That Improves User Experience</h4>
+                      <h3 className="mb-20">Technical SEO for Hotels That Improves User Experience</h3>
                       <p>
                         The proper technical SEO for hotels ensures that your site is not only fast but also compatible with multiple devices and offers customers an easy user-friendly navigation. The search engines will also reward those sites which they find easy to understand, load fast, and are well-structured.
                       </p>
@@ -757,7 +757,7 @@ export default function Page() {
                 <div className="row mt-40">
                   <div className="col-xl-6 col-lg-6">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">Local SEO for Hotels That Captures High-Intent Searches</h4>
+                      <h3 className="mb-20">Local SEO for Hotels That Captures High-Intent Searches</h3>
                       <p>
                         Local visibility is often the most powerful driver of bookings. Local SEO for hotels involves optimizing your Google Business Profile, your Maps listings, local landing pages, and neighbourhood keywords.
                       </p>
@@ -768,7 +768,7 @@ export default function Page() {
                   </div>
                   <div className="col-xl-6 col-lg-6">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">Hotel and Resort Marketing SEO That Highlights Experiences</h4>
+                      <h3 className="mb-20">Hotel and Resort Marketing SEO That Highlights Experiences</h3>
                       <p>
                         Experience-led content is a major ranking factor for both hotels and resorts. Good hotel and resort <Link href="https://biztalbox.com/blog/digital-marketing-facts" className="text-primary">marketing</Link> SEO goes beyond basic room details and focuses on what staying with you actually feels like.
                       </p>
@@ -781,7 +781,7 @@ export default function Page() {
                 <div className="row mt-40">
                   <div className="col-xl-12">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">Restaurant and Hotel SEO That Brings In Additional Revenue</h4>
+                      <h3 className="mb-20">Restaurant and Hotel SEO That Brings In Additional Revenue</h3>
                       <p>
                         Most hotel owners don&apos;t pay much attention to the need to optimize their restaurants, cafes, lounges, bars, etc. With good restaurant and hotel search engine optimization practices, however, you will ensure that your F&B locations appear in searches for rooftop dining, best cafes in, or family-friendly dining options.
                       </p>
@@ -794,7 +794,7 @@ export default function Page() {
                 <div className="row mt-40">
                   <div className="col-xl-12">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">How the Right SEO Hotel Strategy Boosts Bookings</h4>
+                      <h3 className="mb-20">How the Right SEO Hotel Strategy Boosts Bookings</h3>
                       <p>
                         A good Hotel <Link href="https://biztalbox.com/blog/types-of-seo-and-why-you-need-an-agency-to-do-it" className="text-primary">SEO strategy</Link> boosts visibility for all stages of the travel booking process. When your technical, content and local SEO components work together, your hotel benefits from:
                       </p>
@@ -837,7 +837,7 @@ export default function Page() {
                 <div className="row mt-40">
                   <div className="col-xl-6 col-lg-6">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">1. Personalised Experiences</h4>
+                      <h3 className="mb-20">1. Personalised Experiences</h3>
                       <p>
                         Customers want hotels to make their stay experience a true reflection of their taste, be it through room preferences, activities they might like, or customised packages. Google searches like &quot;best personalised boutique stays in Goa&quot; or &quot;romantic stay suggestions in Jaipur&quot; are becoming frequent.
                       </p>
@@ -848,7 +848,7 @@ export default function Page() {
                   </div>
                   <div className="col-xl-6 col-lg-6">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">2. Wellness and Health-Centric Stays</h4>
+                      <h3 className="mb-20">2. Wellness and Health-Centric Stays</h3>
                       <p>
                         Wellness-oriented travel is rising to the top of many guests&apos; priority list. They look for spa treatments, fitness halls, yoga retreats, nature-based activities, and healthy dining.
                       </p>
@@ -861,7 +861,7 @@ export default function Page() {
                 <div className="row mt-40">
                   <div className="col-xl-6 col-lg-6">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">3. Sustainability and Eco-Conscious Travel</h4>
+                      <h3 className="mb-20">3. Sustainability and Eco-Conscious Travel</h3>
                       <p>
                         Green travel measures have gained immense popularity. More and more travellers today prefer lodgings that are genuinely environmentally conscious. They choose accommodations that are environmentally friendly with recognised green certificates, show a commitment to plastic reduction, use renewable energy and have eco-friendly food options.
                       </p>
@@ -872,7 +872,7 @@ export default function Page() {
                   </div>
                   <div className="col-xl-6 col-lg-6">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">4. Workcations and Remote-Friendly Stays</h4>
+                      <h3 className="mb-20">4. Workcations and Remote-Friendly Stays</h3>
                       <p>
                         A lot of consumers nowadays combine work and leisure. This usually includes a good internet connection, a quiet space for work, discounts for long stays, meeting rooms, and flexibility in terms of check-in times.
                       </p>
@@ -885,7 +885,7 @@ export default function Page() {
                 <div className="row mt-40">
                   <div className="col-xl-6 col-lg-6">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">5. Authentic, Local Experiences</h4>
+                      <h3 className="mb-20">5. Authentic, Local Experiences</h3>
                       <p>
                         Travellers want to feel connected to the destination. Local cuisine, cultural tours, neighbourhood experiences, and heritage stories influence booking choices.
                       </p>
@@ -896,7 +896,7 @@ export default function Page() {
                   </div>
                   <div className="col-xl-6 col-lg-6">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">6. Luxury with Character</h4>
+                      <h3 className="mb-20">6. Luxury with Character</h3>
                       <p>
                         Guests are moving away from generic luxury and choosing unique or boutique-style properties. They look for design-forward rooms, intimate experiences, and storied architecture.
                       </p>
@@ -912,7 +912,7 @@ export default function Page() {
                 <div className="row mt-40">
                   <div className="col-xl-12">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">7. Rapid Growth in Travel Technology</h4>
+                      <h3 className="mb-20">7. Rapid Growth in Travel Technology</h3>
                       <p>
                         Travellers increasingly expect seamless digital experiences, from mobile check-in to AI-powered recommendations. Hotel tech adoption shapes how guests choose properties online.
                       </p>
@@ -940,7 +940,7 @@ export default function Page() {
                 <div className="row mt-40">
                   <div className="col-xl-6 col-lg-6">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">1. Shorter Booking Windows & Hotel SEO Impact</h4>
+                      <h3 className="mb-20">1. Shorter Booking Windows & Hotel SEO Impact</h3>
                       <p>
                         <Link href="https://www.hotelnewsresource.com/article137279.html" target="_blank" rel="noopener noreferrer" className="text-primary">Leisure booking windows have decreased to below 21 days, as travellers are far more prone to make last-minute reservations.</Link> Last-minute planners are highly dependent on mobile search features, choosing hotels that feature refundable rates and flexible cancellation policies.
                       </p>
@@ -954,7 +954,7 @@ export default function Page() {
                   </div>
                   <div className="col-xl-6 col-lg-6">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">2. High-Intent Offer Strategies for Hotels</h4>
+                      <h3 className="mb-20">2. High-Intent Offer Strategies for Hotels</h3>
                       <p>
                         Guests today care about value, not just the nightly price. BOGO promotions such as &quot;Stay 3 Nights, Get the 4th Free&quot; continue to perform strongly because they encourage longer stays without lowering ADR.
                       </p>
@@ -970,7 +970,7 @@ export default function Page() {
                 <div className="row mt-40">
                   <div className="col-xl-6 col-lg-6">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">3. Optimizing Offers for Stronger Hotel SEO</h4>
+                      <h3 className="mb-20">3. Optimizing Offers for Stronger Hotel SEO</h3>
                       <p>
                         The most effective hotels create a balanced portfolio of offers that address different guest behaviours. A data-driven strategy often includes flexible rates, advance purchase deals, local market offers, BOGO promotions, and curated value packages. A diverse set of options also produces stronger insights for ongoing optimization.
                       </p>
@@ -981,7 +981,7 @@ export default function Page() {
                   </div>
                   <div className="col-xl-6 col-lg-6">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">4. Flexible Cancellation Policies That Boost Hotel SEO</h4>
+                      <h3 className="mb-20">4. Flexible Cancellation Policies That Boost Hotel SEO</h3>
                       <p>
                         Flexible cancellation remains one of the strongest drivers of early commitment. Fully refundable bookings up to 24–48 hours before arrival performed best in 2025, with more than half of guests willing to pay extra for a hotel that lets them cancel without penalty. Semi-flex and rebookable options also performed well because they offer reassurance while allowing hotels to keep some revenue protection.
                       </p>
@@ -994,7 +994,7 @@ export default function Page() {
                 <div className="row mt-40">
                   <div className="col-xl-12">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">5. Loyalty Programs for Direct Bookings & Hotel SEO</h4>
+                      <h3 className="mb-20">5. Loyalty Programs for Direct Bookings & Hotel SEO</h3>
                       <p>
                         Powerful loyalty programs are now an essential tool for generating repeat bookings and maintaining durable revenue streams. The most effective strategies combine useful perks with flexible cancellation benefits. Guests respond well to programs that offer early access to discounts, exclusive member rates, personalized stay extras, and easier rebooking options. These elements encourage deeper brand relationships and more frequent direct bookings.
                       </p>
@@ -1026,7 +1026,7 @@ export default function Page() {
                                     <span className="tm-hero-subtitle">
                                     Build Your Hotel&apos;s Success Story with Biztalbox
                                     </span>
-                                    <h4 className="tm-details-title">Get Started Today</h4>
+                                    <h3 className="tm-details-title">Get Started Today</h3>
                                 </div>
                                 <div className="tm-details-text">
                                     <p>
@@ -1077,7 +1077,7 @@ export default function Page() {
                 <div className="row mt-40">
                   <div className="col-xl-6 col-lg-6">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">Local SEO for Hotels: Capture Nearby & Booking-Ready Guests</h4>
+                      <h3 className="mb-20">Local SEO for Hotels: Capture Nearby & Booking-Ready Guests</h3>
                       <p>
                         Strong local SEO for hotels ensures your property shows up in searches such as &quot;hotel near me&quot;, &quot;resort near [landmark]&quot;, or &quot;restaurants near me.&quot; Many bookings now happen via local searches on smartphones, which makes local presence essential.
                       </p>
@@ -1098,7 +1098,7 @@ export default function Page() {
                   </div>
                   <div className="col-xl-6 col-lg-6">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">Mobile SEO for Hotels: Be Fast, Simple & Booking-Ready on Phones</h4>
+                      <h3 className="mb-20">Mobile SEO for Hotels: Be Fast, Simple & Booking-Ready on Phones</h3>
                       <p>
                         Mobile and smartphone bookings are becoming a major part of hotel reservations worldwide:
                       </p>
@@ -1125,7 +1125,7 @@ export default function Page() {
                 <div className="row mt-40">
                   <div className="col-xl-12">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">Why Local and Mobile SEO for Hotels Drives More Direct Bookings</h4>
+                      <h3 className="mb-20">Why Local and Mobile SEO for Hotels Drives More Direct Bookings</h3>
                       <p>
                         When you combine local SEO for hotels, mobile SEO for hotels, and hotel website optimization, your hotel becomes more visible to potential guests. This leads to:
                       </p>
@@ -1178,7 +1178,7 @@ export default function Page() {
                 <div className="row mt-40">
                   <div className="col-xl-4 col-lg-4">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">North America</h4>
+                      <h3 className="mb-20">North America</h3>
                       <ul className="list-unstyled">
                         <li>• U.S. and Canadian consumers lead the hotel booking market largely as a result of well-developed tourism infrastructures, high levels of internet accessibility, and the presence of numerous global and locally-based hotel chains.</li>
                         <li>• Besides, major OTAs and hotel brands such as Expedia, Marriott, and Hilton are rapidly transforming by heavily investing in digital innovation, loyalty programs, and mobile-first booking experiences.</li>
@@ -1189,7 +1189,7 @@ export default function Page() {
                   </div>
                   <div className="col-xl-4 col-lg-4">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">Europe</h4>
+                      <h3 className="mb-20">Europe</h3>
                       <ul className="list-unstyled">
                         <li>• The hotel market in Europe is known for cultural tourism, landmark cities and significant cross-border travel.</li>
                         <li>• Trivago and Booking.com are the most popular OTAs that offer multi-language and multi-currency support to their users.</li>
@@ -1200,7 +1200,7 @@ export default function Page() {
                   </div>
                   <div className="col-xl-4 col-lg-4">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">Asia-Pacific</h4>
+                      <h3 className="mb-20">Asia-Pacific</h3>
                       <ul className="list-unstyled">
                         <li>• Rapid growth in domestic and international travel is driven by a booming middle class, rising disposable incomes, and improved tourism infrastructure.</li>
                         <li>• OTAs like Agoda, Ctrip, and MakeMyTrip thrive with localized offerings, competitive pricing, and mobile-first booking.</li>
@@ -1232,7 +1232,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Build Your Hotel&apos;s Success Story with Biztalbox
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>
@@ -1291,7 +1291,7 @@ export default function Page() {
                 <div className="row mt-40">
                   <div className="col-xl-12">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">How Biztalbox Approaches Hotel SEO</h4>
+                      <h3 className="mb-20">How Biztalbox Approaches Hotel SEO</h3>
                       <p>
                         To address their challenges, we implemented a structured approach using advanced seo services for hotels, designed specifically to match traveler intent and revenue goals. This is what separates the <Link href="https://biztalbox.com/blog/inside-a-digital-marketing-agency" className="text-primary">best SEO agency</Link> for hotels from generic agencies.
                       </p>
@@ -1318,7 +1318,7 @@ export default function Page() {
                 <div className="row mt-40">
                   <div className="col-xl-12">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">The Outcomes of Our Hotel SEO Strategy</h4>
+                      <h3 className="mb-20">The Outcomes of Our Hotel SEO Strategy</h3>
                       <p>
                         In a very short time, the outcomes were very close to what a top-tier best hotel SEO agency is expected to deliver;
                       </p>
@@ -1342,7 +1342,7 @@ export default function Page() {
                 <div className="row mt-40">
                   <div className="col-xl-12">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">Why Hotel SEO Plays a Decisive Role in Revenue Growth</h4>
+                      <h3 className="mb-20">Why Hotel SEO Plays a Decisive Role in Revenue Growth</h3>
                       <p>
                         SEO remains one of the most powerful long-term revenue channels for hotels. Once rankings stabilize, the cost per booking decreases sharply because traffic becomes organic rather than paid. Properties that invest in specialized seo services for hotels consistently outperform competitors who rely heavily on ads and OTAs.
                       </p>
@@ -1388,7 +1388,7 @@ export default function Page() {
                 <div className="row mt-40">
                   <div className="col-xl-6 col-lg-6">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">1. &quot;How will your SEO strategy reduce our OTA reliance?&quot;</h4>
+                      <h3 className="mb-20">1. &quot;How will your SEO strategy reduce our OTA reliance?&quot;</h3>
                       <p>
                         Any serious partner offering SEO services for hotels must show how SEO ties directly to cost savings and direct revenue growth. If they cannot quantify how your direct bookings will increase, they are not the right partner.
                       </p>
@@ -1396,7 +1396,7 @@ export default function Page() {
                   </div>
                   <div className="col-xl-6 col-lg-6">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">2. &quot;Can you connect SEO outcomes to booking KPIs rather than vanity metrics?&quot;</h4>
+                      <h3 className="mb-20">2. &quot;Can you connect SEO outcomes to booking KPIs rather than vanity metrics?&quot;</h3>
                       <p>
                         Sessions and impressions do not impress CFOs. A high performing seo agency for hotels must link efforts to ADR protection, occupancy lift, demand capture during compression nights, and improved conversion rate across core landing pages.
                       </p>
@@ -1406,7 +1406,7 @@ export default function Page() {
                 <div className="row mt-40">
                   <div className="col-xl-6 col-lg-6">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">3. &quot;How do you integrate technical SEO with hospitality specific user intent?&quot;</h4>
+                      <h3 className="mb-20">3. &quot;How do you integrate technical SEO with hospitality specific user intent?&quot;</h3>
                       <p>
                         The best SEO agency for hotels understands that technical SEO for hotels such as mobile speed, schema markup, multilingual setup, and crawl depth is directly connected to booking flow, rate visibility, dynamic widgets, and Google&apos;s ability to surface your property in competitive markets.
                       </p>
@@ -1414,7 +1414,7 @@ export default function Page() {
                   </div>
                   <div className="col-xl-6 col-lg-6">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">4. &quot;Do you have a proven methodology for Google SEO for hotels?&quot;</h4>
+                      <h3 className="mb-20">4. &quot;Do you have a proven methodology for Google SEO for hotels?&quot;</h3>
                       <p>
                         Partner only with an agency that understands the granular mechanics of google SEO for hotels, including hotel pack ranking signals, structured data, local SEO for hotels, and how organic search interacts with metasearch visibility.
                       </p>
@@ -1424,7 +1424,7 @@ export default function Page() {
                 <div className="row mt-40">
                   <div className="col-xl-12">
                     <div className="tp-about-4-content">
-                      <h4 className="mb-20">5. &quot;How will you defend our rate parity and strengthen brand authority?&quot;</h4>
+                      <h3 className="mb-20">5. &quot;How will you defend our rate parity and strengthen brand authority?&quot;</h3>
                       <p>
                         Your brand should outrank OTAs for your own branded terms. If a potential hotel SEO company cannot demonstrate improved control over brand keywords, they will weaken rather than strengthen your direct revenue funnel.
                       </p>
@@ -1483,7 +1483,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Hotel&apos;s Direct Bookings?
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>

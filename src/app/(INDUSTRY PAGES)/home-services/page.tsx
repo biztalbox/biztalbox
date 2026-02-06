@@ -171,10 +171,10 @@ export default function Page() {
                         </Link>{" "}
                         – where availability now directly impacts demand.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         Key Market Drivers of the Online On-Demand Home Services
                         Industry
-                      </h4>
+                      </h3>
                       <div className="service-details__fea-list mt-20">
                         <ul>
                           <li>
@@ -238,9 +238,9 @@ export default function Page() {
                           </li>
                         </ul>
                       </div>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         Regional Market Trends
-                      </h4>
+                      </h3>
                       <p>
                         <strong>North America:</strong> Nearly 45 percent of
                         global demand comes from the North American market.
@@ -382,7 +382,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Build Your Home Services Success Story with Biztalbox
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>
@@ -654,10 +654,10 @@ export default function Page() {
                           !isMobile ? "tp_fade_bottom" : ""
                         }`}
                       >
-                        <h4 className="tp-about-4-title">
+                        <h3 className="tp-about-4-title">
                           SEO Strategy for Home Service Businesses: Turning
                           Searches into Leads
-                        </h4>
+                        </h3>
                       </div>
                     </div>
                   </div>
@@ -695,10 +695,10 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Keyword Strategy: Where Home Service Demand
                                 Reveals Itself
-                              </h4>
+                              </h3>
                               <p>
                                 <strong>
                                   Home Service Searches Signal Immediate Intent
@@ -814,10 +814,10 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Content Strategy: How Content Drives Decisions
                                 in Home Services
-                              </h4>
+                              </h3>
                               <p>
                                 Content works very differently in the home
                                 services space, as compared to other industries
@@ -902,10 +902,10 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Off-Page SEO: Why External Trust Shapes
                                 Visibility and Calls
-                              </h4>
+                              </h3>
                               <p>
                                 Off-page SEO involves the signals about your
                                 business that are communicated outside of your
@@ -963,9 +963,9 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 Technical SEO for Home Services
-                              </h4>
+                              </h3>
                               <p>
                                 Technical SEO is the behind-the-scenes work that
                                 makes a website easy to use and easy for search
@@ -1040,9 +1040,9 @@ export default function Page() {
                         controlling these signals consistently, not
                         intermittently.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         Google Maps Is Where Revenue Is Captured
-                      </h4>
+                      </h3>
                       <p>
                         For most home service businesses, Google Maps drives the
                         highest volume of high-intent actions. Calls, navigation
@@ -1059,9 +1059,9 @@ export default function Page() {
                         This is why local SEO in home services cannot be treated
                         as a one-time optimisation.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         Local SEO for Independent Home Service Companies
-                      </h4>
+                      </h3>
                       <p>
                         For local operators, local SEO for home services
                         companies is about defending service areas while
@@ -1077,9 +1077,9 @@ export default function Page() {
                         It requires systematic optimisation and continuous
                         monitoring of performance signals.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         Home Service Franchise SEO Requires Structural Precision
-                      </h4>
+                      </h3>
                       <p>
                         Home Service Franchise SEO presents operational challenges
                         that generic local strategies can fail to accommodate.
@@ -1096,10 +1096,10 @@ export default function Page() {
                         sustain a consistent brand presence across multiple
                         markets without sacrificing local relevance.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         Why Home Services Local SEO Services Are an Ongoing
                         Requirement
-                      </h4>
+                      </h3>
                       <p>
                         Google&apos;s local algorithm increasingly reflects
                         real-world behaviour. Factors such as reviews,
@@ -1157,7 +1157,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Scale Your Home Services Business?
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>
@@ -1243,9 +1243,9 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               1. Industry-Specific Home Services SEO
-                            </h4>
+                            </h3>
                             <p>
                               Home service SEO only works when it respects
                               operational limits. Coverage areas, response time,
@@ -1256,9 +1256,9 @@ export default function Page() {
                               ensuring our home services SEO services support
                               day-to-day revenue rather than abstract rankings.
                             </p>
-                            <h4 className="text-white mt-30">
+                            <h3 className="text-white mt-30">
                               2. Google Maps Visibility That Converts
-                            </h4>
+                            </h3>
                             <p>
                               For home service businesses, Google Maps is the
                               central point where customers make decisions. Each
@@ -1271,10 +1271,10 @@ export default function Page() {
                               your business reaches customers ready to book and
                               places you ahead of the pack.
                             </p>
-                            <h4 className="text-white mt-30">
+                            <h3 className="text-white mt-30">
                               3. Ongoing local SEO management, not one-time
                               optimisation
-                            </h4>
+                            </h3>
                             <p>
                               Local visibility does not sustain itself. As a
                               specialised home services local SEO agency, we
@@ -1296,10 +1296,10 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               4. Franchise and multi-location SEO without
                               internal competition
-                            </h4>
+                            </h3>
                             <p>
                               Growing visibility across multiple locations
                               requires careful planning, not simply creating more
@@ -1311,9 +1311,9 @@ export default function Page() {
                               brands to expand into new areas while keeping every
                               location strong, visible, and trusted locally.
                             </p>
-                            <h4 className="text-white mt-30">
+                            <h3 className="text-white mt-30">
                               5. Lead quality over traffic volume
-                            </h4>
+                            </h3>
                             <p>
                               Traffic alone does not grow a home service
                               business.{" "}
@@ -1339,9 +1339,9 @@ export default function Page() {
                               </Link>{" "}
                               investment aligned with real bookings.
                             </p>
-                            <h4 className="text-white mt-30">
+                            <h3 className="text-white mt-30">
                               6. Practical, affordable expertise focused on ROI
-                            </h4>
+                            </h3>
                             <p>
                               Affordability should never compromise expertise. We
                               believe in home services SEO that actually improves
@@ -1361,9 +1361,9 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               7. An extension of your internal team
-                            </h4>
+                            </h3>
                             <p>
                               We work directly with owners, managers, and
                               marketing teams to align SEO decisions with
@@ -1380,9 +1380,9 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               8. Clear accountability and realistic expectations
-                            </h4>
+                            </h3>
                             <p>
                               We believe trust is earned through clear ownership
                               and honest communication. As a professional home
@@ -1477,7 +1477,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Scale Your Home Services Business?
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>

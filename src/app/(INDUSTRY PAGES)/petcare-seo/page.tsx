@@ -277,10 +277,10 @@ export default function Page() {
                         company can be found when an owner is looking to start
                         their search.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         Search Behaviour in the Pet Industry and High-Intent
                         Demand
-                      </h4>
+                      </h3>
                       <p>
                         Pet care searches are hardly ever casual; they are
                         driven by feelings of duty, concern, or panic from pet
@@ -292,9 +292,9 @@ export default function Page() {
                         consideration. On the other hand, those that do not show
                         up are generally ignored.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         What Pet SEO Means for Pet Businesses
-                      </h4>
+                      </h3>
                       <p>
                         SEO for the pet industry is a process that aims to
                         increase the online visibility and ranking of
@@ -325,9 +325,9 @@ export default function Page() {
                         decision-making (local, informational, or purchase-intent
                         based).
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         How SEO Influences Decisions in the Pet Industry
-                      </h4>
+                      </h3>
                       <p>
                         When it comes to pet care,{" "}
                         <Link
@@ -358,10 +358,10 @@ export default function Page() {
                         during the research phase. For both, SEO enables a
                         business to appear at pivotal stages of decision-making.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         How Pet Industry SEO Connects Businesses with Active
                         Demand
-                      </h4>
+                      </h3>
                       <p>
                         Most pet searches do not result from advertising; rather,
                         they indicate pre-existing demand. Pet owners are
@@ -407,7 +407,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Build Your Pet Care Success Story with Biztalbox
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>
@@ -641,9 +641,9 @@ export default function Page() {
                               </li>
                             </ul>
                             <div className="mt-30">
-                              <h4 className="mb-20 text-white">
+                              <h3 className="mb-20 text-white">
                                 What These SEO Benefits Mean for Pet Businesses
-                              </h4>
+                              </h3>
                               <p>
                                 Collectively, these advantages show why pet
                                 industry SEO has become a necessity for
@@ -681,9 +681,9 @@ export default function Page() {
                           !isMobile ? "tp_fade_bottom" : ""
                         }`}
                       >
-                        <h4 className="tp-about-4-title">
+                        <h3 className="tp-about-4-title">
                           Key SEO Strategies for the Pet Care Industry
-                        </h4>
+                        </h3>
                       </div>
                     </div>
                   </div>
@@ -725,10 +725,10 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 a) Keyword Strategy: Mapping Search Intent to Pet
                                 Care Business Goals
-                              </h4>
+                              </h3>
                               <p>
                                 <Link
                                   href="https://biztalbox.com/blog/keyword-clustering"
@@ -821,10 +821,10 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 b) Content Strategy: Connecting with Pet Owners
                                 and Building Trust
-                              </h4>
+                              </h3>
                               <p>
                                 After a strong pet SEO strategy, the second
                                 important element is the creation of content.{" "}
@@ -925,10 +925,10 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 c) Off-Page SEO: Building Authority and Reach for
                                 Pet Care Businesses
-                              </h4>
+                              </h3>
                               <p>
                                 Once your content is strong and your{" "}
                                 <Link
@@ -992,10 +992,10 @@ export default function Page() {
                                 !isMobile ? "tp_fade_bottom" : ""
                               }`}
                             >
-                              <h4 className="text-white">
+                              <h3 className="text-white">
                                 d) Technical SEO: Improving User Experience in
                                 Pet Care Website SEO
-                              </h4>
+                              </h3>
                               <p>
                                 Technical SEO makes sure your site runs smoothly,
                                 is safe and easy to read by search engine bots.
@@ -1085,9 +1085,9 @@ export default function Page() {
                         compete effectively within their immediate service
                         areas.
                       </p>
-                      <h4 className="mt-30 mb-20 text-white">
+                      <h3 className="mt-30 mb-20 text-white">
                         How Pet Care Local Seo Directly Impacts Local Visibility
-                      </h4>
+                      </h3>
                       <div className="service-details__fea-list mt-30">
                         <ul>
                           <li>
@@ -1179,7 +1179,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Scale Your Pet Care Business?
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>
@@ -1282,9 +1282,9 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               The Cost of Getting SEO Wrong in Pet Care
-                            </h4>
+                            </h3>
                             <p>
                               In pet care, poor SEO decisions carry consequences
                               that go beyond lost rankings:
@@ -1335,10 +1335,10 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               What Makes Biztalbox the Right SEO Company for Pet
                               Services?
-                            </h4>
+                            </h3>
                             <p>
                               Biztalbox operates as a specialist pet{" "}
                               <Link
@@ -1393,10 +1393,10 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               Ongoing Optimization: Adapting to Changing Search
                               Behaviour
-                            </h4>
+                            </h3>
                             <p>
                               Search behaviour in pet care is dynamic, influenced
                               by seasonal demands and emerging trends and emerging
@@ -1421,9 +1421,9 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               An extension of your team
-                            </h4>
+                            </h3>
                             <p>
                               SEO works best when it reflects real decisions
                               inside the business. Biztalbox collaborates closely
@@ -1447,9 +1447,9 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               Transparency and Reporting
-                            </h4>
+                            </h3>
                             <p>
                               Clarity is vital in the pet care sector. Biztalbox,
                               as an expert pet SEO agency ensures every phase of
@@ -1474,9 +1474,9 @@ export default function Page() {
                               !isMobile ? "tp_fade_bottom" : ""
                             }`}
                           >
-                            <h4 className="text-white">
+                            <h3 className="text-white">
                               Expert Pet Care SEO That Respects Your Budget
-                            </h4>
+                            </h3>
                             <p>
                               For most pet businesses, SEO has to make sense
                               financially before anything else. At Biztalbox, we
@@ -1592,7 +1592,7 @@ export default function Page() {
                         <span className="tm-hero-subtitle">
                           Ready to Grow Your Pet Care Business?
                         </span>
-                        <h4 className="tm-details-title">Get Started Today</h4>
+                        <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>
