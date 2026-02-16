@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 
 export default function WhatsAppButton() {
-  const phoneNumber = "918448066811"; // +91 9485699709 without special characters
+  const phoneNumber = "9485699709"; // +91 9485699709 without special characters
   const message = encodeURIComponent("Text us before your competitor does 😉");
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
