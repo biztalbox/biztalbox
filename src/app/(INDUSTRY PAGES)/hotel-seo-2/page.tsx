@@ -65,12 +65,12 @@ export default function Page() {
           <main style={{ overflow: "hidden" }}>
             {/* Hero — compact for content-heavy page */}
             <div className="tp-hero-4-area tp-btn-trigger pt-80 pt-md-0">
-              <div className="container-fluid">
+              <div className="container">
                 <div className="row">
                   <div className="col-xl-12">
                     <div className="tp-hero-4-content-wrap">
                       <div className="p-relative">
-                        <div className="tp-hero-4-content p-relative col-md-11" style={{ marginBottom: "0" }}>
+                        <div className="tp-hero-4-content p-relative" style={{ marginBottom: "0" }}>
                           <h1 className="text-white tp-char-animation">
                             Hotel SEO: Winning Direct Demand in a Competitive Hospitality Market
                           </h1>
@@ -133,35 +133,35 @@ export default function Page() {
               </section>
 
               {/* CTA with form */}
-            <div className="p-relative pt-60 pb-80">
-              <div className="tm-details-shape-1">
-                <Image src={shape_1} alt="shape" />
-              </div>
-              <div className="tm-details-shape-2">
-                <Image src={team_shape_2} alt="shape" />
-              </div>
-              <div className="container">
-                <div className="row align-items-center">
-                  <div className="col-xl-6 col-lg-6 col-md-7">
-                    <div className="tm-details-content-wrap z-index-5" style={{ padding: "30px 0" }}>
-                      <div className="tm-details-title-box mb-20">
-                        <span className="tm-hero-subtitle">Ready to Grow Your Hotel&apos;s Direct Bookings?</span>
-                        <h3 className="tm-details-title">Get Started Today</h3>
-                      </div>
-                      <div className="tm-details-text">
-                        <p>Your guests are searching — make sure they find you first. Partner with Biztalbox, the hotel SEO experts that hotels, resorts, and restaurants trust, and start driving real results. Contact us today for a free consultation.</p>
-                      </div>
-                      <div className="tm-details-portfolio">
-                        <span className="tm-details-social-title">Get in Touch:</span>
-                        <a href="tel:+919485699709">+91 9485699709</a>
-                        <a href="mailto:info@biztalbox.com">info@biztalbox.com</a>
+              <div className="p-relative pt-60 pb-80">
+                <div className="tm-details-shape-1">
+                  <Image src={shape_1} alt="shape" />
+                </div>
+                <div className="tm-details-shape-2">
+                  <Image src={team_shape_2} alt="shape" />
+                </div>
+                <div className="container">
+                  <div className="row align-items-center">
+                    <div className="col-xl-6 col-lg-6 col-md-7">
+                      <div className="tm-details-content-wrap z-index-5" style={{ padding: "30px 0" }}>
+                        <div className="tm-details-title-box mb-20">
+                          <span className="tm-hero-subtitle">Ready to Grow Your Hotel&apos;s Direct Bookings?</span>
+                          <h3 className="tm-details-title">Get Started Today</h3>
+                        </div>
+                        <div className="tm-details-text">
+                          <p>Your guests are searching — make sure they find you first. Partner with Biztalbox, the hotel SEO experts that hotels, resorts, and restaurants trust, and start driving real results. Contact us today for a free consultation.</p>
+                        </div>
+                        <div className="tm-details-portfolio">
+                          <span className="tm-details-social-title">Get in Touch:</span>
+                          <a href="tel:+919485699709">+91 9485699709</a>
+                          <a href="mailto:info@biztalbox.com">info@biztalbox.com</a>
+                        </div>
                       </div>
                     </div>
+                    <LeadForm />
                   </div>
-                  <LeadForm />
                 </div>
               </div>
-            </div>
 
               {/* Benefits and ROI — 3-column grid */}
               <section className="content-section">
@@ -248,35 +248,35 @@ export default function Page() {
               </section>
 
               {/* CTA with form */}
-            <div className="p-relative pt-60 pb-80">
-              <div className="tm-details-shape-1">
-                <Image src={shape_1} alt="shape" />
-              </div>
-              <div className="tm-details-shape-2">
-                <Image src={team_shape_2} alt="shape" />
-              </div>
-              <div className="container">
-                <div className="row align-items-center">
-                  <div className="col-xl-6 col-lg-6 col-md-7">
-                    <div className="tm-details-content-wrap z-index-5" style={{ padding: "30px 0" }}>
-                      <div className="tm-details-title-box mb-20">
-                        <span className="tm-hero-subtitle">Ready to Grow Your Hotel&apos;s Direct Bookings?</span>
-                        <h3 className="tm-details-title">Get Started Today</h3>
-                      </div>
-                      <div className="tm-details-text">
-                        <p>Your guests are searching — make sure they find you first. Partner with Biztalbox, the hotel SEO experts that hotels, resorts, and restaurants trust, and start driving real results. Contact us today for a free consultation.</p>
-                      </div>
-                      <div className="tm-details-portfolio">
-                        <span className="tm-details-social-title">Get in Touch:</span>
-                        <a href="tel:+919485699709">+91 9485699709</a>
-                        <a href="mailto:info@biztalbox.com">info@biztalbox.com</a>
+              <div className="p-relative pt-60 pb-80">
+                <div className="tm-details-shape-1">
+                  <Image src={shape_1} alt="shape" />
+                </div>
+                <div className="tm-details-shape-2">
+                  <Image src={team_shape_2} alt="shape" />
+                </div>
+                <div className="container">
+                  <div className="row align-items-center">
+                    <div className="col-xl-6 col-lg-6 col-md-7">
+                      <div className="tm-details-content-wrap z-index-5" style={{ padding: "30px 0" }}>
+                        <div className="tm-details-title-box mb-20">
+                          <span className="tm-hero-subtitle">Ready to Grow Your Hotel&apos;s Direct Bookings?</span>
+                          <h3 className="tm-details-title">Get Started Today</h3>
+                        </div>
+                        <div className="tm-details-text">
+                          <p>Your guests are searching — make sure they find you first. Partner with Biztalbox, the hotel SEO experts that hotels, resorts, and restaurants trust, and start driving real results. Contact us today for a free consultation.</p>
+                        </div>
+                        <div className="tm-details-portfolio">
+                          <span className="tm-details-social-title">Get in Touch:</span>
+                          <a href="tel:+919485699709">+91 9485699709</a>
+                          <a href="mailto:info@biztalbox.com">info@biztalbox.com</a>
+                        </div>
                       </div>
                     </div>
+                    <LeadForm />
                   </div>
-                  <LeadForm />
                 </div>
               </div>
-            </div>
 
               {/* 2026 Consumer Trends — 2-column grid */}
               <section className="content-section">
@@ -344,35 +344,35 @@ export default function Page() {
               </section>
 
               {/* CTA with form */}
-            <div className="p-relative pt-60 pb-80">
-              <div className="tm-details-shape-1">
-                <Image src={shape_1} alt="shape" />
-              </div>
-              <div className="tm-details-shape-2">
-                <Image src={team_shape_2} alt="shape" />
-              </div>
-              <div className="container">
-                <div className="row align-items-center">
-                  <div className="col-xl-6 col-lg-6 col-md-7">
-                    <div className="tm-details-content-wrap z-index-5" style={{ padding: "30px 0" }}>
-                      <div className="tm-details-title-box mb-20">
-                        <span className="tm-hero-subtitle">Ready to Grow Your Hotel&apos;s Direct Bookings?</span>
-                        <h3 className="tm-details-title">Get Started Today</h3>
-                      </div>
-                      <div className="tm-details-text">
-                        <p>Your guests are searching — make sure they find you first. Partner with Biztalbox, the hotel SEO experts that hotels, resorts, and restaurants trust, and start driving real results. Contact us today for a free consultation.</p>
-                      </div>
-                      <div className="tm-details-portfolio">
-                        <span className="tm-details-social-title">Get in Touch:</span>
-                        <a href="tel:+919485699709">+91 9485699709</a>
-                        <a href="mailto:info@biztalbox.com">info@biztalbox.com</a>
+              <div className="p-relative pt-60 pb-80">
+                <div className="tm-details-shape-1">
+                  <Image src={shape_1} alt="shape" />
+                </div>
+                <div className="tm-details-shape-2">
+                  <Image src={team_shape_2} alt="shape" />
+                </div>
+                <div className="container">
+                  <div className="row align-items-center">
+                    <div className="col-xl-6 col-lg-6 col-md-7">
+                      <div className="tm-details-content-wrap z-index-5" style={{ padding: "30px 0" }}>
+                        <div className="tm-details-title-box mb-20">
+                          <span className="tm-hero-subtitle">Ready to Grow Your Hotel&apos;s Direct Bookings?</span>
+                          <h3 className="tm-details-title">Get Started Today</h3>
+                        </div>
+                        <div className="tm-details-text">
+                          <p>Your guests are searching — make sure they find you first. Partner with Biztalbox, the hotel SEO experts that hotels, resorts, and restaurants trust, and start driving real results. Contact us today for a free consultation.</p>
+                        </div>
+                        <div className="tm-details-portfolio">
+                          <span className="tm-details-social-title">Get in Touch:</span>
+                          <a href="tel:+919485699709">+91 9485699709</a>
+                          <a href="mailto:info@biztalbox.com">info@biztalbox.com</a>
+                        </div>
                       </div>
                     </div>
+                    <LeadForm />
                   </div>
-                  <LeadForm />
                 </div>
               </div>
-            </div>
 
               {/* How to Optimize: Local, Mobile — 2-column */}
               <section className="content-section">
@@ -406,35 +406,35 @@ export default function Page() {
               </section>
 
               {/* CTA with form */}
-            <div className="p-relative pt-60 pb-80">
-              <div className="tm-details-shape-1">
-                <Image src={shape_1} alt="shape" />
-              </div>
-              <div className="tm-details-shape-2">
-                <Image src={team_shape_2} alt="shape" />
-              </div>
-              <div className="container">
-                <div className="row align-items-center">
-                  <div className="col-xl-6 col-lg-6 col-md-7">
-                    <div className="tm-details-content-wrap z-index-5" style={{ padding: "30px 0" }}>
-                      <div className="tm-details-title-box mb-20">
-                        <span className="tm-hero-subtitle">Ready to Grow Your Hotel&apos;s Direct Bookings?</span>
-                        <h3 className="tm-details-title">Get Started Today</h3>
-                      </div>
-                      <div className="tm-details-text">
-                        <p>Your guests are searching — make sure they find you first. Partner with Biztalbox, the hotel SEO experts that hotels, resorts, and restaurants trust, and start driving real results. Contact us today for a free consultation.</p>
-                      </div>
-                      <div className="tm-details-portfolio">
-                        <span className="tm-details-social-title">Get in Touch:</span>
-                        <a href="tel:+919485699709">+91 9485699709</a>
-                        <a href="mailto:info@biztalbox.com">info@biztalbox.com</a>
+              <div className="p-relative pt-60 pb-80">
+                <div className="tm-details-shape-1">
+                  <Image src={shape_1} alt="shape" />
+                </div>
+                <div className="tm-details-shape-2">
+                  <Image src={team_shape_2} alt="shape" />
+                </div>
+                <div className="container">
+                  <div className="row align-items-center">
+                    <div className="col-xl-6 col-lg-6 col-md-7">
+                      <div className="tm-details-content-wrap z-index-5" style={{ padding: "30px 0" }}>
+                        <div className="tm-details-title-box mb-20">
+                          <span className="tm-hero-subtitle">Ready to Grow Your Hotel&apos;s Direct Bookings?</span>
+                          <h3 className="tm-details-title">Get Started Today</h3>
+                        </div>
+                        <div className="tm-details-text">
+                          <p>Your guests are searching — make sure they find you first. Partner with Biztalbox, the hotel SEO experts that hotels, resorts, and restaurants trust, and start driving real results. Contact us today for a free consultation.</p>
+                        </div>
+                        <div className="tm-details-portfolio">
+                          <span className="tm-details-social-title">Get in Touch:</span>
+                          <a href="tel:+919485699709">+91 9485699709</a>
+                          <a href="mailto:info@biztalbox.com">info@biztalbox.com</a>
+                        </div>
                       </div>
                     </div>
+                    <LeadForm />
                   </div>
-                  <LeadForm />
                 </div>
               </div>
-            </div>
 
               {/* Regional OTA Insights — 3-column grid */}
               <section className="content-section">
@@ -639,7 +639,8 @@ export default function Page() {
             </div>
 
             <ServiceThree showIndustry={false} />
-           {/* <LineTextTwo title="Our Hotel SEO Process" /> */}
+
+            {/* <LineTextTwo title="Our Hotel SEO Process" /> */}
           </main>
           <FooterThree />
         </div>

@@ -57,7 +57,7 @@ const BookCallForm = () => {
   };
 
   return (
-    <div className="p-relative pt-20 pb-80">
+    <div className="p-relative pt-120 pb-80">
       {/* Background shapes similar to team details */}
       <div
         className="tm-details-shape-1"
@@ -103,7 +103,7 @@ const BookCallForm = () => {
       <Container style={{ position: "relative", zIndex: 2 }}>
         <Row className="align-items-center">
           <Col xl={6} lg={6} md={7}>
-            <div className="tm-details-content-wrap z-index-5">
+            <div className="z-index-5">
               <div className="tm-details-title-box mb-20">
                 <span className="tm-hero-subtitle">Ready to Schedule Your</span>
                 <h4 className="tm-details-title">Free Consultation Call?</h4>
