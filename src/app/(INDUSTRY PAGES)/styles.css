@@ -107,3 +107,7 @@ h1,h2,h3,h4,h5,h6,h7{
 .content-prose + .content-grid-3 {
   margin-top: 2rem;
 }
+
+p{
+  color: rgb(173, 173, 173) !important;
+}
