@@ -79,7 +79,7 @@ export default function Page() {
 
             {/* hero area start */}
             <div className="tp-hero-4-area tp-btn-trigger">
-              <div className="container-fluid">
+              <div className="container">
                 <div className="row">
                   <div className="col-xl-12">
                     <div className="tp-hero-4-content-wrap">
@@ -107,7 +107,7 @@ export default function Page() {
                             </span>
                           </div>
                         </div>
-                        <div className="tp-hero-4-achievement tp-btn-bounce d-none d-md-block">
+                        <div className="tp-hero-4-achievement tp-btn-bounce d-none d-md-block col-md-1">
                           <div className="tp-hero-4-star-1">
                             <Image
                               className="tp-zoom-in-out"

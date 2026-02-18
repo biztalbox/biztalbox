@@ -117,7 +117,7 @@ export default function Page() {
                             </span>
                           </div>
                         </div>
-                        <div className="tp-hero-4-achievement tp-btn-bounce d-none d-md-block">
+                        <div className="tp-hero-4-achievement tp-btn-bounce d-none d-md-block col-md-1">
                           <div className="tp-hero-4-star-1">
                             <Image
                               className="tp-zoom-in-out"
