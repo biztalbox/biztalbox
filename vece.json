@@ -1,0 +1,8 @@
+{
+    "rewrites": [
+      {
+        "source": "/usa/:path*",
+        "destination": "https://blog.biztalbox.com/:path*"  
+      }
+    ]
+  }
