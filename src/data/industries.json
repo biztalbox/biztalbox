@@ -1,17 +1,5 @@
 [
     {
-        "id": 1,
-        "name": "Healthcare",
-        "link": "healthcare-seo",
-        "description": "Healthcare is the practice of maintaining and improving health through the prevention, diagnosis, and treatment of disease, injury, and other physical and mental impairments."
-    },
-    {
-        "id": 2,
-        "name": "Education",
-        "link": "education-seo",
-        "description": "Education is the process of facilitating learning, or the acquisition of knowledge, skills, values, beliefs, and habits. Educational methods include teaching, training, storytelling, discussion, and directed research."
-    },
-    {
         "id": 3,
         "name": "Beauty and wellness",
         "link": "beauty-and-wellness-seo",
