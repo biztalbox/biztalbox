@@ -2,15 +2,15 @@
   "rewrites": [
     {
       "source": "/usa",
-      "destination": "https://blog.biztalbox.com"
+      "destination": "https://cms.biztalbox.com"
     },
     {
       "source": "/usa/",
-      "destination": "https://blog.biztalbox.com/"
+      "destination": "https://cms.biztalbox.com/"
     },
     {
       "source": "/usa/:path*",
-      "destination": "https://blog.biztalbox.com/:path*"
+      "destination": "https://cms.biztalbox.com/:path*"
     }
   ]
 }
