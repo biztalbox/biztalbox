@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/usa",
+      "destination": "https://cms.biztalbox.com"
+    },
+    {
+      "source": "/usa/",
+      "destination": "https://cms.biztalbox.com/"
+    },
+    {
+      "source": "/usa/:path*",
+      "destination": "https://cms.biztalbox.com/:path*"
+    }
+  ]
+}
