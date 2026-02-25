@@ -35,3 +35,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 zdata.json
+wordpress-mu-plugin-usa-rewrite-fix.php
+wordpress-usa-diagnostic.php

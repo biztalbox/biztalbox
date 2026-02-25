@@ -12,5 +12,20 @@
       "source": "/usa/:path*",
       "destination": "https://cms.biztalbox.com/:path*"
     }
+  ],
+  "headers": [
+    {
+      "source": "/usa/:path*",
+      "headers": [
+        {
+          "key": "X-Forwarded-Host",
+          "value": "biztalbox.com"
+        },
+        {
+          "key": "X-Forwarded-Proto",
+          "value": "https"
+        }
+      ]
+    }
   ]
 }
