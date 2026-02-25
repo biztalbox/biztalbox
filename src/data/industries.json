@@ -1,17 +1,5 @@
 [
     {
-        "id": 1,
-        "name": "Healthcare",
-        "link": "healthcare-seo",
-        "description": "Healthcare is the practice of maintaining and improving health through the prevention, diagnosis, and treatment of disease, injury, and other physical and mental impairments."
-    },
-    {
-        "id": 2,
-        "name": "Education",
-        "link": "education-seo",
-        "description": "Education is the process of facilitating learning, or the acquisition of knowledge, skills, values, beliefs, and habits. Educational methods include teaching, training, storytelling, discussion, and directed research."
-    },
-    {
         "id": 3,
         "name": "Beauty and wellness",
         "link": "beauty-and-wellness-seo",
@@ -20,7 +8,7 @@
     {
         "id": 4,
         "name": "Home services",
-        "link": "home-services-seo",
+        "link": "home services-seo",
         "description": "Home service demand doesn&apos;t build gradually. It appears suddenly, when a problem needs immediate action. A pipe bursts, an AC fails, and a renovation reaches the decision stage. In those moments,homeowners are not exploring options. They are filtering for trust, proximity, and proof of competence. Search is where that filtering happens."
     },
     {
