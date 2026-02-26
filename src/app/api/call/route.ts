@@ -35,6 +35,7 @@ export async function POST(req: NextRequest) {
         const mailOptions = {
             from: email,
             to: 'info@biztalbox.com',
+            cc: 'ish@biztalbox.com',
             subject: `Consultation Request from ${name}`,
             html: `
             <h2>Consultation Call Request</h2>
