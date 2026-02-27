@@ -1,21 +1,21 @@
 {
   "rewrites": [
     {
-      "source": "/usa",
+      "source": "/page",
       "destination": "https://cms.biztalbox.com"
     },
     {
-      "source": "/usa/",
+      "source": "/page/",
       "destination": "https://cms.biztalbox.com/"
     },
     {
-      "source": "/usa/:path*",
+      "source": "/page/:path*",
       "destination": "https://cms.biztalbox.com/:path*"
     }
   ],
   "headers": [
     {
-      "source": "/usa/:path*",
+      "source": "/page/:path*",
       "headers": [
         {
           "key": "X-Forwarded-Host",
