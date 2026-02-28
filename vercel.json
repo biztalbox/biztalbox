@@ -11,6 +11,14 @@
     {
       "source": "/page/:path*",
       "destination": "https://cms.biztalbox.com/:path*"
+    },
+    {
+      "source": "/page/wp-admin/:path*",
+      "destination": "https://cms.biztalbox.com/wp-admin/:path*"
+    },
+    {
+      "source": "/page/wp-json/:path*",
+      "destination": "https://cms.biztalbox.com/wp-json/:path*"
     }
   ],
   "headers": [
