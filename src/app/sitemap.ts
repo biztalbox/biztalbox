@@ -6,6 +6,7 @@ interface WordPressPost {
   date: string;
 }
 
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = 'https://biztalbox.com' // Replace with your actual domain
 
@@ -82,17 +83,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }))
 
-  // Add USA sitemap reference
-  const usaSitemapRoute = {
-    url: `${baseUrl}/usa-sitemap.xml`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: 0.9,
-  }
+  // Sitemap index references (sub-sitemaps)
+  const sitemapRefs = [
+    {
+      url: `${baseUrl}/usa-sitemap.xml`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/page-sitemap.xml`,
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 0.9,
+    },
+  ]
 
-  console.log(`Generated sitemap with ${routes.length} static routes, ${blogRoutes.length} blog routes, and 1 USA sitemap reference`)
+  console.log(`Generated sitemap with ${routes.length} static routes, ${blogRoutes.length} blog routes, and ${sitemapRefs.length} sitemap references`)
 
-  return [...routes, ...blogRoutes, usaSitemapRoute]
+  return [...routes, ...blogRoutes, ...sitemapRefs]
 }
 
 // Force the sitemap to be dynamically generated on each request

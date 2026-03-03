@@ -1,0 +1,43 @@
+export interface BenefitsItem {
+  title: string;
+  description: string;
+}
+
+export interface WhyChooseItem {
+  title: string;
+  body: string;
+}
+
+export interface HowWeWorkStep {
+  title: string;
+  body: string;
+}
+
+export interface CMSPageData {
+  slug: string;
+  title: string;
+  description: string;
+  hero_title: string;
+  hero_paragraph_1: string;
+  hero_paragraph_2: string;
+  cta_subtitle: string;
+  cta_title: string;
+  cta_body: string;
+  benefits_title: string;
+  benefits_subtitle: string;
+  benefits_items: BenefitsItem[];
+  why_choose_title: string;
+  why_choose_items: WhyChooseItem[];
+  how_we_work_title: string;
+  how_we_work_steps: HowWeWorkStep[];
+  faqs: { question: string; answer: string }[];
+}
+
+export interface CMSSettings {
+  projects_count: string;
+  contact_phone: string;
+  contact_email: string;
+  cta_default_subtitle: string;
+  cta_default_title: string;
+  cta_default_body: string;
+}
