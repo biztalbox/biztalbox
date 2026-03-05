@@ -4,6 +4,15 @@ const CMS_API_URL = process.env.CMS_API_URL ?? "https://cms.biztalbox.com";
 const IS_DEV = process.env.NODE_ENV === "development";
 
 /** Base URL of this Next.js app (for same-origin proxy fetch) */
+function getAppBaseUrl(): string {
+  if (process.env.NEXT_PUBLIC_APP_URL) {
+    return process.env.NEXT_PUBLIC_APP_URL.replace(/\/$/, "");
+  }
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`;
+  }
+  return `http://localhost:${process.env.PORT ?? 3000}`;
+}
 
 const EMPTY_PAGE: CMSPageData = {
   slug: "",
@@ -115,12 +124,10 @@ const SETTINGS_FALLBACK: CMSSettings = {
 
 export async function fetchPage(slug: string): Promise<CMSPageData | null> {
   const encodedSlug = encodeURIComponent(slug);
-  const proxyUrl = `${CMS_API_URL}/api/cms/page/${encodedSlug}`;
+  const proxyUrl = `${getAppBaseUrl()}/api/cms/page/${encodedSlug}`;
 
   try {
-    const res = await fetch(proxyUrl, {
-      ...(IS_DEV ? { cache: "no-store" as RequestCache } : { next: { revalidate: 60 } }),
-    });
+    const res = await fetch(proxyUrl, { cache: "no-store" as RequestCache });
     if (!res.ok) return null;
     const raw = await res.json();
     return normalizePageData(raw, slug);
