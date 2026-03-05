@@ -4,6 +4,7 @@ import MarketingPageSchema from "@/components/schema/MarketingPageSchema";
 import { createMarketingPageData } from "@/utils/marketing-page-data";
 import type { CMSPageData } from "@/lib/cms-types";
 import { testimonial } from "@/app/(SEO PAGES)/arapahoe-b2b-seo-company/data";
+import '@/app/page/[slug]/styles.css';
 
 const CMS_API_URL = process.env.CMS_API_URL ?? "https://cms.biztalbox.com";
 const DOMAIN = process.env.NEXT_PUBLIC_DOMAIN ?? "https://biztalbox.com";

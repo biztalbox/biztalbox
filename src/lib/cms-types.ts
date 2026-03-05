@@ -13,6 +13,12 @@ export interface HowWeWorkStep {
   body: string;
 }
 
+/** Same shape as WhyChooseItem – title + body (body may be HTML from rich text). */
+export interface ServicesOfferedItem {
+  title: string;
+  body: string;
+}
+
 export interface CMSPageData {
   slug: string;
   title: string;
@@ -30,6 +36,15 @@ export interface CMSPageData {
   why_choose_items: WhyChooseItem[];
   how_we_work_title: string;
   how_we_work_steps: HowWeWorkStep[];
+  /** Services offered section (below industry cards); same design as Why Choose Us. */
+  services_offered_title?: string;
+  services_offered_items?: ServicesOfferedItem[];
+  /** Pricing section (above FAQs): heading + rich text HTML. */
+  pricing_heading?: string;
+  pricing_content?: string;
+  /** Conclusion section (after FAQs): heading + rich text HTML. */
+  conclusion_heading?: string;
+  conclusion_content?: string;
   faqs: { question: string; answer: string }[];
 }
 

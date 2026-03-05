@@ -37,6 +37,7 @@ import faq_banner from "@/assets/image/faq.webp";
 import FaqItem from "@/components/faq/faq-item";
 import { testimonial } from "@/app/(SEO PAGES)/arapahoe-b2b-seo-company/data";
 import type { CMSPageData, CMSSettings } from "@/lib/cms-types";
+import SafeHtml from "@/components/seo-page/SafeHtml";
 
 // ─── helpers ──────────────────────────────────────────────────────────────────
 
@@ -77,12 +78,12 @@ function CtaBlock({ subtitle, title, body, phone, email }: CtaBlockProps) {
                   <span className="tm-hero-subtitle">{subtitle}</span>
                 )}
                 {title && (
-                  <h4 className="tm-details-title">{title}</h4>
+                  <h3 className="tm-details-title">{title}</h3>
                 )}
               </div>
               {body && (
                 <div className="tm-details-text">
-                  <p>{body}</p>
+                  <SafeHtml html={body} className="tm-details-text-body" />
                 </div>
               )}
               <div className="tm-details-portfolio">
@@ -117,10 +118,13 @@ export default function SEOPageLayout({ data, settings }: SEOPageLayoutProps) {
   const email       = settings.contact_email;
   const projectsCount = settings.projects_count || "5";
 
-  const hasBenefits   = Boolean(data.benefits_title || data.benefits_items?.length);
-  const hasWhyChoose  = Boolean(data.why_choose_title || data.why_choose_items?.length);
-  const hasHowWeWork  = Boolean(data.how_we_work_title || data.how_we_work_steps?.length);
-  const hasFaqs       = Boolean(data.faqs?.length);
+  const hasBenefits        = Boolean(data.benefits_title || data.benefits_items?.length);
+  const hasWhyChoose       = Boolean(data.why_choose_title || data.why_choose_items?.length);
+  const hasHowWeWork       = Boolean(data.how_we_work_title || data.how_we_work_steps?.length);
+  const hasServicesOffered = Boolean(data.services_offered_title || data.services_offered_items?.length);
+  const hasPricing         = Boolean(data.pricing_heading || data.pricing_content);
+  const hasConclusion      = Boolean(data.conclusion_heading || data.conclusion_content);
+  const hasFaqs            = Boolean(data.faqs?.length);
 
   useEffect(() => {
     document.body.classList.add("tp-smooth-scroll");
@@ -170,8 +174,12 @@ export default function SEOPageLayout({ data, settings }: SEOPageLayoutProps) {
                               {data.hero_title}
                             </h1>
                           )}
-                          {data.hero_paragraph_1 && <p>{data.hero_paragraph_1}</p>}
-                          {data.hero_paragraph_2 && <p>{data.hero_paragraph_2}</p>}
+                          {data.hero_paragraph_1 && (
+                            <SafeHtml html={data.hero_paragraph_1} className="text-white" />
+                          )}
+                          {data.hero_paragraph_2 && (
+                            <SafeHtml html={data.hero_paragraph_2} className="text-white" />
+                          )}
                           <div className="tp-hero-4-text tp_fade_right">
                             <span>
                               <Image
@@ -251,8 +259,10 @@ export default function SEOPageLayout({ data, settings }: SEOPageLayoutProps) {
                                 {data.benefits_items.map((item, i) => (
                                   <li key={i}>
                                     {item.title && <strong>{item.title}</strong>}
-                                    {item.title && item.description && " - "}
-                                    {item.description}
+                                    {item.title && item.description && " — "}
+                                    {item.description ? (
+                                      <SafeHtml html={item.description} />
+                                    ) : null}
                                   </li>
                                 ))}
                               </ul>
@@ -287,7 +297,7 @@ export default function SEOPageLayout({ data, settings }: SEOPageLayoutProps) {
                       <div className="col-xl-10 col-md-10">
                         <div className={`tp-about-4-title-box ${!isMobile ? "tp_fade_bottom" : ""}`}>
                           {data.why_choose_title && (
-                            <h4 className="tp-about-4-title">{data.why_choose_title}</h4>
+                            <h2 className="tp-about-4-title">{data.why_choose_title}</h2>
                           )}
                         </div>
                       </div>
@@ -304,15 +314,15 @@ export default function SEOPageLayout({ data, settings }: SEOPageLayoutProps) {
                             <div key={rowIndex} className={`row ${rowIndex > 0 ? "mt-30" : ""}`}>
                               <div className="col-xl-6 col-lg-6">
                                 <div className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                                  {a.title && <h4 className="text-white">{a.title}</h4>}
-                                  {a.body  && <p>{a.body}</p>}
+                                  {a.title && <h3 className="text-white">{a.title}</h3>}
+                                  {a.body  && <SafeHtml html={a.body} />}
                                 </div>
                               </div>
                               {b && (
                                 <div className="col-xl-6 col-lg-6">
                                   <div className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                                    {b.title && <h4 className="text-white">{b.title}</h4>}
-                                    {b.body  && <p>{b.body}</p>}
+                                    {b.title && <h3 className="text-white">{b.title}</h3>}
+                                    {b.body  && <SafeHtml html={b.body} />}
                                   </div>
                                 </div>
                               )}
@@ -335,8 +345,57 @@ export default function SEOPageLayout({ data, settings }: SEOPageLayoutProps) {
               email={email}
             />
 
-            {/* ── Services ─────────────────────────────────────────── */}
+            {/* ── Services (industry cards) ────────────────────────── */}
             <ServiceThree />
+
+            {/* ── Services Offered (same design as Why Choose Us) ─── */}
+            {hasServicesOffered && (
+              <div className="tp-about-4-area pt-100 pb-110 p-relative">
+                <div className="tp-about-4-shape-2">
+                  <Image className="tp-zoom-in-out" src={shape} alt="shape" />
+                </div>
+                <div className="container">
+                  <div className="row">
+                    <div className="col-xl-10 col-md-10">
+                      <div className={`tp-about-4-title-box ${!isMobile ? "tp_fade_bottom" : ""}`}>
+                        {data.services_offered_title && (
+                          <h2 className="tp-about-4-title">{data.services_offered_title}</h2>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="row align-items-center">
+                    <div className="col-xl-3 col-lg-2 col-md-3">
+                      <div className="tp-about-4-shape-1">
+                        <Image src={shape_2} alt="shape-2" />
+                      </div>
+                    </div>
+                    <div className="col-xl-9 col-lg-10 col-md-9">
+                      <div className="tp-about-4-content-wrap">
+                        {toPairs(data.services_offered_items ?? []).map(([a, b], rowIndex) => (
+                          <div key={rowIndex} className={`row ${rowIndex > 0 ? "mt-30" : ""}`}>
+                            <div className="col-xl-6 col-lg-6">
+                              <div className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""}`}>
+                                {a.title && <h3 className="text-white">{a.title}</h3>}
+                                {a.body && <SafeHtml html={a.body} />}
+                              </div>
+                            </div>
+                            {b && (
+                              <div className="col-xl-6 col-lg-6">
+                                <div className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""}`}>
+                                  {b.title && <h3 className="text-white">{b.title}</h3>}
+                                  {b.body && <SafeHtml html={b.body} />}
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* ── How We Work ──────────────────────────────────────── */}
             <LineTextTwo title="Our SEO Process" />
@@ -350,7 +409,7 @@ export default function SEOPageLayout({ data, settings }: SEOPageLayoutProps) {
                     <div className="col-xl-10 col-md-10">
                       <div className={`tp-about-4-title-box ${!isMobile ? "tp_fade_bottom" : ""}`}>
                         {data.how_we_work_title && (
-                          <h3 className="tp-about-4-title">{data.how_we_work_title}</h3>
+                          <h2 className="tp-about-4-title">{data.how_we_work_title}</h2>
                         )}
                       </div>
                     </div>
@@ -368,8 +427,8 @@ export default function SEOPageLayout({ data, settings }: SEOPageLayoutProps) {
                             {(pair.filter(Boolean) as NonNullable<(typeof pair)[0]>[]).map((step, j) => (
                               <div key={j} className="col-xl-6 col-lg-6">
                                 <div className={`tp-about-4-content item-${j + 1} ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                                  {step.title && <h4 className="text-white">{step.title}</h4>}
-                                  {step.body  && <p>{step.body}</p>}
+                                  {step.title && <h3 className="text-white">{step.title}</h3>}
+                                  {step.body  && <SafeHtml html={step.body} />}
                                 </div>
                               </div>
                             ))}
@@ -390,6 +449,26 @@ export default function SEOPageLayout({ data, settings }: SEOPageLayoutProps) {
               phone={phone}
               email={email}
             />
+
+            {/* ── Pricing (above FAQs) ──────────────────────────────── */}
+            {hasPricing && (
+              <div className="tp-about-4-area pt-100 pb-110 p-relative">
+                <div className="container">
+                  <div className="row">
+                    <div className="col-xl-12">
+                      {data.pricing_heading && (
+                        <h2 className="tp-about-4-title mb-30">{data.pricing_heading}</h2>
+                      )}
+                      {data.pricing_content && (
+                        <div className="tp-about-4-content-wrap">
+                          <SafeHtml html={data.pricing_content} className="cms-rich-content" />
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* ── FAQs ─────────────────────────────────────────────── */}
             {hasFaqs && (
@@ -417,7 +496,7 @@ export default function SEOPageLayout({ data, settings }: SEOPageLayoutProps) {
                     <div className="col-xl-4 col-lg-4">
                       <div className="fq-faq-sidebar">
                         <div className="fq-faq-sidebar-content">
-                          <h4 className="fq-faq-sidebar-title">FAQs</h4>
+                          <h3 className="fq-faq-sidebar-title">FAQs</h3>
                         </div>
                         <div className="fq-faq-sidebar-thumb">
                           <Image
@@ -428,6 +507,26 @@ export default function SEOPageLayout({ data, settings }: SEOPageLayoutProps) {
                           />
                         </div>
                       </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* ── Conclusion (after FAQs) ───────────────────────────── */}
+            {hasConclusion && (
+              <div className="tp-about-4-area pt-100 pb-110 p-relative">
+                <div className="container">
+                  <div className="row">
+                    <div className="col-xl-12">
+                      {data.conclusion_heading && (
+                        <h2 className="tp-about-4-title mb-30">{data.conclusion_heading}</h2>
+                      )}
+                      {data.conclusion_content && (
+                        <div className="tp-about-4-content-wrap">
+                          <SafeHtml html={data.conclusion_content} className="cms-rich-content" />
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
