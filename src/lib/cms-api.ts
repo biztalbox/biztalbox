@@ -124,16 +124,21 @@ const SETTINGS_FALLBACK: CMSSettings = {
 
 export async function fetchPage(slug: string): Promise<CMSPageData | null> {
   const encodedSlug = encodeURIComponent(slug);
-  const proxyUrl = `${getAppBaseUrl()}/api/cms/page/${encodedSlug}`;
+
+  const url = IS_DEV
+    ? `${getAppBaseUrl()}/api/cms/page/${encodedSlug}`
+    : `${CMS_API_URL}/api/public/pages/${encodedSlug}`;
 
   try {
-    const res = await fetch(proxyUrl, { cache: "no-store" as RequestCache });
+    const res = await fetch(url, {
+      ...(IS_DEV ? { cache: "no-store" as RequestCache } : { next: { revalidate: 60 } }),
+    });
     if (!res.ok) return null;
     const raw = await res.json();
     return normalizePageData(raw, slug);
   } catch (err) {
     if (IS_DEV) {
-      console.warn(`[CMS] Failed to fetch page "${slug}" from proxy (${proxyUrl}):`, err);
+      console.warn(`[CMS] Failed to fetch page "${slug}" (${url}):`, err);
     }
     return null;
   }
