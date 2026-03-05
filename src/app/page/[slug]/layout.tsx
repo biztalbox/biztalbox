@@ -4,22 +4,10 @@ import MarketingPageSchema from "@/components/schema/MarketingPageSchema";
 import { createMarketingPageData } from "@/utils/marketing-page-data";
 import type { CMSPageData } from "@/lib/cms-types";
 import { testimonial } from "@/app/(SEO PAGES)/arapahoe-b2b-seo-company/data";
+import { fetchPage } from "@/lib/cms-api";
 import '@/app/page/[slug]/styles.css';
 
-const CMS_API_URL = process.env.CMS_API_URL ?? "https://cms.biztalbox.com";
 const DOMAIN = process.env.NEXT_PUBLIC_DOMAIN ?? "https://biztalbox.com";
-
-async function getPage(slug: string): Promise<CMSPageData | null> {
-  try {
-    const res = await fetch(`${CMS_API_URL}/api/public/pages/${slug}`, {
-      next: { revalidate: 60 },
-    });
-    if (!res.ok) return null;
-    return res.json() as Promise<CMSPageData>;
-  } catch {
-    return null;
-  }
-}
 
 /**
  * Dynamic metadata — title, description, and canonical URL all come from
@@ -31,7 +19,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const page = await getPage(slug);
+  const page = await fetchPage(slug);
   if (!page) return {};
 
   return {
@@ -71,7 +59,7 @@ export default async function CMSPageLayout({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const page = await getPage(slug);
+  const page = await fetchPage(slug);
 
   // If page doesn't exist the route's page.tsx will call notFound(); just
   // render children so the 404 boundary works correctly.

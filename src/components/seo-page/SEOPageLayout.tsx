@@ -154,7 +154,7 @@ export default function SEOPageLayout({ data, settings }: SEOPageLayoutProps) {
     <Wrapper>
       <HeaderEleven transparent={true} />
 
-      <div id="smooth-wrapper">
+      <div id="smooth-wrapper page_content">
         <div id="smooth-content">
           <main style={{ overflow: "hidden" }}>
 

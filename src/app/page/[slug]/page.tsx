@@ -1,40 +1,32 @@
 import { notFound } from "next/navigation";
-import type { CMSPageData, CMSSettings } from "@/lib/cms-types";
+import type { CMSPageData } from "@/lib/cms-types";
 import SEOPageLayout from "@/components/seo-page/SEOPageLayout";
+import { fetchPage, fetchSettings } from "@/lib/cms-api";
 
-const CMS_API_URL = process.env.CMS_API_URL ?? "https://cms.biztalbox.com";
-
-async function getPage(slug: string): Promise<CMSPageData | null> {
-  try {
-    const res = await fetch(`${CMS_API_URL}/api/public/pages/${slug}`, {
-      next: { revalidate: 60 },
-    });
-    if (!res.ok) return null;
-    return res.json() as Promise<CMSPageData>;
-  } catch {
-    return null;
-  }
-}
-
-async function getSettings(): Promise<CMSSettings> {
-  const fallback: CMSSettings = {
-    projects_count: "5",
-    contact_phone: "+91 9485699709",
-    contact_email: "info@biztalbox.com",
-    cta_default_subtitle: "",
-    cta_default_title: "",
-    cta_default_body: "",
+function createDevFallbackPage(slug: string): CMSPageData {
+  const title = slug
+    .split("-")
+    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+    .join(" ");
+  return {
+    slug,
+    title: `${title} | Biztalbox SEO Services`,
+    description: `Professional SEO services - ${title}. Contact Biztalbox for a free consultation.`,
+    hero_title: `SEO Services – ${title}`,
+    hero_paragraph_1: `Looking for expert SEO in ${title}? Biztalbox helps local businesses rank higher and attract more customers.`,
+    hero_paragraph_2: `Partner with a trusted SEO agency and grow your online presence.`,
+    cta_subtitle: "Ready to Grow Your Business?",
+    cta_title: "Get Started Today",
+    cta_body: "Contact us for a free consultation and SEO audit.",
+    benefits_title: "",
+    benefits_subtitle: "",
+    benefits_items: [],
+    why_choose_title: "",
+    why_choose_items: [],
+    how_we_work_title: "",
+    how_we_work_steps: [],
+    faqs: [],
   };
-  try {
-    const res = await fetch(`${CMS_API_URL}/api/settings`, {
-      next: { revalidate: 60 },
-    });
-    if (!res.ok) return fallback;
-    const data = await res.json();
-    return { ...fallback, ...data };
-  } catch {
-    return fallback;
-  }
 }
 
 export default async function CMSPage({
@@ -43,7 +35,14 @@ export default async function CMSPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const [page, settings] = await Promise.all([getPage(slug), getSettings()]);
-  if (!page) notFound();
+  const [page, settings] = await Promise.all([fetchPage(slug), fetchSettings()]);
+
+  if (!page) {
+    if (process.env.NODE_ENV === "development") {
+      return <SEOPageLayout data={createDevFallbackPage(slug)} settings={settings} />;
+    }
+    notFound();
+  }
+
   return <SEOPageLayout data={page} settings={settings} />;
 }
