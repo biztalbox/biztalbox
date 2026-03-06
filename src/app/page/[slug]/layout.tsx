@@ -7,6 +7,8 @@ import { testimonial } from "@/app/(SEO PAGES)/arapahoe-b2b-seo-company/data";
 import { fetchPage } from "@/lib/cms-api";
 import '@/app/page/[slug]/styles.css';
 
+export const dynamic = "force-dynamic";
+
 const DOMAIN = process.env.NEXT_PUBLIC_DOMAIN ?? "https://biztalbox.com";
 
 /**

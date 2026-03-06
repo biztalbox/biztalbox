@@ -131,7 +131,7 @@ export async function fetchPage(slug: string): Promise<CMSPageData | null> {
 
   try {
     const res = await fetch(url, {
-      ...(IS_DEV ? { cache: "no-store" as RequestCache } : { next: { revalidate: 60 } }),
+      cache: "no-store",
     });
     if (!res.ok) return null;
     const raw = await res.json();
