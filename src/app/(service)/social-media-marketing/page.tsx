@@ -71,7 +71,8 @@ const SocialMediaMarketingPage = () => {
               imageAlt="Social Media Marketing"
               videoSrc="https://res.cloudinary.com/djoiovkr1/video/upload/Social_Crawler-_2_iy5n53.webm"
             >
-              <div className="project-details-1-right p-relative">
+              <div className="p-relative" style={{padding: "50px 30px"}}> 
+              {/* previously used this class on above div - project-details-1-right */}
                 <div className="project-details-1-title-box">
                   <h1
                     className="project-details-1-subtitle"
