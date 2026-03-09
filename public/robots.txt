@@ -5,3 +5,4 @@ Allow: /
 Sitemap: https://biztalbox.com/sitemap.xml
 Sitemap: https://biztalbox.com/usa-sitemap.xml
 Sitemap: https://biztalbox.com/industry.xml
+Sitemap: https://biztalbox.com/page-sitemap.xml

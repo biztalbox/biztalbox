@@ -33,6 +33,8 @@ export async function POST(req: NextRequest) {
         const mailOptions = {
             from: email,
             to: 'info@biztalbox.com',
+            cc: 'ish@biztalbox.com',
+            replyTo: email,
             subject: `Contact Form Submission from ${name}`,
             html: `
             <h2>New Contact Form Submission</h2>

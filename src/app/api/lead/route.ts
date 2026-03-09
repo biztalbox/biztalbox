@@ -48,6 +48,8 @@ export async function POST(req: NextRequest) {
         const mailOptions = {
             from: email,
             to: 'info@biztalbox.com',
+            cc: 'ish@biztalbox.com',
+            replyTo: email,
             subject: `New Lead Form Submission from ${name}`,
             html: `
             <h2>New Lead Form Submission</h2>

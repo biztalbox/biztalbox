@@ -358,7 +358,7 @@ const BookCallForm = () => {
                         "0 4px 15px rgba(51, 110, 249, 0.3)";
                     }}
                   >
-                    <i className="fas fa-calendar-check me-2"></i>
+                    {/* <i className="fas fa-calendar-check me-2"></i> */}
                     {loading ? "Scheduling..." : "Book Free Call"}
                   </Button>
 

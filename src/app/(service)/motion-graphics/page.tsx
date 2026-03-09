@@ -71,7 +71,8 @@ const MotionGraphicsPage = () => {
               imageAlt="CAPTAIN CUT Video Editing / Motion Graphics"
               videoSrc="https://res.cloudinary.com/djoiovkr1/video/upload/Motion_Graphics_2_klp401.webm"
             >
-              <div className="project-details-1-right p-relative">
+              <div className="p-relative" style={{padding: "50px 30px"}}> 
+              {/* previously used this class on above div - project-details-1-right */}
                 <div className="project-details-1-title-box">
                   <h1
                     className="project-details-1-subtitle"

@@ -279,6 +279,7 @@ const ScrollPinImage: React.FC<ScrollPinImageProps> = ({
               overflowY: "auto",
               scrollbarWidth: "none",
               msOverflowStyle: "none",
+              pointerEvents: "all"
             }}
           >
             {children}
