@@ -107,7 +107,7 @@ export default function GlobalSchema({
               "@type": "Service",
               name: "Digital Marketing",
               url: `${baseUrl}/services`,
-              description: "Biztalbox offers expert digital marketing services to businesses across industries with tailored, ROI-driven strategies.",
+              description: "biztalbox offers expert digital marketing services to businesses across industries with tailored, ROI-driven strategies.",
               serviceType: "Digital Marketing",
               provider: { "@id": `${baseUrl}/#organization` },
               audience: [
@@ -124,7 +124,7 @@ export default function GlobalSchema({
               "@type": "Service",
               name: "SEO Services",
               url: `${baseUrl}/best-seo-agency`,
-              description: "Partner with Biztalbox — a top-rated SEO agency delivering proven strategies that boost search rankings, drive targeted traffic, and fuel real business growth.",
+              description: "Partner with biztalbox — a top-rated SEO agency delivering proven strategies that boost search rankings, drive targeted traffic, and fuel real business growth.",
               serviceType: "Search Engine Optimization",
               provider: { "@id": `${baseUrl}/#organization` }
             },
@@ -235,7 +235,7 @@ export default function GlobalSchema({
             {
               "@type": "LocalBusiness",
               "@id": "#biztalbox",
-              name: "Biztalbox",
+              name: "biztalbox",
               url: organizationData.url,
               image: serviceData.image,
               telephone: organizationData.telephone,
@@ -320,7 +320,7 @@ export default function GlobalSchema({
           "@context": "https://schema.org",
           "@id": `${baseUrl}/#website`,
           url: baseUrl,
-          name: "Biztalbox",
+          name: "biztalbox",
           description: organizationData.description,
           publisher: {
             "@type": "Organization",
@@ -351,14 +351,14 @@ export default function GlobalSchema({
         "@type": "WebPage",
         "@id": `${baseUrl}/blog`,
         url: `${baseUrl}/blog`,
-        name: title || "Blogs - Biztalbox",
-        description: description || "Latest insights and tips from Biztalbox on digital marketing, SEO, web development, and business growth.",
+        name: title || "Blogs - biztalbox",
+        description: description || "Latest insights and tips from biztalbox on digital marketing, SEO, web development, and business growth.",
         isPartOf: {
           "@type": "WebSite",
           "@context": "https://schema.org",
           "@id": `${baseUrl}/#website`,
           url: baseUrl,
-          name: "Biztalbox",
+          name: "biztalbox",
           description: organizationData.description,
           publisher: {
             "@type": "Organization",
@@ -427,14 +427,14 @@ export default function GlobalSchema({
         "@type": "WebPage",
         "@id": `${baseUrl}/contact`,
         url: `${baseUrl}/contact`,
-        name: title || "Contact Us - Biztalbox",
-        description: description || "Get in touch with Biztalbox for all your digital marketing and web development needs. We're here to help grow your business.",
+        name: title || "Contact Us - biztalbox",
+        description: description || "Get in touch with biztalbox for all your digital marketing and web development needs. We're here to help grow your business.",
         isPartOf: {
           "@type": "WebSite",
           "@context": "https://schema.org",
           "@id": `${baseUrl}/#website`,
           url: baseUrl,
-          name: "Biztalbox",
+          name: "biztalbox",
           description: organizationData.description,
           publisher: {
             "@type": "Organization",

@@ -38,6 +38,8 @@ import FaqItem from "@/components/faq/faq-item";
 import { testimonial } from "@/app/(SEO PAGES)/arapahoe-b2b-seo-company/data";
 import type { CMSPageData, CMSSettings } from "@/lib/cms-types";
 import SafeHtml from "@/components/seo-page/SafeHtml";
+import Model3D from "@/components/3d-model";
+import ModelGLB from "../3d-model-glb";
 
 // ─── helpers ──────────────────────────────────────────────────────────────────
 
@@ -112,19 +114,19 @@ export default function SEOPageLayout({ data, settings }: SEOPageLayoutProps) {
   const [isMobile, setIsMobile] = useState(false);
 
   const ctaSubtitle = data.cta_subtitle || settings.cta_default_subtitle;
-  const ctaTitle    = data.cta_title    || settings.cta_default_title;
-  const ctaBody     = data.cta_body     || settings.cta_default_body;
-  const phone       = settings.contact_phone;
-  const email       = settings.contact_email;
+  const ctaTitle = data.cta_title || settings.cta_default_title;
+  const ctaBody = data.cta_body || settings.cta_default_body;
+  const phone = settings.contact_phone;
+  const email = settings.contact_email;
   const projectsCount = settings.projects_count || "5";
 
-  const hasBenefits        = Boolean(data.benefits_title || data.benefits_items?.length);
-  const hasWhyChoose       = Boolean(data.why_choose_title || data.why_choose_items?.length);
-  const hasHowWeWork       = Boolean(data.how_we_work_title || data.how_we_work_steps?.length);
+  const hasBenefits = Boolean(data.benefits_title || data.benefits_items?.length);
+  const hasWhyChoose = Boolean(data.why_choose_title || data.why_choose_items?.length);
+  const hasHowWeWork = Boolean(data.how_we_work_title || data.how_we_work_steps?.length);
   const hasServicesOffered = Boolean(data.services_offered_title || data.services_offered_items?.length);
-  const hasPricing         = Boolean(data.pricing_heading || data.pricing_content);
-  const hasConclusion      = Boolean(data.conclusion_heading || data.conclusion_content);
-  const hasFaqs            = Boolean(data.faqs?.length);
+  const hasPricing = Boolean(data.pricing_heading || data.pricing_content);
+  const hasConclusion = Boolean(data.conclusion_heading || data.conclusion_content);
+  const hasFaqs = Boolean(data.faqs?.length);
 
   useEffect(() => {
     document.body.classList.add("tp-smooth-scroll");
@@ -315,14 +317,14 @@ export default function SEOPageLayout({ data, settings }: SEOPageLayoutProps) {
                               <div className="col-xl-6 col-lg-6">
                                 <div className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""}`}>
                                   {a.title && <h3 className="text-white">{a.title}</h3>}
-                                  {a.body  && <SafeHtml html={a.body} />}
+                                  {a.body && <SafeHtml html={a.body} />}
                                 </div>
                               </div>
                               {b && (
                                 <div className="col-xl-6 col-lg-6">
                                   <div className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""}`}>
                                     {b.title && <h3 className="text-white">{b.title}</h3>}
-                                    {b.body  && <SafeHtml html={b.body} />}
+                                    {b.body && <SafeHtml html={b.body} />}
                                   </div>
                                 </div>
                               )}
@@ -428,7 +430,7 @@ export default function SEOPageLayout({ data, settings }: SEOPageLayoutProps) {
                               <div key={j} className="col-xl-6 col-lg-6">
                                 <div className={`tp-about-4-content item-${j + 1} ${!isMobile ? "tp_fade_bottom" : ""}`}>
                                   {step.title && <h3 className="text-white">{step.title}</h3>}
-                                  {step.body  && <SafeHtml html={step.body} />}
+                                  {step.body && <SafeHtml html={step.body} />}
                                 </div>
                               </div>
                             ))}
@@ -474,7 +476,7 @@ export default function SEOPageLayout({ data, settings }: SEOPageLayoutProps) {
             {hasFaqs && (
               <div className="fq-faq-area fq-faq-bdr">
                 <div className="container">
-                  <div className="row">
+                  <div className="row flex-column-reverse flex-lg-row">
                     <div className="col-xl-8 col-lg-8">
                       <div className="fq-faq-wrapper">
                         <div className="tp-service-2-accordion-box">
@@ -498,12 +500,18 @@ export default function SEOPageLayout({ data, settings }: SEOPageLayoutProps) {
                         <div className="fq-faq-sidebar-content">
                           <h3 className="fq-faq-sidebar-title">FAQs</h3>
                         </div>
-                        <div className="fq-faq-sidebar-thumb">
-                          <Image
-                            className="w-100"
-                            src={faq_banner}
-                            alt="faq-banner"
-                            style={{ height: "auto" }}
+                      </div>
+                      <div className="tp-award-list-thumb-wrap p-relative" style={{ height: '400px' }}>
+                        <div
+                          id="tp-award-thumb"
+                          className="tp-award-list-thumb-1"
+                          style={{ position: 'absolute', inset: 0, visibility: 'visible', opacity: 1 }}
+                        >
+                          <ModelGLB
+                            modelPath="/models/b-logo.glb"
+                            autoRotate={true}
+                            autoRotateSpeed={2}
+                            cameraZ={5}
                           />
                         </div>
                       </div>
@@ -513,30 +521,30 @@ export default function SEOPageLayout({ data, settings }: SEOPageLayoutProps) {
               </div>
             )}
 
-            {/* ── Conclusion (after FAQs) ───────────────────────────── */}
-            {hasConclusion && (
-              <div className="tp-about-4-area pt-100 pb-110 p-relative">
-                <div className="container">
-                  <div className="row">
-                    <div className="col-xl-12">
-                      {data.conclusion_heading && (
-                        <h2 className="tp-about-4-title mb-30">{data.conclusion_heading}</h2>
-                      )}
-                      {data.conclusion_content && (
-                        <div className="tp-about-4-content-wrap">
-                          <SafeHtml html={data.conclusion_content} className="cms-rich-content" />
-                        </div>
-                      )}
+        {/* ── Conclusion (after FAQs) ───────────────────────────── */}
+        {hasConclusion && (
+          <div className="tp-about-4-area pt-40 pb-40 p-relative">
+            <div className="container">
+              <div className="row">
+                <div className="col-xl-12">
+                  {data.conclusion_heading && (
+                    <h2 className="tp-about-4-title mb-30">{data.conclusion_heading}</h2>
+                  )}
+                  {data.conclusion_content && (
+                    <div className="tp-about-4-content-wrap">
+                      <SafeHtml html={data.conclusion_content} className="cms-rich-content" />
                     </div>
-                  </div>
+                  )}
                 </div>
               </div>
-            )}
+            </div>
+          </div>
+        )}
 
-          </main>
-          <FooterThree />
-        </div>
-      </div>
-    </Wrapper>
+      </main>
+      <FooterThree />
+    </div>
+      </div >
+    </Wrapper >
   );
 }

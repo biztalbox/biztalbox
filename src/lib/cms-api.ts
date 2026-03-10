@@ -6,10 +6,12 @@ const IS_DEV = process.env.NODE_ENV === "development";
 /** Base URL of this Next.js app (for same-origin proxy fetch) */
 function getAppBaseUrl(): string {
   if (process.env.NEXT_PUBLIC_APP_URL) {
-    return process.env.NEXT_PUBLIC_APP_URL.replace(/\/$/, "");
+    const url = process.env.NEXT_PUBLIC_APP_URL.replace(/\/$/, "");
+    return url.startsWith("http") ? url : `https://${url}`;
   }
-  if (process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL}`;
+  if (process.env.VERCEL_URL && process.env.VERCEL) {
+    const host = process.env.VERCEL_URL.replace(/^https?:\/\//, "").replace(/\/$/, "");
+    return `https://${host}`;
   }
   return `http://localhost:${process.env.PORT ?? 3000}`;
 }
