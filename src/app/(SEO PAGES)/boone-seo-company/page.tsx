@@ -38,6 +38,7 @@ import faq_banner from "@/assets/image/faq.webp";
 import FaqItem from "@/components/faq/faq-item";
 import { faq_data } from "./data";
 import { testimonial } from "./data";
+import ModelGLB from "@/components/3d-model-glb";
 
 export default function Page() {
   useScrollSmooth();
@@ -75,8 +76,8 @@ export default function Page() {
 
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <main style={{overflow: "hidden"}}>
-            
+          <main style={{ overflow: "hidden" }}>
+
             {/* hero area start */}
             <div className="tp-hero-4-area tp-btn-trigger">
               <div className="container">
@@ -89,13 +90,13 @@ export default function Page() {
                           style={{ marginBottom: "0" }}
                         >
                           <h1 className="text-white tp-char-animation">
-                          Professional SEO Services in Boone – Drive Traffic & Grow Sales
+                            Professional SEO Services in Boone – Drive Traffic & Grow Sales
                           </h1>
                           <p>
-                          In Boone, standing out online isn&apos;t optional—it&apos;s essential. If your website isn&apos;t showing up where customers are searching, competitors take the lead. At Biztalbox, we don&apos;t just improve rankings—we make your business the obvious choice.
+                            In Boone, standing out online isn&apos;t optional—it&apos;s essential. If your website isn&apos;t showing up where customers are searching, competitors take the lead. At Biztalbox, we don&apos;t just improve rankings—we make your business the obvious choice.
                           </p>
                           <p>
-                          As an SEO Agency Boone relies on, we marry technical know-how, data-driven insights, and local knowledge to bring qualified leads, increase engagement, and drive revenue. Our SEO Services Boone make websites work smarter, perform better, and deliver measurable results for businesses of all sizes.
+                            As an SEO Agency Boone relies on, we marry technical know-how, data-driven insights, and local knowledge to bring qualified leads, increase engagement, and drive revenue. Our SEO Services Boone make websites work smarter, perform better, and deliver measurable results for businesses of all sizes.
                           </p>
                           <div className="tp-hero-4-text tp_fade_right">
                             <span>
@@ -236,7 +237,7 @@ export default function Page() {
                     <div className="col-xl-5 col-lg-5">
                       <div style={{ height: "500px", overflow: "hidden" }}>
                         <video
-                        className="videoby_ashish"
+                          className="videoby_ashish"
                           src="https://res.cloudinary.com/djoiovkr1/video/upload/SEO_Stricker_2_aqk6qd.webm"
                           autoPlay
                           loop
@@ -257,12 +258,11 @@ export default function Page() {
                   <div className="row">
                     <div className="col-xl-10 col-md-10">
                       <div
-                        className={`tp-about-4-title-box ${
-                          !isMobile ? "tp_fade_bottom" : ""
-                        }`}
+                        className={`tp-about-4-title-box ${!isMobile ? "tp_fade_bottom" : ""
+                          }`}
                       >
                         <h4 className="tp-about-4-title">
-                        Why Biztalbox is Your Trusted SEO Partner
+                          Why Biztalbox is Your Trusted SEO Partner
                         </h4>
                       </div>
                     </div>
@@ -278,9 +278,8 @@ export default function Page() {
                         <div className="row">
                           <div className="col-xl-6 col-lg-6">
                             <div
-                              className={`tp-about-4-content item-1 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
+                              className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
+                                }`}
                             >
                               <h4 className="text-white">Local Insight in Boone</h4>
                               <p>
@@ -290,9 +289,8 @@ export default function Page() {
                           </div>
                           <div className="col-xl-6 col-lg-6">
                             <div
-                              className={`tp-about-4-content item-2 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
+                              className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""
+                                }`}
                             >
                               <h4 className="text-white">Customized Plans</h4>
                               <p>
@@ -304,9 +302,8 @@ export default function Page() {
                         <div className="row mt-30">
                           <div className="col-xl-6 col-lg-6">
                             <div
-                              className={`tp-about-4-content item-1 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
+                              className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
+                                }`}
                             >
                               <h4 className="text-white">Guaranteed Outcomes</h4>
                               <p>
@@ -316,9 +313,8 @@ export default function Page() {
                           </div>
                           <div className="col-xl-6 col-lg-6">
                             <div
-                              className={`tp-about-4-content item-2 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
+                              className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""
+                                }`}
                             >
                               <h4 className="text-white">Ethical & Transparent Practices</h4>
                               <p>
@@ -389,12 +385,11 @@ export default function Page() {
                 <div className="row">
                   <div className="col-xl-10 col-md-10">
                     <div
-                      className={`tp-about-4-title-box ${
-                        !isMobile ? "tp_fade_bottom" : ""
-                      }`}
+                      className={`tp-about-4-title-box ${!isMobile ? "tp_fade_bottom" : ""
+                        }`}
                     >
                       <h3 className="tp-about-4-title">
-                      How Our SEO Services in Boone Work
+                        How Our SEO Services in Boone Work
                       </h3>
                       <p
                         className="tp-about-4-title"
@@ -416,9 +411,8 @@ export default function Page() {
                       <div className="row">
                         <div className="col-xl-6 col-lg-6">
                           <div
-                            className={`tp-about-4-content item-1 ${
-                              !isMobile ? "tp_fade_bottom" : ""
-                            }`}
+                            className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
+                              }`}
                           >
                             <h4 className="text-white">
                               Website Audit & Analysis
@@ -430,9 +424,8 @@ export default function Page() {
                         </div>
                         <div className="col-xl-6 col-lg-6">
                           <div
-                            className={`tp-about-4-content item-2 ${
-                              !isMobile ? "tp_fade_bottom" : ""
-                            }`}
+                            className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""
+                              }`}
                           >
                             <h4 className="text-white">
                               Keyword Research
@@ -446,9 +439,8 @@ export default function Page() {
                       <div className="row mt-30">
                         <div className="col-xl-6 col-lg-6">
                           <div
-                            className={`tp-about-4-content item-1 ${
-                              !isMobile ? "tp_fade_bottom" : ""
-                            }`}
+                            className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
+                              }`}
                           >
                             <h4 className="text-white">On-Page Optimization</h4>
                             <p>
@@ -458,9 +450,8 @@ export default function Page() {
                         </div>
                         <div className="col-xl-6 col-lg-6">
                           <div
-                            className={`tp-about-4-content item-2 ${
-                              !isMobile ? "tp_fade_bottom" : ""
-                            }`}
+                            className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""
+                              }`}
                           >
                             <h4 className="text-white">
                               Link Building and Off-Page SEO
@@ -474,9 +465,8 @@ export default function Page() {
                       <div className="row mt-30">
                         <div className="col-xl-6 col-lg-6">
                           <div
-                            className={`tp-about-4-content item-1 ${
-                              !isMobile ? "tp_fade_bottom" : ""
-                            }`}
+                            className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
+                              }`}
                           >
                             <h4 className="text-white">Local SEO</h4>
                             <p>
@@ -486,9 +476,8 @@ export default function Page() {
                         </div>
                         <div className="col-xl-6 col-lg-6">
                           <div
-                            className={`tp-about-4-content item-1 ${
-                              !isMobile ? "tp_fade_bottom" : ""
-                            }`}
+                            className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
+                              }`}
                           >
                             <h4 className="text-white">Reporting and Constant Development</h4>
                             <p>
@@ -548,7 +537,7 @@ export default function Page() {
             {/* FAQs */}
             <div className="fq-faq-area fq-faq-bdr">
               <div className="container">
-                <div className="row">
+                <div className="row flex-column-reverse flex-lg-row">
                   <div className="col-xl-8 col-lg-8">
                     <div className="fq-faq-wrapper">
                       <div className="tp-service-2-accordion-box">
@@ -563,15 +552,20 @@ export default function Page() {
                   <div className="col-xl-4 col-lg-4">
                     <div className="fq-faq-sidebar">
                       <div className="fq-faq-sidebar-content">
-                        <h4 className="fq-faq-sidebar-title">Q&A</h4>
-                        <h2>FAQs – SEO Services in Boone</h2>
+                        <h3 className="fq-faq-sidebar-title">FAQs</h3>
                       </div>
-                      <div className="fq-faq-sidebar-thumb">
-                        <Image
-                          className="w-100"
-                          src={faq_banner}
-                          alt="faq-banner"
-                          style={{ height: "auto" }}
+                    </div>
+                    <div className="tp-award-list-thumb-wrap p-relative" style={{ height: '400px' }}>
+                      <div
+                        id="tp-award-thumb"
+                        className="tp-award-list-thumb-1"
+                        style={{ position: 'absolute', inset: 0, visibility: 'visible', opacity: 1 }}
+                      >
+                        <ModelGLB
+                          modelPath="/models/b-logo.glb"
+                          autoRotate={true}
+                          autoRotateSpeed={2}
+                          cameraZ={5}
                         />
                       </div>
                     </div>
