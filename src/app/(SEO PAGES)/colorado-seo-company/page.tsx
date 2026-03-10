@@ -533,43 +533,43 @@ export default function Page() {
 
             {/* FAQs */}
             <div className="fq-faq-area fq-faq-bdr">
-              <div className="container">
-                <div className="row flex-column-reverse flex-lg-row">
-                  <div className="col-xl-8 col-lg-8">
-                    <div className="fq-faq-wrapper">
-                      <div className="tp-service-2-accordion-box">
-                        <div className="accordion" id="accordionExample">
-                          {faq_data.map((item) => (
-                            <FaqItem key={item.id} item={item} />
-                          ))}
+                          <div className="container">
+                            <div className="row flex-column-reverse flex-lg-row">
+                              <div className="col-xl-8 col-lg-8">
+                                <div className="fq-faq-wrapper">
+                                  <div className="tp-service-2-accordion-box">
+                                    <div className="accordion" id="accordionExample">
+                                      {faq_data.map((item) => (
+                                        <FaqItem key={item.id} item={item} />
+                                      ))}
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div className="col-xl-4 col-lg-4">
+                                <div className="fq-faq-sidebar">
+                                  <div className="fq-faq-sidebar-content">
+                                    <h3 className="fq-faq-sidebar-title">FAQs</h3>
+                                  </div>
+                                </div>
+                                <div className="tp-award-list-thumb-wrap p-relative" style={{ height: '400px' }}>
+                                  <div
+                                    id="tp-award-thumb"
+                                    className="tp-award-list-thumb-1"
+                                    style={{ position: 'absolute', inset: 0, visibility: 'visible', opacity: 1 }}
+                                  >
+                                    <ModelGLB
+                                      modelPath="/models/b-logo.glb"
+                                      autoRotate={true}
+                                      autoRotateSpeed={2}
+                                      cameraZ={5}
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-xl-4 col-lg-4">
-                      <div className="fq-faq-sidebar">
-                        <div className="fq-faq-sidebar-content">
-                          <h3 className="fq-faq-sidebar-title">FAQs</h3>
-                        </div>
-                      </div>
-                      <div className="tp-award-list-thumb-wrap p-relative" style={{ height: '400px' }}>
-                        <div
-                          id="tp-award-thumb"
-                          className="tp-award-list-thumb-1"
-                          style={{ position: 'absolute', inset: 0, visibility: 'visible', opacity: 1 }}
-                        >
-                          <ModelGLB
-                            modelPath="/models/b-logo.glb"
-                            autoRotate={true}
-                            autoRotateSpeed={2}
-                            cameraZ={5}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                </div>
-              </div>
-            </div>
           </main>
 
           {/* footer area */}

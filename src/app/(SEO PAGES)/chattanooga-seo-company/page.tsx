@@ -38,6 +38,7 @@ import faq_banner from "@/assets/image/faq.webp";
 import FaqItem from "@/components/faq/faq-item";
 import { faq_data } from "./data";
 import { testimonial } from "./data";
+import ModelGLB from "@/components/3d-model-glb";
 
 export default function Page() {
   useScrollSmooth();
@@ -75,8 +76,8 @@ export default function Page() {
 
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <main style={{overflow: "hidden"}}>
-            
+          <main style={{ overflow: "hidden" }}>
+
             {/* hero area start */}
             <div className="tp-hero-4-area tp-btn-trigger">
               <div className="container">
@@ -89,13 +90,13 @@ export default function Page() {
                           style={{ marginBottom: "0" }}
                         >
                           <h1 className="text-white tp-char-animation">
-                          Professional SEO Services in Chattanooga – Win Visibility, Leads & Sales
+                            Professional SEO Services in Chattanooga – Win Visibility, Leads & Sales
                           </h1>
                           <p>
-                          In Chattanooga, the fight for online visibility is more challenging than ever. A solid website only benefits if customers can actually locate it. That&apos;s where Biztalbox comes into play.
+                            In Chattanooga, the fight for online visibility is more challenging than ever. A solid website only benefits if customers can actually locate it. That&apos;s where Biztalbox comes into play.
                           </p>
                           <p>
-                          As a top-rated SEO Agency Chattanooga, we enable businesses to cut through the din, reach targeted traffic, and turn visitors into long-term customers. Our personalized SEO Services in Chattanooga are crafted to provide your business with the visibility it deserves—locally and globally.
+                            As a top-rated SEO Agency Chattanooga, we enable businesses to cut through the din, reach targeted traffic, and turn visitors into long-term customers. Our personalized SEO Services in Chattanooga are crafted to provide your business with the visibility it deserves—locally and globally.
                           </p>
                           <div className="tp-hero-4-text tp_fade_right">
                             <span>
@@ -236,7 +237,7 @@ export default function Page() {
                     <div className="col-xl-5 col-lg-5">
                       <div style={{ height: "500px", overflow: "hidden" }}>
                         <video
-                        className="videoby_ashish"
+                          className="videoby_ashish"
                           src="https://res.cloudinary.com/djoiovkr1/video/upload/SEO_Stricker_2_aqk6qd.webm"
                           autoPlay
                           loop
@@ -257,12 +258,11 @@ export default function Page() {
                   <div className="row">
                     <div className="col-xl-10 col-md-10">
                       <div
-                        className={`tp-about-4-title-box ${
-                          !isMobile ? "tp_fade_bottom" : ""
-                        }`}
+                        className={`tp-about-4-title-box ${!isMobile ? "tp_fade_bottom" : ""
+                          }`}
                       >
                         <h4 className="tp-about-4-title">
-                        Why Choose Biztalbox as Your SEO Partner
+                          Why Choose Biztalbox as Your SEO Partner
                         </h4>
                       </div>
                     </div>
@@ -278,9 +278,8 @@ export default function Page() {
                         <div className="row">
                           <div className="col-xl-6 col-lg-6">
                             <div
-                              className={`tp-about-4-content item-1 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
+                              className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
+                                }`}
                             >
                               <h4 className="text-white">Local Competence</h4>
                               <p>
@@ -290,9 +289,8 @@ export default function Page() {
                           </div>
                           <div className="col-xl-6 col-lg-6">
                             <div
-                              className={`tp-about-4-content item-2 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
+                              className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""
+                                }`}
                             >
                               <h4 className="text-white">Custom Campaigns</h4>
                               <p>
@@ -304,9 +302,8 @@ export default function Page() {
                         <div className="row mt-30">
                           <div className="col-xl-6 col-lg-6">
                             <div
-                              className={`tp-about-4-content item-1 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
+                              className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
+                                }`}
                             >
                               <h4 className="text-white">Experienced Professionals</h4>
                               <p>
@@ -316,9 +313,8 @@ export default function Page() {
                           </div>
                           <div className="col-xl-6 col-lg-6">
                             <div
-                              className={`tp-about-4-content item-2 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
+                              className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""
+                                }`}
                             >
                               <h4 className="text-white">Ethical Practices</h4>
                               <p>
@@ -330,9 +326,8 @@ export default function Page() {
                         <div className="row mt-30">
                           <div className="col-xl-6 col-lg-6">
                             <div
-                              className={`tp-about-4-content item-1 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
+                              className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
+                                }`}
                             >
                               <h4 className="text-white">Proven Results</h4>
                               <p>
@@ -403,12 +398,11 @@ export default function Page() {
                 <div className="row">
                   <div className="col-xl-10 col-md-10">
                     <div
-                      className={`tp-about-4-title-box ${
-                        !isMobile ? "tp_fade_bottom" : ""
-                      }`}
+                      className={`tp-about-4-title-box ${!isMobile ? "tp_fade_bottom" : ""
+                        }`}
                     >
                       <h3 className="tp-about-4-title">
-                      Our SEO Services for Chattanooga Businesses
+                        Our SEO Services for Chattanooga Businesses
                       </h3>
                       <p
                         className="tp-about-4-title"
@@ -430,9 +424,8 @@ export default function Page() {
                       <div className="row">
                         <div className="col-xl-6 col-lg-6">
                           <div
-                            className={`tp-about-4-content item-1 ${
-                              !isMobile ? "tp_fade_bottom" : ""
-                            }`}
+                            className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
+                              }`}
                           >
                             <h4 className="text-white">
                               Full Site Audit
@@ -444,9 +437,8 @@ export default function Page() {
                         </div>
                         <div className="col-xl-6 col-lg-6">
                           <div
-                            className={`tp-about-4-content item-2 ${
-                              !isMobile ? "tp_fade_bottom" : ""
-                            }`}
+                            className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""
+                              }`}
                           >
                             <h4 className="text-white">
                               Keyword research & Strategy
@@ -460,9 +452,8 @@ export default function Page() {
                       <div className="row mt-30">
                         <div className="col-xl-6 col-lg-6">
                           <div
-                            className={`tp-about-4-content item-1 ${
-                              !isMobile ? "tp_fade_bottom" : ""
-                            }`}
+                            className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
+                              }`}
                           >
                             <h4 className="text-white">On-Page Optimization</h4>
                             <p>
@@ -472,9 +463,8 @@ export default function Page() {
                         </div>
                         <div className="col-xl-6 col-lg-6">
                           <div
-                            className={`tp-about-4-content item-2 ${
-                              !isMobile ? "tp_fade_bottom" : ""
-                            }`}
+                            className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""
+                              }`}
                           >
                             <h4 className="text-white">
                               High-Quality Link Building
@@ -488,9 +478,8 @@ export default function Page() {
                       <div className="row mt-30">
                         <div className="col-xl-6 col-lg-6">
                           <div
-                            className={`tp-about-4-content item-1 ${
-                              !isMobile ? "tp_fade_bottom" : ""
-                            }`}
+                            className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
+                              }`}
                           >
                             <h4 className="text-white">Local SEO</h4>
                             <p>
@@ -500,9 +489,8 @@ export default function Page() {
                         </div>
                         <div className="col-xl-6 col-lg-6">
                           <div
-                            className={`tp-about-4-content item-1 ${
-                              !isMobile ? "tp_fade_bottom" : ""
-                            }`}
+                            className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""
+                              }`}
                           >
                             <h4 className="text-white">Performance Monitoring</h4>
                             <p>
@@ -562,7 +550,7 @@ export default function Page() {
             {/* FAQs */}
             <div className="fq-faq-area fq-faq-bdr">
               <div className="container">
-                <div className="row">
+                <div className="row flex-column-reverse flex-lg-row">
                   <div className="col-xl-8 col-lg-8">
                     <div className="fq-faq-wrapper">
                       <div className="tp-service-2-accordion-box">
@@ -577,15 +565,20 @@ export default function Page() {
                   <div className="col-xl-4 col-lg-4">
                     <div className="fq-faq-sidebar">
                       <div className="fq-faq-sidebar-content">
-                        <h4 className="fq-faq-sidebar-title">Q&A</h4>
-                        <h2>FAQs – SEO Services Chattanooga</h2>
+                        <h3 className="fq-faq-sidebar-title">FAQs</h3>
                       </div>
-                      <div className="fq-faq-sidebar-thumb">
-                        <Image
-                          className="w-100"
-                          src={faq_banner}
-                          alt="faq-banner"
-                          style={{ height: "auto" }}
+                    </div>
+                    <div className="tp-award-list-thumb-wrap p-relative" style={{ height: '400px' }}>
+                      <div
+                        id="tp-award-thumb"
+                        className="tp-award-list-thumb-1"
+                        style={{ position: 'absolute', inset: 0, visibility: 'visible', opacity: 1 }}
+                      >
+                        <ModelGLB
+                          modelPath="/models/b-logo.glb"
+                          autoRotate={true}
+                          autoRotateSpeed={2}
+                          cameraZ={5}
                         />
                       </div>
                     </div>

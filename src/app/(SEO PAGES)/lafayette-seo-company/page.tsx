@@ -38,6 +38,7 @@ import faq_banner from "@/assets/image/faq.webp";
 import FaqItem from "@/components/faq/faq-item";
 import { faq_data } from "./data";
 import { testimonial } from "./data";
+import ModelGLB from "@/components/3d-model-glb";
 
 export default function Page() {
   useScrollSmooth();
@@ -570,7 +571,7 @@ export default function Page() {
             {/* FAQs */}
             <div className="fq-faq-area fq-faq-bdr">
               <div className="container">
-                <div className="row">
+                <div className="row flex-column-reverse flex-lg-row">
                   <div className="col-xl-8 col-lg-8">
                     <div className="fq-faq-wrapper">
                       <div className="tp-service-2-accordion-box">
@@ -585,15 +586,20 @@ export default function Page() {
                   <div className="col-xl-4 col-lg-4">
                     <div className="fq-faq-sidebar">
                       <div className="fq-faq-sidebar-content">
-                        <h4 className="fq-faq-sidebar-title">Q&A</h4>
-                        <h2>FAQs – SEO Services in Lafayette</h2>
+                        <h3 className="fq-faq-sidebar-title">FAQs</h3>
                       </div>
-                      <div className="fq-faq-sidebar-thumb">
-                        <Image
-                          className="w-100"
-                          src={faq_banner}
-                          alt="faq-banner"
-                          style={{ height: "auto" }}
+                    </div>
+                    <div className="tp-award-list-thumb-wrap p-relative" style={{ height: '400px' }}>
+                      <div
+                        id="tp-award-thumb"
+                        className="tp-award-list-thumb-1"
+                        style={{ position: 'absolute', inset: 0, visibility: 'visible', opacity: 1 }}
+                      >
+                        <ModelGLB
+                          modelPath="/models/b-logo.glb"
+                          autoRotate={true}
+                          autoRotateSpeed={2}
+                          cameraZ={5}
                         />
                       </div>
                     </div>
