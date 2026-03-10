@@ -2,49 +2,67 @@
     {
         "id": 3,
         "name": "Beauty and wellness",
-        "link": "beauty-and-wellness-seo",
+        "link": "/beauty-and-wellness-seo",
         "description": "The wellness and beauty industry is expanding at an unprecedented rate, driven by a growing desire professional treatment, outlets for self-expression,as well as holistic wellness." 
     },
     {
         "id": 4,
         "name": "Home services",
-        "link": "home-services",
+        "link": "/home-services",
         "description": "Home service demand doesn&apos;t build gradually. It appears suddenly, when a problem needs immediate action. A pipe bursts, an AC fails, and a renovation reaches the decision stage. In those moments,homeowners are not exploring options. They are filtering for trust, proximity, and proof of competence. Search is where that filtering happens."
     },
     {
         "id": 5,
         "name": "Hotel Industries",
-        "link": "hotel-seo",
+        "link": "/hotel-seo",
         "description": "Winning Direct Demand in a Competitive Hospitality Market."
     },
     {
         "id": 6,
         "name": "Petcare",
-        "link": "petcare-seo",
+        "link": "/petcare-seo",
         "description": "For pet owners today, research is part of responsible care, not just a preliminary step leading to a purchase."
     },
     {
         "id": 7,
         "name": "Plumbing",
-        "link": "plumber-seo",
+        "link": "/plumber-seo",
         "description": " Plumbing is no longer a background trade that people notice only when something breaks. It has become a fast-moving, high-demand service industry tied closely to urban growth, infrastructure spending, a changing consumer expectations."
     },
     {
         "id": 8,
         "name": "Real estate",
-        "link": "real-estate-seo",
+        "link": "/real-estate-seo",
         "description": "SEO is often considered a technical and complicated task. But in reality, the core idea is remarkably simple."
     },
     {
         "id": 9,
         "name": "Food and Beverage",
-        "link": "seo-for-food-and-beverage",
+        "link": "/seo-for-food-and-beverage",
         "description": "Scale your food and beverage ecommerce brand with advanced SEO strategies. Boost Google rankings, drive high-intent traffic, and increase online sales."
     },
     {
         "id": 10,
         "name": "Travel",
-        "link": "travel-seo",
+        "link": "/travel-seo",
         "description": "SEO for Travel Websites: The Complete Travel Industry SEO Guide for Brands Seeking Consistent Rankings and Revenue rials from the earth."
+    },
+    {
+        "id": 11,
+        "name": "Ecommerce",
+        "link": "/ecommerce-seo-services",
+        "description": "E-commerce is on the rise like never before, opening up exciting avenues for businesses to connect with buyers online. However, this rapid growth has also sparked fierce competition. With countless stores offering similar products, search visibility has become the defining advantage, and SEO is what makes it possible."
+    },
+    {
+        "id": 12,
+        "name": "Pest Control",
+        "link": "/pest-control-services",
+        "description": "From crowded city apartments to busy commercial spaces, the need for pest management has never been higher. But offering excellent service isn't enough—if people can't find you online, opportunities slip away. That's where SEO for pest control businesses comes in. Let's dive in together to see how it works, why it drives growth, and the strategies that make it truly effective"
+    },
+    {
+        "id": 13,
+        "name": "Logistics",
+        "link": "/logistics-seo-services",
+        "description": "SEO for Logistics Websites: The Complete Logistics Industry SEO Guide for Brands Seeking Consistent Rankings and Revenue rials from the earth."
     }
 ]
