@@ -12,7 +12,7 @@ const baseMetadata: Metadata = {
 
 export const metadata = createMetadata(
   baseMetadata,
-  "/Ecommerce-SEO-Services"
+  "/ecommerce-seo-services"
 );
 
 export default function RootLayout({
@@ -24,7 +24,7 @@ export default function RootLayout({
   const pageData = createMarketingPageData({
     title: baseMetadata.title as string,
     description: baseMetadata.description as string,
-    path: "/Ecommerce-SEO-Services",
+    path: "/ecommerce-seo-services",
     serviceType: "Ecommerce SEO Services",
     aggregateRating: {
       rating: 4.9,
@@ -39,7 +39,7 @@ export default function RootLayout({
     <>
       <MarketingPageSchema
         pageData={pageData}
-        currentUrl={createFullUrl("/Ecommerce-SEO-Services")}
+        currentUrl={createFullUrl("/ecommerce-seo-services")}
       />
       {children}
     </>

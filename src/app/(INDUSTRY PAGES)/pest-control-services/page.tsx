@@ -612,7 +612,7 @@ export default function Page() {
                   <p>
                     Start with the basics. Pages should load quickly and display
                     correctly on mobile devices. Secure HTTPS connections protect
-                    visitors and build trust. Structured data is often complex but it's a
+                    visitors and build trust. Structured data is often complex but it&apos;s a
                     must for search engines to be able to identify the services a business
                     provides, the locations where the business has its operations, and
                     how to contact the business.
@@ -698,8 +698,8 @@ export default function Page() {
                     a few things that make a person feel confident enough to let your team
                     into their home. Local SEO provides equal market opportunities to small
                     pest control businesses against bigger, well-known brands. Even if
-                    you’re new, appearing on searches such as "local pest control SEO near
-                    me" or "local termite control in [city]" gets you to compete where it
+                    you’re new, appearing on searches such as &quot;local pest control SEO near
+                    me&quot; or &quot;local termite control&quot; in [city] gets you to compete where it
                     counts the most i.e., right in your community.
                   </p>
                   <h4 className="section-subheading">Key Steps to Boost Local Visibility</h4>

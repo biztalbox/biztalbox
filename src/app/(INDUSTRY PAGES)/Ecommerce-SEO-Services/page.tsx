@@ -183,7 +183,7 @@ export default function Page() {
                                 <div className="content-grid-2">
                                     <div className="content-card">
                                         <h3 className="section-subheading">1. Improved Visibility and Search Rankings</h3>
-                                        <p>Just listing products is not enough in today's crowded online marketplace. e-commerce SEO services will get your store indexed as well as easily found when people search for things you sell. This creates consistent exposure across search results, helping new customers discover your products while reinforcing familiarity with returning shoppers.</p>
+                                        <p>Just listing products is not enough in today&apos;s crowded online marketplace. e-commerce SEO services will get your store indexed as well as easily found when people search for things you sell. This creates consistent exposure across search results, helping new customers discover your products while reinforcing familiarity with returning shoppers.</p>
                                     </div>
                                     <div className="content-card">
                                         <h3 className="section-subheading">2. Targeting Shoppers with Purchase Intent</h3>
