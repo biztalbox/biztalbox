@@ -12,7 +12,7 @@ const styles = {
     minHeight: "100vh",
     width: "100%",
     overflow: "hidden" as const,
-    backgroundImage: "url('/assets/image/hero_bg_2.jpg')", 
+    backgroundImage: "url('/assets/image/hero_bg_2.jpg')",
     backgroundSize: "cover" as const,
     backgroundPosition: "center" as const,
     backgroundRepeat: "no-repeat" as const,
@@ -295,7 +295,7 @@ const HeroBannerFour: React.FC = memo(() => {
 
       {/* Responsive Styles */}
       <ResponsiveStyles />
-      
+
       {/* Gallery Section */}
       {/* <div style={styles.galleryContainer}>
         <GalleryOne />
