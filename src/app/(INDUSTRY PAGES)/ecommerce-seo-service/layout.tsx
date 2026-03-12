@@ -12,7 +12,7 @@ const baseMetadata: Metadata = {
 
 export const metadata = createMetadata(
   baseMetadata,
-  "/ecommerce-seo-services"
+  "/ecommerce-seo-service"
 );
 
 export default function RootLayout({
@@ -24,11 +24,11 @@ export default function RootLayout({
   const pageData = createMarketingPageData({
     title: baseMetadata.title as string,
     description: baseMetadata.description as string,
-    path: "/ecommerce-seo-services",
-    serviceType: "Ecommerce SEO Services",
+    path: "/ecommerce-seo-service",
+    serviceType: "Ecommerce SEO Service",
     aggregateRating: {
       rating: 4.9,
-      reviewCount: 184,
+      reviewCount: 156,
       bestRating: 5,
     },
     image:
@@ -45,4 +45,3 @@ export default function RootLayout({
     </>
   );
 }
-
