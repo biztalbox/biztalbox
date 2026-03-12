@@ -8,6 +8,8 @@ import Link from "next/link";
 import Image from "next/image";
 import industriesData from "@/data/industries.json";
 
+
+
 // internal imports
 import star_icon from "@/assets/img/home-04/service/sv-star-1.png";
 import seo from '@/assets/service-icons/seo.webp';
