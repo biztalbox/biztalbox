@@ -42,7 +42,7 @@ export default function WhatsAppButton() {
         rel="noopener noreferrer"
         className="whatsapp-btn"
         aria-label="Contact us on WhatsApp"
-        onClick={handleClick}
+        onClick={() => handleClick()}
       >
         <svg
           width="24"
