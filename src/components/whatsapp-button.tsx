@@ -1,10 +1,16 @@
 'use client';
-import React, { useEffect } from "react";
+import React from "react";
 
 export default function WhatsAppButton() {
   const phoneNumber = "9485699709"; // +91 9485699709 without special characters
   const message = encodeURIComponent("Text us before your competitor does 😉");
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+
+  const handleClick = () => {
+    if (typeof window === "undefined") return;
+    const clarityFn = (window as unknown as { clarity?: (...args: unknown[]) => void }).clarity;
+    clarityFn?.("event", "whatsapp_click");
+  };
 
   function handleScroll() {
     if (typeof window === 'undefined') return;
@@ -36,6 +42,7 @@ export default function WhatsAppButton() {
         rel="noopener noreferrer"
         className="whatsapp-btn"
         aria-label="Contact us on WhatsApp"
+        onClick={() => handleClick()}
       >
         <svg
           width="24"

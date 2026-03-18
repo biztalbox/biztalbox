@@ -290,7 +290,7 @@ export default function ServiceThree({ showService = true, showIndustry = true }
         <div className="row align-items-center mb-40">
           <div className="col-xl-12">
             <div className="tp-industry-title-wrapper d-flex align-items-center justify-content-between">
-              <h3 className="tp-service-4-title text-white">Industry Served</h3>
+              <h2 className="tp-service-4-title text-white">Industry Served</h2>
               {/* Mobile Navigation Buttons */}
               <div className="industry-title-nav d-flex d-md-none gap-2">
                 <button
@@ -446,13 +446,13 @@ export default function ServiceThree({ showService = true, showIndustry = true }
                 }}
                 >
                   <div className="industry-card-inner">
-                    <h4 className="industry-card-title" style={{
+                    <h3 className="industry-card-title" style={{
                       color: '#fff',
                       fontSize: '18px',
                       fontWeight: '600',
                       marginBottom: '12px',
                       lineHeight: '1.4'
-                    }}>{industry.name}</h4>
+                    }}>{industry.name}</h3>
                     <p className="industry-card-desc" style={{
                       color: 'rgba(255, 255, 255, 0.7)',
                       fontSize: '14px',
@@ -502,13 +502,13 @@ export default function ServiceThree({ showService = true, showIndustry = true }
                         textDecoration: 'none'
                       }}>
                         <div className="industry-card-inner">
-                          <h4 className="industry-card-title" style={{
+                          <h3 className="industry-card-title" style={{
                             color: '#fff',
                             fontSize: '16px',
                             fontWeight: '600',
                             marginBottom: '8px',
                             lineHeight: '1.4'
-                          }}>{industry.name}</h4>
+                          }}>{industry.name}</h3>
                           <p className="industry-card-desc" style={{
                             color: 'rgba(255, 255, 255, 0.7)',
                             fontSize: '13px',
