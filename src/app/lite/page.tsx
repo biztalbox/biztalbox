@@ -137,6 +137,9 @@ export default function LitePage() {
         });
       }
 
+      // 🔥 HERO BG CARD 4 SCROLL ANIMATION
+      
+
       // Aesthetics headline animation
       gsap.from(".lite-aesthetics__line", {
         y: 100,
@@ -156,7 +159,7 @@ export default function LitePage() {
 
   return (
     <>
-      <main ref={rootRef} className="lite-hero">
+      <main id="lite-top" ref={rootRef} className="lite-hero">
         <div className="lite-vertical-floating">
           <div className="lite-vertical-floating__inner">
             <span className="lite-vertical-floating__item">NO STANDARD PRICES</span>
@@ -213,7 +216,9 @@ export default function LitePage() {
           </p>
         </section>
 
-
+        <span className="lite-hero__scroll" aria-hidden="true">
+          SCROLL TO MORE
+        </span>
       </main>
 
 
@@ -492,8 +497,223 @@ export default function LitePage() {
             </div>
 
             <h2 className="lite-projects__bottom-headline">
-              WE DESIGN INTERACTIVE SITES THAT ALLOW THE USER TO ENJOY A UNIQUE AND MEMORABLE EXPERIENCE.
+              WE DESIGN INTERACTIVE SITES THAT
+              <br />
+              ALLOW THE USER TO ENJOY A UNIQUE
+              <br />
+              AND MEMORABLE EXPERIENCE.
             </h2>
+          </div>
+        </div>
+      </section>
+
+      <section className="lite-stories">
+        <div className="lite-stories__vertical" aria-hidden="true">
+          TORRE9 WELCOME
+        </div>
+
+        <div className="lite-stories__wrap">
+          <div className="lite-stories__top">
+            <div className="lite-stories__badge">
+              <div className="lite-stories__badge-num">#04</div>
+              <div className="lite-stories__badge-sub">DISRUPTIVE<br />COMM.</div>
+            </div>
+
+            <div className="lite-stories__headline">
+              <h2 className="lite-stories__title">
+                <span>STORIES</span>{" "}
+                <span
+                  className="lite-stories__title-img"
+                  style={{
+                    backgroundImage:
+                      "url(https://biztalbox.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FGOOGLE_ADS.361f02b4.webp&w=1200&q=75)",
+                  }}
+                  aria-hidden="true"
+                />{" "}
+                <span>WE</span>
+                <br />
+                <span className="lite-stories__title-shift">
+                  <span>BELIEVE</span> <span>IN</span>
+                </span>
+              </h2>
+            </div>
+          </div>
+
+          <div className="lite-stories__content">
+            <div className="lite-stories__left">
+              <h3 className="lite-stories__left-title">
+                ORIGINAL<br />SATISFACTION
+              </h3>
+            </div>
+
+            <div className="lite-stories__mid">
+              <p className="lite-stories__para">
+                NOWADAYS, BRAND COMMUNICATION INVOLVES NOT ONLY TRANSMITTING INFORMATION, BUT ALSO GETTING INVOLVED IN CONVERSATIONS AND BEING OPEN TO RECEIVING COMMENTS AND FEEDBACK FROM THEIR AUDIENCE IN ORDER TO ADAPT AND EVOLVE.
+              </p>
+              <p className="lite-stories__para lite-stories__para--muted">
+                SOMETIMES, IT IS NECESSARY TO TAKE CERTAIN RISKS TO, IN REALITY, BE CONSISTENT WITH OUR WAY OF SEEING REALITY. WE DON&apos;T LIKE BORING PROJECTS. WE WANT TO AMAZE PEOPLE AND MAKE THEM SMILE.
+              </p>
+            </div>
+
+            <div className="lite-stories__rightText">
+              <p className="lite-stories__para">
+                BRANDS THAT DARE TO BE CREATIVE, GET OUT OF THE MAINSTREAM AND CHALLENGE, IS BEHIND SOME OF THE ONES THAT STAND OUT AND ATTRACT ATTENTION. CREATIVITY AND ORIGINALITY ARE THE KEYS TO BEING IN THE SPOTLIGHT IN ANY FIELD.
+              </p>
+              <p className="lite-stories__para lite-stories__para--muted">
+                BEING TOO SOLEMN AND SERIOUS NO LONGER MAKES A BRAND ASPIRATIONAL OR EXCLUSIVE.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="lite-daring">
+        <div className="lite-daring__top">
+          <div className="lite-daring__top-item">BRAVE CLIENTS</div>
+          <div className="lite-daring__top-item lite-daring__top-item--center">BE UNIQUE</div>
+          <div className="lite-daring__top-item lite-daring__top-item--right">HONING</div>
+        </div>
+
+        <div className="lite-daring__wrap">
+          <h2 className="lite-daring__headline">
+            <span>DARING</span> <span>BRANDS</span>
+            <br />
+            <span className="lite-daring__img lite-daring__img--left" aria-hidden="true" />
+            <span>WILLING</span>
+            <br />
+            <span>TO</span> <span>FIND</span>
+            <span className="lite-daring__img lite-daring__img--right" aria-hidden="true" />
+            <br />
+            <span>THEIR</span> <span>OWN</span> <span>PATH</span>
+          </h2>
+        </div>
+      </section>
+
+      <section className="lite-scattered">
+        <div className="lite-scattered__top">
+          <p className="lite-scattered__para lite-scattered__para--left">
+            WE CARRY OUT PROJECTS FOR DIFFERENT SECTORS WITH VERY DIVERSE CLIENTS, WHOSE COMMON FEATURE IS THEIR WILLINGNESS TO BE DIFFERENT FROM THEIR COMPETITORS AND INNOVATE IN THEIR WAY OF COMMUNICATING THROUGH ORIGINALITY AND DESIGN.
+          </p>
+          <p className="lite-scattered__para lite-scattered__para--right">
+            WE WORK WITH BRANDS THAT AIM TO DISTINGUISH THEMSELVES FROM OTHER COMPANIES AROUND THEM. BRAVE CLIENTS WHO SHARE OUR AMBITION TO BE UNIQUE. FIRST OF ALL WE WANT TO BE HONEST AND DESIGN BRANDS THAT WE BELIEVE IN.
+          </p>
+        </div>
+
+        <div className="lite-scattered__stage" aria-hidden="true">
+          <img
+            className="lite-scattered__card lite-scattered__card--tl"
+            src="https://biztalbox.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FGOOGLE_ADS.361f02b4.webp&w=1200&q=75"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            className="lite-scattered__card lite-scattered__card--tr"
+            src="https://biztalbox.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FCONTENT.2e4ebec3.webp&w=1200&q=75"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            className="lite-scattered__card lite-scattered__card--cb"
+            src="https://biztalbox.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FVECTOR.291134b9.webp&w=1200&q=75"
+            alt=""
+            loading="lazy"
+          />
+          <img
+            className="lite-scattered__card lite-scattered__card--br"
+            src="https://biztalbox.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2FCAPTAIN_CUT.03d3d3f1.webp&w=1200&q=75"
+            alt=""
+            loading="lazy"
+          />
+        </div>
+
+        <div className="lite-scattered__marquee" aria-label="Selected projects" role="presentation">
+          <div className="lite-scattered__marquee-track" aria-hidden="true">
+            <div className="lite-scattered__marquee-run">
+              <span className="lite-scattered__marquee-item">
+                <span className="lite-scattered__marquee-icon">↗</span>
+                <span className="lite-scattered__marquee-text">SELECTED PROJECTS!</span>
+              </span>
+              <span className="lite-scattered__marquee-item">
+                <span className="lite-scattered__marquee-icon">↗</span>
+                <span className="lite-scattered__marquee-text">SELECTED PROJECTS!</span>
+              </span>
+              <span className="lite-scattered__marquee-item">
+                <span className="lite-scattered__marquee-icon">↗</span>
+                <span className="lite-scattered__marquee-text">SELECTED PROJECTS!</span>
+              </span>
+              <span className="lite-scattered__marquee-item">
+                <span className="lite-scattered__marquee-icon">↗</span>
+                <span className="lite-scattered__marquee-text">SELECTED PROJECTS!</span>
+              </span>
+              <span className="lite-scattered__marquee-item">
+                <span className="lite-scattered__marquee-icon">↗</span>
+                <span className="lite-scattered__marquee-text">SELECTED PROJECTS!</span>
+              </span>
+            </div>
+
+            <div className="lite-scattered__marquee-run" aria-hidden="true">
+              <span className="lite-scattered__marquee-item">
+                <span className="lite-scattered__marquee-icon">↗</span>
+                <span className="lite-scattered__marquee-text">SELECTED PROJECTS!</span>
+              </span>
+              <span className="lite-scattered__marquee-item">
+                <span className="lite-scattered__marquee-icon">↗</span>
+                <span className="lite-scattered__marquee-text">SELECTED PROJECTS!</span>
+              </span>
+              <span className="lite-scattered__marquee-item">
+                <span className="lite-scattered__marquee-icon">↗</span>
+                <span className="lite-scattered__marquee-text">SELECTED PROJECTS!</span>
+              </span>
+              <span className="lite-scattered__marquee-item">
+                <span className="lite-scattered__marquee-icon">↗</span>
+                <span className="lite-scattered__marquee-text">SELECTED PROJECTS!</span>
+              </span>
+              <span className="lite-scattered__marquee-item">
+                <span className="lite-scattered__marquee-icon">↗</span>
+                <span className="lite-scattered__marquee-text">SELECTED PROJECTS!</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="lite-thanks">
+        <div className="lite-thanks__wrap">
+          <div className="lite-thanks__topbar">
+            <div className="lite-thanks__topbar-left">THIS WEBSITE IS 24H OPEN</div>
+            <div className="lite-thanks__topbar-mid">
+              <a className="lite-thanks__topbar-link" href="#">INSTAGRAM</a>
+              <a className="lite-thanks__topbar-link" href="#">AWWWARDS</a>
+            </div>
+            <div className="lite-thanks__topbar-right">
+              <span className="lite-thanks__chip">
+                <span>SELECTED WORKS</span>
+                <span className="lite-thanks__chip-icon" aria-hidden="true">↗</span>
+              </span>
+            </div>
+          </div>
+
+          <div className="lite-thanks__grid">
+            <div className="lite-thanks__left">
+              <h2 className="lite-thanks__title">
+                THANKS FOR
+                <br />
+                YOUR VISIT!
+              </h2>
+
+              <div className="lite-thanks__hero" aria-hidden="true">
+                <img
+                  className="lite-thanks__hero-img"
+                  src="https://images.unsplash.com/photo-1580915411954-282cb1f76b21?auto=format&fit=crop&w=1400&q=80"
+                  alt=""
+                  loading="lazy"
+                />
+              </div>
+
+              <a className="lite-thanks__cta" href="#">
+                LET&apos;S TALK!
+              </a>
+            </div>
           </div>
         </div>
       </section>
