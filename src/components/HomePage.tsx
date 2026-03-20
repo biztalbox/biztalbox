@@ -23,6 +23,7 @@ import { ctaAnimation } from "@/utils/cta-anim";
 import WhyChooseUs from "@/components/about/why-choose-us";
 import HeaderEleven from "@/layouts/headers/header-eleven";
 import PerformanceMonitor from "@/components/PerformanceMonitor";
+import AshishCarousel from "./AshishCarousel";
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
@@ -224,6 +225,7 @@ const HomePage = () => {
 
               {/* gallery area start */}
               <GalleryOne />
+              {/* <AshishCarousel/> */}
               {/* gallery area end */}
 
               {/* about area start */}

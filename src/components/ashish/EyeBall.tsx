@@ -57,10 +57,10 @@ const getResponsiveSettings = () => {
     };
   } else {
     return {
-      modelScale: 55,
+      modelScale: 50,
       cameraZ: 3,
       cameraFOV: 50,
-      modelY: 0
+      modelY: 0.4
     };
   }
 };
@@ -641,9 +641,9 @@ const EyeBall: React.FC = memo(() => {
       style={{
         width: '100%', 
         minHeight: '100vh !important',
-        height: '100vh', // Fixed height to prevent viewport changes
+        // height: '100vh', // Fixed height to prevent viewport changes
         position: 'relative',
-        overflow: 'hidden',
+        // overflow: 'hidden',
         touchAction: 'pan-y', // Allow vertical scrolling but prevent horizontal pan
         userSelect: 'none', // Prevent text selection
         WebkitUserSelect: 'none', // Safari

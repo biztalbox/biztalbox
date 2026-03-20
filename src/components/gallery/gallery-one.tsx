@@ -50,47 +50,62 @@ export default function GalleryOne() {
     <div className="tp-gallery-area fix p-relative">
       <div className="tp-gallery-shape-1">
         <Image className="img-1" src={shape_1} alt="shape" style={imgStyle} priority />
-        <Image className="img-2" src={shape_d_1} alt="shape" style={imgStyle} priority />
+        <Image className="img-2" width={1920} height={600} src="/top_curve.png" alt="shape" style={imgStyle} priority />
+        {/* <Image className="img-2" src={shape_d_1} alt="shape" style={imgStyle} priority /> */}
       </div>
       <div className="tp-gallery-shape-2">
         <Image className="img-1" src={shape_2} alt="shape" style={imgStyle} priority />
-        <Image className="img-2" src={shape_d_2} alt="shape" style={imgStyle} priority />
+        <Image className="img-2"  width={1920} height={600}  src="/bottom_curve.png" alt="shape" style={imgStyle} priority />
+        {/* <Image className="img-2" src={shape_d_2} alt="shape" style={imgStyle} priority /> */}
       </div>
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-xl-12">
-            <div className="tp-gallery-slider-wrap">
-              <div className="swiper-container tp-gallery-slider-active">
-                <Marquee 
-                  className="tp-gallery-titming" 
-                  speed={isMobile ? 40 : 100} 
-                  direction='left'
-                  pauseOnHover={true}
-                  gradient={false}
-                  style={{
-                    willChange: 'transform',
-                    transform: 'translateZ(0)',
-                    backfaceVisibility: 'hidden'
-                  }}
-                >
-                  {gallery_images.map((g, i) => (
-                    <div key={i} style={{ willChange: 'transform' }}>
-                      <div className="tp-gallery-item mr-30">
-                        <Image 
-                          src={g} 
-                          alt="gallery-img" 
-                          style={getImageSize()}
-                          loading="lazy"
-                          quality={isMobile ? 60 : 75}
-                          sizes={isMobile ? 
-                            "(max-width: 768px) 250px" : 
-                            "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          }
-                        />
+      <div className="container-fluid gallery_video_bg">
+        <video
+          className="gallery_video_bg__video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+        >
+          <source src="/split_video.mp4" />
+        </video>
+
+        <div className="gallery_video_bg__content">
+          <div className="row">
+            <div className="col-xl-12">
+              <div className="tp-gallery-slider-wrap">
+                <div className="swiper-container tp-gallery-slider-active">
+                  <Marquee 
+                    className="tp-gallery-titming" 
+                    speed={isMobile ? 40 : 100} 
+                    direction='left'
+                    pauseOnHover={true}
+                    gradient={false}
+                    style={{
+                      willChange: 'transform',
+                      transform: 'translateZ(0)',
+                      backfaceVisibility: 'hidden'
+                    }}
+                  >
+                    {gallery_images.map((g, i) => (
+                      <div key={i} style={{ willChange: 'transform' }}>
+                        <div className="tp-gallery-item mr-30">
+                          <Image 
+                            src={g} 
+                            alt="gallery-img" 
+                            style={getImageSize()}
+                            loading="lazy"
+                            quality={isMobile ? 60 : 75}
+                            sizes={isMobile ? 
+                              "(max-width: 768px) 250px" : 
+                              "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            }
+                          />
+                        </div>
                       </div>
-                    </div>
-                  ))}
-                </Marquee>
+                    ))}
+                  </Marquee>
+                </div>
               </div>
             </div>
           </div>

@@ -3,6 +3,7 @@ import React, { memo, useMemo } from "react";
 import { ArrowBg, RightArrowTwo } from "../svg";
 import Link from "next/link";
 import EyeBall from "../ashish/EyeBall";
+import AshishCarousel from "../AshishCarousel";
 import GalleryOne from "../gallery/gallery-one";
 
 // Optimized styles object to reduce inline style calculations
@@ -11,11 +12,24 @@ const styles = {
     position: "relative" as const,
     minHeight: "100vh",
     width: "100%",
-    overflow: "hidden" as const,
-    backgroundImage: "url('/assets/image/hero_bg_2.jpg')",
-    backgroundSize: "cover" as const,
-    backgroundPosition: "center" as const,
-    backgroundRepeat: "no-repeat" as const,
+  },
+  backgroundVideo: {
+    position: "absolute" as const,
+    inset: 0,
+    width: "100%",
+    height: "100%",
+    objectFit: "cover" as const,
+    zIndex: 0,
+    pointerEvents: "none" as const,
+    opacity: 0.75,
+  },
+  backgroundOverlay: {
+    position: "absolute" as const,
+    inset: 0,
+    zIndex: 1,
+    background:
+      "linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.60) 100%)",
+    pointerEvents: "none" as const,
   },
   leftSideText: {
     position: "absolute" as const,
@@ -38,7 +52,7 @@ const styles = {
     bottom: "22%",
     right: "5%",
     width: "50%",
-    zIndex: 1,
+    zIndex: 2,
     pointerEvents: "auto" as const,
     textAlign: "right" as const,
     padding: "0.5rem",
@@ -66,7 +80,7 @@ const styles = {
     bottom: "3%",
     right: "5%",
     width: "45%",
-    zIndex: 1,
+    zIndex: 2,
     pointerEvents: "auto" as const,
   },
   bottomParagraph: {
@@ -92,8 +106,13 @@ const styles = {
     pointerEvents: "none" as const,
   },
   galleryContainer: {
-    zIndex: 1,
-    // position: "relative" as const,
+    position: "absolute" as const,
+    left: 0,
+    right: 0,
+    bottom: -395,
+    width: "100%",
+    zIndex: 2,
+    pointerEvents: "auto" as const,
   },
 } as const;
 
@@ -146,7 +165,7 @@ const responsiveCSS = `
 
   @media (max-width: 767px) {
     .left-side-text {
-      top: 53% !important;
+      top: 58% !important;
       left: 1% !important;
       right: 1% !important;
       width: 100% !important;
@@ -281,6 +300,18 @@ const HeroBannerFour: React.FC = memo(() => {
 
   return (
     <section className={containerClassName} style={styles.mainContainer}>
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        style={styles.backgroundVideo}
+      >
+        <source src="/hero_video.mp4" type="video/mp4" />
+      </video>
+      <div aria-hidden="true" style={styles.backgroundOverlay} />
+
       {/* Left Side Text */}
       <LeftSideContent />
 
@@ -299,6 +330,7 @@ const HeroBannerFour: React.FC = memo(() => {
       {/* Gallery Section */}
       {/* <div style={styles.galleryContainer}>
         <GalleryOne />
+        <AshishCarousel/>
       </div> */}
     </section>
   );
