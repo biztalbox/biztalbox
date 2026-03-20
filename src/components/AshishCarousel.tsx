@@ -30,42 +30,101 @@ const galleryImages = [
 ];
 
 const AshishCarousel: React.FC = () => {
-  // Duplicate slides for seamless infinite loop (marquee-like)
   const slides = [...galleryImages, ...galleryImages, ...galleryImages];
 
   return (
-    <Swiper
-      spaceBetween={24}
-      slidesPerView="auto"
-      centeredSlides={false}
-      loop
-      speed={4000}
-      allowTouchMove={true}
-      modules={[Autoplay]}
-      autoplay={{
-        delay: 0,
-        disableOnInteraction: false,
-        // pauseOnMouseEnter: true,
-      }}
-      className="ashish-carousel"
-      style={{ overflow: "hidden" }}
-    >
-      {slides.map((item, index) => (
-        <SwiperSlide key={index} style={{ width: "auto" }}>
-          <div style={{ width: 280, flexShrink: 0 }}>
-            <Image
-              src={item.src}
-              alt={item.alt}
-              width={280}
-              height={350}
-              sizes="280px"
-              style={{ width: "100%", height: "auto", objectFit: "cover" }}
-              loading={index < 9 ? "eager" : "lazy"}
-            />
-          </div>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <div style={{ position: "relative", overflow: "hidden" }}>
+      {/* Top curve */}
+      <div
+        style={{
+          position: "absolute",
+          top: -1,
+          left: 0,
+          width: "100%",
+          height: "clamp(10px, 10vw, 80px)",
+          background: "#070707",
+          borderRadius: "0 0 50% 50%",
+          zIndex: 10,
+        }}
+      />
+
+      {/* Bottom curve */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: -1,
+          left: 0,
+          width: "100%",
+          height: "clamp(10px, 10vw, 80px) ",
+          background: "#121212",
+          borderRadius: "50% 50% 0 0",
+          zIndex: 10,
+          borderTop: "3px solid white",
+        }}
+      />
+
+      {/* Video background */}
+      <div style={{ position: "relative", overflow: "hidden" }}>
+        <video
+          style={{
+            position: "absolute",
+            inset: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            zIndex: 0,
+          }}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+        >
+          <source src="/split_video.mp4" />
+        </video>
+
+        {/* Carousel content */}
+        <div
+          style={{
+            position: "relative",
+            zIndex: 1,
+            padding: "clamp(0px, 5vw, 30px) 0",
+          }}
+        >
+          <Swiper
+            spaceBetween={24}
+            slidesPerView="auto"
+            centeredSlides={false}
+            loop
+            speed={4000}
+            allowTouchMove={true}
+            modules={[Autoplay]}
+            autoplay={{
+              delay: 0,
+              disableOnInteraction: false,
+            }}
+            className="ashish-carousel"
+            style={{ overflow: "hidden" }}
+          >
+            {slides.map((item, index) => (
+              <SwiperSlide key={index} style={{ width: "auto" }}>
+                <div style={{ width: 280, flexShrink: 0 }}>
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    width={280}
+                    height={350}
+                    sizes="280px"
+                    style={{ width: "100%", height: "auto", objectFit: "cover" }}
+                    loading={index < 9 ? "eager" : "lazy"}
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div>
+    </div>
   );
 };
 

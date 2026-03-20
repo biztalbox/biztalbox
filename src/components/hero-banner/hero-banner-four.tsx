@@ -165,7 +165,7 @@ const responsiveCSS = `
 
   @media (max-width: 767px) {
     .left-side-text {
-      top: 58% !important;
+      top: 55% !important;
       left: 1% !important;
       right: 1% !important;
       width: 100% !important;

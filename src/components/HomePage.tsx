@@ -224,8 +224,8 @@ const HomePage = () => {
               {/* hero area end */}
 
               {/* gallery area start */}
-              <GalleryOne />
-              {/* <AshishCarousel/> */}
+              {/* <GalleryOne /> */}
+              <AshishCarousel/>
               {/* gallery area end */}
 
               {/* about area start */}
