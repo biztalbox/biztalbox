@@ -1,0 +1,7 @@
+/**
+ * Tailwind (prefixed: tw-*). Imported from `src/app/layout.tsx`.
+ * Use classes like `tw-flex`, `tw-p-4`, not `flex`, `p-4`.
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
