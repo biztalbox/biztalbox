@@ -5,3 +5,28 @@ p{
 main p > a{
   color: royalblue !important;
 }
+
+.tp-footer-3-menu ul {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100% !important;
+  gap: 1.5rem !important;
+  padding-left: 10px;
+}
+
+@media screen and (max-width:767px){
+  .tp-footer-3-menu ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width:768px) and (max-width:1023px){
+  .tp-footer-3-menu ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.tp-footer-3-menu ul li {
+  width: auto !important;
+  list-style: disc;
+  text-transform: capitalize;
+}

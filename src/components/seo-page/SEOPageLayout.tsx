@@ -40,7 +40,6 @@ import type { CMSPageData, CMSSettings } from "@/lib/cms-types";
 import SafeHtml from "@/components/seo-page/SafeHtml";
 import Model3D from "@/components/3d-model";
 import ModelGLB from "../3d-model-glb";
-
 // ─── helpers ──────────────────────────────────────────────────────────────────
 
 /** Pair an array into rows of 2 for 2-col grid rendering */
@@ -107,9 +106,11 @@ function CtaBlock({ subtitle, title, body, phone, email }: CtaBlockProps) {
 interface SEOPageLayoutProps {
   data: CMSPageData;
   settings: CMSSettings;
+  /** Rendered on the server (e.g. `<CountyList />` from `page.tsx`) so links appear in page source. */
+  countyList?: React.ReactNode;
 }
 
-export default function SEOPageLayout({ data, settings }: SEOPageLayoutProps) {
+export default function SEOPageLayout({ data, settings, countyList }: SEOPageLayoutProps) {
   useScrollSmooth();
   const [isMobile, setIsMobile] = useState(false);
 
@@ -540,6 +541,9 @@ export default function SEOPageLayout({ data, settings }: SEOPageLayoutProps) {
             </div>
           </div>
         )}
+
+
+        {countyList}
 
       </main>
       <FooterThree />

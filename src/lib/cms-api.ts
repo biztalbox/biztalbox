@@ -34,6 +34,8 @@ const EMPTY_PAGE: CMSPageData = {
   how_we_work_title: "",
   how_we_work_steps: [],
   faqs: [],
+  country_id: 0,
+  state_id: 0,
 };
 
 /** Safely get string from obj, supports both snake_case and camelCase keys */
@@ -74,45 +76,47 @@ export function normalizePageData(raw: unknown, fallbackSlug: string): CMSPageDa
   const slug = str(page, "slug") || fallbackSlug;
 
   return {
-    slug,
-    title: str(page, "title") || `${fallbackSlug} | Biztalbox`,
-    description: str(page, "description", "meta_description"),
-    hero_title: str(page, "hero_title", "heroTitle"),
-    hero_paragraph_1: str(page, "hero_paragraph_1", "heroParagraph1", "hero_paragraph1"),
-    hero_paragraph_2: str(page, "hero_paragraph_2", "heroParagraph2", "hero_paragraph2"),
-    cta_subtitle: str(page, "cta_subtitle", "ctaSubtitle"),
-    cta_title: str(page, "cta_title", "ctaTitle"),
-    cta_body: str(page, "cta_body", "ctaBody"),
-    benefits_title: str(page, "benefits_title", "benefitsTitle"),
-    benefits_subtitle: str(page, "benefits_subtitle", "benefitsSubtitle"),
-    benefits_items: arr(page, "benefits_items", (i) => ({
-      title: str(i, "title"),
-      description: str(i, "description"),
-    })),
-    why_choose_title: str(page, "why_choose_title", "whyChooseTitle"),
-    why_choose_items: arr(page, "why_choose_items", (i) => ({
-      title: str(i, "title"),
-      body: str(i, "body", "description"),
-    })),
-    how_we_work_title: str(page, "how_we_work_title", "howWeWorkTitle"),
-    how_we_work_steps: arr(page, "how_we_work_steps", (i) => ({
-      title: str(i, "title"),
-      body: str(i, "body", "description"),
-    })),
-    services_offered_title: str(page, "services_offered_title", "servicesOfferedTitle") || undefined,
-    services_offered_items: arr(page, "services_offered_items", (i) => ({
-      title: str(i, "title"),
-      body: str(i, "body", "description"),
-    })),
-    pricing_heading: str(page, "pricing_heading", "pricingHeading") || undefined,
-    pricing_content: str(page, "pricing_content", "pricingContent") || undefined,
-    conclusion_heading: str(page, "conclusion_heading", "conclusionHeading") || undefined,
-    conclusion_content: str(page, "conclusion_content", "conclusionContent") || undefined,
-    faqs: arr(page, "faqs", (i) => ({
-      question: str(i, "question"),
-      answer: str(i, "answer"),
-    })),
-  };
+  slug,
+  title: str(page, "title") || `${fallbackSlug} | Biztalbox`,
+  description: str(page, "description", "meta_description"),
+  hero_title: str(page, "hero_title", "heroTitle"),
+  hero_paragraph_1: str(page, "hero_paragraph_1", "heroParagraph1", "hero_paragraph1"),
+  hero_paragraph_2: str(page, "hero_paragraph_2", "heroParagraph2", "hero_paragraph2"),
+  cta_subtitle: str(page, "cta_subtitle", "ctaSubtitle"),
+  cta_title: str(page, "cta_title", "ctaTitle"),
+  cta_body: str(page, "cta_body", "ctaBody"),
+  benefits_title: str(page, "benefits_title", "benefitsTitle"),
+  benefits_subtitle: str(page, "benefits_subtitle", "benefitsSubtitle"),
+  benefits_items: arr(page, "benefits_items", (i) => ({
+    title: str(i, "title"),
+    description: str(i, "description"),
+  })),
+  why_choose_title: str(page, "why_choose_title", "whyChooseTitle"),
+  why_choose_items: arr(page, "why_choose_items", (i) => ({
+    title: str(i, "title"),
+    body: str(i, "body", "description"),
+  })),
+  how_we_work_title: str(page, "how_we_work_title", "howWeWorkTitle"),
+  how_we_work_steps: arr(page, "how_we_work_steps", (i) => ({
+    title: str(i, "title"),
+    body: str(i, "body", "description"),
+  })),
+  services_offered_title: str(page, "services_offered_title", "servicesOfferedTitle") || undefined,
+  services_offered_items: arr(page, "services_offered_items", (i) => ({
+    title: str(i, "title"),
+    body: str(i, "body", "description"),
+  })),
+  pricing_heading: str(page, "pricing_heading", "pricingHeading") || undefined,
+  pricing_content: str(page, "pricing_content", "pricingContent") || undefined,
+  conclusion_heading: str(page, "conclusion_heading", "conclusionHeading") || undefined,
+  conclusion_content: str(page, "conclusion_content", "conclusionContent") || undefined,
+  faqs: arr(page, "faqs", (i) => ({
+    question: str(i, "question"),
+    answer: str(i, "answer"),
+  })),
+  country_id: page.country_id as number,
+  state_id: page.state_id as number
+};
 }
 
 const SETTINGS_FALLBACK: CMSSettings = {
