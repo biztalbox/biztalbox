@@ -9,9 +9,11 @@ const HeaderMenus = () => {
 
   return (
     <ul>
-      <li className="has-dropdown">
-        <Link href="/">Home</Link>
-      </li>
+      {pathname !== "/" && (
+        <li className="has-dropdown">
+          <Link href="/">Home</Link>
+        </li>
+      )}
       <li className="has-dropdown">
         <Link href="/about">About</Link>
       </li>

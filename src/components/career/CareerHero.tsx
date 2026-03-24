@@ -7,7 +7,7 @@ export default function CareerHero() {
       <div className={styles.inner}>
         <span className={styles.badge}>JOIN THE Biztal</span>
         <h1 id="career-hero-heading" className={styles.title}>
-        We couldn't think of a creative tagline… come join us and suggest one!
+        We couldn&apost think of a creative tagline… come join us and suggest one!
         </h1>
         <p className={styles.subtitle}>
         Biztalbox is for the imaginative and curious.
