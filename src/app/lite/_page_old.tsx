@@ -1,11 +1,10 @@
 "use client";
 
-import "./hero.css";
+// import "./hero.css";
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HeaderEleven from "@/layouts/headers/header-eleven";
-import Ashish from "./_ashish/Ashish";
 
 export default function LitePage() {
   const rootRef = useRef<HTMLElement | null>(null);
@@ -162,6 +161,7 @@ export default function LitePage() {
   return (
     <>
       <main ref={rootRef} className="lite-hero">
+        
         <div className="lite-vertical-floating">
           <div className="lite-vertical-floating__inner">
             <span className="lite-vertical-floating__item">NO STANDARD PRICES</span>
@@ -183,8 +183,11 @@ export default function LitePage() {
             <div className="lite-hero__bg-card lite-hero__bg-card--4" />
           </div>
         </div>
-
+<div className="flex h-22 py-4 bg-red-500 text-blue-400 font-bold text-xl w-full">
+  Hello
+</div>
         <header className="lite-hero__top" data-anim="top">
+          
           <div className="lite-hero__badge-vertical">AUTHENTIC DIGITAL</div>
           <div className="lite-hero__brand">
             <span className="lite-hero__brand-small">

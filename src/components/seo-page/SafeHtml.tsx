@@ -72,24 +72,13 @@ export default function SafeHtml({ html, className, as: Wrapper = "div" }: SafeH
   const content = String(looksLikeHtml ? sanitizeHtml(trimmed) : trimmed);
   const isHtml = looksLikeHtml && content.length > 0;
 
-  if (Wrapper === "div") {
-    return (
-      <div
-        className={className}
-        {...(isHtml ? { dangerouslySetInnerHTML: { __html: content } } : {})}
-      >
-        {!isHtml ? content : null}
-      </div>
-    );
-  }
+  const props: React.HTMLAttributes<HTMLElement> & {
+    dangerouslySetInnerHTML?: { __html: string };
+  } = {
+    className,
+    ...(isHtml ? { dangerouslySetInnerHTML: { __html: content } } : {}),
+  };
 
-  const Component = Wrapper;
-  return (
-    <Component
-      className={className}
-      {...(isHtml ? { dangerouslySetInnerHTML: { __html: content } } : {})}
-    >
-      {!isHtml ? content : null}
-    </Component>
-  );
+  // createElement avoids JSX `<Component>` clashing with other typings (e.g. R3F/three).
+  return React.createElement(Wrapper, props, !isHtml ? content : null);
 }

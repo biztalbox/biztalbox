@@ -392,7 +392,7 @@ strong {
   overflow: hidden;
   position: relative;
   --v-offset: 60px;
-  --curve-height: 200px;
+  --curve-height: 150px !important;
 
   &:before,
   &:after {
