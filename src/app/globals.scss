@@ -3,6 +3,17 @@
 @import "swiper/css/bundle";
 @import '../../public/assets/scss/main.scss';
 
+/* Global page background (make the whole site black) */
+html,
+body {
+  background-color: #000 !important;
+}
+
+/* Next.js root container fallback */
+#__next {
+  background-color: #000 !important;
+}
+
 /*
  Designed & Developed by Ashish Raj Verma
  Portfolio: https://ashishrv.vercel.app
@@ -429,4 +440,24 @@ strong {
     scroll-snap-align: center;
    
   }
+}
+
+.career-page-wrap {
+  min-height: 100vh;
+  background-color: #000;
+}
+
+/* Careers page: active nav link (purple underline) */
+.tp-inner-header-menu nav > ul > li > a.tp-career-nav-active {
+  box-shadow: 0 3px 0 0 #a855f7;
+}
+
+.header-sticky.tp-inner-header-area
+  .tp-inner-header-menu
+  nav
+  > ul
+  > li
+  > a.tp-career-nav-active {
+  color: #7c3aed !important;
+  box-shadow: 0 3px 0 0 #a855f7;
 }
