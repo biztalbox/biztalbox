@@ -1,12 +1,14 @@
 import React from "react";
 // import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 // import menu_data from "@/data/menu-data";
 // import shop_banner from "@/assets/img/menu/shop-menu/banner-1.jpg";
 // import port_img from "@/assets/img/menu/portfolio-menu/portfolio.png";
 
 export default function MobileMenus() {
   const [navTitle, setNavTitle] = React.useState<string>("");
+  const pathname = usePathname();
 
   //openMobileMenu
   const openMobileMenu = (menu: string) => {
@@ -20,14 +22,19 @@ export default function MobileMenus() {
     <>
       <nav className="tp-main-menu-content">
         <ul>
-          <li className="has-dropdown">
-            <Link href="/">Home</Link>
-          </li>
+          {pathname !== "/" && (
+            <li className="has-dropdown">
+              <Link href="/">Home</Link>
+            </li>
+          )}
           <li className="has-dropdown">
             <Link href="/about">About</Link>
           </li>
           <li className="has-dropdown">
             <Link href="/services">Services</Link>
+          </li>
+          <li className="has-dropdown">
+            <Link href="/career">Careers</Link>
           </li>
           <li className="has-dropdown">
             <Link href="/blog">Blog</Link>

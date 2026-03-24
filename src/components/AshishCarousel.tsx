@@ -42,7 +42,7 @@ const AshishCarousel: React.FC = () => {
           left: 0,
           width: "100%",
           height: "clamp(10px, 10vw, 80px)",
-          background: "#070707",
+          background: "#030303",
           borderRadius: "0 0 50% 50%",
           zIndex: 10,
         }}

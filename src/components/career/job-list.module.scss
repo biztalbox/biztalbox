@@ -1,0 +1,497 @@
+.section {
+  position: relative;
+  padding: clamp(2rem, 4vw, 3rem) 1.25rem clamp(3.5rem, 7vw, 5.5rem);
+  background: #121212;
+  font-family: var(--tp-ff-syne), system-ui, sans-serif;
+}
+
+.inner {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.6rem 0.5rem 1.1rem;
+  background: #1e1e1e;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 9999px;
+}
+
+.searchWrap {
+  flex: 1 1 200px;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-width: 0;
+  color: #737373;
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+.searchInput {
+  flex: 1;
+  min-width: 0;
+  padding: 0.55rem 0;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #fafafa;
+  background: transparent;
+  border: none;
+  outline: none;
+
+  &::placeholder {
+    color: #737373;
+  }
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.selectWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.select {
+  appearance: none;
+  padding: 0.5rem 1.85rem 0.5rem 0.85rem;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #e5e5e5;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 9999px;
+  cursor: pointer;
+  min-width: 7.5rem;
+  /* Dark dropdown list in supporting browsers (Chrome, Edge, Firefox) */
+  color-scheme: dark;
+
+  &:focus {
+    outline: 2px solid rgba(167, 139, 250, 0.35);
+    outline-offset: 1px;
+  }
+
+  option {
+    background: #0a0a0a;
+    color: #e5e5e5;
+  }
+}
+
+.selectChevron {
+  position: absolute;
+  right: 0.55rem;
+  pointer-events: none;
+  color: #a3a3a3;
+  display: flex;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.1rem;
+  margin-bottom: 1.85rem;
+}
+
+@mixin tag-base {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.38rem 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.tagActive {
+  @include tag-base;
+  color: #fff;
+  background: rgba(88, 28, 135, 0.35);
+  border: 1px solid rgba(167, 139, 250, 0.45);
+}
+
+.tagInactive {
+  @include tag-base;
+  color: #d4d4d4;
+  background: #2a2a2a;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tagDismiss {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-left: 0.1rem;
+  font-size: 0.875rem;
+  line-height: 1;
+  color: inherit;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  opacity: 0.9;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.75rem;
+
+  @media (max-width: 991px) {
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 992px) and (max-width: 1199px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.35rem 1.35rem 1.1rem;
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 14px;
+  min-height: 100%;
+}
+
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+@mixin category-pill {
+  display: inline-block;
+  padding: 0.28rem 0.6rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 9999px;
+}
+
+.catEngineering {
+  @include category-pill;
+  color: #d4d4d4;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.catDesign {
+  @include category-pill;
+  color: #d4d4d4;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.catProduct {
+  @include category-pill;
+  color: #d4d4d4;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.catMarketing {
+  @include category-pill;
+  color: #d4d4d4;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.catDefault {
+  @include category-pill;
+  color: #d4d4d4;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.loading,
+.error {
+  text-align: center;
+  margin-top: 1.75rem;
+  padding: 2.5rem 1rem;
+  font-size: 0.9375rem;
+  color: #a3a3a3;
+}
+
+.error {
+  color: #fca5a5;
+}
+
+.applyLink {
+  display: block;
+  width: 100%;
+  margin-top: auto;
+  padding: 0.72rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fafafa !important;
+  text-align: center;
+  text-decoration: none !important;
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: #181818;
+    color: #fff !important;
+  }
+}
+
+.locRow {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #a3a3a3;
+
+  svg {
+    flex-shrink: 0;
+    color: #737373;
+  }
+}
+
+.cardTitle {
+  margin: 0 0 0.6rem;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #fff;
+}
+
+.cardDesc {
+  margin: 0 0 1.1rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #a3a3a3;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.25rem;
+  margin-top: auto;
+  margin-bottom: 1rem;
+}
+
+.metaItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #a3a3a3;
+
+  svg {
+    flex-shrink: 0;
+    color: #737373;
+  }
+}
+
+.applyBtn {
+  width: 100%;
+  margin-top: auto;
+  padding: 0.72rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #fafafa;
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: #181818;
+    color: #fff;
+  }
+}
+
+.applyBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.paginationWrap {
+  margin-top: 2.5rem;
+  padding: 1.25rem 1rem;
+  background: #000000;
+  border-radius: 0.5rem;
+}
+
+.paginationNav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.25rem;
+}
+
+.paginationArrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid #525252;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+
+  &:hover:not(:disabled) {
+    border-color: #a3a3a3;
+  }
+
+  &:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
+}
+
+.paginationList {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.15rem 0.35rem;
+  list-style: none;
+  margin: 0;
+  padding: 0 0.25rem;
+}
+
+.paginationPage {
+  min-width: 2rem;
+  padding: 0.45rem 0.55rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #fff;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  cursor: pointer;
+  line-height: 1.2;
+  transition: opacity 0.15s ease;
+
+  &:hover {
+    opacity: 0.88;
+  }
+}
+
+.paginationPageActive {
+  border-color: #fff;
+  opacity: 1;
+}
+
+.paginationEllipsis {
+  padding: 0.45rem 0.25rem;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #fff;
+  user-select: none;
+  pointer-events: none;
+}
+
+.emptyState {
+  text-align: center;
+  color: #a3a3a3;
+  margin-top: 2rem;
+  font-size: 0.9375rem;
+}
+
+@media (max-width: 991px) {
+  .section {
+    padding: 1.5rem 1rem 3rem;
+  }
+
+  .toolbar {
+    border-radius: 1rem;
+    padding: 0.8rem;
+    gap: 0.7rem;
+  }
+
+  .searchWrap {
+    flex: 1 1 100%;
+  }
+
+  .searchInput {
+    padding: 0.45rem 0;
+  }
+
+  .filters {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+
+  .selectWrap {
+    width: 100%;
+  }
+
+  .select {
+    width: 100%;
+    min-width: 0;
+    font-size: 0.875rem;
+  }
+
+  .grid {
+    margin-top: 1.25rem;
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1.1rem 1rem 1rem;
+  }
+
+  .cardTop {
+    flex-wrap: wrap;
+    gap: 0.55rem;
+  }
+}
