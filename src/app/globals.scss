@@ -445,6 +445,12 @@ strong {
 .career-page-wrap {
   min-height: 100vh;
   background-color: #000;
+  font-family: var(--tp-ff-p) !important;
+}
+
+/* Enforce Syne on the full career experience (list + job detail pages) */
+.career-page-wrap * {
+  font-family: var(--tp-ff-p) !important;
 }
 
 /* Careers page: active nav link (purple underline) */
