@@ -22,7 +22,7 @@ const styles = {
     zIndex: 0,
     pointerEvents: "none" as const,
     opacity: 0.75,
-    top: '-45px'
+    top: '-100px'
   },
   backgroundOverlay: {
     position: "absolute" as const,
