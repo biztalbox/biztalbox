@@ -52,7 +52,7 @@ const AshishCarousel: React.FC = () => {
       <div
         style={{
           position: "absolute",
-          bottom: -1,
+          bottom: -3,
           left: 0,
           width: "100%",
           height: "clamp(10px, 10vw, 80px) ",
