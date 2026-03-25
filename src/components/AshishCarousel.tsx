@@ -56,7 +56,7 @@ const AshishCarousel: React.FC = () => {
           left: 0,
           width: "100%",
           height: "clamp(10px, 10vw, 80px) ",
-          background: "#121212",
+          background: "#000000",
           borderRadius: "50% 50% 0 0",
           zIndex: 10,
           borderTop: "3px solid white",
