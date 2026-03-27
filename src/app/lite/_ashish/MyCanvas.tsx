@@ -88,7 +88,7 @@ const MyCanvas = () => {
           />
         );
       })}
-      <ambientLight intensity={5.45} />
+      <ambientLight intensity={5.50} />
       <hemisphereLight args={["#f5f5ff", "#3a3a3a", 5.55]} />
       <directionalLight position={[140, 120, 160]} intensity={1.35} color="#ffffff" />
       <directionalLight position={[-130, 70, 90]} intensity={5.65} color="#eef2ff" />
