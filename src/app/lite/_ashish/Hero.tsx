@@ -1,4 +1,4 @@
-"use client"
+"use client" 
 
 import gsap from "gsap"
 import { useGSAP } from "@gsap/react"
