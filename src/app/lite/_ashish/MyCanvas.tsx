@@ -1,82 +1,98 @@
 "use client";
-import { useRef } from "react";
-import { useFrame } from "@react-three/fiber";
+
+import { useMemo, useRef } from "react";
+import { useFrame, useLoader, useThree } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import type { Group } from "three";
-import gsap from 'gsap'
+import type { GLTF } from "three/examples/jsm/loaders/GLTFLoader.js";
+import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { LITE_GLB_URLS, LITE_MODELS } from "./lite-models";
+import { WigglingModel } from "./WigglingModel";
 
-function WigglingModel({ scene }: { scene: Group }) {
-  const groupRef = useRef<Group>(null);
-
-
-
-  useFrame((state) => {
-    const t = state.clock.elapsedTime;
-    const g = groupRef.current;
-    if (!g) return;
-    g.rotation.x = Math.sin(t * 2.1) * 0.08;
-    g.rotation.z = Math.cos(t * 1.7) * 0.1;
-    g.rotation.y = Math.sin(t * 2.4) * 0.06;
-  });
-
-  return (
-    <group ref={groupRef} position={[0, 0, 0]}>
-      <primitive object={scene} />
-    </group>
-  );
+for (const url of LITE_GLB_URLS) {
+  useGLTF.preload(url);
 }
 
 const MyCanvas = () => {
+  gsap.registerPlugin(useGSAP);
+  gsap.registerPlugin(ScrollTrigger);
 
-  gsap.registerPlugin(useGSAP)
-  gsap.registerPlugin(ScrollTrigger)
+  const gltf = useLoader(GLTFLoader, LITE_GLB_URLS) as GLTF | GLTF[];
+  const sceneBySrc = useMemo(() => {
+    const list = Array.isArray(gltf) ? gltf : [gltf];
+    const map = new Map<string, Group>();
+    LITE_GLB_URLS.forEach((url, i) => map.set(url, list[i].scene));
+    return map;
+  }, [gltf]);
 
-  const can = useGLTF("/assets/lite_models/can.glb");
-  const canRef = useRef<Group>(can.scene);
-  // const packet = useGLTF("/assets/lite_models/packet.glb");
-  // const chocolate = useGLTF("/assets/lite_models/chocolate.glb");
-  // const tube = useGLTF("/assets/lite_models/tube.glb");
+  const scrollTargetRef = useRef<Group>(null);
+
+  // const { camera } = useThree();
+  // const cameraLogFrame = useRef(0);
+
+  // // Remove or raise the modulo when you want fewer logs (e.g. every 60 frames ≈ 1s at 60fps)
+  // useFrame(() => {
+  //   cameraLogFrame.current += 1;
+  //   if (cameraLogFrame.current % 30 !== 0) return;
+  //   const { x, y, z } = camera.position;
+  //   console.log("camera.position", { x, y, z });
+  // });
 
   useGSAP(() => {
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "#section0",
-        endTrigger: "#section4",
-        start: "top top",
-        end: "bottom bottom",
-        markers: true,
-        scrub: true,
-      },
-    })
-
-    tl.to(canRef.current.rotation, {
-      x: "-8",
-    })
-
-
-    
-  })
-
+    let cancelled = false;
+    let attempts = 0;
+    const maxAttempts = 120;
+    const mountScroll = () => {
+      const target = scrollTargetRef.current;
+      if (!target) {
+        if (!cancelled && attempts++ < maxAttempts) requestAnimationFrame(mountScroll);
+        return;
+      }
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: "#section0",
+          endTrigger: "#section4",
+          start: "top top",
+          end: "bottom bottom",
+          markers: true,
+          scrub: true,
+        },
+      });
+      tl.to(target.rotation, { x: "-8" });
+    };
+    mountScroll();
+    return () => {
+      cancelled = true;
+    };
+  });
 
   return (
     <>
-      <WigglingModel scene={can.scene} />
-      {/* <primitive object={packet.scene} position={[-100, 40, 0]} />
-      <primitive object={chocolate.scene} position={[0, 80, -60]} />
-      <primitive object={tube.scene} position={[80, 0, 0]} /> */}
-      {/* Even lighting for spread-out models (rough center ~0, 40, -30) */}
+      {LITE_MODELS.map((m) => {
+        const scene = sceneBySrc.get(m.src);
+        if (!scene) return null;
+        return (
+          <WigglingModel
+            key={m.id}
+            scene={scene}
+            position={m.position}
+            animation={m.animation}
+            phase={m.phase}
+            speed={m.speed}
+            scale={m.scale}
+            rotation={m.rotation}
+            scrollRef={m.scrollDriven ? scrollTargetRef : undefined}
+          />
+        );
+      })}
       <ambientLight intensity={5.45} />
       <hemisphereLight args={["#f5f5ff", "#3a3a3a", 5.55]} />
-      {/* Key: front-right-top → fills faces visible from camera side */}
       <directionalLight position={[140, 120, 160]} intensity={1.35} color="#ffffff" />
-      {/* Fill: left side → opens shadows on packet / left objects */}
       <directionalLight position={[-130, 70, 90]} intensity={5.65} color="#eef2ff" />
-      {/* Rim: from behind → separates models from background, reads tube & chocolate depth */}
       <directionalLight position={[40, 90, -160]} intensity={5.75} color="#ffffff" />
-      {/* Low front bounce → underside / bottom of can & tube */}
       <directionalLight position={[0, -80, 120]} intensity={5.35} color="#d4d4d8" />
       {/* <OrbitControls /> */}
     </>
