@@ -12,7 +12,7 @@ const baseMetadata: Metadata = {
 
 export const metadata = createMetadata(
   baseMetadata,
-  "/logistics-seo-services"
+  "/logistics-seo"
 );
 
 export default function RootLayout({
@@ -24,7 +24,7 @@ export default function RootLayout({
   const pageData = createMarketingPageData({
     title: baseMetadata.title as string,
     description: baseMetadata.description as string,
-    path: "/logistics-seo-services",
+    path: "/logistics-seo",
     serviceType: "Logistics SEO Services",
     aggregateRating: {
       rating: 4.8,
@@ -39,7 +39,7 @@ export default function RootLayout({
     <>
       <MarketingPageSchema
         pageData={pageData}
-        currentUrl={createFullUrl("/logistics-seo-services")}
+        currentUrl={createFullUrl("/logistics-seo")}
       />
       {children}
     </>

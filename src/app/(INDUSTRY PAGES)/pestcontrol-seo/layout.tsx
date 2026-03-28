@@ -5,14 +5,14 @@ import { createMarketingPageData } from "@/utils/marketing-page-data";
 import "@/app/(INDUSTRY PAGES)/styles.css";
 
 const baseMetadata: Metadata = {
-  title: "Electrician SEO: Strategies That Turn Google Searches Into Service Calls",
+  title: "Pet Care SEO Experts | Scale Grooming, Vet & Boarding Sales!",
   description:
-    "The ultimate electrician SEO guide covering strategies, search rankings, local SEO visibility, and how electricians turn Google searches into real service calls.",
+    "Hire pet care SEO experts to increase visibility, outrank competitors, and generate grooming, vet and boarding sales month after month. Proven systems now! ROI!",
 };
 
 export const metadata = createMetadata(
   baseMetadata,
-  "/electrician-seo-services"
+  "/pestcontrol-seo"
 );
 
 export default function RootLayout({
@@ -24,11 +24,11 @@ export default function RootLayout({
   const pageData = createMarketingPageData({
     title: baseMetadata.title as string,
     description: baseMetadata.description as string,
-    path: "/electrician-seo-services",
-    serviceType: "Electrician SEO Services",
+    path: "/pestcontrol-seo",
+    serviceType: "Pet Care SEO Services",
     aggregateRating: {
       rating: 4.9,
-      reviewCount: 124,
+      reviewCount: 142,
       bestRating: 5,
     },
     image:
@@ -39,9 +39,11 @@ export default function RootLayout({
     <>
       <MarketingPageSchema
         pageData={pageData}
-        currentUrl={createFullUrl("/electrician-seo-services")}
+        currentUrl={createFullUrl("/pestcontrol-seo")}
       />
       {children}
     </>
   );
 }
+
+

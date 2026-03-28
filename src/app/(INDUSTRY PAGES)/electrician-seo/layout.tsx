@@ -5,14 +5,14 @@ import { createMarketingPageData } from "@/utils/marketing-page-data";
 import "@/app/(INDUSTRY PAGES)/styles.css";
 
 const baseMetadata: Metadata = {
-  title: "Ecommerce SEO Strategy: The Ultimate Guide for Ecommerce Websites",
+  title: "Electrician SEO: Strategies That Turn Google Searches Into Service Calls",
   description:
-    "Struggling to grow organic traffic? Discover the ecommerce SEO strategies and SEO for ecommerce websites that help online stores rank higher and sell more.",
+    "The ultimate electrician SEO guide covering strategies, search rankings, local SEO visibility, and how electricians turn Google searches into real service calls.",
 };
 
 export const metadata = createMetadata(
   baseMetadata,
-  "/ecommerce-seo-service"
+  "/electrician-seo"
 );
 
 export default function RootLayout({
@@ -24,11 +24,11 @@ export default function RootLayout({
   const pageData = createMarketingPageData({
     title: baseMetadata.title as string,
     description: baseMetadata.description as string,
-    path: "/ecommerce-seo-service",
-    serviceType: "Ecommerce SEO Service",
+    path: "/electrician-seo",
+    serviceType: "Electrician SEO Services",
     aggregateRating: {
       rating: 4.9,
-      reviewCount: 156,
+      reviewCount: 124,
       bestRating: 5,
     },
     image:
@@ -39,7 +39,7 @@ export default function RootLayout({
     <>
       <MarketingPageSchema
         pageData={pageData}
-        currentUrl={createFullUrl("/ecommerce-seo-services")}
+        currentUrl={createFullUrl("/electrician-seo")}
       />
       {children}
     </>

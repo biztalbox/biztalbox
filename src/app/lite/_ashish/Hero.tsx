@@ -15,7 +15,7 @@ const Hero = () => {
     return (
         <div className="relative">
             <section id="section0" className="h-screen relative">
-                <Canvas className="!fixed top-0 h-full w-full inset-0 bg-neutral-200" camera={{ position: [-4, 303, 622], fov: 70 }}>
+                <Canvas className="!fixed top-0 h-full w-full inset-0 " camera={{ position: [-4, 303, 622], fov: 70 }}>
                     <MyCanvas />
                 </Canvas>
                <div className="flex justify-btween">
@@ -26,7 +26,7 @@ const Hero = () => {
             <section id="section1" className="h-screen bg-red-500 border-2 border-red-500"></section>
             <section id="section2" className="h-screen bg-orange-500 border-2 border-red-500"></section>
             <section id="section3" className="h-screen bg-blue-500 border-2 border-red-500"></section>
-            <section id="section4" className="h-screen bg-green-500 border-2 border-red-500"></section>
+            <section id="section4" className="h-screen bg-green-500 border-2 border-red-500"></section> 
         </div>
     )
 }

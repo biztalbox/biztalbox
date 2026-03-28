@@ -5,14 +5,14 @@ import { createMarketingPageData } from "@/utils/marketing-page-data";
 import "@/app/(INDUSTRY PAGES)/styles.css";
 
 const baseMetadata: Metadata = {
-  title: "Pet Care SEO Experts | Scale Grooming, Vet & Boarding Sales!",
+  title: "Ecommerce SEO Strategy: The Ultimate Guide for Ecommerce Websites",
   description:
-    "Hire pet care SEO experts to increase visibility, outrank competitors, and generate grooming, vet and boarding sales month after month. Proven systems now! ROI!",
+    "Struggling to grow organic traffic? Discover the ecommerce SEO strategies and SEO for ecommerce websites that help online stores rank higher and sell more.",
 };
 
 export const metadata = createMetadata(
   baseMetadata,
-  "/petcare-seo"
+  "/ecommerce-seo"
 );
 
 export default function RootLayout({
@@ -24,11 +24,11 @@ export default function RootLayout({
   const pageData = createMarketingPageData({
     title: baseMetadata.title as string,
     description: baseMetadata.description as string,
-    path: "/petcare-seo",
-    serviceType: "Pet Care SEO Services",
+    path: "/ecommerce-seo",
+    serviceType: "Ecommerce SEO Service",
     aggregateRating: {
       rating: 4.9,
-      reviewCount: 142,
+      reviewCount: 156,
       bestRating: 5,
     },
     image:
@@ -39,11 +39,9 @@ export default function RootLayout({
     <>
       <MarketingPageSchema
         pageData={pageData}
-        currentUrl={createFullUrl("/petcare-seo")}
+        currentUrl={createFullUrl("/ecommerce-seos")}
       />
       {children}
     </>
   );
 }
-
-
