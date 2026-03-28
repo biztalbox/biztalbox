@@ -288,7 +288,7 @@ export default function Page() {
                       <div className="tm-details-content-wrap z-index-5" style={{ padding: "30px 0" }}>
                         <div className="tm-details-title-box mb-20">
                           <span className="tm-hero-subtitle">Scale Your Business with Biztalbox</span>
-                          <h3 className="tm-details-title">Let&apos;s Transform Search Into Revenue</h3>
+                          <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
                         <div className="tm-details-text">
                           <p>Generic SEO brings visitors; we bring buyers. Partner with the experts who understand how e-commerce truly works.</p>
