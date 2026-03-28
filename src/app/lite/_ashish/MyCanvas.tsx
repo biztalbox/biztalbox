@@ -72,9 +72,7 @@ const MyCanvas = () => {
             key={m.id}
             scene={scene}
             position={m.position}
-            animation={m.animation}
-            phase={m.phase}
-            speed={m.speed}
+            floatConfig={m.floatConfig}
             scale={m.scale}
             rotation={m.rotation}
             scrollRef={m.scrollDriven ? scrollTargetRef : undefined}

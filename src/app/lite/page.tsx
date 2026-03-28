@@ -1,5 +1,5 @@
 // "use client"
-import HeaderEleven from "@/layouts/headers/header-eleven";
+import Header from "./_ashish/Header";
 import Wrapper from "@/layouts/wrapper";
 import Hero from "./_ashish/Hero";
 import FooterFour from "@/layouts/footers/footer-four";
@@ -8,10 +8,13 @@ import FooterFour from "@/layouts/footers/footer-four";
 const page = () => {
   return (
     <Wrapper>
-      <HeaderEleven />
+      {/* <main className="bg-neutral-100 text-black"> */}
 
-      <Hero />
-       <FooterFour/>
+        <Header />
+
+        <Hero />
+      {/* </main> */}
+      <FooterFour />
     </Wrapper>
   );
 };

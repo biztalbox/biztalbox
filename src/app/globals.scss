@@ -14,6 +14,63 @@ body {
   background-color: #000 !important;
 }
 
+/* /lite route: drop global black chrome (html/body/#__next) while on this section */
+html:has(#lite-route-root),
+body:has(#lite-route-root) {
+  background-color: #f5f5f5 !important;
+}
+
+#__next:has(#lite-route-root) {
+  background-color: #f5f5f5 !important;
+}
+
+[data-theme="dark"] body:has(#lite-route-root) {
+  background-color: #f5f5f5 !important;
+}
+
+/* Lite header: transparent at top; frosted translucent bar once sticky (scroll) */
+.lite-ashish-header.tp-inner-header-area {
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.header-sticky.lite-ashish-header.tp-inner-header-area {
+  background: rgba(255, 255, 255, 0.58) !important;
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06) !important;
+}
+
+[data-theme="dark"] .header-sticky.lite-ashish-header.tp-inner-header-area {
+  /* Lite route keeps light page chrome; match frosted bar for readability */
+  background: rgba(255, 255, 255, 0.58) !important;
+  backdrop-filter: blur(14px) saturate(1.2);
+  -webkit-backdrop-filter: blur(14px) saturate(1.2);
+}
+
+.header-sticky.lite-ashish-header.tp-inner-header-area::after {
+  display: none !important;
+}
+
+/* Lite /lite header: black nav + black hamburger even in app dark theme */
+[data-theme="dark"] .lite-ashish-header.tp-inner-header-style-2 .tp-inner-header-menu nav ul li a,
+[data-theme="dark"] .lite-ashish-header.tp-inner-header-style-2 .tp-inner-header-menu nav > ul > li > a {
+  color: #000 !important;
+}
+
+[data-theme="dark"] .lite-ashish-header.tp-inner-header-style-2 .tp-inner-header-right-action ul li .tp-inner-bar,
+[data-theme="dark"] .header-sticky.lite-ashish-header.tp-inner-header-area .tp-inner-header-menu > nav > ul > li > a,
+[data-theme="dark"] .header-sticky.lite-ashish-header.tp-inner-header-area .tp-inner-header-right-action ul li .tp-inner-bar {
+  color: #000 !important;
+}
+
+[data-theme="dark"] .lite-ashish-header .tp-header-bar button span,
+[data-theme="dark"] .header-sticky.lite-ashish-header .tp-header-bar button span {
+  background-color: #000 !important;
+}
+
 /*
  Designed & Developed by Ashish Raj Verma
  Portfolio: https://ashishrv.vercel.app
