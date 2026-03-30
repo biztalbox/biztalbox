@@ -9,7 +9,7 @@ export type WigglingModelProps = {
   scene: Group;
   position?: [number, number, number];
   floatConfig?: FloatConfig;
-  scrollRef?: RefObject<Group | null>;
+  scrollRef?: RefObject<Group>;
   scale?: number | [number, number, number];
   rotation?: [number, number, number];
 };

@@ -38,6 +38,7 @@ const MyCanvas = () => {
     let cancelled = false;
     let attempts = 0;
     const maxAttempts = 120;
+
     const mountScroll = () => {
       const target = scrollTargetRef.current;
       if (!target) {
@@ -50,7 +51,7 @@ const MyCanvas = () => {
           endTrigger: "#section4",
           start: "top top",
           end: "bottom bottom",
-          markers: false,
+          markers: true,
           scrub: true,
         },
       });
@@ -79,12 +80,13 @@ const MyCanvas = () => {
           />
         );
       })}
-      <ambientLight intensity={5.45} />
-      <hemisphereLight args={["#f5f5ff", "#3a3a3a", 5.55]} />
+      {/* <ambientLight intensity={25.45} /> */}
+      {/* <hemisphereLight args={["#f5f5ff", "#3a3a3a", 20.55]} /> */}
       <directionalLight position={[140, 120, 160]} intensity={1.35} color="#ffffff" />
       <directionalLight position={[-130, 70, 90]} intensity={5.65} color="#eef2ff" />
       <directionalLight position={[40, 90, -160]} intensity={5.75} color="#ffffff" />
       <directionalLight position={[0, -80, 120]} intensity={5.35} color="#d4d4d8" />
+      {/* <directionalLight position={[-200, 100, 1200]} intensity={5} color="#ffffff" /> */}
     </>
   );
 };
