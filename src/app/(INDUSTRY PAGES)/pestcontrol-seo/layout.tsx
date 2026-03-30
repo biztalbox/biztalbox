@@ -5,9 +5,9 @@ import { createMarketingPageData } from "@/utils/marketing-page-data";
 import "@/app/(INDUSTRY PAGES)/styles.css";
 
 const baseMetadata: Metadata = {
-  title: "Pet Care SEO Experts | Scale Grooming, Vet & Boarding Sales!",
+  title: "SEO for Pest Control Companies: The Guide to More Calls & Customers",
   description:
-    "Hire pet care SEO experts to increase visibility, outrank competitors, and generate grooming, vet and boarding sales month after month. Proven systems now! ROI!",
+    "Want more pest control customers from Google? Discover SEO strategies for pest control companies and expert SEO services for pest control that generate consistent leads.",
 };
 
 export const metadata = createMetadata(
