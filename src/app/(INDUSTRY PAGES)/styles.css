@@ -95,6 +95,16 @@ h1,h2,h3,h4,h5,h6,h7{
   margin-bottom: 0;
 }
 
+/* HVAC page: cards should be only as tall as their content */
+.industry-page--hvac .content-grid-2,
+.industry-page--hvac .content-grid-3 {
+  align-items: start !important;
+}
+.industry-page--hvac .content-card {
+  align-self: start !important;
+  height: auto !important;
+}
+
 /* Prose block: full width, comfortable reading */
 .content-prose {
   width: 100%;
