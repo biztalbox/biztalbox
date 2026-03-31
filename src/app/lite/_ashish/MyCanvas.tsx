@@ -2,7 +2,7 @@
 
 import { useMemo, useRef } from "react";
 import { useLoader } from "@react-three/fiber";
-import { useGLTF } from "@react-three/drei";
+import { OrbitControls, useGLTF } from "@react-three/drei";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import type { Group } from "three";
 import type { GLTF } from "three/examples/jsm/loaders/GLTFLoader.js";
@@ -154,17 +154,18 @@ const MyCanvas = () => {
             trigger: "#section0",
             endTrigger: "#section3",
             start: "top top",
-            end: "bottom bottom",
-            scrub: 10,
+            end: "top center",
+            scrub: 5,
             markers: process.env.NODE_ENV === "development",
           },
         });
         // rotation.y is radians in Three.js — 50° ≈ 0.87 rad (was +=50 rad ≈ many full spins)
-        webDevTl.to(
-          webdevRef.current.rotation,
-          { y: `+=${(50 * Math.PI) / 180}`, duration: 10, ease: "power3.inOut" },
-          0,
-        );
+
+        webDevTl.to(webdevRef.current.scale,{ x: `+=${1.04}`, y: `+=${1.04}`, z: `+=${1.04}`, ease: "power4.inOut" },0);
+        webDevTl.to(webdevRef.current.position,{ x: `-=${10}`, duration: 2, ease: "power3.inOut" },0);
+        webDevTl.to(webdevRef.current.position,{ y: `-=${10}`, duration: 2, ease: "power3.inOut" },0);
+        webDevTl.to(webdevRef.current.rotation,{ x: `+=${10}`, duration: 2, ease: "power3.inOut" },0);
+        // webDevTl.to(webdevRef.current.rotation,{ y: `+=${100}`, duration: 2, ease: "power3.inOut" },0);
       };
 
       mountScroll();
@@ -202,7 +203,7 @@ const MyCanvas = () => {
         groupRef={adsRef}
         position={[-100, 270, 0]}
         floatConfig={{
-          speed: 5,
+          speed: 3,
           rotationIntensity: 0.5,
           floatIntensity: 1,
           floatingRange: [-0.1, 0.1],
@@ -212,30 +213,19 @@ const MyCanvas = () => {
       <WigglingModel
         scene={smoScene}
         groupRef={smoRef}
-        position={[0, 300, 0]}
+        position={[-200, 300, 0]}
         floatConfig={{
-          speed: 4,
+          speed: 3,
           rotationIntensity: 0.5,
           floatIntensity: 1,
           floatingRange: [-0.1, 0.1],
         }}
       />
-      <WigglingModel
-        scene={contentScene}
-        groupRef={contentRef}
-        position={[120, 50, 700]}
-        floatConfig={{
-          speed: 5,
-          rotationIntensity: 0.2,
-          floatIntensity: 1,
-          floatingRange: [-0.1, 0.1],
-        }}
-        scale={0.7}
-      />
+      
       <WigglingModel
         scene={algoScene}
         groupRef={algoRef}
-        position={[-200, 180, -100]}
+        position={[-100, 200, -200]}
         floatConfig={{
           speed: 5,
           rotationIntensity: 0.3,
@@ -243,15 +233,28 @@ const MyCanvas = () => {
           floatingRange: [-0.1, 0.1],
         }}
       />
+      <WigglingModel
+      scene={graphicScene}
+      groupRef={graphicRef}
+      position={[450, 180, 0]}
+      floatConfig={{
+        speed: 5,
+        rotationIntensity: 0.5,
+        floatIntensity: 1,
+        floatingRange: [-0.1, 0.1],
+      }}
+    />
+
 
       {/* Second Row */}      
+      
       <WigglingModel
-        scene={graphicScene}
-        groupRef={graphicRef}
-        position={[450, 150, 1]}
+        scene={contentScene}
+        groupRef={contentRef}
+        position={[250, 0, 300]}
         floatConfig={{
           speed: 5,
-          rotationIntensity: 0.5,
+          rotationIntensity: 0.2,
           floatIntensity: 1,
           floatingRange: [-0.1, 0.1],
         }}
@@ -259,7 +262,7 @@ const MyCanvas = () => {
       <WigglingModel
         scene={seoScene}
         groupRef={seoRef}
-        position={[10, 160, 380]}
+        position={[-30, 220, 300]}
         floatConfig={{
           speed: 5,
           rotationIntensity: 0.5,
@@ -270,18 +273,19 @@ const MyCanvas = () => {
       <WigglingModel
         scene={webdevScene}
         groupRef={webdevRef}
-        position={[-140, -50, 600]}
+        position={[600, 160, 150]}
         floatConfig={{
           speed: 5,
           rotationIntensity: 0.2,
           floatIntensity: 1,
           floatingRange: [-0.1, 0.1],
         }}
+        scale={0.7}
       />
       <WigglingModel
         scene={appdevScene}
         groupRef={appdevRef}
-        position={[200, 160, 440]}
+        position={[100, 10, 440]}
         floatConfig={{
           speed: 5,
           rotationIntensity: 0.5,
@@ -307,6 +311,7 @@ const MyCanvas = () => {
       <directionalLight position={[-130, 70, 90]} intensity={5.65} color="#eef2ff" />
       <directionalLight position={[40, 90, -160]} intensity={5.75} color="#ffffff" />
       <directionalLight position={[0, -80, 120]} intensity={5.35} color="#d4d4d8" />
+      {/* <OrbitControls /> */}
     </>
   );
 };

@@ -26,8 +26,8 @@ function ResponsiveHeroCamera() {
       camera.fov = 50;
       camera.position.set(-4, 265, 560);
     } else {
-      camera.fov = 105;
-      camera.position.set(-4, 290, 622);
+      camera.fov = 55;
+      camera.position.set(300, 220, 650);
     }
     camera.updateProjectionMatrix();
   }, [camera, size.width]);
@@ -75,12 +75,12 @@ const Hero = () => {
             <div className="flex items-start justify-center pt-2 max-sm:self-start sm:-translate-y-4 sm:items-center sm:pt-0">
               <div className="w-full max-w-[1120px] px-1 text-center sm:px-0">
                 <h1
-                  className="mx-auto leading-[0.88] sm:leading-[0.9]"
-                  style={{
-                    fontWeight: 300,
-                    letterSpacing: "-0.02em",
-                    fontSize: "clamp(2rem, 10vw + 0.5rem, 12.5rem)",
-                  }}
+                  className="mx-auto leading-[0.88] sm:leading-[0.9] font-light text-[9.5rem]"
+                  // style={{
+                  //   fontWeight: 500,
+                  //   letterSpacing: "-0.02em",
+                  //   fontSize: "clamp(2rem, 10vw + 0.5rem, 12.5rem)",
+                  // }}
                 >
                   DIGITAL
                   <br />
