@@ -10,7 +10,7 @@ const page = () => {
     <Wrapper>
       {/* <main className="bg-neutral-100 text-black"> */}
 
-        <Header />
+        <Header  />
 
         <Hero />
       {/* </main> */}

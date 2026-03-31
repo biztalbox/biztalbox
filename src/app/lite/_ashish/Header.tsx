@@ -23,7 +23,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="tp-header-height z-index-5" ref={headerRef}>
+      <header className="tp-header-height z-50" ref={headerRef}>
         <div
           id="header-sticky"
           className={`lite-ashish-header tp-inner-header-area tp-inner-header-style-2 tp-inner-header-mob-space ${sticky ? "header-sticky" : ""}`}

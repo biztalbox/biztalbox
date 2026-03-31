@@ -23,11 +23,11 @@ function ResponsiveHeroCamera() {
       camera.fov = 78;
       camera.position.set(-4, 268, 495);
     } else if (w < 1024) {
-      camera.fov = 74;
-      camera.position.set(-4, 285, 560);
+      camera.fov = 50;
+      camera.position.set(-4, 265, 560);
     } else {
-      camera.fov = 70;
-      camera.position.set(-4, 303, 622);
+      camera.fov = 105;
+      camera.position.set(-4, 290, 622);
     }
     camera.updateProjectionMatrix();
   }, [camera, size.width]);
@@ -46,12 +46,13 @@ const Hero = () => {
           onCreated={({ gl }) => {
             gl.setClearColor("#000000", 0);
           }}
-          camera={{ position: [-4, 303, 622], fov: 70 }}
         >
           <ResponsiveHeroCamera />
           <MyCanvas />
         </Canvas>
 
+
+        {/* Hero Content  */}
         <div
           className="relative z-10 min-h-[100svh] w-full px-4 pb-[max(1.5rem,env(safe-area-inset-bottom))] pt-[max(5rem,env(safe-area-inset-top)+3.5rem)] text-black sm:px-6 sm:pb-10 sm:pt-24 md:px-8"
           style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, system-ui, sans-serif' }}
@@ -221,13 +222,14 @@ const Hero = () => {
           </div>
 
           {/* Receipt — monospace, thin border, taller middle line */}
-          
-            
+
+
         </div>
-            
-    
+
+
       </section>
 
+      {/* Service Section */}
       <section
         id="section2"
         className="relative isolate min-h-[100svh] w-full overflow-hidden bg-[#f2f2f2] text-black"
@@ -249,7 +251,7 @@ const Hero = () => {
             className="pointer-events-none absolute left-2 top-[52%] z-10 sm:left-4 lg:left-6"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
-            
+
           </div>
 
           {/* Top right — pill buttons */}
@@ -288,13 +290,14 @@ const Hero = () => {
           </div>
 
           {/* Bottom right — receipt */}
-          </div>
-        
-        
-            
-    
+        </div>
+
+
+
+
       </section>
 
+      {/* Why choose us */}
       <section
         id="section3"
         className="relative isolate min-h-[100svh] w-full overflow-hidden bg-[#E5E5E5] text-black"
@@ -449,7 +452,7 @@ const Hero = () => {
           </div>
         </div>
       </section>
-      <section id="section4" className="h-screen border border-red-500 bg-green-500" />
+      {/* <section id="section4" className="h-screen border border-red-500 bg-green-500" /> */}
     </div>
   );
 };

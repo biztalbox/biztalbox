@@ -1,15 +1,22 @@
 "use client";
 
-import { useMemo, type RefObject } from "react";
+import { useMemo, type Ref } from "react";
 import { Float } from "@react-three/drei";
 import type { Group } from "three";
-import type { FloatConfig } from "./lite-models";
+
+type FloatConfig = {
+  speed?: number;
+  rotationIntensity?: number;
+  floatIntensity?: number;
+  floatingRange?: [number, number];
+};
 
 export type WigglingModelProps = {
   scene: Group;
   position?: [number, number, number];
   floatConfig?: FloatConfig;
-  scrollRef?: RefObject<Group>;
+  /** Outer wrapper group (scroll / GSAP targets this). */
+  groupRef?: Ref<Group>;
   scale?: number | [number, number, number];
   rotation?: [number, number, number];
 };
@@ -18,7 +25,7 @@ export function WigglingModel({
   scene,
   position = [0, 0, 0],
   floatConfig,
-  scrollRef,
+  groupRef,
   scale = 1,
   rotation = [0, 0, 0],
 }: WigglingModelProps) {
@@ -29,7 +36,7 @@ export function WigglingModel({
 
   return (
     <group
-      ref={scrollRef}
+      ref={groupRef}
       position={position}
       rotation={rotation}
       scale={scaleTuple}
