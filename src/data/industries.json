@@ -70,6 +70,30 @@
         "name": "Electrician",
         "link": "/electrician-seo",
         "description": "The electrical service industry continues to grow as cities expand and power systems become more complex. But demand alone doesn’t guarantee new customers."
+    },
+    {
+        "id": 15,
+        "name": "Automotive",
+        "link": "/automotive-seo",
+        "description": "The automotive world is crowded, fast, and fiercely competitive. Great cars and services alone won’t get noticed anymore. Buyers start online—searching, comparing, deciding. And in those search results, visibility is everything."
+    },
+    {
+        "id": 16,
+        "name": "Hvac",
+        "link": "/hvac-seo",
+        "description": "The HVAC industry today is more competitive than ever. While the demand is constant, getting noticed isn't as easy. Customers compare options online and make decisions in mere minutes. So the question looms large—are they finding your business or your competitors?But demand alone doesn’t guarantee new customers."
+    },
+    {
+        "id": 17,
+        "name": "Manufacturing",
+        "link": "/manufacturing-seo",
+        "description": "The manufacturing industry has shifted into a new phase of growth and complexity. Advanced processes alone aren’t enough anymore to stay competitive. Because buyer behaviour has changed."
+    },
+    {
+        "id": 18,
+        "name": "Roofing",
+        "link": "/roofing-seo",
+        "description": "The roofing market is expanding fast. New materials, better systems, evolving standards. As a contractor, you’re expected to keep up. To improve. To stay competitive.But what’s the point if the right customers never find you?"
     }
     
 ]
