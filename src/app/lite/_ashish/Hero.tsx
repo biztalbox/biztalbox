@@ -245,14 +245,88 @@ const Hero = () => {
 
 
         </div>
+        <div className="relative mx-auto h-[min(100svh,100dvh)] min-h-[100svh] w-full max-w-[1920px]">
+          {/* Top right — SELECTED WORKS */}
+          <div className="absolute right-5 top-[max(1rem,env(safe-area-inset-top))] z-20">
+            
+          </div>
+
+          {/* Left vertical label */}
+          <div
+            className="pointer-events-none absolute left-[-10px] top-1/2 z-10 -translate-y-1/2 text-[10px] font-medium uppercase tracking-[0.22em] text-black/60 sm:left-2"
+            style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
+          >
+            SILENCIO STORE © W
+          </div>
+
+          {/* Center ticket */}
+          <div className="pointer-events-none absolute left-1/2 top-1/2 z-10 w-[min(84vw,270px)] -translate-x-1/2 -translate-y-1/2">
+            <div className="relative rounded-[14px] border border-black bg-transparent px-3 pb-4 pt-3">
+              {/* #01 */}
+              <div className="text-left text-[34px] font-semibold leading-none tracking-tight">#01</div>
+
+              {/* Right vertical text */}
+              <div
+                className="absolute right-2 top-2 text-[8px] font-medium uppercase tracking-[0.18em] text-black/70"
+                style={{ writingMode: "vertical-rl" }}
+              >
+                DIGITAL PRODUCTS IDENTITY
+              </div>
+
+              {/* Left vertical text inside */}
+              <div
+                className="absolute left-2 top-12 text-[8px] font-medium uppercase tracking-[0.18em] text-black/70"
+                style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
+              >
+               
+              </div>
+
+              {/* Spacer (keeps height after removing text block) */}
+              <div className="mt-14 h-[112px]" />
+
+              {/* Barcode + purchased */}
+              <div className="mt-2 flex items-end justify-between gap-3">
+                <div className="h-[22px] w-[140px] rounded-[2px] border border-black/30 bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                <div className="rounded-full border border-[#c95b62] px-3 py-1 text-[8px] font-semibold uppercase tracking-[0.14em] text-[#c95b62]">
+                  PURCHASED
+                </div>
+              </div>
+
+              {/* Ingredients / footer */}
+              <div className="mt-2 grid grid-cols-2 gap-3 text-[7px] font-medium uppercase leading-[1.45] tracking-[0.08em] text-black/70">
+                <div>
+                  <div className="opacity-80">INGREDIENTS</div>
+                  <div>CONCEPT MINING,</div>
+                  <div>STRATEGY, IDENTITY,</div>
+                  <div>POSITIONING, BRAND PURPOSE</div>
+                  <div className="mt-1">• CONCEPT DARKNESS</div>
+                  <div>• CREATIVE DUCT TAPE</div>
+                  <div>• DIGITAL PRODUCTS</div>
+                </div>
+                <div className="text-right">
+                  <div className="opacity-80">FOR</div>
+                  <div>DIGITAL PRODUCTS FOR</div>
+                  <div>CONTEMPORARY BRANDS</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+
+
+
       </section>
 
       {/* Why choose us */}
       <section
         id="section3"
-        className="relative isolate min-h-[100svh] w-full overflow-hidden bg-[#E5E5E5] text-black"
+        className="relative isolate min-h-[100svh] w-full overflow-hidden text-black"
+        
       >
-
+        
+          {/* Bottom right receipt */}
+         
+        
       </section>
 
 
