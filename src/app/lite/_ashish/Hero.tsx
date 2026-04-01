@@ -27,7 +27,7 @@ function ResponsiveHeroCamera() {
       camera.position.set(-4, 265, 560);
     } else {
       camera.fov = 55;
-      camera.position.set(300, 220, 650);
+      camera.position.set(300, 230, 650);
     }
     camera.updateProjectionMatrix();
   }, [camera, size.width]);
@@ -99,23 +99,12 @@ const Hero = () => {
         </div>
       </section>
 
-      {/* receipt bill card */}
-      <section className="fixed bottom-0 right-0 z-30">
-        <div className="flex flex-col gap-1 p-2 bg-white w-48 rounded shadow">
-          <div className="flex justify-between uppercase">
-            <span>Invoice</span>
-            <span>28/03/26</span>
-          </div>
-          <div className="mt-2 text-center uppercase">** DIGITAL PRODUCTS **</div>
-          <div className="mt-2 uppercase">BRANDING DIGITAL x1</div>
-          <div className="mt-1 uppercase">REF: SHH 0001</div>
-        </div>
-      </section>
+
 
       {/* about section */}
       <section
         id="section1"
-        className="relative z-10"
+        className="relative"
       >
         <div className="container relative">
           {/* Top: centered nav + right pill */}
@@ -187,13 +176,12 @@ const Hero = () => {
 
       </section>
 
-      {/* Service Section */}
+      {/* SEO Service Section */}
       <section
         id="section2"
-        className="relative isolate min-h-[100svh] w-full overflow-hidden bg-[#f2f2f2] text-black"
-        style={{ fontFamily: '"Helvetica Neue", Helvetica, Arial, system-ui, sans-serif' }}
+        className="relative bg-[#f2f2f2]"
       >
-        <div className="relative mx-auto h-[min(100svh,100dvh)] min-h-[100svh] w-full max-w-[1920px]">
+        <div className="container flex flex-col py-32">
           {/* Left — PRODUCTS (top, vertical) */}
           <div
             className="pointer-events-none absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
@@ -204,41 +192,8 @@ const Hero = () => {
             </span>
           </div>
 
-          {/* Left — SELF SERVICE STORE (mid, large bold vertical) */}
-          <div
-            className="pointer-events-none absolute left-2 top-[52%] z-10 sm:left-4 lg:left-6"
-            style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
-          >
-
-          </div>
-
-          {/* Top right — pill buttons */}
-          {/* <div className="absolute right-4 top-[max(1.25rem,env(safe-area-inset-top))] z-20 flex flex-wrap items-center justify-end gap-2 sm:right-6 sm:gap-3 lg:right-10">
-            <button
-              type="button"
-              className="inline-flex items-center gap-2 rounded-full border border-black bg-transparent px-3 py-2 text-[8px] font-medium uppercase tracking-[0.14em] sm:px-4 sm:py-2.5 sm:text-[9px] sm:tracking-[0.16em]"
-            >
-              <span className="text-[11px] leading-none sm:text-xs" aria-hidden>
-                🎬
-              </span>
-              Please read carefully
-            </button>
-            <button
-              type="button"
-              className="inline-flex items-center gap-2 rounded-full border border-black bg-transparent px-3 py-2 text-[8px] font-medium uppercase tracking-[0.14em] sm:px-4 sm:py-2.5 sm:text-[9px] sm:tracking-[0.16em]"
-            >
-              Selected works
-              <span
-                className="inline-flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-full border border-black text-[10px] leading-none sm:h-5 sm:w-5 sm:text-[11px]"
-                aria-hidden
-              >
-                ↗
-              </span>
-            </button>
-          </div> */}
-
-          {/* Center — #01 card */}
-          <div className="pointer-events-none absolute left-1/2 top-1/2 z-10 w-[min(88vw,280px)] -translate-x-1/2 -translate-y-1/2 sm:w-[240px]">
+          {/* #01 card */}
+          <div className="flex justify-center">
             <div className="rounded-md border border-black bg-transparent px-6 py-8 text-center sm:px-8 sm:py-10">
               <p className="text-[clamp(2.5rem,8vw,4rem)] font-bold leading-none tracking-tight">#01</p>
               <p className="mt-3 text-[10px] font-medium uppercase tracking-[0.18em] sm:text-[11px] sm:tracking-[0.2em]">
@@ -247,35 +202,25 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Bottom right — receipt */}
-        </div>
 
-        <div className="relative mx-auto min-h-[100svh] max-w-[1800px] px-4 pb-28 pt-[max(1.25rem,env(safe-area-inset-top))] sm:px-8 lg:px-12">
-          {/* Top right — SELECTED WORKS */}
-
-
-          {/* Left edge — vertical copy (hidden on very narrow screens) */}
-
-
-          {/* Center — headline + subhead */}
-          <div className="relative z-10 mx-auto max-w-[min(100%,920px)] px-2 pt-16 text-center sm:px-6 sm:pt-20 lg:pt-24">
+          <div className="pt-40 text-center">
             {/* Center-left pill badge */}
 
             <h2
-              className="relative z-10 text-center uppercase font-thin text-[8rem]"
+              className="relative text-center uppercase font-thin text-[8rem] z-20"
             >
               Search Engine Optimization
             </h2>
 
             <p
-              className="mx-auto mt-6 max-w-[520px] text-balance uppercase sm:mt-8"
+              className="text-balance uppercase"
             >
               Refresh your business identity
             </p>
           </div>
 
           {/* Two-column body */}
-          <div className="relative z-10 mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 text-justify sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
+          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 text-justify sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
             <div className="space-y-6 text-[8px] font-medium uppercase leading-[1.75] tracking-[0.08em] text-black sm:text-[9px] sm:tracking-[0.09em]">
               <p>
                 WE LOVE THINKING. EVERYTHING STARTS WITH AN IDEA AROUND WHICH WE CONSTRUCT THE ENTIRE BRAND COMMUNICATION. AN
@@ -298,9 +243,8 @@ const Hero = () => {
             </div>
           </div>
 
+
         </div>
-
-
       </section>
 
       {/* Why choose us */}
@@ -310,7 +254,21 @@ const Hero = () => {
       >
 
       </section>
-      {/* <section id="section4" className="h-screen border border-red-500 bg-green-500" /> */}
+
+
+
+      {/* receipt bill card */}
+      <section className="fixed bottom-0 right-0 z-30">
+        <div className="flex flex-col gap-1 p-2 bg-white w-48 rounded shadow">
+          <div className="flex justify-between uppercase">
+            <span>Invoice</span>
+            <span>28/03/26</span>
+          </div>
+          <div className="mt-2 text-center uppercase">** DIGITAL PRODUCTS **</div>
+          <div className="mt-2 uppercase">BRANDING DIGITAL x1</div>
+          <div className="mt-1 uppercase">REF: SHH 0001</div>
+        </div>
+      </section>
     </div>
   );
 };

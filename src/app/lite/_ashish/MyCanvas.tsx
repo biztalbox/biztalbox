@@ -3,6 +3,7 @@
 import { useMemo, useRef } from "react";
 import { useLoader } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
+import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import type { Group } from "three";
 import type { GLTF } from "three/examples/jsm/loaders/GLTFLoader.js";
@@ -18,13 +19,20 @@ const LITE_GLB_URLS = [
   "/assets/lite_models/smo.glb",
   "/assets/lite_models/ads.glb",
   "/assets/lite_models/content.glb",
-  "/assets/lite_models/seo.glb",
+  "/assets/lite_models/seo2.glb",
   "/assets/lite_models/webdev.glb",
   "/assets/lite_models/appdev.glb",
   "/assets/lite_models/graphic.glb",
   "/assets/lite_models/video.glb",
-  "/assets/lite_models/algo.glb",
+  "/assets/lite_models/mri3.glb",
 ] as const;
+
+/** Draco-compressed GLBs (e.g. many exported `can.glb`) need a decoder on the loader. */
+function configureGltfLoader(loader: GLTFLoader) {
+  const draco = new DRACOLoader();
+  draco.setDecoderPath("https://www.gstatic.com/draco/v1/decoders/");
+  loader.setDRACOLoader(draco);
+}
 
 // for (const url of LITE_GLB_URLS) {
 //   useGLTF.preload(url);
@@ -86,7 +94,12 @@ const MyCanvas = () => {
   const videoRef = useRef<Group>(null);
   const algoRef = useRef<Group>(null);
 
-  const gltf = useLoader(GLTFLoader, [...LITE_GLB_URLS]) as GLTF | GLTF[];
+  /**
+   * Loads every GLB in one batch. `useLoader` caches by [loader, URL, …].
+   * `sceneBySrc` maps each URL string → that file’s root `scene` (a Group) so you can pick
+   * “which mesh” by path without indexing the array by position.
+   */
+  const gltf = useLoader(GLTFLoader, [...LITE_GLB_URLS], configureGltfLoader) as GLTF | GLTF[];
   const sceneBySrc = useMemo(() => {
     const list = Array.isArray(gltf) ? gltf : [gltf];
     const map = new Map<string, Group>();
@@ -97,12 +110,14 @@ const MyCanvas = () => {
   const smoScene = sceneBySrc.get("/assets/lite_models/smo.glb");
   const adsScene = sceneBySrc.get("/assets/lite_models/ads.glb");
   const contentScene = sceneBySrc.get("/assets/lite_models/content.glb");
-  const seoScene = sceneBySrc.get("/assets/lite_models/seo.glb");
+  const seoScene = sceneBySrc.get("/assets/lite_models/seo2.glb");
   const webdevScene = sceneBySrc.get("/assets/lite_models/webdev.glb");
   const appdevScene = sceneBySrc.get("/assets/lite_models/appdev.glb");
   const graphicScene = sceneBySrc.get("/assets/lite_models/graphic.glb");
   const videoScene = sceneBySrc.get("/assets/lite_models/video.glb");
-  const algoScene = sceneBySrc.get("/assets/lite_models/algo.glb");
+  const algoScene = sceneBySrc.get("/assets/lite_models/mri3.glb");
+
+
 
   useGSAP(
     () => {
@@ -145,7 +160,6 @@ const MyCanvas = () => {
             start: "top top",
             end: "30% center",
             scrub: 5,
-            markers: process.env.NODE_ENV === "development",
           },
         });
 
@@ -162,13 +176,16 @@ const MyCanvas = () => {
           scrollTrigger: {
             trigger: "#section0",
             endTrigger: "#section2",
-            start: "center top",
+            start: "top top",
             end: "bottom top",
-            scrub: 5,
+            scrub: 1.2,
+            markers: true,
           },
         });
 
-        seoTl.to(seoRef.current.scale, {x: 2, y: 2, z: 2, duration: 2, ease: "power3.inOut" }, 0);
+        seoTl.to(seoRef.current.scale, {x:3,y:3,z:3, duration: 2, ease: "power1.inOut" }, 0);
+        seoTl.to(seoRef.current.position, {x:"-=90", duration: 1, ease: "power1.inOut" }, 0);
+        seoTl.to(seoRef.current.rotation, {y:10, duration: 1, ease: "power1.inOut" }, 0);
 
         // webDevTl = gsap.timeline({
         //   scrollTrigger: {
@@ -222,39 +239,41 @@ const MyCanvas = () => {
       <WigglingModel
         scene={algoScene}
         groupRef={algoRef}
-        position={[100, 290, -200]}
+        position={[450, 260, 400]}
         floatConfig={{
-          speed: 5,
-          rotationIntensity: 0.3,
-          floatIntensity: 1,
-          floatingRange: [-0.1, 0.1],
+          speed: 3,
+          rotationIntensity: 0.2,
+          floatIntensity: 0.3,
+          floatingRange: [-0.1, 0],
         }}
-        rotation={[0,0.9,0]}
+        scale={[3,3.5,3]}
+        rotation={[0,-0.5,0]}
       />
       <WigglingModel
       scene={graphicScene}
       groupRef={graphicRef}
-      position={[-250, 180, 0]}
+      position={[-250, 260, 0]}
       floatConfig={{
         speed: 5,
         rotationIntensity: 0.5,
         floatIntensity: 1,
         floatingRange: [-0.1, 0.1],
       }}
-      rotation={[0, 0, 0]}
+      scale={0.8}
       
     />
     <WigglingModel
         scene={webdevScene}
         groupRef={webdevRef}
-        position={[100, 290, 150]}
+        position={[100, 300, 150]}
         floatConfig={{
           speed: 5,
           rotationIntensity: 0.2,
           floatIntensity: 1,
           floatingRange: [-0.1, 0.1],
         }}
-        scale={0.7}
+        scale={0.8}
+      
       />
 
 
@@ -262,37 +281,39 @@ const MyCanvas = () => {
       <WigglingModel
         scene={appdevScene}
         groupRef={appdevRef}
-        position={[250, 10, 440]}
+        position={[260, 150, 440]}
         floatConfig={{
           speed: 5,
           rotationIntensity: 0.5,
           floatIntensity: 1,
           floatingRange: [-0.1, 0.1],
         }}
+        scale={0.4}
       />
       
       <WigglingModel
         scene={videoScene}
         groupRef={videoRef}
-        position={[180, 100, 0]}
+        position={[260, 100, 0]}
         floatConfig={{
           speed: 5,
           rotationIntensity: 0.2,
           floatIntensity: 1,
           floatingRange: [-0.1, 0.1],
         }}
+        scale={1.3}
       />
       <WigglingModel
         scene={adsScene}
         groupRef={adsRef}
-        position={[500, 120, 0]}
+        position={[400, 160, 200]}
         floatConfig={{
           speed: 3,
           rotationIntensity: 0.5,
           floatIntensity: 1,
           floatingRange: [-0.1, 0.1],
         }}
-        scale={0.5}
+        scale={0.3}
       />
 
       {/* Third row */}
@@ -311,25 +332,30 @@ const MyCanvas = () => {
       <WigglingModel
         scene={smoScene}
         groupRef={smoRef}
-        position={[-100, 10, 0]}
+        position={[150, 110, 300]}
         floatConfig={{
           speed: 3,
           rotationIntensity: 0.5,
           floatIntensity: 1,
           floatingRange: [-0.1, 0.1],
         }}
+        scale={0.4}
       />
       <WigglingModel
         scene={seoScene}
         groupRef={seoRef}
-        position={[350, 220, 300]}
+        position={[380,140,300]}
         floatConfig={{
-          speed: 5,
-          rotationIntensity: 0.5,
-          floatIntensity: 1,
+          speed: 3,
+          rotationIntensity: 0.3,
+          floatIntensity: 0.5,
           floatingRange: [-0.1, 0.1],
         }}
+        scale={1.6}
       />
+     
+      
+      
       
 
       <directionalLight position={[140, 120, 160]} intensity={1.35} color="#ffffff" />
