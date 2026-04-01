@@ -199,33 +199,9 @@ const MyCanvas = () => {
     <>
       {/* Fist row */}
       <WigglingModel
-        scene={adsScene}
-        groupRef={adsRef}
-        position={[-100, 270, 0]}
-        floatConfig={{
-          speed: 3,
-          rotationIntensity: 0.5,
-          floatIntensity: 1,
-          floatingRange: [-0.1, 0.1],
-        }}
-        scale={0.5}
-      />
-      <WigglingModel
-        scene={smoScene}
-        groupRef={smoRef}
-        position={[-200, 300, 0]}
-        floatConfig={{
-          speed: 3,
-          rotationIntensity: 0.5,
-          floatIntensity: 1,
-          floatingRange: [-0.1, 0.1],
-        }}
-      />
-      
-      <WigglingModel
         scene={algoScene}
         groupRef={algoRef}
-        position={[-100, 200, -200]}
+        position={[100, 290, -200]}
         floatConfig={{
           speed: 5,
           rotationIntensity: 0.3,
@@ -236,44 +212,20 @@ const MyCanvas = () => {
       <WigglingModel
       scene={graphicScene}
       groupRef={graphicRef}
-      position={[450, 180, 0]}
+      position={[-250, 180, 0]}
       floatConfig={{
         speed: 5,
         rotationIntensity: 0.5,
         floatIntensity: 1,
         floatingRange: [-0.1, 0.1],
       }}
-    />
-
-
-      {/* Second Row */}      
+      rotation={[0, 0, 0]}
       
-      <WigglingModel
-        scene={contentScene}
-        groupRef={contentRef}
-        position={[250, 0, 300]}
-        floatConfig={{
-          speed: 5,
-          rotationIntensity: 0.2,
-          floatIntensity: 1,
-          floatingRange: [-0.1, 0.1],
-        }}
-      />
-      <WigglingModel
-        scene={seoScene}
-        groupRef={seoRef}
-        position={[-30, 220, 300]}
-        floatConfig={{
-          speed: 5,
-          rotationIntensity: 0.5,
-          floatIntensity: 1,
-          floatingRange: [-0.1, 0.1],
-        }}
-      />
-      <WigglingModel
+    />
+    <WigglingModel
         scene={webdevScene}
         groupRef={webdevRef}
-        position={[600, 160, 150]}
+        position={[100, 290, 150]}
         floatConfig={{
           speed: 5,
           rotationIntensity: 0.2,
@@ -282,10 +234,13 @@ const MyCanvas = () => {
         }}
         scale={0.7}
       />
+
+
+      {/* Second Row */}      
       <WigglingModel
         scene={appdevScene}
         groupRef={appdevRef}
-        position={[100, 10, 440]}
+        position={[250, 10, 440]}
         floatConfig={{
           speed: 5,
           rotationIntensity: 0.5,
@@ -297,10 +252,58 @@ const MyCanvas = () => {
       <WigglingModel
         scene={videoScene}
         groupRef={videoRef}
-        position={[500, 120, 200]}
+        position={[180, 100, 0]}
         floatConfig={{
           speed: 5,
           rotationIntensity: 0.2,
+          floatIntensity: 1,
+          floatingRange: [-0.1, 0.1],
+        }}
+      />
+      <WigglingModel
+        scene={adsScene}
+        groupRef={adsRef}
+        position={[500, 120, 0]}
+        floatConfig={{
+          speed: 3,
+          rotationIntensity: 0.5,
+          floatIntensity: 1,
+          floatingRange: [-0.1, 0.1],
+        }}
+        scale={0.5}
+      />
+
+      {/* Third row */}
+
+      <WigglingModel
+        scene={contentScene}
+        groupRef={contentRef}
+        position={[300, 0, 300]}
+        floatConfig={{
+          speed: 5,
+          rotationIntensity: 0.2,
+          floatIntensity: 1,
+          floatingRange: [-0.1, 0.1],
+        }}
+      />
+      <WigglingModel
+        scene={smoScene}
+        groupRef={smoRef}
+        position={[-100, 10, 0]}
+        floatConfig={{
+          speed: 3,
+          rotationIntensity: 0.5,
+          floatIntensity: 1,
+          floatingRange: [-0.1, 0.1],
+        }}
+      />
+      <WigglingModel
+        scene={seoScene}
+        groupRef={seoRef}
+        position={[350, 220, 300]}
+        floatConfig={{
+          speed: 5,
+          rotationIntensity: 0.5,
           floatIntensity: 1,
           floatingRange: [-0.1, 0.1],
         }}
