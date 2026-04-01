@@ -109,8 +109,16 @@ const MyCanvas = () => {
       let cancelled = false;
       let attempts = 0;
       const maxAttempts = 120;
-      let webDevTl: gsap.core.Timeline | null = null;
       let modelFadeOutTl: gsap.core.Timeline | null = null;
+      let seoTl: gsap.core.Timeline | null = null;
+      let smoTl: gsap.core.Timeline | null = null;
+      let webDevTl: gsap.core.Timeline | null = null;
+      let adsTl: gsap.core.Timeline | null = null;
+      let contentTl: gsap.core.Timeline | null = null;
+      let videoTl: gsap.core.Timeline | null = null;
+      let algoTl: gsap.core.Timeline | null = null;
+      let appdevTl: gsap.core.Timeline | null = null;
+      let graphicTl: gsap.core.Timeline | null = null;
 
       const mountScroll = () => {
         if (
@@ -133,38 +141,51 @@ const MyCanvas = () => {
         modelFadeOutTl = gsap.timeline({
           scrollTrigger: {
             trigger: "#section0",
+            endTrigger: "#section1",
             start: "top top",
-            end: "30% bottom",
-            scrub: 10,
-            markers: process.env.NODE_ENV === "development",
-          },
-        });
-
-        modelFadeOutTl.to(videoRef.current.position, { y: "+=500", duration: 10, ease: "power3.inOut" }, 0);
-        modelFadeOutTl.to(smoRef.current.position, { y: "+=500", duration: 10, ease: "power3.inOut" }, 0);
-        modelFadeOutTl.to(appdevRef.current.position, { y: "+=500", duration: 10, ease: "power3.inOut" }, 0);
-        modelFadeOutTl.to(graphicRef.current.position, { y: "+=500", duration: 10, ease: "power3.inOut" }, 0);
-        modelFadeOutTl.to(algoRef.current.position, { y: "+=500", duration: 10, ease: "power3.inOut" }, 0);
-        modelFadeOutTl.to(contentRef.current.position, { y: "+=500", duration: 10, ease: "power3.inOut" }, 0);
-        modelFadeOutTl.to(adsRef.current.position, { y: "+=500", duration: 10, ease: "power3.inOut" }, 0);
-        modelFadeOutTl.to(seoRef.current.position, { y: "+=500", duration: 10, ease: "power3.inOut" }, 0);
-
-        webDevTl = gsap.timeline({
-          scrollTrigger: {
-            trigger: "#section0",
-            endTrigger: "#section3",
-            start: "top top",
-            end: "top center",
+            end: "30% center",
             scrub: 5,
             markers: process.env.NODE_ENV === "development",
           },
         });
-        // rotation.y is radians in Three.js — 50° ≈ 0.87 rad (was +=50 rad ≈ many full spins)
 
-        webDevTl.to(webdevRef.current.scale,{ x: `+=${1.04}`, y: `+=${1.04}`, z: `+=${1.04}`, ease: "power4.inOut" },0);
-        webDevTl.to(webdevRef.current.position,{ x: `-=${10}`, duration: 2, ease: "power3.inOut" },0);
-        webDevTl.to(webdevRef.current.position,{ y: `-=${10}`, duration: 2, ease: "power3.inOut" },0);
-        webDevTl.to(webdevRef.current.rotation,{ x: `+=${10}`, duration: 2, ease: "power3.inOut" },0);
+        modelFadeOutTl.to(videoRef.current.position, { y: "+=500", duration: 2, ease: "power3.inOut" }, 0);
+        modelFadeOutTl.to(smoRef.current.position, { y: "+=700", duration: 2, ease: "power3.inOut" }, 0);
+        modelFadeOutTl.to(appdevRef.current.position, { y: "+=500", duration: 2, ease: "power3.inOut" }, 0);
+        modelFadeOutTl.to(graphicRef.current.position, { y: "+=600", duration: 2, ease: "power3.inOut" }, 0);
+        modelFadeOutTl.to(algoRef.current.position, { y: "+=500", duration: 2, ease: "power3.inOut" }, 0);
+        modelFadeOutTl.to(contentRef.current.position, { y: "+=500", duration: 2, ease: "power3.inOut" }, 0);
+        modelFadeOutTl.to(adsRef.current.position, { y: "+=500", duration: 2, ease: "power3.inOut" }, 0);
+        modelFadeOutTl.to(webdevRef.current.position, { y: "+=500", duration: 2, ease: "power3.inOut" }, 0);
+
+        seoTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: "#section0",
+            endTrigger: "#section2",
+            start: "center top",
+            end: "bottom top",
+            scrub: 5,
+          },
+        });
+
+        seoTl.to(seoRef.current.scale, {x: 2, y: 2, z: 2, duration: 2, ease: "power3.inOut" }, 0);
+
+        // webDevTl = gsap.timeline({
+        //   scrollTrigger: {
+        //     trigger: "#section0",
+        //     endTrigger: "#section3",
+        //     start: "top top",
+        //     end: "top center",
+        //     scrub: 5,
+        //     markers: process.env.NODE_ENV === "development",
+        //   },
+        // });
+        // // rotation.y is radians in Three.js — 50° ≈ 0.87 rad (was +=50 rad ≈ many full spins)
+
+        // webDevTl.to(webdevRef.current.scale,{ x: `+=${1.04}`, y: `+=${1.04}`, z: `+=${1.04}`, ease: "power4.inOut" },0);
+        // webDevTl.to(webdevRef.current.position,{ x: `-=${10}`, duration: 2, ease: "power3.inOut" },0);
+        // webDevTl.to(webdevRef.current.position,{ y: `-=${10}`, duration: 2, ease: "power3.inOut" },0);
+        // webDevTl.to(webdevRef.current.rotation,{ x: `+=${10}`, duration: 2, ease: "power3.inOut" },0);
         // webDevTl.to(webdevRef.current.rotation,{ y: `+=${100}`, duration: 2, ease: "power3.inOut" },0);
       };
 
@@ -174,8 +195,8 @@ const MyCanvas = () => {
         cancelled = true;
         modelFadeOutTl?.scrollTrigger?.kill();
         modelFadeOutTl?.kill();
-        webDevTl?.scrollTrigger?.kill();
-        webDevTl?.kill();
+        // webDevTl?.scrollTrigger?.kill();
+        // webDevTl?.kill();
       };
     },
     { dependencies: [sceneBySrc] },
@@ -208,6 +229,7 @@ const MyCanvas = () => {
           floatIntensity: 1,
           floatingRange: [-0.1, 0.1],
         }}
+        rotation={[0,0.9,0]}
       />
       <WigglingModel
       scene={graphicScene}
