@@ -244,95 +244,68 @@ const Hero = () => {
           </div>
 
 
-        </div>
-        <div className="relative mx-auto h-[min(100svh,100dvh)] min-h-[100svh] w-full max-w-[1920px]">
-          {/* Top right — SELECTED WORKS */}
-          <div className="absolute right-5 top-[max(1rem,env(safe-area-inset-top))] z-20">
-            
-          </div>
-
-          {/* Left vertical label */}
-          <div
-            className="pointer-events-none absolute left-[-10px] top-1/2 z-10 -translate-y-1/2 text-[10px] font-medium uppercase tracking-[0.22em] text-black/60 sm:left-2"
-            style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
-          >
-            SILENCIO STORE © W
-          </div>
 
           {/* Center ticket */}
-          <div className="pointer-events-none absolute left-1/2 top-1/2 z-10 w-[min(84vw,270px)] -translate-x-1/2 -translate-y-1/2">
-            <div className="relative rounded-[14px] border border-black bg-transparent px-3 pb-4 pt-3">
-              {/* #01 */}
-              <div className="text-left text-[34px] font-semibold leading-none tracking-tight">#01</div>
 
-              {/* Right vertical text */}
+          <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{background: "transparent"}} id="seoScanner">
+
+            {/* Two panels in one row: GSAP `xPercent` on the track scrubs forward/back (no DOM text swaps). */}
+            <div className="relative overflow-hidden text-left">
               <div
-                className="absolute right-2 top-2 text-[8px] font-medium uppercase tracking-[0.18em] text-black/70"
-                style={{ writingMode: "vertical-rl" }}
+                id="seoScannerNumberTrack"
+                className="flex w-[200%] will-change-transform"
               >
-                DIGITAL PRODUCTS IDENTITY
+                <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
+                  #01
+                </span>
+                <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
+                  #02
+                </span>
               </div>
+            </div>
 
-              {/* Left vertical text inside */}
-              <div
-                className="absolute left-2 top-12 text-[8px] font-medium uppercase tracking-[0.18em] text-black/70"
-                style={{ writingMode: "vertical-rl", transform: "rotate(180deg)" }}
-              >
-               
+            {/* Spacer for 3D “slot” / layout height */}
+            <div className="mt-14 h-44" />
+
+            {/* Barcode + purchased */}
+            <div className="mt-2 flex items-center justify-between gap-4">
+              <div className="relative h-[22px] w-[140px]">
+                <div className="barcode absolute inset-0 h-full w-full rounded-[2px] border border-black/30 bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                <div style={{display: "none"}} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
               </div>
-
-              {/* Spacer (keeps height after removing text block) */}
-              <div className="mt-14 h-[112px]" />
-
-              {/* Barcode + purchased */}
-              <div className="mt-2 flex items-end justify-between gap-3">
-                <div className="h-[22px] w-[140px] rounded-[2px] border border-black/30 bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                <div className="rounded-full border border-[#c95b62] px-3 py-1 text-[8px] font-semibold uppercase tracking-[0.14em] text-[#c95b62]">
-                  PURCHASED
-                </div>
+              <div style={{width: "0px", color: "transparent"}} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+                PURCHASED
               </div>
+            </div>
 
-              {/* Ingredients / footer */}
-              <div className="mt-2 grid grid-cols-2 gap-3 text-[7px] font-medium uppercase leading-[1.45] tracking-[0.08em] text-black/70">
-                <div>
-                  <div className="opacity-80">INGREDIENTS</div>
-                  <div>CONCEPT MINING,</div>
-                  <div>STRATEGY, IDENTITY,</div>
-                  <div>POSITIONING, BRAND PURPOSE</div>
-                  <div className="mt-1">• CONCEPT DARKNESS</div>
-                  <div>• CREATIVE DUCT TAPE</div>
-                  <div>• DIGITAL PRODUCTS</div>
-                </div>
-                <div className="text-right">
-                  <div className="opacity-80">FOR</div>
-                  <div>DIGITAL PRODUCTS FOR</div>
-                  <div>CONTEMPORARY BRANDS</div>
-                </div>
+            {/* Ingredients / footer */}
+            <div className="mt-2 grid grid-cols-2 gap-3 text-[7px] font-medium uppercase leading-[1.45] tracking-[0.08em] text-black/70">
+              <div>
+                <div className="opacity-80">INGREDIENTS</div>
+                <div>CONCEPT MINING,</div>
+                <div>STRATEGY, IDENTITY,</div>
+                <div>POSITIONING, BRAND PURPOSE</div>
+                <div className="mt-1">• CONCEPT DARKNESS</div>
+                <div>• CREATIVE DUCT TAPE</div>
+                <div>• DIGITAL PRODUCTS</div>
+              </div>
+              <div className="text-right">
+                <div className="opacity-80">FOR</div>
+                <div>DIGITAL PRODUCTS FOR</div>
+                <div>CONTEMPORARY BRANDS</div>
               </div>
             </div>
           </div>
-          </div>
-
+        </div>
 
 
       </section>
 
-      {/* Why choose us */}
-      <section
-        id="section3"
-        className="relative isolate min-h-[100svh] w-full overflow-hidden text-black"
-        
-      >
-        
-          {/* Bottom right receipt */}
-         
-        
-      </section>
 
-
+      <section id="section4" className="min-h-screen bg-gray-200"></section>
 
       {/* receipt bill card */}
-      <section className="fixed bottom-0 right-0 z-30">
+      {/* <section className="fixed bottom-0 right-0 z-30">
         <div className="flex flex-col gap-1 p-2 bg-white w-48 rounded shadow">
           <div className="flex justify-between uppercase">
             <span>Invoice</span>
@@ -342,7 +315,7 @@ const Hero = () => {
           <div className="mt-2 uppercase">BRANDING DIGITAL x1</div>
           <div className="mt-1 uppercase">REF: SHH 0001</div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 };

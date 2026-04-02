@@ -11,6 +11,8 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { WigglingModel } from "./WigglingModel";
+import { addSlideTextStripToTimeline } from "./slide-text-timeline";
+import { SFX_BEEP, addScrubTimelineCue, playSfx, pauseSfx } from "./sfx";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -126,6 +128,7 @@ const MyCanvas = () => {
       const maxAttempts = 120;
       let modelFadeOutTl: gsap.core.Timeline | null = null;
       let seoTl: gsap.core.Timeline | null = null;
+      let seoScanTl: gsap.core.Timeline | null = null;
       let smoTl: gsap.core.Timeline | null = null;
       let webDevTl: gsap.core.Timeline | null = null;
       let adsTl: gsap.core.Timeline | null = null;
@@ -134,6 +137,7 @@ const MyCanvas = () => {
       let algoTl: gsap.core.Timeline | null = null;
       let appdevTl: gsap.core.Timeline | null = null;
       let graphicTl: gsap.core.Timeline | null = null;
+      let removeSeoScanBeepCue: (() => void) | undefined;
 
       const mountScroll = () => {
         if (
@@ -156,10 +160,10 @@ const MyCanvas = () => {
         modelFadeOutTl = gsap.timeline({
           scrollTrigger: {
             trigger: "#section0",
-            endTrigger: "#section1",
-            start: "top top",
-            end: "30% center",
-            scrub: 5,
+            start: "-120 top",
+            end: "top top",
+            scrub: 10,
+            markers: true,
           },
         });
 
@@ -175,17 +179,61 @@ const MyCanvas = () => {
         seoTl = gsap.timeline({
           scrollTrigger: {
             trigger: "#section0",
-            endTrigger: "#section2",
+            endTrigger: "#seoScanner",
             start: "top top",
-            end: "bottom top",
+            end: "top center",
             scrub: 1.2,
-            markers: true,
           },
         });
 
-        seoTl.to(seoRef.current.scale, {x:3,y:3,z:3, duration: 2, ease: "power1.inOut" }, 0);
-        seoTl.to(seoRef.current.position, {x:"-=90", duration: 1, ease: "power1.inOut" }, 0);
-        seoTl.to(seoRef.current.rotation, {y:10, duration: 1, ease: "power1.inOut" }, 0);
+        seoTl.to(seoRef.current.scale, { x: 2.5, y: 2.5, z: 2.5, duration: 2, ease: "power1.inOut" }, 0);
+        seoTl.to(seoRef.current.position, { x: "-=70", y: "+=70", duration: 1, ease: "power1.inOut" }, 0);
+        seoTl.to(seoRef.current.rotation, { y: 10, duration: 1, ease: "power1.inOut" }, 0);
+
+
+        // Pin needs a clear scroll *distance*: `end: "top center"` vs `start: "top 60%"` often yields ~0 or inverted range → pin never “sticks”.
+        seoScanTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: "#seoScanner",
+            start: "top 30%",
+            end: "+=2600",
+            pin: true,
+            pinSpacing: true,
+            anticipatePin: 1,
+            scrub: 5,
+            invalidateOnRefresh: true,
+            // markers: process.env.NODE_ENV === "development",
+          },
+        });
+        seoScanTl.to("#seoScanner .purchaseStatus",{width: "135px", duration: 2, ease: "power1.inOut" }, 0);
+        seoScanTl.to(
+          seoRef.current.rotation,
+          { y: `+=${Math.PI * 2}`, duration: 2, ease: "none" },
+          0,
+        );
+        seoScanTl.to("#seoScanner .purchaseStatus",{color: "red", duration: 0.1, ease: "power1.inOut" }, 2);
+        seoScanTl.to("#seoScanner .barcoadCheck",{display: "block", duration: 0.1, ease: "power1.inOut" }, 2.1);
+        removeSeoScanBeepCue = addScrubTimelineCue(seoScanTl, 2.1 + 0.1, () => {
+          if (!cancelled) playSfx(SFX_BEEP);
+        });
+
+        seoScanTl.to(seoRef.current.scale, { x: 0, y: 0, z: 0, duration: 0.15, ease: "power1.inOut" }, 2);
+        seoScanTl.to("#seoScanner", { height: "100px", width: "100px", duration: 0.7, ease: "power1.inOut" }, 2.9);
+        seoScanTl.to("#seoScanner", { x: "+=600", duration: 1, ease: "power1.inOut" }, 2.9);
+
+        // Strip tween is scrub-reversible (scroll up brings back #01). Card x runs 2.9 → 3.9.
+        addSlideTextStripToTimeline(seoScanTl, {
+          track: "#seoScannerNumberTrack",
+          baselineAt: 0,
+          startTime: 2.9,
+          delay: 0.25,
+          duration: 0.9,
+          fromXPercent: 0,
+          toXPercent: -50,
+          ease: "power2.inOut",
+        });
+
+        
 
         // webDevTl = gsap.timeline({
         //   scrollTrigger: {
@@ -204,16 +252,24 @@ const MyCanvas = () => {
         // webDevTl.to(webdevRef.current.position,{ y: `-=${10}`, duration: 2, ease: "power3.inOut" },0);
         // webDevTl.to(webdevRef.current.rotation,{ x: `+=${10}`, duration: 2, ease: "power3.inOut" },0);
         // webDevTl.to(webdevRef.current.rotation,{ y: `+=${100}`, duration: 2, ease: "power3.inOut" },0);
+
+        requestAnimationFrame(() => {
+          ScrollTrigger.refresh();
+        });
       };
 
       mountScroll();
 
       return () => {
         cancelled = true;
+        removeSeoScanBeepCue?.();
+        pauseSfx(SFX_BEEP);
+        seoScanTl?.scrollTrigger?.kill();
+        seoScanTl?.kill();
+        seoTl?.scrollTrigger?.kill();
+        seoTl?.kill();
         modelFadeOutTl?.scrollTrigger?.kill();
         modelFadeOutTl?.kill();
-        // webDevTl?.scrollTrigger?.kill();
-        // webDevTl?.kill();
       };
     },
     { dependencies: [sceneBySrc] },
@@ -246,23 +302,23 @@ const MyCanvas = () => {
           floatIntensity: 0.3,
           floatingRange: [-0.1, 0],
         }}
-        scale={[3,3.5,3]}
-        rotation={[0,-0.5,0]}
+        scale={[3, 3.5, 3]}
+        rotation={[0, -0.5, 0]}
       />
       <WigglingModel
-      scene={graphicScene}
-      groupRef={graphicRef}
-      position={[-250, 260, 0]}
-      floatConfig={{
-        speed: 5,
-        rotationIntensity: 0.5,
-        floatIntensity: 1,
-        floatingRange: [-0.1, 0.1],
-      }}
-      scale={0.8}
-      
-    />
-    <WigglingModel
+        scene={graphicScene}
+        groupRef={graphicRef}
+        position={[-250, 260, 0]}
+        floatConfig={{
+          speed: 5,
+          rotationIntensity: 0.5,
+          floatIntensity: 1,
+          floatingRange: [-0.1, 0.1],
+        }}
+        scale={0.8}
+
+      />
+      <WigglingModel
         scene={webdevScene}
         groupRef={webdevRef}
         position={[100, 300, 150]}
@@ -273,11 +329,11 @@ const MyCanvas = () => {
           floatingRange: [-0.1, 0.1],
         }}
         scale={0.8}
-      
+
       />
 
 
-      {/* Second Row */}      
+      {/* Second Row */}
       <WigglingModel
         scene={appdevScene}
         groupRef={appdevRef}
@@ -290,7 +346,7 @@ const MyCanvas = () => {
         }}
         scale={0.4}
       />
-      
+
       <WigglingModel
         scene={videoScene}
         groupRef={videoRef}
@@ -344,7 +400,7 @@ const MyCanvas = () => {
       <WigglingModel
         scene={seoScene}
         groupRef={seoRef}
-        position={[380,140,300]}
+        position={[380, 140, 300]}
         floatConfig={{
           speed: 3,
           rotationIntensity: 0.3,
@@ -353,10 +409,10 @@ const MyCanvas = () => {
         }}
         scale={1.6}
       />
-     
-      
-      
-      
+
+
+
+
 
       <directionalLight position={[140, 120, 160]} intensity={1.35} color="#ffffff" />
       <directionalLight position={[-130, 70, 90]} intensity={5.65} color="#eef2ff" />
