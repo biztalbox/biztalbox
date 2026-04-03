@@ -162,7 +162,7 @@ const MyCanvas = () => {
             trigger: "#section0",
             start: "-120 top",
             end: "top top",
-            scrub: 10,
+            scrub: 5,
             markers: true,
           },
         });
@@ -176,6 +176,7 @@ const MyCanvas = () => {
         modelFadeOutTl.to(adsRef.current.position, { y: "+=500", duration: 2, ease: "power3.inOut" }, 0);
         modelFadeOutTl.to(webdevRef.current.position, { y: "+=500", duration: 2, ease: "power3.inOut" }, 0);
 
+        // SEO Timeline
         seoTl = gsap.timeline({
           scrollTrigger: {
             trigger: "#section0",
@@ -187,16 +188,16 @@ const MyCanvas = () => {
         });
 
         seoTl.to(seoRef.current.scale, { x: 2.5, y: 2.5, z: 2.5, duration: 2, ease: "power1.inOut" }, 0);
-        seoTl.to(seoRef.current.position, { x: "-=70", y: "+=70", duration: 1, ease: "power1.inOut" }, 0);
+        seoTl.to(seoRef.current.position, { x: "-=140", y: "+=70", duration: 1, ease: "power1.inOut" }, 0);
         seoTl.to(seoRef.current.rotation, { y: 10, duration: 1, ease: "power1.inOut" }, 0);
 
 
-        // Pin needs a clear scroll *distance*: `end: "top center"` vs `start: "top 60%"` often yields ~0 or inverted range → pin never “sticks”.
         seoScanTl = gsap.timeline({
           scrollTrigger: {
             trigger: "#seoScanner",
-            start: "top 30%",
-            end: "+=2600",
+            endTrigger:"#smoScanner",
+            start: "top 28%",
+            end: "bottom top",
             pin: true,
             pinSpacing: true,
             anticipatePin: 1,
@@ -223,7 +224,7 @@ const MyCanvas = () => {
 
         // Strip tween is scrub-reversible (scroll up brings back #01). Card x runs 2.9 → 3.9.
         addSlideTextStripToTimeline(seoScanTl, {
-          track: "#seoScannerNumberTrack",
+          track: "#seoScanner .numberTrack",
           baselineAt: 0,
           startTime: 2.9,
           delay: 0.25,

@@ -77,15 +77,8 @@ export function addSlideTextStripToTimeline(
   tl: gsap.core.Timeline,
   options: AddSlideTextStripToTimelineOptions,
 ): void {
-  const el = resolveSlideTextTarget(options.track);
-  if (!el) {
-    if (process.env.NODE_ENV === "development") {
-      console.warn("[addSlideTextStripToTimeline] track not found:", options.track);
-    }
-    return;
-  }
-
   const {
+    track,
     startTime,
     delay = 0,
     duration = 0.8,
@@ -95,18 +88,39 @@ export function addSlideTextStripToTimeline(
     baselineAt,
   } = options;
 
+  let tweenTarget: string | Element;
+
+  if (typeof track === "string") {
+    if (typeof document !== "undefined" && !document.querySelector(track)) {
+      if (process.env.NODE_ENV === "development") {
+        console.warn("[addSlideTextStripToTimeline] track not found:", track);
+      }
+      return;
+    }
+    tweenTarget = track;
+  } else {
+    const el = resolveSlideTextTarget(track);
+    if (!el) {
+      if (process.env.NODE_ENV === "development") {
+        console.warn("[addSlideTextStripToTimeline] track not found:", track);
+      }
+      return;
+    }
+    tweenTarget = el;
+  }
+
   const tStart = startTime + delay;
 
   if (baselineAt !== undefined) {
     tl.set(
-      el,
+      tweenTarget,
       { xPercent: fromXPercent, force3D: true, immediateRender: false },
       baselineAt,
     );
   }
 
   tl.fromTo(
-    el,
+    tweenTarget,
     { xPercent: fromXPercent, force3D: true, immediateRender: false },
     {
       xPercent: toXPercent,
