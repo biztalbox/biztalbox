@@ -84,9 +84,25 @@
       "scan": {
         "endTrigger": "#lite-scanner-video"
       },
-      "motion":{
-        
+      "motion": {
+        "approach": {
+          "position": {
+            "y": "-=600",
+            "x": "+=10"
+          },
+          "rotation": {
+            "x": "+=9.2",
+            "z": "+=3.2"
+          },
+          "scale": 0.35,
+          "durations": {
+            "position": 2,
+            "scale": 2,
+            "rotation": 2
+          }
+        }
       }
+
     },
     {
       "modelKey": "video",
@@ -97,7 +113,26 @@
       },
       "scan": {
         "endTrigger": "#lite-scanner-content"
+      },
+      "motion": {
+        "approach": {
+          "position": {
+            "y": "-=470",
+            "x": "+=270"
+          },
+          "rotation": {
+            "x": "+=9.2",
+            "z": "+=3.2"
+          },
+          "scale": 1.4,
+          "durations": {
+            "position": 2,
+            "scale": 2,
+            "rotation": 2
+          }
+        }
       }
+
     },
     {
       "modelKey": "content",
@@ -108,7 +143,28 @@
       },
       "scan": {
         "endTrigger": "#lite-scanner-ads"
+      },
+      "motion": {
+        "approach": {
+          "position": {
+            "y": "-=400",
+            "x": "+=140"
+          },
+          "rotation": {
+            "x": "+=0",
+            "z": "+=0"
+          },
+          
+          "scale": 1,
+          "durations": {
+            "position": 2,
+            "scale": 2,
+            "rotation": 2
+          }
+        }
       }
+
+
     },
     {
       "modelKey": "ads",
@@ -119,7 +175,26 @@
       },
       "scan": {
         "endTrigger": "#lite-scanner-appdev"
+      },
+      "motion": {
+        "approach": {
+          "position": {
+            "y": "-=480",
+            "x": "-=100"
+          },
+          "rotation": {
+            "x": "+=9.2",
+            "z": "+=3.2"
+          },
+          "scale": 0.17,
+          "durations": {
+            "position": 2,
+            "scale": 2,
+            "rotation": 2
+          }
+        }
       }
+
     },
     {
       "modelKey": "appdev",
@@ -130,6 +205,23 @@
       },
       "scan": {
         "endTrigger": "#lite-scanner-algo"
+      },"motion": {
+        "approach": {
+          "position": {
+            "y": "-=460",
+            "x": "-=30"
+          },
+          "rotation": {
+            "x": "+=9.2",
+            "z": "+=3.2"
+          },
+          "scale": 0.5,
+          "durations": {
+            "position": 2,
+            "scale": 2,
+            "rotation": 2
+          }
+        }
       }
     },
     {
@@ -141,6 +233,24 @@
       },
       "scan": {
         "endTrigger": "#lite-scroll-tail"
+      },
+      "motion": {
+        "approach": {
+          "position": {
+            "y": "-=380",
+            "x": "-=170"
+          },
+          "rotation": {
+            "x": "+=9.2",
+            "z": "+=3.2"
+          },
+          "scale": 3,
+          "durations": {
+            "position": 2,
+            "scale": 2,
+            "rotation": 2
+          }
+        }
       }
     }
   ]
