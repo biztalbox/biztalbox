@@ -1,0 +1,147 @@
+{
+  "scrollDefaults": {
+    "approachStart": "top top",
+    "approachEnd": "top center",
+    "scanPinEnd": "bottom top"
+  },
+  "services": [
+    {
+      "modelKey": "seo",
+      "scannerId": "lite-scanner-seo",
+      "approach": {
+        "trigger": "#section0",
+        "endTrigger": "#lite-scanner-seo"
+      },
+      "scan": {
+        "endTrigger": "#lite-scanner-smo"
+      }
+    },
+    {
+      "modelKey": "smo",
+      "scannerId": "lite-scanner-smo",
+      "approach": {
+        "trigger": "#section3",
+        "endTrigger": "#lite-scanner-smo"
+      },
+      "scan": {
+        "endTrigger": "#lite-scanner-webdev"
+      },
+      "motion": {
+        "approach": {
+          "position": {
+            "y": "-=600",
+            "x": "+=10"
+          },
+          "rotation": {
+            "x": "+=9.2",
+            "z": "+=3.2"
+          },
+          "scale": 0.35,
+          "durations": {
+            "position": 2,
+            "scale": 2,
+            "rotation": 2
+          }
+          
+        }
+      }
+    },
+    {
+      "modelKey": "webdev",
+      "scannerId": "lite-scanner-webdev",
+      "approach": {
+        "trigger": "#section4",
+        "endTrigger": "#lite-scanner-webdev"
+      },
+      "scan": {
+        "endTrigger": "#lite-scanner-graphic"
+      },
+      "motion": {
+        "approach": {
+          "position": {
+            "x": "+=300",
+            "y": "-=400"
+          },
+          "rotation": {
+            "x": "+=9.2",
+            "y": "+=3.2"
+          },
+          "scale": 1.7,
+          "durations": {
+            "position": 2,
+            "rotation": 2
+          }
+        }
+      }
+    },
+    {
+      "modelKey": "graphic",
+      "scannerId": "lite-scanner-graphic",
+      "approach": {
+        "trigger": "#section5",
+        "endTrigger": "#lite-scanner-graphic"
+      },
+      "scan": {
+        "endTrigger": "#lite-scanner-video"
+      },
+      "motion":{
+        
+      }
+    },
+    {
+      "modelKey": "video",
+      "scannerId": "lite-scanner-video",
+      "approach": {
+        "trigger": "#section6",
+        "endTrigger": "#lite-scanner-video"
+      },
+      "scan": {
+        "endTrigger": "#lite-scanner-content"
+      }
+    },
+    {
+      "modelKey": "content",
+      "scannerId": "lite-scanner-content",
+      "approach": {
+        "trigger": "#section7",
+        "endTrigger": "#lite-scanner-content"
+      },
+      "scan": {
+        "endTrigger": "#lite-scanner-ads"
+      }
+    },
+    {
+      "modelKey": "ads",
+      "scannerId": "lite-scanner-ads",
+      "approach": {
+        "trigger": "#section8",
+        "endTrigger": "#lite-scanner-ads"
+      },
+      "scan": {
+        "endTrigger": "#lite-scanner-appdev"
+      }
+    },
+    {
+      "modelKey": "appdev",
+      "scannerId": "lite-scanner-appdev",
+      "approach": {
+        "trigger": "#section9",
+        "endTrigger": "#lite-scanner-appdev"
+      },
+      "scan": {
+        "endTrigger": "#lite-scanner-algo"
+      }
+    },
+    {
+      "modelKey": "algo",
+      "scannerId": "lite-scanner-algo",
+      "approach": {
+        "trigger": "#section10",
+        "endTrigger": "#lite-scanner-algo"
+      },
+      "scan": {
+        "endTrigger": "#lite-scroll-tail"
+      }
+    }
+  ]
+}

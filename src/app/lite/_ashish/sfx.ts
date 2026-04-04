@@ -17,7 +17,6 @@ function getOrCreateAudio(src: string): HTMLAudioElement {
   if (!el) {
     el = new Audio(src);
     el.preload = "auto";
-    el.playsInline = true;
     el.setAttribute("playsinline", "");
     audioBySrc.set(src, el);
   }
@@ -41,7 +40,7 @@ function primeAudioInGesture(el: HTMLAudioElement): void {
 }
 
 function flushPendingAfterUnlock(): void {
-  const queued = [...pendingAfterUnlock];
+  const queued = Array.from(pendingAfterUnlock);
   pendingAfterUnlock.clear();
   for (const src of queued) {
     playSfx(src);
@@ -66,9 +65,9 @@ function installUnlockListenersOnce(): void {
         silent.src = "";
       },
     );
-    for (const el of audioBySrc.values()) {
+    audioBySrc.forEach((el) => {
       primeAudioInGesture(el);
-    }
+    });
     flushPendingAfterUnlock();
   };
 

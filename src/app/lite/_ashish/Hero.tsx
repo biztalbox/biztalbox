@@ -249,12 +249,11 @@ const Hero = () => {
 
           {/* Center ticket */}
 
-          <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="seoScanner">
+          <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="lite-scanner-seo">
 
             {/* Two panels in one row: GSAP `xPercent` on the track scrubs forward/back (no DOM text swaps). */}
             <div className="relative overflow-hidden text-left">
               <div
-                id="seoScannerNumberTrack"
                 className="numberTrack flex w-[200%] will-change-transform"
               >
                 <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
@@ -374,7 +373,7 @@ const Hero = () => {
 
           {/* Center ticket */}
 
-          <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="smoScanner">
+          <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="lite-scanner-smo">
 
             {/* Two panels in one row: GSAP `xPercent` on the track scrubs forward/back (no DOM text swaps). */}
             <div className="relative overflow-hidden text-left">
@@ -488,7 +487,7 @@ const Hero = () => {
 
           {/* Center ticket */}
 
-          <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="smoScanner">
+          <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="lite-scanner-webdev">
 
             {/* Two panels in one row: GSAP `xPercent` on the track scrubs forward/back (no DOM text swaps). */}
             <div className="relative overflow-hidden text-left">
@@ -603,7 +602,7 @@ const Hero = () => {
 
           {/* Center ticket */}
 
-          <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="smoScanner">
+          <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="lite-scanner-graphic">
 
             {/* Two panels in one row: GSAP `xPercent` on the track scrubs forward/back (no DOM text swaps). */}
             <div className="relative overflow-hidden text-left">
@@ -659,7 +658,7 @@ const Hero = () => {
 
       {/* Video Editing */}
       <section
-        id="section5"
+        id="section6"
         className="relative bg-[#f2f2f2]"
       >
         <div className="container flex flex-col">
@@ -728,7 +727,7 @@ const Hero = () => {
 
           {/* Center ticket */}
 
-          <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="smoScanner">
+          <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="lite-scanner-video">
 
             {/* Two panels in one row: GSAP `xPercent` on the track scrubs forward/back (no DOM text swaps). */}
             <div className="relative overflow-hidden text-left">
@@ -783,7 +782,7 @@ const Hero = () => {
 
       {/* Content Writing */}
       <section
-        id="section6"
+        id="section7"
         className="relative bg-[#f2f2f2]"
       >
         <div className="container flex flex-col">
@@ -842,7 +841,7 @@ const Hero = () => {
 
           {/* Center ticket */}
 
-          <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="smoScanner">
+          <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="lite-scanner-content">
 
             {/* Two panels in one row: GSAP `xPercent` on the track scrubs forward/back (no DOM text swaps). */}
             <div className="relative overflow-hidden text-left">
@@ -897,7 +896,7 @@ const Hero = () => {
 
       {/* Performance Marketing */}
       <section
-        id="section7"
+        id="section8"
         className="relative bg-[#f2f2f2]"
       >
         <div className="container flex flex-col">
@@ -956,7 +955,7 @@ const Hero = () => {
 
           {/* Center ticket */}
 
-          <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="smoScanner">
+          <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="lite-scanner-ads">
 
             {/* Two panels in one row: GSAP `xPercent` on the track scrubs forward/back (no DOM text swaps). */}
             <div className="relative overflow-hidden text-left">
@@ -1011,7 +1010,7 @@ const Hero = () => {
 
       {/* App Development */}
       <section
-        id="section8"
+        id="section9"
         className="relative bg-[#f2f2f2]"
       >
         <div className="container flex flex-col">
@@ -1070,7 +1069,7 @@ const Hero = () => {
 
           {/* Center ticket */}
 
-          <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="smoScanner">
+          <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="lite-scanner-appdev">
 
             {/* Two panels in one row: GSAP `xPercent` on the track scrubs forward/back (no DOM text swaps). */}
             <div className="relative overflow-hidden text-left">
@@ -1120,12 +1119,11 @@ const Hero = () => {
           </div>
         </div>
 
-
       </section>
 
       {/* Algorithm Analysis */}
       <section
-        id="section9"
+        id="section10"
         className="relative bg-[#f2f2f2]"
       >
         <div className="container flex flex-col">
@@ -1194,7 +1192,7 @@ const Hero = () => {
 
           {/* Center ticket */}
 
-          <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="smoScanner">
+          <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="lite-scanner-algo">
 
             {/* Two panels in one row: GSAP `xPercent` on the track scrubs forward/back (no DOM text swaps). */}
             <div className="relative overflow-hidden text-left">
@@ -1203,6 +1201,9 @@ const Hero = () => {
               >
                 <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
                   #09
+                </span>
+                <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
+                  #10
                 </span>
               </div>
             </div>
@@ -1243,6 +1244,9 @@ const Hero = () => {
 
 
       </section>
+
+      {/* Scroll end marker for last scanner pin (GSAP ScrollTrigger endTrigger) */}
+      <div id="lite-scroll-tail" className="pointer-events-none h-px w-full shrink-0" aria-hidden />
 
       <WhyChooseUs />
       {/* service area end */}

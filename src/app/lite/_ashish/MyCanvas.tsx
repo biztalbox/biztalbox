@@ -2,7 +2,6 @@
 
 import { useMemo, useRef } from "react";
 import { useLoader } from "@react-three/fiber";
-import { OrbitControls, useGLTF } from "@react-three/drei";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import type { Group } from "three";
@@ -11,8 +10,14 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { WigglingModel } from "./WigglingModel";
-import { addSlideTextStripToTimeline } from "./slide-text-timeline";
-import { SFX_BEEP, addScrubTimelineCue, playSfx, pauseSfx } from "./sfx";
+import type { LiteModelRefMap } from "./motion/lite-service-scan-config";
+import {
+  LITE_SCAN_TIMING_DESKTOP,
+  LITE_SCAN_TIMING_MOBILE,
+  LITE_SCAN_TIMING_TABLET,
+  registerAllLiteServiceScans,
+} from "./motion/lite-service-scan-factory";
+import { SFX_BEEP, pauseSfx } from "./sfx";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -29,60 +34,10 @@ const LITE_GLB_URLS = [
   "/assets/lite_models/mri3.glb",
 ] as const;
 
-/** Draco-compressed GLBs (e.g. many exported `can.glb`) need a decoder on the loader. */
 function configureGltfLoader(loader: GLTFLoader) {
   const draco = new DRACOLoader();
   draco.setDecoderPath("https://www.gstatic.com/draco/v1/decoders/");
   loader.setDRACOLoader(draco);
-}
-
-// for (const url of LITE_GLB_URLS) {
-//   useGLTF.preload(url);
-// }
-
-const SCROLL_SEGMENT_GAP = 0.15;
-const SCROLL_SEGMENT_DURATION = 0.55;
-
-function addModelScrollSegment(
-  tl: gsap.core.Timeline,
-  group: Group,
-  modelId: string,
-  position: number | string,
-) {
-  const dur = SCROLL_SEGMENT_DURATION;
-  const ease = "none" as const;
-
-  switch (modelId) {
-    case "smo":
-      tl.to(group.rotation, { x: "+=0.35", y: "+=0.55", duration: dur, ease }, position);
-      break;
-    case "ads":
-      tl.to(group.rotation, { y: "+=0.65", z: "+=0.2", duration: dur, ease }, position);
-      break;
-    case "content":
-      tl.to(group.position, { y: "+=12", duration: dur, ease }, position);
-      break;
-    case "seo":
-      tl.to(group.rotation, { z: "+=0.5", duration: dur, ease }, position);
-      break;
-    case "webdev":
-      tl.to(group.rotation, { x: "+=0.45", duration: dur, ease }, position);
-      break;
-    case "appdev":
-      tl.to(group.rotation, { x: "+=0.25", y: "+=0.4", duration: dur, ease }, position);
-      break;
-    case "graphic":
-      tl.to(group.scale, { x: "+=0.08", y: "+=0.08", z: "+=0.08", duration: dur, ease }, position);
-      break;
-    case "video":
-      tl.to(group.rotation, { y: "+=0.5", x: "+=0.15", duration: dur, ease }, position);
-      break;
-    case "algo":
-      tl.to(group.position, { z: "+=28", duration: dur, ease }, position);
-      break;
-    default:
-      tl.to(group.rotation, { z: "+=0.35", duration: dur, ease }, position);
-  }
 }
 
 const MyCanvas = () => {
@@ -96,11 +51,21 @@ const MyCanvas = () => {
   const videoRef = useRef<Group>(null);
   const algoRef = useRef<Group>(null);
 
-  /**
-   * Loads every GLB in one batch. `useLoader` caches by [loader, URL, …].
-   * `sceneBySrc` maps each URL string → that file’s root `scene` (a Group) so you can pick
-   * “which mesh” by path without indexing the array by position.
-   */
+  const modelRefs = useMemo<LiteModelRefMap>(
+    () => ({
+      seo: seoRef,
+      smo: smoRef,
+      webdev: webdevRef,
+      graphic: graphicRef,
+      video: videoRef,
+      content: contentRef,
+      ads: adsRef,
+      appdev: appdevRef,
+      algo: algoRef,
+    }),
+    [],
+  );
+
   const gltf = useLoader(GLTFLoader, [...LITE_GLB_URLS], configureGltfLoader) as GLTF | GLTF[];
   const sceneBySrc = useMemo(() => {
     const list = Array.isArray(gltf) ? gltf : [gltf];
@@ -119,25 +84,13 @@ const MyCanvas = () => {
   const videoScene = sceneBySrc.get("/assets/lite_models/video.glb");
   const algoScene = sceneBySrc.get("/assets/lite_models/mri3.glb");
 
-
-
   useGSAP(
     () => {
       let cancelled = false;
       let attempts = 0;
       const maxAttempts = 120;
       let modelFadeOutTl: gsap.core.Timeline | null = null;
-      let seoTl: gsap.core.Timeline | null = null;
-      let seoScanTl: gsap.core.Timeline | null = null;
-      let smoTl: gsap.core.Timeline | null = null;
-      let webDevTl: gsap.core.Timeline | null = null;
-      let adsTl: gsap.core.Timeline | null = null;
-      let contentTl: gsap.core.Timeline | null = null;
-      let videoTl: gsap.core.Timeline | null = null;
-      let algoTl: gsap.core.Timeline | null = null;
-      let appdevTl: gsap.core.Timeline | null = null;
-      let graphicTl: gsap.core.Timeline | null = null;
-      let removeSeoScanBeepCue: (() => void) | undefined;
+      let matchMediaInstance: gsap.MatchMedia | null = null;
 
       const mountScroll = () => {
         if (
@@ -156,103 +109,38 @@ const MyCanvas = () => {
         }
         if (cancelled) return;
 
-        // Assign to outer `let`s so cleanup can kill these timelines (do not `const` shadow here).
         modelFadeOutTl = gsap.timeline({
           scrollTrigger: {
             trigger: "#section0",
             start: "-120 top",
             end: "top top",
-            scrub: 5,
-            markers: true,
+            scrub: 2.5,
+            markers: process.env.NODE_ENV === "development",
           },
         });
 
         modelFadeOutTl.to(videoRef.current.position, { y: "+=500", duration: 2, ease: "power3.inOut" }, 0);
         modelFadeOutTl.to(smoRef.current.position, { y: "+=700", duration: 2, ease: "power3.inOut" }, 0);
         modelFadeOutTl.to(appdevRef.current.position, { y: "+=500", duration: 2, ease: "power3.inOut" }, 0);
-        modelFadeOutTl.to(graphicRef.current.position, { y: "+=600", duration: 2, ease: "power3.inOut" }, 0);
-        modelFadeOutTl.to(algoRef.current.position, { y: "+=500", duration: 2, ease: "power3.inOut" }, 0);
+        modelFadeOutTl.to(graphicRef.current.position, { y: "+=400", duration: 2, ease: "power3.inOut" }, 0);
+        modelFadeOutTl.to(algoRef.current.position, { y: "+=350", duration: 2, ease: "power3.inOut" }, 0);
         modelFadeOutTl.to(contentRef.current.position, { y: "+=500", duration: 2, ease: "power3.inOut" }, 0);
         modelFadeOutTl.to(adsRef.current.position, { y: "+=500", duration: 2, ease: "power3.inOut" }, 0);
-        modelFadeOutTl.to(webdevRef.current.position, { y: "+=500", duration: 2, ease: "power3.inOut" }, 0);
+        modelFadeOutTl.to(webdevRef.current.position, { y: "+=350", duration: 2, ease: "power3.inOut" }, 0);
 
-        // SEO Timeline
-        seoTl = gsap.timeline({
-          scrollTrigger: {
-            trigger: "#section0",
-            endTrigger: "#seoScanner",
-            start: "top top",
-            end: "top center",
-            scrub: 1.2,
-          },
-        });
+        matchMediaInstance = gsap.matchMedia();
 
-        seoTl.to(seoRef.current.scale, { x: 2.5, y: 2.5, z: 2.5, duration: 2, ease: "power1.inOut" }, 0);
-        seoTl.to(seoRef.current.position, { x: "-=140", y: "+=70", duration: 1, ease: "power1.inOut" }, 0);
-        seoTl.to(seoRef.current.rotation, { y: 10, duration: 1, ease: "power1.inOut" }, 0);
-
-
-        seoScanTl = gsap.timeline({
-          scrollTrigger: {
-            trigger: "#seoScanner",
-            endTrigger:"#smoScanner",
-            start: "top 28%",
-            end: "bottom top",
-            pin: true,
-            pinSpacing: true,
-            anticipatePin: 1,
-            scrub: 5,
-            invalidateOnRefresh: true,
-            // markers: process.env.NODE_ENV === "development",
-          },
-        });
-        seoScanTl.to("#seoScanner .purchaseStatus",{width: "135px", duration: 2, ease: "power1.inOut" }, 0);
-        seoScanTl.to(
-          seoRef.current.rotation,
-          { y: `+=${Math.PI * 2}`, duration: 2, ease: "none" },
-          0,
+        matchMediaInstance.add("(max-width: 639px)", () =>
+          registerAllLiteServiceScans(modelRefs, LITE_SCAN_TIMING_MOBILE, () => cancelled),
         );
-        seoScanTl.to("#seoScanner .purchaseStatus",{color: "red", duration: 0.1, ease: "power1.inOut" }, 2);
-        seoScanTl.to("#seoScanner .barcoadCheck",{display: "block", duration: 0.1, ease: "power1.inOut" }, 2.1);
-        removeSeoScanBeepCue = addScrubTimelineCue(seoScanTl, 2.1 + 0.1, () => {
-          if (!cancelled) playSfx(SFX_BEEP);
-        });
 
-        seoScanTl.to(seoRef.current.scale, { x: 0, y: 0, z: 0, duration: 0.15, ease: "power1.inOut" }, 2);
-        seoScanTl.to("#seoScanner", { height: "100px", width: "100px", duration: 0.7, ease: "power1.inOut" }, 2.9);
-        seoScanTl.to("#seoScanner", { x: "+=600", duration: 1, ease: "power1.inOut" }, 2.9);
+        matchMediaInstance.add("(min-width: 640px) and (max-width: 1023px)", () =>
+          registerAllLiteServiceScans(modelRefs, LITE_SCAN_TIMING_TABLET, () => cancelled),
+        );
 
-        // Strip tween is scrub-reversible (scroll up brings back #01). Card x runs 2.9 → 3.9.
-        addSlideTextStripToTimeline(seoScanTl, {
-          track: "#seoScanner .numberTrack",
-          baselineAt: 0,
-          startTime: 2.9,
-          delay: 0.25,
-          duration: 0.9,
-          fromXPercent: 0,
-          toXPercent: -50,
-          ease: "power2.inOut",
-        });
-
-        
-
-        // webDevTl = gsap.timeline({
-        //   scrollTrigger: {
-        //     trigger: "#section0",
-        //     endTrigger: "#section3",
-        //     start: "top top",
-        //     end: "top center",
-        //     scrub: 5,
-        //     markers: process.env.NODE_ENV === "development",
-        //   },
-        // });
-        // // rotation.y is radians in Three.js — 50° ≈ 0.87 rad (was +=50 rad ≈ many full spins)
-
-        // webDevTl.to(webdevRef.current.scale,{ x: `+=${1.04}`, y: `+=${1.04}`, z: `+=${1.04}`, ease: "power4.inOut" },0);
-        // webDevTl.to(webdevRef.current.position,{ x: `-=${10}`, duration: 2, ease: "power3.inOut" },0);
-        // webDevTl.to(webdevRef.current.position,{ y: `-=${10}`, duration: 2, ease: "power3.inOut" },0);
-        // webDevTl.to(webdevRef.current.rotation,{ x: `+=${10}`, duration: 2, ease: "power3.inOut" },0);
-        // webDevTl.to(webdevRef.current.rotation,{ y: `+=${100}`, duration: 2, ease: "power3.inOut" },0);
+        matchMediaInstance.add("(min-width: 1024px)", () =>
+          registerAllLiteServiceScans(modelRefs, LITE_SCAN_TIMING_DESKTOP, () => cancelled),
+        );
 
         requestAnimationFrame(() => {
           ScrollTrigger.refresh();
@@ -263,17 +151,15 @@ const MyCanvas = () => {
 
       return () => {
         cancelled = true;
-        removeSeoScanBeepCue?.();
+        matchMediaInstance?.revert();
+        matchMediaInstance = null;
         pauseSfx(SFX_BEEP);
-        seoScanTl?.scrollTrigger?.kill();
-        seoScanTl?.kill();
-        seoTl?.scrollTrigger?.kill();
-        seoTl?.kill();
         modelFadeOutTl?.scrollTrigger?.kill();
         modelFadeOutTl?.kill();
+        modelFadeOutTl = null;
       };
     },
-    { dependencies: [sceneBySrc] },
+    { dependencies: [sceneBySrc, modelRefs] },
   );
 
   if (
@@ -292,7 +178,6 @@ const MyCanvas = () => {
 
   return (
     <>
-      {/* Fist row */}
       <WigglingModel
         scene={algoScene}
         groupRef={algoRef}
@@ -307,21 +192,19 @@ const MyCanvas = () => {
         rotation={[0, -0.5, 0]}
       />
       <WigglingModel
-      scene={graphicScene}
-      groupRef={graphicRef}
-      position={[40, 220, 0]}
-      floatConfig={{
-        speed: 5,
-        rotationIntensity: 0.5,
-        floatIntensity: 1,
-        floatingRange: [-0.1, 0.1],
-      }}
-      scale={0.45}
-      rotation={[0,-0.99,0]}
-
-      
-    />
-    <WigglingModel
+        scene={graphicScene}
+        groupRef={graphicRef}
+        position={[40, 220, 0]}
+        floatConfig={{
+          speed: 5,
+          rotationIntensity: 0.5,
+          floatIntensity: 1,
+          floatingRange: [-0.1, 0.1],
+        }}
+        scale={0.45}
+        rotation={[0, -0.99, 0]}
+      />
+      <WigglingModel
         scene={webdevScene}
         groupRef={webdevRef}
         position={[1, 280, 150]}
@@ -331,12 +214,9 @@ const MyCanvas = () => {
           floatIntensity: 1,
           floatingRange: [-0.1, 0.1],
         }}
-        scale={[2,1.7,1]}
-      
+        scale={[2, 1.7, 1]}
       />
 
-
-      {/* Second Row */}
       <WigglingModel
         scene={appdevScene}
         groupRef={appdevRef}
@@ -373,11 +253,8 @@ const MyCanvas = () => {
           floatingRange: [-0.1, 0.1],
         }}
         scale={0.1}
-        rotation={[0,-0.5,0]}
-
+        rotation={[0, -0.5, 0]}
       />
-
-      {/* Third row */}
 
       <WigglingModel
         scene={contentScene}
@@ -406,7 +283,7 @@ const MyCanvas = () => {
       <WigglingModel
         scene={seoScene}
         groupRef={seoRef}
-        position={[440,140,300]}
+        position={[440, 140, 300]}
         floatConfig={{
           speed: 3,
           rotationIntensity: 0.3,
@@ -414,18 +291,12 @@ const MyCanvas = () => {
           floatingRange: [-0.1, 0.1],
         }}
         scale={1.6}
-
       />
-
-
-
-
 
       <directionalLight position={[140, 120, 160]} intensity={1.35} color="#ffffff" />
       <directionalLight position={[-130, 70, 90]} intensity={5.65} color="#eef2ff" />
       <directionalLight position={[40, 90, -160]} intensity={5.75} color="#ffffff" />
       <directionalLight position={[0, -80, 120]} intensity={5.35} color="#d4d4d8" />
-      {/* <OrbitControls /> */}
     </>
   );
 };

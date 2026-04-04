@@ -1,0 +1,302 @@
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import type { Group } from "three";
+import { addSlideTextStripToTimeline } from "../slide-text-timeline";
+import { SFX_BEEP, addScrubTimelineCue, playSfx } from "../sfx";
+import {
+  LITE_SERVICE_SCANS,
+  type LiteApproachMotion,
+  type LiteModelRefMap,
+  type LiteScanMotion,
+} from "./lite-service-scan-config";
+
+gsap.registerPlugin(ScrollTrigger);
+
+/** One shared “recipe” for all services; tweak via matchMedia presets. */
+export type LiteScanTimingPreset = {
+  approachScrub: number;
+  scanScrub: number;
+  scanPinStart: string;
+  approachScale: number;
+  approachPosition: { x: string; y: string };
+  approachRotationY: number;
+  spinRadians: number;
+  /** Card slide after scan — use `vw` on small screens for robustness */
+  cardSlideX: string;
+};
+
+export const LITE_SCAN_TIMING_DESKTOP: LiteScanTimingPreset = {
+  approachScrub: 1.2,
+  scanScrub: 5,
+  scanPinStart: "top 28%",
+  approachScale: 2.5,
+  approachPosition: { x: "-=140", y: "+=70" },
+  approachRotationY: 10,
+  spinRadians: Math.PI * 2,
+  cardSlideX: "+=600",
+};
+
+export const LITE_SCAN_TIMING_TABLET: LiteScanTimingPreset = {
+  approachScrub: 1.2,
+  scanScrub: 5,
+  scanPinStart: "top 25%",
+  approachScale: 2.15,
+  approachPosition: { x: "-=115", y: "+=62" },
+  approachRotationY: 8,
+  spinRadians: Math.PI * 2,
+  cardSlideX: "+=520",
+};
+
+export const LITE_SCAN_TIMING_MOBILE: LiteScanTimingPreset = {
+  approachScrub: 1.2,
+  scanScrub: 5,
+  scanPinStart: "top 22%",
+  approachScale: 1.85,
+  approachPosition: { x: "-=85", y: "+=55" },
+  approachRotationY: 6,
+  spinRadians: Math.PI * 2,
+  cardSlideX: "+=48vw",
+};
+
+function sel(id: string): string {
+  return id.startsWith("#") ? id : `#${id}`;
+}
+
+function resolveApproachScale(
+  timing: LiteScanTimingPreset,
+  approach?: LiteApproachMotion,
+): { x: number; y: number; z: number } {
+  if (approach?.scaleXYZ) {
+    return { ...approach.scaleXYZ };
+  }
+  const u = approach?.scale ?? timing.approachScale;
+  return { x: u, y: u, z: u };
+}
+
+function resolveApproachPosition(
+  timing: LiteScanTimingPreset,
+  approach?: LiteApproachMotion,
+): { x: string; y: string; z?: string } {
+  return {
+    x: approach?.position?.x ?? timing.approachPosition.x,
+    y: approach?.position?.y ?? timing.approachPosition.y,
+    ...(approach?.position?.z !== undefined ? { z: approach.position.z } : {}),
+  };
+}
+
+function resolveApproachRotation(
+  timing: LiteScanTimingPreset,
+  approach?: LiteApproachMotion,
+): Record<string, number | string> {
+  const r = approach?.rotation;
+  if (r && (r.x !== undefined || r.y !== undefined || r.z !== undefined)) {
+    const out: Record<string, number | string> = {};
+    if (r.x !== undefined) out.x = r.x;
+    if (r.y !== undefined) out.y = r.y;
+    if (r.z !== undefined) out.z = r.z;
+    return out;
+  }
+  return { y: timing.approachRotationY };
+}
+
+function resolveScanSpin(timing: LiteScanTimingPreset, scan?: LiteScanMotion): number {
+  return scan?.spinRadians ?? timing.spinRadians;
+}
+
+function resolveCardSlideX(timing: LiteScanTimingPreset, scan?: LiteScanMotion): string {
+  return scan?.cardSlideX ?? timing.cardSlideX;
+}
+
+/** End of number-strip chapter: startTime 2.9 + delay 0.25 + duration 0.9 */
+const SCAN_STRIP_END_TIME = 2.9 + 0.25 + 0.9;
+
+/**
+ * Builds approach + pinned scan timelines for one service. Same choreography as the original SEO block.
+ */
+export function attachLiteServiceScanPair(options: {
+  group: Group;
+  scannerId: string;
+  approachTrigger: string;
+  approachEndTrigger: string;
+  approachScrollStart: string;
+  approachScrollEnd: string;
+  scanEndTrigger: string;
+  scanPinStart: string;
+  scanPinEnd: string;
+  timing: LiteScanTimingPreset;
+  motion?: {
+    approach?: LiteApproachMotion;
+    scan?: LiteScanMotion;
+  };
+  isCancelled: () => boolean;
+}): () => void {
+  const {
+    group,
+    scannerId,
+    approachTrigger,
+    approachEndTrigger,
+    approachScrollStart,
+    approachScrollEnd,
+    scanEndTrigger,
+    scanPinStart,
+    scanPinEnd,
+    timing,
+    motion,
+    isCancelled,
+  } = options;
+
+  const approach = motion?.approach;
+  const scanMotion = motion?.scan;
+  const scaleTriple = resolveApproachScale(timing, approach);
+  const posTriple = resolveApproachPosition(timing, approach);
+  const rotProps = resolveApproachRotation(timing, approach);
+  const scaleDur = approach?.durations?.scale ?? 2;
+  const posDur = approach?.durations?.position ?? 1;
+  const rotDur = approach?.durations?.rotation ?? 1;
+  const spinRad = resolveScanSpin(timing, scanMotion);
+  const cardX = resolveCardSlideX(timing, scanMotion);
+
+  const scanner = sel(scannerId);
+
+  const approachTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: approachTrigger,
+      endTrigger: approachEndTrigger,
+      start: approachScrollStart,
+      end: approachScrollEnd,
+      scrub: timing.approachScrub,
+    },
+  });
+
+  approachTl.to(
+    group.scale,
+    {
+      x: scaleTriple.x,
+      y: scaleTriple.y,
+      z: scaleTriple.z,
+      duration: scaleDur,
+      ease: "power1.inOut",
+    },
+    0,
+  );
+  approachTl.to(
+    group.position,
+    {
+      x: posTriple.x,
+      y: posTriple.y,
+      ...(posTriple.z !== undefined ? { z: posTriple.z } : {}),
+      duration: posDur,
+      ease: "power1.inOut",
+    },
+    0,
+  );
+  approachTl.to(group.rotation, { ...rotProps, duration: rotDur, ease: "power1.inOut" }, 0);
+
+  const scanTl = gsap.timeline({
+    scrollTrigger: {
+      trigger: scanner,
+      endTrigger: scanEndTrigger,
+      start: scanPinStart,
+      end: scanPinEnd,
+      pin: true,
+      pinSpacing: true,
+      anticipatePin: 1,
+      scrub: timing.scanScrub,
+      invalidateOnRefresh: true,
+    },
+  });
+
+  scanTl.to(`${scanner} .purchaseStatus`, { width: "135px", duration: 2, ease: "power1.inOut" }, 0);
+  scanTl.to(group.rotation, { y: `+=${spinRad}`, duration: 2, ease: "none" }, 0);
+  scanTl.to(`${scanner} .purchaseStatus`, { color: "red", duration: 0.1, ease: "power1.inOut" }, 2);
+  scanTl.to(`${scanner} .barcoadCheck`, { display: "block", duration: 0.1, ease: "power1.inOut" }, 2.1);
+
+  const removeBeepCue = addScrubTimelineCue(scanTl, 2.1 + 0.1, () => {
+    if (!isCancelled()) playSfx(SFX_BEEP);
+  });
+
+  scanTl.to(group.scale, { x: 0, y: 0, z: 0, duration: 0.15, ease: "power1.inOut" }, 2);
+  scanTl.to(scanner, { height: "100px", width: "100px", duration: 0.7, ease: "power1.inOut" }, 2.9);
+  scanTl.to(scanner, { x: cardX, duration: 1, ease: "power1.inOut" }, 2.9);
+
+  addSlideTextStripToTimeline(scanTl, {
+    track: `${scanner} .numberTrack`,
+    baselineAt: 0,
+    startTime: 2.9,
+    delay: 0.25,
+    duration: 0.9,
+    fromXPercent: 0,
+    toXPercent: -50,
+    ease: "power2.inOut",
+  });
+
+  /**
+   * Post–strip: timeline must stay “busy” until the pin ends so scrub never
+   * leaves the card at a half state, and we avoid clearProps/onLeave hacks that
+   * broke reverse scroll. Hold small size, then optional extra x drift (JSON).
+   */
+  const scrollPad =
+    scanMotion?.postScanScrollPad !== undefined ? scanMotion.postScanScrollPad : 1.25;
+  if (scrollPad > 0) {
+    scanTl.to(
+      scanner,
+      { width: "100px", height: "100px", duration: scrollPad, ease: "none" },
+      SCAN_STRIP_END_TIME,
+    );
+  }
+
+  const driftX = scanMotion?.postScanDriftX;
+  const driftDur = scanMotion?.postScanDriftDuration ?? 1.2;
+  if (driftX) {
+    const driftStart =
+      scanMotion?.postScanDriftStart ?? SCAN_STRIP_END_TIME + scrollPad;
+    scanTl.to(scanner, { x: driftX, duration: driftDur, ease: "none" }, driftStart);
+  }
+
+  return () => {
+    removeBeepCue();
+    approachTl.scrollTrigger?.kill();
+    approachTl.kill();
+    scanTl.scrollTrigger?.kill();
+    scanTl.kill();
+  };
+}
+
+/**
+ * Registers all service scans for the current breakpoint. Call inside `gsap.matchMedia().add(...)`.
+ */
+export function registerAllLiteServiceScans(
+  refs: LiteModelRefMap,
+  timing: LiteScanTimingPreset,
+  isCancelled: () => boolean,
+): () => void {
+  const disposers: (() => void)[] = [];
+
+  for (const def of LITE_SERVICE_SCANS) {
+    const group = refs[def.modelKey].current;
+    if (!group) continue;
+
+    const scanPinStart = def.scan.pinStart ?? timing.scanPinStart;
+
+    disposers.push(
+      attachLiteServiceScanPair({
+        group,
+        scannerId: def.scannerId,
+        approachTrigger: def.approach.trigger,
+        approachEndTrigger: def.approach.endTrigger,
+        approachScrollStart: def.approach.start,
+        approachScrollEnd: def.approach.end,
+        scanEndTrigger: def.scan.endTrigger,
+        scanPinStart,
+        scanPinEnd: def.scan.pinEnd,
+        timing,
+        motion: def.motion,
+        isCancelled,
+      }),
+    );
+  }
+
+  return () => {
+    for (const d of disposers) d();
+  };
+}
