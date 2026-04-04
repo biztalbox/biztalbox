@@ -8,6 +8,7 @@ import * as THREE from "three";
 import { LITE_HERO_SURFACE_STYLE } from "./lite-hero-surface";
 import WhyChooseUs from "@/components/about/why-choose-us";
 import ContactOne from "@/components/contact/contact-one";
+import Link from "next/link";
 
 const SECTION3_SEO_IMAGE_SRC =
   "https://biztalbox.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fseo.0f33ee3b.webp&w=1200&q=75";
@@ -108,27 +109,27 @@ const Hero = () => {
         id="section1"
         className="relative"
       >
-        <div className="container relative">
+        <div className="container relative py-32">
           {/* Top: centered nav + right pill */}
-          <header className="relative z-10 flex flex-col items-stretch gap-6 lg:flex-row lg:items-start lg:justify-between">
-            <nav className="flex flex-1 flex-wrap items-center justify-center gap-x-5 gap-y-2 text-center text-[9px] font-medium uppercase tracking-[0.14em] sm:text-[10px] sm:gap-x-8">
+          <div className="relative z-10 flex flex-col items-stretch gap-6 lg:flex-row lg:items-start lg:justify-between">
+            <div className="flex flex-1 flex-wrap items-center justify-center gap-x-5 gap-y-2 text-center text-[9px] font-medium uppercase tracking-[0.14em] sm:text-[10px] sm:gap-x-8">
               <span className="whitespace-nowrap">DIGITAL BRANDING #01</span>
               <span className="whitespace-nowrap">VISUAL LANGUAGES #02</span>
               <span className="whitespace-nowrap">INTERACTIVE WEBSITES #03</span>
               <span className="whitespace-nowrap">DISRUPTIVE COMM. #04</span>
-            </nav>
-            <div className="flex shrink-0 justify-center lg:justify-end">
+            </div>
+            {/* <div className="flex shrink-0 justify-center lg:justify-end">
               <button
                 type="button"
-                className="rounded-full border-[0.5px] border-black/40 bg-white/60 px-5 py-2.5 text-[9px] uppercase tracking-[0.16em] backdrop-blur-sm sm:text-[10px]"
+                className="relative z-10 hover:bg-orange-600 hover:text-white rounded-full border-[0.5px] border-black/40 bg-white/60 px-5 py-2.5 text-[9px] uppercase tracking-[0.16em] backdrop-blur-sm sm:text-[10px]"
               >
-                SELECTED WORKS ↗
+                ABOUT US ↗
               </button>
-            </div>
-          </header>
+            </div> */}
+          </div>
 
           {/* Left vertical */}
-          <div className="pointer-events-none absolute left-2 top-[42%] z-10 -translate-y-1/2 sm:left-5 lg:left-8">
+          {/* <div className="pointer-events-none absolute left-2 top-[42%] z-10 -translate-y-1/2 sm:left-5 lg:left-8">
             <div
               className="text-[9px] uppercase tracking-[0.22em] text-black/75"
               style={{
@@ -138,7 +139,7 @@ const Hero = () => {
             >
               AUTHENTIC DIGITAL PRODUCTS © SILENCIO
             </div>
-          </div>
+          </div> */}
 
           {/* Main headline */}
           <div className="relative z-10 mx-auto mt-14 max-w-[1100px] text-center sm:mt-20 lg:mt-24">
@@ -161,12 +162,9 @@ const Hero = () => {
                 WE BUILD DIGITAL PRODUCTS WHERE INTERACTION WITH THE USER AND MOVEMENT ARE OF GREAT IMPORTANCE, WHICH ALLOWS US
                 TO GENERATE UNIQUE EMOTIONS AND SENSATIONS.
               </p>
-              <div className="mt-6 inline-flex w-fit items-center gap-2 border-[0.5px] border-black/35 bg-white/50 px-3 py-2 text-[8px] font-medium uppercase tracking-[0.14em] sm:text-[9px]">
-                <span className="text-sm" aria-hidden>
-                  🎬
-                </span>
-                PLEASE READ CAREFULLY
-              </div>
+              <Link href="/about" className="relative hover:bg-orange-600 hover:text-white z-10 mt-6 inline-flex w-fit items-center gap-2 border-[0.5px] border-black/35 bg-white/50 px-3 py-2 text-[8px] font-medium uppercase tracking-[0.14em] sm:text-[9px]">
+                About Us ↗
+              </Link>
             </div>
           </div>
 
@@ -183,7 +181,7 @@ const Hero = () => {
         id="section2"
         className="relative bg-[#f2f2f2]"
       >
-        <div className="container flex flex-col">
+        <div className="container flex flex-col pt-16">
           {/* Left — PRODUCTS (top, vertical) */}
           <div
             className="pointer-events-none absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
@@ -1246,7 +1244,7 @@ const Hero = () => {
       </section>
 
       {/* Scroll end marker for last scanner pin (GSAP ScrollTrigger endTrigger) */}
-      <div id="lite-scroll-tail" className="pointer-events-none h-px w-full shrink-0" aria-hidden />
+      <div id="section11" className="" aria-hidden />
 
       <WhyChooseUs />
       {/* service area end */}

@@ -13,7 +13,9 @@
         "endTrigger": "#lite-scanner-seo"
       },
       "scan": {
-        "endTrigger": "#lite-scanner-smo"
+        "endTrigger": "#section3",
+        "pinStart": "top 30%",
+        "pinEnd": "top -30%"
       }
     },
     {
@@ -24,7 +26,7 @@
         "endTrigger": "#lite-scanner-smo"
       },
       "scan": {
-        "endTrigger": "#lite-scanner-webdev"
+        "endTrigger": "#section4"
       },
       "motion": {
         "approach": {
@@ -43,6 +45,9 @@
             "rotation": 2
           }
           
+        },
+        "scan":{
+          "cardSlideX": "-=400"
         }
       }
     },
@@ -54,7 +59,7 @@
         "endTrigger": "#lite-scanner-webdev"
       },
       "scan": {
-        "endTrigger": "#lite-scanner-graphic"
+        "endTrigger": "#section5"
       },
       "motion": {
         "approach": {
@@ -82,7 +87,7 @@
         "endTrigger": "#lite-scanner-graphic"
       },
       "scan": {
-        "endTrigger": "#lite-scanner-video"
+        "endTrigger": "#section6"
       },
       "motion":{
         
@@ -92,7 +97,7 @@
       "modelKey": "video",
       "scannerId": "lite-scanner-video",
       "approach": {
-        "trigger": "#section6",
+        "trigger": "#section7",
         "endTrigger": "#lite-scanner-video"
       },
       "scan": {
@@ -103,18 +108,18 @@
       "modelKey": "content",
       "scannerId": "lite-scanner-content",
       "approach": {
-        "trigger": "#section7",
+        "trigger": "#section8",
         "endTrigger": "#lite-scanner-content"
       },
       "scan": {
-        "endTrigger": "#lite-scanner-ads"
+        "endTrigger": "#section7"
       }
     },
     {
       "modelKey": "ads",
       "scannerId": "lite-scanner-ads",
       "approach": {
-        "trigger": "#section8",
+        "trigger": "#section9",
         "endTrigger": "#lite-scanner-ads"
       },
       "scan": {
@@ -125,18 +130,18 @@
       "modelKey": "appdev",
       "scannerId": "lite-scanner-appdev",
       "approach": {
-        "trigger": "#section9",
+        "trigger": "#section10",
         "endTrigger": "#lite-scanner-appdev"
       },
       "scan": {
-        "endTrigger": "#lite-scanner-algo"
+        "endTrigger": "#section8"
       }
     },
     {
       "modelKey": "algo",
       "scannerId": "lite-scanner-algo",
       "approach": {
-        "trigger": "#section10",
+        "trigger": "#section11",
         "endTrigger": "#lite-scanner-algo"
       },
       "scan": {
