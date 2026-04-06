@@ -9,6 +9,7 @@ import { LITE_HERO_SURFACE_STYLE } from "./lite-hero-surface";
 import WhyChooseUs from "@/components/about/why-choose-us";
 import ContactOne from "@/components/contact/contact-one";
 import Link from "next/link";
+import WhyChooseUsLite from "./WhyChooseUs";
 
 const SECTION3_SEO_IMAGE_SRC =
   "https://biztalbox.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fseo.0f33ee3b.webp&w=1200&q=75";
@@ -308,7 +309,7 @@ const Hero = () => {
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
-            Social Media Optimization
+              Social Media Optimization
             </span>
           </div>
 
@@ -432,7 +433,7 @@ const Hero = () => {
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
-            Website Development
+              Website Development
             </span>
           </div>
 
@@ -547,7 +548,7 @@ const Hero = () => {
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
-            Graphic Designing
+              Graphic Designing
             </span>
           </div>
 
@@ -1242,7 +1243,7 @@ const Hero = () => {
       {/* Scroll end marker for last scanner pin (GSAP ScrollTrigger endTrigger) */}
       <div id="section11" className="" aria-hidden />
 
-      <WhyChooseUs />
+      <WhyChooseUsLite />
       {/* service area end */}
 
       {/* contact area start */}
@@ -1262,6 +1263,18 @@ const Hero = () => {
           <div className="mt-1 uppercase">REF: SHH 0001</div>
         </div>
       </section> */}
+
+      <section id="ctaSection" className="pt-10 pb-32">
+        <div className="container flex flex-col gap-10">
+          <h3 className="text-[7rem] font-thin uppercase leading-none max-w-screen mx-auto text-center">
+            Thanks for <br/>your visit!
+          </h3>
+          <div className="h-48"></div>
+          <Link href="#" className="hover:bg-black bg-white hover:text-white relative z-10 text-center uppercase text-7xl font-thin max-w-lg mx-auto px-5 py-4 border border-black rounded-full">
+            Let's Talk!
+          </Link>
+        </div>
+      </section>
     </div>
   );
 };

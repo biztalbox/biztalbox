@@ -32,6 +32,7 @@ const LITE_GLB_URLS = [
   "/assets/lite_models/graphic.glb",
   "/assets/lite_models/video.glb",
   "/assets/lite_models/mri3.glb",
+  "/assets/lite_models/bucket.glb",
 ] as const;
 
 function configureGltfLoader(loader: GLTFLoader) {
@@ -50,6 +51,7 @@ const MyCanvas = () => {
   const graphicRef = useRef<Group>(null);
   const videoRef = useRef<Group>(null);
   const algoRef = useRef<Group>(null);
+  const bucketRef = useRef<Group>(null);
 
   const modelRefs = useMemo<LiteModelRefMap>(
     () => ({
@@ -83,6 +85,7 @@ const MyCanvas = () => {
   const graphicScene = sceneBySrc.get("/assets/lite_models/graphic.glb");
   const videoScene = sceneBySrc.get("/assets/lite_models/video.glb");
   const algoScene = sceneBySrc.get("/assets/lite_models/mri3.glb");
+  const bucketScene = sceneBySrc.get("/assets/lite_models/bucket.glb");
 
   useGSAP(
     () => {
@@ -91,6 +94,7 @@ const MyCanvas = () => {
       const maxAttempts = 120;
       let modelFadeOutTl: gsap.core.Timeline | null = null;
       let matchMediaInstance: gsap.MatchMedia | null = null;
+      let addToCartTl: gsap.core.Timeline | null = null;
 
       const mountScroll = () => {
         if (
@@ -142,6 +146,18 @@ const MyCanvas = () => {
           registerAllLiteServiceScans(modelRefs, LITE_SCAN_TIMING_DESKTOP, () => cancelled),
         );
 
+        addToCartTl = gsap.timeline({
+          scrollTrigger: {
+            trigger: "#ctaSection",
+            start: "top bottom",
+            end: "top top",
+            scrub: 2.5,
+            markers: true,
+          },
+        });
+
+        // addToCartTl.to(bucketRef.current.scale, { x: 6.5, y: 6.5, z: 6.5, duration: 2, ease: "power3.inOut" }, 0);
+
         requestAnimationFrame(() => {
           ScrollTrigger.refresh();
         });
@@ -157,6 +173,9 @@ const MyCanvas = () => {
         modelFadeOutTl?.scrollTrigger?.kill();
         modelFadeOutTl?.kill();
         modelFadeOutTl = null;
+        addToCartTl?.scrollTrigger?.kill();
+        addToCartTl?.kill();
+        addToCartTl = null;
       };
     },
     { dependencies: [sceneBySrc, modelRefs] },
@@ -291,6 +310,21 @@ const MyCanvas = () => {
           floatingRange: [-0.1, 0.1],
         }}
         scale={1.6}
+      />
+
+      {/* // Bucket */}
+      <WigglingModel
+        scene={bucketScene!}
+        groupRef={bucketRef}
+        position={[300, 100, 300]}
+        floatConfig={{
+          speed: 3,
+          rotationIntensity: 0.3,
+          floatIntensity: 0.8,
+          floatingRange: [-0.1, 0.1],
+        }}
+        scale={8}
+        rotation={[1, 0, 0]}
       />
 
       <directionalLight position={[140, 120, 160]} intensity={1.35} color="#ffffff" />

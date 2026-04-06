@@ -1,5 +1,6 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import * as THREE from "three";
 import type { Group } from "three";
 import { addSlideTextStripToTimeline } from "../slide-text-timeline";
 import { SFX_BEEP, addScrubTimelineCue, playSfx } from "../sfx";
@@ -110,6 +111,82 @@ function resolveCardSlideX(timing: LiteScanTimingPreset, scan?: LiteScanMotion):
 /** End of number-strip chapter: startTime 2.9 + delay 0.25 + duration 0.9 */
 const SCAN_STRIP_END_TIME = 2.9 + 0.25 + 0.9;
 
+/** Soft coral emissive — “scan warmth”, not flat red */
+const SCAN_TINT_EMISSIVE = new THREE.Color("#ff2424");
+const SCAN_TINT_EMISSIVE_INTENSITY = 1;
+/** Fallback for non-PBR mats: gentle lerp toward dusty rose */
+const SCAN_TINT_COLOR_MIX = new THREE.Color("#c86b62");
+const SCAN_TINT_COLOR_LERP = 0.1;
+
+function isPbrMaterial(m: THREE.Material): m is THREE.MeshStandardMaterial | THREE.MeshPhysicalMaterial {
+  return (
+    (m as THREE.MeshStandardMaterial).isMeshStandardMaterial === true ||
+    (m as THREE.MeshPhysicalMaterial).isMeshPhysicalMaterial === true
+  );
+}
+
+/**
+ * Brief warm / rosy shading on all meshes under the model group (scrub-reversible).
+ * PBR: emissive + emissiveIntensity. Others: slight diffuse color lerp.
+ */
+function addScanWarmTintToTimeline(
+  tl: gsap.core.Timeline,
+  root: Group,
+  startTime: number,
+  duration: number,
+): void {
+  root.traverse((obj) => {
+    if (!(obj instanceof THREE.Mesh)) return;
+    const raw = obj.material;
+    const list = Array.isArray(raw) ? raw : [raw];
+    for (const m of list) {
+      if (!m) continue;
+      if (isPbrMaterial(m)) {
+        if (!m.emissive) m.emissive = new THREE.Color(0x000000);
+        const e = m.emissive;
+        const r0 = e.r;
+        const g0 = e.g;
+        const b0 = e.b;
+        const i0 = m.emissiveIntensity ?? 0;
+        tl.fromTo(
+          e,
+          { r: r0, g: g0, b: b0 },
+          {
+            r: SCAN_TINT_EMISSIVE.r,
+            g: SCAN_TINT_EMISSIVE.g,
+            b: SCAN_TINT_EMISSIVE.b,
+            duration,
+            ease: "power2.out",
+          },
+          startTime,
+        );
+        tl.fromTo(
+          m,
+          { emissiveIntensity: i0 },
+          {
+            emissiveIntensity: SCAN_TINT_EMISSIVE_INTENSITY,
+            duration,
+            ease: "power2.out",
+          },
+          startTime,
+        );
+      } else if ("color" in m && m.color instanceof THREE.Color) {
+        const c = m.color;
+        const sr = c.r;
+        const sg = c.g;
+        const sb = c.b;
+        const end = new THREE.Color(sr, sg, sb).lerp(SCAN_TINT_COLOR_MIX, SCAN_TINT_COLOR_LERP);
+        tl.fromTo(
+          c,
+          { r: sr, g: sg, b: sb },
+          { r: end.r, g: end.g, b: end.b, duration, ease: "power2.out" },
+          startTime,
+        );
+      }
+    }
+  });
+}
+
 /**
  * Builds approach + pinned scan timelines for one service. Same choreography as the original SEO block.
  */
@@ -214,6 +291,9 @@ export function attachLiteServiceScanPair(options: {
   const removeBeepCue = addScrubTimelineCue(scanTl, 2.1 + 0.1, () => {
     if (!isCancelled()) playSfx(SFX_BEEP);
   });
+
+  /** Warm rosy “scan” read on the GLB, peaking as the model vanishes (scrub reverses cleanly). */
+  addScanWarmTintToTimeline(scanTl, group, 1.68, 0.36);
 
   scanTl.to(group.scale, { x: 0, y: 0, z: 0, duration: 0.15, ease: "power1.inOut" }, 2);
   scanTl.to(scanner, { height: "150px", width: "150px", duration: 0.7, ease: "power1.inOut" }, 2.9);
