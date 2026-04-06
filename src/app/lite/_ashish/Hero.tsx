@@ -40,12 +40,11 @@ function ResponsiveHeroCamera() {
 const Hero = () => {
   return (
     <div className="relative">
-      <section id="section0" className="relative min-h-[100svh] overflow-hidden" style={LITE_HERO_SURFACE_STYLE}>
+      <section id="section0" className="relative min-h-[100svh] overflow-hidden">
         <Canvas
           className="!fixed top-0 z-10 h-full w-full inset-0"
           dpr={[1, 2]}
           gl={{ alpha: true }}
-          style={{ background: "transparent" }}
           onCreated={({ gl }) => {
             gl.setClearColor("#000000", 0);
           }}
@@ -129,7 +128,7 @@ const Hero = () => {
           </div>
 
           {/* Left vertical */}
-          {/* <div className="pointer-events-none absolute left-2 top-[42%] z-10 -translate-y-1/2 sm:left-5 lg:left-8">
+          {/* <div className="absolute left-2 top-[42%] z-10 -translate-y-1/2 sm:left-5 lg:left-8">
             <div
               className="text-[9px] uppercase tracking-[0.22em] text-black/75"
               style={{
@@ -184,7 +183,7 @@ const Hero = () => {
         <div className="container flex flex-col pt-16">
           {/* Left — PRODUCTS (top, vertical) */}
           <div
-            className="pointer-events-none absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
+            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -193,12 +192,9 @@ const Hero = () => {
           </div>
 
           {/* #01 card */}
-          <div className="flex justify-center">
-            <div className="rounded-md border border-black bg-transparent px-6 py-8 text-center sm:px-8 sm:py-10">
-              <p className="text-[clamp(2.5rem,8vw,4rem)] font-bold leading-none tracking-tight">#01</p>
-              <p className="mt-3 text-[10px] font-medium uppercase tracking-[0.18em] sm:text-[11px] sm:tracking-[0.2em]">
-                SEO
-              </p>
+          <div className="flex justify-center self-end">
+            <div className="rounded-md border border-black p-4 text-center">
+              <p className="text-[34px] font-semibold leading-none tracking-tight">#01</p>
             </div>
           </div>
 
@@ -308,7 +304,7 @@ const Hero = () => {
         <div className="container flex flex-col">
           {/* Left — PRODUCTS (top, vertical) */}
           <div
-            className="pointer-events-none absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
+            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -432,7 +428,7 @@ const Hero = () => {
         <div className="container flex flex-col">
           {/* Left — PRODUCTS (top, vertical) */}
           <div
-            className="pointer-events-none absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
+            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -547,7 +543,7 @@ const Hero = () => {
         <div className="container flex flex-col">
           {/* Left — PRODUCTS (top, vertical) */}
           <div
-            className="pointer-events-none absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
+            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -662,7 +658,7 @@ const Hero = () => {
         <div className="container flex flex-col">
           {/* Left — PRODUCTS (top, vertical) */}
           <div
-            className="pointer-events-none absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
+            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -786,7 +782,7 @@ const Hero = () => {
         <div className="container flex flex-col">
           {/* Left — PRODUCTS (top, vertical) */}
           <div
-            className="pointer-events-none absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
+            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -900,7 +896,7 @@ const Hero = () => {
         <div className="container flex flex-col">
           {/* Left — PRODUCTS (top, vertical) */}
           <div
-            className="pointer-events-none absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
+            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -1014,7 +1010,7 @@ const Hero = () => {
         <div className="container flex flex-col">
           {/* Left — PRODUCTS (top, vertical) */}
           <div
-            className="pointer-events-none absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
+            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -1127,7 +1123,7 @@ const Hero = () => {
         <div className="container flex flex-col">
           {/* Left — PRODUCTS (top, vertical) */}
           <div
-            className="pointer-events-none absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
+            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
