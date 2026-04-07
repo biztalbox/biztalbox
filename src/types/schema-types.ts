@@ -57,12 +57,13 @@ export interface WebPage extends BaseSchema {
   description: string;
   inLanguage?: string;
   isPartOf?: WebSite;
+  about?: { "@id": string };
   primaryImageOfPage?: ImageObject;
   datePublished?: string;
   dateModified?: string;
   author?: Person | Organization;
   publisher?: Organization;
-  mainEntity?: any;
+  mainEntity?: { "@id": string } | unknown;
 }
 
 export interface WebSite extends BaseSchema {

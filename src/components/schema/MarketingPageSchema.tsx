@@ -2,7 +2,6 @@ import Script from 'next/script';
 import { 
   Organization,
   LocalBusiness, 
-  Service,
   WebPage,
   BreadcrumbList,
   FAQPage,
@@ -41,8 +40,11 @@ export default function MarketingPageSchema({
   pageData, 
   currentUrl 
 }: MarketingPageSchemaProps) {
-  const schemas: any[] = [];
+  const schemas: unknown[] = [];
   const baseUrl = "https://biztalbox.com";
+  const serviceId = `${currentUrl}#service`;
+  const localBusinessId = `${baseUrl}/#biztalbox`;
+  const webPageId = `${currentUrl}#webpage`;
 
   // 1. Organization Schema (always included)
   const organizationSchema: Organization = {
@@ -74,18 +76,18 @@ export default function MarketingPageSchema({
     "@graph": [
       {
         "@type": "Service",
-        "@id": currentUrl,
+        "@id": serviceId,
         name: pageData.title,
         url: currentUrl,
         description: pageData.description,
         serviceType: pageData.serviceType,
         provider: {
-          "@id": "#biztalbox"
+          "@id": localBusinessId
         }
       },
       {
         "@type": "LocalBusiness",
-        "@id": "#biztalbox",
+        "@id": localBusinessId,
         name: "Biztalbox",
         url: organizationData.url,
         image: pageData.image || organizationData.logo,
@@ -165,10 +167,11 @@ export default function MarketingPageSchema({
   const webPageSchema: WebPage = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": currentUrl,
+    "@id": webPageId,
     url: currentUrl,
     name: pageData.title,
     description: pageData.description,
+    inLanguage: "en-IN",
     isPartOf: {
       "@type": "WebSite",
       "@context": "https://schema.org",
@@ -191,9 +194,8 @@ export default function MarketingPageSchema({
         ]
       }
     },
-    mainEntity: {
-      "@id": currentUrl
-    }
+    about: { "@id": serviceId },
+    mainEntity: { "@id": serviceId }
   };
   schemas.push(webPageSchema);
 
