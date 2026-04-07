@@ -14,7 +14,7 @@ const page = () => {
 
         <Hero />
       {/* </main> */}
-      <FooterFour />
+      {/* <FooterFour /> */}
     </Wrapper>
   );
 };

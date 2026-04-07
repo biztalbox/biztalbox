@@ -63,9 +63,8 @@ const Hero = () => {
           <div className="container flex flex-col gap-16">
             {/* Center — mobile: natural height only; sm+: fills middle row for vertical centering */}
             <div className="flex items-start justify-center pt-2 max-sm:self-start sm:-translate-y-4 sm:items-center sm:pt-0">
-              <div className="w-full max-w-[1120px] px-1 text-center sm:px-0">
+              <div className="w-full max-w-[1120px] text-center flex flex-col gap-6">
                 <h1
-                  className="mx-auto leading-[0.88] sm:leading-[0.9] font-light text-[9.5rem]"
                 >
                   DIGITAL
                   <br />
@@ -73,22 +72,24 @@ const Hero = () => {
                 </h1>
 
                 <div
-                  className="mt-3 flex flex-col items-center justify-center gap-1 text-[11px] uppercase tracking-[0.1em] sm:mt-5 sm:flex-row sm:gap-0 sm:text-base sm:tracking-[0.12em]"
+                  className="mt-3 flex flex-col items-center justify-center gap-1 text-base uppercase"
 
                 >
                   <span>FOR CONTEMPORARY</span>
-                  <span className="leading-none sm:px-1" aria-hidden>
+                  <span className="leading-none" aria-hidden>
                     ✖
                   </span>
                   <span>BRANDS</span>
                 </div>
 
                 <p
-                  className="mx-auto mt-2 px-1 text-[9px] leading-[1.65] text-black/75 sm:mt-3 sm:px-0 sm:text-[10px]"
 
                 >
-                  WE CRAFT UNIQUE, INNOVATIVE AND MEMORABLE DIGITAL EXPERIENCES THAT STRIVE TO PUSH THE BOUNDARIES AND LEAVE A
-                  LASTING IMPACT THROUGH DESIGN AND INTERACTIVITY
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse exercitationem explicabo in cum corrupti temporibus odio eius quidem, eligendi, ex eveniet delectus quasi iste soluta?
+                </p>
+
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laborum ad perspiciatis tempora! Nihil quas placeat, labore quos dolores nemo a iste quis modi ad. Dolor dolorem modi veniam molestiae illum.
                 </p>
 
                 <div className="mt-2 text-[9px] uppercase tracking-[0.18em] text-black/55 sm:mt-5 sm:text-[10px] sm:tracking-[0.22em]">
@@ -109,60 +110,35 @@ const Hero = () => {
         id="section1"
         className="relative"
       >
-        <div className="container relative py-32">
+        <div className="container relative py-32 text-center">
           {/* Top: centered nav + right pill */}
-          <div className="relative z-10 flex flex-col items-stretch gap-6 lg:flex-row lg:items-start lg:justify-between">
-            <div className="flex flex-1 flex-wrap items-center justify-center gap-x-5 gap-y-2 text-center text-[9px] font-medium uppercase tracking-[0.14em] sm:text-[10px] sm:gap-x-8">
+          <div className="relative z-10 flex flex-col gap-6 lg:flex-row items-center lg:justify-between">
+            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-center text-xs uppercase">
               <span className="whitespace-nowrap">DIGITAL BRANDING #01</span>
               <span className="whitespace-nowrap">VISUAL LANGUAGES #02</span>
               <span className="whitespace-nowrap">INTERACTIVE WEBSITES #03</span>
               <span className="whitespace-nowrap">DISRUPTIVE COMM. #04</span>
             </div>
-            {/* <div className="flex shrink-0 justify-center lg:justify-end">
-              <button
-                type="button"
-                className="relative z-10 hover:bg-orange-600 hover:text-white rounded-full border-[0.5px] border-black/40 bg-white/60 px-5 py-2.5 text-[9px] uppercase tracking-[0.16em] backdrop-blur-sm sm:text-[10px]"
-              >
-                ABOUT US ↗
-              </button>
-            </div> */}
           </div>
-
-          {/* Left vertical */}
-          {/* <div className="absolute left-2 top-[42%] z-10 -translate-y-1/2 sm:left-5 lg:left-8">
-            <div
-              className="text-[9px] uppercase tracking-[0.22em] text-black/75"
-              style={{
-                writingMode: "vertical-rl",
-                transform: "rotate(180deg)",
-              }}
-            >
-              AUTHENTIC DIGITAL PRODUCTS © SILENCIO
-            </div>
-          </div> */}
 
           {/* Main headline */}
           <div className="relative z-10 mx-auto mt-14 max-w-[1100px] text-center sm:mt-20 lg:mt-24">
             <h2
-              className="space-y-3 uppercase sm:space-y-4 text-4xl"
             >
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quos.
             </h2>
           </div>
 
           {/* Bottom two columns + CTA */}
-          <div className="relative z-10 mx-auto mt-16 grid max-w-[920px] gap-10 sm:mt-20 lg:mt-28 lg:grid-cols-2 lg:gap-14">
-            <p className="text-[9px] font-medium uppercase leading-[1.7] tracking-[0.08em] text-black/85 sm:text-[10px]">
-              WE ARE A DESIGN STUDIO SPECIALISED IN INTERACTIVE VISUAL LANGUAGES FOR ORGANISATIONS THAT WANT TO PUSH THE
-              BOUNDARIES. WE BUILD FLEXIBLE AND AGILE BRANDS CAPABLE OF ADAPTING TO THE CONTEMPORARY CONTEXT, IN WHICH THE SPEED
-              OF CONSUMPTION REQUIRES HIGH-IMPACT CONTENT TO BE RELEVANT.
+          <div className="relative z-10 mx-auto mt-16 grid  gap-10 sm:mt-20 lg:mt-28 lg:grid-cols-2 lg:gap-14">
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint odit est, at sunt unde quibusdam debitis pariatur architecto alias, repellendus veniam obcaecati recusandae vitae labore maxime laudantium? Ipsa dignissimos tenetur accusamus esse beatae voluptas, aliquid a pariatur ipsum, nesciunt soluta.
             </p>
-            <div className="flex flex-col">
-              <p className="text-[9px] font-medium uppercase leading-[1.7] tracking-[0.08em] text-black/85 sm:text-[10px]">
-                WE BUILD DIGITAL PRODUCTS WHERE INTERACTION WITH THE USER AND MOVEMENT ARE OF GREAT IMPORTANCE, WHICH ALLOWS US
-                TO GENERATE UNIQUE EMOTIONS AND SENSATIONS.
+            <div className="flex flex-col items-center lg:items-start">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos soluta ducimus veniam, ullam, hic distinctio at dolores eligendi dolore sit aliquid rem quo nobis? Facere.
               </p>
-              <Link href="/about" className="relative hover:bg-orange-600 hover:text-white z-10 mt-6 inline-flex w-fit items-center gap-2 border-[0.5px] border-black/35 bg-white/50 px-3 py-2 text-[8px] font-medium uppercase tracking-[0.14em] sm:text-[9px]">
+              <Link href="/about" className="relative bg-neutral-200 hover:bg-orange-600 hover:text-white z-10 mt-6 w-fit items-center gap-2 px-3 py-2 font-medium border">
                 About Us ↗
               </Link>
             </div>
@@ -184,7 +160,7 @@ const Hero = () => {
         <div className="container flex flex-col pt-16">
           {/* Left — PRODUCTS (top, vertical) */}
           <div
-            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
+            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8 hidden md:block"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -194,8 +170,8 @@ const Hero = () => {
 
           {/* #01 card */}
           <div className="flex justify-center self-end">
-            <div className="rounded-md border border-black p-4 text-center">
-              <p className="text-[34px] font-semibold leading-none tracking-tight">#01</p>
+            <div className="rounded-md border border-black p-3.5 text-center">
+              <p className="text-4xl font-semibold leading-none tracking-tight">#01</p>
             </div>
           </div>
 
@@ -204,7 +180,7 @@ const Hero = () => {
             {/* Center-left pill badge */}
 
             <h2
-              className="relative text-center uppercase font-thin text-[8rem] z-20"
+              className="relative z-20"
             >
               Search Engine Optimization
             </h2>
@@ -217,27 +193,24 @@ const Hero = () => {
           </div>
 
           {/* Two-column body */}
-          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 text-justify sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
-            <div className="space-y-6 text-[8px] font-medium uppercase leading-[1.75] tracking-[0.08em] text-black sm:text-[9px] sm:tracking-[0.09em]">
+          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
+            <div>
               <p>
-                WE LOVE THINKING. EVERYTHING STARTS WITH AN IDEA AROUND WHICH WE CONSTRUCT THE ENTIRE BRAND COMMUNICATION. AN
-                INGENIOUS CONCEPT THAT PROVIDES A DIFFERENTIAL VALUE AND IS SUITABLE TO ACHIEVE YOUR GOALS.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias aspernatur laboriosam soluta doloribus numquam recusandae, magnam eos iste, deleniti praesentium ullam cupiditate veniam a ut inventore autem quos sequi, porro minima. Fugit facilis alias unde.
               </p>
               <p>
-                WE NEVER SETTLE FOR A BRIEF IF WE DETECT OTHER OPPORTUNITIES. WE ATTEMPT TO GO FURTHER AND PROPOSE DIFFERENT
-                SOLUTIONS THAT ALLOW OUR CLIENTS TO POSITION THEMSELVES IN A DISRUPTIVE WAY.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil eum sint, saepe eos sapiente id aliquam quisquam quas, molestias, nam veritatis qui expedita! Asperiores, assumenda?
               </p>
             </div>
-            <div className="space-y-6 text-[8px] font-medium uppercase leading-[1.75] tracking-[0.08em] text-black sm:text-[9px] sm:tracking-[0.09em]">
+            <div>
               <p>
-                WE BELIEVE THAT DESIGNING BRANDS THAT REMAIN GRAPHICALLY UNCHANGED FOR 30 YEARS NO LONGER MAKES SENSE. WE WORK
-                BASED ON CONCEPTS THAT GO BEYOND TIME AND PROVIDE THE BASIS OF AESTHETICS.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias aspernatur laboriosam soluta doloribus numquam recusandae, magnam eos iste, deleniti praesentium ullam cupiditate veniam a ut inventore autem quos sequi, porro minima. Fugit facilis alias unde.
               </p>
               <p>
-                DIGITAL, COHERENT AND IDENTIFIABLE UNIVERSES, BASED ON THE NEEDS OF EACH CLIENT. WITH RESOURCEFULNESS AS A TOOL
-                THROUGHOUT THE ENTIRE PROCESS.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil eum sint, saepe eos sapiente id aliquam quisquam quas, molestias, nam veritatis qui expedita! Asperiores, assumenda?
               </p>
             </div>
+
           </div>
 
 
@@ -275,20 +248,23 @@ const Hero = () => {
             </div>
 
             {/* Ingredients / footer */}
-            <div className="mt-2 grid grid-cols-2 gap-3 text-[7px] font-medium uppercase leading-[1.45] tracking-[0.08em] text-black/70">
-              <div>
-                <div className="opacity-80">INGREDIENTS</div>
-                <div>CONCEPT MINING,</div>
-                <div>STRATEGY, IDENTITY,</div>
-                <div>POSITIONING, BRAND PURPOSE</div>
-                <div className="mt-1">• CONCEPT DARKNESS</div>
-                <div>• CREATIVE DUCT TAPE</div>
-                <div>• DIGITAL PRODUCTS</div>
+            <div className="mt-2 grid grid-cols-2 gap-3 text-[10px] font-medium leading-[1.45] tracking-[0.08em] text-black/70">
+              <div className="flex flex-col gap-1">
+                <span className="font-bold block text-xs uppercase mb-1">Our Services</span>
+                <span>CONCEPT MINING,</span>
+                <span>STRATEGY, IDENTITY,</span>
+                <span>POSITIONING, BRAND PURPOSE</span>
+                <span>CONCEPT DARKNESS</span>
+                <span>CREATIVE DUCT TAPE</span>
+                <span>DIGITAL PRODUCTS</span>
               </div>
-              <div className="text-right">
-                <div className="opacity-80">FOR</div>
-                <div>DIGITAL PRODUCTS FOR</div>
-                <div>CONTEMPORARY BRANDS</div>
+
+              {/* right Col */}
+              <div className="flex flex-col gap-1 text-right">
+                <span className="font-bold block text-xs uppercase mb-1">Super Powers</span>
+                <span>FOR</span>
+                <span>DIGITAL PRODUCTS FOR</span>
+                <span>CONTEMPORARY BRANDS</span>
               </div>
             </div>
           </div>
@@ -302,10 +278,10 @@ const Hero = () => {
         id="section3"
         className="relative bg-[#f2f2f2]"
       >
-        <div className="container flex flex-col">
+        <div className="container flex flex-col pt-16">
           {/* Left — PRODUCTS (top, vertical) */}
           <div
-            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
+            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8 hidden md:block"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -313,22 +289,11 @@ const Hero = () => {
             </span>
           </div>
 
-          {/* #01 card */}
-          {/* <div className="flex justify-center">
-            <div className="rounded-md border border-black bg-transparent px-6 py-8 text-center sm:px-8 sm:py-10">
-              <p className="text-[clamp(2.5rem,8vw,4rem)] font-bold leading-none tracking-tight">#01</p>
-              <p className="mt-3 text-[10px] font-medium uppercase tracking-[0.18em] sm:text-[11px] sm:tracking-[0.2em]">
-                SMO
-              </p>
-            </div>
-          </div> */}
-
-
-          <div className="text-center ">
+          <div className="pt-40 text-center">
             {/* Center-left pill badge */}
 
             <h2
-              className="relative text-center uppercase font-thin text-[8rem] z-20"
+              className="relative z-20"
             >
               Social Media Optimization
             </h2>
@@ -341,8 +306,8 @@ const Hero = () => {
           </div>
 
           {/* Two-column body */}
-          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 text-justify sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
-            <div className="space-y-6 text-[8px] font-medium uppercase leading-[1.75] tracking-[0.08em] text-black sm:text-[9px] sm:tracking-[0.09em]">
+          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
+            <div>
               <p>
                 WE LOVE THINKING. EVERYTHING STARTS WITH AN IDEA AROUND WHICH WE CONSTRUCT THE ENTIRE BRAND COMMUNICATION. AN
                 INGENIOUS CONCEPT THAT PROVIDES A DIFFERENTIAL VALUE AND IS SUITABLE TO ACHIEVE YOUR GOALS.
@@ -352,7 +317,7 @@ const Hero = () => {
                 SOLUTIONS THAT ALLOW OUR CLIENTS TO POSITION THEMSELVES IN A DISRUPTIVE WAY.
               </p>
             </div>
-            <div className="space-y-6 text-[8px] font-medium uppercase leading-[1.75] tracking-[0.08em] text-black sm:text-[9px] sm:tracking-[0.09em]">
+            <div>
               <p>
                 WE BELIEVE THAT DESIGNING BRANDS THAT REMAIN GRAPHICALLY UNCHANGED FOR 30 YEARS NO LONGER MAKES SENSE. WE WORK
                 BASED ON CONCEPTS THAT GO BEYOND TIME AND PROVIDE THE BASIS OF AESTHETICS.
@@ -399,20 +364,20 @@ const Hero = () => {
             </div>
 
             {/* Ingredients / footer */}
-            <div className="mt-2 grid grid-cols-2 gap-3 text-[7px] font-medium uppercase leading-[1.45] tracking-[0.08em] text-black/70">
-              <div>
-                <div className="opacity-80">INGREDIENTS</div>
-                <div>CONCEPT MINING,</div>
-                <div>STRATEGY, IDENTITY,</div>
-                <div>POSITIONING, BRAND PURPOSE</div>
-                <div className="mt-1">• CONCEPT DARKNESS</div>
-                <div>• CREATIVE DUCT TAPE</div>
-                <div>• DIGITAL PRODUCTS</div>
+            <div className="mt-2 grid grid-cols-2 gap-3 text-[10px] font-medium leading-[1.45] tracking-[0.08em] text-black/70">
+              <div className="flex flex-col gap-1">
+                <span className="font-bold block text-xs uppercase mb-1">INGREDIENTS</span>
+                <span>CONCEPT MINING,</span>
+                <span>STRATEGY, IDENTITY,</span>
+                <span>POSITIONING, BRAND PURPOSE</span>
+                <span>• CONCEPT DARKNESS</span>
+                <span>• CREATIVE DUCT TAPE</span>
+                <span>• DIGITAL PRODUCTS</span>
               </div>
-              <div className="text-right">
-                <div className="opacity-80">FOR</div>
-                <div>DIGITAL PRODUCTS FOR</div>
-                <div>CONTEMPORARY BRANDS</div>
+              <div className="flex flex-col gap-1 text-right">
+                <span className="font-bold block text-xs uppercase mb-1">FOR</span>
+                <span>DIGITAL PRODUCTS FOR</span>
+                <span>CONTEMPORARY BRANDS</span>
               </div>
             </div>
           </div>
@@ -426,10 +391,10 @@ const Hero = () => {
         id="section4"
         className="relative bg-[#f2f2f2]"
       >
-        <div className="container flex flex-col">
+        <div className="container flex flex-col pt-16">
           {/* Left — PRODUCTS (top, vertical) */}
           <div
-            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
+            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8 hidden md:block"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -437,12 +402,11 @@ const Hero = () => {
             </span>
           </div>
 
-
-          <div className="text-center ">
+          <div className="pt-40 text-center">
             {/* Center-left pill badge */}
 
             <h2
-              className="relative text-center uppercase font-thin text-[8rem] z-20"
+              className="relative z-20"
             >
               Website Development
             </h2>
@@ -455,8 +419,8 @@ const Hero = () => {
           </div>
 
           {/* Two-column body */}
-          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 text-justify sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
-            <div className="space-y-6 text-[8px] font-medium uppercase leading-[1.75] tracking-[0.08em] text-black sm:text-[9px] sm:tracking-[0.09em]">
+          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
+            <div>
               <p>
                 WE LOVE THINKING. EVERYTHING STARTS WITH AN IDEA AROUND WHICH WE CONSTRUCT THE ENTIRE BRAND COMMUNICATION. AN
                 INGENIOUS CONCEPT THAT PROVIDES A DIFFERENTIAL VALUE AND IS SUITABLE TO ACHIEVE YOUR GOALS.
@@ -466,7 +430,7 @@ const Hero = () => {
                 SOLUTIONS THAT ALLOW OUR CLIENTS TO POSITION THEMSELVES IN A DISRUPTIVE WAY.
               </p>
             </div>
-            <div className="space-y-6 text-[8px] font-medium uppercase leading-[1.75] tracking-[0.08em] text-black sm:text-[9px] sm:tracking-[0.09em]">
+            <div>
               <p>
                 WE BELIEVE THAT DESIGNING BRANDS THAT REMAIN GRAPHICALLY UNCHANGED FOR 30 YEARS NO LONGER MAKES SENSE. WE WORK
                 BASED ON CONCEPTS THAT GO BEYOND TIME AND PROVIDE THE BASIS OF AESTHETICS.
@@ -513,20 +477,20 @@ const Hero = () => {
             </div>
 
             {/* Ingredients / footer */}
-            <div className="mt-2 grid grid-cols-2 gap-3 text-[7px] font-medium uppercase leading-[1.45] tracking-[0.08em] text-black/70">
-              <div>
-                <div className="opacity-80">INGREDIENTS</div>
-                <div>CONCEPT MINING,</div>
-                <div>STRATEGY, IDENTITY,</div>
-                <div>POSITIONING, BRAND PURPOSE</div>
-                <div className="mt-1">• CONCEPT DARKNESS</div>
-                <div>• CREATIVE DUCT TAPE</div>
-                <div>• DIGITAL PRODUCTS</div>
+            <div className="mt-2 grid grid-cols-2 gap-3 text-[10px] font-medium leading-[1.45] tracking-[0.08em] text-black/70">
+              <div className="flex flex-col gap-1">
+                <span className="font-bold block text-xs uppercase mb-1">INGREDIENTS</span>
+                <span>CONCEPT MINING,</span>
+                <span>STRATEGY, IDENTITY,</span>
+                <span>POSITIONING, BRAND PURPOSE</span>
+                <span>• CONCEPT DARKNESS</span>
+                <span>• CREATIVE DUCT TAPE</span>
+                <span>• DIGITAL PRODUCTS</span>
               </div>
-              <div className="text-right">
-                <div className="opacity-80">FOR</div>
-                <div>DIGITAL PRODUCTS FOR</div>
-                <div>CONTEMPORARY BRANDS</div>
+              <div className="flex flex-col gap-1 text-right">
+                <span className="font-bold block text-xs uppercase mb-1">FOR</span>
+                <span>DIGITAL PRODUCTS FOR</span>
+                <span>CONTEMPORARY BRANDS</span>
               </div>
             </div>
           </div>
@@ -541,10 +505,10 @@ const Hero = () => {
         id="section5"
         className="relative bg-[#f2f2f2]"
       >
-        <div className="container flex flex-col">
+        <div className="container flex flex-col pt-16">
           {/* Left — PRODUCTS (top, vertical) */}
           <div
-            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
+            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8 hidden md:block"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -552,12 +516,11 @@ const Hero = () => {
             </span>
           </div>
 
-
-          <div className="text-center ">
+          <div className="pt-40 text-center">
             {/* Center-left pill badge */}
 
             <h2
-              className="relative text-center uppercase font-thin text-[8rem] z-20"
+              className="relative z-20"
             >
               Graphic Designing
             </h2>
@@ -570,8 +533,8 @@ const Hero = () => {
           </div>
 
           {/* Two-column body */}
-          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 text-justify sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
-            <div className="space-y-6 text-[8px] font-medium uppercase leading-[1.75] tracking-[0.08em] text-black sm:text-[9px] sm:tracking-[0.09em]">
+          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
+            <div>
               <p>
                 WE LOVE THINKING. EVERYTHING STARTS WITH AN IDEA AROUND WHICH WE CONSTRUCT THE ENTIRE BRAND COMMUNICATION. AN
                 INGENIOUS CONCEPT THAT PROVIDES A DIFFERENTIAL VALUE AND IS SUITABLE TO ACHIEVE YOUR GOALS.
@@ -581,7 +544,7 @@ const Hero = () => {
                 SOLUTIONS THAT ALLOW OUR CLIENTS TO POSITION THEMSELVES IN A DISRUPTIVE WAY.
               </p>
             </div>
-            <div className="space-y-6 text-[8px] font-medium uppercase leading-[1.75] tracking-[0.08em] text-black sm:text-[9px] sm:tracking-[0.09em]">
+            <div>
               <p>
                 WE BELIEVE THAT DESIGNING BRANDS THAT REMAIN GRAPHICALLY UNCHANGED FOR 30 YEARS NO LONGER MAKES SENSE. WE WORK
                 BASED ON CONCEPTS THAT GO BEYOND TIME AND PROVIDE THE BASIS OF AESTHETICS.
@@ -628,20 +591,20 @@ const Hero = () => {
             </div>
 
             {/* Ingredients / footer */}
-            <div className="mt-2 grid grid-cols-2 gap-3 text-[7px] font-medium uppercase leading-[1.45] tracking-[0.08em] text-black/70">
-              <div>
-                <div className="opacity-80">INGREDIENTS</div>
-                <div>CONCEPT MINING,</div>
-                <div>STRATEGY, IDENTITY,</div>
-                <div>POSITIONING, BRAND PURPOSE</div>
-                <div className="mt-1">• CONCEPT DARKNESS</div>
-                <div>• CREATIVE DUCT TAPE</div>
-                <div>• DIGITAL PRODUCTS</div>
+            <div className="mt-2 grid grid-cols-2 gap-3 text-[10px] font-medium leading-[1.45] tracking-[0.08em] text-black/70">
+              <div className="flex flex-col gap-1">
+                <span className="font-bold block text-xs uppercase mb-1">INGREDIENTS</span>
+                <span>CONCEPT MINING,</span>
+                <span>STRATEGY, IDENTITY,</span>
+                <span>POSITIONING, BRAND PURPOSE</span>
+                <span>• CONCEPT DARKNESS</span>
+                <span>• CREATIVE DUCT TAPE</span>
+                <span>• DIGITAL PRODUCTS</span>
               </div>
-              <div className="text-right">
-                <div className="opacity-80">FOR</div>
-                <div>DIGITAL PRODUCTS FOR</div>
-                <div>CONTEMPORARY BRANDS</div>
+              <div className="flex flex-col gap-1 text-right">
+                <span className="font-bold block text-xs uppercase mb-1">FOR</span>
+                <span>DIGITAL PRODUCTS FOR</span>
+                <span>CONTEMPORARY BRANDS</span>
               </div>
             </div>
           </div>
@@ -656,10 +619,10 @@ const Hero = () => {
         id="section6"
         className="relative bg-[#f2f2f2]"
       >
-        <div className="container flex flex-col">
+        <div className="container flex flex-col pt-16">
           {/* Left — PRODUCTS (top, vertical) */}
           <div
-            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
+            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8 hidden md:block"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -667,22 +630,11 @@ const Hero = () => {
             </span>
           </div>
 
-          {/* #01 card */}
-          {/* <div className="flex justify-center">
-            <div className="rounded-md border border-black bg-transparent px-6 py-8 text-center sm:px-8 sm:py-10">
-              <p className="text-[clamp(2.5rem,8vw,4rem)] font-bold leading-none tracking-tight">#01</p>
-              <p className="mt-3 text-[10px] font-medium uppercase tracking-[0.18em] sm:text-[11px] sm:tracking-[0.2em]">
-                SMO
-              </p>
-            </div>
-          </div> */}
-
-
-          <div className="text-center ">
+          <div className="pt-40 text-center">
             {/* Center-left pill badge */}
 
             <h2
-              className="relative text-center uppercase font-thin text-[8rem] z-20"
+              className="relative z-20"
             >
               Video Editing
             </h2>
@@ -695,8 +647,8 @@ const Hero = () => {
           </div>
 
           {/* Two-column body */}
-          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 text-justify sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
-            <div className="space-y-6 text-[8px] font-medium uppercase leading-[1.75] tracking-[0.08em] text-black sm:text-[9px] sm:tracking-[0.09em]">
+          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
+            <div>
               <p>
                 WE LOVE THINKING. EVERYTHING STARTS WITH AN IDEA AROUND WHICH WE CONSTRUCT THE ENTIRE BRAND COMMUNICATION. AN
                 INGENIOUS CONCEPT THAT PROVIDES A DIFFERENTIAL VALUE AND IS SUITABLE TO ACHIEVE YOUR GOALS.
@@ -706,7 +658,7 @@ const Hero = () => {
                 SOLUTIONS THAT ALLOW OUR CLIENTS TO POSITION THEMSELVES IN A DISRUPTIVE WAY.
               </p>
             </div>
-            <div className="space-y-6 text-[8px] font-medium uppercase leading-[1.75] tracking-[0.08em] text-black sm:text-[9px] sm:tracking-[0.09em]">
+            <div>
               <p>
                 WE BELIEVE THAT DESIGNING BRANDS THAT REMAIN GRAPHICALLY UNCHANGED FOR 30 YEARS NO LONGER MAKES SENSE. WE WORK
                 BASED ON CONCEPTS THAT GO BEYOND TIME AND PROVIDE THE BASIS OF AESTHETICS.
@@ -753,20 +705,20 @@ const Hero = () => {
             </div>
 
             {/* Ingredients / footer */}
-            <div className="mt-2 grid grid-cols-2 gap-3 text-[7px] font-medium uppercase leading-[1.45] tracking-[0.08em] text-black/70">
-              <div>
-                <div className="opacity-80">INGREDIENTS</div>
-                <div>CONCEPT MINING,</div>
-                <div>STRATEGY, IDENTITY,</div>
-                <div>POSITIONING, BRAND PURPOSE</div>
-                <div className="mt-1">• CONCEPT DARKNESS</div>
-                <div>• CREATIVE DUCT TAPE</div>
-                <div>• DIGITAL PRODUCTS</div>
+            <div className="mt-2 grid grid-cols-2 gap-3 text-[10px] font-medium leading-[1.45] tracking-[0.08em] text-black/70">
+              <div className="flex flex-col gap-1">
+                <span className="font-bold block text-xs uppercase mb-1">INGREDIENTS</span>
+                <span>CONCEPT MINING,</span>
+                <span>STRATEGY, IDENTITY,</span>
+                <span>POSITIONING, BRAND PURPOSE</span>
+                <span>• CONCEPT DARKNESS</span>
+                <span>• CREATIVE DUCT TAPE</span>
+                <span>• DIGITAL PRODUCTS</span>
               </div>
-              <div className="text-right">
-                <div className="opacity-80">FOR</div>
-                <div>DIGITAL PRODUCTS FOR</div>
-                <div>CONTEMPORARY BRANDS</div>
+              <div className="flex flex-col gap-1 text-right">
+                <span className="font-bold block text-xs uppercase mb-1">FOR</span>
+                <span>DIGITAL PRODUCTS FOR</span>
+                <span>CONTEMPORARY BRANDS</span>
               </div>
             </div>
           </div>
@@ -780,10 +732,10 @@ const Hero = () => {
         id="section7"
         className="relative bg-[#f2f2f2]"
       >
-        <div className="container flex flex-col">
+        <div className="container flex flex-col pt-16">
           {/* Left — PRODUCTS (top, vertical) */}
           <div
-            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
+            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8 hidden md:block"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -791,12 +743,11 @@ const Hero = () => {
             </span>
           </div>
 
-
-          <div className="text-center ">
+          <div className="pt-40 text-center">
             {/* Center-left pill badge */}
 
             <h2
-              className="relative text-center uppercase font-thin text-[8rem] z-20"
+              className="relative z-20"
             >
               Content Writing
             </h2>
@@ -809,8 +760,8 @@ const Hero = () => {
           </div>
 
           {/* Two-column body */}
-          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 text-justify sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
-            <div className="space-y-6 text-[8px] font-medium uppercase leading-[1.75] tracking-[0.08em] text-black sm:text-[9px] sm:tracking-[0.09em]">
+          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
+            <div>
               <p>
                 WE LOVE THINKING. EVERYTHING STARTS WITH AN IDEA AROUND WHICH WE CONSTRUCT THE ENTIRE BRAND COMMUNICATION. AN
                 INGENIOUS CONCEPT THAT PROVIDES A DIFFERENTIAL VALUE AND IS SUITABLE TO ACHIEVE YOUR GOALS.
@@ -820,7 +771,7 @@ const Hero = () => {
                 SOLUTIONS THAT ALLOW OUR CLIENTS TO POSITION THEMSELVES IN A DISRUPTIVE WAY.
               </p>
             </div>
-            <div className="space-y-6 text-[8px] font-medium uppercase leading-[1.75] tracking-[0.08em] text-black sm:text-[9px] sm:tracking-[0.09em]">
+            <div>
               <p>
                 WE BELIEVE THAT DESIGNING BRANDS THAT REMAIN GRAPHICALLY UNCHANGED FOR 30 YEARS NO LONGER MAKES SENSE. WE WORK
                 BASED ON CONCEPTS THAT GO BEYOND TIME AND PROVIDE THE BASIS OF AESTHETICS.
@@ -867,20 +818,20 @@ const Hero = () => {
             </div>
 
             {/* Ingredients / footer */}
-            <div className="mt-2 grid grid-cols-2 gap-3 text-[7px] font-medium uppercase leading-[1.45] tracking-[0.08em] text-black/70">
-              <div>
-                <div className="opacity-80">INGREDIENTS</div>
-                <div>CONCEPT MINING,</div>
-                <div>STRATEGY, IDENTITY,</div>
-                <div>POSITIONING, BRAND PURPOSE</div>
-                <div className="mt-1">• CONCEPT DARKNESS</div>
-                <div>• CREATIVE DUCT TAPE</div>
-                <div>• DIGITAL PRODUCTS</div>
+            <div className="mt-2 grid grid-cols-2 gap-3 text-[10px] font-medium leading-[1.45] tracking-[0.08em] text-black/70">
+              <div className="flex flex-col gap-1">
+                <span className="font-bold block text-xs uppercase mb-1">INGREDIENTS</span>
+                <span>CONCEPT MINING,</span>
+                <span>STRATEGY, IDENTITY,</span>
+                <span>POSITIONING, BRAND PURPOSE</span>
+                <span>• CONCEPT DARKNESS</span>
+                <span>• CREATIVE DUCT TAPE</span>
+                <span>• DIGITAL PRODUCTS</span>
               </div>
-              <div className="text-right">
-                <div className="opacity-80">FOR</div>
-                <div>DIGITAL PRODUCTS FOR</div>
-                <div>CONTEMPORARY BRANDS</div>
+              <div className="flex flex-col gap-1 text-right">
+                <span className="font-bold block text-xs uppercase mb-1">FOR</span>
+                <span>DIGITAL PRODUCTS FOR</span>
+                <span>CONTEMPORARY BRANDS</span>
               </div>
             </div>
           </div>
@@ -894,10 +845,10 @@ const Hero = () => {
         id="section8"
         className="relative bg-[#f2f2f2]"
       >
-        <div className="container flex flex-col">
+        <div className="container flex flex-col pt-16">
           {/* Left — PRODUCTS (top, vertical) */}
           <div
-            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
+            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8 hidden md:block"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -905,12 +856,11 @@ const Hero = () => {
             </span>
           </div>
 
-
-          <div className="text-center ">
+          <div className="pt-40 text-center">
             {/* Center-left pill badge */}
 
             <h2
-              className="relative text-center uppercase font-thin text-[8rem] z-20"
+              className="relative z-20"
             >
               Performance Marketing
             </h2>
@@ -923,8 +873,8 @@ const Hero = () => {
           </div>
 
           {/* Two-column body */}
-          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 text-justify sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
-            <div className="space-y-6 text-[8px] font-medium uppercase leading-[1.75] tracking-[0.08em] text-black sm:text-[9px] sm:tracking-[0.09em]">
+          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
+            <div>
               <p>
                 WE LOVE THINKING. EVERYTHING STARTS WITH AN IDEA AROUND WHICH WE CONSTRUCT THE ENTIRE BRAND COMMUNICATION. AN
                 INGENIOUS CONCEPT THAT PROVIDES A DIFFERENTIAL VALUE AND IS SUITABLE TO ACHIEVE YOUR GOALS.
@@ -934,7 +884,7 @@ const Hero = () => {
                 SOLUTIONS THAT ALLOW OUR CLIENTS TO POSITION THEMSELVES IN A DISRUPTIVE WAY.
               </p>
             </div>
-            <div className="space-y-6 text-[8px] font-medium uppercase leading-[1.75] tracking-[0.08em] text-black sm:text-[9px] sm:tracking-[0.09em]">
+            <div>
               <p>
                 WE BELIEVE THAT DESIGNING BRANDS THAT REMAIN GRAPHICALLY UNCHANGED FOR 30 YEARS NO LONGER MAKES SENSE. WE WORK
                 BASED ON CONCEPTS THAT GO BEYOND TIME AND PROVIDE THE BASIS OF AESTHETICS.
@@ -981,20 +931,20 @@ const Hero = () => {
             </div>
 
             {/* Ingredients / footer */}
-            <div className="mt-2 grid grid-cols-2 gap-3 text-[7px] font-medium uppercase leading-[1.45] tracking-[0.08em] text-black/70">
-              <div>
-                <div className="opacity-80">INGREDIENTS</div>
-                <div>CONCEPT MINING,</div>
-                <div>STRATEGY, IDENTITY,</div>
-                <div>POSITIONING, BRAND PURPOSE</div>
-                <div className="mt-1">• CONCEPT DARKNESS</div>
-                <div>• CREATIVE DUCT TAPE</div>
-                <div>• DIGITAL PRODUCTS</div>
+            <div className="mt-2 grid grid-cols-2 gap-3 text-[10px] font-medium leading-[1.45] tracking-[0.08em] text-black/70">
+              <div className="flex flex-col gap-1">
+                <span className="font-bold block text-xs uppercase mb-1">INGREDIENTS</span>
+                <span>CONCEPT MINING,</span>
+                <span>STRATEGY, IDENTITY,</span>
+                <span>POSITIONING, BRAND PURPOSE</span>
+                <span>• CONCEPT DARKNESS</span>
+                <span>• CREATIVE DUCT TAPE</span>
+                <span>• DIGITAL PRODUCTS</span>
               </div>
-              <div className="text-right">
-                <div className="opacity-80">FOR</div>
-                <div>DIGITAL PRODUCTS FOR</div>
-                <div>CONTEMPORARY BRANDS</div>
+              <div className="flex flex-col gap-1 text-right">
+                <span className="font-bold block text-xs uppercase mb-1">FOR</span>
+                <span>DIGITAL PRODUCTS FOR</span>
+                <span>CONTEMPORARY BRANDS</span>
               </div>
             </div>
           </div>
@@ -1008,10 +958,10 @@ const Hero = () => {
         id="section9"
         className="relative bg-[#f2f2f2]"
       >
-        <div className="container flex flex-col">
+        <div className="container flex flex-col pt-16">
           {/* Left — PRODUCTS (top, vertical) */}
           <div
-            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
+            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8 hidden md:block"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -1019,12 +969,11 @@ const Hero = () => {
             </span>
           </div>
 
-
-          <div className="text-center ">
+          <div className="pt-40 text-center">
             {/* Center-left pill badge */}
 
             <h2
-              className="relative text-center uppercase font-thin text-[8rem] z-20"
+              className="relative z-20"
             >
               App Development
             </h2>
@@ -1037,8 +986,8 @@ const Hero = () => {
           </div>
 
           {/* Two-column body */}
-          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 text-justify sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
-            <div className="space-y-6 text-[8px] font-medium uppercase leading-[1.75] tracking-[0.08em] text-black sm:text-[9px] sm:tracking-[0.09em]">
+          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
+            <div>
               <p>
                 WE LOVE THINKING. EVERYTHING STARTS WITH AN IDEA AROUND WHICH WE CONSTRUCT THE ENTIRE BRAND COMMUNICATION. AN
                 INGENIOUS CONCEPT THAT PROVIDES A DIFFERENTIAL VALUE AND IS SUITABLE TO ACHIEVE YOUR GOALS.
@@ -1048,7 +997,7 @@ const Hero = () => {
                 SOLUTIONS THAT ALLOW OUR CLIENTS TO POSITION THEMSELVES IN A DISRUPTIVE WAY.
               </p>
             </div>
-            <div className="space-y-6 text-[8px] font-medium uppercase leading-[1.75] tracking-[0.08em] text-black sm:text-[9px] sm:tracking-[0.09em]">
+            <div>
               <p>
                 WE BELIEVE THAT DESIGNING BRANDS THAT REMAIN GRAPHICALLY UNCHANGED FOR 30 YEARS NO LONGER MAKES SENSE. WE WORK
                 BASED ON CONCEPTS THAT GO BEYOND TIME AND PROVIDE THE BASIS OF AESTHETICS.
@@ -1095,20 +1044,20 @@ const Hero = () => {
             </div>
 
             {/* Ingredients / footer */}
-            <div className="mt-2 grid grid-cols-2 gap-3 text-[7px] font-medium uppercase leading-[1.45] tracking-[0.08em] text-black/70">
-              <div>
-                <div className="opacity-80">INGREDIENTS</div>
-                <div>CONCEPT MINING,</div>
-                <div>STRATEGY, IDENTITY,</div>
-                <div>POSITIONING, BRAND PURPOSE</div>
-                <div className="mt-1">• CONCEPT DARKNESS</div>
-                <div>• CREATIVE DUCT TAPE</div>
-                <div>• DIGITAL PRODUCTS</div>
+            <div className="mt-2 grid grid-cols-2 gap-3 text-[10px] font-medium leading-[1.45] tracking-[0.08em] text-black/70">
+              <div className="flex flex-col gap-1">
+                <span className="font-bold block text-xs uppercase mb-1">INGREDIENTS</span>
+                <span>CONCEPT MINING,</span>
+                <span>STRATEGY, IDENTITY,</span>
+                <span>POSITIONING, BRAND PURPOSE</span>
+                <span>• CONCEPT DARKNESS</span>
+                <span>• CREATIVE DUCT TAPE</span>
+                <span>• DIGITAL PRODUCTS</span>
               </div>
-              <div className="text-right">
-                <div className="opacity-80">FOR</div>
-                <div>DIGITAL PRODUCTS FOR</div>
-                <div>CONTEMPORARY BRANDS</div>
+              <div className="flex flex-col gap-1 text-right">
+                <span className="font-bold block text-xs uppercase mb-1">FOR</span>
+                <span>DIGITAL PRODUCTS FOR</span>
+                <span>CONTEMPORARY BRANDS</span>
               </div>
             </div>
           </div>
@@ -1121,10 +1070,10 @@ const Hero = () => {
         id="section10"
         className="relative bg-[#f2f2f2]"
       >
-        <div className="container flex flex-col">
+        <div className="container flex flex-col pt-16">
           {/* Left — PRODUCTS (top, vertical) */}
           <div
-            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8"
+            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8 hidden md:block"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -1132,22 +1081,11 @@ const Hero = () => {
             </span>
           </div>
 
-          {/* #01 card */}
-          {/* <div className="flex justify-center">
-            <div className="rounded-md border border-black bg-transparent px-6 py-8 text-center sm:px-8 sm:py-10">
-              <p className="text-[clamp(2.5rem,8vw,4rem)] font-bold leading-none tracking-tight">#01</p>
-              <p className="mt-3 text-[10px] font-medium uppercase tracking-[0.18em] sm:text-[11px] sm:tracking-[0.2em]">
-                SMO
-              </p>
-            </div>
-          </div> */}
-
-
-          <div className="text-center ">
+          <div className="pt-40 text-center">
             {/* Center-left pill badge */}
 
             <h2
-              className="relative text-center uppercase font-thin text-[8rem] z-20"
+              className="relative z-20"
             >
               Algorithm Analysis
             </h2>
@@ -1160,8 +1098,8 @@ const Hero = () => {
           </div>
 
           {/* Two-column body */}
-          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 text-justify sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
-            <div className="space-y-6 text-[8px] font-medium uppercase leading-[1.75] tracking-[0.08em] text-black sm:text-[9px] sm:tracking-[0.09em]">
+          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
+            <div>
               <p>
                 WE LOVE THINKING. EVERYTHING STARTS WITH AN IDEA AROUND WHICH WE CONSTRUCT THE ENTIRE BRAND COMMUNICATION. AN
                 INGENIOUS CONCEPT THAT PROVIDES A DIFFERENTIAL VALUE AND IS SUITABLE TO ACHIEVE YOUR GOALS.
@@ -1171,7 +1109,7 @@ const Hero = () => {
                 SOLUTIONS THAT ALLOW OUR CLIENTS TO POSITION THEMSELVES IN A DISRUPTIVE WAY.
               </p>
             </div>
-            <div className="space-y-6 text-[8px] font-medium uppercase leading-[1.75] tracking-[0.08em] text-black sm:text-[9px] sm:tracking-[0.09em]">
+            <div>
               <p>
                 WE BELIEVE THAT DESIGNING BRANDS THAT REMAIN GRAPHICALLY UNCHANGED FOR 30 YEARS NO LONGER MAKES SENSE. WE WORK
                 BASED ON CONCEPTS THAT GO BEYOND TIME AND PROVIDE THE BASIS OF AESTHETICS.
@@ -1218,20 +1156,20 @@ const Hero = () => {
             </div>
 
             {/* Ingredients / footer */}
-            <div className="mt-2 grid grid-cols-2 gap-3 text-[7px] font-medium uppercase leading-[1.45] tracking-[0.08em] text-black/70">
-              <div>
-                <div className="opacity-80">INGREDIENTS</div>
-                <div>CONCEPT MINING,</div>
-                <div>STRATEGY, IDENTITY,</div>
-                <div>POSITIONING, BRAND PURPOSE</div>
-                <div className="mt-1">• CONCEPT DARKNESS</div>
-                <div>• CREATIVE DUCT TAPE</div>
-                <div>• DIGITAL PRODUCTS</div>
+            <div className="mt-2 grid grid-cols-2 gap-3 text-[10px] font-medium leading-[1.45] tracking-[0.08em] text-black/70">
+              <div className="flex flex-col gap-1">
+                <span className="font-bold block text-xs uppercase mb-1">INGREDIENTS</span>
+                <span>CONCEPT MINING,</span>
+                <span>STRATEGY, IDENTITY,</span>
+                <span>POSITIONING, BRAND PURPOSE</span>
+                <span>• CONCEPT DARKNESS</span>
+                <span>• CREATIVE DUCT TAPE</span>
+                <span>• DIGITAL PRODUCTS</span>
               </div>
-              <div className="text-right">
-                <div className="opacity-80">FOR</div>
-                <div>DIGITAL PRODUCTS FOR</div>
-                <div>CONTEMPORARY BRANDS</div>
+              <div className="flex flex-col gap-1 text-right">
+                <span className="font-bold block text-xs uppercase mb-1">FOR</span>
+                <span>DIGITAL PRODUCTS FOR</span>
+                <span>CONTEMPORARY BRANDS</span>
               </div>
             </div>
           </div>
@@ -1241,7 +1179,7 @@ const Hero = () => {
       </section>
 
       {/* Scroll end marker for last scanner pin (GSAP ScrollTrigger endTrigger) */}
-      <div id="section11" className="" aria-hidden />
+      {/* <div id="section11" className="" aria-hidden /> */}
 
       <WhyChooseUsLite />
       {/* service area end */}
@@ -1265,12 +1203,12 @@ const Hero = () => {
       </section> */}
 
       <section id="ctaSection" className="pt-10 pb-32">
-        <div className="container flex flex-col gap-10">
-          <h3 className="text-[7rem] font-thin uppercase leading-none max-w-screen mx-auto text-center">
-            Thanks for <br/>your visit!
+        <div className="container flex flex-col gap-10 overflow-hidden">
+          <h3 className="text-5xl md:text-7xl lg:text-[6rem] font-thin uppercase leading-none mx-auto text-center">
+            Thanks for <br />your visit!
           </h3>
           <div className="h-48"></div>
-          <Link href="#" className="!hover:bg-black bg-white hover:text-white relative z-10 text-center uppercase text-7xl font-thin max-w-lg mx-auto px-5 py-4 border border-black rounded-full">
+          <Link href="#" className="!hover:bg-black bg-white hover:text-white relative z-10 text-center uppercase text-5xl md:text-7xl lg:text-[6rem] font-thin mx-auto px-5 py-4 border border-black rounded-full">
             Let's Talk!
           </Link>
         </div>
