@@ -1209,7 +1209,7 @@ const Hero = () => {
           </h3>
           <div className="h-48"></div>
           <Link href="#" className="!hover:bg-black bg-white hover:text-white relative z-10 text-center uppercase text-5xl md:text-7xl lg:text-[6rem] font-thin mx-auto px-5 py-4 border border-black rounded-full">
-            Let's Talk!
+            Let&apos;s Talk!
           </Link>
         </div>
       </section>

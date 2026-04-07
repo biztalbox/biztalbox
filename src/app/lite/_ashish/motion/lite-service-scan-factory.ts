@@ -135,6 +135,8 @@ function addScanWarmTintToTimeline(
   startTime: number,
   duration: number,
 ): void {
+  const restoreAt = startTime + duration + 0.06;
+  const restoreDur = Math.min(0.22, Math.max(0.12, duration * 0.6));
   root.traverse((obj) => {
     if (!(obj instanceof THREE.Mesh)) return;
     const raw = obj.material;
@@ -170,6 +172,8 @@ function addScanWarmTintToTimeline(
           },
           startTime,
         );
+        tl.to(e, { r: r0, g: g0, b: b0, duration: restoreDur, ease: "power2.out" }, restoreAt);
+        tl.to(m, { emissiveIntensity: i0, duration: restoreDur, ease: "power2.out" }, restoreAt);
       } else if ("color" in m && m.color instanceof THREE.Color) {
         const c = m.color;
         const sr = c.r;
@@ -182,6 +186,7 @@ function addScanWarmTintToTimeline(
           { r: end.r, g: end.g, b: end.b, duration, ease: "power2.out" },
           startTime,
         );
+        tl.to(c, { r: sr, g: sg, b: sb, duration: restoreDur, ease: "power2.out" }, restoreAt);
       }
     }
   });
