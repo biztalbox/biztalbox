@@ -1270,7 +1270,7 @@ const Hero = () => {
             Thanks for <br/>your visit!
           </h3>
           <div className="h-48"></div>
-          <Link href="#" className="hover:bg-black bg-white hover:text-white relative z-10 text-center uppercase text-7xl font-thin max-w-lg mx-auto px-5 py-4 border border-black rounded-full">
+          <Link href="#" className="!hover:bg-black bg-white hover:text-white relative z-10 text-center uppercase text-7xl font-thin max-w-lg mx-auto px-5 py-4 border border-black rounded-full">
             Let's Talk!
           </Link>
         </div>

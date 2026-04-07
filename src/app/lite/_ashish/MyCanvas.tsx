@@ -4,7 +4,7 @@ import { useMemo, useRef } from "react";
 import { useLoader } from "@react-three/fiber";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import type { Group } from "three";
+import type { Group, Object3D } from "three";
 import type { GLTF } from "three/examples/jsm/loaders/GLTFLoader.js";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -39,6 +39,15 @@ function configureGltfLoader(loader: GLTFLoader) {
   const draco = new DRACOLoader();
   draco.setDecoderPath("https://www.gstatic.com/draco/v1/decoders/");
   loader.setDRACOLoader(draco);
+}
+
+function findChildByName(root: Object3D, name: string): Object3D | null {
+  let found: Object3D | null = null;
+  root.traverse((obj) => {
+    if (found || obj.name !== name) return;
+    found = obj;
+  });
+  return found;
 }
 
 const MyCanvas = () => {
@@ -106,7 +115,8 @@ const MyCanvas = () => {
           !appdevRef.current ||
           !graphicRef.current ||
           !videoRef.current ||
-          !algoRef.current
+          !algoRef.current ||
+          !bucketRef.current
         ) {
           if (!cancelled && attempts++ < maxAttempts) requestAnimationFrame(mountScroll);
           return;
@@ -152,11 +162,37 @@ const MyCanvas = () => {
             start: "top bottom",
             end: "top top",
             scrub: 2.5,
-            markers: true,
+            // pin: true,
+            // pinSpacing: true,
+            // anticipatePin: 1,
+            // markers: true,
+            // invalidateOnRefresh: true,
           },
         });
 
-        // addToCartTl.to(bucketRef.current.scale, { x: 6.5, y: 6.5, z: 6.5, duration: 2, ease: "power3.inOut" }, 0);
+        const asa1 = findChildByName(bucketRef.current, "Asa1");
+        const asa2 = findChildByName(bucketRef.current, "Asa2");
+
+        addToCartTl.to(bucketRef.current.scale, { x: 0, y: 0, z: 0, duration: 0, ease: "power3.inOut" }, 0);
+        addToCartTl.to(bucketRef.current.scale, { x: 8, y: 8, z: 8, duration: 0, ease: "power3.inOut" }, 0);
+        addToCartTl.to(bucketRef.current.rotation, { x: 0.3, y: 0.6, duration: 3, ease: "power3.inOut" }, 0.3);
+        addToCartTl.to(bucketRef.current.scale, { x: 7, y: 7, z: 7, duration: 3, ease: "power3.inOut" }, 0.3);
+
+        /** Local-space offsets for nested `bucket.glb` meshes — edit targets as you like */
+        if (asa1) {
+          addToCartTl.to(
+            asa1.rotation,
+            { z: "+=2.5", duration: 3, ease: "power3.inOut" },
+            0.3,
+          );
+        }
+        if (asa2) {
+          addToCartTl.to(
+            asa2.rotation,
+            { z: "-=2.5", duration: 3, ease: "power3.inOut" },
+            0.3,
+          );
+        }
 
         requestAnimationFrame(() => {
           ScrollTrigger.refresh();
@@ -323,7 +359,7 @@ const MyCanvas = () => {
           floatIntensity: 0.8,
           floatingRange: [-0.1, 0.1],
         }}
-        scale={8}
+        scale={0}
         rotation={[1, 0, 0]}
       />
 

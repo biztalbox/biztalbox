@@ -5,7 +5,7 @@ import shape from '@/assets/img/inner-about/about/shape-1.png';
 
 export default function WhyChooseUsLite() {
   return (
-    <div id="section11" className="ab-about-area py-36 z-index-5 why_choose_us_wrapper">
+    <div id="section11" className="bg-white relative z-10 ab-about-area py-36 z-index-5 why_choose_us_wrapper">
       <div className="container">
         <div className="row">
           <div className="col-xl-12">
