@@ -10,32 +10,44 @@
       "scannerId": "lite-scanner-seo",
       "approach": {
         "trigger": "#section0",
+        "start": "top 30%",
         "endTrigger": "#lite-scanner-seo"
       },
       "scan": {
-        "endTrigger": "#section3",
-        "pinStart": "top 30%",
-        "pinEnd": "top -30%"
+        "endTrigger": "#section3"
+      },
+      "motion":{
+        "approach":{
+          "rotation":{
+            "y": "+=28"
+          },
+          "duration": {
+            "rotation": 3
+          }
+        }
       }
     },
     {
       "modelKey": "smo",
       "scannerId": "lite-scanner-smo",
       "approach": {
-        "trigger": "#section3",
+        "trigger": "#section2",
         "endTrigger": "#lite-scanner-smo"
       },
       "scan": {
-        "endTrigger": "#section4"
+        "endTrigger": "#section4",
+        "pinStart": "top 20%",
+        "pinEnd": "top -30%"
+
       },
       "motion": {
         "approach": {
           "position": {
-            "y": "-=600",
+            "y": "-=590",
             "x": "+=10"
           },
           "rotation": {
-            "x": "+=9.2",
+            "x": "+=34.5",
             "z": "+=3.2"
           },
           "scale": 0.35,
@@ -52,11 +64,15 @@
       "modelKey": "webdev",
       "scannerId": "lite-scanner-webdev",
       "approach": {
-        "trigger": "#section4",
+        "trigger": "#section3",
+        "start": "center top",
         "endTrigger": "#lite-scanner-webdev"
       },
       "scan": {
-        "endTrigger": "#section5"
+        "endTrigger": "#section5",
+        
+        "pinStart": "top 20%",
+        "pinEnd": "top -30%"
       },
       "motion": {
         "approach": {
@@ -80,7 +96,8 @@
       "modelKey": "graphic",
       "scannerId": "lite-scanner-graphic",
       "approach": {
-        "trigger": "#section5",
+        "trigger": "#section4",
+        "start": "top top",
         "endTrigger": "#lite-scanner-graphic"
       },
       "scan": {
@@ -89,14 +106,14 @@
       "motion": {
         "approach": {
           "position": {
-            "y": "-=430",
-            "x": "+=10"
+            "y": "-=480",
+            "x": "+=5",
+            "z": "+=40"
           },
           "rotation": {
-            "x": "+=9.2",
-            "z": "+=3.2"
+            "y": "+=57.5"
           },
-          "scale": 3,
+          "scale": 1,
           "durations": {
             "position": 2,
             "scale": 2,
