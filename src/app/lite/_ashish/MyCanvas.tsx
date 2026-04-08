@@ -284,7 +284,7 @@ const MyCanvas = () => {
           floatingRange: [-0.1, 0.1],
         }}
         scale={1}
-        scale={1}
+       
         rotation={[0, -0.99, 0]}
       />
       

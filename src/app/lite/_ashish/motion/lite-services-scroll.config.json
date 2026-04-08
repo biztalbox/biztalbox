@@ -71,14 +71,14 @@
       "scan": {
         "endTrigger": "#section5",
         
-        "pinStart": "top 20%",
+        "pinStart": "top 10%",
         "pinEnd": "top -30%"
       },
       "motion": {
         "approach": {
           "position": {
             "x": "+=300",
-            "y": "-=400"
+            "y": "-=330"
           },
           "rotation": {
             "x": "+=9.2",
@@ -106,7 +106,7 @@
       "motion": {
         "approach": {
           "position": {
-            "y": "-=480",
+            "y": "-=430",
             "x": "+=5",
             "z": "+=40"
           },
@@ -127,7 +127,8 @@
       "modelKey": "video",
       "scannerId": "lite-scanner-video",
       "approach": {
-        "trigger": "#section6",
+        "trigger": "#section5",
+        "start": "center top",
         "endTrigger": "#lite-scanner-video"
       },
       "scan": {
@@ -158,7 +159,8 @@
       "modelKey": "content",
       "scannerId": "lite-scanner-content",
       "approach": {
-        "trigger": "#section7",
+        "trigger": "#section6",
+        "start": "center top",
         "endTrigger": "#lite-scanner-content"
       },
       "scan": {
@@ -171,8 +173,8 @@
             "x": "+=140"
           },
           "rotation": {
-            "x": "+=0",
-            "z": "+=0"
+            "x": "+=18.4",
+            "z": "+=6.4"
           },
           
           "scale": 1,
@@ -190,7 +192,8 @@
       "modelKey": "ads",
       "scannerId": "lite-scanner-ads",
       "approach": {
-        "trigger": "#section8",
+        "trigger": "#section7",
+        "start": "top top",
         "endTrigger": "#lite-scanner-ads"
       },
       "scan": {
@@ -203,8 +206,8 @@
             "x": "-=100"
           },
           "rotation": {
-            "x": "+=9.2",
-            "z": "+=3.2"
+            "x": "+=18.4",
+            "z": "+=6.4"
           },
           "scale": 0.17,
           "durations": {
@@ -220,7 +223,8 @@
       "modelKey": "appdev",
       "scannerId": "lite-scanner-appdev",
       "approach": {
-        "trigger": "#section9",
+        "trigger": "#section8",
+        "start": "top top",
         "endTrigger": "#lite-scanner-appdev"
       },
       "scan": {
@@ -229,11 +233,11 @@
         "approach": {
           "position": {
             "y": "-=460",
-            "x": "-=30"
+            "x": "-=40"
           },
           "rotation": {
-            "x": "+=9.2",
-            "z": "+=3.2"
+            "x": "+=32.5",
+            "z": "0"
           },
           "scale": 0.5,
           "durations": {
@@ -248,7 +252,8 @@
       "modelKey": "algo",
       "scannerId": "lite-scanner-algo",
       "approach": {
-        "trigger": "#section10",
+        "trigger": "#section9",
+        "start": "center top",
         "endTrigger": "#lite-scanner-algo"
       },
       "scan": {
@@ -257,14 +262,14 @@
       "motion": {
         "approach": {
           "position": {
-            "y": "-=380",
-            "x": "-=170"
+            "y": "-=370",
+            "x": "-=80"
           },
           "rotation": {
             "x": "+=9.2",
             "z": "+=3.2"
           },
-          "scale": 3,
+          "scale": 2,
           "durations": {
             "position": 2,
             "scale": 2,
