@@ -298,7 +298,7 @@ export function attachLiteServiceScanPair(options: {
   });
 
   /** Warm rosy “scan” read on the GLB, peaking as the model vanishes (scrub reverses cleanly). */
-  addScanWarmTintToTimeline(scanTl, group, 1.68, 0.36);
+  addScanWarmTintToTimeline(scanTl, group, 1.50, 1.36);
 
   scanTl.to(group.scale, { x: 0, y: 0, z: 0, duration: 0.15, ease: "power1.inOut" }, 2);
   scanTl.to(scanner, { height: "150px", width: "150px", duration: 0.7, ease: "power1.inOut" }, 2.9);

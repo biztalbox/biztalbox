@@ -31,7 +31,7 @@ const LITE_GLB_URLS = [
   "/assets/lite_models/appdev.glb",
   "/assets/lite_models/graphic.glb",
   "/assets/lite_models/video.glb",
-  "/assets/lite_models/mri3.glb",
+  "/assets/lite_models/algo.glb",
   "/assets/lite_models/bucket.glb",
 ] as const;
 
@@ -93,7 +93,7 @@ const MyCanvas = () => {
   const appdevScene = sceneBySrc.get("/assets/lite_models/appdev.glb");
   const graphicScene = sceneBySrc.get("/assets/lite_models/graphic.glb");
   const videoScene = sceneBySrc.get("/assets/lite_models/video.glb");
-  const algoScene = sceneBySrc.get("/assets/lite_models/mri3.glb");
+  const algoScene = sceneBySrc.get("/assets/lite_models/algo.glb");
   const bucketScene = sceneBySrc.get("/assets/lite_models/bucket.glb");
 
   useGSAP(
@@ -259,27 +259,27 @@ const MyCanvas = () => {
       <WigglingModel
         scene={algoScene}
         groupRef={algoRef}
-        position={[470, 240, 400]}
+        position={[380, 240, 500]}
         floatConfig={{
           speed: 6,
           rotationIntensity: 0.6,
           floatIntensity: 0.8,
           floatingRange: [-0.1, 0.4],
         }}
-        scale={[3, 3.5, 3]}
-        rotation={[0, -0.5, 0]}
+        scale={[2,2, 2]}
+        rotation={[0, 0.5, 0]}
       />
       <WigglingModel
         scene={graphicScene}
         groupRef={graphicRef}
-        position={[40, 220, 0]}
+        position={[300, 260, 400]}
         floatConfig={{
           speed: 5,
           rotationIntensity: 0.5,
           floatIntensity: 1,
           floatingRange: [-0.1, 0.1],
         }}
-        scale={0.45}
+        scale={1}
         rotation={[0, -0.99, 0]}
       />
       <WigglingModel

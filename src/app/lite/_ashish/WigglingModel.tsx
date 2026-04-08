@@ -19,6 +19,8 @@ export type WigglingModelProps = {
   groupRef?: Ref<Group>;
   scale?: number | [number, number, number];
   rotation?: [number, number, number];
+  /** When true, skip `<Float>` so scripted drop / GSAP motion matches the mesh 1:1. */
+  disableFloat?: boolean;
 };
 
 export function WigglingModel({
@@ -28,11 +30,14 @@ export function WigglingModel({
   groupRef,
   scale = 1,
   rotation = [0, 0, 0],
+  disableFloat = false,
 }: WigglingModelProps) {
   const cloned = useMemo(() => scene.clone(true), [scene]);
 
   const scaleTuple: [number, number, number] =
     typeof scale === "number" ? [scale, scale, scale] : scale;
+
+  const mesh = <primitive object={cloned} />;
 
   return (
     <group
@@ -41,14 +46,18 @@ export function WigglingModel({
       rotation={rotation}
       scale={scaleTuple}
     >
-      <Float
-        speed={floatConfig?.speed ?? 1}
-        rotationIntensity={floatConfig?.rotationIntensity ?? 1}
-        floatIntensity={floatConfig?.floatIntensity ?? 1}
-        floatingRange={floatConfig?.floatingRange ?? [-0.1, 0.1]}
-      >
-        <primitive object={cloned} />
-      </Float>
+      {disableFloat ? (
+        mesh
+      ) : (
+        <Float
+          speed={floatConfig?.speed ?? 1}
+          rotationIntensity={floatConfig?.rotationIntensity ?? 1}
+          floatIntensity={floatConfig?.floatIntensity ?? 1}
+          floatingRange={floatConfig?.floatingRange ?? [-0.1, 0.1]}
+        >
+          {mesh}
+        </Float>
+      )}
     </group>
   );
 }
