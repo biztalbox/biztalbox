@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useRef } from "react";
-import { useLoader } from "@react-three/fiber";
+import { useLoader, useThree } from "@react-three/fiber";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import type { Group, Object3D } from "three";
@@ -50,7 +50,45 @@ function findChildByName(root: Object3D, name: string): Object3D | null {
   return found;
 }
 
+/**
+ * Offsets + scales the whole hero model cluster so it stays framed with
+ * `ResponsiveHeroCamera` in Hero.tsx (desktop camera x≈300 vs narrow x≈-4, different FOV/z).
+ */
+function useHeroModelsRootTransform() {
+  const { size } = useThree();
+  return useMemo(() => {
+    const w = size.width;
+    const h = size.height;
+    const aspect = w / Math.max(h, 1);
+
+    if (w >= 1024) {
+      return { position: [0, 0, 0] as const, scale: 1 };
+    }
+
+    const landscapePhone = w < 1024 && aspect > 1.15;
+
+    if (w >= 640) {
+      return {
+        position: [-148, landscapePhone ? -22 : -6, -38] as const,
+        scale: 0.9,
+      };
+    }
+    if (w >= 480) {
+      return {
+        position: [-168, landscapePhone ? -28 : -12, -48] as const,
+        scale: 0.84,
+      };
+    }
+    return {
+      position: [-182, landscapePhone ? -32 : -18, -58] as const,
+      scale: 0.78,
+    };
+  }, [size.width, size.height]);
+}
+
 const MyCanvas = () => {
+  const root = useHeroModelsRootTransform();
+
   const smoRef = useRef<Group>(null);
   const adsRef = useRef<Group>(null);
   const contentRef = useRef<Group>(null);
@@ -259,7 +297,7 @@ const MyCanvas = () => {
   }
 
   return (
-    <>
+    <group position={root.position} scale={root.scale}>
       <WigglingModel
         scene={algoScene}
         groupRef={algoRef}
@@ -396,7 +434,7 @@ const MyCanvas = () => {
       <directionalLight position={[-130, 70, 90]} intensity={5.65} color="#eef2ff" />
       <directionalLight position={[40, 90, -160]} intensity={5.75} color="#ffffff" />
       <directionalLight position={[0, -80, 120]} intensity={5.35} color="#d4d4d8" />
-    </>
+    </group>
   );
 };
 
