@@ -249,7 +249,7 @@ const Hero = () => {
 
             {/* Ingredients / footer */}
             <div className="mt-2 grid grid-cols-2 gap-3 text-[10px] font-medium leading-[1.45] tracking-[0.08em] text-black/70">
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col">
                 <span className="font-bold block text-xs uppercase mb-1">Our Services</span>
                 <span>CONCEPT MINING,</span>
                 <span>STRATEGY, IDENTITY,</span>
@@ -260,7 +260,7 @@ const Hero = () => {
               </div>
 
               {/* right Col */}
-              <div className="flex flex-col gap-1 text-right">
+              <div className="flex flex-col text-right">
                 <span className="font-bold block text-xs uppercase mb-1">Super Powers</span>
                 <span>FOR</span>
                 <span>DIGITAL PRODUCTS FOR</span>
@@ -365,7 +365,7 @@ const Hero = () => {
 
             {/* Ingredients / footer */}
             <div className="mt-2 grid grid-cols-2 gap-3 text-[10px] font-medium leading-[1.45] tracking-[0.08em] text-black/70">
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col">
                 <span className="font-bold block text-xs uppercase mb-1">INGREDIENTS</span>
                 <span>CONCEPT MINING,</span>
                 <span>STRATEGY, IDENTITY,</span>
@@ -374,7 +374,7 @@ const Hero = () => {
                 <span>• CREATIVE DUCT TAPE</span>
                 <span>• DIGITAL PRODUCTS</span>
               </div>
-              <div className="flex flex-col gap-1 text-right">
+              <div className="flex flex-col text-right">
                 <span className="font-bold block text-xs uppercase mb-1">FOR</span>
                 <span>DIGITAL PRODUCTS FOR</span>
                 <span>CONTEMPORARY BRANDS</span>
@@ -478,7 +478,7 @@ const Hero = () => {
 
             {/* Ingredients / footer */}
             <div className="mt-2 grid grid-cols-2 gap-3 text-[10px] font-medium leading-[1.45] tracking-[0.08em] text-black/70">
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col">
                 <span className="font-bold block text-xs uppercase mb-1">INGREDIENTS</span>
                 <span>CONCEPT MINING,</span>
                 <span>STRATEGY, IDENTITY,</span>
@@ -487,7 +487,7 @@ const Hero = () => {
                 <span>• CREATIVE DUCT TAPE</span>
                 <span>• DIGITAL PRODUCTS</span>
               </div>
-              <div className="flex flex-col gap-1 text-right">
+              <div className="flex flex-col text-right">
                 <span className="font-bold block text-xs uppercase mb-1">FOR</span>
                 <span>DIGITAL PRODUCTS FOR</span>
                 <span>CONTEMPORARY BRANDS</span>
@@ -592,7 +592,7 @@ const Hero = () => {
 
             {/* Ingredients / footer */}
             <div className="mt-2 grid grid-cols-2 gap-3 text-[10px] font-medium leading-[1.45] tracking-[0.08em] text-black/70">
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col">
                 <span className="font-bold block text-xs uppercase mb-1">INGREDIENTS</span>
                 <span>CONCEPT MINING,</span>
                 <span>STRATEGY, IDENTITY,</span>
@@ -601,7 +601,7 @@ const Hero = () => {
                 <span>• CREATIVE DUCT TAPE</span>
                 <span>• DIGITAL PRODUCTS</span>
               </div>
-              <div className="flex flex-col gap-1 text-right">
+              <div className="flex flex-col text-right">
                 <span className="font-bold block text-xs uppercase mb-1">FOR</span>
                 <span>DIGITAL PRODUCTS FOR</span>
                 <span>CONTEMPORARY BRANDS</span>
@@ -706,7 +706,7 @@ const Hero = () => {
 
             {/* Ingredients / footer */}
             <div className="mt-2 grid grid-cols-2 gap-3 text-[10px] font-medium leading-[1.45] tracking-[0.08em] text-black/70">
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col">
                 <span className="font-bold block text-xs uppercase mb-1">INGREDIENTS</span>
                 <span>CONCEPT MINING,</span>
                 <span>STRATEGY, IDENTITY,</span>
@@ -715,7 +715,7 @@ const Hero = () => {
                 <span>• CREATIVE DUCT TAPE</span>
                 <span>• DIGITAL PRODUCTS</span>
               </div>
-              <div className="flex flex-col gap-1 text-right">
+              <div className="flex flex-col text-right">
                 <span className="font-bold block text-xs uppercase mb-1">FOR</span>
                 <span>DIGITAL PRODUCTS FOR</span>
                 <span>CONTEMPORARY BRANDS</span>
@@ -819,7 +819,7 @@ const Hero = () => {
 
             {/* Ingredients / footer */}
             <div className="mt-2 grid grid-cols-2 gap-3 text-[10px] font-medium leading-[1.45] tracking-[0.08em] text-black/70">
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col">
                 <span className="font-bold block text-xs uppercase mb-1">INGREDIENTS</span>
                 <span>CONCEPT MINING,</span>
                 <span>STRATEGY, IDENTITY,</span>
@@ -828,7 +828,7 @@ const Hero = () => {
                 <span>• CREATIVE DUCT TAPE</span>
                 <span>• DIGITAL PRODUCTS</span>
               </div>
-              <div className="flex flex-col gap-1 text-right">
+              <div className="flex flex-col text-right">
                 <span className="font-bold block text-xs uppercase mb-1">FOR</span>
                 <span>DIGITAL PRODUCTS FOR</span>
                 <span>CONTEMPORARY BRANDS</span>
@@ -932,7 +932,7 @@ const Hero = () => {
 
             {/* Ingredients / footer */}
             <div className="mt-2 grid grid-cols-2 gap-3 text-[10px] font-medium leading-[1.45] tracking-[0.08em] text-black/70">
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col">
                 <span className="font-bold block text-xs uppercase mb-1">INGREDIENTS</span>
                 <span>CONCEPT MINING,</span>
                 <span>STRATEGY, IDENTITY,</span>
@@ -941,7 +941,7 @@ const Hero = () => {
                 <span>• CREATIVE DUCT TAPE</span>
                 <span>• DIGITAL PRODUCTS</span>
               </div>
-              <div className="flex flex-col gap-1 text-right">
+              <div className="flex flex-col text-right">
                 <span className="font-bold block text-xs uppercase mb-1">FOR</span>
                 <span>DIGITAL PRODUCTS FOR</span>
                 <span>CONTEMPORARY BRANDS</span>
@@ -1045,7 +1045,7 @@ const Hero = () => {
 
             {/* Ingredients / footer */}
             <div className="mt-2 grid grid-cols-2 gap-3 text-[10px] font-medium leading-[1.45] tracking-[0.08em] text-black/70">
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col">
                 <span className="font-bold block text-xs uppercase mb-1">INGREDIENTS</span>
                 <span>CONCEPT MINING,</span>
                 <span>STRATEGY, IDENTITY,</span>
@@ -1054,7 +1054,7 @@ const Hero = () => {
                 <span>• CREATIVE DUCT TAPE</span>
                 <span>• DIGITAL PRODUCTS</span>
               </div>
-              <div className="flex flex-col gap-1 text-right">
+              <div className="flex flex-col text-right">
                 <span className="font-bold block text-xs uppercase mb-1">FOR</span>
                 <span>DIGITAL PRODUCTS FOR</span>
                 <span>CONTEMPORARY BRANDS</span>
@@ -1157,7 +1157,7 @@ const Hero = () => {
 
             {/* Ingredients / footer */}
             <div className="mt-2 grid grid-cols-2 gap-3 text-[10px] font-medium leading-[1.45] tracking-[0.08em] text-black/70">
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col">
                 <span className="font-bold block text-xs uppercase mb-1">INGREDIENTS</span>
                 <span>CONCEPT MINING,</span>
                 <span>STRATEGY, IDENTITY,</span>
@@ -1166,7 +1166,7 @@ const Hero = () => {
                 <span>• CREATIVE DUCT TAPE</span>
                 <span>• DIGITAL PRODUCTS</span>
               </div>
-              <div className="flex flex-col gap-1 text-right">
+              <div className="flex flex-col text-right">
                 <span className="font-bold block text-xs uppercase mb-1">FOR</span>
                 <span>DIGITAL PRODUCTS FOR</span>
                 <span>CONTEMPORARY BRANDS</span>
@@ -1191,7 +1191,7 @@ const Hero = () => {
 
       {/* receipt bill card */}
       {/* <section className="fixed bottom-0 right-0 z-30">
-        <div className="flex flex-col gap-1 p-2 bg-white w-48 rounded shadow">
+        <div className="flex flex-col p-2 bg-white w-48 rounded shadow">
           <div className="flex justify-between uppercase">
             <span>Invoice</span>
             <span>28/03/26</span>
@@ -1208,7 +1208,7 @@ const Hero = () => {
             Thanks for <br />your visit!
           </h3>
           <div className="h-48"></div>
-          <Link href="#" className="!hover:bg-black bg-white hover:text-white relative z-10 text-center uppercase text-5xl md:text-7xl lg:text-[6rem] font-thin mx-auto px-5 py-4 border border-black rounded-full">
+          <Link href="#" className="hover:!bg-black bg-white hover:!text-white relative z-10 text-center uppercase text-5xl md:text-7xl lg:text-[6rem] font-thin mx-auto px-5 py-4 border border-black rounded-full">
             Let&apos;s Talk!
           </Link>
         </div>

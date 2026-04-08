@@ -290,15 +290,15 @@ export function attachLiteServiceScanPair(options: {
 
   scanTl.to(`${scanner} .purchaseStatus`, { width: "135px", duration: 2, ease: "power1.inOut" }, 0);
   scanTl.to(group.rotation, { y: `+=${spinRad}`, duration: 2, ease: "none" }, 0);
-  scanTl.to(`${scanner} .purchaseStatus`, { color: "red", duration: 0.1, ease: "power1.inOut" }, 2);
-  scanTl.to(`${scanner} .barcoadCheck`, { display: "block", duration: 0.1, ease: "power1.inOut" }, 2.1);
+  scanTl.to(`${scanner} .purchaseStatus`, { color: "red", duration: 0.1, ease: "power1.inOut" }, 1.9);
+  scanTl.to(`${scanner} .barcoadCheck`, { display: "block", duration: 0.1, ease: "power1.inOut" }, 1.9);
 
   const removeBeepCue = addScrubTimelineCue(scanTl, 2.1 + 0.1, () => {
     if (!isCancelled()) playSfx(SFX_BEEP);
   });
 
   /** Warm rosy “scan” read on the GLB, peaking as the model vanishes (scrub reverses cleanly). */
-  addScanWarmTintToTimeline(scanTl, group, 1.68, 0.36);
+  addScanWarmTintToTimeline(scanTl, group, 2, 0.36);
 
   scanTl.to(group.scale, { x: 0, y: 0, z: 0, duration: 0.15, ease: "power1.inOut" }, 2);
   scanTl.to(scanner, { height: "150px", width: "150px", duration: 0.7, ease: "power1.inOut" }, 2.9);

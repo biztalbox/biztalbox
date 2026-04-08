@@ -161,37 +161,41 @@ const MyCanvas = () => {
             trigger: "#ctaSection",
             start: "top bottom",
             end: "top top",
-            scrub: 2,
-            // pin: true,
-            // pinSpacing: true,
-            // anticipatePin: 1,
-            // markers: true,
-            // invalidateOnRefresh: true,
+            scrub: 1.5,
           },
         });
 
         const asa1 = findChildByName(bucketRef.current, "Asa1");
         const asa2 = findChildByName(bucketRef.current, "Asa2");
 
+        addToCartTl.to(seoRef.current.scale, { x: 0, y: 0, z: 0, duration: 0, ease: "power3.inOut" }, 0);
+        addToCartTl.to(smoRef.current.scale, { x: 0, y: 0, z: 0, duration: 0, ease: "power3.inOut" }, 0);
+        addToCartTl.to(webdevRef.current.scale, { x: 0, y: 0, z: 0, duration: 0, ease: "power3.inOut" }, 0);
+        addToCartTl.to(videoRef.current.scale, { x: 0, y: 0, z: 0, duration: 0, ease: "power3.inOut" }, 0);
+        addToCartTl.to(contentRef.current.scale, { x: 0, y: 0, z: 0, duration: 0, ease: "power3.inOut" }, 0);
+        addToCartTl.to(adsRef.current.scale, { x: 0, y: 0, z: 0, duration: 0, ease: "power3.inOut" }, 0);
+        addToCartTl.to(algoRef.current.scale, { x: 0, y: 0, z: 0, duration: 0, ease: "power3.inOut" }, 0);
+        addToCartTl.to(graphicRef.current.scale, { x: 0, y: 0, z: 0, duration: 0, ease: "power3.inOut" }, 0);
+        addToCartTl.to(appdevRef.current.scale, { x: 0, y: 0, z: 0, duration: 0, ease: "power3.inOut" }, 0);
         addToCartTl.to(bucketRef.current.scale, { x: 0, y: 0, z: 0, duration: 0, ease: "power3.inOut" }, 0);
-        addToCartTl.to(bucketRef.current.scale, { x: 8, y: 8, z: 8, duration: 0, ease: "power3.inOut" }, 0);
-        addToCartTl.to(bucketRef.current.rotation, { x: 0.3, y: 0.6, duration: 3, ease: "power3.inOut" }, 0.3);
-        addToCartTl.to(bucketRef.current.scale, { x: 7, y: 7, z: 7, duration: 3, ease: "power3.inOut" }, 0.3);
-        addToCartTl.to(seoRef.current.scale, { x:1.6, y: 1.6,z:1.6, duration: 0, ease: "power3.inOut" }, 0);
+        addToCartTl.to(bucketRef.current.scale, { x: 8, y: 8, z: 8, duration: 0, ease: "power3.inOut" }, 0.15);
+        addToCartTl.to(bucketRef.current.rotation, { x: 0.3, y: 0.6, duration: 2, ease: "power3.inOut" }, 0.3);
+        addToCartTl.to(bucketRef.current.scale, { x: 7, y: 7, z: 7, duration: 2, ease: "power3.inOut" }, 0.3);
+        addToCartTl.to(seoRef.current.scale, { x:1.6, y: 1.6,z:1.6, duration: 0, ease: "power3.inOut" }, 0.3);
         addToCartTl.to(seoRef.current.position, { y: "-=10", duration: 2, ease: "power3.inOut" }, 1.5);
-        addToCartTl.to(smoRef.current.scale, { x:0.2, y: 0.2,z:0.1, duration: 0, ease: "power3.inOut" }, 0);
+        addToCartTl.to(smoRef.current.scale, { x:0.2, y: 0.2,z:0.1, duration: 0, ease: "power3.inOut" }, 0.3);
         addToCartTl.to(smoRef.current.position, { y: "-=60", x: "+=60", z: "-=30", duration: 2, ease: "power3.inOut" }, 1.5);
-        addToCartTl.to(webdevRef.current.scale, { x:1, y: 1,z:0.3, duration: 0, ease: "power3.inOut" }, 0);
+        addToCartTl.to(webdevRef.current.scale, { x:1, y: 1,z:0.3, duration: 0, ease: "power3.inOut" }, 0.3);
         addToCartTl.to(webdevRef.current.position, { y: "-=30", x: "-=70", z: "+=150", duration: 2, ease: "power3.inOut" }, 1.5);
-        addToCartTl.to(videoRef.current.scale, { x:0.6, y: 1,z:0.3, duration: 0, ease: "power3.inOut" }, 0);
+        addToCartTl.to(videoRef.current.scale, { x:0.6, y: 1,z:0.3, duration: 0, ease: "power3.inOut" }, 0.3);
         addToCartTl.to(videoRef.current.position, { y: "-=30", x: "-=70", z: "+=150", duration: 2, ease: "power3.inOut" }, 1.5);
-        addToCartTl.to(contentRef.current.scale, { x:0.3, y: 0.5,z:0.3, duration: 0, ease: "power3.inOut" }, 0);
+        addToCartTl.to(contentRef.current.scale, { x:0.3, y: 0.5,z:0.3, duration: 0, ease: "power3.inOut" }, 0.3);
         addToCartTl.to(contentRef.current.position, { y: "-=30", x: "-=10", z: "+=150", duration: 2, ease: "power3.inOut" }, 1.5);
-        addToCartTl.to(adsRef.current.scale, { x:0.4, y:0.1,z:0.1, duration: 0, ease: "power3.inOut" }, 0);
+        addToCartTl.to(adsRef.current.scale, { x:0.4, y:0.1,z:0.1, duration: 0, ease: "power3.inOut" }, 0.3);
         addToCartTl.to(adsRef.current.position, { y: "-=1", x: "+=30", z: "-=200", duration: 2, ease: "power3.inOut" }, 1.5);
-        addToCartTl.to(appdevRef.current.scale, { x:0.3, y: 0.1,z:0.1, duration: 0, ease: "power3.inOut" }, 0);
+        addToCartTl.to(appdevRef.current.scale, { x:0.3, y: 0.1,z:0.1, duration: 0, ease: "power3.inOut" }, 0.3);
         addToCartTl.to(appdevRef.current.position, { y: "-=10", x: "-=100", z: "-=100", duration: 2, ease: "power3.inOut" }, 1.5);
-        addToCartTl.to(algoRef.current.scale, { x:2, y: 2,z:2, duration: 0, ease: "power3.inOut" }, 0);
+        addToCartTl.to(algoRef.current.scale, { x:2, y: 2,z:2, duration: 0, ease: "power3.inOut" }, 0.3);
         addToCartTl.to(algoRef.current.position, { y: "-=2", x: "+=40", z: "-=50", duration: 2, ease: "power3.inOut" }, 1.5);
 
 
@@ -272,16 +276,17 @@ const MyCanvas = () => {
       <WigglingModel
         scene={graphicScene}
         groupRef={graphicRef}
-        position={[40, 220, 0]}
+        position={[300, 300, 400]}
         floatConfig={{
           speed: 5,
           rotationIntensity: 0.5,
           floatIntensity: 1,
           floatingRange: [-0.1, 0.1],
         }}
-        scale={0.45}
+        scale={1}
         rotation={[0, -0.99, 0]}
       />
+      
       <WigglingModel
         scene={webdevScene}
         groupRef={webdevRef}
@@ -351,9 +356,9 @@ const MyCanvas = () => {
         groupRef={smoRef}
         position={[290, 130, 400]}
         floatConfig={{
-          speed: 20,
+          speed: 4,
           rotationIntensity: 0.5,
-          floatIntensity: 1,
+          floatIntensity: 1.5,
           floatingRange: [-0.1, 0.1],
         }}
         scale={0.23}
