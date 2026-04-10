@@ -14,6 +14,34 @@ import WhyChooseUsLite from "./WhyChooseUs";
 const SECTION3_SEO_IMAGE_SRC =
   "https://biztalbox.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fseo.0f33ee3b.webp&w=1200&q=75";
 
+/** Matches `src/app/(service)/*` routes (e.g. https://biztalbox.com/best-seo-agency). */
+const LITE_SERVICE_PAGE_PATHS = {
+  seo: "/best-seo-agency",
+  smo: "/social-media-marketing",
+  webdev: "/website-development",
+  graphic: "/graphic-designing",
+  video: "/motion-graphics",
+  content: "/content-marketing",
+  ads: "/google-ads-service",
+  appdev: "/app-development",
+  algo: "/analysis-algorithm",
+} as const;
+
+type LiteServicePageKey = keyof typeof LITE_SERVICE_PAGE_PATHS;
+
+function LiteServiceViewMoreLink({ service }: { service: LiteServicePageKey }) {
+  return (
+    <div className="relative z-20 mx-auto mt-10 flex justify-center px-2 sm:mt-12">
+      <Link
+        href={LITE_SERVICE_PAGE_PATHS[service]}
+        className="inline-flex rounded-full border border-black bg-white px-10 py-2.5 text-sm font-medium uppercase tracking-[0.12em] text-black transition-colors hover:bg-neutral-900 hover:text-white"
+      >
+        View More
+      </Link>
+    </div>
+  );
+}
+
 /** Tweaks default perspective camera when the canvas resizes so the scene reads on phones and tablets. */
 function ResponsiveHeroCamera() {
   const { camera, size } = useThree();
@@ -215,6 +243,8 @@ const Hero = () => {
 
 
 
+          <LiteServiceViewMoreLink service="seo" />
+
           {/* Center ticket */}
 
           <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="lite-scanner-seo">
@@ -331,6 +361,8 @@ const Hero = () => {
 
 
 
+          <LiteServiceViewMoreLink service="smo" />
+
           {/* Center ticket */}
 
           <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="lite-scanner-smo">
@@ -443,6 +475,8 @@ const Hero = () => {
           </div>
 
 
+
+          <LiteServiceViewMoreLink service="webdev" />
 
           {/* Center ticket */}
 
@@ -558,6 +592,8 @@ const Hero = () => {
 
 
 
+          <LiteServiceViewMoreLink service="graphic" />
+
           {/* Center ticket */}
 
           <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="lite-scanner-graphic">
@@ -672,6 +708,8 @@ const Hero = () => {
 
 
 
+          <LiteServiceViewMoreLink service="video" />
+
           {/* Center ticket */}
 
           <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="lite-scanner-video">
@@ -784,6 +822,8 @@ const Hero = () => {
           </div>
 
 
+
+          <LiteServiceViewMoreLink service="content" />
 
           {/* Center ticket */}
 
@@ -898,6 +938,8 @@ const Hero = () => {
 
 
 
+          <LiteServiceViewMoreLink service="ads" />
+
           {/* Center ticket */}
 
           <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="lite-scanner-ads">
@@ -1011,6 +1053,8 @@ const Hero = () => {
 
 
 
+          <LiteServiceViewMoreLink service="appdev" />
+
           {/* Center ticket */}
 
           <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="lite-scanner-appdev">
@@ -1123,6 +1167,8 @@ const Hero = () => {
 
 
 
+          <LiteServiceViewMoreLink service="algo" />
+
           {/* Center ticket */}
 
           <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="lite-scanner-algo">
@@ -1173,8 +1219,8 @@ const Hero = () => {
               </div>
             </div>
           </div>
-        </div>
-
+        </div> 
+        
 
       </section>
 
@@ -1201,6 +1247,82 @@ const Hero = () => {
           <div className="mt-1 uppercase">REF: SHH 0001</div>
         </div>
       </section> */}
+
+      <section id="recieptSection" className="fixed bottom-0 left-5 bg-white p-3 translate-y-full">
+        <div className="flex flex-col gap-1 w-44 divide-y-2 divide-x-0 divide-dashed text-sm font-thin font-mono">
+
+          <div className="flex justify-between">
+            <span>BIZTALBOX</span>
+            <span>09/04/26</span>
+          </div>
+
+          <span className="text-center">DIGITAL SERVICES</span>
+          
+
+{/* Item list and total */}
+          <div className="flex flex-col">
+              <div className="flex justify-between">
+                <span className="min-w-0 break-words">Search Engine Optimization</span>
+                <span className="shrink-0 whitespace-nowrap">x1</span>
+              </div>
+              <div className="flex justify-between gap-2">
+                <span className="min-w-0 break-words">Social Media Optimization</span>
+                <span className="shrink-0 whitespace-nowrap">x1</span>
+              </div>
+              <div className="flex justify-between gap-2">
+                <span className="min-w-0 break-words">Website Development</span>
+                <span className="shrink-0 whitespace-nowrap">x1</span>
+              </div>
+              <div className="flex justify-between gap-2">
+                <span className="min-w-0 break-words">Graphic Designing</span>
+                <span className="shrink-0 whitespace-nowrap">x1</span>
+              </div>
+              <div className="flex justify-between gap-2">
+                <span className="min-w-0 break-words">Video Editing</span>
+                <span className="shrink-0 whitespace-nowrap">x1</span>
+              </div>
+              <div className="flex justify-between gap-2">
+                <span className="min-w-0 break-words">Content Writing</span>
+                <span className="shrink-0 whitespace-nowrap">x1</span>
+              </div>
+              <div className="flex justify-between gap-2">
+                <span className="min-w-0 break-words">Performance Marketing</span>
+                <span className="shrink-0 whitespace-nowrap">x1</span>
+              </div>
+              <div className="flex justify-between gap-2">
+                <span className="min-w-0 break-words">App Development</span>
+                <span className="shrink-0 whitespace-nowrap">x1</span>
+              </div>
+              <div className="flex justify-between gap-2">
+                <span className="min-w-0 break-words">Algorithm Analysis</span>
+                <span className="shrink-0 whitespace-nowrap">x1</span>
+              </div>
+            <div className="flex mt-2 justify-between">
+              <span>TOTAL:</span>
+              <span>SPECIAL PROJECT</span>
+            </div>
+
+            <span className="text-center">
+              *******************
+            </span>
+            
+
+            <span className="text-center normal-case">Thanks for your visit!</span>
+            <Image src="/assets/image/barcode.svg" alt="barcode" className="w-full h-fit" width={100} height={100} />
+          </div>
+          <span className="text-center leading-tight">
+              we love meeting people with whom we can work and share projects.
+              WRITE TO US!
+            </span>
+{/* contact email and no. */}
+          <div className="flex flex-col">
+            
+            <span>info@biztalbox.com</span>
+            <span>PHONE: +91 9876543210</span>
+          </div>
+
+        </div>
+      </section>
 
       <section id="ctaSection" className="pt-10 pb-32">
         <div className="container flex flex-col gap-10 overflow-hidden">

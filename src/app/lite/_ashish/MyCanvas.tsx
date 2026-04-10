@@ -205,6 +205,7 @@ const MyCanvas = () => {
 
         const asa1 = findChildByName(bucketRef.current, "Asa1");
         const asa2 = findChildByName(bucketRef.current, "Asa2");
+        addToCartTl.to("#recieptSection", { y: "-=550", duration: 2, ease: "power3.inOut" }, 1.5);
 
         addToCartTl.to(seoRef.current.scale, { x: 0, y: 0, z: 0, duration: 0, ease: "power3.inOut" }, 0);
         addToCartTl.to(smoRef.current.scale, { x: 0, y: 0, z: 0, duration: 0, ease: "power3.inOut" }, 0);
@@ -329,14 +330,14 @@ const MyCanvas = () => {
       <WigglingModel
         scene={webdevScene}
         groupRef={webdevRef}
-        position={[1, 280, 150]}
+        position={[30, 280, 150]}
         floatConfig={{
           speed: 5,
           rotationIntensity: 0.2,
           floatIntensity: 1,
           floatingRange: [-0.1, 0.1],
         }}
-        scale={[2, 1.7, 1]}
+        scale={[0.8, 0.8, 0.8]}
       />
 
       <WigglingModel
@@ -381,7 +382,7 @@ const MyCanvas = () => {
       <WigglingModel
         scene={contentScene}
         groupRef={contentRef}
-        position={[170, 100, 300]}
+        position={[190,130, 300]}
         floatConfig={{
           speed: 5,
           rotationIntensity: 1,
@@ -393,7 +394,7 @@ const MyCanvas = () => {
       <WigglingModel
         scene={smoScene}
         groupRef={smoRef}
-        position={[290, 130, 400]}
+        position={[290, 140, 400]}
         floatConfig={{
           speed: 4,
           rotationIntensity: 0.5,
