@@ -5,11 +5,13 @@ import type { Group } from "three";
 import { addSlideTextStripToTimeline } from "../slide-text-timeline";
 import { SFX_BEEP, addScrubTimelineCue, playSfx } from "../sfx";
 import {
-  LITE_SERVICE_SCANS,
+  resolveLiteServiceScans,
   type LiteApproachMotion,
   type LiteModelRefMap,
   type LiteScanMotion,
+  type LiteScrollServiceBreakpoint,
 } from "./lite-service-scan-config";
+import scrollBundle from "./lite-services-scroll.config.json";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -58,6 +60,31 @@ export const LITE_SCAN_TIMING_MOBILE: LiteScanTimingPreset = {
   spinRadians: Math.PI * 2,
   cardSlideX: "+=48vw",
 };
+
+type ScanTimingPresetsJson = Partial<
+  Record<LiteScrollServiceBreakpoint, Partial<LiteScanTimingPreset>>
+>;
+
+const scrollBundleTiming = scrollBundle as typeof scrollBundle & {
+  scanTimingPresets?: ScanTimingPresetsJson;
+};
+
+/**
+ * Active timing preset for a breakpoint: TS defaults, shallow-overridden by
+ * `scanTimingPresets` in `lite-services-scroll.config.json` (e.g. `cardSlideX`).
+ */
+export function getLiteScanTimingForBreakpoint(
+  breakpoint: LiteScrollServiceBreakpoint,
+): LiteScanTimingPreset {
+  const base =
+    breakpoint === "mobile"
+      ? LITE_SCAN_TIMING_MOBILE
+      : breakpoint === "tablet"
+        ? LITE_SCAN_TIMING_TABLET
+        : LITE_SCAN_TIMING_DESKTOP;
+  const over = scrollBundleTiming.scanTimingPresets?.[breakpoint];
+  return over ? { ...base, ...over } : base;
+}
 
 function sel(id: string): string {
   return id.startsWith("#") ? id : `#${id}`;
@@ -350,15 +377,18 @@ export function attachLiteServiceScanPair(options: {
 
 /**
  * Registers all service scans for the current breakpoint. Call inside `gsap.matchMedia().add(...)`.
+ * Scroll positions / motion come from `lite-services-scroll.config.json` (base + `responsive[breakpoint]`).
  */
 export function registerAllLiteServiceScans(
   refs: LiteModelRefMap,
   timing: LiteScanTimingPreset,
   isCancelled: () => boolean,
+  breakpoint: LiteScrollServiceBreakpoint,
 ): () => void {
   const disposers: (() => void)[] = [];
+  const defs = resolveLiteServiceScans(breakpoint);
 
-  for (const def of LITE_SERVICE_SCANS) {
+  for (const def of defs) {
     const group = refs[def.modelKey].current;
     if (!group) continue;
 

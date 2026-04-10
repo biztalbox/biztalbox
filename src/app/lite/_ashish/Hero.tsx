@@ -21,8 +21,8 @@ function ResponsiveHeroCamera() {
     if (!(camera instanceof THREE.PerspectiveCamera)) return;
     const w = size.width;
     if (w < 480) {
-      camera.fov = 82;
-      camera.position.set(-4, 255, 440);
+      camera.fov = 80;
+      camera.position.set(0, 0, 400);
     } else if (w < 640) {
       camera.fov = 78;
       camera.position.set(-4, 268, 495);

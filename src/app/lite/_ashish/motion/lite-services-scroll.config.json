@@ -4,6 +4,17 @@
     "approachEnd": "top center",
     "scanPinEnd": "bottom top"
   },
+  "scanTimingPresets": {
+    "desktop": {
+      "cardSlideX": "+=550"
+    },
+    "tablet": {
+      "cardSlideX": "+=400"
+    },
+    "mobile": {
+      "cardSlideX": "+=48vw"
+    }
+  },
   "services": [
     {
       "modelKey": "seo",
