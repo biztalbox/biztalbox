@@ -88,14 +88,14 @@
       "motion": {
         "approach": {
           "position": {
-            "x": "+=300",
+            "x": "+=270",
             "y": "-=330"
           },
           "rotation": {
             "x": "+=9.2",
             "y": "+=3.2"
           },
-          "scale": 1.7,
+          "scale": 4,
           "durations": {
             "position": 2,
             "rotation": 2

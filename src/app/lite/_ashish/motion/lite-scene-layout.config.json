@@ -24,8 +24,8 @@
         }
       },
       "webdev": {
-        "position": [1, 280, 150],
-        "scale": [2, 1.7, 1],
+        "position": [30, 280, 150],
+        "scale": [4, 4.5, 4],
         "float": {
           "speed": 5,
           "rotationIntensity": 0.2,
@@ -111,7 +111,7 @@
       
       "webdev": {
         "position": [80, 280, 0],
-        "scale": 1.2,
+        "scale": 3,
         "float": {
           "speed": 5,
           "rotationIntensity": 0.2,

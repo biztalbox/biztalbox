@@ -98,7 +98,7 @@ const Hero = () => {
                   <br />
                   PRODUCTS
                 </h1>
-
+                
                 <div
                   className="mt-3 flex flex-col items-center justify-center gap-1 text-base uppercase"
 
@@ -124,9 +124,10 @@ const Hero = () => {
                   SCROLL TO DISCOVER
                 </div>
               </div>
+              </div>
+
+             
             </div>
-
-
           </div>
         </div>
       </section>
@@ -154,14 +155,31 @@ const Hero = () => {
             <h2
             >
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, quos.
-            </h2>
-          </div>
+              </h2>
+
+              {/* Eight-point decorative mark (screenshot-style) */}
+              <div className="relative mt-10 h-28 w-28 text-black sm:mt-12 sm:h-32 sm:w-32" aria-hidden>
+                <svg viewBox="0 0 100 100" className="h-full w-full opacity-[0.92]" fill="none">
+                  <g stroke="currentColor" strokeWidth="3" strokeLinecap="round">
+                    {[0, 45, 90, 135, 180, 225, 270, 315].map((deg) => (
+                      <line
+                        key={deg}
+                        x1="50"
+                        y1="50"
+                        x2={50 + 38 * Math.cos(((deg - 90) * Math.PI) / 180)}
+                        y2={50 + 38 * Math.sin(((deg - 90) * Math.PI) / 180)}
+                      />
+                    ))}
+                  </g>
+                </svg>
+              </div>
+            </div>
 
           {/* Bottom two columns + CTA */}
           <div className="relative z-10 mx-auto mt-16 grid  gap-10 sm:mt-20 lg:mt-28 lg:grid-cols-2 lg:gap-14">
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint odit est, at sunt unde quibusdam debitis pariatur architecto alias, repellendus veniam obcaecati recusandae vitae labore maxime laudantium? Ipsa dignissimos tenetur accusamus esse beatae voluptas, aliquid a pariatur ipsum, nesciunt soluta.
-            </p>
+              </p>
             <div className="flex flex-col items-center lg:items-start">
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos soluta ducimus veniam, ullam, hic distinctio at dolores eligendi dolore sit aliquid rem quo nobis? Facere.
@@ -207,35 +225,37 @@ const Hero = () => {
           <div className="pt-40 text-center">
             {/* Center-left pill badge */}
 
-            <h2
-              className="relative z-20"
-            >
+            <h2 className="relative z-20 text-[clamp(2.5rem,7vw,5.75rem)] font-normal leading-[1.06] tracking-[-0.02em] text-black md:text-[clamp(3rem,6.5vw,6.25rem)]">
               Search Engine Optimization
             </h2>
 
-            <p
-              className="text-balance uppercase"
-            >
-              Refresh your business identity
+            <p className="text-balance text-[clamp(1.05rem,2.8vw,1.5rem)] font-normal uppercase text-black md:text-[clamp(1.15rem,2.4vw,1.7rem)]">
+              Long-term SEO grounded in clarity, intent, and measurable growth
             </p>
           </div>
 
           {/* Two-column body */}
-          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
-            <div>
+          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12 [&_p]:text-[10px] [&_p]:leading-[1.85] [&_p]:sm:text-[11px] [&_p]:md:text-xs">
+            <div className="space-y-6">
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias aspernatur laboriosam soluta doloribus numquam recusandae, magnam eos iste, deleniti praesentium ullam cupiditate veniam a ut inventore autem quos sequi, porro minima. Fugit facilis alias unde.
+                Search influences how a brand is first encountered, how it is assessed, and whether it is taken seriously.
               </p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil eum sint, saepe eos sapiente id aliquam quisquam quas, molestias, nam veritatis qui expedita! Asperiores, assumenda?
+                At Biztalbox, we approach SEO as a long-term system grounded in clarity and intent, one that begins with a thorough audit. We study your website in detail, understanding how it is understood by search engines and users, where it falls short, and how it compares within its competitive space. This early clarity allows every subsequent step to remain grounded and precise.
+              </p>
+              <p>
+                Our SEO experts then turn to search intent, looking beyond keywords to the underlying patterns of behaviour. What people are actually looking for. What leads them forward? These insights inform how we refine the technical foundation of your website, bringing greater coherence to its structure, speed, and internal movement.
               </p>
             </div>
-            <div>
+            <div className="space-y-6">
               <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Alias aspernatur laboriosam soluta doloribus numquam recusandae, magnam eos iste, deleniti praesentium ullam cupiditate veniam a ut inventore autem quos sequi, porro minima. Fugit facilis alias unde.
+                Content at Biztalbox is crafted with intention and patience. It connects with your audience, builds trust through relevance, and grows into authority over time. Our Off-page SEO services add another layer. This includes earning relevant backlinks, strengthening brand mentions, and placing your website within a network of trusted sources that search engines already recognise.
               </p>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil eum sint, saepe eos sapiente id aliquam quisquam quas, molestias, nam veritatis qui expedita! Asperiores, assumenda?
+                Our SEO services do not stop at implementation. We revisit and refine the work regularly as search behaviour continues to evolve. At Biztalbox, we always keep the client in the loop with clear reporting. It gives a clear view of progress and business growth.
+              </p>
+              <p>
+                What follows is a presence in search that carries weight, holds consistency, and earns its position over time.
               </p>
             </div>
 
@@ -322,39 +342,41 @@ const Hero = () => {
           <div className="pt-40 text-center">
             {/* Center-left pill badge */}
 
-            <h2
-              className="relative z-20"
-            >
+            <h2 className="relative z-20 text-[clamp(2.5rem,7vw,5.75rem)] font-normal leading-[1.06] tracking-[-0.02em] text-black md:text-[clamp(3rem,6.5vw,6.25rem)]">
               Social Media Optimization
             </h2>
 
-            <p
-              className="text-balance uppercase"
-            >
-              Refresh your business identity
+            <p className="text-balance text-[clamp(1.05rem,2.8vw,1.5rem)] font-normal uppercase text-black md:text-[clamp(1.15rem,2.4vw,1.7rem)]">
+              At Biztalbox, social media is about how your brand shows up consistently in everyday attention.
             </p>
           </div>
 
           {/* Two-column body */}
-          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
+          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12 [&_p]:text-[10px] [&_p]:leading-[1.85] [&_p]:sm:text-[11px] [&_p]:md:text-xs">
             <div>
               <p>
-                WE LOVE THINKING. EVERYTHING STARTS WITH AN IDEA AROUND WHICH WE CONSTRUCT THE ENTIRE BRAND COMMUNICATION. AN
-                INGENIOUS CONCEPT THAT PROVIDES A DIFFERENTIAL VALUE AND IS SUITABLE TO ACHIEVE YOUR GOALS.
+                Our social media managers begin by understanding your brand, your audience, and how your competitors are
+                positioning themselves. This gives us a clear direction before anything goes live. We then plan content calendars to
+                bring consistency and direction to your presence.
               </p>
               <p>
-                WE NEVER SETTLE FOR A BRIEF IF WE DETECT OTHER OPPORTUNITIES. WE ATTEMPT TO GO FURTHER AND PROPOSE DIFFERENT
-                SOLUTIONS THAT ALLOW OUR CLIENTS TO POSITION THEMSELVES IN A DISRUPTIVE WAY.
+                We don&apos;t just chase trends or virality, but focus on building a social presence that actually reflects your brand
+                and stays consistent over time. Our social media marketing services focus on making content feel clear and natural.
+                Not forced trends or random ideas, but communication that fits your brand and makes sense to your audience.
               </p>
             </div>
             <div>
               <p>
-                WE BELIEVE THAT DESIGNING BRANDS THAT REMAIN GRAPHICALLY UNCHANGED FOR 30 YEARS NO LONGER MAKES SENSE. WE WORK
-                BASED ON CONCEPTS THAT GO BEYOND TIME AND PROVIDE THE BASIS OF AESTHETICS.
+                We also pay attention to how people respond. What they engage with, what they ignore, and what brings them back.
+                This helps us refine what your brand should keep doing and what it should leave behind.
               </p>
               <p>
-                DIGITAL, COHERENT AND IDENTIFIABLE UNIVERSES, BASED ON THE NEEDS OF EACH CLIENT. WITH RESOURCEFULNESS AS A TOOL
-                THROUGHOUT THE ENTIRE PROCESS.
+                Over time, this builds familiarity. Your brand starts to feel recognisable, not because of one post, but because of
+                consistent presence.
+              </p>
+              <p>
+                With our expert social media services, we aim to make your brand feel active, relevant, and easy to connect with on
+                a daily basis.
               </p>
             </div>
           </div>
@@ -437,39 +459,34 @@ const Hero = () => {
           <div className="pt-40 text-center">
             {/* Center-left pill badge */}
 
-            <h2
-              className="relative z-20"
-            >
+            <h2 className="relative z-20 text-[clamp(2.5rem,7vw,5.75rem)] font-normal leading-[1.06] tracking-[-0.02em] text-black md:text-[clamp(3rem,6.5vw,6.25rem)]">
               Website Development
             </h2>
 
-            <p
-              className="text-balance uppercase"
-            >
-              Refresh your business identity
+            <p className="text-balance text-[clamp(1.05rem,2.8vw,1.5rem)] font-normal uppercase text-black md:text-[clamp(1.15rem,2.4vw,1.7rem)]">
+              Performance-focused websites
             </p>
           </div>
 
           {/* Two-column body */}
-          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
-            <div>
+          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12 [&_p]:text-[10px] [&_p]:leading-[1.85] [&_p]:sm:text-[11px] [&_p]:md:text-xs">
+            <div className="space-y-6">
               <p>
-                WE LOVE THINKING. EVERYTHING STARTS WITH AN IDEA AROUND WHICH WE CONSTRUCT THE ENTIRE BRAND COMMUNICATION. AN
-                INGENIOUS CONCEPT THAT PROVIDES A DIFFERENTIAL VALUE AND IS SUITABLE TO ACHIEVE YOUR GOALS.
+                At Biztalbox, we believe a website should make things easier for your users, not more complicated. Our web development approach reflects that thinking.
               </p>
               <p>
-                WE NEVER SETTLE FOR A BRIEF IF WE DETECT OTHER OPPORTUNITIES. WE ATTEMPT TO GO FURTHER AND PROPOSE DIFFERENT
-                SOLUTIONS THAT ALLOW OUR CLIENTS TO POSITION THEMSELVES IN A DISRUPTIVE WAY.
+                We begin with understanding what the business actually needs the website to carry. Not just information, but direction. What should be seen first, what should be understood next, and what should lead a user toward action? This thinking sets the foundation before any layout is discussed.
+              </p>
+              <p>
+                Web development is then approached through structure first, not visuals. Our web development experts focus on making websites that offer a guided experience, rather than isolated pages. Information is arranged to reduce effort for the user, so nothing feels misplaced or difficult to reach. The goal is simple navigation that still feels intentional.
               </p>
             </div>
-            <div>
+            <div className="space-y-6">
               <p>
-                WE BELIEVE THAT DESIGNING BRANDS THAT REMAIN GRAPHICALLY UNCHANGED FOR 30 YEARS NO LONGER MAKES SENSE. WE WORK
-                BASED ON CONCEPTS THAT GO BEYOND TIME AND PROVIDE THE BASIS OF AESTHETICS.
+                Our web development firm takes pride in the quality of our execution. Clean development practices, consistent responsiveness, and reliable performance are maintained across every project.
               </p>
               <p>
-                DIGITAL, COHERENT AND IDENTIFIABLE UNIVERSES, BASED ON THE NEEDS OF EACH CLIENT. WITH RESOURCEFULNESS AS A TOOL
-                THROUGHOUT THE ENTIRE PROCESS.
+                Lastly, Biztalbox always ensures the website remains manageable after it goes live.
               </p>
             </div>
           </div>
@@ -553,39 +570,40 @@ const Hero = () => {
           <div className="pt-40 text-center">
             {/* Center-left pill badge */}
 
-            <h2
-              className="relative z-20"
-            >
+            <h2 className="relative z-20 text-[clamp(2.5rem,7vw,5.75rem)] font-normal leading-[1.06] tracking-[-0.02em] text-black md:text-[clamp(3rem,6.5vw,6.25rem)]">
               Graphic Designing
             </h2>
 
-            <p
-              className="text-balance uppercase"
-            >
-              Refresh your business identity
+            <p className="text-balance text-[clamp(1.05rem,2.8vw,1.5rem)] font-normal uppercase text-black md:text-[clamp(1.15rem,2.4vw,1.7rem)]">
+              Clear and consistent brand identity
             </p>
           </div>
 
           {/* Two-column body */}
-          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
-            <div>
+          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12 [&_p]:text-[10px] [&_p]:leading-[1.85] [&_p]:sm:text-[11px] [&_p]:md:text-xs">
+            <div className="space-y-6">
               <p>
-                WE LOVE THINKING. EVERYTHING STARTS WITH AN IDEA AROUND WHICH WE CONSTRUCT THE ENTIRE BRAND COMMUNICATION. AN
-                INGENIOUS CONCEPT THAT PROVIDES A DIFFERENTIAL VALUE AND IS SUITABLE TO ACHIEVE YOUR GOALS.
+                At Biztalbox, we understand that visual design plays a defining role in how a brand is interpreted and remembered.
               </p>
               <p>
-                WE NEVER SETTLE FOR A BRIEF IF WE DETECT OTHER OPPORTUNITIES. WE ATTEMPT TO GO FURTHER AND PROPOSE DIFFERENT
-                SOLUTIONS THAT ALLOW OUR CLIENTS TO POSITION THEMSELVES IN A DISRUPTIVE WAY.
+                We treat graphic design as a connected system rather than standalone visuals. Every piece we create has to work with the next one. So the brand feels consistent wherever it shows up.
+              </p>
+              <p>
+                Our graphic designers start by looking at how your brand currently shows up across different touchpoints. We look for gaps in consistency. We notice where clarity is lost. We see where the visual language is not holding attention the way it should.
               </p>
             </div>
-            <div>
+            <div className="space-y-6">
               <p>
-                WE BELIEVE THAT DESIGNING BRANDS THAT REMAIN GRAPHICALLY UNCHANGED FOR 30 YEARS NO LONGER MAKES SENSE. WE WORK
-                BASED ON CONCEPTS THAT GO BEYOND TIME AND PROVIDE THE BASIS OF AESTHETICS.
+                From there, our graphic design services focus on how information is perceived. Typography, spacing, colour, and layout are crafted so that the design feels easy to read and naturally organised.
               </p>
               <p>
-                DIGITAL, COHERENT AND IDENTIFIABLE UNIVERSES, BASED ON THE NEEDS OF EACH CLIENT. WITH RESOURCEFULNESS AS A TOOL
-                THROUGHOUT THE ENTIRE PROCESS.
+                We keep attention where it matters. Important information is made clear at first glance. Supporting elements stay in the background without distracting from the message.
+              </p>
+              <p>
+                We stay consistent across every asset we create. So your brand does not feel different on each platform. It feels like one identity, carried forward with discipline.
+              </p>
+              <p>
+                Each design decision at Biztalbox is made with one goal in mind: To make your brand easier to recognise, easier to understand, and harder to forget.
               </p>
             </div>
           </div>
@@ -650,7 +668,7 @@ const Hero = () => {
       </section>
 
 
-      {/* Video Editing */}
+      {/* Motion Graphics */}
       <section
         id="section6"
         className="relative bg-[#f2f2f2]"
@@ -662,46 +680,47 @@ const Hero = () => {
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
-              Video Editing
+              Motion Graphics
             </span>
           </div>
 
           <div className="pt-40 text-center">
             {/* Center-left pill badge */}
 
-            <h2
-              className="relative z-20"
-            >
-              Video Editing
+            <h2 className="relative z-20 text-[clamp(2.5rem,7vw,5.75rem)] font-normal leading-[1.06] tracking-[-0.02em] text-black md:text-[clamp(3rem,6.5vw,6.25rem)]">
+              Motion Graphics
             </h2>
 
-            <p
-              className="text-balance uppercase"
-            >
-              Refresh your business identity
+            <p className="text-balance text-[clamp(1.05rem,2.8vw,1.5rem)] font-normal uppercase text-black md:text-[clamp(1.15rem,2.4vw,1.7rem)]">
+              Storytelling through motion
             </p>
           </div>
 
           {/* Two-column body */}
-          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
-            <div>
+          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12 [&_p]:text-[10px] [&_p]:leading-[1.85] [&_p]:sm:text-[11px] [&_p]:md:text-xs">
+            <div className="space-y-6">
               <p>
-                WE LOVE THINKING. EVERYTHING STARTS WITH AN IDEA AROUND WHICH WE CONSTRUCT THE ENTIRE BRAND COMMUNICATION. AN
-                INGENIOUS CONCEPT THAT PROVIDES A DIFFERENTIAL VALUE AND IS SUITABLE TO ACHIEVE YOUR GOALS.
+                At Biztalbox, we turn to motion graphics when a message is too layered to be understood in a single static frame.
               </p>
               <p>
-                WE NEVER SETTLE FOR A BRIEF IF WE DETECT OTHER OPPORTUNITIES. WE ATTEMPT TO GO FURTHER AND PROPOSE DIFFERENT
-                SOLUTIONS THAT ALLOW OUR CLIENTS TO POSITION THEMSELVES IN A DISRUPTIVE WAY.
+                Motion graphics play a direct role in how clearly a brand is understood and how strongly it is remembered.
+              </p>
+              <p>
+                Motion graphic designers at Biztalbox approach motion as a way to sharpen brand communication. We start by looking at how your brand currently shows up visually and where its communication weakens.
+              </p>
+              <p>
+                This helps us decide the structure, sequence, and emphasis each part needs.
               </p>
             </div>
-            <div>
+            <div className="space-y-6">
               <p>
-                WE BELIEVE THAT DESIGNING BRANDS THAT REMAIN GRAPHICALLY UNCHANGED FOR 30 YEARS NO LONGER MAKES SENSE. WE WORK
-                BASED ON CONCEPTS THAT GO BEYOND TIME AND PROVIDE THE BASIS OF AESTHETICS.
+                We design motion around how attention actually moves. What draws focus, what holds it, and what needs to be reinforced before moving forward. This is where our process stays deliberate rather than decorative.
               </p>
               <p>
-                DIGITAL, COHERENT AND IDENTIFIABLE UNIVERSES, BASED ON THE NEEDS OF EACH CLIENT. WITH RESOURCEFULNESS AS A TOOL
-                THROUGHOUT THE ENTIRE PROCESS.
+                Our motion graphics agency brings consistency to every layer, from typography to transitions to rhythm. Everything works together, so the viewer is not interpreting multiple signals at once.
+              </p>
+              <p>
+                We keep motion purposeful. It exists only to make the idea easier to follow and quicker to absorb. Every piece is designed to support how your brand is perceived.
               </p>
             </div>
           </div>
@@ -765,7 +784,7 @@ const Hero = () => {
 
       </section>
 
-      {/* Content Writing */}
+      {/* Copywriting (content-marketing route) */}
       <section
         id="section7"
         className="relative bg-[#f2f2f2]"
@@ -777,46 +796,47 @@ const Hero = () => {
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
-              Content Writing
+              Copywriting
             </span>
           </div>
 
           <div className="pt-40 text-center">
             {/* Center-left pill badge */}
 
-            <h2
-              className="relative z-20"
-            >
-              Content Writing
+            <h2 className="relative z-20 text-[clamp(2.5rem,7vw,5.75rem)] font-normal leading-[1.06] tracking-[-0.02em] text-black md:text-[clamp(3rem,6.5vw,6.25rem)]">
+              Copywriting
             </h2>
 
-            <p
-              className="text-balance uppercase"
-            >
-              Refresh your business identity
+            <p className="text-balance text-[clamp(1.05rem,2.8vw,1.5rem)] font-normal uppercase text-black md:text-[clamp(1.15rem,2.4vw,1.7rem)]">
+              Words that drive action
             </p>
           </div>
 
           {/* Two-column body */}
-          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
-            <div>
+          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12 [&_p]:text-[10px] [&_p]:leading-[1.85] [&_p]:sm:text-[11px] [&_p]:md:text-xs">
+            <div className="space-y-6">
               <p>
-                WE LOVE THINKING. EVERYTHING STARTS WITH AN IDEA AROUND WHICH WE CONSTRUCT THE ENTIRE BRAND COMMUNICATION. AN
-                INGENIOUS CONCEPT THAT PROVIDES A DIFFERENTIAL VALUE AND IS SUITABLE TO ACHIEVE YOUR GOALS.
+                At Biztalbox, we see copywriting as the layer that decides how a brand is understood, positioned, and ultimately responded to.
               </p>
               <p>
-                WE NEVER SETTLE FOR A BRIEF IF WE DETECT OTHER OPPORTUNITIES. WE ATTEMPT TO GO FURTHER AND PROPOSE DIFFERENT
-                SOLUTIONS THAT ALLOW OUR CLIENTS TO POSITION THEMSELVES IN A DISRUPTIVE WAY.
+                The purpose is not to describe what a brand does, but to influence how it is perceived at the exact moment a decision is being formed.
+              </p>
+              <p>
+                Biztalbox&apos;s copywriting services have helped brands improve how they express value and position themselves. This has led to clearer responses, stronger engagement, and more confident decision-making.
+              </p>
+              <p>
+                Across all communication, we maintain control over tone and consistency so the brand feels aligned in every context it appears in. This consistency is what builds recognition and trust over time.
               </p>
             </div>
-            <div>
+            <div className="space-y-6">
               <p>
-                WE BELIEVE THAT DESIGNING BRANDS THAT REMAIN GRAPHICALLY UNCHANGED FOR 30 YEARS NO LONGER MAKES SENSE. WE WORK
-                BASED ON CONCEPTS THAT GO BEYOND TIME AND PROVIDE THE BASIS OF AESTHETICS.
+                Our copywriting experts begin by understanding how your audience evaluates a brand like yours. What they compare. What they doubt. What they need to take you seriously. Because brand positioning is influenced by the language used to describe it.
               </p>
               <p>
-                DIGITAL, COHERENT AND IDENTIFIABLE UNIVERSES, BASED ON THE NEEDS OF EACH CLIENT. WITH RESOURCEFULNESS AS A TOOL
-                THROUGHOUT THE ENTIRE PROCESS.
+                From there, our copywriters focus on how decisions move. Copy is written to reduce hesitation, close interpretation gaps, and bring clarity to what would otherwise feel uncertain or incomplete. It is also structured to carry the reader forward without forcing attention.
+              </p>
+              <p>
+                We also use language to strengthen perception. The same offering can feel ordinary or credible depending on how it is expressed. Copy plays a direct role in that shift.
               </p>
             </div>
           </div>
@@ -899,39 +919,34 @@ const Hero = () => {
           <div className="pt-40 text-center">
             {/* Center-left pill badge */}
 
-            <h2
-              className="relative z-20"
-            >
+            <h2 className="relative z-20 text-[clamp(2.5rem,7vw,5.75rem)] font-normal leading-[1.06] tracking-[-0.02em] text-black md:text-[clamp(3rem,6.5vw,6.25rem)]">
               Performance Marketing
             </h2>
 
-            <p
-              className="text-balance uppercase"
-            >
-              Refresh your business identity
+            <p className="text-balance text-[clamp(1.05rem,2.8vw,1.5rem)] font-normal uppercase text-black md:text-[clamp(1.15rem,2.4vw,1.7rem)]">
+              Measurable marketing outcomes
             </p>
           </div>
 
           {/* Two-column body */}
-          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
-            <div>
+          <div className="mx-auto mt-8 grid max-w-[1100px] gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12 [&_p]:text-[10px] [&_p]:leading-[1.85] [&_p]:sm:text-[11px] [&_p]:md:text-xs">
+            <div className="space-y-6">
               <p>
-                WE LOVE THINKING. EVERYTHING STARTS WITH AN IDEA AROUND WHICH WE CONSTRUCT THE ENTIRE BRAND COMMUNICATION. AN
-                INGENIOUS CONCEPT THAT PROVIDES A DIFFERENTIAL VALUE AND IS SUITABLE TO ACHIEVE YOUR GOALS.
+                Performance marketing, for us at Biztalbox, is a revenue system first. Every part of it has to support a clear commercial outcome.
               </p>
               <p>
-                WE NEVER SETTLE FOR A BRIEF IF WE DETECT OTHER OPPORTUNITIES. WE ATTEMPT TO GO FURTHER AND PROPOSE DIFFERENT
-                SOLUTIONS THAT ALLOW OUR CLIENTS TO POSITION THEMSELVES IN A DISRUPTIVE WAY.
+                We begin by looking at how growth is currently being generated and where it is breaking down. In some cases, the issue sits in acquisition. In others, it is the offer itself or what happens after the click. The point is to locate the real constraint, not just the visible symptom.
+              </p>
+              <p>
+                We evaluate the entire journey together as part of a full funnel performance marketing strategy. Audience targeting, messaging, creative direction, landing experience, and tracking. If even one of these is misaligned, performance stays capped regardless of spend.
               </p>
             </div>
-            <div>
+            <div className="space-y-6">
               <p>
-                WE BELIEVE THAT DESIGNING BRANDS THAT REMAIN GRAPHICALLY UNCHANGED FOR 30 YEARS NO LONGER MAKES SENSE. WE WORK
-                BASED ON CONCEPTS THAT GO BEYOND TIME AND PROVIDE THE BASIS OF AESTHETICS.
+                We also read performance beyond surface metrics. We look at lead quality, drop-off behaviour, and consistency of results over time. These patterns show what is actually working and what is not.
               </p>
               <p>
-                DIGITAL, COHERENT AND IDENTIFIABLE UNIVERSES, BASED ON THE NEEDS OF EACH CLIENT. WITH RESOURCEFULNESS AS A TOOL
-                THROUGHOUT THE ENTIRE PROCESS.
+                Our performance marketing agency brings structure across the full revenue flow through performance marketing solutions. So performance is not driven by assumptions or isolated wins, but by a system that holds together under scale.
               </p>
             </div>
           </div>
@@ -1014,16 +1029,12 @@ const Hero = () => {
           <div className="pt-40 text-center">
             {/* Center-left pill badge */}
 
-            <h2
-              className="relative z-20"
-            >
+            <h2 className="relative z-20 text-[clamp(2.5rem,7vw,5.75rem)] font-normal leading-[1.06] tracking-[-0.02em] text-black md:text-[clamp(3rem,6.5vw,6.25rem)]">
               App Development
             </h2>
 
-            <p
-              className="text-balance uppercase"
-            >
-              Refresh your business identity
+            <p className="text-balance text-[clamp(1.05rem,2.8vw,1.5rem)] font-normal uppercase text-black md:text-[clamp(1.15rem,2.4vw,1.7rem)]">
+              Built for long-term performance
             </p>
           </div>
 
@@ -1278,11 +1289,11 @@ const Hero = () => {
                 <span className="shrink-0 whitespace-nowrap">x1</span>
               </div>
               <div className="flex justify-between gap-2">
-                <span className="min-w-0 break-words">Video Editing</span>
+                <span className="min-w-0 break-words">Motion Graphics</span>
                 <span className="shrink-0 whitespace-nowrap">x1</span>
               </div>
               <div className="flex justify-between gap-2">
-                <span className="min-w-0 break-words">Content Writing</span>
+                <span className="min-w-0 break-words">Copywriting</span>
                 <span className="shrink-0 whitespace-nowrap">x1</span>
               </div>
               <div className="flex justify-between gap-2">
