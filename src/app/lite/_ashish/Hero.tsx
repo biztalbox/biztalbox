@@ -30,6 +30,13 @@ const LITE_SERVICE_PAGE_PATHS = {
 
 type LiteServicePageKey = keyof typeof LITE_SERVICE_PAGE_PATHS;
 
+function formatReceiptDate(d: Date): string {
+  const dd = String(d.getDate()).padStart(2, "0");
+  const mm = String(d.getMonth() + 1).padStart(2, "0");
+  const yy = String(d.getFullYear() % 100).padStart(2, "0");
+  return `${dd}/${mm}/${yy}`;
+}
+
 function LiteServiceViewMoreLink({ service }: { service: LiteServicePageKey }) {
   return (
     <div className="relative z-20 mx-auto mt-10 flex justify-center px-2 sm:mt-12">
@@ -132,10 +139,9 @@ const Hero = () => {
 
 
               </div>
-              </div>
-
-             
             </div>
+
+
           </div>
         </div>
       </section>
@@ -151,10 +157,10 @@ const Hero = () => {
           {/* Top: centered nav + right pill */}
           <div className="relative z-10 flex flex-col gap-6 lg:flex-row items-center lg:justify-between">
             <div className="flex flex-wrap items-center mx-auto justify-center gap-x-5 gap-y-2 text-center text-xs uppercase">
-              <span className="whitespace-nowrap">DIGITAL BRANDING</span>
-              <span className="whitespace-nowrap">VISUAL Designing</span>
-              <span className="whitespace-nowrap">INTERACTIVE WEBSITES</span>
-              <span className="whitespace-nowrap">DISRUPTIVE COMM.</span>
+              <span className="whitespace-nowrap">Search Visibility</span>
+              <span className="whitespace-nowrap">Brand Strategy</span>
+              <span className="whitespace-nowrap">Visual Design</span>
+              <span className="whitespace-nowrap">Business Growth</span>
             </div>
           </div>
 
@@ -216,12 +222,12 @@ const Hero = () => {
           <div className="pt-40 max-w-screen mx-auto">
             {/* Center-left pill badge */}
 
-            <h2 className="text-center">Search Engine Optimization</h2>
+            <h2 className="text-center whitespace-nowrap">Search Engine Optimization</h2>
 
             <h3
               className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative z-20"
             >
-              Organic Rankings & Visibility
+              Organic Growth through search
             </h3>
             {/* Two-column body */}
             <div className="grid gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
@@ -304,16 +310,10 @@ const Hero = () => {
             </span>
           </div>
 
-          <div className="flex justify-center self-end">
-            <div className="rounded-md border border-black p-3.5 text-center">
-              <p className="text-4xl font-semibold leading-none tracking-tight">#02</p>
-            </div>
-          </div>
-
           <div className="pt-40 max-w-screen mx-auto">
-            <h2 className="text-center">Social Media Optimization</h2>
+            <h2 className="text-center whitespace-nowrap">Social Media Optimization</h2>
             <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative z-20">
-              Reach, Engagement, & Growth
+            Building everyday brand presence
             </h3>
             <div className="grid gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
               <div>
@@ -393,12 +393,6 @@ const Hero = () => {
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
               Website Development
             </span>
-          </div>
-
-          <div className="flex justify-center self-end">
-            <div className="rounded-md border border-black p-3.5 text-center">
-              <p className="text-4xl font-semibold leading-none tracking-tight">#03</p>
-            </div>
           </div>
 
           <div className="pt-40 max-w-screen mx-auto">
@@ -483,12 +477,6 @@ const Hero = () => {
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
               Graphic Designing
             </span>
-          </div>
-
-          <div className="flex justify-center self-end">
-            <div className="rounded-md border border-black p-3.5 text-center">
-              <p className="text-4xl font-semibold leading-none tracking-tight">#04</p>
-            </div>
           </div>
 
           <div className="pt-40 max-w-screen mx-auto">
@@ -582,12 +570,6 @@ const Hero = () => {
             </span>
           </div>
 
-          <div className="flex justify-center self-end">
-            <div className="rounded-md border border-black p-3.5 text-center">
-              <p className="text-4xl font-semibold leading-none tracking-tight">#05</p>
-            </div>
-          </div>
-
           <div className="pt-40 max-w-screen mx-auto">
             <h2 className="text-center">Motion Graphics</h2>
             <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative z-20">
@@ -672,12 +654,6 @@ const Hero = () => {
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
               Copywriting
             </span>
-          </div>
-
-          <div className="flex justify-center self-end">
-            <div className="rounded-md border border-black p-3.5 text-center">
-              <p className="text-4xl font-semibold leading-none tracking-tight">#06</p>
-            </div>
           </div>
 
           <div className="pt-40 max-w-screen mx-auto">
@@ -772,12 +748,6 @@ const Hero = () => {
             </span>
           </div>
 
-          <div className="flex justify-center self-end">
-            <div className="rounded-md border border-black p-3.5 text-center">
-              <p className="text-4xl font-semibold leading-none tracking-tight">#07</p>
-            </div>
-          </div>
-
           <div className="pt-40 max-w-screen mx-auto">
             <h2 className="text-center">Performance Marketing</h2>
             <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative z-20">
@@ -861,12 +831,6 @@ const Hero = () => {
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
               App Development
             </span>
-          </div>
-
-          <div className="flex justify-center self-end">
-            <div className="rounded-md border border-black p-3.5 text-center">
-              <p className="text-4xl font-semibold leading-none tracking-tight">#08</p>
-            </div>
           </div>
 
           <div className="pt-40 max-w-screen mx-auto">
@@ -954,12 +918,6 @@ const Hero = () => {
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
               Algorithm Analysis
             </span>
-          </div>
-
-          <div className="flex justify-center self-end">
-            <div className="rounded-md border border-black p-3.5 text-center">
-              <p className="text-4xl font-semibold leading-none tracking-tight">#09</p>
-            </div>
           </div>
 
           <div className="pt-40 max-w-screen mx-auto">
@@ -1063,7 +1021,7 @@ const Hero = () => {
 
           <div className="flex justify-between">
             <span>BIZTALBOX</span>
-            <span>09/04/26</span>
+            <span>{formatReceiptDate(new Date())}</span>
           </div>
 
           <span className="text-center">DIGITAL SERVICES</span>
@@ -1134,14 +1092,15 @@ const Hero = () => {
         </div>
       </section>
 
-      <section id="ctaSection" className="pt-10 pb-32">
+      <section id="ctaSection" className="pt-10 pb-5">
         <div className="container flex flex-col gap-10 overflow-hidden">
-          <h3 className="text-5xl md:text-7xl lg:text-[6rem] font-thin uppercase leading-none mx-auto text-center">
-            Thanks for <br />your visit!
+          <h3 className="text-3xl md:text-4xl lg:text-6xl font-thin uppercase leading-none mx-auto text-center">
+          Thanks for being here<br/>Let’s take this forward.
           </h3>
           <div className="h-48"></div>
-          <Link href="#" className="hover:!bg-black bg-white hover:!text-white relative z-10 text-center uppercase text-5xl md:text-7xl lg:text-[6rem] font-thin mx-auto px-5 py-4 border border-black rounded-full">
-            Let&apos;s Talk!
+          <Link href="#" className="hover:!bg-black bg-white hover:!text-white relative z-10 text-center uppercase text-3xl md:text-5xl lg:text-7xl font-thin mx-auto px-5 py-4 border border-black rounded-full">
+            
+          Contact us
           </Link>
         </div>
       </section>

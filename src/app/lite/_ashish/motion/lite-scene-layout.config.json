@@ -24,8 +24,8 @@
         }
       },
       "webdev": {
-        "position": [1, 280, 150],
-        "scale": [0.8, 0.8, 0.8],
+        "position": [5, 280, 150],
+        "scale": [4, 4, 4],
         "float": {
           "speed": 5,
           "rotationIntensity": 0.2,
@@ -347,15 +347,15 @@
   "ctaCart": {
     "desktop": {
       "times": {
-        "bucketGrow": 0.15,
-        "arrange": 0.3,
+        "bucketGrow": 0.2,
+        "arrange": 0.8,
         "move": 1.5,
         "asa": 0.3
       },
       "bucket": {
         "scale0": [0, 0, 0],
-        "scaleGrow": [8, 8, 8],
-        "rotationArrange": { "x": 0.3, "y": 0.6, "duration": 2, "ease": "power3.inOut" },
+        "scaleGrow": [9, 9, 9],
+        "rotationArrange": { "x": 0.3, "y": 0.6, "duration": 3, "ease": "power3.inOut" },
         "scaleArrange": { "x": 7, "y": 7, "z": 7, "duration": 2, "ease": "power3.inOut" }
       },
       "asa": {
@@ -367,46 +367,48 @@
       "models": {
         "seo": {
           "scale0": [0, 0, 0],
-          "scaleArrange": [1.6, 1.6, 1.6],
-          "positionMove": { "y": "-=10", "duration": 2, "ease": "power3.inOut" }
+          "scaleArrange": [1.2, 1.2, 1.2],
+          "positionMove": { "y": "-=25", "z": "+=100", "duration": 2, "ease": "power3.inOut" }
         },
         "smo": {
           "scale0": [0, 0, 0],
           "scaleArrange": [0.2, 0.2, 0.1],
-          "positionMove": { "y": "-=60", "x": "+=60", "z": "-=30", "duration": 2, "ease": "power3.inOut" }
+          "positionMove": { "y": "-=70", "x": "+=40", "z": "-=20", "duration": 2, "ease": "power3.inOut" }
         },
         "webdev": {
           "scale0": [0, 0, 0],
-          "scaleArrange": [1, 1, 0.3],
-          "positionMove": { "y": "-=30", "x": "-=70", "z": "+=150", "duration": 2, "ease": "power3.inOut" }
+          "scaleArrange": [1, 1, 1],
+          "positionMove": { "y": "-=100", "x": "-=10", "z": "+=270", "duration": 2, "ease": "power3.inOut" }
         },
         "video": {
           "scale0": [0, 0, 0],
-          "scaleArrange": [0.6, 1, 0.3],
-          "positionMove": { "y": "-=30", "x": "-=70", "z": "+=150", "duration": 2, "ease": "power3.inOut" }
+          "scaleArrange": [0.6, 0.6, 0.6],
+          "positionMove": { "y": "-=20", "x": "-=80", "z": "+=150", "duration": 2, "ease": "power3.inOut" }
         },
         "content": {
           "scale0": [0, 0, 0],
-          "scaleArrange": [0.3, 0.5, 0.3],
-          "positionMove": { "y": "-=30", "x": "-=10", "z": "+=150", "duration": 2, "ease": "power3.inOut" }
+          "scaleArrange": [0.3, 0.3, 0.3],
+          "positionMove": { "y": "+=20", "x": "-=10", "z": "+=100", "duration": 2, "ease": "power3.inOut" }
         },
         "ads": {
           "scale0": [0, 0, 0],
-          "scaleArrange": [0.4, 0.1, 0.1],
-          "positionMove": { "y": "-=1", "x": "+=30", "z": "-=200", "duration": 2, "ease": "power3.inOut" }
+          "scaleArrange": [0.1, 0.1, 0.1],
+          "positionMove": { "y": "-=20", "x": "+=75", "z": "-=130", "duration": 2, "ease": "power3.inOut" }
         },
         "algo": {
           "scale0": [0, 0, 0],
-          "scaleArrange": [2, 2, 2],
-          "positionMove": { "y": "-=2", "x": "+=40", "z": "-=50", "duration": 2, "ease": "power3.inOut" }
+          "scaleArrange": [1, 1, 1],
+          "positionMove": { "y": "-=2", "x": "+=40", "z": "-=100", "duration": 2, "ease": "power3.inOut" }
         },
         "graphic": {
-          "scale0": [0, 0, 0]
+          "scale0": [0, 0, 0],
+          "scaleArrange": [0.5, 0.5, 0.5],
+          "positionMove": { "y": "-=20", "x": "-=80", "z": "-=60", "duration": 2, "ease": "power3.inOut" }
         },
         "appdev": {
           "scale0": [0, 0, 0],
-          "scaleArrange": [0.3, 0.1, 0.1],
-          "positionMove": { "y": "-=10", "x": "-=100", "z": "-=100", "duration": 2, "ease": "power3.inOut" }
+          "scaleArrange": [0.2, 0.2, 0.2],
+          "positionMove": { "y": "-=50", "x": "-=20", "z": "+=5", "duration": 2, "ease": "power3.inOut" }
         }
       }
     },
