@@ -24,8 +24,8 @@
         }
       },
       "webdev": {
-        "position": [30, 280, 150],
-        "scale": [4, 4.5, 4],
+        "position": [1, 280, 150],
+        "scale": [0.8, 0.8, 0.8],
         "float": {
           "speed": 5,
           "rotationIntensity": 0.2,
@@ -331,14 +331,18 @@
     }
   },
   "heroFadeOut": {
-    "video": 500,
-    "smo": 700,
-    "appdev": 500,
-    "graphic": 400,
-    "algo": 350,
-    "content": 500,
-    "ads": 500,
-    "webdev": 350
+    "desktop": {
+      "video": 500,
+      "smo": 700,
+      "appdev": 500,
+      "graphic": 400,
+      "algo": 350,
+      "content": 500,
+      "ads": 500,
+      "webdev": 350
+    },
+    "tablet": {},
+    "mobile": {}
   },
   "ctaCart": {
     "desktop": {

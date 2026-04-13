@@ -5,18 +5,18 @@ import shape from '@/assets/img/inner-about/about/shape-1.png';
 
 export default function WhyChooseUsLite() {
   return (
-    <div id="section11" className="bg-white min-h-screen relative z-10 ab-about-area py-36 z-index-5 why_choose_us_wrapper">
+    <div id="section11" className="bg-black rounded-[70px] min-h-screen relative z-10 ab-about-area py-36 z-index-5 why_choose_us_wrapper">
       <div className="container">
         <div className="row">
           <div className="col-xl-12">
             <div className="ab-about-content p-relative">   {/* add this class for animation tp_fade_bottom */}
-              <span>
+              {/* <span>
                 <Hand />
                 Hi!
-              </span>
-              <p className="tp-dropcap">
+              </span> */}
+              <h3 className="text-white">
               We believe every brand without a voice is just a name — and we&apos;re here to make yours heard! No shortcuts or gimmicks, just pure creativity and authentic marketing.
-              </p>
+              </h3>
             </div>
           </div>
         </div>
@@ -25,9 +25,9 @@ export default function WhyChooseUsLite() {
             <div className="row">
               <div className="col-xl-5 col-lg-5 col-md-4 mb-40">
                 <div className="ab-about-category-title-box tp_fade_bottom ab-2-about-title-style p-relative">
-                  <h4 className="ab-about-category-title">
+                  <h4 className="ab-about-category-title text-white">
                     Why Choose Us <br />
-                    <span>Helping you survive the Internet Jungle</span>
+                    <p className="text-sm font-bold">Helping you survive the Internet Jungle</p>
                   </h4>
                   <Image
                     className="ab-about-shape-1 d-none d-md-block"
@@ -39,7 +39,7 @@ export default function WhyChooseUsLite() {
               <div className="col-xl-7 col-lg-7 col-md-8">
                 <div className="row">
                   <div className="tp_fade_bottom">
-                    <div className="ab-about-category-list category-space-1">
+                    <div className="ab-about-category-list category-space-1 text-white">
                       {/* <span className="ab-about-category-title mb-30">
                         WHAT I DO
                       </span> */}

@@ -53,9 +53,16 @@ type CtaCartDesktopJson = {
   >;
 };
 
+/** Same pattern as `modelLayouts`: full `desktop`, partial `tablet` / `mobile` merged on top. */
+type HeroFadeOutFile = {
+  desktop: Record<string, number>;
+  tablet?: Record<string, number>;
+  mobile?: Record<string, number>;
+};
+
 const bundle = layoutBundle as unknown as {
   modelLayouts: ModelLayoutsFile;
-  heroFadeOut: Record<LiteModelKey, number>;
+  heroFadeOut: HeroFadeOutFile;
   ctaCart: {
     desktop: CtaCartDesktopJson;
     tablet: CtaCartDesktopJson | null;
@@ -104,8 +111,30 @@ export function getResolvedModelLayouts(bp: LiteSceneBreakpoint): Record<string,
   return out;
 }
 
-export function getHeroFadeOutYDelta(modelKey: LiteModelKey): number {
-  return bundle.heroFadeOut[modelKey];
+function mergeHeroFadeOutRecords(
+  base: Record<string, number>,
+  over: Record<string, number> | undefined,
+): Record<string, number> {
+  if (!over || Object.keys(over).length === 0) return { ...base };
+  return { ...base, ...over };
+}
+
+function mergeHeroFadeOutForBreakpoint(bp: LiteSceneBreakpoint): Record<string, number> {
+  const hf = bundle.heroFadeOut;
+  const desktop = hf.desktop ?? {};
+  if (bp === "desktop") return { ...desktop };
+  if (bp === "tablet") return mergeHeroFadeOutRecords(desktop, hf.tablet);
+  return mergeHeroFadeOutRecords(desktop, hf.mobile);
+}
+
+/**
+ * GSAP `y +=` delta for the hero fade strip from `heroFadeOut` in
+ * `lite-scene-layout.config.json` (`desktop` + merged `tablet` / `mobile` partials).
+ */
+export function getHeroFadeOutYDelta(modelKey: LiteModelKey, breakpoint: LiteSceneBreakpoint): number {
+  const merged = mergeHeroFadeOutForBreakpoint(breakpoint);
+  const v = merged[modelKey];
+  return typeof v === "number" && !Number.isNaN(v) ? v : 0;
 }
 
 const CTA_SCALE0_ORDER: LiteModelKey[] = [

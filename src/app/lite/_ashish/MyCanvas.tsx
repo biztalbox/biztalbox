@@ -18,6 +18,7 @@ import {
   getLiteSceneBreakpoint,
   getResolvedModelLayouts,
   resolveCtaCartConfig,
+  type LiteSceneBreakpoint,
 } from "./motion/lite-scene-layout";
 import { SFX_BEEP, pauseSfx } from "./sfx";
 
@@ -158,7 +159,6 @@ const MyCanvas = () => {
       let cancelled = false;
       let attempts = 0;
       const maxAttempts = 120;
-      let modelFadeOutTl: gsap.core.Timeline | null = null;
       let matchMediaInstance: gsap.MatchMedia | null = null;
       let addToCartTl: gsap.core.Timeline | null = null;
 
@@ -180,51 +180,40 @@ const MyCanvas = () => {
         }
         if (cancelled) return;
 
-        modelFadeOutTl = gsap.timeline({
-          scrollTrigger: {
-            trigger: "#section0",
-            start: "-120 top",
-            end: "top top",
-            scrub: 2.5,
-            markers: process.env.NODE_ENV === "development",
-          },
-        });
-
-        for (const key of HERO_FADE_OUT_KEYS) {
-          const g = modelRefs[key].current;
-          if (!g) continue;
-          const dy = getHeroFadeOutYDelta(key);
-          modelFadeOutTl.to(g.position, { y: `+=${dy}`, duration: 2, ease: "power3.inOut" }, 0);
-        }
-
         matchMediaInstance = gsap.matchMedia();
 
-        matchMediaInstance.add("(max-width: 639px)", () =>
-          registerAllLiteServiceScans(
+        const attachHeroBand = (bp: LiteSceneBreakpoint) => {
+          const fadeTl = gsap.timeline({
+            scrollTrigger: {
+              trigger: "#section0",
+              start: "-120 top",
+              end: "top top",
+              scrub: 2.5,
+              markers: process.env.NODE_ENV === "development",
+            },
+          });
+          for (const key of HERO_FADE_OUT_KEYS) {
+            const g = modelRefs[key].current;
+            if (!g) continue;
+            const dy = getHeroFadeOutYDelta(key, bp);
+            fadeTl.to(g.position, { y: `+=${dy}`, duration: 2, ease: "power3.inOut" }, 0);
+          }
+          const disposeScans = registerAllLiteServiceScans(
             modelRefs,
-            getLiteScanTimingForBreakpoint("mobile"),
+            getLiteScanTimingForBreakpoint(bp),
             () => cancelled,
-            "mobile",
-          ),
-        );
+            bp,
+          );
+          return () => {
+            fadeTl.scrollTrigger?.kill();
+            fadeTl.kill();
+            disposeScans();
+          };
+        };
 
-        matchMediaInstance.add("(min-width: 640px) and (max-width: 1023px)", () =>
-          registerAllLiteServiceScans(
-            modelRefs,
-            getLiteScanTimingForBreakpoint("tablet"),
-            () => cancelled,
-            "tablet",
-          ),
-        );
-
-        matchMediaInstance.add("(min-width: 1024px)", () =>
-          registerAllLiteServiceScans(
-            modelRefs,
-            getLiteScanTimingForBreakpoint("desktop"),
-            () => cancelled,
-            "desktop",
-          ),
-        );
+        matchMediaInstance.add("(max-width: 639px)", () => attachHeroBand("mobile"));
+        matchMediaInstance.add("(min-width: 640px) and (max-width: 1023px)", () => attachHeroBand("tablet"));
+        matchMediaInstance.add("(min-width: 1024px)", () => attachHeroBand("desktop"));
 
         addToCartTl = gsap.timeline({
           scrollTrigger: {
@@ -252,9 +241,6 @@ const MyCanvas = () => {
         matchMediaInstance?.revert();
         matchMediaInstance = null;
         pauseSfx(SFX_BEEP);
-        modelFadeOutTl?.scrollTrigger?.kill();
-        modelFadeOutTl?.kill();
-        modelFadeOutTl = null;
         addToCartTl?.scrollTrigger?.kill();
         addToCartTl?.kill();
         addToCartTl = null;
