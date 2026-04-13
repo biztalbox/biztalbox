@@ -19,5 +19,9 @@ h2{
 }
 
 h3{
-    @apply text-3xl md:text-4xl lg:text-6xl;
+    @apply text-xl md:text-2xl lg:text-4xl;
+}
+
+p{
+    @apply text-xs uppercase font-thin text-neutral-700;
 }
