@@ -141,6 +141,7 @@ const Hero = () => {
 
 
           </div>
+        </div>
       </section>
 
       {/* about section */}

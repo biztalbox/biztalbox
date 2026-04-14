@@ -374,10 +374,16 @@ const MyCanvas = () => {
         rotation={L.bucket!.rotation}
       />
 
-      <directionalLight position={[140, 120, 160]} intensity={1.35} color="#ffffff" />
+      {/* <directionalLight position={[140, 120, 160]} intensity={1.35} color="#ffffff" />
       <directionalLight position={[-130, 70, 90]} intensity={5.65} color="#eef2ff" />
       <directionalLight position={[40, 90, -160]} intensity={5.75} color="#ffffff" />
-      <directionalLight position={[0, -80, 120]} intensity={5.35} color="#d4d4d8" />
+      <directionalLight position={[0, -80, 120]} intensity={5.35} color="#d4d4d8" /> */}
+      <directionalLight position={[140, 120, 560]} intensity={1} color="#ffffff" />
+      <directionalLight position={[-130, 70, 90]} intensity={1}color="#ffffff" />
+      <directionalLight position={[40, 90, -160]} intensity={5.75}
+color="#ffffff" />
+      <directionalLight position={[0, 100, 420]} intensity={3.5}
+color="#ffffff" />
     </group>
   );
 };
