@@ -113,33 +113,24 @@ const Hero = () => {
 
 
         {/* Hero Content  */}
-        <div className="relative z-10 pt-20" >
-          <div className="container flex flex-col gap-16">
-            {/* Center — mobile: natural height only; sm+: fills middle row for vertical centering */}
-            <div className="flex items-start justify-center pt-2 max-sm:self-start sm:-translate-y-4 sm:items-center sm:pt-0">
-              <div className="w-full max-w-screen text-center flex flex-col gap-6">
-                <h3
-                >
-                  Creativity? Always
-                  <br />
-                  Calculated? Definitely
-                </h3>
+        <div className="relative z-10 flex min-h-[100svh] flex-col justify-center pt-20 sm:pt-0 md:pt-0 lg:block lg:min-h-0 lg:pt-90">
+          <div className="container flex flex-col items-center justify-center gap-6 text-center lg:items-stretch lg:justify-start lg:gap-16">
+            <div className="w-full max-w-screen flex flex-col gap-6">
+              <h3>
+                Creativity? Always
+                <br />
+                Calculated? Definitely
+              </h3>
 
-                <h1>biztalbox</h1>
+              <h1>biztalbox</h1>
 
-                <h3>Igniting your brand's
-                  potential with
-                  out-of-the-box
-                  Marketing Solutions</h3>
-                <p className="text-sm uppercase">
-                  Expert digital marketing, SEO, and web development tailored for your success. Contact us & we will find that solution for you!
-                </p>
-
-
-              </div>
+              <h3>
+                Igniting your brand&apos;s potential with out-of-the-box Marketing Solutions
+              </h3>
+              <p className="text-sm uppercase">
+                Expert digital marketing, SEO, and web development tailored for your success. Contact us &amp; we will find that solution for you!
+              </p>
             </div>
-
-
           </div>
         </div>
       </section>
