@@ -4,6 +4,7 @@ import Image from "next/image";
 import MyCanvas from "./MyCanvas";
 import { Canvas, useThree } from "@react-three/fiber";
 import { useLayoutEffect } from "react";
+import localFont from "next/font/local";
 import * as THREE from "three";
 import { LITE_HERO_SURFACE_STYLE } from "./lite-hero-surface";
 import WhyChooseUs from "@/components/about/why-choose-us";
@@ -11,6 +12,11 @@ import ContactOne from "@/components/contact/contact-one";
 import Link from "next/link";
 import WhyChooseUsLite from "./WhyChooseUs";
 import { getTicketSpecNameColumns } from "./lite-service-ticket-specs";
+
+const centuryGothic = localFont({
+  src: "../../../../public/assets/fonts/centurygothic.ttf",
+  display: "swap",
+});
 
 const SECTION3_SEO_IMAGE_SRC =
   "https://biztalbox.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fseo.0f33ee3b.webp&w=1200&q=75";
@@ -113,31 +119,39 @@ const Hero = () => {
 
 
         {/* Hero Content  */}
-        <div className="relative z-10 flex min-h-[100svh] flex-col justify-center pt-20 sm:pt-0 md:pt-0 lg:block lg:min-h-0 lg:pt-90">
-          <div className="container flex flex-col items-center justify-center gap-6 text-center lg:items-stretch lg:justify-start lg:gap-16">
-            <div className="w-full max-w-screen flex flex-col gap-6">
-              <h3>
-                Creativity? Always
-                <br />
-                Calculated? Definitely
-              </h3>
+        <div className="relative z-10 pt-20" >
+          <div className="container flex flex-col gap-16">
+            {/* Center — mobile: natural height only; sm+: fills middle row for vertical centering */}
+            <div className="flex items-start justify-center pt-2 max-sm:self-start sm:-translate-y-4 sm:items-center sm:pt-0">
+              <div className="w-full max-w-screen text-center flex flex-col gap-4">
+                <p className="whitespace-nowrap font-bold px-3 py-1.5 bg-black text-white uppercase w-fit text-center mx-auto rounded"
+                >
+                  Creative Souls, Strategic Minds
+                </p>
 
-              <h1>biztalbox</h1>
+                <h1 className={`${centuryGothic.className}`}>biztalbox</h1>
+                <span className="h-[1px] w-40 mx-auto bg-black"></span>
 
-              <h3>
-                Igniting your brand&apos;s potential with out-of-the-box Marketing Solutions
-              </h3>
-              <p className="text-sm uppercase">
-                Expert digital marketing, SEO, and web development tailored for your success. Contact us &amp; we will find that solution for you!
-              </p>
+                <h3>Igniting your brand&apos;s
+                  potential with
+                  out-of-the-box
+                  Marketing Solutions</h3>
+                <p className="text-sm uppercase">
+                  Expert digital marketing, SEO, and web development tailored for your success. Contact us & we will find that solution for you!
+                </p>
+
+
+              </div>
             </div>
+
+
           </div>
         </div>
       </section>
 
       {/* about section */}
       <section id="section1" className="relative" >
-        <div className="container relative py-32">
+        <div className="container relative py-10">
           {/* Top: centered nav + right pill */}
           <div className="relative z-10 flex flex-col gap-6 lg:flex-row items-center lg:justify-between">
             <div className="flex flex-wrap items-center mx-auto justify-center gap-x-5 gap-y-2 text-center text-xs uppercase">
@@ -161,7 +175,7 @@ const Hero = () => {
           {/* Bottom two columns + CTA */}
           <div className="relative z-10 mx-auto mt-16 grid  gap-10 sm:mt-20 lg:mt-28 lg:grid-cols-2 lg:gap-14">
             <p>
-              Biztal Box is a marketing agency that enhances brands' online presence through a range of services including SEO optimization, web development, graphic design, and more. Our dynamic agency crafts strategies that stick while bringing every client' unique perspective to life.            </p>
+              Biztal Box is a marketing agency that enhances brand&apos;s online presence through a range of services including SEO optimization, web development, graphic design, and more. Our dynamic agency crafts strategies that stick while bringing every client&apos;s unique perspective to life.            </p>
             <div className="flex flex-col lg:items-start">
               <p>
                 We understand a brand’s goals and ideas to the finest detail by immersing ourselves in its unique vision. By brainstorming creative solutions, we improve visibility and ensure that every interaction with your audience leaves a memorable mark.              </p>
@@ -294,7 +308,7 @@ const Hero = () => {
           <div className="pt-40 max-w-screen mx-auto">
             <h2 className="text-center whitespace-nowrap">Social Media Optimization</h2>
             <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative z-20">
-            Building everyday brand presence
+              Building everyday brand presence
             </h3>
             <div className="grid gap-x-10 gap-y-8 px-2 sm:mt-10 sm:grid-cols-2 sm:gap-x-14 sm:px-6 lg:mt-12">
               <div>
@@ -1056,12 +1070,12 @@ const Hero = () => {
       <section id="ctaSection" className="pt-10 pb-5">
         <div className="container flex flex-col gap-10 overflow-hidden">
           <h3 className="text-3xl md:text-4xl lg:text-6xl font-thin uppercase leading-none mx-auto text-center">
-          Thanks for being here<br/>Let’s take this forward.
+            Thanks for being here<br />Let’s take this forward.
           </h3>
           <div className="h-48"></div>
           <Link href="#" className="hover:!bg-black bg-white hover:!text-white relative z-10 text-center uppercase text-3xl md:text-5xl lg:text-7xl font-thin mx-auto px-5 py-4 border border-black rounded-full">
-            
-          Contact us
+
+            Contact us
           </Link>
         </div>
       </section>

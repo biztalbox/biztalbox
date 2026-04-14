@@ -15,13 +15,13 @@ h1{
 }
 
 h2{
-    @apply text-[44px] md:text-[99px] !whitespace-normal lg:!text-[99px] leading-normal;
+    @apply text-[44px] md:text-[60px] !whitespace-normal lg:!text-[99px] leading-none;
 }
 
 h3{
     @apply text-[22px] lg:text-[33px];
 }
 
-                            p{
-                                @apply text-[11px] leading-normal uppercase font-thin text-neutral-700;
-                            }
+p{
+    @apply text-[11px] leading-normal uppercase font-thin text-neutral-700;
+}
