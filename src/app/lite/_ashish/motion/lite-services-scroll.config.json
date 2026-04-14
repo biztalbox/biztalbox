@@ -29,8 +29,11 @@
       },
       "motion": {
         "approach": {
+          "position": {
+            "y": "+=100"
+          },
           "rotation": {
-            "y": "+=28"
+            "y": "+=30"
           },
           "duration": {
             "rotation": 3
@@ -72,12 +75,8 @@
             }
           }
         }
-        
-        
       }
-    
     },
-    
     {
       "modelKey": "smo",
       "scannerId": "lite-scanner-smo",
@@ -94,11 +93,11 @@
         "approach": {
           "position": {
             "y": "-=590",
-            "x": "+=10"
+            "x": "+=150"
           },
           "rotation": {
             "x": "+=34.5",
-            "z": "+=3.2"
+            "z": "-=3.2"
           },
           "scale": 0.35,
           "durations": {
@@ -121,8 +120,8 @@
               },
               "scale": 1,
               "rotation": {
-                 "x": "+=34.5",
-                 "z": "+=3.2"
+                "x": "+=34.5",
+                "z": "+=3.2"
               },
               "duration": {
                 "rotation": 3
@@ -142,8 +141,8 @@
               },
               "scale": 0.6,
               "rotation": {
-                 "x": "+=34.5",
-                 "z": "+=3.2"
+                "x": "+=34.5",
+                "z": "+=3.2"
               },
               "duration": {
                 "rotation": 3
@@ -163,18 +162,19 @@
       },
       "scan": {
         "endTrigger": "#section5",
-        "pinStart": "top 10%",
+        "pinStart": "top 20%",
         "pinEnd": "top -30%"
       },
       "motion": {
         "approach": {
           "position": {
-            "x": "+=270",
-            "y": "-=330"
+            "x": "+=380",
+            "y": "-=450"
           },
           "rotation": {
-            "x": "+=9.2",
-            "y": "+=3.2"
+            "x": "+=9.5",
+            "y": "+=5",
+            "z": "+=3.2"
           },
           "scale": 0.8,
           "durations": {
@@ -196,8 +196,8 @@
               },
               "scale": 6,
               "rotation": {
-                 "x": "+=34.5",
-                 "z": "+=3.2"
+                "x": "+=34.5",
+                "z": "+=3.2"
               },
               "duration": {
                 "rotation": 3
@@ -224,8 +224,6 @@
         }
       }
     },
-    
-    
     {
       "modelKey": "graphic",
       "scannerId": "lite-scanner-graphic",
@@ -240,16 +238,14 @@
       "motion": {
         "approach": {
           "position": {
-            "y": "-=430",
-            "x": "+=5",
+            "y": "-=370",
+            "x": "-=200",
             "z": "+=40"
           },
           "rotation": {
-            "rotation": {
-                 "x": "+=34.5",
-                 "z": "+=3.2"
-                 }
-
+            "x": "+=3.5",
+              "y": "+=34.5",
+            "z": "+=3.2"
           },
           "scale": 1,
           "durations": {
@@ -272,8 +268,8 @@
               },
               "scale": 3,
               "rotation": {
-                 "x": "+=34.5",
-                 "z": "+=3.2"
+                "x": "+=34.5",
+                "z": "+=3.2"
               },
               "duration": {
                 "rotation": 3
@@ -314,8 +310,8 @@
       "motion": {
         "approach": {
           "position": {
-            "y": "-=470",
-            "x": "+=270"
+            "y": "-=560",
+            "x": "+=180"
           },
           "rotation": {
             "x": "+=9.2",
@@ -342,8 +338,8 @@
               },
               "scale": 2.6,
               "rotation": {
-                 "x": "+=34.5",
-                 "z": "+=3.2"
+                "x": "+=34.5",
+                "z": "+=3.2"
               },
               "duration": {
                 "rotation": 3
@@ -368,7 +364,6 @@
             }
           }
         }
-       
       }
     },
     {
@@ -385,14 +380,13 @@
       "motion": {
         "approach": {
           "position": {
-            "y": "-=400",
-            "x": "+=140"
+            "y": "-=430",
+            "x": "+=10"
           },
           "rotation": {
-            "x": "+=31.5",
-            "z": "+=0"
+            "x": "+=31.5"
           },
-          "scale": 1,
+          "scale": 0.8,
           "durations": {
             "position": 2,
             "scale": 2,
@@ -413,8 +407,8 @@
               },
               "scale": 2.1,
               "rotation": {
-                 "x": "+=34.5",
-                 "z": "+=3.2"
+                "x": "+=34.5",
+                "z": "+=3.2"
               },
               "duration": {
                 "rotation": 3
@@ -455,8 +449,8 @@
       "motion": {
         "approach": {
           "position": {
-            "y": "-=470",
-            "x": "-=100"
+            "y": "-=530",
+            "x": "-=60"
           },
           "rotation": {
             "x": "+=31.5",
@@ -481,10 +475,10 @@
                 "y": "-=1100",
                 "x": "-=130"
               },
-              "scale":0.7,
+              "scale": 0.7,
               "rotation": {
-                 "x": "+=34.5",
-                 "z": "+=3.2"
+                "x": "+=34.5",
+                "z": "+=3.2"
               },
               "duration": {
                 "rotation": 3
@@ -525,12 +519,13 @@
       "motion": {
         "approach": {
           "position": {
-            "y": "-=460",
-            "x": "-=40"
+            "y": "-=480",
+            "x": "+=180"
           },
           "rotation": {
             "x": "+=32.5",
-            "z": "0"
+            "z": "+=0",
+            "y":"-=0.5"
           },
           "scale": 0.5,
           "durations": {
@@ -553,8 +548,8 @@
               },
               "scale": 3,
               "rotation": {
-                 "x": "+=34.5",
-                 "z": "+=3.2"
+                "x": "+=34.5",
+                "z": "+=3.2"
               },
               "duration": {
                 "rotation": 3
@@ -595,8 +590,8 @@
       "motion": {
         "approach": {
           "position": {
-            "y": "-=370",
-            "x": "-=80"
+            "y": "-=390",
+            "x": "-=100"
           },
           "rotation": {
             "x": "+=31.5",
@@ -608,7 +603,7 @@
             "scale": 2,
             "rotation": 2
           }
-        } 
+        }
       },
       "responsive": {
         "mobile": {
@@ -623,8 +618,8 @@
               },
               "scale": 4,
               "rotation": {
-                 "x": "+=34.5",
-                 "z": "+=3.2"
+                "x": "+=34.5",
+                "z": "+=3.2"
               },
               "duration": {
                 "rotation": 3

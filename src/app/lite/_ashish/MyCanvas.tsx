@@ -35,7 +35,7 @@ const LITE_GLB_URLS = [
   "/assets/lite_models/graphic.glb",
   "/assets/lite_models/video.glb",
   "/assets/lite_models/algo.glb",
-  "/assets/lite_models/bucket.glb",
+  "/assets/lite_models/box.glb",
 ] as const;
 
 function configureGltfLoader(loader: GLTFLoader) {
@@ -152,7 +152,7 @@ const MyCanvas = () => {
   const graphicScene = sceneBySrc.get("/assets/lite_models/graphic.glb");
   const videoScene = sceneBySrc.get("/assets/lite_models/video.glb");
   const algoScene = sceneBySrc.get("/assets/lite_models/algo.glb");
-  const bucketScene = sceneBySrc.get("/assets/lite_models/bucket.glb");
+  const bucketScene = sceneBySrc.get("/assets/lite_models/box.glb");
 
   useGSAP(
     () => {
@@ -220,11 +220,12 @@ const MyCanvas = () => {
             start: "top bottom",
             end: "top top",
             scrub: 3,
+            markers: true,
           },
         });
 
-        const asa1 = findChildByName(bucketRef.current, "Asa1");
-        const asa2 = findChildByName(bucketRef.current, "Asa2");
+        const asa1 = findChildByName(bucketRef.current, "flap_1");
+        const asa2 = findChildByName(bucketRef.current, "flap_2");
         
         
         addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 2)

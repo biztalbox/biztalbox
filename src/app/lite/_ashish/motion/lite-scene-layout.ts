@@ -190,6 +190,7 @@ export function addCtaCartTweensToTimeline(
     { x: b.scaleGrow[0], y: b.scaleGrow[1], z: b.scaleGrow[2], duration: 0, ease: ease0 },
     times.bucketGrow,
   );
+  tl.to(bucket.position, { y: "+=70", duration: 0, ease: ease0 }, 0);
   tl.to(bucket.rotation, b.rotationArrange, times.arrange);
   tl.to(bucket.scale, b.scaleArrange, times.arrange);
 
