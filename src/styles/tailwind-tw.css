@@ -15,13 +15,13 @@ h1{
 }
 
 h2{
-    @apply text-4xl md:text-5xl lg:text-7xl;
+    @apply text-[44px] md:text-[99px] !whitespace-normal lg:!text-[99px] leading-normal;
 }
 
 h3{
-    @apply text-xl md:text-2xl lg:text-4xl;
+    @apply text-[22px] lg:text-[33px];
 }
 
-p{
-    @apply text-xs uppercase font-thin text-neutral-700;
-}
+                            p{
+                                @apply text-[11px] leading-normal uppercase font-thin text-neutral-700;
+                            }

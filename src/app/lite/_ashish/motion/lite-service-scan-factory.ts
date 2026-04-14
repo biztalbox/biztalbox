@@ -3,7 +3,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import * as THREE from "three";
 import type { Group } from "three";
 import { addSlideTextStripToTimeline } from "../slide-text-timeline";
-import { SFX_BEEP, addScrubTimelineCue, playSfx } from "../sfx";
+import { addScrubTimelineCue, playLiteSfx } from "../sfx";
 import {
   resolveLiteServiceScans,
   type LiteApproachMotion,
@@ -321,7 +321,7 @@ export function attachLiteServiceScanPair(options: {
   scanTl.to(`${scanner} .barcoadCheck`, { display: "block", duration: 0.1, ease: "power1.inOut" }, 1.9);
 
   const removeBeepCue = addScrubTimelineCue(scanTl, 2.1 + 0.1, () => {
-    if (!isCancelled()) playSfx(SFX_BEEP);
+    if (!isCancelled()) playLiteSfx("beep");
   });
 
   /** Warm rosy “scan” read on the GLB, peaking as the model vanishes (scrub reverses cleanly). */

@@ -1,14 +1,32 @@
 import type gsap from "gsap";
 
-export const SFX_BEEP = "/assets/lite_models/beep.mp3";
+const SFX_BEEP_SRC = "/assets/lite_models/beep.mp3";
+const SFX_BILL_SRC = "/assets/lite_models/bill.mp3";
+
+export type LiteSfxKind = "beep" | "bill";
+
+/** Defaults when `startSeconds` / `durationSeconds` args are omitted. */
+export const LITE_SFX_DEFAULTS: Record<
+  LiteSfxKind,
+  { src: string; startTime: number; durationSec: number | undefined }
+> = {
+  beep: { src: SFX_BEEP_SRC, startTime: 0, durationSec: undefined },
+  bill: { src: SFX_BILL_SRC, startTime: 0, durationSec: 8 },
+};
 
 const audioBySrc = new Map<string, HTMLAudioElement>();
+const stopTimersBySrc = new Map<string, ReturnType<typeof setTimeout>>();
+
+type PendingPlay = {
+  kind: LiteSfxKind;
+  startSeconds?: number;
+  durationSeconds?: number;
+};
+const pendingAfterUnlock: PendingPlay[] = [];
 
 let unlockInstalled = false;
 let sfxUnlocked = false;
-const pendingAfterUnlock = new Set<string>();
 
-/** Tiny WAV so we can unlock playback before any real file is cached (tap once → later scroll SFX work). */
 const SILENT_WAV =
   "data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA";
 
@@ -23,7 +41,14 @@ function getOrCreateAudio(src: string): HTMLAudioElement {
   return el;
 }
 
-/** Prime playback in a real user gesture (pointer / key). Scrolling alone is often not enough for autoplay policy. */
+function clearStopTimerForSrc(src: string): void {
+  const prev = stopTimersBySrc.get(src);
+  if (prev !== undefined) {
+    clearTimeout(prev);
+    stopTimersBySrc.delete(src);
+  }
+}
+
 function primeAudioInGesture(el: HTMLAudioElement): void {
   const prevVol = el.volume;
   el.volume = 0;
@@ -40,10 +65,9 @@ function primeAudioInGesture(el: HTMLAudioElement): void {
 }
 
 function flushPendingAfterUnlock(): void {
-  const queued = Array.from(pendingAfterUnlock);
-  pendingAfterUnlock.clear();
-  for (const src of queued) {
-    playSfx(src);
+  const queued = pendingAfterUnlock.splice(0, pendingAfterUnlock.length);
+  for (const p of queued) {
+    playLiteSfx(p.kind, p.startSeconds, p.durationSeconds);
   }
 }
 
@@ -76,45 +100,74 @@ function installUnlockListenersOnce(): void {
   window.addEventListener("touchstart", onGesture, { capture: true, passive: true });
 }
 
-function tryPlayFromBeginning(el: HTMLAudioElement, srcKey: string): void {
-  el.currentTime = 0;
-  const p = el.play();
-  if (p != null) {
-    void p.catch((err: DOMException) => {
-      if (err?.name === "NotAllowedError") {
-        installUnlockListenersOnce();
-        pendingAfterUnlock.add(srcKey);
-      }
-    });
-  }
-}
-
 /**
- * Play a short sound. If the browser blocks autoplay, the clip is queued until the next tap / key / touch
- * (listeners are installed automatically on first blocked play).
+ * Lite page SFX — ek hi function.
+ * @param kind `"beep"` | `"bill"`
+ * @param startSeconds seek (seconds); omit → `LITE_SFX_DEFAULTS[kind].startTime`
+ * @param durationSeconds play this many seconds then stop; omit → default; `undefined` from default = natural end / no timer
  */
-export function playSfx(src: string): void {
+export function playLiteSfx(kind: LiteSfxKind, startSeconds?: number, durationSeconds?: number): void {
   if (typeof window === "undefined") return;
   installUnlockListenersOnce();
 
-  const el = getOrCreateAudio(src);
+  const def = LITE_SFX_DEFAULTS[kind];
+  const start = startSeconds ?? def.startTime;
+  const duration = durationSeconds !== undefined ? durationSeconds : def.durationSec;
+
+  const el = getOrCreateAudio(def.src);
+  const src = def.src;
 
   const run = (): void => {
-    installUnlockListenersOnce();
-    tryPlayFromBeginning(el, src);
+    clearStopTimerForSrc(src);
+
+    try {
+      el.currentTime = Math.max(0, start);
+    } catch {
+      el.currentTime = 0;
+    }
+
+    const p = el.play();
+    if (p != null) {
+      void p.catch((err: DOMException) => {
+        if (err?.name === "NotAllowedError") {
+          pendingAfterUnlock.push({ kind, startSeconds, durationSeconds });
+          installUnlockListenersOnce();
+        }
+      });
+    }
+
+    if (duration != null && Number.isFinite(duration) && duration > 0) {
+      const id = setTimeout(() => {
+        el.pause();
+        stopTimersBySrc.delete(src);
+      }, duration * 1000);
+      stopTimersBySrc.set(src, id);
+    }
   };
 
-  if (el.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
+  if (el.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
     run();
     return;
   }
 
+  let ran = false;
   const onReady = (): void => {
+    if (ran) return;
+    ran = true;
+    el.removeEventListener("canplaythrough", onReady);
     el.removeEventListener("canplay", onReady);
     run();
   };
-  el.addEventListener("canplay", onReady, { once: true });
-  el.addEventListener("error", () => el.removeEventListener("canplay", onReady), { once: true });
+  el.addEventListener("canplaythrough", onReady);
+  el.addEventListener("canplay", onReady);
+  el.addEventListener(
+    "error",
+    () => {
+      el.removeEventListener("canplaythrough", onReady);
+      el.removeEventListener("canplay", onReady);
+    },
+    { once: true },
+  );
   try {
     el.load();
   } catch {
@@ -122,7 +175,9 @@ export function playSfx(src: string): void {
   }
 }
 
-export function pauseSfx(src: string): void {
+export function pauseLiteSfx(kind: LiteSfxKind): void {
+  const src = LITE_SFX_DEFAULTS[kind].src;
+  clearStopTimerForSrc(src);
   audioBySrc.get(src)?.pause();
 }
 
@@ -153,10 +208,6 @@ function scrubCueOnUpdate(tl: gsap.core.Timeline): void {
   scrubCueLastTime.set(tl, t);
 }
 
-/**
- * When a timeline is scrub-linked to scroll, run `fn` when the playhead crosses `at` moving forward
- * (handles large jumps in one frame; init uses time at registration so starting already past `at` does not fire).
- */
 export function addScrubTimelineCue(tl: gsap.core.Timeline, at: number, fn: () => void): () => void {
   const cue: ScrubCue = { at, fn };
 

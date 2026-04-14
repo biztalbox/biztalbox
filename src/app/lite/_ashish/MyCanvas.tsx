@@ -20,7 +20,7 @@ import {
   resolveCtaCartConfig,
   type LiteSceneBreakpoint,
 } from "./motion/lite-scene-layout";
-import { SFX_BEEP, pauseSfx } from "./sfx";
+import { pauseLiteSfx, playLiteSfx } from "./sfx";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -189,7 +189,6 @@ const MyCanvas = () => {
               start: "-120 top",
               end: "top top",
               scrub: 2.5,
-              markers: process.env.NODE_ENV === "development",
             },
           });
           for (const key of HERO_FADE_OUT_KEYS) {
@@ -220,14 +219,37 @@ const MyCanvas = () => {
             trigger: "#ctaSection",
             start: "top bottom",
             end: "top top",
-            scrub: 1.5,
+            scrub: 3,
           },
         });
 
         const asa1 = findChildByName(bucketRef.current, "Asa1");
         const asa2 = findChildByName(bucketRef.current, "Asa2");
-
+        
         addCtaCartTweensToTimeline(addToCartTl, modelRefs, bucketRef, asa1, asa2, ctaCart);
+        
+        addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 2)
+        addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 2.2)
+        addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 2.4)
+        addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 2.6)
+        addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 2.8)
+        addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 3)
+        addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 3.2)
+        addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 3.4)
+        addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 3.6)
+        addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 3.8);
+
+        /** Receipt strip ends at 3.8 + 1 = 4.8 — GSAP `call` = zero-duration tween at this time (scrub-safe). */
+        addToCartTl.call(
+          () => {
+            if (cancelled) return;
+            const st = addToCartTl?.scrollTrigger;
+            if (st && st.direction < 0) return;
+            playLiteSfx("bill");
+          },
+          undefined,
+          4.8,
+        );
 
         requestAnimationFrame(() => {
           ScrollTrigger.refresh();
@@ -240,7 +262,8 @@ const MyCanvas = () => {
         cancelled = true;
         matchMediaInstance?.revert();
         matchMediaInstance = null;
-        pauseSfx(SFX_BEEP);
+        pauseLiteSfx("beep");
+        pauseLiteSfx("bill");
         addToCartTl?.scrollTrigger?.kill();
         addToCartTl?.kill();
         addToCartTl = null;
