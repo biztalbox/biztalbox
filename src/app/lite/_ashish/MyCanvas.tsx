@@ -226,7 +226,6 @@ const MyCanvas = () => {
         const asa1 = findChildByName(bucketRef.current, "Asa1");
         const asa2 = findChildByName(bucketRef.current, "Asa2");
         
-        addCtaCartTweensToTimeline(addToCartTl, modelRefs, bucketRef, asa1, asa2, ctaCart);
         
         addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 2)
         addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 2.2)
@@ -239,6 +238,7 @@ const MyCanvas = () => {
         addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 3.6)
         addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 3.8);
 
+        addCtaCartTweensToTimeline(addToCartTl, modelRefs, bucketRef, asa1, asa2, ctaCart);
         /** Receipt strip ends at 3.8 + 1 = 4.8 — GSAP `call` = zero-duration tween at this time (scrub-safe). */
         addToCartTl.call(
           () => {
@@ -248,7 +248,7 @@ const MyCanvas = () => {
             playLiteSfx("bill");
           },
           undefined,
-          4.8,
+          1.8,
         );
 
         requestAnimationFrame(() => {
@@ -374,10 +374,10 @@ const MyCanvas = () => {
         rotation={L.bucket!.rotation}
       />
 
-      <directionalLight position={[140, 120, 160]} intensity={1.35} color="#ffffff" />
-      <directionalLight position={[-130, 70, 90]} intensity={5.65} color="#eef2ff" />
+      <directionalLight position={[140, 120, 560]} intensity={1} color="#ffffff" />
+      <directionalLight position={[-130, 70, 90]} intensity={1} color="#ffffff" />
       <directionalLight position={[40, 90, -160]} intensity={5.75} color="#ffffff" />
-      <directionalLight position={[0, -80, 120]} intensity={5.35} color="#d4d4d8" />
+      <directionalLight position={[0, 100, 420]} intensity={3.5} color="#ffffff" />
     </group>
   );
 };

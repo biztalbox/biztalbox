@@ -1,11 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { Hand } from "@/components/svg";
 import shape from '@/assets/img/inner-about/about/shape-1.png';
+import GalleryLite from "./Gallery";
 
 export default function WhyChooseUsLite() {
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   return (
-    <div id="section11" className="bg-black rounded-[70px] min-h-screen relative z-10 ab-about-area py-36 z-index-5 why_choose_us_wrapper">
+    <div id="section11" className={`bg-black rounded-[70px] min-h-screen relative z-10 ab-about-area ${isMobile ? 'pt-20' : 'pt-36'} z-index-5 why_choose_us_wrapper`}>
       <div className="container">
         <div className="row">
           <div className="col-xl-12">
@@ -71,7 +83,12 @@ export default function WhyChooseUsLite() {
             </div>
           </div>
         </div>
+
       </div>
+      {
+        isMobile &&  <GalleryLite/>
+      }
+       
     </div>
   );
 }
