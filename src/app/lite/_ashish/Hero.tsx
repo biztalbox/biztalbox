@@ -90,6 +90,7 @@ function ResponsiveHeroCamera() {
 const Hero = () => {
   return (
     <div className="relative">
+
       <section id="section0" className="relative min-h-[100svh] overflow-hidden">
         <Canvas
           className="!fixed top-0 z-10 h-full w-full inset-0"
@@ -105,10 +106,7 @@ const Hero = () => {
 
 
         {/* Hero Content  */}
-        <div
-          className="relative z-10 pt-20"
-
-        >
+        <div className="relative z-10 pt-20" >
           <div className="container flex flex-col gap-16">
             {/* Center — mobile: natural height only; sm+: fills middle row for vertical centering */}
             <div className="flex items-start justify-center pt-2 max-sm:self-start sm:-translate-y-4 sm:items-center sm:pt-0">
@@ -137,16 +135,10 @@ const Hero = () => {
              
             </div>
           </div>
-        </div>
       </section>
 
-
-
       {/* about section */}
-      <section
-        id="section1"
-        className="relative"
-      >
+      <section id="section1" className="relative" >
         <div className="container relative py-32">
           {/* Top: centered nav + right pill */}
           <div className="relative z-10 flex flex-col gap-6 lg:flex-row items-center lg:justify-between">
@@ -190,10 +182,7 @@ const Hero = () => {
       </section>
 
       {/* SEO Service Section */}
-      <section
-        id="section2"
-        className="relative bg-[#f2f2f2]"
-      >
+      <section id="section2" className="relative bg-[#f2f2f2]">
         <div className="container flex flex-col pt-16">
           {/* Left — PRODUCTS (top, vertical) */}
           <div
@@ -1034,29 +1023,9 @@ const Hero = () => {
         </div>
       </section>
 
-      {/* Scroll end marker for last scanner pin (GSAP ScrollTrigger endTrigger) */}
-      {/* <div id="section11" className="" aria-hidden /> */}
-
       <WhyChooseUsLite />
       {/* service area end */}
 
-      {/* contact area start */}
-      {/* <ContactOne /> */}
-      {/* contact area end */}
-
-
-      {/* receipt bill card */}
-      {/* <section className="fixed bottom-0 right-0 z-30">
-        <div className="flex flex-col p-2 bg-white w-48 rounded shadow">
-          <div className="flex justify-between uppercase">
-            <span>Invoice</span>
-            <span>28/03/26</span>
-          </div>
-          <div className="mt-2 text-center uppercase">** DIGITAL PRODUCTS **</div>
-          <div className="mt-2 uppercase">BRANDING DIGITAL x1</div>
-          <div className="mt-1 uppercase">REF: SHH 0001</div>
-        </div>
-      </section> */}
 
       <section id="recieptSection" className="fixed bottom-0 left-5 bg-white p-3 translate-y-full">
         <div className="flex flex-col gap-1 w-44 divide-y-2 divide-x-0 divide-dashed text-sm font-thin font-mono">

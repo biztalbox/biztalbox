@@ -12,7 +12,7 @@
       "cardSlideX": "+=350"
     },
     "mobile": {
-      "cardSlideX": "+=48vw"
+      "cardSlideX": "+=60"
     }
   },
   "services": [
@@ -27,13 +27,32 @@
       "scan": {
         "endTrigger": "#section3"
       },
-      "motion":{
-        "approach":{
-          "rotation":{
+      "motion": {
+        "approach": {
+          "rotation": {
             "y": "+=28"
           },
           "duration": {
             "rotation": 3
+          }
+        }
+      },
+      "responsive": {
+        "mobile": {
+          "motion": {
+            "approach": {
+              "position": {
+                "y": "+=160",
+                "x": "-=110"
+              },
+              "scale": 6,
+              "rotation": {
+                "y": "+=28"
+              },
+              "duration": {
+                "rotation": 3
+              }
+            }
           }
         }
       }
@@ -49,7 +68,6 @@
         "endTrigger": "#section4",
         "pinStart": "top 20%",
         "pinEnd": "top -30%"
-
       },
       "motion": {
         "approach": {
@@ -67,7 +85,29 @@
             "scale": 2,
             "rotation": 2
           }
-          
+        }
+      },
+      "responsive": {
+        "mobile": {
+          "approach": {
+            "start": "bottom bottom"
+          },
+          "motion": {
+            "approach": {
+              "position": {
+                "y": "-=530",
+                "x": "-=150"
+              },
+              "scale": 1,
+              "rotation": {
+                 "x": "+=34.5",
+                 "z": "+=3.2"
+              },
+              "duration": {
+                "rotation": 3
+              }
+            }
+          }
         }
       }
     },
@@ -81,7 +121,6 @@
       },
       "scan": {
         "endTrigger": "#section5",
-        
         "pinStart": "top 10%",
         "pinEnd": "top -30%"
       },
@@ -95,14 +134,39 @@
             "x": "+=9.2",
             "y": "+=3.2"
           },
-          "scale": 0.8,
+          "scale": 4,
           "durations": {
             "position": 2,
             "rotation": 2
           }
         }
+      },
+      "responsive": {
+        "mobile": {
+          "approach": {
+            "start": "bottom bottom"
+          },
+          "motion": {
+            "approach": {
+              "position": {
+                "y": "-=460",
+                "x": "+=150"
+              },
+              "scale": 6,
+              "rotation": {
+                 "x": "+=34.5",
+                 "z": "+=3.2"
+              },
+              "duration": {
+                "rotation": 3
+              }
+            }
+          }
+        }
       }
     },
+    
+    
     {
       "modelKey": "graphic",
       "scannerId": "lite-scanner-graphic",
@@ -122,7 +186,11 @@
             "z": "+=40"
           },
           "rotation": {
-            "y": "+=57.5"
+            "rotation": {
+                 "x": "+=34.5",
+                 "z": "+=3.2"
+                 }
+
           },
           "scale": 1,
           "durations": {
@@ -131,8 +199,30 @@
             "rotation": 2
           }
         }
+      },
+      "responsive": {
+        "mobile": {
+          "approach": {
+            "start": "bottom bottom"
+          },
+          "motion": {
+            "approach": {
+              "position": {
+                "y": "-=500",
+                "x": "+=30"
+              },
+              "scale": 3,
+              "rotation": {
+                 "x": "+=34.5",
+                 "z": "+=3.2"
+              },
+              "duration": {
+                "rotation": 3
+              }
+            }
+          }
+        }
       }
-
     },
     {
       "modelKey": "video",
@@ -161,10 +251,31 @@
             "scale": 2,
             "rotation": 2
           }
-        }                    
-
+        }
+      },
+      "responsive": {
+        "mobile": {
+          "approach": {
+            "start": "bottom bottom"
+          },
+          "motion": {
+            "approach": {
+              "position": {
+                "y": "-=500",
+                "x": "+=100"
+              },
+              "scale": 2.6,
+              "rotation": {
+                 "x": "+=34.5",
+                 "z": "+=3.2"
+              },
+              "duration": {
+                "rotation": 3
+              }
+            }
+          }
+        }
       }
-
     },
     {
       "modelKey": "content",
@@ -187,7 +298,6 @@
             "x": "+=31.5",
             "z": "+=0"
           },
-          
           "scale": 1,
           "durations": {
             "position": 2,
@@ -195,9 +305,30 @@
             "rotation": 2
           }
         }
+      },
+      "responsive": {
+        "mobile": {
+          "approach": {
+            "start": "bottom bottom"
+          },
+          "motion": {
+            "approach": {
+              "position": {
+                "y": "-=500",
+                "x": "-=20"
+              },
+              "scale": 2.1,
+              "rotation": {
+                 "x": "+=34.5",
+                 "z": "+=3.2"
+              },
+              "duration": {
+                "rotation": 3
+              }
+            }
+          }
+        }
       }
-
-
     },
     {
       "modelKey": "ads",
@@ -227,8 +358,30 @@
             "rotation": 2
           }
         }
+      },
+      "responsive": {
+        "mobile": {
+          "approach": {
+            "start": "bottom bottom"
+          },
+          "motion": {
+            "approach": {
+              "position": {
+                "y": "-=1100",
+                "x": "-=130"
+              },
+              "scale":0.7,
+              "rotation": {
+                 "x": "+=34.5",
+                 "z": "+=3.2"
+              },
+              "duration": {
+                "rotation": 3
+              }
+            }
+          }
+        }
       }
-
     },
     {
       "modelKey": "appdev",
@@ -240,7 +393,8 @@
       },
       "scan": {
         "endTrigger": "#section10"
-      },"motion": {
+      },
+      "motion": {
         "approach": {
           "position": {
             "y": "-=460",
@@ -255,6 +409,29 @@
             "position": 2,
             "scale": 2,
             "rotation": 2
+          }
+        }
+      },
+      "responsive": {
+        "mobile": {
+          "approach": {
+            "start": "bottom bottom"
+          },
+          "motion": {
+            "approach": {
+              "position": {
+                "y": "-=50",
+                "x": "-=100"
+              },
+              "scale": 3,
+              "rotation": {
+                 "x": "+=34.5",
+                 "z": "+=3.2"
+              },
+              "duration": {
+                "rotation": 3
+              }
+            }
           }
         }
       }
@@ -285,6 +462,29 @@
             "position": 2,
             "scale": 2,
             "rotation": 2
+          }
+        } 
+      },
+      "responsive": {
+        "mobile": {
+          "approach": {
+            "start": "bottom bottom"
+          },
+          "motion": {
+            "approach": {
+              "position": {
+                "y": "-=590",
+                "x": "+=10"
+              },
+              "scale": 4,
+              "rotation": {
+                 "x": "+=34.5",
+                 "z": "+=3.2"
+              },
+              "duration": {
+                "rotation": 3
+              }
+            }
           }
         }
       }
