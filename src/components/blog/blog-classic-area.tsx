@@ -542,7 +542,7 @@ export default function BlogClassicArea({
               {(currentCategory || validatedSearchQuery) && (
                 <div className="postbox__category-header mb-50">
                   <div className="postbox__category-title">
-                    <h2 className="category-page-title text-white">
+                    <h2 className="category-page-title" style={{ color: "var(--app-text)" }}>
                       {validatedSearchQuery
                         ? `Search Results for "${validatedSearchQuery}"`
                         : currentCategory?.name}

@@ -87,7 +87,7 @@ const ContentMarketingPage = () => {
                   <h2
                     className="project-details-1"
                     style={{
-                      color: "white",
+                      color: "var(--app-text)",
                       fontSize: "2.2rem",
                       fontWeight: 700,
                     }}
@@ -172,7 +172,7 @@ const ContentMarketingPage = () => {
         </div>
       </div>
 
-      <style jsx>{`
+     <style jsx>{`
         .project-details-1-info > span {
           color: ${highlightColor} !important;
         }
@@ -192,12 +192,11 @@ const ContentMarketingPage = () => {
         .power-pill {
           display: inline-flex;
           align-items: center;
-          background: rgba(255, 255, 255, 0.08);
-          border: 2px solid
-            rgba(${colorRGB.r}, ${colorRGB.g}, ${colorRGB.b}, 0.4);
+          background: rgba(0, 0, 0, 0.06);
+          border: 2px solid rgba(${colorRGB.r}, ${colorRGB.g}, ${colorRGB.b}, 0.4);
           border-radius: 50px;
           padding: 8px 16px;
-          color: #e0e0e0;
+          color: var(--app-text);
           font-size: 0.9rem;
           font-weight: 500;
           cursor: pointer;
@@ -210,8 +209,7 @@ const ContentMarketingPage = () => {
           background: rgba(${colorRGB.r}, ${colorRGB.g}, ${colorRGB.b}, 0.15);
           border-color: ${highlightColor};
           transform: translateY(-2px);
-          box-shadow: 0 8px 25px
-            rgba(${colorRGB.r}, ${colorRGB.g}, ${colorRGB.b}, 0.3);
+          box-shadow: 0 8px 25px rgba(${colorRGB.r}, ${colorRGB.g}, ${colorRGB.b}, 0.3);
         }
 
         .power-pill.active {
@@ -224,18 +222,14 @@ const ContentMarketingPage = () => {
         .power-pill-name {
           font-size: 0.85rem;
           letter-spacing: 0.5px;
+          color: var(--app-text);
         }
 
         .active-power-description {
           margin-top: 20px;
           padding: 20px;
-          background: linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.08),
-            rgba(255, 255, 255, 0.04)
-          );
-          border: 1px solid
-            rgba(${colorRGB.r}, ${colorRGB.g}, ${colorRGB.b}, 0.3);
+          background: linear-gradient(145deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.02));
+          border: 1px solid rgba(${colorRGB.r}, ${colorRGB.g}, ${colorRGB.b}, 0.3);
           border-radius: 15px;
           backdrop-filter: blur(10px);
           animation: slideDown 0.3s ease;
@@ -253,10 +247,19 @@ const ContentMarketingPage = () => {
         }
 
         .description-text {
-          color: #e0e0e0;
+          color: var(--app-text);
           font-size: 0.95rem;
           line-height: 1.6;
           margin: 0;
+        }
+
+        /* Dark mode tweaks (keep the same “glass” look but readable) */
+        :global([data-theme="dark"]) .power-pill {
+          background: rgba(255, 255, 255, 0.08);
+        }
+
+        :global([data-theme="dark"]) .active-power-description {
+          background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
         }
 
         @keyframes slideDown {
@@ -277,12 +280,12 @@ const ContentMarketingPage = () => {
           .powers-pills-container {
             gap: 8px;
           }
-
+          
           .power-pill {
             padding: 6px 12px;
             font-size: 0.8rem;
           }
-
+          
           .power-pill-name {
             font-size: 0.75rem;
           }

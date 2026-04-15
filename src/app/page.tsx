@@ -24,7 +24,9 @@ export default function Home() {
       title={baseMetadata.title as string}
       description={baseMetadata.description as string}
     >
-      <HomePage/>
+      <div id="home-route-root">
+        <HomePage />
+      </div>
     </SchemaProvider>
   );
 }

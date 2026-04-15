@@ -15,15 +15,35 @@
   font-family: "Century Gothic Local", "Century Gothic", Helvetica, Arial, sans-serif !important;
 }
 
-/* Global page background (make the whole site black) */
+/* App-wide theme tokens (used for all pages except home + /lite). */
+:root {
+  --app-surface: #ffffff;
+  --app-text: #000000;
+}
+
+[data-theme="dark"] {
+  --app-surface: #000000;
+  --app-text: #ffffff;
+}
+
+/*
+  Default keep the existing home chrome (black background),
+  but for all non-home, non-/lite routes apply theme surface + text.
+*/
 html,
 body {
   background-color: #000 !important;
 }
 
-/* Next.js root container fallback */
 #__next {
   background-color: #000 !important;
+}
+
+html:not(:has(#lite-route-root)):not(:has(#home-route-root)),
+body:not(:has(#lite-route-root)):not(:has(#home-route-root)),
+#__next:not(:has(#lite-route-root)):not(:has(#home-route-root)) {
+  background-color: var(--app-surface) !important;
+  color: var(--app-text) !important;
 }
 
 /* /lite route: drop global black chrome (html/body/#__next) while on this section */
@@ -535,4 +555,8 @@ strong {
   > a.tp-career-nav-active {
   color: #7c3aed !important;
   box-shadow: 0 3px 0 0 #a855f7;
+}
+
+.outlinedImg{
+  border:0.25px solid black !important;
 }

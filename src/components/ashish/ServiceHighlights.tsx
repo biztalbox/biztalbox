@@ -53,7 +53,7 @@ const ServiceHighlights = ({
         <h5
           className="tp-section-title tp_fade_bottom"
           style={{
-            color: "#fff",
+            color: "var(--app-text)",
             fontWeight: 600,
             lineHeight: 1.1,
             fontSize: "1.8rem",
@@ -67,7 +67,7 @@ const ServiceHighlights = ({
             <li
               key={i}
               className="d-flex align-items-center mb-3"
-              style={{ fontSize: "1rem", color: "#fff", fontWeight: 500 }}
+              style={{ fontSize: "1rem", color: "var(--app-text)", fontWeight: 500 }}
             >
               <span
                 style={{
@@ -99,7 +99,7 @@ const ServiceHighlights = ({
         <h5
           className="tp-section-title tp_fade_bottom"
           style={{
-            color: "#fff",
+            color: "var(--app-text)",
             fontWeight: 600,
             fontSize: "1.8rem",
             marginBottom: 24,
@@ -164,11 +164,11 @@ const ServiceHighlights = ({
           display: inline-flex;
           align-items: center;
           gap: 8px;
-          background: rgba(255, 255, 255, 0.08);
+          background: rgba(0, 0, 0, 0.06);
           border: 2px solid rgba(${colorRGB.r}, ${colorRGB.g}, ${colorRGB.b}, 0.4);
           border-radius: 50px;
           padding: 8px 16px;
-          color: #e0e0e0;
+          color: var(--app-text);
           font-size: 0.9rem;
           font-weight: 500;
           cursor: pointer;
@@ -224,10 +224,15 @@ const ServiceHighlights = ({
         }
 
         .service-description-text {
-          color: #e0e0e0;
+          color: var(--app-text);
           font-size: 0.95rem;
           line-height: 1.6;
           margin: 0;
+        }
+
+        /* Dark mode: restore the original glass treatment */
+        :global([data-theme="dark"]) .service-pill {
+          background: rgba(255, 255, 255, 0.08);
         }
 
         @keyframes slideDown {
