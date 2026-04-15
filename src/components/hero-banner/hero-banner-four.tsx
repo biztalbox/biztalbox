@@ -41,8 +41,9 @@ const styles = {
     pointerEvents: "auto" as const,
   },
   leftSideTitle: {
-    fontSize: "3rem",
-    fontWeight: "bold" as const,
+    paddingTop: "3rem",
+    fontSize: "2rem",
+    textTransform: "uppercase" as const,
     lineHeight: "1",
     color: "#fff",
     letterSpacing: "1px",
@@ -60,20 +61,18 @@ const styles = {
   },
   rightSideMainTitle: {
     fontSize: "5rem",
-    fontWeight: "bold" as const,
     lineHeight: "0.9",
     letterSpacing: "1px",
     color: "#fff",
     margin: 0,
-    marginBottom: "1rem",
+    marginBottom: "0.1rem",
   },
   rightSideSubTitle: {
-    fontSize: "3.2rem",
-    fontWeight: "bold" as const,
+    fontSize: "2rem",
     lineHeight: "1",
     color: "#fff",
     margin: 0,
-    marginBottom: "1rem",
+    marginBottom: "2rem",
     letterSpacing: "0px",
   },
   bottomText: {
@@ -85,7 +84,7 @@ const styles = {
     pointerEvents: "auto" as const,
   },
   bottomParagraph: {
-    fontSize: "0.85rem",
+    fontSize: "rem",
     textAlign: "right" as const,
     color: "#fff",
     lineHeight: "1.6",
@@ -244,7 +243,8 @@ ResponsiveStyles.displayName = 'ResponsiveStyles';
 const LeftSideContent = memo(() => (
   <div className="left-side-text" style={styles.leftSideText}>
     <h3 className="tp-hero-3-title tp_reveal_anim" style={styles.leftSideTitle}>
-      Igniting your brand&apos;s potential with out-of-the-box Marketing Solutions
+    Breakthrough Marketing Solutions, 
+    <br/>Igniting Brand Potential 
     </h3>
   </div>
 ));
@@ -253,7 +253,7 @@ LeftSideContent.displayName = 'LeftSideContent';
 
 const RightSideContent = memo(() => (
   <div className="right-side-text" style={styles.rightSideText}>
-    <h1 className="tp-hero-3-title tp_reveal_anim" style={styles.rightSideMainTitle}>
+    <h1 className="tp-hero-3-title tp_reveal_anim font-century-gothic" style={styles.rightSideMainTitle}>
       biztalbox
     </h1>
     <h2 className="tp-hero-3-title tp_reveal_anim" style={styles.rightSideSubTitle}>
@@ -269,8 +269,7 @@ RightSideContent.displayName = 'RightSideContent';
 const BottomContent = memo(() => (
   <div className="bottom-text" style={styles.bottomText}>
     <p style={styles.bottomParagraph}>
-      Expert digital marketing, SEO, and web development tailored for your
-      success. Contact us & we will find that solution for you!
+    Sustainable Growth Guided by Expertise, Rooted in Partnership
     </p>
     <div style={styles.bottomLinkContainer}>
       <Link className="tp-btn-black-2" href="/contact">

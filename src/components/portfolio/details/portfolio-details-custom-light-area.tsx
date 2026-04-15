@@ -137,7 +137,7 @@ export default function PortfolioDetailsCustomLightArea() {
                     <div className="col-xl-4 col-lg-4 col-md-6">
                       <div className="pd-typography-left tp_fade_bottom">
                           <span className="text-1">Typography</span>
-                          <span className="text-2">Big Shoulders Display</span>
+                          <span className="text-2">Helvetica</span>
                           <span className="text-3">abcdefghijklmnopqrstuvwxyz</span>
                           <span className="text-4">0123456789</span>
                           <span className="text-5">Aa</span>
@@ -146,7 +146,7 @@ export default function PortfolioDetailsCustomLightArea() {
                     <div className="col-xl-4 col-lg-4 col-md-6">
                       <div className="pd-typography-middle tp_fade_bottom">
                           <div className="pd-typography-left">
-                            <span className="text-2">Syne</span>
+                            <span className="text-2">Helvetica</span>
                             <span className="text-3">abcdefghijklmnopqrstuvwxyz</span>
                             <span className="text-4">0123456789</span>
                             <span className="text-5">Aa</span>

@@ -4,19 +4,13 @@ import Image from "next/image";
 import MyCanvas from "./MyCanvas";
 import { Canvas, useThree } from "@react-three/fiber";
 import { useLayoutEffect } from "react";
-import localFont from "next/font/local";
 import * as THREE from "three";
 import { LITE_HERO_SURFACE_STYLE } from "./lite-hero-surface";
 import WhyChooseUs from "@/components/about/why-choose-us";
 import ContactOne from "@/components/contact/contact-one";
 import Link from "next/link";
 import WhyChooseUsLite from "./WhyChooseUs";
-import { getTicketSpecNameColumns } from "./lite-service-ticket-specs";
-
-const centuryGothic = localFont({
-  src: "../../../../public/assets/fonts/centurygothic.ttf",
-  display: "swap",
-});
+import { getTicketSpecNameColumns, type LiteServiceTicketSpecKey } from "./lite-service-ticket-specs";
 
 const SECTION3_SEO_IMAGE_SRC =
   "https://biztalbox.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fseo.0f33ee3b.webp&w=1200&q=75";
@@ -29,7 +23,10 @@ const LITE_SERVICE_PAGE_PATHS = {
   graphic: "/graphic-designing",
   video: "/motion-graphics",
   content: "/content-marketing",
+  // Alias used by lite 3D model + ticket specs (maps to Google Ads service page).
   ads: "/google-ads-service",
+  google: "/google-ads-service",
+  meta: "/facebook-ads-service",
   appdev: "/app-development",
   algo: "/analysis-algorithm",
 } as const;
@@ -43,20 +40,18 @@ function formatReceiptDate(d: Date): string {
   return `${dd}/${mm}/${yy}`;
 }
 
-function LiteServiceViewMoreLink({ service }: { service: LiteServicePageKey }) {
+function LiteServiceViewMoreLink({ service, text="View More" }: { service: LiteServicePageKey, text?: string }) {
   return (
-    <div className="relative z-20 mx-auto mt-10 flex justify-center px-2 sm:mt-12">
-      <Link
-        href={LITE_SERVICE_PAGE_PATHS[service]}
-        className="inline-flex rounded-full border border-black bg-[#F2F2F2] px-10 py-2.5 text-sm font-medium uppercase text-black transition-colors hover:bg-orange-600 hover:!text-white"
-      >
-        View More
-      </Link>
-    </div>
+    <Link
+      href={LITE_SERVICE_PAGE_PATHS[service]}
+      className="relative z-20 mx-auto block w-fit mt-5 rounded-full border border-black bg-[#F2F2F2] px-10 py-2.5 text-sm font-medium uppercase text-black transition-colors hover:bg-orange-600 hover:!text-white"
+    >
+      {text}
+    </Link>
   );
 }
 
-function LiteTicketSpecsFooter({ service }: { service: LiteServicePageKey }) {
+function LiteTicketSpecsFooter({ service }: { service: LiteServiceTicketSpecKey }) {
   const { left, right } = getTicketSpecNameColumns(service);
   return (
     <div className="mt-2 grid grid-cols-2 gap-3 text-[10px] font-medium leading-[1.45] tracking-[0.08em] text-black/70">
@@ -119,25 +114,22 @@ const Hero = () => {
 
 
         {/* Hero Content  */}
-        <div className="relative z-10 pt-20" >
-          <div className="container flex flex-col gap-16">
+        <div className="relative z-10 pt-32 2xl:pt-36" >
+          <div className="container flex flex-col gap-8">
             {/* Center — mobile: natural height only; sm+: fills middle row for vertical centering */}
             <div className="flex items-start justify-center pt-2 max-sm:self-start sm:-translate-y-4 sm:items-center sm:pt-0">
-              <div className="w-full max-w-screen text-center flex flex-col gap-4">
-                <p className="whitespace-nowrap font-bold px-3 py-1.5 bg-black text-white uppercase w-fit text-center mx-auto rounded"
+              <div className="w-full max-w-screen text-center flex flex-col gap-0">
+                <p className="whitespace-nowrap uppercase text-center"
                 >
                   Creative Souls, Strategic Minds
                 </p>
 
-                <h1 className={`${centuryGothic.className}`}>biztalbox</h1>
-                <span className="h-[1px] w-40 mx-auto bg-black"></span>
+                <h1 className="font-century-gothic !text-[99px]">biztalbox</h1>
+                {/* <span className="h-[1px] w-40 mx-auto bg-black"></span> */}
 
-                <h3>Igniting your brand&apos;s
-                  potential with
-                  out-of-the-box
-                  Marketing Solutions</h3>
-                <p className="text-sm uppercase">
-                  Expert digital marketing, SEO, and web development tailored for your success. Contact us & we will find that solution for you!
+                <h3 className="!text-[22px]">Breakthrough Marketing Solutions,<br /> Igniting Brand Potential</h3>
+                <p className="uppercase">
+                  Sustainable Growth Guided by Expertise, Rooted in Partnership
                 </p>
 
 
@@ -179,12 +171,12 @@ const Hero = () => {
             <div className="flex flex-col lg:items-start">
               <p>
                 We understand a brand’s goals and ideas to the finest detail by immersing ourselves in its unique vision. By brainstorming creative solutions, we improve visibility and ensure that every interaction with your audience leaves a memorable mark.              </p>
-              <Link href="/about" className="relative bg-neutral-200 hover:bg-orange-600 hover:text-white z-10 mt-6 w-fit items-center gap-2 px-3 py-2 font-medium border">
-                About Us ↗
-              </Link>
+
             </div>
           </div>
-
+          <Link href="/about" className="relative bg-neutral-200 hover:bg-orange-600 hover:text-white z-10 mt-6 w-fit block mx-auto text-center items-center gap-2 px-3 py-2 font-medium border">
+            About Us ↗
+          </Link>
           {/* Receipt — monospace, thin border, taller middle line */}
 
 
@@ -308,15 +300,15 @@ const Hero = () => {
             </h3>
             <div className="grid md:grid-cols-2 md:gap-10 mt-6">
               <p>
-              The social media team at Biztalbox, we begin by understanding your brand, your audience, and how your competitors are positioning themselves. This helps us set a clear direction before we put anything out in the world. Then we create content calendars that bring structure and consistency to your social presence.
+                The social media team at Biztalbox, we begin by understanding your brand, your audience, and how your competitors are positioning themselves. This helps us set a clear direction before we put anything out in the world. Then we create content calendars that bring structure and consistency to your social presence.
 
-We don't just chase trends or push for viral moments. The focus stays on building a presence that feels true to your brand. We focus on making content that fits your brand and makes sense to your audience.
-</p>
+                We don&apos;t just chase trends or push for viral moments. The focus stays on building a presence that feels true to your brand. We focus on making content that fits your brand and makes sense to your audience.
+              </p>
               <p>We also pay attention to how people respond. What they engage with and ignore. And what brings them back again? This helps us understand what your brand should keep doing and what it should leave behind.
 
-Over time, this builds familiarity. Your brand starts to feel recognisable, not because of one post, but because of consistent presence.
+                Over time, this builds familiarity. Your brand starts to feel recognisable, not because of one post, but because of consistent presence.
 
-Biztalbox aims to make your brand feel active, relevant, and easy to connect with.
+                Biztalbox aims to make your brand feel active, relevant, and easy to connect with.
 
               </p>
             </div>
@@ -378,19 +370,19 @@ Biztalbox aims to make your brand feel active, relevant, and easy to connect wit
             </h3>
             <div className="grid md:grid-cols-2 md:gap-10 mt-6">
               <p>
-              At Biztalbox, we believe a website should make things easier for your users, not more complicated. Our web development approach reflects that thinking.
+                At Biztalbox, we believe a website should make things easier for your users, not more complicated. Our web development approach reflects that thinking.
 
-We begin with understanding what the business actually needs the website to carry. What should be seen first, what should be understood next, and what should lead a user toward action? This thinking sets the foundation before any layout is discussed.
+                We begin with understanding what the business actually needs the website to carry. What should be seen first, what should be understood next, and what should lead a user toward action? This thinking sets the foundation before any layout is discussed.
 
 
-</p>
+              </p>
               <p>
-              We approached through structure first, not visuals. Our web development experts focus on making websites that offer a guided experience, rather than isolated pages. Information is arranged to reduce effort for the user, so nothing feels misplaced or difficult to reach. The goal is simple navigation that still feels intentional.
+                We approached through structure first, not visuals. Our web development experts focus on making websites that offer a guided experience, rather than isolated pages. Information is arranged to reduce effort for the user, so nothing feels misplaced or difficult to reach. The goal is simple navigation that still feels intentional.
 
 
-Our web development firm takes pride in the quality of our execution. Clean development practices, consistent responsiveness, and reliable performance are maintained across every project.
+                Our web development firm takes pride in the quality of our execution. Clean development practices, consistent responsiveness, and reliable performance are maintained across every project.
 
-Lastly, Biztalbox always ensure the website remains manageable after it goes live.
+                Lastly, Biztalbox always ensure the website remains manageable after it goes live.
 
               </p>
             </div>
@@ -452,17 +444,17 @@ Lastly, Biztalbox always ensure the website remains manageable after it goes liv
             </h3>
             <div className="grid md:grid-cols-2 md:gap-10 mt-6">
               <p>
-              At Biztalbox, we understand that visual design plays a defining role in how a brand is interpreted and remembered. We treat graphic design as a connected system rather than standalone visuals. Every piece we create works with the next one. This makes the brand feel consistent wherever it shows up.
+                At Biztalbox, we understand that visual design plays a defining role in how a brand is interpreted and remembered. We treat graphic design as a connected system rather than standalone visuals. Every piece we create works with the next one. This makes the brand feel consistent wherever it shows up.
 
 
-We focus on how information is perceived. Typography, spacing, colour, and layout are crafted so that the design feels easy to read and naturally organised.
+                We focus on how information is perceived. Typography, spacing, colour, and layout are crafted so that the design feels easy to read and naturally organised.
 
- </p>
+              </p>
               <p>
-              We keep attention where it matters. Important information is made clear at first glance. Supporting elements stay in the background without distracting from the message.
-We stay consistent across every asset we create. So your brand does not feel different on each platform. It feels like one identity, carried forward with discipline.
+                We keep attention where it matters. Important information is made clear at first glance. Supporting elements stay in the background without distracting from the message.
+                We stay consistent across every asset we create. So your brand does not feel different on each platform. It feels like one identity, carried forward with discipline.
 
-Each design decision at Biztalbox is made with one goal in mind: To make your brand easier to recognise, easier to understand, and harder to forget.
+                Each design decision at Biztalbox is made with one goal in mind: To make your brand easier to recognise, easier to understand, and harder to forget.
 
 
               </p>
@@ -525,19 +517,19 @@ Each design decision at Biztalbox is made with one goal in mind: To make your br
             </h3>
             <div className="grid md:grid-cols-2 md:gap-10 mt-6">
               <p>
-              At Biztalbox, we turn to motion graphics when a message is too layered to be understood in a single static frame.
+                At Biztalbox, we turn to motion graphics when a message is too layered to be understood in a single static frame.
 
-Motion graphic designers at Biztalbox approach motion as a way to sharpen brand communication. We start by looking at how your brand currently shows up visually and where its communication weakens.
+                Motion graphic designers at Biztalbox approach motion as a way to sharpen brand communication. We start by looking at how your brand currently shows up visually and where its communication weakens.
 
 
-This helps us decide the structure, sequence, and emphasis each part needs.
-</p>
+                This helps us decide the structure, sequence, and emphasis each part needs.
+              </p>
               <p>
-              We design motion around how attention actually moves. What draws focus, what holds it, and what needs to be reinforced before moving forward. This is where our process stays deliberate rather than decorative.
+                We design motion around how attention actually moves. What draws focus, what holds it, and what needs to be reinforced before moving forward. This is where our process stays deliberate rather than decorative.
 
-Our motion graphics agency brings consistency to every layer, from typography to transitions to rhythm. Everything works together, so the viewer is not interpreting multiple signals at once.
+                Our motion graphics agency brings consistency to every layer, from typography to transitions to rhythm. Everything works together, so the viewer is not interpreting multiple signals at once.
 
-Biztalbox keeps motion purposeful. It exists only to make the idea easier to follow and quicker to absorb. Every piece is designed to support how your brand is perceived.
+                Biztalbox keeps motion purposeful. It exists only to make the idea easier to follow and quicker to absorb. Every piece is designed to support how your brand is perceived.
 
 
               </p>
@@ -600,21 +592,21 @@ Biztalbox keeps motion purposeful. It exists only to make the idea easier to fol
             </h3>
             <div className="grid md:grid-cols-2 md:gap-10 mt-6">
               <p>
-              At Biztalbox, we see copywriting as the layer that decides how your brand is experienced.
+                At Biztalbox, we see copywriting as the layer that decides how your brand is experienced.
 
 
-Biztalbox's copywriting services have helped brands improve how they express value and position themselves. This has led to clearer responses, stronger engagement, and more confident decision-making.
+                Biztalbox&apos;s copywriting services have helped brands improve how they express value and position themselves. This has led to clearer responses, stronger engagement, and more confident decision-making.
 
-Our copywriting experts begin by understanding how your audience evaluates a brand like yours. What they compare. What they doubt. What they need to take you seriously. 
-</p>
+                Our copywriting experts begin by understanding how your audience evaluates a brand like yours. What they compare. What they doubt. What they need to take you seriously.
+              </p>
               <p>
-              From there, we focus on the decision-making process. Copy is written to reduce hesitation, close interpretation gaps, and bring clarity to what would otherwise feel uncertain or incomplete. 
+                From there, we focus on the decision-making process. Copy is written to reduce hesitation, close interpretation gaps, and bring clarity to what would otherwise feel uncertain or incomplete.
 
-The same offering can feel ordinary or credible depending on how it is expressed. And Biztalbox’s content plays a direct role in that shift. 
+                The same offering can feel ordinary or credible depending on how it is expressed. And Biztalbox’s content plays a direct role in that shift.
 
 
 
-We maintain consistency over tone and voice so the brand feels aligned in every context it appears in. This consistency is what builds recognition and trust over time.
+                We maintain consistency over tone and voice so the brand feels aligned in every context it appears in. This consistency is what builds recognition and trust over time.
 
 
 
@@ -677,22 +669,35 @@ We maintain consistency over tone and voice so the brand feels aligned in every 
               Measurable marketing outcomes
             </h3>
             <div className="grid md:grid-cols-2 md:gap-10 mt-6">
-              <p>
-              Biztalbox views Performance marketing as a revenue system first. Every part of it supports a clear commercial outcome.
+              <div className="flex flex-col">
 
-We begin by looking at how growth is currently being generated and where it is breaking down. Then we figure out the real constraints, not just the visible symptoms.
+                <p>
+                  Biztalbox views Performance marketing as a revenue system first. Every part of it supports a clear commercial outcome.
 
-We evaluate the entire journey together as part of a full funnel performance marketing strategy. This includes audience targeting, messaging, creative direction, landing experience, and tracking. If even one of these is misaligned, performance stays capped regardless of spend.
- </p>
-              <p>
-              Biztalbox evaluates performance beyond surface metrics. We consider lead quality, drop-off behaviour, and consistency of results over time. These patterns show what is working and what is not.
+                  We begin by looking at how growth is currently being generated and where it is breaking down. Then we figure out the real constraints, not just the visible symptoms.
 
-The goal of our performance marketing services is to generate meaningful actions that contribute to business growth.
+                  We evaluate the entire journey together as part of a full funnel performance marketing strategy.
+                </p>
+                <div className="block w-fit ml-auto">
+
+                <LiteServiceViewMoreLink service="google" text="Google Ads" />
+                </div>
+              </div>
+              <div className="flex flex-col ">
+
+                <p>
+                  Biztalbox evaluates performance beyond surface metrics. We consider lead quality, drop-off behaviour, and consistency of results over time. These patterns show what is working and what is not.
+
+                  The goal of our performance marketing services is to generate meaningful actions that contribute to business growth. This includes audience targeting, messaging, creative direction, landing experience, and tracking. If even one of these is misaligned, performance stays capped regardless of spend.
 
 
-              </p>
+                </p>
+                <div className="block w-fit mr-auto">
+
+                <LiteServiceViewMoreLink service="meta" text="Meta Ads" />
+                </div>
+              </div>
             </div>
-            <LiteServiceViewMoreLink service="ads" />
           </div>
 
           <div
@@ -750,19 +755,19 @@ The goal of our performance marketing services is to generate meaningful actions
             </h3>
             <div className="grid md:grid-cols-2 md:gap-10 mt-6">
               <p>
-              App development at Biztalbox begins with clarity on what the product is meant to achieve in real use,  rather than just how it is created.
+                App development at Biztalbox begins with clarity on what the product is meant to achieve in real use,  rather than just how it is created.
 
 
-Throughout the many apps that we have designed, this understanding has consistently made our products more engaging, adoptable, and usable.
+                Throughout the many apps that we have designed, this understanding has consistently made our products more engaging, adoptable, and usable.
 
-Our app developers focus on structure before starting the development process. They pay attention to how easily users can move through it without friction. Flow and ease of use guide all decisions so the product feels easy to adopt from day one.
-</p>
+                Our app developers focus on structure before starting the development process. They pay attention to how easily users can move through it without friction. Flow and ease of use guide all decisions so the product feels easy to adopt from day one.
+              </p>
               <p>
-              Our app development services also consider how the system will behave as it grows. Stability, speed, and structure are planned early so the experience does not break as it grows.
+                Our app development services also consider how the system will behave as it grows. Stability, speed, and structure are planned early so the experience does not break as it grows.
 
-After launch, our app development consultants continue to observe how users interact with the product. Real usage patterns guide refinements and improvements over time.
+                After launch, our app development consultants continue to observe how users interact with the product. Real usage patterns guide refinements and improvements over time.
 
-We build Apps that feel clear in purpose, stable in performance, and practical in real-world use.
+                We build Apps that feel clear in purpose, stable in performance, and practical in real-world use.
 
 
               </p>
@@ -825,19 +830,19 @@ We build Apps that feel clear in purpose, stable in performance, and practical i
             </h3>
             <div className="grid md:grid-cols-2 md:gap-10 mt-6">
               <p>
-              At Biztalbox, Algorithm analysis is about understanding what actually drives visibility in a system, not chasing surface-level signals.
+                At Biztalbox, Algorithm analysis is about understanding what actually drives visibility in a system, not chasing surface-level signals.
 
 
-We use it to help brands stay aligned with how platforms distribute content at any given point in time. Algorithm analysis helps us read patterns behind performance instead of reacting after it drops. The focus stays on understanding behaviour, not guessing outcomes.
+                We use it to help brands stay aligned with how platforms distribute content at any given point in time. Algorithm analysis helps us read patterns behind performance instead of reacting after it drops. The focus stays on understanding behaviour, not guessing outcomes.
 
 
-We also translate these signals into a clear direction for content and communication. Small adjustments in structure, timing, or format often decide how far something travels within a platform. 
- </p>
+                We also translate these signals into a clear direction for content and communication. Small adjustments in structure, timing, or format often decide how far something travels within a platform.
+              </p>
               <p>
-              At our digital marketing agency, we understand that algorithms don't have fixed rules but are characterised by dynamic behaviour that evolves. That is what allows us to adjust direction early, instead of correcting performance after it drops.
+                At our digital marketing agency, we understand that algorithms don&apos;t have fixed rules but are characterised by dynamic behaviour that evolves. That is what allows us to adjust direction early, instead of correcting performance after it drops.
 
 
-What this gives brands is more stable visibility, better alignment with platform behaviour, and fewer fluctuations in how content performs over time.
+                What this gives brands is more stable visibility, better alignment with platform behaviour, and fewer fluctuations in how content performs over time.
 
               </p>
             </div>
@@ -966,9 +971,9 @@ What this gives brands is more stable visibility, better alignment with platform
             Thanks for being here<br />Let’s take this forward.
           </h3>
           <div className="h-48"></div>
-          <Link href="#" className="hover:!bg-black bg-white hover:!text-white relative z-10 text-center uppercase text-3xl md:text-5xl lg:text-7xl font-thin mx-auto px-5 py-4 border border-black rounded-full">
+          <Link href="#" className="hover:!bg-black bg-[#F2F2F2] hover:!text-white relative z-10 text-center uppercase text-3xl md:text-5xl lg:text-7xl font-thin mx-auto px-5 py-4 border border-black rounded-full">
 
-            Contact us ↗
+            Let&apos;s Talk ↗
           </Link>
         </div>
       </section>

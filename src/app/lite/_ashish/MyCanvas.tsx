@@ -220,26 +220,25 @@ const MyCanvas = () => {
             start: "top bottom",
             end: "top top",
             scrub: 3,
-            markers: true,
           },
         });
 
         const asa1 = findChildByName(bucketRef.current, "flap_1");
         const asa2 = findChildByName(bucketRef.current, "flap_2");
         
-        
-        addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 2)
-        addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 2.2)
-        addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 2.4)
-        addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 2.6)
-        addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 2.8)
-        addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 3)
-        addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 3.2)
-        addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 3.4)
-        addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 3.6)
-        addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 3.8);
-
         addCtaCartTweensToTimeline(addToCartTl, modelRefs, bucketRef, asa1, asa2, ctaCart);
+        
+        addToCartTl.to("#recieptSection", {y: "-=520", duration: 1, ease: "power1.inOut"}, 2)
+        // addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 2.2)
+        // addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 2.4)
+        // addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 2.6)
+        // addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 2.8)
+        // addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 3)
+        // addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 3.2)
+        // addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 3.4)
+        // addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 3.6)
+        // addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 3.8);
+
         /** Receipt strip ends at 3.8 + 1 = 4.8 — GSAP `call` = zero-duration tween at this time (scrub-safe). */
         addToCartTl.call(
           () => {

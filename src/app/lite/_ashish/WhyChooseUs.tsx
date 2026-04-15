@@ -45,8 +45,8 @@ export default function WhyChooseUsLite() {
           <h4 className="text-white">
             We believe every brand without a voice is just a name — and we&apos;re here to make yours heard! No shortcuts or gimmicks, just pure creativity and authentic marketing.
           </h4>
-          <Image className="h-fit hidden md:block" width={570} height={720} src={webdev} alt="webdev" />
-          <Image className="h-fit hidden md:block" width={570} height={720} src={graphic} alt="graphic" />
+          <Image className="h-80 w-fit hidden md:block" width={570} height={720} src={webdev} alt="webdev" />
+          <Image className="h-80 w-fit hidden md:block" width={570} height={720} src={graphic} alt="graphic" />
           <div className="ab-about-category-list category-space-1 text-white">
             <ul>
               <li><b>No Ifs and Buts</b>: We ensure every click turns into customers.</li>
@@ -58,16 +58,16 @@ export default function WhyChooseUsLite() {
           </div>
 
         </div>
-        <div className="hidden md:grid md:grid-cols-5 gap-10">
-          <Image className="h-fit" width={570} height={720} src={appdev} alt="seo" />
-          <Link href="/about" className="md:col-span-3 p-4 border border-white rounded text-white hover:bg-white text-center">
-            <h2 className="text-white hover:!text-black">View All Services ↗</h2>
+        <div className="hidden md:grid md:grid-cols-5 gap-10n place-items-center items-center">
+          <Image className="h-80 w-fit" width={570} height={720} src={appdev} alt="seo" />
+          <Link href="/services" className="md:col-span-3 text-center">
+            <h3 className="hover:!text-black p-4 border h-fit border-white rounded text-white hover:bg-white w-fit mx-auto ">View All Services</h3>
 
           </Link>
-          <Image className="h-fit hidden md:block" width={570} height={720} src={algo} alt="seo" />
+          <Image className="h-80 w-fit hidden md:block" width={570} height={720} src={algo} alt="seo" />
         </div>
 
-        <div className="hidden md:grid grid-cols-3 gap-10 place-items-center justify-center">
+        <div className="hidden md:flex gap-10 justify-center">
           <Image className="h-72 w-fit" width={570} height={720} src={google} alt="ads" />
           <Image className="h-72 w-fit" width={570} height={720} src={video} alt="appdev" />
           <Image className="h-72 w-fit" width={570} height={720} src={content} alt="algo" />

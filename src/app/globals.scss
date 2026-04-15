@@ -3,6 +3,18 @@
 @import "swiper/css/bundle";
 @import '../../public/assets/scss/main.scss';
 
+@font-face {
+  font-family: "Century Gothic Local";
+  src: url("/assets/fonts/centurygothic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-century-gothic {
+  font-family: "Century Gothic Local", "Century Gothic", Helvetica, Arial, sans-serif !important;
+}
+
 /* Global page background (make the whole site black) */
 html,
 body {
@@ -505,7 +517,7 @@ strong {
   font-family: var(--tp-ff-p) !important;
 }
 
-/* Enforce Syne on the full career experience (list + job detail pages) */
+/* Career pages: same body stack as the rest of the site */
 .career-page-wrap * {
   font-family: var(--tp-ff-p) !important;
 }
