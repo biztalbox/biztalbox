@@ -19,7 +19,7 @@ import { faq_data, powers, servicesData } from "./data";
 
 const MotionGraphicsPage = () => {
   const [activePower, setActivePower] = React.useState<number | null>(1);
-  const highlightColor = "#b5547a"; // You can change this color or make it a prop
+  const highlightColor = "#6bcd71"; // You can change this color or make it a prop
 
   // Memoize RGB values to prevent repeated parsing
   const colorRGB = useMemo(() => {

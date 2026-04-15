@@ -119,10 +119,10 @@ const Hero = () => {
 
 
         {/* Hero Content  */}
-        <div className="relative z-10 pt-20" >
+        <div className="relative z-10 pt-20 md:pt-80 lg:pt-36" >
           <div className="container flex flex-col gap-16">
             {/* Center — mobile: natural height only; sm+: fills middle row for vertical centering */}
-            <div className="flex items-start justify-center pt-2 max-sm:self-start sm:-translate-y-4 sm:items-center sm:pt-0">
+            <div className="flex items-start justify-center pt-2 max-sm:self-start sm:-translate-y-4 sm:items-center">
               <div className="w-full max-w-screen text-center flex flex-col gap-4">
                 <p className="whitespace-nowrap font-bold px-3 py-1.5 bg-black text-white uppercase w-fit text-center mx-auto rounded"
                 >

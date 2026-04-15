@@ -19,7 +19,7 @@ import { faq_data, powers, servicesData } from "./data";
 
 const FacebookAdsServicePage = () => {
   const [activePower, setActivePower] = React.useState<number | null>(1);
-  const highlightColor = "#b4ffff"; 
+  const highlightColor = "#3e93d6"; 
   const textColor = "#000"; 
 
   // Memoize RGB values to prevent repeated parsing
