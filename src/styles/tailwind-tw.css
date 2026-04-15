@@ -11,7 +11,7 @@
 }
 
 h1{
-    @apply ttext-[44px] md:text-[60px] lg:!text-[99px] leading-none;
+    @apply text-[44px] md:text-[60px] lg:!text-[99px] leading-none;
 }
 
 h2{

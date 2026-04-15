@@ -141,7 +141,7 @@ const Hero = () => {
 
 
         {/* Hero Content  */}
-        <div className="relative z-10 pt-20 md:pt-80 lg:pt-36" >
+        <div className="relative z-10 pt-80 lg:pt-36" >
           <div className="container flex flex-col gap-16">
             {/* Center — mobile: natural height only; sm+: fills middle row for vertical centering */}
             <div className="flex items-start justify-center pt-2 max-sm:self-start sm:-translate-y-4 sm:items-center sm:pt-0">
@@ -154,7 +154,7 @@ const Hero = () => {
                 <h1 className="font-century-gothic">biztalbox</h1>
                 {/* <span className="h-[1px] w-40 mx-auto bg-black"></span> */}
 
-                <h3 className="!text-[22px]">Breakthrough Marketing Solutions,<br /> Igniting Brand Potential</h3>
+                <h3 className="text-[16px] md:!text-[22px]">Breakthrough Marketing Solutions,<br /> Igniting Brand Potential</h3>
                 <p className="uppercase">
                   Sustainable Growth Guided by Expertise, Rooted in Partnership
                 </p>
