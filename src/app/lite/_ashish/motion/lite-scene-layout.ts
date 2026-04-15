@@ -149,6 +149,10 @@ const CTA_SCALE0_ORDER: LiteModelKey[] = [
   "appdev",
 ];
 
+function isNonEmptyObject(v: unknown): v is Record<string, unknown> {
+  return !!v && typeof v === "object" && Object.keys(v as Record<string, unknown>).length > 0;
+}
+
 export function resolveCtaCartConfig(bp: LiteSceneBreakpoint): CtaCartDesktopJson {
   const pick =
     bp === "desktop"
@@ -156,7 +160,8 @@ export function resolveCtaCartConfig(bp: LiteSceneBreakpoint): CtaCartDesktopJso
       : bp === "tablet"
         ? bundle.ctaCart.tablet
         : bundle.ctaCart.mobile;
-  return pick ?? bundle.ctaCart.desktop;
+  // `tablet` / `mobile` can be `{}` in JSON (truthy) — treat that as "missing".
+  return isNonEmptyObject(pick) ? (pick as CtaCartDesktopJson) : bundle.ctaCart.desktop;
 }
 
 /**
@@ -174,12 +179,13 @@ export function addCtaCartTweensToTimeline(
   if (!bucket) return;
 
   const { times, bucket: b, models, asa } = cfg;
+  const safeModels = (models ?? {}) as CtaCartDesktopJson["models"];
   const t0 = 0;
   const ease0 = "power3.inOut" as const;
 
   for (const key of CTA_SCALE0_ORDER) {
-    const g = modelRefs[key].current;
-    const m = models[key];
+    const g = modelRefs?.[key]?.current ?? null;
+    const m = safeModels[key];
     if (!g || !m?.scale0) continue;
     tl.to(g.scale, { x: m.scale0[0], y: m.scale0[1], z: m.scale0[2], duration: 0, ease: ease0 }, t0);
   }
@@ -195,16 +201,16 @@ export function addCtaCartTweensToTimeline(
   tl.to(bucket.scale, b.scaleArrange, times.arrange);
 
   for (const key of CTA_SCALE0_ORDER) {
-    const g = modelRefs[key].current;
-    const m = models[key];
+    const g = modelRefs?.[key]?.current ?? null;
+    const m = safeModels[key];
     if (!g || !m?.scaleArrange) continue;
     const [sx, sy, sz] = m.scaleArrange;
     tl.to(g.scale, { x: sx, y: sy, z: sz, duration: 0, ease: ease0 }, times.arrange);
   }
 
   for (const key of CTA_SCALE0_ORDER) {
-    const g = modelRefs[key].current;
-    const m = models[key];
+    const g = modelRefs?.[key]?.current ?? null;
+    const m = safeModels[key];
     if (!g || !m?.positionMove) continue;
     const { duration, ease, ...rest } = m.positionMove;
     tl.to(g.position, { ...rest, duration, ease }, times.move);

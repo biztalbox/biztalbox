@@ -70,7 +70,7 @@ const FacebookAdsServicePage = () => {
             <ScrollPinImage
               imageSrc="/assets/img/services/META.webp"
               imageAlt="Meta Ads Facebook & Meta Ads"
-              videoSrc="https://res.cloudinary.com/djoiovkr1/video/upload/Meta_Ads_pb7bk7.webm"
+              videoSrc="/assets/image/new_avatar/video/meta.webm"
             >
               <div className="p-relative" style={{padding: "50px 30px"}}> 
               {/* previously used this class on above div - project-details-1-right */}
