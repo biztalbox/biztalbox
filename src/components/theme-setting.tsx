@@ -1,21 +1,23 @@
 'use client';
-import React from "react";
+import React, { useEffect } from "react";
 import { useTheme } from "next-themes";
 import dynamic from "next/dynamic";
 const ThemeSetting = () => {
   const { setTheme, theme } = useTheme();
   const [settingOpen, setSettingOpen] = React.useState(false);
 
-  // console.log('theme', theme);
-
   function handleOpenSetting() {
     setSettingOpen(!settingOpen);
   };
+
+  useEffect(() => {
+    // If no theme is set yet, default to light.
+    if (!theme) setTheme("light");
+  }, [setTheme, theme]);
   return (
     <div
-      className={`tp-theme-settings-area transition-3 ${
-        settingOpen ? "settings-opened" : ""
-      }`}
+      className={`tp-theme-settings-area transition-3 ${settingOpen ? "settings-opened" : ""
+        }`}
     >
       <div className="tp-theme-wrapper">
         <div className="tp-theme-header text-center">
@@ -34,9 +36,8 @@ const ThemeSetting = () => {
             <i className="tp-theme-dir-slide"></i>
             <span
               onClick={() => setTheme("light")}
-              className={`tp-theme-dir-ltr ${
-                theme === "light" ? "active" : ""
-              }`}
+              className={`tp-theme-dir-ltr ${theme === "light" ? "active" : ""
+                }`}
             >
               Light
             </span>

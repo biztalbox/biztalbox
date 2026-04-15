@@ -157,6 +157,7 @@ export default function ProjectFour({ style_2 = false }: IProps) {
                           src={item.img_1}
                           alt={item.alt}
                           style={{ height: "auto" }}
+                          className="outlinedImg"
                         />
                       )}
                     </div>
@@ -187,6 +188,7 @@ export default function ProjectFour({ style_2 = false }: IProps) {
                           src={item.img_2}
                            alt={item.alt}
                           style={{ height: "auto" }}
+                          className="outlinedImg"
                         />
                       )}
                     </div>

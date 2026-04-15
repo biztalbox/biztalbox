@@ -31,7 +31,7 @@ const ContactPage = () => {
   return (
     <Wrapper>
       {/* header area start */}
-      <HeaderEleven />
+      <HeaderEleven transparent={true} />
       {/* header area end */}
 
       <div id="smooth-wrapper">
@@ -52,9 +52,9 @@ const ContactPage = () => {
                     <div className="col-xl-12">
                       <div className="tm-hero-content">
                         <span className="tm-hero-subtitle">biztalbox</span>
-                        <h4 className="tm-hero-title-big tp-char-animation">
+                        <h2 className="text-white tm-hero-title-big tp-char-animation">
                           Get <br /> in touch
-                        </h4>
+                        </h2>
                       </div>
                     </div>
                   </div>

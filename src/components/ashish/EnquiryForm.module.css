@@ -4,6 +4,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  color: var(--app-text);
 }
 
 .formRow {
@@ -23,7 +24,8 @@
 .formRow span {
   font-size: 1.2rem;
   font-weight: 500;
-  color: #c9c9c9 !important;
+  color: var(--app-text) !important;
+  opacity: 0.82;
 }
 
 .asterisk {
@@ -33,7 +35,7 @@
 
 .underline {
   width: 250px;
-  border-bottom: 1px solid white !important;
+  border-bottom: 1px solid var(--app-text) !important;
   margin-bottom: 2rem !important;
   display: block !important;
 }
@@ -42,7 +44,7 @@
   border: none;
   background: transparent;
   font-weight: 400;
-  color: #fff;
+  color: var(--app-text);
   width: auto !important;
   padding-bottom: 10px;
   transition: border-color 0.2s;
@@ -57,7 +59,7 @@
 
 .inputField::placeholder, 
 .inputField[type="email"]::placeholder {
-  color: #5e5c5c !important;
+  color: color-mix(in srgb, var(--app-text) 55%, transparent) !important;
   font-weight: bold !important;  
   text-align: center !important;
   text-transform: capitalize !important;
@@ -76,6 +78,7 @@
   border: none;
   position: absolute;
   inset: auto 0% 0%;
+  /* White stroke by default; overridden in light theme below */
   background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDYwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIGQ9Ik0wLDU2LjVjMCwwLDI5OC42NjYsMCwzOTkuMzMzLDBDNDQ4LjMzNiw1Ni41LDUxMy45OTQsNDYsNTk3LDQ2Yzc3LjMyNywwLDEzNSwxMC41LDIwMC45OTksMTAuNWM5NS45OTYsMCw0MDIuMDAxLDAsNDAyLjAwMSwwIj48L3BhdGg+PC9zdmc+);
   background-position: center bottom;
   background-repeat: no-repeat;
@@ -118,6 +121,11 @@
   white-space: nowrap;
   z-index: 99999;
   overflow: hidden;
+}
+
+/* Light theme: swap underline stroke to black for contrast */
+:global(:root:not([data-theme="dark"])) .inputBorder {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDYwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiMwMDAiIGQ9Ik0wLDU2LjVjMCwwLDI5OC42NjYsMCwzOTkuMzMzLDBDNDQ4LjMzNiw1Ni41LDUxMy45OTQsNDYsNTk3LDQ2Yzc3LjMyNywwLDEzNSwxMC41LDIwMC45OTksMTAuNWM5NS45OTYsMCw0MDIuMDAxLDAsNDAyLjAwMSwwIj48L3BhdGg+PC9zdmc+);
 }
 
 .hoverMessage.visible {

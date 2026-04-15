@@ -77,7 +77,7 @@ const AwardOne = ({cls="pt-125 pb-125",abStyle=false}: IProps) => {
               </div>
             )}
             {abStyle && (
-              <div className="ab-award-title-sm">
+              <div className="text-white ab-award-title-sm">
                 <span>
                   <Leaf />
                   Our Thoughts
@@ -115,7 +115,7 @@ const AwardOne = ({cls="pt-125 pb-125",abStyle=false}: IProps) => {
                 >
                   <div className="tp-award-list-content-left d-flex align-items-end" style={{justifyContent: 'space-between', gap: '20px'}}>
                     <p className="text-white">{item.title}</p>
-                    <span style={{whiteSpace: 'nowrap'}}>{item.Author}</span>
+                    <span style={{whiteSpace: 'nowrap',color:"white"}}>{item.Author}</span>
                   </div>
                   {/* <div className="tp-award-list-content-right">
                     <span>{item.Author}</span>
