@@ -69,7 +69,7 @@ const AnalysisAlgorithmPage = () => {
             <ScrollPinImage
               imageSrc="/assets/img/services/ALGANIX.webp"
               imageAlt="ALGANIX Analysis Algorithm"
-              videoSrc="https://res.cloudinary.com/djoiovkr1/video/upload/Alganix_3_cwiltk.webm"
+              videoSrc="/assets/image/new_avatar/video/algo.webm"
             >
               <div className="p-relative" style={{padding: "50px 30px"}}> 
               {/* previously used this class on above div - project-details-1-right */}

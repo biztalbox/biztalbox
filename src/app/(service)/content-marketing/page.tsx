@@ -73,7 +73,7 @@ const ContentMarketingPage = () => {
             <ScrollPinImage
               imageSrc="/assets/img/services/CONTENT.webp"
               imageAlt="Contenteena Copy Writing"
-              videoSrc="https://res.cloudinary.com/djoiovkr1/video/upload/Copy_Writing_r1iho0.webm"
+              videoSrc="/assets/image/new_avatar/video/content.webm"
             >
               <div className="p-relative" style={{padding: "50px 30px"}}> 
               {/* previously used this class on above div - project-details-1-right */}

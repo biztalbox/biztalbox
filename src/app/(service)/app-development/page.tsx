@@ -69,7 +69,7 @@ const AppDevelopmentPage = () => {
             <ScrollPinImage
               imageSrc="/assets/img/services/app_dev.webp"
               imageAlt="App Development"
-              videoSrc="https://res.cloudinary.com/djoiovkr1/video/upload/Captain_code_mwe84s.webm"
+              videoSrc="/assets/image/new_avatar/video/appdev.webm"
             >
               <div className="p-relative" style={{padding: "50px 30px"}}> 
               {/* previously used this class on above div - project-details-1-right */}

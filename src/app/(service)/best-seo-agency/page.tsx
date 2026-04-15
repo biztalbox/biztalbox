@@ -69,7 +69,7 @@ const BestSeoAgencyPage = () => {
             <ScrollPinImage
               imageSrc="/assets/img/services/seo.webp"
               imageAlt="Search Engine Optimization"
-              videoSrc="https://res.cloudinary.com/djoiovkr1/video/upload/SEO_Stricker_2_aqk6qd.webm"
+              videoSrc="/assets/image/new_avatar/video/seo.webm"
             >
               <div className="p-relative" style={{padding: "50px 30px"}}> 
               {/* previously used this class on above div - project-details-1-right */}
