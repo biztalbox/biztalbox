@@ -13,9 +13,9 @@
         }
       },
       "graphic": {
-        "position": [300, 260, 400],
-        "scale": 1,
-        "rotation": [0, -0.99, 0],
+        "position": [500, 200, 400],
+        "scale": [0.8,1,0.8],
+        "rotation": [0, -0.6, 0],
         "float": {
           "speed": 5,
           "rotationIntensity": 0.5,
@@ -24,10 +24,9 @@
         }
       },
       "webdev": {
-       
-        "scale": [0.7,0.7,0.7],
-        "position": [-80, 360, 150],
+        "position": [-90, 345, 150],
         "rotation": [0, 0.1, 0],
+        "scale": [0.65,0.65,0.65],
         "float": {
           "speed": 5,
           "rotationIntensity": 0.2,
@@ -36,8 +35,9 @@
         }
       },
       "appdev": {
-        "position": [330, 180, 440],
+        "position": [120, 210, 440],
         "scale": 0.3,
+        "rotation": [0.4,0.2,0],
         "float": {
           "speed": 5,
           "rotationIntensity": 0.5,
@@ -46,7 +46,7 @@
         }
       },
       "video": {
-        "position": [30, 160, 250],
+        "position": [120, 270, 250],
         "scale": 1.1,
         "float": {
           "speed": 5,
@@ -56,29 +56,30 @@
         }
       },
       "ads": {
-        "position": [400, 200, 500],
-        "scale": 0.12,
+        "position": [365, 250, 500],
+        "scale": 0.10,
         "rotation": [0, -0.5, 0],
         "float": {
-          "speed": 3,
+          "speed": 5,
           "rotationIntensity": 0.5,
           "floatIntensity": 1,
           "floatingRange": [-0.1, 0.1]
         }
       },
       "content": {
-        "position": [170, 100, 300],
-        "scale": 0.6,
+        "position": [290, 140, 400],
+        "scale": 0.5,
         "float": {
           "speed": 5,
-          "rotationIntensity": 1,
+          "rotationIntensity": 0.5,
           "floatIntensity": 1,
           "floatingRange": [-0.1, 0.1]
         }
       },
       "smo": {
-        "position": [290, 130, 400],
-        "scale": 0.23,
+        "position": [150, 130, 350 ],
+        "scale": 0.3,
+        "rotation": [0,0.4,0],
         "float": {
           "speed": 4,
           "rotationIntensity": 0.5,
@@ -87,8 +88,8 @@
         }
       },
       "seo": {
-        "position": [430, 140, 300],
-        "rotation": [0,0,0],
+        "position": [450, 110, 300],
+        "rotation": [0,-1.5,0],
         "scale": 1.6,
         "float": {
           "speed": 3,
@@ -321,7 +322,7 @@
         "rotation": [0.3, 0, 0]
       },
       "bucket": {
-        "position": [200, -300, 300],
+        "position": [200, -200, 300],
         "scale": 0,
         "rotation": [1, 0, 0],
         "float": {
@@ -377,11 +378,11 @@
         "scale0": [0, 0, 0],
         "scaleGrow": [9, 9, 9],
         "rotationArrange": { "x": 0.3, "y": 0.6, "duration": 3, "ease": "power3.inOut" },
-        "scaleArrange": { "x": 7, "y": 7, "z": 7, "duration": 2, "ease": "power3.inOut" }
+        "scaleArrange": { "x": 5, "y": 5, "z": 5, "duration": 2, "ease": "power3.inOut" }
       },
       "asa": {
         "z1": "+=2.5",
-        "z2": "-=2.5",
+        "z2": "+=2.5",
         "duration": 3,
         "ease": "power3.inOut"
       },
@@ -398,8 +399,8 @@
         },
         "webdev": {
           "scale0": [0, 0, 0],
-          "scaleArrange": [1, 1, 1],
-          "positionMove": { "y": "-=100", "x": "-=10", "z": "+=270", "duration": 2, "ease": "power3.inOut" }
+          "scaleArrange": [0.2, 0.2, 0.2],
+          "positionMove": { "y": "-=80", "x": "-=40", "z": "+=270", "duration": 2, "ease": "power3.inOut" }
         },
         "video": {
           "scale0": [0, 0, 0],

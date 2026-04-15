@@ -19,7 +19,7 @@ h2{
 }
 
 h3{
-    @apply text-[22px] lg:text-[33px];
+    @apply text-[22px] md:!text-[33px];
 }
 
 p{

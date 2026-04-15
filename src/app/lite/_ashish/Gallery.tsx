@@ -2,24 +2,25 @@ import React, { CSSProperties, useEffect, useState } from 'react';
 import Image from 'next/image';
 import Marquee from 'react-fast-marquee';
 
-import port_1 from "@/assets/img/services/ALGANIX.webp";
-import port_2 from "@/assets/img/services/CAPTAIN_CUT.webp";
-import port_3 from "@/assets/img/services/WEBDEV.webp";
-import port_4 from "@/assets/img/services/seo.webp";
-import port_5 from "@/assets/img/services/VECTOR.webp";
-import port_6 from "@/assets/img/services/CONTENT.webp";
-import port_7 from "@/assets/img/services/social.webp";
-import port_8 from "@/assets/img/services/GOOGLE_ADS.webp";
-import port_9 from "@/assets/img/services/META.webp";
-import port_10 from "@/assets/img/services/app_dev.webp";
+import algo from "@/assets/image/new_avatar/algo.webp";
+import video from "@/assets/image/new_avatar/video.webp";
+import webdev from "@/assets/image/new_avatar/webdev.webp";
+import seo from "@/assets/image/new_avatar/seo.webp";
+import graphic from "@/assets/image/new_avatar/graphic.webp";
+import content from "@/assets/image/new_avatar/content.webp";
+import smo from "@/assets/image/new_avatar/smo.webp";
+import google from "@/assets/image/new_avatar/google.webp";
+import meta from "@/assets/image/new_avatar/meta.webp";
+import appdev from "@/assets/image/new_avatar/appdev.webp";
 
 import Link from "next/link";
+import { metadata } from '@/app/_faq/page';
 
 // portfolio data
 const gallery = [
   {
     id: 1,
-    img: port_4,
+    img: seo,
     // img: port_4,
     title: "SEO",
     desc: "Search Engine Optimization (SEO) is the key to make sure your website stands out digitally. It enhances your website for search engines, resulting in improved ranks and increased visibility.",
@@ -29,7 +30,7 @@ const gallery = [
   {
     id: 2,
     // img: port_6,
-    img: port_7,
+    img: smo,
     title: "Social Media",
     desc: "Social media Marketing is the digital arena where brands connect, captivate, and communicate with their audience.",
     slug: "social-media-marketing",
@@ -37,7 +38,7 @@ const gallery = [
   },
   {
     id: 3,
-    img: port_3,
+    img: webdev,
     // img: port_6,
     title: "Web Development",
     desc: "A Web Development is a digital architect who builds, optimizes, and secures seamless websites.",
@@ -47,7 +48,7 @@ const gallery = [
   {
     id: 4,
     // img: port_6,
-    img: port_10,
+    img: appdev,
     title: "App Development",
     desc: "An App Developer is a mobile maestro who builds the next killer app and delivers unparalleled performance to keep users coming back for more.",
     slug: "app-development",
@@ -55,7 +56,7 @@ const gallery = [
   },
   {
     id: 5,
-    img: port_1,
+    img: algo,
     // img: port_2,
     title: "Analysis Algorithm",
     desc: "An algorithm is a precision powerhouse that can instantly analyse vast amount of data to find hidden patterns and insights.",
@@ -65,7 +66,7 @@ const gallery = [
   {
     id: 6,
     // img: port_3,
-    img: port_2,
+    img: video,
     title: "Motion Graphics",
     desc: "A video editing is a multimedia guru who turns in raw footage into cinematic masterpieces.",
     slug: "motion-graphics",
@@ -73,7 +74,7 @@ const gallery = [
   },
   {
     id: 7,
-    img: port_5,
+    img: graphic,
     // img: port_2,
     title: "Graphic Designing",
     desc: "A graphic designing is a creative force that turns concepts into recognised piece of art.",
@@ -83,7 +84,7 @@ const gallery = [
   {
     id: 8,
     // img: port_3,
-    img: port_6,
+    img: content,
     title: "Copy Writing",
     desc: "Content creation combines crafting high-quality, SEO-optimized material that engages users and search engines.",
     slug: "content-marketing",
@@ -91,7 +92,7 @@ const gallery = [
   },
   {
     id: 9,
-    img: port_8,
+    img: google,
     // img: port_7,
     title: "Performance Marketing",
     desc: "Google Ads is a versatile tool that makes every click an instant hit. It improves return on investment (ROI) and generates high-value leads through strategic bidding.",
@@ -101,7 +102,7 @@ const gallery = [
   {
     id: 10,
     // img: port_2,
-    img: port_9,
+    img: meta,
     title: "Meta Ads",
     desc: "Throughout its ecosystem, Meta Ads creates visually striking ads with precise targeting, turning it into a digital powerhouse.",
     slug: "facebook-ads-service",
