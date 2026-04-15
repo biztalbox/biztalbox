@@ -3,7 +3,7 @@
 import Image from "next/image";
 import MyCanvas from "./MyCanvas";
 import { Canvas, useThree } from "@react-three/fiber";
-import { useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import * as THREE from "three";
 import { LITE_HERO_SURFACE_STYLE } from "./lite-hero-surface";
 import WhyChooseUs from "@/components/about/why-choose-us";
@@ -96,21 +96,48 @@ function ResponsiveHeroCamera() {
 }
 
 const Hero = () => {
+  const [showCanvas, setShowCanvas] = useState(false);
+
+  // Avoid blocking first paint with heavy GLB parsing on /lite.
+  // Mount the WebGL scene once the browser is idle (or shortly after).
+  useEffect(() => {
+    const w = globalThis as any;
+    let t: any = null;
+    let idleId: any = null;
+
+    const enable = () => setShowCanvas(true);
+
+    if (w?.requestIdleCallback) {
+      idleId = w.requestIdleCallback(enable, { timeout: 1200 });
+    } else {
+      t = w.setTimeout(enable, 250);
+    }
+
+    return () => {
+      if (t) w.clearTimeout(t);
+      if (idleId && w?.cancelIdleCallback) w.cancelIdleCallback(idleId);
+    };
+  }, []);
+
   return (
     <div className="relative">
 
       <section id="section0" className="relative min-h-[100svh] overflow-hidden">
-        <Canvas
-          className="!fixed top-0 z-10 h-full w-full inset-0"
-          dpr={[1, 2]}
-          gl={{ alpha: true }}
-          onCreated={({ gl }) => {
-            gl.setClearColor("#000000", 0);
-          }}
-        >
-          <ResponsiveHeroCamera />
-          <MyCanvas />
-        </Canvas>
+        {showCanvas && (
+          <Canvas
+            className="!fixed top-0 z-10 h-full w-full inset-0"
+            // Cap DPR to reduce GPU cost on high-DPI devices.
+            dpr={[1, 1.5]}
+            performance={{ min: 0.5 }}
+            gl={{ alpha: true, antialias: false, powerPreference: "high-performance" }}
+            onCreated={({ gl }) => {
+              gl.setClearColor("#000000", 0);
+            }}
+          >
+            <ResponsiveHeroCamera />
+            <MyCanvas />
+          </Canvas>
+        )}
 
 
         {/* Hero Content  */}
@@ -124,7 +151,7 @@ const Hero = () => {
                   Creative Souls, Strategic Minds
                 </p>
 
-                <h1 className="font-century-gothic !text-[99px]">biztalbox</h1>
+                <h1 className="font-century-gothic">biztalbox</h1>
                 {/* <span className="h-[1px] w-40 mx-auto bg-black"></span> */}
 
                 <h3 className="!text-[22px]">Breakthrough Marketing Solutions,<br /> Igniting Brand Potential</h3>
@@ -959,7 +986,7 @@ const Hero = () => {
           <div className="flex flex-col">
 
             <span>info@biztalbox.com</span>
-            <span>PHONE: +91 9876543210</span>
+            <span>PHONE: +91 9485699709</span>
           </div>
 
         </div>
