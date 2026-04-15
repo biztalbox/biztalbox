@@ -19,7 +19,7 @@ import { faq_data, powers, servicesData } from "./data";
 
 const WebsiteDevelopmentPage = () => {
   const [activePower, setActivePower] = React.useState<number | null>(1);
-  const highlightColor = "#49cb66"; // You can change this color or make it a prop
+  const highlightColor = "#5e8574"; // You can change this color or make it a prop
 
   // Memoize RGB values to prevent repeated parsing
   const colorRGB = useMemo(() => {
