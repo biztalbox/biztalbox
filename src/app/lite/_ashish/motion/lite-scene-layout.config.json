@@ -377,6 +377,11 @@
       "bucket": {
         "scale0": [0, 0, 0],
         "scaleGrow": [9, 9, 9],
+        "positionNudge": {
+          "x": "-=20",
+          "y": "+=80",
+          "z": "+=0"
+        },
         "rotationArrange": { "x": 0.3, "y": 0.6, "duration": 3, "ease": "power3.inOut" },
         "scaleArrange": { "x": 5, "y": 5, "z": 5, "duration": 2, "ease": "power3.inOut" }
       },
@@ -434,7 +439,15 @@
         }
       }
     },
-    "tablet": {},
+    "tablet": {
+      "bucket": {
+        "positionNudge": {
+          "x": "-=20",
+          "y": "+=80",
+          "z": "+=0"
+        }
+      }
+    },
     "mobile": {
               "times": {
         "bucketGrow": 0.2,
@@ -445,6 +458,11 @@
       "bucket": {
         "scale0": [0, 0, 0],
         "scaleGrow": [5, 5, 5],
+        "positionNudge": {
+          "x": "-=20",
+          "y": "+=80",
+          "z": "+=0"
+        },
         "rotationArrange": { "x": 0.3, "y": 0.6, "duration": 3, "ease": "power3.inOut" },
         "scaleArrange": { "x": 5, "y": 5, "z": 5, "duration": 2, "ease": "power3.inOut" }
       },

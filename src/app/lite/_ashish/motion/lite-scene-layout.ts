@@ -34,6 +34,13 @@ export type ResolvedHeroModelLayout = {
   float: FloatJson;
 };
 
+/** GSAP `x` / `y` / `z` for `bucket.position` at timeline start (instant tween at t0); strings like `"+=80"` or numbers. */
+type CtaCartBucketPositionNudge = {
+  x?: string | number;
+  y?: string | number;
+  z?: string | number;
+};
+
 type CtaCartDesktopJson = {
   times: { bucketGrow: number; arrange: number; move: number; asa: number };
   bucket: {
@@ -41,6 +48,8 @@ type CtaCartDesktopJson = {
     scaleGrow: Vec3;
     rotationArrange: { x: number; y: number; duration: number; ease: string };
     scaleArrange: { x: number; y: number; z: number; duration: number; ease: string };
+    /** Instant offset for bucket position at scrub t0 (`x` / `y` / `z`, e.g. `"+=80"`, `"-=20"`, `"+=0"`). */
+    positionNudge?: CtaCartBucketPositionNudge;
   };
   asa: { z1: string; z2: string; duration: number; ease: string };
   models: Record<
@@ -153,15 +162,52 @@ function isNonEmptyObject(v: unknown): v is Record<string, unknown> {
   return !!v && typeof v === "object" && Object.keys(v as Record<string, unknown>).length > 0;
 }
 
+function mergeCtaCart(desktop: CtaCartDesktopJson, over: Partial<CtaCartDesktopJson> | null | undefined): CtaCartDesktopJson {
+  if (!over || !isNonEmptyObject(over)) return desktop;
+  const mergedModels = { ...desktop.models };
+  if (over.models) {
+    for (const key of Object.keys(over.models)) {
+      const k = key as keyof typeof mergedModels;
+      const b = desktop.models[k];
+      const o = over.models[k];
+      if (!o) continue;
+      if (!b) {
+        (mergedModels as Record<string, (typeof mergedModels)[keyof typeof mergedModels]>)[k] = o;
+        continue;
+      }
+      const pm =
+        b.positionMove && o.positionMove
+          ? { ...b.positionMove, ...o.positionMove }
+          : (o.positionMove ?? b.positionMove);
+      mergedModels[k] = {
+        ...b,
+        ...o,
+        ...(pm ? { positionMove: pm } : {}),
+      } as (typeof mergedModels)[typeof k];
+    }
+  }
+  return {
+    ...desktop,
+    ...over,
+    times: { ...desktop.times, ...over.times },
+    bucket: {
+      ...desktop.bucket,
+      ...over.bucket,
+      positionNudge: {
+        ...desktop.bucket.positionNudge,
+        ...over.bucket?.positionNudge,
+      },
+    },
+    asa: { ...desktop.asa, ...over.asa },
+    models: mergedModels,
+  };
+}
+
 export function resolveCtaCartConfig(bp: LiteSceneBreakpoint): CtaCartDesktopJson {
-  const pick =
-    bp === "desktop"
-      ? bundle.ctaCart.desktop
-      : bp === "tablet"
-        ? bundle.ctaCart.tablet
-        : bundle.ctaCart.mobile;
-  // `tablet` / `mobile` can be `{}` in JSON (truthy) — treat that as "missing".
-  return isNonEmptyObject(pick) ? (pick as CtaCartDesktopJson) : bundle.ctaCart.desktop;
+  const d = bundle.ctaCart.desktop;
+  if (bp === "desktop") return d;
+  if (bp === "tablet") return mergeCtaCart(d, bundle.ctaCart.tablet as Partial<CtaCartDesktopJson> | null);
+  return mergeCtaCart(d, bundle.ctaCart.mobile as Partial<CtaCartDesktopJson> | null);
 }
 
 /**
@@ -196,7 +242,19 @@ export function addCtaCartTweensToTimeline(
     { x: b.scaleGrow[0], y: b.scaleGrow[1], z: b.scaleGrow[2], duration: 0, ease: ease0 },
     times.bucketGrow,
   );
-  tl.to(bucket.position, { y: "+=70", duration: 0, ease: ease0 }, 0);
+  const defaultNudge: CtaCartBucketPositionNudge = { x: "-=20", y: "+=80" };
+  const nudge = { ...defaultNudge, ...b.positionNudge };
+  tl.to(
+    bucket.position,
+    {
+      ...(nudge.x !== undefined ? { x: nudge.x } : {}),
+      ...(nudge.y !== undefined ? { y: nudge.y } : {}),
+      ...(nudge.z !== undefined ? { z: nudge.z } : {}),
+      duration: 0,
+      ease: ease0,
+    },
+    0,
+  );
   tl.to(bucket.rotation, b.rotationArrange, times.arrange);
   tl.to(bucket.scale, b.scaleArrange, times.arrange);
 
