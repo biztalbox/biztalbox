@@ -70,7 +70,7 @@ const GraphicDesigningPage = () => {
             <ScrollPinImage
               imageSrc="/assets/img/services/VECTOR.webp"
               imageAlt="Vector Graphic Designing"
-              videoSrc="https://res.cloudinary.com/djoiovkr1/video/upload/Graphic_Designing_nhtetc.webm"
+              videoSrc="/assets/image/new_avatar/video/desginer.webm"
               >
               <div className="p-relative" style={{padding: "50px 30px"}}> 
               {/* previously used this class on above div - project-details-1-right */}
