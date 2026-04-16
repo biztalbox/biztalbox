@@ -26,16 +26,16 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 /** All lite hero GLBs passed to useLoader / preload (order does not matter). */
 const LITE_GLB_URLS = [
-  "/assets/lite_models/smo.glb",
-  "/assets/lite_models/ads.glb",
-  "/assets/lite_models/content.glb",
-  "/assets/lite_models/seo2.glb",
-  "/assets/lite_models/webdev.glb",
-  "/assets/lite_models/appdev.glb",
-  "/assets/lite_models/graphic.glb",
-  "/assets/lite_models/video.glb",
-  "/assets/lite_models/algo.glb",
-  "/assets/lite_models/box.glb",
+  "/assets/lite_models/compressed/smo.glb",
+  "/assets/lite_models/compressed/ads.glb",
+  "/assets/lite_models/compressed/content.glb",
+  "/assets/lite_models/compressed/seo.glb",
+  "/assets/lite_models/compressed/webdev.glb",
+  "/assets/lite_models/compressed/appdev.glb",
+  "/assets/lite_models/compressed/graphic.glb",
+  "/assets/lite_models/compressed/video.glb",
+  "/assets/lite_models/compressed/algo.glb",
+  "/assets/lite_models/compressed/box.glb",
 ] as const;
 
 function configureGltfLoader(loader: GLTFLoader) {
@@ -147,16 +147,16 @@ const MyCanvas = () => {
     return map;
   }, [gltf]);
 
-  const smoScene = sceneBySrc.get("/assets/lite_models/smo.glb");
-  const adsScene = sceneBySrc.get("/assets/lite_models/ads.glb");
-  const contentScene = sceneBySrc.get("/assets/lite_models/content.glb");
-  const seoScene = sceneBySrc.get("/assets/lite_models/seo2.glb");
-  const webdevScene = sceneBySrc.get("/assets/lite_models/webdev.glb");
-  const appdevScene = sceneBySrc.get("/assets/lite_models/appdev.glb");
-  const graphicScene = sceneBySrc.get("/assets/lite_models/graphic.glb");
-  const videoScene = sceneBySrc.get("/assets/lite_models/video.glb");
-  const algoScene = sceneBySrc.get("/assets/lite_models/algo.glb");
-  const bucketScene = sceneBySrc.get("/assets/lite_models/box.glb");
+  const smoScene = sceneBySrc.get("/assets/lite_models/compressed/smo.glb");
+  const adsScene = sceneBySrc.get("/assets/lite_models/compressed/ads.glb");
+  const contentScene = sceneBySrc.get("/assets/lite_models/compressed/content.glb");
+  const seoScene = sceneBySrc.get("/assets/lite_models/compressed/seo.glb");
+  const webdevScene = sceneBySrc.get("/assets/lite_models/compressed/webdev.glb");
+  const appdevScene = sceneBySrc.get("/assets/lite_models/compressed/appdev.glb");
+  const graphicScene = sceneBySrc.get("/assets/lite_models/compressed/graphic.glb");
+  const videoScene = sceneBySrc.get("/assets/lite_models/compressed/video.glb");
+  const algoScene = sceneBySrc.get("/assets/lite_models/compressed/algo.glb");
+  const bucketScene = sceneBySrc.get("/assets/lite_models/compressed/box.glb");
 
   useGSAP(
     () => {
