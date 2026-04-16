@@ -97,6 +97,7 @@ function ResponsiveHeroCamera() {
 
 const Hero = () => {
   const [showCanvas, setShowCanvas] = useState(false);
+  const [viewportWidth, setViewportWidth] = useState(1440);
 
   // Avoid blocking first paint with heavy GLB parsing on /lite.
   // Mount the WebGL scene once the browser is idle (or shortly after).
@@ -119,6 +120,18 @@ const Hero = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const w = globalThis as any;
+    const syncViewportWidth = () => setViewportWidth(w?.innerWidth ?? 1440);
+    syncViewportWidth();
+    w?.addEventListener?.("resize", syncViewportWidth, { passive: true });
+    return () => w?.removeEventListener?.("resize", syncViewportWidth);
+  }, []);
+
+  const isPhone = viewportWidth < 640;
+  const isTablet = viewportWidth < 1024;
+  const canvasDpr: [number, number] = isPhone ? [1, 1.1] : isTablet ? [1, 1.25] : [1, 1.75];
+
   return (
     <div className="relative">
 
@@ -126,12 +139,12 @@ const Hero = () => {
         {showCanvas && (
           <Canvas
             className="!fixed top-0 z-10 h-full w-full inset-0"
-            // Balanced defaults: sharp visuals without overloading high-DPI GPUs.
-            dpr={[1, 1.75]}
-            performance={{ min: 0.6, max: 1, debounce: 200 }}
+            // Keep mobile GPU work intentionally low; desktop can afford sharper output.
+            dpr={canvasDpr}
+            performance={{ min: isPhone ? 0.4 : isTablet ? 0.5 : 0.6, max: 1, debounce: 200 }}
             gl={{
               alpha: true,
-              antialias: true,
+              antialias: !isTablet,
               powerPreference: "high-performance",
               stencil: false,
               preserveDrawingBuffer: false,
@@ -277,7 +290,7 @@ const Hero = () => {
 
           {/* Center ticket */}
 
-          <div className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="lite-scanner-seo">
+          <div className="relative z-10 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="lite-scanner-seo">
 
             {/* Two panels in one row: GSAP `xPercent` on the track scrubs forward/back (no DOM text swaps). */}
             <div className="relative overflow-hidden text-left">
@@ -349,7 +362,7 @@ const Hero = () => {
           </div>
 
           <div
-            className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
+            className="relative z-10 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
             style={{ background: "transparent" }}
             id="lite-scanner-smo"
           >
@@ -423,7 +436,7 @@ const Hero = () => {
           </div>
 
           <div
-            className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
+            className="relative z-10 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
             style={{ background: "transparent" }}
             id="lite-scanner-webdev"
           >
@@ -496,7 +509,7 @@ const Hero = () => {
           </div>
 
           <div
-            className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
+            className="relative z-10 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
             style={{ background: "transparent" }}
             id="lite-scanner-graphic"
           >
@@ -571,7 +584,7 @@ const Hero = () => {
           </div>
 
           <div
-            className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
+            className="relative z-10 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
             style={{ background: "transparent" }}
             id="lite-scanner-video"
           >
@@ -649,7 +662,7 @@ const Hero = () => {
           </div>
 
           <div
-            className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
+            className="relative z-10 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
             style={{ background: "transparent" }}
             id="lite-scanner-content"
           >
@@ -739,7 +752,7 @@ const Hero = () => {
           </div>
 
           <div
-            className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
+            className="relative z-10 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
             style={{ background: "transparent" }}
             id="lite-scanner-ads"
           >
@@ -814,7 +827,7 @@ const Hero = () => {
           </div>
 
           <div
-            className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
+            className="relative z-10 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
             style={{ background: "transparent" }}
             id="lite-scanner-appdev"
           >
@@ -888,7 +901,7 @@ const Hero = () => {
           </div>
 
           <div
-            className="relative mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
+            className="relative z-10 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
             style={{ background: "transparent" }}
             id="lite-scanner-algo"
           >

@@ -5,30 +5,31 @@ import { CloseTwo, Facebook, InstagramTwo, Linkdin, Twitter, Youtube } from "../
 // images
 import logo_white from "@/assets/img/logo/white.png";
 // import black_logo from "@/assets/img/logo/black.png";
-import port_1 from "@/assets/img/services/seo.webp";
-import port_2 from "@/assets/img/services/social.webp";
-import port_3 from "@/assets/img/services/WEBDEV.webp";
-import port_4 from "@/assets/img/services/CAPTAIN_CUT.webp";
-import port_5 from "@/assets/img/services/VECTOR.webp";
-import port_6 from "@/assets/img/services/CONTENT.webp";
-import port_7 from "@/assets/img/services/GOOGLE_ADS.webp";
-import port_8 from "@/assets/img/services/META.webp";
-import port_9 from "@/assets/img/services/ALGANIX.webp";
-import port_10 from "@/assets/img/services/app_dev.webp";
+import algo from "@/assets/image/new_avatar/algo.webp";
+import video from "@/assets/image/new_avatar/video.webp";
+import webdev from "@/assets/image/new_avatar/webdev.webp";
+import seo from "@/assets/image/new_avatar/seo.webp";
+import graphic from "@/assets/image/new_avatar/graphic.webp";
+import content from "@/assets/image/new_avatar/content.webp";
+import smo from "@/assets/image/new_avatar/smo.webp";
+import google from "@/assets/image/new_avatar/google.webp";
+import meta from "@/assets/image/new_avatar/meta.webp";
+import appdev from "@/assets/image/new_avatar/appdev.webp";
+
 import MobileMenus from "./mobile-menus";
 import Link from "next/link";
 
 const gallery_images = [
-  { img: port_1, slug: "best-seo-agency" },
-  { img: port_2, slug: "social-media-marketing" },
-  { img: port_3, slug: "website-development" },
-  { img: port_4, slug: "motion-graphics" },
-  { img: port_5, slug: "graphic-designing" },
-  { img: port_6, slug: "content-marketing" },
-  { img: port_7, slug: "google-ads-service" },
-  { img: port_8, slug: "facebook-ads-service" },
-  { img: port_9, slug: "analysis-algorithm" },
-  { img: port_10, slug: "app-development" },
+  { img: seo, slug: "best-seo-agency" },
+  { img: smo, slug: "social-media-marketing" },
+  { img: webdev, slug: "website-development" },
+  { img: video, slug: "motion-graphics" },
+  { img: graphic, slug: "graphic-designing" },
+  { img: content, slug: "content-marketing" },
+  { img: google, slug: "google-ads-service" },
+  { img: meta, slug: "facebook-ads-service" },
+  { img: algo, slug: "analysis-algorithm" },
+  { img: appdev, slug: "app-development" },
 ];
 
 // prop type

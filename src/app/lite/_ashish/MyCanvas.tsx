@@ -109,7 +109,9 @@ function useLiteHeroCanvasFrame() {
 const MyCanvas = () => {
   const { root, layouts: L, ctaCart } = useLiteHeroCanvasFrame();
   const { size } = useThree();
-  const disableFloat = size.width < 1024;
+  const isPhone = size.width < 640;
+  const isTablet = size.width < 1024;
+  const disableFloat = false;
 
   const smoRef = useRef<Group>(null);
   const adsRef = useRef<Group>(null);
@@ -185,12 +187,13 @@ const MyCanvas = () => {
         matchMediaInstance = gsap.matchMedia();
 
         const attachHeroBand = (bp: LiteSceneBreakpoint) => {
+          const isNarrow = bp !== "desktop";
           const fadeTl = gsap.timeline({
             scrollTrigger: {
               trigger: "#section0",
               start: "-120 top",
               end: "top top",
-              scrub: 2.5,
+              scrub: isNarrow ? 1.2 : 2.5,
             },
           });
           for (const key of HERO_FADE_OUT_KEYS) {
@@ -221,7 +224,7 @@ const MyCanvas = () => {
             trigger: "#ctaSection",
             start: "top bottom",
             end: "top top",
-            scrub: 5,
+            scrub: isPhone ? 2 : isTablet ? 3 : 5,
           },
         });
 
@@ -390,12 +393,14 @@ const MyCanvas = () => {
       <directionalLight position={[-130, 70, 90]} intensity={5.65} color="#eef2ff" />
       <directionalLight position={[40, 90, -160]} intensity={5.75} color="#ffffff" />
       <directionalLight position={[0, -80, 120]} intensity={5.35} color="#d4d4d8" /> */}
-      <directionalLight position={[140, 120, 560]} intensity={1} color="#ffffff" />
-      <directionalLight position={[-130, 70, 90]} intensity={1}color="#ffffff" />
-      <directionalLight position={[40, 90, -160]} intensity={5.75}
-color="#ffffff" />
-      <directionalLight position={[0, 100, 420]} intensity={3.5}
-color="#ffffff" />
+      <directionalLight position={[140, 120, 560]} intensity={3} color="#ffffff" />
+      <directionalLight position={[-130, 70, 90]} intensity={2} color="#ffffff" />
+      {!isTablet && (
+        <>
+          <directionalLight position={[40, 90, -160]} intensity={4.2} color="#ffffff" />
+          <directionalLight position={[0, 100, 420]} intensity={2.25} color="#ffffff" />
+        </>
+      )}
     </group>
   );
 };
