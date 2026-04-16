@@ -212,7 +212,7 @@ const HomePage = () => {
 
       <Wrapper>
         {/* header area start */}
-        <HeaderEleven />
+        <HeaderEleven transparent={true} />
         {/* header area end */}
 
         <div id="smooth-wrapper">

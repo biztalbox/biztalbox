@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "dev:ip": "next dev --hostname 192.168.1.11 --port 3005",
-    "build": "next build",
+    "verify:lfs-assets": "node scripts/verify-lfs-assets.mjs",
+    "build": "yarn verify:lfs-assets && yarn clean && next build",
+    "clean": "node -e \"require('fs').rmSync('.next',{recursive:true,force:true});\"",
     "start": "next start",
     "start:ip": "next start --hostname 192.168.1.1 --port 3005",
     "lint": "next lint"
