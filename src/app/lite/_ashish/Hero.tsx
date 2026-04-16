@@ -916,7 +916,7 @@ const Hero = () => {
       {/* service area end */}
 
 
-      <section id="recieptSection" className="fixed z-20 bottom-0 left-5 bg-white p-3 translate-y-full">
+      <section id="recieptSection" className="fixed hidden md:block z-20 bottom-0 left-5 bg-white p-3 translate-y-full">
         <div className="flex flex-col gap-1 w-44 divide-y-2 divide-x-0 divide-dashed text-sm font-thin font-mono">
 
           <div className="flex justify-between">

@@ -12,7 +12,7 @@
       "cardSlideX": "+=270"
     },
     "mobile": {
-      "cardSlideX": "+=60"
+      "cardSlideX": "0"
     }
   },
   "services": [
