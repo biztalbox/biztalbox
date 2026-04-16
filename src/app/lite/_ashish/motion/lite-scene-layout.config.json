@@ -620,9 +620,9 @@
       },
       "bucket": {
         "position": [
+          150,
           200,
-          -200,
-          300
+          200
         ],
         "scale": 0,
         "rotation": [
@@ -910,8 +910,8 @@
           7
         ],
         "positionNudge": {
-          "x": "+=0",
-          "y": "-=80"
+          "x": "+=100",
+          "y": "-=200"
         },
         "rotationArrange": {
           "x": 0.3,
@@ -920,9 +920,9 @@
           "ease": "power3.inOut"
         },
         "scaleArrange": {
-          "x": 5,
-          "y": 5,
-          "z": 5,
+          "x": 3,
+          "y": 3,
+          "z": 3,
           "duration": 2,
           "ease": "power3.inOut"
         }
@@ -932,8 +932,179 @@
         "z2": "+=2.5",
         "duration": 3,
         "ease": "power3.inOut"
+      },
+      "models": {
+        "seo": {
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            1.2,
+            1.2,
+            1.2
+          ],
+          "positionMove": {
+            "y": "-=25",
+            "z": "-=70",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
+        },
+        "smo": {
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            0.1,
+            0.1,
+            0.1
+          ],
+          "positionMove": {
+            "y": "-=70",
+            "x": "+=40",
+            "z": "-=20",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
+        },
+        "webdev": {
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            0.2,
+            0.2,
+            0.2
+          ],
+          "positionMove": {
+            "y": "-=80",
+            "x": "-=1",
+            "z": "+=270",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
+        },
+        "video": {
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            0.6,
+            0.6,
+            0.6
+          ],
+          "positionMove": {
+            "y": "-=20",
+            "x": "-=40",
+            "z": "+=150",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
+        },
+        "content": {
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            0.3,
+            0.3,
+            0.3
+          ],
+          "positionMove": {
+            "y": "-=10",
+            "x": "-=10",
+            "z": "-=90",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
+        },
+        "ads": {
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            0.1,
+            0.1,
+            0.1
+          ],
+          "positionMove": {
+            "y": "-=10",
+            "x": "+=15",
+            "z": "-=200",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
+        },
+        "algo": {
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            1,
+            1,
+            1
+          ],
+          "positionMove": {
+            "y": "-=60",
+            "x": "+=70",
+            "z": "-=150",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
+        },
+        "graphic": {
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "positionMove": {
+            "y": "-=20",
+            "x": "-=80",
+            "z": "-=90",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
+        },
+        "appdev": {
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            0.2,
+            0.2,
+            0.2
+          ],
+          "positionMove": {
+            "y": "-=20",
+            "x": "+=60",
+            "z": "-=90",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
+        }
       }
-      
     },
     "mobile": {
       "times": {
