@@ -2,334 +2,642 @@
   "modelLayouts": {
     "desktop": {
       "algo": {
-        "position": [410, 260, 500],
-        "scale": [1.8, 1.8, 1.8],
-        "rotation": [0.3, 0.5, 0],
+        "position": [
+          410,
+          260,
+          500
+        ],
+        "scale": [
+          1.8,
+          1.8,
+          1.8
+        ],
+        "rotation": [
+          0.3,
+          0.5,
+          0
+        ],
         "float": {
           "speed": 3,
           "rotationIntensity": 0.4,
           "floatIntensity": 1,
-          "floatingRange": [-0.1, 0.4]
+          "floatingRange": [
+            -0.1,
+            0.4
+          ]
         }
       },
       "graphic": {
-        "position": [500, 200, 400],
-        "scale": [0.8,1,0.8],
-        "rotation": [0, -0.6, 0],
+        "position": [
+          500,
+          200,
+          400
+        ],
+        "scale": [
+          0.8,
+          1,
+          0.8
+        ],
+        "rotation": [
+          0,
+          -0.6,
+          0
+        ],
         "float": {
           "speed": 5,
           "rotationIntensity": 0.5,
           "floatIntensity": 1,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         }
       },
       "webdev": {
-        "position": [-90, 345, 150],
-        "rotation": [0, 0.1, 0],
-        "scale": [0.65,0.65,0.65],
+        "position": [
+          -90,
+          345,
+          150
+        ],
+        "rotation": [
+          0,
+          0.1,
+          0
+        ],
+        "scale": [
+          0.65,
+          0.65,
+          0.65
+        ],
         "float": {
           "speed": 5,
           "rotationIntensity": 0.2,
           "floatIntensity": 1,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         }
       },
       "appdev": {
-        "position": [120, 210, 440],
+        "position": [
+          120,
+          210,
+          440
+        ],
         "scale": 0.3,
-        "rotation": [0.4,0.2,0],
+        "rotation": [
+          0.4,
+          0.2,
+          0
+        ],
         "float": {
           "speed": 5,
           "rotationIntensity": 0.5,
           "floatIntensity": 1,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         }
       },
       "video": {
-        "position": [120, 270, 250],
+        "position": [
+          120,
+          270,
+          250
+        ],
         "scale": 1.1,
         "float": {
           "speed": 5,
           "rotationIntensity": 1,
           "floatIntensity": 1,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         }
       },
       "ads": {
-        "position": [365, 250, 500],
+        "position": [
+          365,
+          250,
+          500
+        ],
         "scale": 0.10,
-        "rotation": [0, -0.5, 0],
+        "rotation": [
+          0,
+          -0.5,
+          0
+        ],
         "float": {
           "speed": 5,
           "rotationIntensity": 0.5,
           "floatIntensity": 1,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         }
       },
       "content": {
-        "position": [290, 140, 400],
+        "position": [
+          290,
+          140,
+          400
+        ],
         "scale": 0.5,
         "float": {
           "speed": 5,
           "rotationIntensity": 0.5,
           "floatIntensity": 1,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         }
       },
       "smo": {
-        "position": [150, 130, 350 ],
+        "position": [
+          150,
+          130,
+          350
+        ],
         "scale": 0.3,
-        "rotation": [0,0.4,0],
+        "rotation": [
+          0,
+          0.4,
+          0
+        ],
         "float": {
           "speed": 4,
           "rotationIntensity": 0.5,
           "floatIntensity": 1.5,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         }
       },
       "seo": {
-        "position": [450, 110, 300],
-        "rotation": [0,-1.5,0],
+        "position": [
+          450,
+          110,
+          300
+        ],
+        "rotation": [
+          0,
+          -1.5,
+          0
+        ],
         "scale": 1.6,
         "float": {
           "speed": 3,
           "rotationIntensity": 0.3,
           "floatIntensity": 0.5,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         }
       },
       "bucket": {
-        "position": [300, 100, 300],
+        "position": [
+          300,
+          100,
+          300
+        ],
         "scale": 0,
-        "rotation": [1, 0, 0],
+        "rotation": [
+          1,
+          0,
+          0
+        ],
         "float": {
           "speed": 3,
           "rotationIntensity": 0.3,
           "floatIntensity": 0.8,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         }
       }
     },
     "mobile": {
       "webdev": {
-        "position": [120, 270, 0],
+        "position": [
+          120,
+          270,
+          0
+        ],
         "scale": 0.7,
-        "rotation": [0.4, 0.9, 0],
+        "rotation": [
+          0.4,
+          0.9,
+          0
+        ],
         "float": {
           "speed": 5,
           "rotationIntensity": 0.2,
           "floatIntensity": 1,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         }
       },
-      
       "ads": {
-        "position": [370, 20, 0],
+        "position": [
+          370,
+          20,
+          0
+        ],
         "scale": 0.4,
-        "rotation": [0, -0.5, 0],
+        "rotation": [
+          0,
+          -0.5,
+          0
+        ],
         "float": {
           "speed": 3,
           "rotationIntensity": 0.5,
           "floatIntensity": 1,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         }
       },
       "graphic": {
-        "position": [380, -100, 0],
+        "position": [
+          380,
+          -100,
+          0
+        ],
         "scale": 1.6,
-        "rotation": [0, -0.5, 0],
+        "rotation": [
+          0,
+          -0.5,
+          0
+        ],
         "float": {
           "speed": 5,
           "rotationIntensity": 0.5,
           "floatIntensity": 1,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         }
       },
-      
       "smo": {
-        "position": [100,-300, 0],
+        "position": [
+          100,
+          -300,
+          0
+        ],
         "scale": 0.5,
         "float": {
           "speed": 4,
           "rotationIntensity": 0.5,
           "floatIntensity": 1.5,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         }
       },
       "seo": {
-        "position": [350, -200, 0],
+        "position": [
+          350,
+          -200,
+          0
+        ],
         "scale": 3,
         "float": {
           "speed": 3,
           "rotationIntensity": 0.3,
           "floatIntensity": 0.5,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         }
       },
       "appdev": {
-        "position": [100, -100, 0],
+        "position": [
+          100,
+          -100,
+          0
+        ],
         "scale": 0.9,
         "float": {
           "speed": 5,
           "rotationIntensity": 0.5,
           "floatIntensity": 1,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         }
       },
       "video": {
-       "position": [150, 10, 0],
+        "position": [
+          150,
+          10,
+          0
+        ],
         "scale": 1.7,
         "float": {
           "speed": 5,
           "rotationIntensity": 1,
           "floatIntensity": 1,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         }
       },
       "algo": {
-        "position": [350, 200, 0],
-        "scale": [6, 6, 6],
-        "rotation": [0.4, -1, 0],
+        "position": [
+          350,
+          200,
+          0
+        ],
+        "scale": [
+          6,
+          6,
+          6
+        ],
+        "rotation": [
+          0.4,
+          -1,
+          0
+        ],
         "float": {
           "speed": 6,
           "rotationIntensity": 0.6,
           "floatIntensity": 0.8,
-          "floatingRange": [-0.1, 0.4]
+          "floatingRange": [
+            -0.1,
+            0.4
+          ]
         }
-        
       },
       "content": {
-        "position": [250, -430, 0],
+        "position": [
+          250,
+          -430,
+          0
+        ],
         "scale": 1,
         "float": {
           "speed": 5,
           "rotationIntensity": 1,
           "floatIntensity": 1,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         },
-        "rotation": [1, 0, 0]
+        "rotation": [
+          1,
+          0,
+          0
+        ]
       },
       "bucket": {
-        "position": [200, -300, 300],
+        "position": [
+          200,
+          -300,
+          300
+        ],
         "scale": 0,
-        "rotation": [1, 0, 0],
+        "rotation": [
+          1,
+          0,
+          0
+        ],
         "float": {
           "speed": 3,
           "rotationIntensity": 0.3,
           "floatIntensity": 0.8,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         }
       }
     },
     "tablet": {
       "webdev": {
-        "position": [50, 440, 0],
+        "position": [
+          50,
+          440,
+          0
+        ],
         "scale": 0.5,
-        "rotation": [0.4, 0.9, 0],
+        "rotation": [
+          0.4,
+          0.9,
+          0
+        ],
         "float": {
           "speed": 5,
           "rotationIntensity": 0.2,
           "floatIntensity": 1,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         }
       },
-      
       "ads": {
-        "position": [290, 260, 0],
+        "position": [
+          290,
+          260,
+          0
+        ],
         "scale": 0.23,
-        "rotation": [0, -0.5, 0],
+        "rotation": [
+          0,
+          -0.5,
+          0
+        ],
         "float": {
           "speed": 3,
           "rotationIntensity": 0.5,
           "floatIntensity": 1,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         }
       },
-     "graphic": {
-        "position": [330, 120, 0],
+      "graphic": {
+        "position": [
+          330,
+          120,
+          0
+        ],
         "scale": 1.6,
-        "rotation": [0, -0.5, 0],
+        "rotation": [
+          0,
+          -0.5,
+          0
+        ],
         "float": {
           "speed": 5,
           "rotationIntensity": 0.5,
           "floatIntensity": 1,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         }
-      
       },
-      
       "smo": {
-        "position": [40,-50, 0],
+        "position": [
+          40,
+          -50,
+          0
+        ],
         "scale": 0.4,
         "float": {
           "speed": 4,
           "rotationIntensity": 0.5,
           "floatIntensity": 1.5,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         }
       },
       "seo": {
-        "position": [290, 60, 0],
+        "position": [
+          290,
+          60,
+          0
+        ],
         "scale": 2,
-        "rotation": [0,1.5,0],
+        "rotation": [
+          0,
+          1.5,
+          0
+        ],
         "float": {
           "speed": 6,
           "rotationIntensity": 0.3,
           "floatIntensity": 0.5,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         }
       },
       "appdev": {
-        "position": [-20, 100, 0],
+        "position": [
+          -20,
+          100,
+          0
+        ],
         "scale": 0.7,
         "float": {
           "speed": 5,
           "rotationIntensity": 0.5,
           "floatIntensity": 1,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         }
       },
       "video": {
-       "position": [40, 250, 0],
+        "position": [
+          40,
+          250,
+          0
+        ],
         "scale": 1.3,
         "float": {
           "speed": 5,
           "rotationIntensity": 1,
           "floatIntensity": 1,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         }
       },
-     "algo": {
-        "position": [300, 360, 0],
-        "scale": [5, 5, 5],
-        "rotation": [0.4, -1, 0],
+      "algo": {
+        "position": [
+          300,
+          360,
+          0
+        ],
+        "scale": [
+          5,
+          5,
+          5
+        ],
+        "rotation": [
+          0.4,
+          -1,
+          0
+        ],
         "float": {
           "speed": 6,
           "rotationIntensity": 0.6,
           "floatIntensity": 0.8,
-          "floatingRange": [-0.1, 0.4]
+          "floatingRange": [
+            -0.1,
+            0.4
+          ]
         }
       },
       "content": {
-        "position": [160, 20, 0],
+        "position": [
+          160,
+          20,
+          0
+        ],
         "scale": 1,
         "float": {
           "speed": 5,
           "rotationIntensity": 1,
           "floatIntensity": 1,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         },
-        "rotation": [0.3, 0, 0]
+        "rotation": [
+          0.3,
+          0,
+          0
+        ]
       },
       "bucket": {
-        "position": [200, -200, 300],
+        "position": [
+          200,
+          -200,
+          300
+        ],
         "scale": 0,
-        "rotation": [1, 0, 0],
+        "rotation": [
+          1,
+          0,
+          0
+        ],
         "float": {
           "speed": 3,
           "rotationIntensity": 0.3,
           "floatIntensity": 0.8,
-          "floatingRange": [-0.1, 0.1]
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
         }
       }
     }
@@ -375,15 +683,34 @@
         "asa": 0.3
       },
       "bucket": {
-        "scale0": [0, 0, 0],
-        "scaleGrow": [9, 9, 9],
+        "scale0": [
+          0,
+          0,
+          0
+        ],
+        "scaleGrow": [
+          9,
+          9,
+          9
+        ],
         "positionNudge": {
           "x": "-=20",
           "y": "+=80",
           "z": "+=0"
         },
-        "rotationArrange": { "x": 0.3, "y": 0.6, "duration": 3, "ease": "power3.inOut" },
-        "scaleArrange": { "x": 5, "y": 5, "z": 5, "duration": 2, "ease": "power3.inOut" }
+        "rotationArrange": {
+          "x": 0.3,
+          "y": 0.6,
+          "duration": 3,
+          "ease": "power3.inOut"
+        },
+        "scaleArrange": {
+          "x": 5,
+          "y": 5,
+          "z": 5,
+          "duration": 2,
+          "ease": "power3.inOut"
+        }
       },
       "asa": {
         "z1": "+=2.5",
@@ -393,49 +720,174 @@
       },
       "models": {
         "seo": {
-          "scale0": [0, 0, 0],
-          "scaleArrange": [1.2, 1.2, 1.2],
-          "positionMove": { "y": "-=25", "z": "-=70", "duration": 2, "ease": "power3.inOut" }
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            1.2,
+            1.2,
+            1.2
+          ],
+          "positionMove": {
+            "y": "-=25",
+            "z": "-=70",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
         },
         "smo": {
-          "scale0": [0, 0, 0],
-          "scaleArrange": [0.1, 0.1, 0.1],
-          "positionMove": { "y": "-=70", "x": "+=40", "z": "-=20", "duration": 2, "ease": "power3.inOut" }
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            0.1,
+            0.1,
+            0.1
+          ],
+          "positionMove": {
+            "y": "-=70",
+            "x": "+=40",
+            "z": "-=20",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
         },
         "webdev": {
-          "scale0": [0, 0, 0],
-          "scaleArrange": [0.2, 0.2, 0.2],
-          "positionMove": { "y": "-=80", "x": "-=1", "z": "+=270", "duration": 2, "ease": "power3.inOut" }
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            0.2,
+            0.2,
+            0.2
+          ],
+          "positionMove": {
+            "y": "-=80",
+            "x": "-=1",
+            "z": "+=270",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
         },
         "video": {
-          "scale0": [0, 0, 0],
-          "scaleArrange": [0.6, 0.6, 0.6],
-          "positionMove": { "y": "-=20", "x": "-=40", "z": "+=150", "duration": 2, "ease": "power3.inOut" }
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            0.6,
+            0.6,
+            0.6
+          ],
+          "positionMove": {
+            "y": "-=20",
+            "x": "-=40",
+            "z": "+=150",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
         },
         "content": {
-          "scale0": [0, 0, 0],
-          "scaleArrange": [0.3, 0.3, 0.3],
-          "positionMove": { "y": "-=10", "x": "-=10", "z": "-=90", "duration": 2, "ease": "power3.inOut" }
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            0.3,
+            0.3,
+            0.3
+          ],
+          "positionMove": {
+            "y": "-=10",
+            "x": "-=10",
+            "z": "-=90",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
         },
         "ads": {
-          "scale0": [0, 0, 0],
-          "scaleArrange": [0.1, 0.1, 0.1],
-          "positionMove": { "y": "-=10", "x": "+=15", "z": "-=200", "duration": 2, "ease": "power3.inOut" }
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            0.1,
+            0.1,
+            0.1
+          ],
+          "positionMove": {
+            "y": "-=10",
+            "x": "+=15",
+            "z": "-=200",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
         },
         "algo": {
-          "scale0": [0, 0, 0],
-          "scaleArrange": [1, 1, 1],
-          "positionMove": { "y": "-=60", "x": "+=70", "z": "-=150", "duration": 2, "ease": "power3.inOut" }
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            1,
+            1,
+            1
+          ],
+          "positionMove": {
+            "y": "-=60",
+            "x": "+=70",
+            "z": "-=150",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
         },
         "graphic": {
-          "scale0": [0, 0, 0],
-          "scaleArrange": [0.5, 0.5, 0.5],
-          "positionMove": { "y": "-=20", "x": "-=80", "z": "-=90", "duration": 2, "ease": "power3.inOut" }
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "positionMove": {
+            "y": "-=20",
+            "x": "-=80",
+            "z": "-=90",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
         },
         "appdev": {
-          "scale0": [0, 0, 0],
-          "scaleArrange": [0.2, 0.2, 0.2],
-          "positionMove": { "y": "-=20", "x": "+=60", "z": "-=90", "duration": 2, "ease": "power3.inOut" }
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            0.2,
+            0.2,
+            0.2
+          ],
+          "positionMove": {
+            "y": "-=20",
+            "x": "+=60",
+            "z": "-=90",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
         }
       }
     },
@@ -443,28 +895,46 @@
       "bucket": {
         "positionNudge": {
           "x": "-=20",
-          "y": "+=80",
+          "y": "+=90",
           "z": "+=0"
         }
       }
     },
     "mobile": {
-              "times": {
+      "times": {
         "bucketGrow": 0.2,
         "arrange": 0.8,
         "move": 1.5,
         "asa": 0.3
       },
       "bucket": {
-        "scale0": [0, 0, 0],
-        "scaleGrow": [5, 5, 5],
+        "scale0": [
+          0,
+          0,
+          0
+        ],
+        "scaleGrow": [
+          7,
+          7,
+          7
+        ],
         "positionNudge": {
           "x": "+=40",
-          "y": "+=240",
-          "z": "+=0"
+          "y": "+=240"
         },
-        "rotationArrange": { "x": 0.3, "y": 0.6, "duration": 3, "ease": "power3.inOut" },
-        "scaleArrange": { "x": 2, "y": 2, "z": 2, "duration": 2, "ease": "power3.inOut" }
+        "rotationArrange": {
+          "x": 0.3,
+          "y": 0.6,
+          "duration": 3,
+          "ease": "power3.inOut"
+        },
+        "scaleArrange": {
+          "x": 3,
+          "y": 3,
+          "z": 3,
+          "duration": 2,
+          "ease": "power3.inOut"
+        }
       },
       "asa": {
         "z1": "+=2.5",
@@ -474,49 +944,174 @@
       },
       "models": {
         "seo": {
-          "scale0": [0, 0, 0],
-          "scaleArrange": [1.2, 1.2, 1.2],
-          "positionMove": { "y": "-=25", "z": "-=70", "duration": 2, "ease": "power3.inOut" }
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            1.2,
+            1.2,
+            1.2
+          ],
+          "positionMove": {
+            "y": "-=250",
+            "z": "+=200",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
         },
         "smo": {
-          "scale0": [0, 0, 0],
-          "scaleArrange": [0.1, 0.1, 0.1],
-          "positionMove": { "y": "-=70", "x": "+=40", "z": "-=20", "duration": 2, "ease": "power3.inOut" }
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            0.1,
+            0.1,
+            0.1
+          ],
+          "positionMove": {
+            "y": "-=190",
+            "x": "-=80",
+            "z": "+=370",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
         },
         "webdev": {
-          "scale0": [0, 0, 0],
-          "scaleArrange": [0.2, 0.2, 0.2],
-          "positionMove": { "y": "-=80", "x": "-=1", "z": "+=270", "duration": 2, "ease": "power3.inOut" }
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            0.3,
+            0.3,
+            0.3
+          ],
+          "positionMove": {
+            "y": "-=300",
+            "x": "-=1",
+            "z": "+=370",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
         },
         "video": {
-          "scale0": [0, 0, 0],
-          "scaleArrange": [0.6, 0.6, 0.6],
-          "positionMove": { "y": "-=20", "x": "-=40", "z": "+=150", "duration": 2, "ease": "power3.inOut" }
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            0.7,
+            0.7,
+            0.7
+          ],
+          "positionMove": {
+            "y": "-=230",
+            "x": "-=40",
+            "z": "+=350",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
         },
         "content": {
-          "scale0": [0, 0, 0],
-          "scaleArrange": [0.3, 0.3, 0.3],
-          "positionMove": { "y": "-=10", "x": "-=10", "z": "-=90", "duration": 2, "ease": "power3.inOut" }
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            0.4,
+            0.4,
+            0.4
+          ],
+          "positionMove": {
+            "y": "-=120",
+            "x": "-=10",
+            "z": "+=380",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
         },
         "ads": {
-          "scale0": [0, 0, 0],
-          "scaleArrange": [0.1, 0.1, 0.1],
-          "positionMove": { "y": "-=10", "x": "+=15", "z": "-=200", "duration": 2, "ease": "power3.inOut" }
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            0.1,
+            0.1,
+            0.1
+          ],
+          "positionMove": {
+            "y": "-=300",
+            "x": "+=10",
+            "z": "+=380",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
         },
         "algo": {
-          "scale0": [0, 0, 0],
-          "scaleArrange": [1, 1, 1],
-          "positionMove": { "y": "-=60", "x": "+=70", "z": "-=150", "duration": 2, "ease": "power3.inOut" }
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            2,
+            2,
+            2
+          ],
+          "positionMove": {
+            "y": "-=220",
+            "x": "+=100",
+            "z": "+=300",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
         },
         "graphic": {
-          "scale0": [0, 0, 0],
-          "scaleArrange": [0.5, 0.5, 0.5],
-          "positionMove": { "y": "-=20", "x": "-=80", "z": "-=90", "duration": 2, "ease": "power3.inOut" }
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            0.5,
+            0.5,
+            0.5
+          ],
+          "positionMove": {
+            "y": "-=200",
+            "x": "-=10",
+            "z": "+=380",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
         },
         "appdev": {
-          "scale0": [0, 0, 0],
-          "scaleArrange": [0.2, 0.2, 0.2],
-          "positionMove": { "y": "-=20", "x": "+=60", "z": "-=90", "duration": 2, "ease": "power3.inOut" }
+          "scale0": [
+            0,
+            0,
+            0
+          ],
+          "scaleArrange": [
+            0.2,
+            0.2,
+            0.2
+          ],
+          "positionMove": {
+            "y": "-=250",
+            "x": "+=60",
+            "z": "-=450",
+            "duration": 2,
+            "ease": "power3.inOut"
+          }
         }
       }
     }
