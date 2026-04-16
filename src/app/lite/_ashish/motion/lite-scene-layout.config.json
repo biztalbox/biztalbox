@@ -459,12 +459,12 @@
         "scale0": [0, 0, 0],
         "scaleGrow": [5, 5, 5],
         "positionNudge": {
-          "x": "-=20",
-          "y": "+=80",
+          "x": "+=40",
+          "y": "+=240",
           "z": "+=0"
         },
         "rotationArrange": { "x": 0.3, "y": 0.6, "duration": 3, "ease": "power3.inOut" },
-        "scaleArrange": { "x": 5, "y": 5, "z": 5, "duration": 2, "ease": "power3.inOut" }
+        "scaleArrange": { "x": 2, "y": 2, "z": 2, "duration": 2, "ease": "power3.inOut" }
       },
       "asa": {
         "z1": "+=2.5",

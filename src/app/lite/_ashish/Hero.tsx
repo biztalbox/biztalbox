@@ -126,12 +126,18 @@ const Hero = () => {
         {showCanvas && (
           <Canvas
             className="!fixed top-0 z-10 h-full w-full inset-0"
-            // Cap DPR to reduce GPU cost on high-DPI devices.
-            dpr={[1, 1.5]}
-            performance={{ min: 0.5 }}
-            gl={{ alpha: true, antialias: false, powerPreference: "high-performance" }}
+            // Balanced defaults: sharp visuals without overloading high-DPI GPUs.
+            dpr={[1, 1.75]}
+            performance={{ min: 0.6, max: 1, debounce: 200 }}
+            gl={{
+              alpha: true,
+              antialias: true,
+              powerPreference: "high-performance",
+              stencil: false,
+              preserveDrawingBuffer: false,
+            }}
             onCreated={({ gl }) => {
-              gl.setClearColor("#000000", 0);
+              gl.setClearColor("#ffffff", 0);
             }}
           >
             <ResponsiveHeroCamera />
