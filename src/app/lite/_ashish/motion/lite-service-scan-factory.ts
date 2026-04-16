@@ -40,8 +40,8 @@ export const LITE_SCAN_TIMING_DESKTOP: LiteScanTimingPreset = {
 };
 
 export const LITE_SCAN_TIMING_TABLET: LiteScanTimingPreset = {
-  approachScrub: 1.2,
-  scanScrub: 5,
+  approachScrub: 0.9,
+  scanScrub: 3,
   scanPinStart: "top 25%",
   approachScale: 2.15,
   approachPosition: { x: "-=115", y: "+=62" },
@@ -51,8 +51,8 @@ export const LITE_SCAN_TIMING_TABLET: LiteScanTimingPreset = {
 };
 
 export const LITE_SCAN_TIMING_MOBILE: LiteScanTimingPreset = {
-  approachScrub: 1.2,
-  scanScrub: 5,
+  approachScrub: 0.65,
+  scanScrub: 1.75,
   scanPinStart: "top 22%",
   approachScale: 1.85,
   approachPosition: { x: "-=85", y: "+=55" },
@@ -237,6 +237,7 @@ export function attachLiteServiceScanPair(options: {
     approach?: LiteApproachMotion;
     scan?: LiteScanMotion;
   };
+  lowPowerMode?: boolean;
   isCancelled: () => boolean;
 }): () => void {
   const {
@@ -251,6 +252,7 @@ export function attachLiteServiceScanPair(options: {
     scanPinEnd,
     timing,
     motion,
+    lowPowerMode = false,
     isCancelled,
   } = options;
 
@@ -340,7 +342,9 @@ export function attachLiteServiceScanPair(options: {
   });
 
   /** Warm rosy “scan” read on the GLB, peaking as the model vanishes (scrub reverses cleanly). */
-  addScanWarmTintToTimeline(scanTl, group, 2.01, 0.36);
+  if (!lowPowerMode) {
+    addScanWarmTintToTimeline(scanTl, group, 2.01, 0.36);
+  }
 
   scanTl.to(group.scale, { x: 0, y: 0, z: 0, duration: 0.15, ease: "power1.inOut" }, 2);
   scanTl.to(scanner, { height: "150px", width: "150px", duration: 0.7, ease: "power1.inOut" }, 2.9);
@@ -402,6 +406,7 @@ export function registerAllLiteServiceScans(
 ): () => void {
   const disposers: (() => void)[] = [];
   const defs = resolveLiteServiceScans(breakpoint);
+  const lowPowerMode = breakpoint !== "desktop";
 
   for (const def of defs) {
     const group = refs[def.modelKey].current;
@@ -422,6 +427,7 @@ export function registerAllLiteServiceScans(
         scanPinEnd: def.scan.pinEnd,
         timing,
         motion: def.motion,
+        lowPowerMode,
         isCancelled,
       }),
     );

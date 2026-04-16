@@ -165,7 +165,7 @@ const responsiveCSS = `
 
   @media (max-width: 767px) {
     .left-side-text {
-      top: 55% !important;
+      top: 54% !important;
       left: 1% !important;
       right: 1% !important;
       width: 100% !important;
@@ -173,7 +173,7 @@ const responsiveCSS = `
     }
 
     .left-side-text h3 {
-      font-size: 1.5rem !important;
+      font-size: 1rem !important;
       line-height: 0.9 !important;
       text-align: center !important;
       font-weight: 500 !important;
