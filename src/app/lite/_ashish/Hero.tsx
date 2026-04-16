@@ -711,7 +711,7 @@ const Hero = () => {
 
                   We evaluate the entire journey together as part of a full funnel performance marketing strategy.
                 </p>
-                <div className="block w-fit ml-auto">
+                <div className="md:block w-fit md:ml-auto hidden">
 
                 <LiteServiceViewMoreLink service="google" text="Google Ads" />
                 </div>
@@ -725,9 +725,14 @@ const Hero = () => {
 
 
                 </p>
-                <div className="block w-fit mr-auto">
+                
+                <div className="block w-fit mx-auto md:mx-0 md:mr-auto">
 
                 <LiteServiceViewMoreLink service="meta" text="Meta Ads" />
+                <div className="md:hidden block w-fit">
+
+                <LiteServiceViewMoreLink service="google" text="Google Ads" />
+                </div>
                 </div>
               </div>
             </div>
@@ -1003,8 +1008,8 @@ const Hero = () => {
           <h3 className="text-3xl md:text-4xl lg:text-6xl font-thin uppercase leading-none mx-auto text-center">
             Thanks for being here<br />Let’s take this forward.
           </h3>
-          <div className="h-48"></div>
-          <Link href="#" className="hover:!bg-black bg-[#F2F2F2] hover:!text-white relative z-10 text-center uppercase text-3xl md:text-5xl lg:text-7xl font-thin mx-auto px-5 py-4 border border-black rounded-full">
+          <div className="h-48 2xl:h-[30rem]"></div>
+          <Link href="/contact" className="hover:!bg-black bg-[#F2F2F2] hover:!text-white relative z-10 text-center uppercase text-3xl md:text-5xl lg:text-7xl font-thin mx-auto px-5 py-4 border border-black rounded-full">
 
             Let&apos;s Talk ↗
           </Link>

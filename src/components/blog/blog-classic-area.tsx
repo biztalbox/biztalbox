@@ -311,7 +311,7 @@ export default function BlogClassicArea({
   >("");
 
   const router = useRouter();
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "/blog";
   const urlSearchParams = useSearchParams();
 
   // Parse and validate search parameters

@@ -221,7 +221,7 @@ const MyCanvas = () => {
             trigger: "#ctaSection",
             start: "top bottom",
             end: "top top",
-            scrub: 3,
+            scrub: 5,
           },
         });
 
@@ -250,7 +250,7 @@ const MyCanvas = () => {
             playLiteSfx("bill");
           },
           undefined,
-          1.8,
+          1.5,
         );
 
         requestAnimationFrame(() => {

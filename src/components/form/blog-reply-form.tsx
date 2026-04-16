@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, FormEvent } from "react";
-import { usePathname, } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { submitWordPressComment } from "@/utils/wordpress-comment";
 
 interface BlogReplyFormProps {
@@ -8,7 +8,7 @@ interface BlogReplyFormProps {
 }
 
 export default function BlogReplyForm({ postId }: BlogReplyFormProps) {
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "";
   const [formData, setFormData] = useState({
     comment: "",
     author: "",
@@ -25,7 +25,8 @@ export default function BlogReplyForm({ postId }: BlogReplyFormProps) {
     if (postId) return postId;
     
     // Try to get post ID from URL
-    const pathSegments = pathname.split('/');
+    if (!pathname) return null;
+    const pathSegments = pathname.split("/");
     const slug = pathSegments[pathSegments.length - 1];
     
     // If we have a slug, we'll need to fetch the post ID

@@ -312,6 +312,21 @@ export function attachLiteServiceScanPair(options: {
       anticipatePin: 1,
       scrub: timing.scanScrub,
       invalidateOnRefresh: true,
+      /**
+       * Prevent “fast scroll” race where the approach scrub keeps rendering and
+       * overwrites scan end-state (e.g. model scale not reaching 0).
+       * Scan owns the model transforms while pinned; approach re-enables when
+       * user scrolls back above the scan start.
+       */
+      onEnter: () => {
+        approachTl.scrollTrigger?.disable(false);
+      },
+      onEnterBack: () => {
+        approachTl.scrollTrigger?.disable(false);
+      },
+      onLeaveBack: () => {
+        approachTl.scrollTrigger?.enable(false, false);
+      },
     },
   });
 
