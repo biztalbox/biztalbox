@@ -108,6 +108,8 @@ function useLiteHeroCanvasFrame() {
 
 const MyCanvas = () => {
   const { root, layouts: L, ctaCart } = useLiteHeroCanvasFrame();
+  const { size } = useThree();
+  const disableFloat = size.width < 1024;
 
   const smoRef = useRef<Group>(null);
   const adsRef = useRef<Group>(null);
@@ -295,6 +297,7 @@ const MyCanvas = () => {
         floatConfig={L.algo!.float}
         scale={L.algo!.scale}
         rotation={L.algo!.rotation}
+        disableFloat={disableFloat}
       />
       <WigglingModel
         scene={graphicScene}
@@ -303,6 +306,7 @@ const MyCanvas = () => {
         floatConfig={L.graphic!.float}
         scale={L.graphic!.scale}
         rotation={L.graphic!.rotation}
+        disableFloat={disableFloat}
       />
 
       <WigglingModel
@@ -312,6 +316,7 @@ const MyCanvas = () => {
         floatConfig={L.webdev!.float}
         scale={L.webdev!.scale}
         rotation={L.webdev!.rotation}
+        disableFloat={disableFloat}
       />
 
       <WigglingModel
@@ -321,6 +326,7 @@ const MyCanvas = () => {
         floatConfig={L.appdev!.float}
         scale={L.appdev!.scale}
         rotation={L.appdev!.rotation}
+        disableFloat={disableFloat}
       />
 
       <WigglingModel
@@ -330,6 +336,7 @@ const MyCanvas = () => {
         floatConfig={L.video!.float}
         scale={L.video!.scale}
         rotation={L.video!.rotation}
+        disableFloat={disableFloat}
       />
       <WigglingModel
         scene={adsScene}
@@ -338,6 +345,7 @@ const MyCanvas = () => {
         floatConfig={L.ads!.float}
         scale={L.ads!.scale}
         rotation={L.ads!.rotation}
+        disableFloat={disableFloat}
       />
 
       <WigglingModel
@@ -347,6 +355,7 @@ const MyCanvas = () => {
         floatConfig={L.content!.float}
         scale={L.content!.scale}
         rotation={L.content!.rotation}
+        disableFloat={disableFloat}
       />
       <WigglingModel
         scene={smoScene}
@@ -355,6 +364,7 @@ const MyCanvas = () => {
         floatConfig={L.smo!.float}
         scale={L.smo!.scale}
         rotation={L.smo!.rotation}
+        disableFloat={disableFloat}
       />
       <WigglingModel
         scene={seoScene}
@@ -363,6 +373,7 @@ const MyCanvas = () => {
         floatConfig={L.seo!.float}
         scale={L.seo!.scale}
         rotation={L.seo!.rotation}
+        disableFloat={disableFloat}
       />
 
       <WigglingModel
@@ -372,6 +383,7 @@ const MyCanvas = () => {
         floatConfig={L.bucket!.float}
         scale={L.bucket!.scale}
         rotation={L.bucket!.rotation}
+        disableFloat={disableFloat}
       />
 
       {/* <directionalLight position={[140, 120, 160]} intensity={1.35} color="#ffffff" />
