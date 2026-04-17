@@ -360,7 +360,7 @@ export function attachLiteServiceScanPair(options: {
     toXPercent: -50,
     ease: "power2.inOut",
   });
-  scanTl.to(scanner, { height: "150px", width: "150px", duration: 1, ease: "power1.inOut" }, 3.12);
+  // scanTl.to(scanner, { height: "150px", width: "150px", duration: 1, ease: "power1.inOut" }, 3.12);
 
   /**
    * Post–strip: timeline must stay “busy” until the pin ends so scrub never

@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import MyCanvas from "./MyCanvas";
+import { AdaptiveDpr } from "@react-three/drei";
 import { Canvas, useThree } from "@react-three/fiber";
-import { useEffect, useLayoutEffect, useState } from "react";
+import { Suspense, useEffect, useLayoutEffect, useState } from "react";
 import * as THREE from "three";
 import { LITE_HERO_SURFACE_STYLE } from "./lite-hero-surface";
 import WhyChooseUs from "@/components/about/why-choose-us";
@@ -11,9 +12,7 @@ import ContactOne from "@/components/contact/contact-one";
 import Link from "next/link";
 import WhyChooseUsLite from "./WhyChooseUs";
 import { getTicketSpecNameColumns, type LiteServiceTicketSpecKey } from "./lite-service-ticket-specs";
-
-const SECTION3_SEO_IMAGE_SRC =
-  "https://biztalbox.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fseo.0f33ee3b.webp&w=1200&q=75";
+import dynamic from "next/dynamic";
 
 /** Matches `src/app/(service)/*` routes (e.g. https://biztalbox.com/best-seo-agency). */
 const LITE_SERVICE_PAGE_PATHS = {
@@ -23,7 +22,6 @@ const LITE_SERVICE_PAGE_PATHS = {
   graphic: "/graphic-designing",
   video: "/motion-graphics",
   content: "/content-marketing",
-  // Alias used by lite 3D model + ticket specs (maps to Google Ads service page).
   ads: "/google-ads-service",
   google: "/google-ads-service",
   meta: "/facebook-ads-service",
@@ -33,6 +31,11 @@ const LITE_SERVICE_PAGE_PATHS = {
 
 type LiteServicePageKey = keyof typeof LITE_SERVICE_PAGE_PATHS;
 
+const Loader = dynamic(
+  () => import("@react-three/drei").then((mod) => mod.Loader),
+  { ssr: false },
+);
+
 function formatReceiptDate(d: Date): string {
   const dd = String(d.getDate()).padStart(2, "0");
   const mm = String(d.getMonth() + 1).padStart(2, "0");
@@ -40,7 +43,7 @@ function formatReceiptDate(d: Date): string {
   return `${dd}/${mm}/${yy}`;
 }
 
-function LiteServiceViewMoreLink({ service, text="View More" }: { service: LiteServicePageKey, text?: string }) {
+function LiteServiceViewMoreLink({ service, text = "View More" }: { service: LiteServicePageKey, text?: string }) {
   return (
     <Link
       href={LITE_SERVICE_PAGE_PATHS[service]}
@@ -130,7 +133,8 @@ const Hero = () => {
 
   const isPhone = viewportWidth < 640;
   const isTablet = viewportWidth < 1024;
-  const canvasDpr: [number, number] = isPhone ? [1, 1.1] : isTablet ? [1, 1.25] : [1, 1.75];
+  /** Clamp DPR by tier — full asset quality; AdaptiveDpr only lowers effective DPR when FPS dips. */
+  const canvasDpr: [number, number] = isPhone ? [1, 1.35] : isTablet ? [1, 1.55] : [1, 1.85];
 
   return (
     <div className="relative">
@@ -139,25 +143,22 @@ const Hero = () => {
         {showCanvas && (
           <Canvas
             className="!fixed top-0 z-10 h-full w-full inset-0"
-            // Keep mobile GPU work intentionally low; desktop can afford sharper output.
             dpr={canvasDpr}
-            performance={{ min: isPhone ? 0.4 : isTablet ? 0.5 : 0.6, max: 1, debounce: 200 }}
+            performance={{ min: 0.5, max: 1, debounce: 280 }}
             gl={{
               alpha: true,
-              antialias: !isTablet,
-              powerPreference: "high-performance",
-              stencil: false,
-              preserveDrawingBuffer: false,
-            }}
-            onCreated={({ gl }) => {
-              gl.setClearColor("#ffffff", 0);
+              antialias: true,
             }}
           >
             <ResponsiveHeroCamera />
-            <MyCanvas />
+            <AdaptiveDpr />
+            <Suspense fallback={null}>
+              <MyCanvas />
+            </Suspense>
           </Canvas>
         )}
 
+        <Loader />
 
         {/* Hero Content  */}
         <div className="relative z-10 pt-80 lg:pt-36" >
@@ -726,7 +727,7 @@ const Hero = () => {
                 </p>
                 <div className="md:block w-fit md:ml-auto hidden">
 
-                <LiteServiceViewMoreLink service="google" text="Google Ads" />
+                  <LiteServiceViewMoreLink service="google" text="Google Ads" />
                 </div>
               </div>
               <div className="flex flex-col ">
@@ -738,14 +739,14 @@ const Hero = () => {
 
 
                 </p>
-                
+
                 <div className="block w-fit mx-auto md:mx-0 md:mr-auto">
 
-                <LiteServiceViewMoreLink service="meta" text="Meta Ads" />
-                <div className="md:hidden block w-fit">
+                  <LiteServiceViewMoreLink service="meta" text="Meta Ads" />
+                  <div className="md:hidden block w-fit">
 
-                <LiteServiceViewMoreLink service="google" text="Google Ads" />
-                </div>
+                    <LiteServiceViewMoreLink service="google" text="Google Ads" />
+                  </div>
                 </div>
               </div>
             </div>

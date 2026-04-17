@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { useLoader, useThree } from "@react-three/fiber";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
@@ -21,6 +21,7 @@ import {
   type LiteSceneBreakpoint,
 } from "./motion/lite-scene-layout";
 import { pauseLiteSfx, playLiteSfx } from "./sfx";
+import { Environment } from "@react-three/drei";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -101,17 +102,19 @@ function useLiteHeroCanvasFrame() {
 
     const bp = getLiteSceneBreakpoint(w);
     const layouts = getResolvedModelLayouts(bp);
-    const ctaCart = resolveCtaCartConfig(bp);
-    return { root, layouts, ctaCart };
+    return { root, layouts, layoutBreakpoint: bp };
   }, [size.width, size.height]);
 }
 
+const ST_REFRESH_DEBOUNCE_MS = 160;
+
 const MyCanvas = () => {
-  const { root, layouts: L, ctaCart } = useLiteHeroCanvasFrame();
+  const { root, layouts: L, layoutBreakpoint } = useLiteHeroCanvasFrame();
   const { size } = useThree();
-  const isPhone = size.width < 640;
-  const isTablet = size.width < 1024;
   const disableFloat = false;
+  const floatSoft = layoutBreakpoint !== "desktop";
+  /** Same HDR file everywhere; intensity only nudges lighting cost/readability — mesh & texture quality unchanged. */
+  const envIntensity = layoutBreakpoint === "desktop" ? 1.2 : layoutBreakpoint === "tablet" ? 1.1 : 1.02;
 
   const smoRef = useRef<Group>(null);
   const adsRef = useRef<Group>(null);
@@ -123,6 +126,7 @@ const MyCanvas = () => {
   const videoRef = useRef<Group>(null);
   const algoRef = useRef<Group>(null);
   const bucketRef = useRef<Group>(null);
+  const heroFadeOutGroupRef = useRef<Group>(null);
 
   const modelRefs = useMemo<LiteModelRefMap>(
     () => ({
@@ -158,6 +162,28 @@ const MyCanvas = () => {
   const algoScene = sceneBySrc.get("/assets/lite_models/compressed/algo.glb");
   const bucketScene = sceneBySrc.get("/assets/lite_models/compressed/box.glb");
 
+  useEffect(() => {
+    let t: ReturnType<typeof setTimeout> | undefined;
+    const scheduleRefresh = () => {
+      if (t) clearTimeout(t);
+      t = setTimeout(() => {
+        t = undefined;
+        ScrollTrigger.refresh();
+      }, ST_REFRESH_DEBOUNCE_MS);
+    };
+    const w = typeof window !== "undefined" ? window : undefined;
+    w?.addEventListener("resize", scheduleRefresh, { passive: true });
+    w?.addEventListener("orientationchange", scheduleRefresh, { passive: true });
+    const vv = w?.visualViewport;
+    vv?.addEventListener?.("resize", scheduleRefresh, { passive: true });
+    return () => {
+      if (t) clearTimeout(t);
+      w?.removeEventListener("resize", scheduleRefresh);
+      w?.removeEventListener("orientationchange", scheduleRefresh);
+      vv?.removeEventListener?.("resize", scheduleRefresh);
+    };
+  }, []);
+
   useGSAP(
     () => {
       let cancelled = false;
@@ -165,6 +191,9 @@ const MyCanvas = () => {
       const maxAttempts = 120;
       let matchMediaInstance: gsap.MatchMedia | null = null;
       let addToCartTl: gsap.core.Timeline | null = null;
+      const ctaCart = resolveCtaCartConfig(layoutBreakpoint);
+      const ctaScrub =
+        layoutBreakpoint === "mobile" ? 2 : layoutBreakpoint === "tablet" ? 3 : 5;
 
       const mountScroll = () => {
         if (
@@ -189,6 +218,7 @@ const MyCanvas = () => {
         const attachHeroBand = (bp: LiteSceneBreakpoint) => {
           const isNarrow = bp !== "desktop";
           const fadeTl = gsap.timeline({
+            defaults: { duration: 2, ease: "circ.inOut" },
             scrollTrigger: {
               trigger: "#section0",
               start: "-120 top",
@@ -224,16 +254,16 @@ const MyCanvas = () => {
             trigger: "#ctaSection",
             start: "top bottom",
             end: "top top",
-            scrub: isPhone ? 2 : isTablet ? 3 : 5,
+            scrub: ctaScrub,
           },
         });
 
         const asa1 = findChildByName(bucketRef.current, "flap_1");
         const asa2 = findChildByName(bucketRef.current, "flap_2");
-        
+
         addCtaCartTweensToTimeline(addToCartTl, modelRefs, bucketRef, asa1, asa2, ctaCart);
-        
-        addToCartTl.to("#recieptSection", {y: "-=520", duration: 1, ease: "power1.inOut"}, 2)
+
+        addToCartTl.to("#recieptSection", { y: "-=520", duration: 3, ease: "steps" }, 2)
         // addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 2.2)
         // addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 2.4)
         // addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 2.6)
@@ -274,7 +304,7 @@ const MyCanvas = () => {
         addToCartTl = null;
       };
     },
-    { dependencies: [sceneBySrc, modelRefs, ctaCart] },
+    { dependencies: [sceneBySrc, modelRefs, layoutBreakpoint] },
   );
 
   if (
@@ -293,82 +323,104 @@ const MyCanvas = () => {
 
   return (
     <group position={root.position} scale={root.scale}>
-      <WigglingModel
-        scene={algoScene}
-        groupRef={algoRef}
-        position={L.algo!.position}
-        floatConfig={L.algo!.float}
-        scale={L.algo!.scale}
-        rotation={L.algo!.rotation}
-        disableFloat={disableFloat}
-      />
-      <WigglingModel
-        scene={graphicScene}
-        groupRef={graphicRef}
-        position={L.graphic!.position}
-        floatConfig={L.graphic!.float}
-        scale={L.graphic!.scale}
-        rotation={L.graphic!.rotation}
-        disableFloat={disableFloat}
-      />
+      <group ref={heroFadeOutGroupRef}>
+        <WigglingModel
+          scene={algoScene}
+          groupRef={algoRef}
+          position={L.algo!.position}
+          floatConfig={L.algo!.float}
+          scale={L.algo!.scale}
+          rotation={L.algo!.rotation}
+          disableFloat={disableFloat}
+          floatSoft={floatSoft}
+        />
+        <WigglingModel
+          scene={graphicScene}
+          groupRef={graphicRef}
+          position={L.graphic!.position}
+          floatConfig={L.graphic!.float}
+          scale={L.graphic!.scale}
+          rotation={L.graphic!.rotation}
+          disableFloat={disableFloat}
+          floatSoft={floatSoft}
+        />
 
-      <WigglingModel
-        scene={webdevScene}
-        groupRef={webdevRef}
-        position={L.webdev!.position}
-        floatConfig={L.webdev!.float}
-        scale={L.webdev!.scale}
-        rotation={L.webdev!.rotation}
-        disableFloat={disableFloat}
-      />
+        <WigglingModel
+          scene={webdevScene}
+          groupRef={webdevRef}
+          position={L.webdev!.position}
+          floatConfig={L.webdev!.float}
+          scale={L.webdev!.scale}
+          rotation={L.webdev!.rotation}
+          disableFloat={disableFloat}
+          floatSoft={floatSoft}
+        />
 
-      <WigglingModel
-        scene={appdevScene}
-        groupRef={appdevRef}
-        position={L.appdev!.position}
-        floatConfig={L.appdev!.float}
-        scale={L.appdev!.scale}
-        rotation={L.appdev!.rotation}
-        disableFloat={disableFloat}
-      />
+        <WigglingModel
+          scene={appdevScene}
+          groupRef={appdevRef}
+          position={L.appdev!.position}
+          floatConfig={L.appdev!.float}
+          scale={L.appdev!.scale}
+          rotation={L.appdev!.rotation}
+          disableFloat={disableFloat}
+          floatSoft={floatSoft}
+        />
 
-      <WigglingModel
-        scene={videoScene}
-        groupRef={videoRef}
-        position={L.video!.position}
-        floatConfig={L.video!.float}
-        scale={L.video!.scale}
-        rotation={L.video!.rotation}
-        disableFloat={disableFloat}
-      />
-      <WigglingModel
-        scene={adsScene}
-        groupRef={adsRef}
-        position={L.ads!.position}
-        floatConfig={L.ads!.float}
-        scale={L.ads!.scale}
-        rotation={L.ads!.rotation}
-        disableFloat={disableFloat}
-      />
+        <WigglingModel
+          scene={videoScene}
+          groupRef={videoRef}
+          position={L.video!.position}
+          floatConfig={L.video!.float}
+          scale={L.video!.scale}
+          rotation={L.video!.rotation}
+          disableFloat={disableFloat}
+          floatSoft={floatSoft}
+        />
+        <WigglingModel
+          scene={adsScene}
+          groupRef={adsRef}
+          position={L.ads!.position}
+          floatConfig={L.ads!.float}
+          scale={L.ads!.scale}
+          rotation={L.ads!.rotation}
+          disableFloat={disableFloat}
+          floatSoft={floatSoft}
+        />
 
-      <WigglingModel
-        scene={contentScene}
-        groupRef={contentRef}
-        position={L.content!.position}
-        floatConfig={L.content!.float}
-        scale={L.content!.scale}
-        rotation={L.content!.rotation}
-        disableFloat={disableFloat}
-      />
-      <WigglingModel
-        scene={smoScene}
-        groupRef={smoRef}
-        position={L.smo!.position}
-        floatConfig={L.smo!.float}
-        scale={L.smo!.scale}
-        rotation={L.smo!.rotation}
-        disableFloat={disableFloat}
-      />
+        <WigglingModel
+          scene={contentScene}
+          groupRef={contentRef}
+          position={L.content!.position}
+          floatConfig={L.content!.float}
+          scale={L.content!.scale}
+          rotation={L.content!.rotation}
+          disableFloat={disableFloat}
+          floatSoft={floatSoft}
+        />
+        <WigglingModel
+          scene={smoScene}
+          groupRef={smoRef}
+          position={L.smo!.position}
+          floatConfig={L.smo!.float}
+          scale={L.smo!.scale}
+          rotation={L.smo!.rotation}
+          disableFloat={disableFloat}
+          floatSoft={floatSoft}
+        />
+
+
+        <WigglingModel
+          scene={bucketScene!}
+          groupRef={bucketRef}
+          position={L.bucket!.position}
+          floatConfig={L.bucket!.float}
+          scale={L.bucket!.scale}
+          rotation={L.bucket!.rotation}
+          disableFloat={disableFloat}
+          floatSoft={floatSoft}
+        />
+      </group>
       <WigglingModel
         scene={seoScene}
         groupRef={seoRef}
@@ -377,30 +429,22 @@ const MyCanvas = () => {
         scale={L.seo!.scale}
         rotation={L.seo!.rotation}
         disableFloat={disableFloat}
-      />
-
-      <WigglingModel
-        scene={bucketScene!}
-        groupRef={bucketRef}
-        position={L.bucket!.position}
-        floatConfig={L.bucket!.float}
-        scale={L.bucket!.scale}
-        rotation={L.bucket!.rotation}
-        disableFloat={disableFloat}
+        floatSoft={floatSoft}
       />
 
       {/* <directionalLight position={[140, 120, 160]} intensity={1.35} color="#ffffff" />
       <directionalLight position={[-130, 70, 90]} intensity={5.65} color="#eef2ff" />
       <directionalLight position={[40, 90, -160]} intensity={5.75} color="#ffffff" />
       <directionalLight position={[0, -80, 120]} intensity={5.35} color="#d4d4d8" /> */}
-      <directionalLight position={[140, 120, 560]} intensity={3} color="#ffffff" />
+      {/* <directionalLight position={[140, 120, 560]} intensity={3} color="#ffffff" />
       <directionalLight position={[-130, 70, 90]} intensity={2} color="#ffffff" />
       {!isTablet && (
         <>
           <directionalLight position={[40, 90, -160]} intensity={4.2} color="#ffffff" />
           <directionalLight position={[0, 100, 420]} intensity={2.25} color="#ffffff" />
         </>
-      )}
+      )} */}
+      <Environment files="/assets/hdr/orange.hdr" environmentIntensity={envIntensity} />
     </group>
   );
 };

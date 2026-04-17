@@ -2,7 +2,6 @@
 import Header from "./_ashish/Header";
 import Wrapper from "@/layouts/wrapper";
 import Hero from "./_ashish/Hero";
-import FooterFour from "@/layouts/footers/footer-four";
 
 
 const page = () => {
@@ -13,6 +12,7 @@ const page = () => {
         <Header  />
 
         <Hero />
+        {/* <MobileSceme /> */}
       {/* </main> */}
       {/* <FooterFour /> */}
     </Wrapper>
