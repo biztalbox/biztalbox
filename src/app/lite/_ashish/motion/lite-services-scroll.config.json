@@ -9,7 +9,7 @@
       "cardSlideX": "+=550"
     },
     "tablet": {
-      "cardSlideX": "+=270"
+      "cardSlideX": "0"
     },
     "mobile": {
       "cardSlideX": "0"
