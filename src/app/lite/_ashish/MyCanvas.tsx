@@ -8,7 +8,7 @@ import type { Group, Object3D } from "three";
 import type { GLTF } from "three/examples/jsm/loaders/GLTFLoader.js";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import { WigglingModel } from "./WigglingModel";
 import type { LiteModelKey, LiteModelRefMap } from "./motion/lite-service-scan-config";
 import { getLiteScanTimingForBreakpoint, registerAllLiteServiceScans } from "./motion/lite-service-scan-factory";
@@ -206,12 +206,17 @@ const MyCanvas = () => {
           !graphicRef.current ||
           !videoRef.current ||
           !algoRef.current ||
-          !bucketRef.current
+          !bucketRef.current ||
+          !heroFadeOutGroupRef.current
         ) {
           if (!cancelled && attempts++ < maxAttempts) requestAnimationFrame(mountScroll);
           return;
         }
         if (cancelled) return;
+
+        const initModals = gsap.timeline({ defaults: { duration: 5, ease: "back.inOut" } })
+
+        initModals.from(heroFadeOutGroupRef.current.position, { y: "+=900" }, 0)
 
         matchMediaInstance = gsap.matchMedia();
 
@@ -250,6 +255,9 @@ const MyCanvas = () => {
         matchMediaInstance.add("(min-width: 1024px)", () => attachHeroBand("desktop"));
 
         addToCartTl = gsap.timeline({
+          defaults: {
+            duration: 1, ease: "power1.inOut"
+          },
           scrollTrigger: {
             trigger: "#ctaSection",
             start: "top bottom",
@@ -263,16 +271,16 @@ const MyCanvas = () => {
 
         addCtaCartTweensToTimeline(addToCartTl, modelRefs, bucketRef, asa1, asa2, ctaCart);
 
-        addToCartTl.to("#recieptSection", { y: "-=520", duration: 3, ease: "steps" }, 2)
-        // addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 2.2)
-        // addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 2.4)
-        // addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 2.6)
-        // addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 2.8)
-        // addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 3)
-        // addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 3.2)
-        // addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 3.4)
-        // addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 3.6)
-        // addToCartTl.to("#recieptSection", {y: "-=56", duration: 1, ease: "power1.inOut"}, 3.8);
+        // addToCartTl.to("#recieptSection", { y: "-=520", duration: 3, ease: "elastic.inOut" }, 1)
+        addToCartTl.to("#recieptSection", {y: "-=104"}, 1)
+        addToCartTl.to("#recieptSection", {y: "-=104"}, 1.2)
+        addToCartTl.to("#recieptSection", {y: "-=104"}, 1.4)
+        addToCartTl.to("#recieptSection", {y: "-=104"}, 1.6)
+        addToCartTl.to("#recieptSection", {y: "-=104"}, 1.8)
+        // addToCartTl.to("#recieptSection", {y: "-=56"}, 1.0)
+        // addToCartTl.to("#recieptSection", {y: "-=56"}, 1.2)
+        // addToCartTl.to("#recieptSection", {y: "-=56"}, 1.4)
+        // addToCartTl.to("#recieptSection", {y: "-=56"}, 1.6)
 
         /** Receipt strip ends at 3.8 + 1 = 4.8 — GSAP `call` = zero-duration tween at this time (scrub-safe). */
         addToCartTl.call(
@@ -322,105 +330,105 @@ const MyCanvas = () => {
   }
 
   return (
-    <group position={root.position} scale={root.scale}>
-      <group ref={heroFadeOutGroupRef}>
-        <WigglingModel
-          scene={algoScene}
-          groupRef={algoRef}
-          position={L.algo!.position}
-          floatConfig={L.algo!.float}
-          scale={L.algo!.scale}
-          rotation={L.algo!.rotation}
-          disableFloat={disableFloat}
-          floatSoft={floatSoft}
-        />
-        <WigglingModel
-          scene={graphicScene}
-          groupRef={graphicRef}
-          position={L.graphic!.position}
-          floatConfig={L.graphic!.float}
-          scale={L.graphic!.scale}
-          rotation={L.graphic!.rotation}
-          disableFloat={disableFloat}
-          floatSoft={floatSoft}
-        />
+    <group ref={heroFadeOutGroupRef} position={root.position} scale={root.scale}>
+      {/* <group > */}
+      <WigglingModel
+        scene={algoScene}
+        groupRef={algoRef}
+        position={L.algo!.position}
+        floatConfig={L.algo!.float}
+        scale={L.algo!.scale}
+        rotation={L.algo!.rotation}
+        disableFloat={disableFloat}
+        floatSoft={floatSoft}
+      />
+      <WigglingModel
+        scene={graphicScene}
+        groupRef={graphicRef}
+        position={L.graphic!.position}
+        floatConfig={L.graphic!.float}
+        scale={L.graphic!.scale}
+        rotation={L.graphic!.rotation}
+        disableFloat={disableFloat}
+        floatSoft={floatSoft}
+      />
 
-        <WigglingModel
-          scene={webdevScene}
-          groupRef={webdevRef}
-          position={L.webdev!.position}
-          floatConfig={L.webdev!.float}
-          scale={L.webdev!.scale}
-          rotation={L.webdev!.rotation}
-          disableFloat={disableFloat}
-          floatSoft={floatSoft}
-        />
+      <WigglingModel
+        scene={webdevScene}
+        groupRef={webdevRef}
+        position={L.webdev!.position}
+        floatConfig={L.webdev!.float}
+        scale={L.webdev!.scale}
+        rotation={L.webdev!.rotation}
+        disableFloat={disableFloat}
+        floatSoft={floatSoft}
+      />
 
-        <WigglingModel
-          scene={appdevScene}
-          groupRef={appdevRef}
-          position={L.appdev!.position}
-          floatConfig={L.appdev!.float}
-          scale={L.appdev!.scale}
-          rotation={L.appdev!.rotation}
-          disableFloat={disableFloat}
-          floatSoft={floatSoft}
-        />
+      <WigglingModel
+        scene={appdevScene}
+        groupRef={appdevRef}
+        position={L.appdev!.position}
+        floatConfig={L.appdev!.float}
+        scale={L.appdev!.scale}
+        rotation={L.appdev!.rotation}
+        disableFloat={disableFloat}
+        floatSoft={floatSoft}
+      />
 
-        <WigglingModel
-          scene={videoScene}
-          groupRef={videoRef}
-          position={L.video!.position}
-          floatConfig={L.video!.float}
-          scale={L.video!.scale}
-          rotation={L.video!.rotation}
-          disableFloat={disableFloat}
-          floatSoft={floatSoft}
-        />
-        <WigglingModel
-          scene={adsScene}
-          groupRef={adsRef}
-          position={L.ads!.position}
-          floatConfig={L.ads!.float}
-          scale={L.ads!.scale}
-          rotation={L.ads!.rotation}
-          disableFloat={disableFloat}
-          floatSoft={floatSoft}
-        />
+      <WigglingModel
+        scene={videoScene}
+        groupRef={videoRef}
+        position={L.video!.position}
+        floatConfig={L.video!.float}
+        scale={L.video!.scale}
+        rotation={L.video!.rotation}
+        disableFloat={disableFloat}
+        floatSoft={floatSoft}
+      />
+      <WigglingModel
+        scene={adsScene}
+        groupRef={adsRef}
+        position={L.ads!.position}
+        floatConfig={L.ads!.float}
+        scale={L.ads!.scale}
+        rotation={L.ads!.rotation}
+        disableFloat={disableFloat}
+        floatSoft={floatSoft}
+      />
 
-        <WigglingModel
-          scene={contentScene}
-          groupRef={contentRef}
-          position={L.content!.position}
-          floatConfig={L.content!.float}
-          scale={L.content!.scale}
-          rotation={L.content!.rotation}
-          disableFloat={disableFloat}
-          floatSoft={floatSoft}
-        />
-        <WigglingModel
-          scene={smoScene}
-          groupRef={smoRef}
-          position={L.smo!.position}
-          floatConfig={L.smo!.float}
-          scale={L.smo!.scale}
-          rotation={L.smo!.rotation}
-          disableFloat={disableFloat}
-          floatSoft={floatSoft}
-        />
+      <WigglingModel
+        scene={contentScene}
+        groupRef={contentRef}
+        position={L.content!.position}
+        floatConfig={L.content!.float}
+        scale={L.content!.scale}
+        rotation={L.content!.rotation}
+        disableFloat={disableFloat}
+        floatSoft={floatSoft}
+      />
+      <WigglingModel
+        scene={smoScene}
+        groupRef={smoRef}
+        position={L.smo!.position}
+        floatConfig={L.smo!.float}
+        scale={L.smo!.scale}
+        rotation={L.smo!.rotation}
+        disableFloat={disableFloat}
+        floatSoft={floatSoft}
+      />
 
 
-        <WigglingModel
-          scene={bucketScene!}
-          groupRef={bucketRef}
-          position={L.bucket!.position}
-          floatConfig={L.bucket!.float}
-          scale={L.bucket!.scale}
-          rotation={L.bucket!.rotation}
-          disableFloat={disableFloat}
-          floatSoft={floatSoft}
-        />
-      </group>
+      <WigglingModel
+        scene={bucketScene!}
+        groupRef={bucketRef}
+        position={L.bucket!.position}
+        floatConfig={L.bucket!.float}
+        scale={L.bucket!.scale}
+        rotation={L.bucket!.rotation}
+        disableFloat={disableFloat}
+        floatSoft={floatSoft}
+      />
+      {/* </group> */}
       <WigglingModel
         scene={seoScene}
         groupRef={seoRef}

@@ -21,7 +21,7 @@
       "scannerId": "lite-scanner-seo",
       "approach": {
         "trigger": "#section0",
-        "start": "top 30%",
+        "start": "-100px top",
         "endTrigger": "#lite-scanner-seo"
       },
       "scan": {
@@ -616,7 +616,7 @@
         "approach": {
           "position": {
             "y": "-=390",
-            "x": "-=140"
+            "x": "-=110"
           },
           "rotation": {
             "x": "+=31.5",

@@ -10,19 +10,19 @@
     @apply mx-auto px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12;
 }
 
-h1{
+#litePage h1{
     @apply text-[44px] md:text-[60px] lg:!text-[99px] leading-none;
 }
 
-h2{
+#litePage h2{
     @apply text-[44px] md:text-[60px] uppercase !whitespace-normal lg:!text-[99px] leading-none;
 }
 
-h3{
+#litePage h3{
     @apply text-[22px] uppercase md:!text-[33px];
 }
 
-p{
+#litePage p{
     @apply text-[11px] leading-normal uppercase font-thin text-neutral-700;
 }
 

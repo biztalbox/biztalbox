@@ -2,7 +2,6 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import * as THREE from "three";
 import type { Group } from "three";
-import { addSlideTextStripToTimeline } from "../slide-text-timeline";
 import { addScrubTimelineCue, playLiteSfx } from "../sfx";
 import {
   resolveLiteServiceScans,
@@ -347,43 +346,12 @@ export function attachLiteServiceScanPair(options: {
   }
 
   scanTl.to(group.scale, { x: 0, y: 0, z: 0, duration: 0.15, ease: "power1.inOut" }, 2);
-  scanTl.to(scanner, { height: "150px", width: "150px", duration: 0.7, ease: "power1.inOut" }, 2.9);
-  scanTl.to(scanner, { x: cardX, duration: 1, ease: "power1.inOut" }, 2.9);
+  scanTl.to(scanner, { height: "150px", width: "150px", duration: 1, ease: "power1.inOut" }, 2.2);
+  scanTl.to(scanner, { x: cardX, duration: 1, ease: "power1.inOut" }, 2.4);
+  scanTl.to(`${scanner} .numberTrack`,{x:"-=50%", duration:1, ease: "back.inOut" }, 2.6);
+  scanTl.to(scanner, { y: "-=200", duration: 1 }, 2.8);
+  scanTl.to(scanner, { height: "150px", width: "150px", duration: 1 }, 2.8);
 
-  addSlideTextStripToTimeline(scanTl, {
-    track: `${scanner} .numberTrack`,
-    baselineAt: 0,
-    startTime: 2.9,
-    delay: 0.25,
-    duration: 0.9,
-    fromXPercent: 0,
-    toXPercent: -50,
-    ease: "power2.inOut",
-  });
-  // scanTl.to(scanner, { height: "150px", width: "150px", duration: 1, ease: "power1.inOut" }, 3.12);
-
-  /**
-   * Post–strip: timeline must stay “busy” until the pin ends so scrub never
-   * leaves the card at a half state, and we avoid clearProps/onLeave hacks that
-   * broke reverse scroll. Hold small size, then optional extra x drift (JSON).
-   */
-  // const scrollPad =
-  //   scanMotion?.postScanScrollPad !== undefined ? scanMotion.postScanScrollPad : 0.1;
-  // if (scrollPad > 0) {
-  //   scanTl.to(
-  //     scanner,
-  //     { width: "150px", height: "150px", duration: scrollPad, ease: "none" },
-  //     SCAN_STRIP_END_TIME,
-  //   );
-  // }
-
-  // const driftX = scanMotion?.postScanDriftX;
-  // const driftDur = scanMotion?.postScanDriftDuration ?? 0.1;
-  // if (driftX) {
-  //   const driftStart =
-  //     scanMotion?.postScanDriftStart ?? SCAN_STRIP_END_TIME + scrollPad;
-  //   scanTl.to(scanner, { x: 0, duration: driftDur, ease: "none" }, driftStart);
-  // }
 
   return () => {
     removeBeepCue();

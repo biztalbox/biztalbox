@@ -3,12 +3,10 @@
 import Image from "next/image";
 import MyCanvas from "./MyCanvas";
 import { AdaptiveDpr } from "@react-three/drei";
+import { Perf } from 'r3f-perf'
 import { Canvas, useThree } from "@react-three/fiber";
 import { Suspense, useEffect, useLayoutEffect, useState } from "react";
 import * as THREE from "three";
-import { LITE_HERO_SURFACE_STYLE } from "./lite-hero-surface";
-import WhyChooseUs from "@/components/about/why-choose-us";
-import ContactOne from "@/components/contact/contact-one";
 import Link from "next/link";
 import WhyChooseUsLite from "./WhyChooseUs";
 import { getTicketSpecNameColumns, type LiteServiceTicketSpecKey } from "./lite-service-ticket-specs";
@@ -102,6 +100,10 @@ const Hero = () => {
   const [showCanvas, setShowCanvas] = useState(false);
   const [viewportWidth, setViewportWidth] = useState(1440);
 
+  
+  // useScrollSmooth();
+
+
   // Avoid blocking first paint with heavy GLB parsing on /lite.
   // Mount the WebGL scene once the browser is idle (or shortly after).
   useEffect(() => {
@@ -155,6 +157,8 @@ const Hero = () => {
             <Suspense fallback={null}>
               <MyCanvas />
             </Suspense>
+
+            {/* <Perf style={{marginTop:"120px",marginLeft:"50px", height:"200px"}} position="top-left" showGraph /> */}
           </Canvas>
         )}
 
