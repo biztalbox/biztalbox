@@ -182,7 +182,7 @@
       "seo": {
         "position": [
           450,
-          110,
+          190,
           300
         ],
         "rotation": [
@@ -228,7 +228,7 @@
       "webdev": {
         "position": [
           120,
-          270,
+          380,
           0
         ],
         "scale": 0.7,
@@ -272,10 +272,10 @@
       "graphic": {
         "position": [
           380,
-          -100,
+          -50,
           0
         ],
-        "scale": 1.6,
+        "scale": 1.7,
         "rotation": [
           0,
           -0.5,
@@ -294,7 +294,7 @@
       "smo": {
         "position": [
           100,
-          -300,
+          -350,
           0
         ],
         "scale": 0.5,
@@ -311,10 +311,10 @@
       "seo": {
         "position": [
           350,
-          -200,
+          0,
           0
         ],
-        "scale": 3,
+        "scale": 2.6,
         "float": {
           "speed": 3,
           "rotationIntensity": 0.3,
@@ -328,7 +328,7 @@
       "appdev": {
         "position": [
           100,
-          -100,
+          -80,
           0
         ],
         "scale": 0.9,
@@ -388,7 +388,7 @@
       "content": {
         "position": [
           250,
-          -430,
+          -480,
           0
         ],
         "scale": 1,
@@ -517,7 +517,7 @@
       "seo": {
         "position": [
           290,
-          60,
+          180,
           0
         ],
         "scale": 2,
@@ -539,7 +539,7 @@
       "appdev": {
         "position": [
           -20,
-          100,
+          220,
           0
         ],
         "scale": 0.7,
@@ -665,13 +665,13 @@
     },
     "mobile": {
       "video": 900,
-      "smo": 900,
-      "appdev": 600,
-      "graphic": 600,
+      "smo": 1200,
+      "appdev": 900,
+      "graphic": 900,
       "algo": 900,
-      "content": 1000,
+      "content": 1300,
       "ads": 900,
-      "webdev": 400
+      "webdev": 600
     }
   },
   "ctaCart": {

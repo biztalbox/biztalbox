@@ -227,10 +227,10 @@ export function addCtaCartTweensToTimeline(
   const { times, bucket: b, models, asa } = cfg;
   const safeModels = (models ?? {}) as CtaCartDesktopJson["models"];
   const t0 = 0;
-  const ease0 = "power3.inOut" as const;
+  const ease0 = "none" as const;
 
   for (const key of CTA_SCALE0_ORDER) {
-    const g = modelRefs?.[key]?.current ?? null;
+    const g = modelRefs?.[key]?.outer?.current ?? null;
     const m = safeModels[key];
     if (!g || !m?.scale0) continue;
     tl.to(g.scale, { x: m.scale0[0], y: m.scale0[1], z: m.scale0[2], duration: 0, ease: ease0 }, t0);
@@ -259,7 +259,7 @@ export function addCtaCartTweensToTimeline(
   tl.to(bucket.scale, b.scaleArrange, times.arrange);
 
   for (const key of CTA_SCALE0_ORDER) {
-    const g = modelRefs?.[key]?.current ?? null;
+    const g = modelRefs?.[key]?.outer?.current ?? null;
     const m = safeModels[key];
     if (!g || !m?.scaleArrange) continue;
     const [sx, sy, sz] = m.scaleArrange;
@@ -267,7 +267,7 @@ export function addCtaCartTweensToTimeline(
   }
 
   for (const key of CTA_SCALE0_ORDER) {
-    const g = modelRefs?.[key]?.current ?? null;
+    const g = modelRefs?.[key]?.outer?.current ?? null;
     const m = safeModels[key];
     if (!g || !m?.positionMove) continue;
     const { duration, ease, ...rest } = m.positionMove;

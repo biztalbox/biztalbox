@@ -23,7 +23,7 @@
 }
 
 #litePage p{
-    @apply text-[11px] leading-normal uppercase font-thin text-neutral-700;
+    @apply text-[11px] leading-normal uppercase font-thin;
 }
 
 html, body, h1, h2, h3, h4, h5, h6, p, span, li, a, button, label, input, textarea, select {

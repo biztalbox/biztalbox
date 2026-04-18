@@ -246,4 +246,13 @@ export function resolveLiteServiceScans(breakpoint: LiteScrollServiceBreakpoint)
  */
 export const LITE_SERVICE_SCANS: readonly LiteServiceScanDefinition[] = resolveLiteServiceScans("desktop");
 
-export type LiteModelRefMap = Record<LiteModelKey, RefObject<Group | null>>;
+/**
+ * `outer` — layout + approach-phase GSAP (position / scale / rotation).
+ * `inner` — scan-phase GSAP (spin + shrink) so two scrub timelines never fight the same props.
+ */
+export type LiteModelGroupRefs = {
+  outer: RefObject<Group | null>;
+  inner: RefObject<Group | null>;
+};
+
+export type LiteModelRefMap = Record<LiteModelKey, LiteModelGroupRefs>;

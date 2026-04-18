@@ -80,16 +80,16 @@ function ResponsiveHeroCamera() {
     const w = size.width;
     if (w < 480) {
       camera.fov = 80;
-      camera.position.set(0, 0, 400);
+      camera.position.set(0, 150, 400);
     } else if (w < 640) {
       camera.fov = 78;
-      camera.position.set(-4, 268, 495);
+      camera.position.set(-4, 270, 495);
     } else if (w < 1024) {
       camera.fov = 50;
-      camera.position.set(-4, 265, 560);
+      camera.position.set(-4, 270, 560);
     } else {
       camera.fov = 55;
-      camera.position.set(300, 230, 650);
+      camera.position.set(300, 280, 650);
     }
     camera.updateProjectionMatrix();
   }, [camera, size.width]);
@@ -165,7 +165,7 @@ const Hero = () => {
         <Loader />
 
         {/* Hero Content  */}
-        <div className="relative z-10 pt-80 lg:pt-36" >
+        <div className="relative z-10 pt-60 lg:pt-36" >
           <div className="container flex flex-col gap-16">
             {/* Center — mobile: natural height only; sm+: fills middle row for vertical centering */}
             <div className="flex items-start justify-center pt-2 max-sm:self-start sm:-translate-y-4 sm:items-center sm:pt-0">
