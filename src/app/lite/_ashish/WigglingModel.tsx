@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, type Ref, type ReactNode } from "react";
+import { useMemo, type Ref } from "react";
 import { Float } from "@react-three/drei";
 import type { Group } from "three";
 
@@ -28,10 +28,8 @@ export type WigglingModelProps = {
   scene: Group;
   position?: [number, number, number];
   floatConfig?: FloatConfig;
-  /** Outer wrapper group — layout + approach-phase GSAP targets this. */
+  /** Outer wrapper group (scroll / GSAP targets this). */
   groupRef?: Ref<Group>;
-  /** Inner group — scan-phase GSAP (spin / scale-to-zero); keeps scrub timelines off the same Object3D as approach. */
-  scanGroupRef?: Ref<Group>;
   scale?: number | [number, number, number];
   rotation?: [number, number, number];
   /** When true, skip `<Float>` so scripted drop / GSAP motion matches the mesh 1:1. */
@@ -45,7 +43,6 @@ export function WigglingModel({
   position = [0, 0, 0],
   floatConfig,
   groupRef,
-  scanGroupRef,
   scale = 1,
   rotation = [0, 0, 0],
   disableFloat = false,
@@ -63,22 +60,25 @@ export function WigglingModel({
 
   const mesh = <primitive object={cloned} />;
 
-  const floated: ReactNode = disableFloat ? (
-    mesh
-  ) : (
-    <Float
-      speed={resolvedFloat?.speed ?? 1}
-      rotationIntensity={resolvedFloat?.rotationIntensity ?? 1}
-      floatIntensity={resolvedFloat?.floatIntensity ?? 1}
-      floatingRange={resolvedFloat?.floatingRange ?? [-0.1, 0.1]}
-    >
-      {mesh}
-    </Float>
-  );
-
   return (
-    <group ref={groupRef} position={position} rotation={rotation} scale={scaleTuple}>
-      {scanGroupRef ? <group ref={scanGroupRef}>{floated}</group> : floated}
+    <group
+      ref={groupRef}
+      position={position}
+      rotation={rotation}
+      scale={scaleTuple}
+    >
+      {disableFloat ? (
+        mesh
+      ) : (
+        <Float
+          speed={resolvedFloat?.speed ?? 1}
+          rotationIntensity={resolvedFloat?.rotationIntensity ?? 1}
+          floatIntensity={resolvedFloat?.floatIntensity ?? 1}
+          floatingRange={resolvedFloat?.floatingRange ?? [-0.1, 0.1]}
+        >
+          {mesh}
+        </Float>
+      )}
     </group>
   );
 }

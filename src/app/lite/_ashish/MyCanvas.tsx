@@ -125,29 +125,20 @@ const MyCanvas = () => {
   const graphicRef = useRef<Group>(null);
   const videoRef = useRef<Group>(null);
   const algoRef = useRef<Group>(null);
-  const seoScanRef = useRef<Group>(null);
-  const smoScanRef = useRef<Group>(null);
-  const webdevScanRef = useRef<Group>(null);
-  const graphicScanRef = useRef<Group>(null);
-  const videoScanRef = useRef<Group>(null);
-  const contentScanRef = useRef<Group>(null);
-  const adsScanRef = useRef<Group>(null);
-  const appdevScanRef = useRef<Group>(null);
-  const algoScanRef = useRef<Group>(null);
   const bucketRef = useRef<Group>(null);
   const heroFadeOutGroupRef = useRef<Group>(null);
 
   const modelRefs = useMemo<LiteModelRefMap>(
     () => ({
-      seo: { outer: seoRef, inner: seoScanRef },
-      smo: { outer: smoRef, inner: smoScanRef },
-      webdev: { outer: webdevRef, inner: webdevScanRef },
-      graphic: { outer: graphicRef, inner: graphicScanRef },
-      video: { outer: videoRef, inner: videoScanRef },
-      content: { outer: contentRef, inner: contentScanRef },
-      ads: { outer: adsRef, inner: adsScanRef },
-      appdev: { outer: appdevRef, inner: appdevScanRef },
-      algo: { outer: algoRef, inner: algoScanRef },
+      seo: seoRef,
+      smo: smoRef,
+      webdev: webdevRef,
+      graphic: graphicRef,
+      video: videoRef,
+      content: contentRef,
+      ads: adsRef,
+      appdev: appdevRef,
+      algo: algoRef,
     }),
     [],
   );
@@ -200,11 +191,6 @@ const MyCanvas = () => {
       const maxAttempts = 120;
       let matchMediaInstance: gsap.MatchMedia | null = null;
       let addToCartTl: gsap.core.Timeline | null = null;
-
-      ScrollTrigger.config({
-        ignoreMobileResize: true,
-      });
-
       const ctaCart = resolveCtaCartConfig(layoutBreakpoint);
       const ctaScrub =
         layoutBreakpoint === "mobile" ? 2 : layoutBreakpoint === "tablet" ? 3 : 5;
@@ -220,15 +206,6 @@ const MyCanvas = () => {
           !graphicRef.current ||
           !videoRef.current ||
           !algoRef.current ||
-          !seoScanRef.current ||
-          !smoScanRef.current ||
-          !webdevScanRef.current ||
-          !graphicScanRef.current ||
-          !videoScanRef.current ||
-          !contentScanRef.current ||
-          !adsScanRef.current ||
-          !appdevScanRef.current ||
-          !algoScanRef.current ||
           !bucketRef.current ||
           !heroFadeOutGroupRef.current
         ) {
@@ -246,19 +223,19 @@ const MyCanvas = () => {
         const attachHeroBand = (bp: LiteSceneBreakpoint) => {
           const isNarrow = bp !== "desktop";
           const fadeTl = gsap.timeline({
-            defaults: { duration: 2, ease: "none" },
+            defaults: { duration: 2, ease: "circ.inOut" },
             scrollTrigger: {
               trigger: "#section0",
               start: "-120 top",
               end: "top top",
-              scrub: isNarrow ? 1.35 : 2.65,
+              scrub: isNarrow ? 1.2 : 2.5,
             },
           });
           for (const key of HERO_FADE_OUT_KEYS) {
-            const g = modelRefs[key].outer.current;
+            const g = modelRefs[key].current;
             if (!g) continue;
             const dy = getHeroFadeOutYDelta(key, bp);
-            fadeTl.to(g.position, { y: `+=${dy}`, duration: 2, ease: "none" }, 0);
+            fadeTl.to(g.position, { y: `+=${dy}`, duration: 2, ease: "power3.inOut" }, 0);
           }
           const disposeScans = registerAllLiteServiceScans(
             modelRefs,
@@ -279,8 +256,7 @@ const MyCanvas = () => {
 
         addToCartTl = gsap.timeline({
           defaults: {
-            duration: 1,
-            ease: "none",
+            duration: 1, ease: "power1.inOut"
           },
           scrollTrigger: {
             trigger: "#ctaSection",
@@ -359,7 +335,6 @@ const MyCanvas = () => {
       <WigglingModel
         scene={algoScene}
         groupRef={algoRef}
-        scanGroupRef={algoScanRef}
         position={L.algo!.position}
         floatConfig={L.algo!.float}
         scale={L.algo!.scale}
@@ -370,7 +345,6 @@ const MyCanvas = () => {
       <WigglingModel
         scene={graphicScene}
         groupRef={graphicRef}
-        scanGroupRef={graphicScanRef}
         position={L.graphic!.position}
         floatConfig={L.graphic!.float}
         scale={L.graphic!.scale}
@@ -382,7 +356,6 @@ const MyCanvas = () => {
       <WigglingModel
         scene={webdevScene}
         groupRef={webdevRef}
-        scanGroupRef={webdevScanRef}
         position={L.webdev!.position}
         floatConfig={L.webdev!.float}
         scale={L.webdev!.scale}
@@ -394,7 +367,6 @@ const MyCanvas = () => {
       <WigglingModel
         scene={appdevScene}
         groupRef={appdevRef}
-        scanGroupRef={appdevScanRef}
         position={L.appdev!.position}
         floatConfig={L.appdev!.float}
         scale={L.appdev!.scale}
@@ -406,7 +378,6 @@ const MyCanvas = () => {
       <WigglingModel
         scene={videoScene}
         groupRef={videoRef}
-        scanGroupRef={videoScanRef}
         position={L.video!.position}
         floatConfig={L.video!.float}
         scale={L.video!.scale}
@@ -417,7 +388,6 @@ const MyCanvas = () => {
       <WigglingModel
         scene={adsScene}
         groupRef={adsRef}
-        scanGroupRef={adsScanRef}
         position={L.ads!.position}
         floatConfig={L.ads!.float}
         scale={L.ads!.scale}
@@ -429,7 +399,6 @@ const MyCanvas = () => {
       <WigglingModel
         scene={contentScene}
         groupRef={contentRef}
-        scanGroupRef={contentScanRef}
         position={L.content!.position}
         floatConfig={L.content!.float}
         scale={L.content!.scale}
@@ -440,7 +409,6 @@ const MyCanvas = () => {
       <WigglingModel
         scene={smoScene}
         groupRef={smoRef}
-        scanGroupRef={smoScanRef}
         position={L.smo!.position}
         floatConfig={L.smo!.float}
         scale={L.smo!.scale}
@@ -464,7 +432,6 @@ const MyCanvas = () => {
       <WigglingModel
         scene={seoScene}
         groupRef={seoRef}
-        scanGroupRef={seoScanRef}
         position={L.seo!.position}
         floatConfig={L.seo!.float}
         scale={L.seo!.scale}

@@ -10,22 +10,43 @@
     @apply mx-auto px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12;
 }
 
-#litePage h1{
-    @apply text-[44px] md:text-[60px] lg:!text-[99px] leading-none;
+/*
+  /lite typography — quoted family name required (spaces).
+  Win over `.font-century-gothic` on hero h1 (class also uses !important).
+*/
+#litePage h1,
+#litePage h1 {
+    @apply text-[44px] md:text-[60px] lg:!text-[99px] leading-none font-light;
 }
 
 #litePage h2{
-    @apply text-[44px] md:text-[60px] uppercase !whitespace-normal lg:!text-[99px] leading-none;
+    @apply text-[44px] md:text-[60px] uppercase !whitespace-normal lg:!text-[99px] leading-none font-light;
+    font-family: "Century Gothic Local" !important;
 }
 
 #litePage h3{
     @apply text-[22px] uppercase md:!text-[33px];
+    font-family: "Century Gothic Local" !important;
 }
 
 #litePage p{
     @apply text-[11px] leading-normal uppercase font-thin;
+    font-family: "Century Gothic Local" !important;
 }
 
-html, body, h1, h2, h3, h4, h5, h6, p, span, li, a, button, label, input, textarea, select {
-    font-family: Helvetica, Arial, sans-serif !important;
+/* Scope to /lite only — avoids leaking Helvetica Light after client navigation */
+#lite-route-root,
+#lite-route-root h4,
+#lite-route-root h5,
+#lite-route-root h6,
+#lite-route-root p,
+#lite-route-root span,
+#lite-route-root li,
+#lite-route-root a,
+#lite-route-root button,
+#lite-route-root label,
+#lite-route-root input,
+#lite-route-root textarea,
+#lite-route-root select {
+    font-family: "Century Gothic Local" !important;
 }

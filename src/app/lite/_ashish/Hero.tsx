@@ -45,7 +45,7 @@ function LiteServiceViewMoreLink({ service, text = "View More" }: { service: Lit
   return (
     <Link
       href={LITE_SERVICE_PAGE_PATHS[service]}
-      className="relative z-20 mx-auto block w-fit mt-5 rounded-full border border-black bg-[#F2F2F2] px-10 py-2.5 text-sm font-medium uppercase text-black transition-colors hover:bg-orange-600 hover:!text-white"
+      className="relative z-20 mx-auto block w-fit mt-5 rounded-full border border-black bg-[#F2F2F2] px-10 py-2.5 text-sm font-medium uppercase text-black transition-colors hover:bg-black hover:!text-white"
     >
       {text}
     </Link>
@@ -80,16 +80,16 @@ function ResponsiveHeroCamera() {
     const w = size.width;
     if (w < 480) {
       camera.fov = 80;
-      camera.position.set(0, 150, 400);
+      camera.position.set(0, 0, 400);
     } else if (w < 640) {
       camera.fov = 78;
-      camera.position.set(-4, 270, 495);
+      camera.position.set(-4, 268, 495);
     } else if (w < 1024) {
       camera.fov = 50;
-      camera.position.set(-4, 270, 560);
+      camera.position.set(-4, 265, 560);
     } else {
       camera.fov = 55;
-      camera.position.set(300, 280, 650);
+      camera.position.set(300, 230, 650);
     }
     camera.updateProjectionMatrix();
   }, [camera, size.width]);
@@ -225,7 +225,7 @@ const Hero = () => {
 
             </div>
           </div>
-          <Link href="/about" className="relative bg-neutral-200 hover:bg-orange-600 hover:text-white z-10 mt-6 w-fit block mx-auto text-center items-center gap-2 px-3 py-2 font-medium border">
+          <Link href="/about" className="relative bg-neutral-200 hover:bg-black hover:text-white z-10 mt-6 w-fit block mx-auto text-center items-center gap-2 px-3 py-2 font-medium border">
             About Us ↗
           </Link>
           {/* Receipt — monospace, thin border, taller middle line */}

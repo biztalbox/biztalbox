@@ -28,8 +28,8 @@ export type LiteScanTimingPreset = {
 };
 
 export const LITE_SCAN_TIMING_DESKTOP: LiteScanTimingPreset = {
-  approachScrub: 1.35,
-  scanScrub: 5.2,
+  approachScrub: 1.2,
+  scanScrub: 5,
   scanPinStart: "top 28%",
   approachScale: 2.5,
   approachPosition: { x: "-=140", y: "+=70" },
@@ -39,8 +39,8 @@ export const LITE_SCAN_TIMING_DESKTOP: LiteScanTimingPreset = {
 };
 
 export const LITE_SCAN_TIMING_TABLET: LiteScanTimingPreset = {
-  approachScrub: 1,
-  scanScrub: 3.25,
+  approachScrub: 0.9,
+  scanScrub: 3,
   scanPinStart: "top 25%",
   approachScale: 2.15,
   approachPosition: { x: "-=115", y: "+=62" },
@@ -50,9 +50,8 @@ export const LITE_SCAN_TIMING_TABLET: LiteScanTimingPreset = {
 };
 
 export const LITE_SCAN_TIMING_MOBILE: LiteScanTimingPreset = {
-  /** Slightly higher scrub = less “stuck” lag when reversing on touch devices. */
-  approachScrub: 0.95,
-  scanScrub: 2.35,
+  approachScrub: 0.65,
+  scanScrub: 1.75,
   scanPinStart: "top 22%",
   approachScale: 1.85,
   approachPosition: { x: "-=85", y: "+=55" },
@@ -135,6 +134,9 @@ function resolveCardSlideX(timing: LiteScanTimingPreset, scan?: LiteScanMotion):
   return scan?.cardSlideX ?? timing.cardSlideX;
 }
 
+/** End of number-strip chapter: startTime 2.9 + delay 0.25 + duration 0.9 */
+const SCAN_STRIP_END_TIME = 2.9 + 0.25 + 0.9;
+
 /** Soft coral emissive — “scan warmth”, not flat red */
 const SCAN_TINT_EMISSIVE = new THREE.Color("#ff2424");
 const SCAN_TINT_EMISSIVE_INTENSITY = 1;
@@ -182,7 +184,7 @@ function addScanWarmTintToTimeline(
             g: SCAN_TINT_EMISSIVE.g,
             b: SCAN_TINT_EMISSIVE.b,
             duration,
-            ease: "none",
+            ease: "power2.out",
           },
           startTime,
         );
@@ -192,12 +194,12 @@ function addScanWarmTintToTimeline(
           {
             emissiveIntensity: SCAN_TINT_EMISSIVE_INTENSITY,
             duration,
-            ease: "none",
+            ease: "power2.out",
           },
           startTime,
         );
-        tl.to(e, { r: r0, g: g0, b: b0, duration: restoreDur, ease: "none" }, restoreAt);
-        tl.to(m, { emissiveIntensity: i0, duration: restoreDur, ease: "none" }, restoreAt);
+        tl.to(e, { r: r0, g: g0, b: b0, duration: restoreDur, ease: "power2.out" }, restoreAt);
+        tl.to(m, { emissiveIntensity: i0, duration: restoreDur, ease: "power2.out" }, restoreAt);
       } else if ("color" in m && m.color instanceof THREE.Color) {
         const c = m.color;
         const sr = c.r;
@@ -207,10 +209,10 @@ function addScanWarmTintToTimeline(
         tl.fromTo(
           c,
           { r: sr, g: sg, b: sb },
-          { r: end.r, g: end.g, b: end.b, duration, ease: "none" },
+          { r: end.r, g: end.g, b: end.b, duration, ease: "power2.out" },
           startTime,
         );
-        tl.to(c, { r: sr, g: sg, b: sb, duration: restoreDur, ease: "none" }, restoreAt);
+        tl.to(c, { r: sr, g: sg, b: sb, duration: restoreDur, ease: "power2.out" }, restoreAt);
       }
     }
   });
@@ -220,10 +222,7 @@ function addScanWarmTintToTimeline(
  * Builds approach + pinned scan timelines for one service. Same choreography as the original SEO block.
  */
 export function attachLiteServiceScanPair(options: {
-  /** Layout + approach tweens (position / scale / rotation). */
-  outerGroup: Group;
-  /** Scan tweens (spin + shrink) — separate from outer so two scrub timelines never overwrite the same props. */
-  innerGroup: Group;
+  group: Group;
   scannerId: string;
   approachTrigger: string;
   approachEndTrigger: string;
@@ -241,8 +240,7 @@ export function attachLiteServiceScanPair(options: {
   isCancelled: () => boolean;
 }): () => void {
   const {
-    outerGroup,
-    innerGroup,
+    group,
     scannerId,
     approachTrigger,
     approachEndTrigger,
@@ -281,28 +279,28 @@ export function attachLiteServiceScanPair(options: {
   });
 
   approachTl.to(
-    outerGroup.scale,
+    group.scale,
     {
       x: scaleTriple.x,
       y: scaleTriple.y,
       z: scaleTriple.z,
       duration: scaleDur,
-      ease: "none",
+      ease: "power1.inOut",
     },
     0,
   );
   approachTl.to(
-    outerGroup.position,
+    group.position,
     {
       x: posTriple.x,
       y: posTriple.y,
       ...(posTriple.z !== undefined ? { z: posTriple.z } : {}),
       duration: posDur,
-      ease: "none",
+      ease: "power1.inOut",
     },
     0,
   );
-  approachTl.to(outerGroup.rotation, { ...rotProps, duration: rotDur, ease: "none" }, 0);
+  approachTl.to(group.rotation, { ...rotProps, duration: rotDur, ease: "power1.inOut" }, 0);
 
   const scanTl = gsap.timeline({
     scrollTrigger: {
@@ -316,10 +314,10 @@ export function attachLiteServiceScanPair(options: {
       scrub: timing.scanScrub,
       invalidateOnRefresh: true,
       /**
-       * Spin must target the same Object3D as approach rotation (full euler x/y/z), or nested
-       * inner-only Ry looks “wrong axis / backwards” when approach uses non‑zero rx / rz (e.g. graphic).
-       * Scale stays on `innerGroup` so we still avoid approach vs scan fighting on scale.
-       * Disable approach while pinned so two scrub timelines never write `outerGroup.rotation` at once.
+       * Prevent “fast scroll” race where the approach scrub keeps rendering and
+       * overwrites scan end-state (e.g. model scale not reaching 0).
+       * Scan owns the model transforms while pinned; approach re-enables when
+       * user scrolls back above the scan start.
        */
       onEnter: () => {
         approachTl.scrollTrigger?.disable(false);
@@ -333,10 +331,10 @@ export function attachLiteServiceScanPair(options: {
     },
   });
 
-  scanTl.to(`${scanner} .purchaseStatus`, { width: "135px", duration: 2, ease: "power1.out" }, 0);
-  scanTl.to(outerGroup.rotation, { y: `+=${spinRad}`, duration: 2, ease: "none" }, 0);
-  scanTl.to(`${scanner} .purchaseStatus`, { color: "red", duration: 0.1, ease: "none" }, 1.9);
-  scanTl.to(`${scanner} .barcoadCheck`, { display: "block", duration: 0.1, ease: "none" }, 1.9);
+  scanTl.to(`${scanner} .purchaseStatus`, { width: "135px", duration: 2, ease: "power1.inOut" }, 0);
+  scanTl.to(group.rotation, { y: `+=${spinRad}`, duration: 2, ease: "none" }, 0);
+  scanTl.to(`${scanner} .purchaseStatus`, { color: "red", duration: 0.1, ease: "power1.inOut" }, 1.9);
+  scanTl.to(`${scanner} .barcoadCheck`, { display: "block", duration: 0.1, ease: "power1.inOut" }, 1.9);
 
   const removeBeepCue = addScrubTimelineCue(scanTl, 2.1 + 0.1, () => {
     if (!isCancelled()) playLiteSfx("beep");
@@ -344,15 +342,15 @@ export function attachLiteServiceScanPair(options: {
 
   /** Warm rosy “scan” read on the GLB, peaking as the model vanishes (scrub reverses cleanly). */
   if (!lowPowerMode) {
-    addScanWarmTintToTimeline(scanTl, innerGroup, 2.01, 0.36);
+    addScanWarmTintToTimeline(scanTl, group, 2.01, 0.36);
   }
 
-  scanTl.to(innerGroup.scale, { x: 0, y: 0, z: 0, duration: 0.15, ease: "none" }, 2);
-  scanTl.to(scanner, { height: "150px", width: "150px", duration: 1, ease: "power1.out" }, 2.2);
-  scanTl.to(scanner, { x: cardX, duration: 1, ease: "power1.out" }, 2.4);
-  scanTl.to(`${scanner} .numberTrack`, { x: "-=50%", duration: 1, ease: "power2.inOut" }, 2.6);
-  scanTl.to(scanner, { y: "-=200", duration: 1, ease: "power1.out" }, 2.8);
-  scanTl.to(scanner, { height: "150px", width: "150px", duration: 1, ease: "power1.out" }, 2.8);
+  scanTl.to(group.scale, { x: 0, y: 0, z: 0, duration: 0.15, ease: "power1.inOut" }, 2);
+  scanTl.to(scanner, { height: "150px", width: "150px", duration: 1, ease: "power1.inOut" }, 2.2);
+  scanTl.to(scanner, { x: cardX, duration: 1, ease: "power1.inOut" }, 2.4);
+  scanTl.to(`${scanner} .numberTrack`,{x:"-=50%", duration:1, ease: "back.inOut" }, 2.6);
+  scanTl.to(scanner, { y: "-=200", duration: 1 }, 2.8);
+  scanTl.to(scanner, { height: "150px", width: "150px", duration: 1 }, 2.8);
 
 
   return () => {
@@ -379,16 +377,14 @@ export function registerAllLiteServiceScans(
   const lowPowerMode = breakpoint !== "desktop";
 
   for (const def of defs) {
-    const outerGroup = refs[def.modelKey].outer.current;
-    const innerGroup = refs[def.modelKey].inner.current;
-    if (!outerGroup || !innerGroup) continue;
+    const group = refs[def.modelKey].current;
+    if (!group) continue;
 
     const scanPinStart = def.scan.pinStart ?? timing.scanPinStart;
 
     disposers.push(
       attachLiteServiceScanPair({
-        outerGroup,
-        innerGroup,
+        group,
         scannerId: def.scannerId,
         approachTrigger: def.approach.trigger,
         approachEndTrigger: def.approach.endTrigger,
