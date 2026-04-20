@@ -4,6 +4,8 @@ import { useEffect, useMemo, useRef } from "react";
 import { useLoader, useThree } from "@react-three/fiber";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { KTX2Loader } from "three/examples/jsm/loaders/KTX2Loader.js";
+import { MeshoptDecoder } from "three/examples/jsm/libs/meshopt_decoder.module.js";
 import type { Group, Object3D } from "three";
 import type { GLTF } from "three/examples/jsm/loaders/GLTFLoader.js";
 import gsap from "gsap";
@@ -27,23 +29,17 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 /** All lite hero GLBs passed to useLoader / preload (order does not matter). */
 const LITE_GLB_URLS = [
-  "/assets/lite_models/compressed/smo.glb",
-  "/assets/lite_models/compressed/ads.glb",
-  "/assets/lite_models/compressed/content.glb",
-  "/assets/lite_models/compressed/seo.glb",
-  "/assets/lite_models/compressed/webdev.glb",
-  "/assets/lite_models/compressed/appdev.glb",
-  "/assets/lite_models/compressed/graphic.glb",
-  "/assets/lite_models/compressed/video.glb",
-  "/assets/lite_models/compressed/algo.glb",
-  "/assets/lite_models/compressed/box.glb",
+  "/assets/lite_models/minified/smo.glb",
+  "/assets/lite_models/minified/ads.glb",
+  "/assets/lite_models/minified/content.glb",
+  "/assets/lite_models/minified/seo.glb",
+  "/assets/lite_models/minified/webdev.glb",
+  "/assets/lite_models/minified/appdev.glb",
+  "/assets/lite_models/minified/graphic.glb",
+  "/assets/lite_models/minified/video.glb",
+  "/assets/lite_models/minified/algo.glb",
+  "/assets/lite_models/minified/box.glb",
 ] as const;
-
-function configureGltfLoader(loader: GLTFLoader) {
-  const draco = new DRACOLoader();
-  draco.setDecoderPath("https://www.gstatic.com/draco/v1/decoders/");
-  loader.setDRACOLoader(draco);
-}
 
 function findChildByName(root: Object3D, name: string): Object3D | null {
   let found: Object3D | null = null;
@@ -110,7 +106,7 @@ const ST_REFRESH_DEBOUNCE_MS = 160;
 
 const MyCanvas = () => {
   const { root, layouts: L, layoutBreakpoint } = useLiteHeroCanvasFrame();
-  const { size } = useThree();
+  const { gl, size } = useThree();
   const disableFloat = false;
   const floatSoft = layoutBreakpoint !== "desktop";
   /** Same HDR file everywhere; intensity only nudges lighting cost/readability — mesh & texture quality unchanged. */
@@ -143,6 +139,22 @@ const MyCanvas = () => {
     [],
   );
 
+  const configureGltfLoader = useMemo(() => {
+    return (loader: GLTFLoader) => {
+      loader.setMeshoptDecoder(MeshoptDecoder);
+
+      const draco = new DRACOLoader();
+      draco.setDecoderPath("https://www.gstatic.com/draco/v1/decoders/");
+      loader.setDRACOLoader(draco);
+
+      // GLBs include KTX2-compressed textures; GLTFLoader requires KTX2Loader configured first.
+      const ktx2 = new KTX2Loader();
+      ktx2.setTranscoderPath("https://unpkg.com/three@0.164.1/examples/jsm/libs/basis/");
+      ktx2.detectSupport(gl);
+      loader.setKTX2Loader(ktx2);
+    };
+  }, [gl]);
+
   const gltf = useLoader(GLTFLoader, [...LITE_GLB_URLS], configureGltfLoader) as GLTF | GLTF[];
   const sceneBySrc = useMemo(() => {
     const list = Array.isArray(gltf) ? gltf : [gltf];
@@ -151,16 +163,16 @@ const MyCanvas = () => {
     return map;
   }, [gltf]);
 
-  const smoScene = sceneBySrc.get("/assets/lite_models/compressed/smo.glb");
-  const adsScene = sceneBySrc.get("/assets/lite_models/compressed/ads.glb");
-  const contentScene = sceneBySrc.get("/assets/lite_models/compressed/content.glb");
-  const seoScene = sceneBySrc.get("/assets/lite_models/compressed/seo.glb");
-  const webdevScene = sceneBySrc.get("/assets/lite_models/compressed/webdev.glb");
-  const appdevScene = sceneBySrc.get("/assets/lite_models/compressed/appdev.glb");
-  const graphicScene = sceneBySrc.get("/assets/lite_models/compressed/graphic.glb");
-  const videoScene = sceneBySrc.get("/assets/lite_models/compressed/video.glb");
-  const algoScene = sceneBySrc.get("/assets/lite_models/compressed/algo.glb");
-  const bucketScene = sceneBySrc.get("/assets/lite_models/compressed/box.glb");
+  const smoScene = sceneBySrc.get("/assets/lite_models/minified/smo.glb");
+  const adsScene = sceneBySrc.get("/assets/lite_models/minified/ads.glb");
+  const contentScene = sceneBySrc.get("/assets/lite_models/minified/content.glb");
+  const seoScene = sceneBySrc.get("/assets/lite_models/minified/seo.glb");
+  const webdevScene = sceneBySrc.get("/assets/lite_models/minified/webdev.glb");
+  const appdevScene = sceneBySrc.get("/assets/lite_models/minified/appdev.glb");
+  const graphicScene = sceneBySrc.get("/assets/lite_models/minified/graphic.glb");
+  const videoScene = sceneBySrc.get("/assets/lite_models/minified/video.glb");
+  const algoScene = sceneBySrc.get("/assets/lite_models/minified/algo.glb");
+  const bucketScene = sceneBySrc.get("/assets/lite_models/minified/box.glb");
 
   useEffect(() => {
     let t: ReturnType<typeof setTimeout> | undefined;
@@ -193,7 +205,7 @@ const MyCanvas = () => {
       let addToCartTl: gsap.core.Timeline | null = null;
       const ctaCart = resolveCtaCartConfig(layoutBreakpoint);
       const ctaScrub =
-        layoutBreakpoint === "mobile" ? 2 : layoutBreakpoint === "tablet" ? 3 : 5;
+        layoutBreakpoint === "mobile" ? 2 : layoutBreakpoint === "tablet" ? 8 : 15;
 
       const mountScroll = () => {
         if (
@@ -271,16 +283,12 @@ const MyCanvas = () => {
 
         addCtaCartTweensToTimeline(addToCartTl, modelRefs, bucketRef, asa1, asa2, ctaCart);
 
-        // addToCartTl.to("#recieptSection", { y: "-=520", duration: 3, ease: "elastic.inOut" }, 1)
-        addToCartTl.to("#recieptSection", {y: "-=104"}, 1)
-        addToCartTl.to("#recieptSection", {y: "-=104"}, 1.2)
-        addToCartTl.to("#recieptSection", {y: "-=104"}, 1.4)
-        addToCartTl.to("#recieptSection", {y: "-=104"}, 1.6)
-        addToCartTl.to("#recieptSection", {y: "-=104"}, 1.8)
-        // addToCartTl.to("#recieptSection", {y: "-=56"}, 1.0)
-        // addToCartTl.to("#recieptSection", {y: "-=56"}, 1.2)
-        // addToCartTl.to("#recieptSection", {y: "-=56"}, 1.4)
-        // addToCartTl.to("#recieptSection", {y: "-=56"}, 1.6)
+        addToCartTl.to("#recieptSection", { y: "-=520", duration: 4, ease: "back.inOut" }, 1.5)
+        // addToCartTl.to("#recieptSection", {y: "-=104"}, 1)
+        // addToCartTl.to("#recieptSection", {y: "-=104"}, 1.2)
+        // addToCartTl.to("#recieptSection", {y: "-=104"}, 1.4)
+        // addToCartTl.to("#recieptSection", {y: "-=104"}, 1.6)
+        // addToCartTl.to("#recieptSection", {y: "-=104"}, 1.8)
 
         /** Receipt strip ends at 3.8 + 1 = 4.8 — GSAP `call` = zero-duration tween at this time (scrub-safe). */
         addToCartTl.call(

@@ -162,7 +162,7 @@ const Hero = () => {
           </Canvas>
         )}
 
-        <Loader />
+        {/* <Loader /> */}
 
         {/* Hero Content  */}
         <div className="relative z-10 pt-60 lg:pt-36" >
