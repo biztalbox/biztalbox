@@ -100,7 +100,7 @@ const Hero = () => {
   const [showCanvas, setShowCanvas] = useState(false);
   const [viewportWidth, setViewportWidth] = useState(1440);
 
-  
+
   // useScrollSmooth();
 
 
@@ -149,7 +149,8 @@ const Hero = () => {
             performance={{ min: 0.5, max: 1, debounce: 280 }}
             gl={{
               alpha: true,
-              antialias: true,
+              antialias: !isTablet,
+              powerPreference: "high-performance",
             }}
           >
             <ResponsiveHeroCamera />
@@ -162,7 +163,7 @@ const Hero = () => {
           </Canvas>
         )}
 
-        {/* <Loader /> */}
+        <Loader />
 
         {/* Hero Content  */}
         <div className="relative z-10 pt-60 lg:pt-36" >
@@ -225,8 +226,16 @@ const Hero = () => {
 
             </div>
           </div>
-          <Link href="/about" className="relative bg-neutral-200 hover:bg-black hover:text-white z-10 mt-6 w-fit block mx-auto text-center items-center gap-2 px-3 py-2 font-medium border">
-            About Us ↗
+          <Link href="/about" className="relative bg-neutral-200 group hover:bg-black hover:text-white z-10 mt-6 w-fit block mx-auto text-center items-center gap-2 px-3 py-2 font-medium border">
+            About Us <svg className="group-hover:stroke-white stroke-black"
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="48"
+              fill="currentColor"
+              viewBox="0 -960 960 960"
+            >
+              <path d="m242-246-42-42 412-412H234v-60h480v480h-60v-378z"></path>
+            </svg>
           </Link>
           {/* Receipt — monospace, thin border, taller middle line */}
 
@@ -317,7 +326,7 @@ const Hero = () => {
             {/* Barcode + purchased */}
             <div className="mt-2 flex items-center justify-between gap-4">
               <div className="relative h-[22px] w-[140px]">
-                <div className="barcode absolute inset-0 h-full w-full rounded-[2px] border border-black/30 bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
                 <div style={{ display: "none" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
               </div>
               <div style={{ width: "0px", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
@@ -384,7 +393,7 @@ const Hero = () => {
             <div className="mt-14 h-44" />
             <div className="mt-2 flex items-center justify-between gap-4">
               <div className="relative h-[22px] w-[140px]">
-                <div className="barcode absolute inset-0 h-full w-full rounded-[2px] border border-black/30 bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
                 <div
                   style={{ display: "none" }}
                   className="barcoadCheck absolute inset-0 top-1/2 h-[2px] w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500"
@@ -458,7 +467,7 @@ const Hero = () => {
             <div className="mt-14 h-44" />
             <div className="mt-2 flex items-center justify-between gap-4">
               <div className="relative h-[22px] w-[140px]">
-                <div className="barcode absolute inset-0 h-full w-full rounded-[2px] border border-black/30 bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
                 <div
                   style={{ display: "none" }}
                   className="barcoadCheck absolute inset-0 top-1/2 h-[2px] w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500"
@@ -531,7 +540,7 @@ const Hero = () => {
             <div className="mt-14 h-44" />
             <div className="mt-2 flex items-center justify-between gap-4">
               <div className="relative h-[22px] w-[140px]">
-                <div className="barcode absolute inset-0 h-full w-full rounded-[2px] border border-black/30 bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
                 <div
                   style={{ display: "none" }}
                   className="barcoadCheck absolute inset-0 top-1/2 h-[2px] w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500"
@@ -606,7 +615,7 @@ const Hero = () => {
             <div className="mt-14 h-44" />
             <div className="mt-2 flex items-center justify-between gap-4">
               <div className="relative h-[22px] w-[140px]">
-                <div className="barcode absolute inset-0 h-full w-full rounded-[2px] border border-black/30 bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
                 <div
                   style={{ display: "none" }}
                   className="barcoadCheck absolute inset-0 top-1/2 h-[2px] w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500"
@@ -684,7 +693,7 @@ const Hero = () => {
             <div className="mt-14 h-44" />
             <div className="mt-2 flex items-center justify-between gap-4">
               <div className="relative h-[22px] w-[140px]">
-                <div className="barcode absolute inset-0 h-full w-full rounded-[2px] border border-black/30 bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
                 <div
                   style={{ display: "none" }}
                   className="barcoadCheck absolute inset-0 top-1/2 h-[2px] w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500"
@@ -774,7 +783,7 @@ const Hero = () => {
             <div className="mt-14 h-44" />
             <div className="mt-2 flex items-center justify-between gap-4">
               <div className="relative h-[22px] w-[140px]">
-                <div className="barcode absolute inset-0 h-full w-full rounded-[2px] border border-black/30 bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
                 <div
                   style={{ display: "none" }}
                   className="barcoadCheck absolute inset-0 top-1/2 h-[2px] w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500"
@@ -849,7 +858,7 @@ const Hero = () => {
             <div className="mt-14 h-44" />
             <div className="mt-2 flex items-center justify-between gap-4">
               <div className="relative h-[22px] w-[140px]">
-                <div className="barcode absolute inset-0 h-full w-full rounded-[2px] border border-black/30 bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
                 <div
                   style={{ display: "none" }}
                   className="barcoadCheck absolute inset-0 top-1/2 h-[2px] w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500"
@@ -923,7 +932,7 @@ const Hero = () => {
             <div className="mt-14 h-44" />
             <div className="mt-2 flex items-center justify-between gap-4">
               <div className="relative h-[22px] w-[140px]">
-                <div className="barcode absolute inset-0 h-full w-full rounded-[2px] border border-black/30 bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
                 <div
                   style={{ display: "none" }}
                   className="barcoadCheck absolute inset-0 top-1/2 h-[2px] w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500"
@@ -1023,13 +1032,21 @@ const Hero = () => {
 
       <section id="ctaSection" className="pt-10 pb-5">
         <div className="container flex flex-col gap-10 overflow-hidden">
-          <h3 className="text-3xl md:text-4xl lg:text-6xl font-thin uppercase leading-none mx-auto text-center">
-            Thanks for being here<br />Let’s take this forward.
+          <h3 className="text-3xl md:text-4xl lg:text-6xl font-thin uppercase leading-none mx-auto text-center relative z-10">
+            Thanks for being here.
           </h3>
           <div className="h-48 2xl:h-[30rem]"></div>
-          <Link href="/contact" className="hover:!bg-black bg-[#F2F2F2] hover:!text-white relative z-10 text-center uppercase text-3xl md:text-5xl lg:text-7xl font-thin mx-auto px-5 py-4 border border-black rounded-full">
+          <Link href="/contact" className="hover:!bg-black group bg-[#F2F2F2] hover:!text-white relative z-10 text-center uppercase text-3xl md:text-5xl lg:text-7xl font-thin mx-auto px-5 py-4 border border-black rounded-full">
 
-            Let&apos;s Talk ↗
+            Let&apos;s Talk <svg className="group-hover:stroke-white stroke-black"
+              xmlns="http://www.w3.org/2000/svg"
+              width="48"
+              height="48"
+              fill="currentColor"
+              viewBox="0 -960 960 960"
+            >
+              <path d="m242-246-42-42 412-412H234v-60h480v480h-60v-378z"></path>
+            </svg>
           </Link>
         </div>
       </section>

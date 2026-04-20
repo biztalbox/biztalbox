@@ -311,7 +311,7 @@ export function attachLiteServiceScanPair(options: {
       pin: true,
       pinSpacing: true,
       anticipatePin: 1,
-      scrub: timing.scanScrub,
+      scrub: 1,
       invalidateOnRefresh: true,
       /**
        * Prevent “fast scroll” race where the approach scrub keeps rendering and
@@ -331,26 +331,26 @@ export function attachLiteServiceScanPair(options: {
     },
   });
 
-  scanTl.to(`${scanner} .purchaseStatus`, { width: "135px", duration: 2, ease: "power1.inOut" }, 0);
-  scanTl.to(group.rotation, { y: `+=${spinRad}`, duration: 2, ease: "none" }, 0);
-  scanTl.to(`${scanner} .purchaseStatus`, { color: "red", duration: 0.1, ease: "power1.inOut" }, 1.9);
-  scanTl.to(`${scanner} .barcoadCheck`, { display: "block", duration: 0.1, ease: "power1.inOut" }, 1.9);
+  scanTl.to(`${scanner} .purchaseStatus`, { width: "135px", duration: 1, ease: "power1.inOut" }, 0);
+  scanTl.to(group.rotation, { y: `+=${spinRad}`, duration: 1, ease: "none" }, 0);
+  scanTl.to(`${scanner} .purchaseStatus`, { color: "red", duration: 0.1, ease: "power1.inOut" }, 1);
+  scanTl.to(`${scanner} .barcoadCheck`, { display: "block", duration: 0.1, ease: "power1.inOut" }, 1);
 
-  const removeBeepCue = addScrubTimelineCue(scanTl, 2.1 + 0.1, () => {
+  const removeBeepCue = addScrubTimelineCue(scanTl, 0.8 + 0.1, () => {
     if (!isCancelled()) playLiteSfx("beep");
   });
 
   /** Warm rosy “scan” read on the GLB, peaking as the model vanishes (scrub reverses cleanly). */
   if (!lowPowerMode) {
-    addScanWarmTintToTimeline(scanTl, group, 2.01, 0.36);
+    addScanWarmTintToTimeline(scanTl, group, 1, 0.36);
   }
 
-  scanTl.to(group.scale, { x: 0, y: 0, z: 0, duration: 0.15, ease: "power1.inOut" }, 2);
-  scanTl.to(scanner, { height: "150px", width: "150px", duration: 1, ease: "power1.inOut" }, 2.2);
-  scanTl.to(scanner, { x: cardX, duration: 1, ease: "power1.inOut" }, 2.4);
-  scanTl.to(`${scanner} .numberTrack`,{x:"-=50%", duration:1, ease: "back.inOut" }, 2.6);
-  scanTl.to(scanner, { y: "-=200", duration: 1 }, 2.8);
-  scanTl.to(scanner, { height: "150px", width: "150px", duration: 1 }, 2.8);
+  scanTl.to(group.scale, { x: 0, y: 0, z: 0, duration: 0.15, ease: "power1.inOut" }, 1);
+  scanTl.to(scanner, { height: "150px", width: "150px", duration: 0.5, ease: "power1.inOut" }, 1.1);
+  scanTl.to(scanner, { x: cardX, duration: 1, ease: "power1.inOut" }, 1.2);
+  scanTl.to(`${scanner} .numberTrack`,{x:"-=50%", duration:0.5, ease: "back.inOut" }, 1.5);
+  scanTl.to(scanner, { y: "-=200", duration: 0.3 }, 1.8);
+  scanTl.to(scanner, { height: "150px", width: "150px", duration: 0.4 }, 1.8);
 
 
   return () => {

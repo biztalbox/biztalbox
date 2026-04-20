@@ -34,6 +34,11 @@ export type WigglingModelProps = {
   rotation?: [number, number, number];
   /** When true, skip `<Float>` so scripted drop / GSAP motion matches the mesh 1:1. */
   disableFloat?: boolean;
+  /**
+   * When false, Float animation is disabled (saves CPU/GPU when offscreen).
+   * The model still renders with its current transforms.
+   */
+  floatEnabled?: boolean;
   /** Reduce Float amplitude for GPU savings; does not change geometry or textures. */
   floatSoft?: boolean;
 };
@@ -46,6 +51,7 @@ export function WigglingModel({
   scale = 1,
   rotation = [0, 0, 0],
   disableFloat = false,
+  floatEnabled = true,
   floatSoft = false,
 }: WigglingModelProps) {
   const cloned = useMemo(() => scene.clone(true), [scene]);
@@ -67,7 +73,7 @@ export function WigglingModel({
       rotation={rotation}
       scale={scaleTuple}
     >
-      {disableFloat ? (
+      {disableFloat || !floatEnabled ? (
         mesh
       ) : (
         <Float

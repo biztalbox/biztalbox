@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useLoader, useThree } from "@react-three/fiber";
 import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
@@ -13,6 +13,7 @@ import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { WigglingModel } from "./WigglingModel";
 import type { LiteModelKey, LiteModelRefMap } from "./motion/lite-service-scan-config";
+import { resolveLiteServiceScans } from "./motion/lite-service-scan-config";
 import { getLiteScanTimingForBreakpoint, registerAllLiteServiceScans } from "./motion/lite-service-scan-factory";
 import {
   addCtaCartTweensToTimeline,
@@ -139,6 +140,92 @@ const MyCanvas = () => {
     [],
   );
 
+  const [floatEnabledByKey, setFloatEnabledByKey] = useState<Record<LiteModelKey, boolean>>(() => ({
+    seo: true,
+    smo: true,
+    webdev: true,
+    graphic: true,
+    video: true,
+    content: true,
+    ads: true,
+    appdev: true,
+    algo: true,
+  }));
+  const [bucketFloatEnabled, setBucketFloatEnabled] = useState(true);
+
+  /**
+   * Pause idle float animations when the related DOM section/card is offscreen.
+   * This saves CPU/GPU without touching GSAP placements or timings.
+   */
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const services = resolveLiteServiceScans(layoutBreakpoint);
+    const idFor = (raw: string) => raw.replace(/^#/, "");
+
+    const anchors: Array<
+      | { kind: "hero"; id: string }
+      | { kind: "cta"; id: string }
+      | { kind: "service"; id: string; key: LiteModelKey }
+    > = [
+      { kind: "hero", id: "section0" },
+      { kind: "cta", id: "ctaSection" },
+      ...services.map((s) => ({ kind: "service" as const, id: idFor(s.scannerId), key: s.modelKey })),
+    ];
+
+    const visible = new Set<string>();
+    const compute = () => {
+      const heroOn = visible.has("section0");
+      const next: Record<LiteModelKey, boolean> = {
+        seo: heroOn,
+        smo: heroOn,
+        webdev: heroOn,
+        graphic: heroOn,
+        video: heroOn,
+        content: heroOn,
+        ads: heroOn,
+        appdev: heroOn,
+        algo: heroOn,
+      };
+      for (const a of anchors) {
+        if (a.kind !== "service") continue;
+        if (visible.has(a.id)) next[a.key] = true;
+      }
+      setFloatEnabledByKey(next);
+      setBucketFloatEnabled(heroOn || visible.has("ctaSection"));
+    };
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        let changed = false;
+        for (const e of entries) {
+          const id = (e.target as HTMLElement).id;
+          if (!id) continue;
+          if (e.isIntersecting) {
+            if (!visible.has(id)) {
+              visible.add(id);
+              changed = true;
+            }
+          } else if (visible.delete(id)) {
+            changed = true;
+          }
+        }
+        if (changed) compute();
+      },
+      { root: null, threshold: 0.12, rootMargin: "20% 0px 20% 0px" },
+    );
+
+    for (const a of anchors) {
+      const el = document.getElementById(a.id);
+      if (el) io.observe(el);
+    }
+    compute();
+
+    return () => {
+      io.disconnect();
+    };
+  }, [layoutBreakpoint]);
+
   const configureGltfLoader = useMemo(() => {
     return (loader: GLTFLoader) => {
       loader.setMeshoptDecoder(MeshoptDecoder);
@@ -226,9 +313,10 @@ const MyCanvas = () => {
         }
         if (cancelled) return;
 
-        const initModals = gsap.timeline({ defaults: { duration: 5, ease: "back.inOut" } })
-
-        initModals.from(heroFadeOutGroupRef.current.position, { y: "+=900" }, 0)
+        const initModals = gsap.timeline({ defaults: { duration: 5, ease: "back.inOut" } });
+        const baseHeroY = heroFadeOutGroupRef.current.position.y;
+        gsap.set(heroFadeOutGroupRef.current.position, { y: baseHeroY + 900 });
+        initModals.to(heroFadeOutGroupRef.current.position, { y: baseHeroY }, 0);
 
         matchMediaInstance = gsap.matchMedia();
 
@@ -241,6 +329,8 @@ const MyCanvas = () => {
               start: "-120 top",
               end: "top top",
               scrub: isNarrow ? 1.2 : 2.5,
+              invalidateOnRefresh: true,
+              fastScrollEnd: true,
             },
           });
           for (const key of HERO_FADE_OUT_KEYS) {
@@ -275,6 +365,8 @@ const MyCanvas = () => {
             start: "top bottom",
             end: "top top",
             scrub: ctaScrub,
+            invalidateOnRefresh: true,
+            fastScrollEnd: true,
           },
         });
 
@@ -348,6 +440,7 @@ const MyCanvas = () => {
         scale={L.algo!.scale}
         rotation={L.algo!.rotation}
         disableFloat={disableFloat}
+        floatEnabled={floatEnabledByKey.algo}
         floatSoft={floatSoft}
       />
       <WigglingModel
@@ -358,6 +451,7 @@ const MyCanvas = () => {
         scale={L.graphic!.scale}
         rotation={L.graphic!.rotation}
         disableFloat={disableFloat}
+        floatEnabled={floatEnabledByKey.graphic}
         floatSoft={floatSoft}
       />
 
@@ -369,6 +463,7 @@ const MyCanvas = () => {
         scale={L.webdev!.scale}
         rotation={L.webdev!.rotation}
         disableFloat={disableFloat}
+        floatEnabled={floatEnabledByKey.webdev}
         floatSoft={floatSoft}
       />
 
@@ -380,6 +475,7 @@ const MyCanvas = () => {
         scale={L.appdev!.scale}
         rotation={L.appdev!.rotation}
         disableFloat={disableFloat}
+        floatEnabled={floatEnabledByKey.appdev}
         floatSoft={floatSoft}
       />
 
@@ -391,6 +487,7 @@ const MyCanvas = () => {
         scale={L.video!.scale}
         rotation={L.video!.rotation}
         disableFloat={disableFloat}
+        floatEnabled={floatEnabledByKey.video}
         floatSoft={floatSoft}
       />
       <WigglingModel
@@ -401,6 +498,7 @@ const MyCanvas = () => {
         scale={L.ads!.scale}
         rotation={L.ads!.rotation}
         disableFloat={disableFloat}
+        floatEnabled={floatEnabledByKey.ads}
         floatSoft={floatSoft}
       />
 
@@ -412,6 +510,7 @@ const MyCanvas = () => {
         scale={L.content!.scale}
         rotation={L.content!.rotation}
         disableFloat={disableFloat}
+        floatEnabled={floatEnabledByKey.content}
         floatSoft={floatSoft}
       />
       <WigglingModel
@@ -422,6 +521,7 @@ const MyCanvas = () => {
         scale={L.smo!.scale}
         rotation={L.smo!.rotation}
         disableFloat={disableFloat}
+        floatEnabled={floatEnabledByKey.smo}
         floatSoft={floatSoft}
       />
 
@@ -434,6 +534,7 @@ const MyCanvas = () => {
         scale={L.bucket!.scale}
         rotation={L.bucket!.rotation}
         disableFloat={disableFloat}
+        floatEnabled={bucketFloatEnabled}
         floatSoft={floatSoft}
       />
       {/* </group> */}
@@ -445,6 +546,7 @@ const MyCanvas = () => {
         scale={L.seo!.scale}
         rotation={L.seo!.rotation}
         disableFloat={disableFloat}
+        floatEnabled={floatEnabledByKey.seo}
         floatSoft={floatSoft}
       />
 
