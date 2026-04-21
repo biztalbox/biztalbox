@@ -167,7 +167,7 @@ const Hero = () => {
         <Loader />
 
         {/* Hero Content  */}
-        <div className="relative z-10 pt-72 lg:pt-36" >
+        <div className="relative z-10 pt-60 lg:pt-36" >
           <div className="container flex flex-col gap-16">
             {/* Center — mobile: natural height only; sm+: fills middle row for vertical centering */}
             <div className="flex items-start justify-center pt-2 max-sm:self-start sm:-translate-y-4 sm:items-center sm:pt-0">
@@ -230,8 +230,8 @@ const Hero = () => {
           <Link href="/about" className="relative bg-neutral-200 group hover:bg-black hover:text-white z-10 mt-6 w-fit block mx-auto text-center items-center gap-2 px-3 py-2 font-medium border">
             About Us <svg className="group-hover:stroke-white stroke-black"
               xmlns="http://www.w3.org/2000/svg"
-              width="48"
-              height="48"
+              width="24"
+              height="24"
               fill="currentColor"
               viewBox="0 -960 960 960"
             >
@@ -884,7 +884,7 @@ const Hero = () => {
                   #09
                 </span>
                 <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
-                  #10
+                  
                 </span>
               </div>
             </div>
