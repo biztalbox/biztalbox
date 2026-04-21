@@ -263,7 +263,22 @@ const MyCanvas = () => {
 
   useEffect(() => {
     let t: ReturnType<typeof setTimeout> | undefined;
+    // iOS/Chrome mobile: `visualViewport` height changes while scrolling (URL bar).
+    // Refreshing ScrollTrigger on those events causes visible jitter. Only refresh
+    // when the viewport *width* meaningfully changes (rotation / responsive).
+    let lastWidth = typeof window !== "undefined" ? window.innerWidth : 0;
+
+    ScrollTrigger.config({
+      // GSAP recommended for mobile address bar resize jitter.
+      ignoreMobileResize: true,
+    });
+
     const scheduleRefresh = () => {
+      const w = typeof window !== "undefined" ? window : undefined;
+      const nextWidth = w?.innerWidth ?? lastWidth;
+      const widthChanged = Math.abs(nextWidth - lastWidth) > 8;
+      if (!widthChanged) return;
+      lastWidth = nextWidth;
       if (t) clearTimeout(t);
       t = setTimeout(() => {
         t = undefined;
@@ -273,13 +288,10 @@ const MyCanvas = () => {
     const w = typeof window !== "undefined" ? window : undefined;
     w?.addEventListener("resize", scheduleRefresh, { passive: true });
     w?.addEventListener("orientationchange", scheduleRefresh, { passive: true });
-    const vv = w?.visualViewport;
-    vv?.addEventListener?.("resize", scheduleRefresh, { passive: true });
     return () => {
       if (t) clearTimeout(t);
       w?.removeEventListener("resize", scheduleRefresh);
       w?.removeEventListener("orientationchange", scheduleRefresh);
-      vv?.removeEventListener?.("resize", scheduleRefresh);
     };
   }, []);
 

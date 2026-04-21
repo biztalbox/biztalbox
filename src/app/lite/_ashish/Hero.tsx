@@ -145,11 +145,12 @@ const Hero = () => {
         {showCanvas && (
           <Canvas
             className="!fixed top-0 z-10 h-full w-full inset-0"
-            dpr={[1,1.5]}
+            dpr={canvasDpr}
             performance={{ min: 0.5, max: 1, debounce: 280 }}
             gl={{
               alpha: true,
-              antialias: true,
+              // Antialiasing is expensive on mobile; DPR + post effects are enough here.
+              antialias: !isPhone,
               powerPreference: "high-performance",
             }}
           >
@@ -327,9 +328,9 @@ const Hero = () => {
             <div className="mt-2 flex items-center justify-between gap-4">
               <div className="relative h-[22px] w-[140px]">
                 <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                <div style={{ display: "none" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+                <div style={{visibility: "hidden"}} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
               </div>
-              <div style={{ width: "0px", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+              <div style={{ visibility: "hidden" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
                 PURCHASED
               </div>
             </div>
@@ -394,15 +395,9 @@ const Hero = () => {
             <div className="mt-2 flex items-center justify-between gap-4">
               <div className="relative h-[22px] w-[140px]">
                 <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                <div
-                  style={{ display: "none" }}
-                  className="barcoadCheck absolute inset-0 top-1/2 h-[2px] w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500"
-                />
+                <div style={{visibility: "hidden"}} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
               </div>
-              <div
-                style={{ width: "0px", color: "transparent" }}
-                className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest"
-              >
+              <div style={{ visibility: "hidden" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
                 PURCHASED
               </div>
             </div>
@@ -468,15 +463,9 @@ const Hero = () => {
             <div className="mt-2 flex items-center justify-between gap-4">
               <div className="relative h-[22px] w-[140px]">
                 <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                <div
-                  style={{ display: "none" }}
-                  className="barcoadCheck absolute inset-0 top-1/2 h-[2px] w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500"
-                />
+                <div style={{visibility: "hidden"}} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
               </div>
-              <div
-                style={{ width: "0px", color: "transparent" }}
-                className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest"
-              >
+              <div style={{ visibility: "hidden" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
                 PURCHASED
               </div>
             </div>
@@ -541,15 +530,9 @@ const Hero = () => {
             <div className="mt-2 flex items-center justify-between gap-4">
               <div className="relative h-[22px] w-[140px]">
                 <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                <div
-                  style={{ display: "none" }}
-                  className="barcoadCheck absolute inset-0 top-1/2 h-[2px] w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500"
-                />
+                <div style={{visibility: "hidden"}} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
               </div>
-              <div
-                style={{ width: "0px", color: "transparent" }}
-                className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest"
-              >
+              <div style={{ visibility: "hidden" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
                 PURCHASED
               </div>
             </div>
@@ -616,15 +599,9 @@ const Hero = () => {
             <div className="mt-2 flex items-center justify-between gap-4">
               <div className="relative h-[22px] w-[140px]">
                 <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                <div
-                  style={{ display: "none" }}
-                  className="barcoadCheck absolute inset-0 top-1/2 h-[2px] w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500"
-                />
+                <div style={{visibility: "hidden"}} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
               </div>
-              <div
-                style={{ width: "0px", color: "transparent" }}
-                className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest"
-              >
+              <div style={{ visibility: "hidden" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
                 PURCHASED
               </div>
             </div>
@@ -694,15 +671,9 @@ const Hero = () => {
             <div className="mt-2 flex items-center justify-between gap-4">
               <div className="relative h-[22px] w-[140px]">
                 <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                <div
-                  style={{ display: "none" }}
-                  className="barcoadCheck absolute inset-0 top-1/2 h-[2px] w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500"
-                />
+                <div style={{visibility: "hidden"}} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
               </div>
-              <div
-                style={{ width: "0px", color: "transparent" }}
-                className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest"
-              >
+              <div style={{ visibility: "hidden" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
                 PURCHASED
               </div>
             </div>
@@ -784,15 +755,9 @@ const Hero = () => {
             <div className="mt-2 flex items-center justify-between gap-4">
               <div className="relative h-[22px] w-[140px]">
                 <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                <div
-                  style={{ display: "none" }}
-                  className="barcoadCheck absolute inset-0 top-1/2 h-[2px] w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500"
-                />
+                <div style={{visibility: "hidden"}} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
               </div>
-              <div
-                style={{ width: "0px", color: "transparent" }}
-                className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest"
-              >
+              <div style={{ visibility: "hidden" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
                 PURCHASED
               </div>
             </div>
@@ -859,15 +824,9 @@ const Hero = () => {
             <div className="mt-2 flex items-center justify-between gap-4">
               <div className="relative h-[22px] w-[140px]">
                 <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                <div
-                  style={{ display: "none" }}
-                  className="barcoadCheck absolute inset-0 top-1/2 h-[2px] w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500"
-                />
+                <div style={{visibility: "hidden"}} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
               </div>
-              <div
-                style={{ width: "0px", color: "transparent" }}
-                className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest"
-              >
+              <div style={{ visibility: "hidden" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
                 PURCHASED
               </div>
             </div>
@@ -933,15 +892,9 @@ const Hero = () => {
             <div className="mt-2 flex items-center justify-between gap-4">
               <div className="relative h-[22px] w-[140px]">
                 <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                <div
-                  style={{ display: "none" }}
-                  className="barcoadCheck absolute inset-0 top-1/2 h-[2px] w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500"
-                />
+                <div style={{visibility: "hidden"}} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
               </div>
-              <div
-                style={{ width: "0px", color: "transparent" }}
-                className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest"
-              >
+              <div style={{ visibility: "hidden" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
                 PURCHASED
               </div>
             </div>

@@ -126,11 +126,17 @@ function resolveApproachRotation(
   return { y: timing.approachRotationY };
 }
 
-function resolveScanSpin(timing: LiteScanTimingPreset, scan?: LiteScanMotion): number {
+function resolveScanSpin(
+  timing: LiteScanTimingPreset,
+  scan?: LiteScanMotion,
+): number {
   return scan?.spinRadians ?? timing.spinRadians;
 }
 
-function resolveCardSlideX(timing: LiteScanTimingPreset, scan?: LiteScanMotion): string {
+function resolveCardSlideX(
+  timing: LiteScanTimingPreset,
+  scan?: LiteScanMotion,
+): string {
   return scan?.cardSlideX ?? timing.cardSlideX;
 }
 
@@ -144,7 +150,9 @@ const SCAN_TINT_EMISSIVE_INTENSITY = 1;
 const SCAN_TINT_COLOR_MIX = new THREE.Color("#c86b62");
 const SCAN_TINT_COLOR_LERP = 0.1;
 
-function isPbrMaterial(m: THREE.Material): m is THREE.MeshStandardMaterial | THREE.MeshPhysicalMaterial {
+function isPbrMaterial(
+  m: THREE.Material,
+): m is THREE.MeshStandardMaterial | THREE.MeshPhysicalMaterial {
   return (
     (m as THREE.MeshStandardMaterial).isMeshStandardMaterial === true ||
     (m as THREE.MeshPhysicalMaterial).isMeshPhysicalMaterial === true
@@ -198,21 +206,36 @@ function addScanWarmTintToTimeline(
           },
           startTime,
         );
-        tl.to(e, { r: r0, g: g0, b: b0, duration: restoreDur, ease: "power2.out" }, restoreAt);
-        tl.to(m, { emissiveIntensity: i0, duration: restoreDur, ease: "power2.out" }, restoreAt);
+        tl.to(
+          e,
+          { r: r0, g: g0, b: b0, duration: restoreDur, ease: "power2.out" },
+          restoreAt,
+        );
+        tl.to(
+          m,
+          { emissiveIntensity: i0, duration: restoreDur, ease: "power2.out" },
+          restoreAt,
+        );
       } else if ("color" in m && m.color instanceof THREE.Color) {
         const c = m.color;
         const sr = c.r;
         const sg = c.g;
         const sb = c.b;
-        const end = new THREE.Color(sr, sg, sb).lerp(SCAN_TINT_COLOR_MIX, SCAN_TINT_COLOR_LERP);
+        const end = new THREE.Color(sr, sg, sb).lerp(
+          SCAN_TINT_COLOR_MIX,
+          SCAN_TINT_COLOR_LERP,
+        );
         tl.fromTo(
           c,
           { r: sr, g: sg, b: sb },
           { r: end.r, g: end.g, b: end.b, duration, ease: "power2.out" },
           startTime,
         );
-        tl.to(c, { r: sr, g: sg, b: sb, duration: restoreDur, ease: "power2.out" }, restoreAt);
+        tl.to(
+          c,
+          { r: sr, g: sg, b: sb, duration: restoreDur, ease: "power2.out" },
+          restoreAt,
+        );
       }
     }
   });
@@ -300,7 +323,11 @@ export function attachLiteServiceScanPair(options: {
     },
     0,
   );
-  approachTl.to(group.rotation, { ...rotProps, duration: rotDur, ease: "power1.inOut" }, 0);
+  approachTl.to(
+    group.rotation,
+    { ...rotProps, duration: rotDur, ease: "power1.inOut" },
+    0,
+  );
 
   const scanTl = gsap.timeline({
     scrollTrigger: {
@@ -331,10 +358,36 @@ export function attachLiteServiceScanPair(options: {
     },
   });
 
-  scanTl.to(`${scanner} .purchaseStatus`, { width: "135px", duration: 1, ease: "power1.inOut" }, 0);
-  scanTl.to(group.rotation, { y: `+=${spinRad}`, duration: 1, ease: "none" }, 0);
-  scanTl.to(`${scanner} .purchaseStatus`, { color: "red", duration: 0.1, ease: "power1.inOut" }, 1);
-  scanTl.to(`${scanner} .barcoadCheck`, { display: "block", duration: 0.1, ease: "power1.inOut" }, 1);
+  // Avoid layout thrash during scrubbing: prefer transforms/opacity over width/height/display.
+  // Pin + width/height animations are a common source of jitter (esp. mobile).
+  gsap.set(scanner, {
+    willChange: "transform",
+    force3D: true,
+    transformOrigin: "50% 50%",
+  });
+  gsap.set(`${scanner} .numberTrack`, {
+    willChange: "visibility",
+    force3D: true,
+  });
+  gsap.set(`${scanner} .purchaseStatus`, {
+    willChange: "visibility",
+    force3D: true,
+  });
+  scanTl.to(`${scanner} .purchaseStatus`, { visibility: "visible", duration: 0 },1);
+  scanTl.to(`${scanner} .barcoadCheck`, { visibility: "visible", duration: 0 },1);
+
+  // // "Purchased" pill reveal: slide + fade in (no width animation).
+  // scanTl.fromTo(
+  //   `${scanner} .purchaseStatus`,
+  //   { autoAlpha: 0, xPercent: +500 },
+  //   { autoAlpha: 1, xPercent: 0, duration: 0.6, ease: "power1.out" },
+  //   0,
+  // );
+  scanTl.to(
+    group.rotation,
+    { y: `+=${spinRad}`, duration: 1, ease: "none" },
+    0,
+  );
 
   const removeBeepCue = addScrubTimelineCue(scanTl, 0.8 + 0.1, () => {
     if (!isCancelled()) playLiteSfx("beep");
@@ -345,13 +398,28 @@ export function attachLiteServiceScanPair(options: {
     addScanWarmTintToTimeline(scanTl, group, 1, 0.36);
   }
 
-  scanTl.to(group.scale, { x: 0, y: 0, z: 0, duration: 0.15, ease: "power1.inOut" }, 1);
-  scanTl.to(scanner, { height: "150px", width: "150px", duration: 0.5, ease: "power1.inOut" }, 1.1);
-  scanTl.to(scanner, { x: cardX, duration: 1, ease: "power1.inOut" }, 1.2);
-  scanTl.to(`${scanner} .numberTrack`,{x:"-=50%", duration:0.5, ease: "back.inOut" }, 1.5);
-  scanTl.to(scanner, { y: "-=200", duration: 0.3 }, 1.8);
-  scanTl.to(scanner, { height: "150px", width: "150px", duration: 0.4 }, 1.8);
-
+  scanTl.to(
+    group.scale,
+    { x: 0, y: 0, z: 0, duration: 0.15, ease: "power1.inOut" },
+    1,
+  );
+  // Instead of animating height/width (layout), scale the whole card.
+  // scanTl.fromTo(
+  //   scanner,
+  //   { scale: 1 },
+  //   { scale: 0, duration: 0.5, ease: "power1.inOut" },
+  //   1.1,
+  // );
+  // scanTl.to(scanner, { height: "150px", width: "150px", duration: 0.5, ease: "power1.inOut" }, 1.1);
+  // scanTl.to(scanner, { x: cardX, duration: 1, ease: "power1.inOut" }, 1.2);
+  scanTl.to(
+    `${scanner} .numberTrack`,
+    { x: "-=50%", duration: 0.5, ease: "back.inOut" },
+    1,
+  );
+  // scanTl.to(scanner, { y: "-=200", duration: 0.3 }, 1.8);
+  scanTl.to(scanner, { height: "150px", width: "150px", duration: 0.4 }, 1.2);
+  // scanTl.to(scanner, { scale: 0.86, duration: 0.4, ease: "power1.inOut" }, 1.8);
 
   return () => {
     removeBeepCue();
