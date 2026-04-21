@@ -227,15 +227,15 @@
     "mobile": {
       "webdev": {
         "position": [
-          120,
+          110,
           270,
           0
         ],
-        "scale": 0.7,
+        "scale": 0.6,
         "rotation": [
           0.4,
-          0.9,
-          0
+          0.7,
+          -0.1
         ],
         "float": {
           "speed": 5,
@@ -247,13 +247,53 @@
           ]
         }
       },
-      "ads": {
+      "algo": {
         "position": [
-          370,
-          20,
+          350,
+          200,
           0
         ],
-        "scale": 0.4,
+        "scale": 5.2,
+        "rotation": [
+          0.4,
+          -1,
+          0
+        ],
+        "float": {
+          "speed": 6,
+          "rotationIntensity": 0.6,
+          "floatIntensity": 0.8,
+          "floatingRange": [
+            -0.1,
+            0.4
+          ]
+        }
+      },
+      "video": {
+        "position": [
+          100,
+          35,
+          0
+        ],
+        "scale": 1.6,
+        "float": {
+          "speed": 5,
+          "rotationIntensity": 1,
+          "floatIntensity": 1,
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
+        }
+      },
+      
+      "ads": {
+        "position": [
+          390,
+          50,
+          0
+        ],
+        "scale": 0.31,
         "rotation": [
           0,
           -0.5,
@@ -271,14 +311,14 @@
       },
       "graphic": {
         "position": [
-          380,
-          -100,
+          390,
+          -200,
           0
         ],
         "scale": 1.6,
         "rotation": [
           0,
-          -0.5,
+          -0.9,
           0
         ],
         "float": {
@@ -294,10 +334,11 @@
       "smo": {
         "position": [
           100,
-          -300,
+          -400,
           0
         ],
-        "scale": 0.5,
+        "scale": 0.38,
+        "rotation":[-0.4,0,0.3],
         "float": {
           "speed": 4,
           "rotationIntensity": 0.5,
@@ -310,11 +351,12 @@
       },
       "seo": {
         "position": [
-          350,
-          -200,
+          390,
+          -340,
           0
         ],
-        "scale": 3,
+        "scale": 2,
+        "rotation":[0,-1,0],
         "float": {
           "speed": 3,
           "rotationIntensity": 0.3,
@@ -327,11 +369,16 @@
       },
       "appdev": {
         "position": [
-          100,
-          -100,
+          90,
+          -200,
           0
         ],
-        "scale": 0.9,
+        "scale": 0.7,
+        "rotation": [
+          0.5,
+          0.5,
+          -0.5
+        ],
         "float": {
           "speed": 5,
           "rotationIntensity": 0.5,
@@ -342,56 +389,14 @@
           ]
         }
       },
-      "video": {
-        "position": [
-          150,
-          10,
-          0
-        ],
-        "scale": 1.7,
-        "float": {
-          "speed": 5,
-          "rotationIntensity": 1,
-          "floatIntensity": 1,
-          "floatingRange": [
-            -0.1,
-            0.1
-          ]
-        }
-      },
-      "algo": {
-        "position": [
-          350,
-          200,
-          0
-        ],
-        "scale": [
-          6,
-          6,
-          6
-        ],
-        "rotation": [
-          0.4,
-          -1,
-          0
-        ],
-        "float": {
-          "speed": 6,
-          "rotationIntensity": 0.6,
-          "floatIntensity": 0.8,
-          "floatingRange": [
-            -0.1,
-            0.4
-          ]
-        }
-      },
+      
       "content": {
         "position": [
-          250,
-          -430,
+          240,
+          -350,
           0
         ],
-        "scale": 1,
+        "scale": 0.9,
         "float": {
           "speed": 5,
           "rotationIntensity": 1,
@@ -402,9 +407,9 @@
           ]
         },
         "rotation": [
-          1,
-          0,
-          0
+          0.1,
+          -0.2,
+          -0
         ]
       },
       "bucket": {
@@ -555,7 +560,7 @@
       },
       "video": {
         "position": [
-          40,
+          32,
           250,
           0
         ],
@@ -666,10 +671,10 @@
     "mobile": {
       "video": 900,
       "smo": 900,
-      "appdev": 600,
-      "graphic": 600,
+      "appdev": 700,
+      "graphic": 700,
       "algo": 900,
-      "content": 1000,
+      "content": 1100,
       "ads": 900,
       "webdev": 400
     }

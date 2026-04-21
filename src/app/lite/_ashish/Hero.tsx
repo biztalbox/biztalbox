@@ -145,11 +145,11 @@ const Hero = () => {
         {showCanvas && (
           <Canvas
             className="!fixed top-0 z-10 h-full w-full inset-0"
-            dpr={canvasDpr}
+            dpr={[1,1.5]}
             performance={{ min: 0.5, max: 1, debounce: 280 }}
             gl={{
               alpha: true,
-              antialias: !isTablet,
+              antialias: true,
               powerPreference: "high-performance",
             }}
           >
@@ -166,7 +166,7 @@ const Hero = () => {
         <Loader />
 
         {/* Hero Content  */}
-        <div className="relative z-10 pt-60 lg:pt-36" >
+        <div className="relative z-10 pt-72 lg:pt-36" >
           <div className="container flex flex-col gap-16">
             {/* Center — mobile: natural height only; sm+: fills middle row for vertical centering */}
             <div className="flex items-start justify-center pt-2 max-sm:self-start sm:-translate-y-4 sm:items-center sm:pt-0">
