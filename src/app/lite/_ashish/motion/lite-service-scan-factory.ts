@@ -34,7 +34,7 @@ export const LITE_SCAN_TIMING_DESKTOP: LiteScanTimingPreset = {
   approachScale: 2.5,
   approachPosition: { x: "-=140", y: "+=70" },
   approachRotationY: 10,
-  spinRadians: Math.PI * 2,
+  spinRadians: Math.PI / 1,
   cardSlideX: "+=600",
 };
 
@@ -45,7 +45,7 @@ export const LITE_SCAN_TIMING_TABLET: LiteScanTimingPreset = {
   approachScale: 2.15,
   approachPosition: { x: "-=115", y: "+=62" },
   approachRotationY: 8,
-  spinRadians: Math.PI * 2,
+  spinRadians: Math.PI/ 1,
   cardSlideX: "+=520",
 };
 
@@ -56,7 +56,7 @@ export const LITE_SCAN_TIMING_MOBILE: LiteScanTimingPreset = {
   approachScale: 1.85,
   approachPosition: { x: "-=85", y: "+=55" },
   approachRotationY: 6,
-  spinRadians: Math.PI * 2,
+  spinRadians: Math.PI/1,
   cardSlideX: "+=48vw",
 };
 
@@ -370,19 +370,13 @@ export function attachLiteServiceScanPair(options: {
     force3D: true,
   });
   gsap.set(`${scanner} .purchaseStatus`, {
-    willChange: "visibility",
+    willChange: "width, color",
     force3D: true,
   });
-  scanTl.to(`${scanner} .purchaseStatus`, { visibility: "visible", duration: 0 },1);
-  scanTl.to(`${scanner} .barcoadCheck`, { visibility: "visible", duration: 0 },1);
+  scanTl.to(`${scanner} .purchaseStatus`, { width: "135px", duration: 1 },0);
+  scanTl.to(`${scanner} .purchaseStatus`, { color: "red", duration: 0 },0.8);
+  scanTl.to(`${scanner} .barcoadCheck`, { visibility: "visible", duration: 0 },0.8);
 
-  // // "Purchased" pill reveal: slide + fade in (no width animation).
-  // scanTl.fromTo(
-  //   `${scanner} .purchaseStatus`,
-  //   { autoAlpha: 0, xPercent: +500 },
-  //   { autoAlpha: 1, xPercent: 0, duration: 0.6, ease: "power1.out" },
-  //   0,
-  // );
   scanTl.to(
     group.rotation,
     { y: `+=${spinRad}`, duration: 1, ease: "none" },
@@ -395,13 +389,13 @@ export function attachLiteServiceScanPair(options: {
 
   /** Warm rosy “scan” read on the GLB, peaking as the model vanishes (scrub reverses cleanly). */
   if (!lowPowerMode) {
-    addScanWarmTintToTimeline(scanTl, group, 1, 0.36);
+    addScanWarmTintToTimeline(scanTl, group, 0.5, 0.36);
   }
 
   scanTl.to(
     group.scale,
     { x: 0, y: 0, z: 0, duration: 0.15, ease: "power1.inOut" },
-    1,
+    0.8,
   );
   // Instead of animating height/width (layout), scale the whole card.
   // scanTl.fromTo(
