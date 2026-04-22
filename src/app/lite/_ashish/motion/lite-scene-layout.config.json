@@ -670,9 +670,9 @@
     },
     "mobile": {
       "video": 900,
-      "smo": 900,
-      "appdev": 700,
-      "graphic": 700,
+      "smo": 980,
+      "appdev": 800,
+      "graphic": 900,
       "algo": 900,
       "content": 1100,
       "ads": 900,

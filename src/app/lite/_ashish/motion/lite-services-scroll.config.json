@@ -47,7 +47,7 @@
           "motion": {
             "approach": {
               "position": {
-                "y": "+=300",
+                "y": "+=400",
                 "x": "-=110"
               },
               "scale": 6,
@@ -122,8 +122,8 @@
               },
               "scale": 1.4,
               "rotation": {
-                "x": "+=34.5",
-                "z": "+=3.2"
+                "x": "+=3.5",
+                "y": "+=9.4"
               },
               "duration": {
                 "rotation": 3
@@ -194,7 +194,7 @@
           "motion": {
             "approach": {
               "position": {
-                "y": "-=600",
+                "y": "-=560",
                 "x": "+=110"
               },
               "scale": 1.5,
@@ -270,7 +270,7 @@
           "motion": {
             "approach": {
               "position": {
-                "y": "-=390",
+                "y": "-=590",
                 "x": "-=150"
               },
               "scale": 3,
@@ -344,7 +344,7 @@
           "motion": {
             "approach": {
               "position": {
-                "y": "-=800",
+                "y": "-=850",
                 "x": "+=100"
               },
               "scale": 2.6,
@@ -417,7 +417,7 @@
           "motion": {
             "approach": {
               "position": {
-                "y": "-=490",
+                "y": "-=660",
                 "x": "-=20"
               },
               "scale": 2.1,
@@ -492,7 +492,7 @@
           "motion": {
             "approach": {
               "position": {
-                "y": "-=790",
+                "y": "-=800",
                 "x": "-=150"
               },
               "scale": 0.7,
@@ -567,7 +567,7 @@
           "motion": {
             "approach": {
               "position": {
-                "y": "-=400",
+                "y": "-=540",
                 "x": "+=130"
               },
               "scale": 1.6,
@@ -608,7 +608,7 @@
       "modelKey": "algo",
       "scannerId": "lite-scanner-algo",
       "approach": {
-        "trigger": "#section9",
+        "trigger": "#section10",
         "start": "center top",
         "endTrigger": "#lite-scanner-algo"
       },
