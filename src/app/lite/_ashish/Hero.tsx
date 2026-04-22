@@ -167,7 +167,7 @@ const Hero = () => {
         <Loader />
 
         {/* Hero Content  */}
-        <div className="relative z-10 pt-72 lg:pt-36" >
+        <div className="relative z-10 pt-60 lg:pt-36" >
           <div className="container flex flex-col gap-16">
             {/* Center — mobile: natural height only; sm+: fills middle row for vertical centering */}
             <div className="flex items-start justify-center pt-2 max-sm:self-start sm:-translate-y-4 sm:items-center sm:pt-0">
@@ -884,7 +884,7 @@ const Hero = () => {
                   #09
                 </span>
                 <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
-                  #10
+                  
                 </span>
               </div>
             </div>
