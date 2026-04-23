@@ -6,21 +6,29 @@ import { RightArrow, Search, SvgBgSm } from "../svg";
 import Link from "next/link";
 import RecentPostList from "./recentpostlist";
 import CategoryList from "./categorylist";
-import { useRouter} from "next/navigation";
+import { useRouter } from "next/navigation";
 import { validateSearchQuery, buildBlogUrl } from "@/utils/blog-utils";
+import BookCallForm from "../landingPage/BookCallForm";
+import Callback from "../landingPage/Callback";
+import SidebarCta from "./SidebarCta";
+import { useTheme } from "next-themes";
+import styles from "./blog-sidebar.module.scss";
 
 export default function BlogSidebar() {
   const router = useRouter();
+  const { resolvedTheme } = useTheme();
   const [isSubscribing, setIsSubscribing] = useState(false);
   const [subscribeMessage, setSubscribeMessage] = useState<string>("");
   const [subscribeStatus, setSubscribeStatus] = useState<
     "success" | "error" | ""
   >("");
 
+  const arrowClr = resolvedTheme === "dark" ? "#F3F3F4" : "#19191A";
+
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const searchQuery = (e.target as HTMLFormElement).search.value;
-    
+
     if (searchQuery && searchQuery.trim()) {
       const validatedQuery = validateSearchQuery(searchQuery);
       if (validatedQuery) {
@@ -71,7 +79,7 @@ export default function BlogSidebar() {
     } catch (error) {
       console.log("Error caught:", error);
       setSubscribeStatus("error");
-      setSubscribeMessage(error instanceof Error ? error.message : "An error occurred"); 
+      setSubscribeMessage(error instanceof Error ? error.message : "An error occurred");
     } finally {
       setIsSubscribing(false);
 
@@ -101,10 +109,10 @@ export default function BlogSidebar() {
           <div className="sidebar__search">
             <form onSubmit={handleSearch}>
               <div className="sidebar__search-input-2">
-                <input 
-                  type="text" 
-                  placeholder="Search" 
-                  name="search" 
+                <input
+                  type="text"
+                  placeholder="Search"
+                  name="search"
                   maxLength={100}
                   pattern="[^<>]*"
                   title="Search query cannot contain < or > characters"
@@ -117,6 +125,13 @@ export default function BlogSidebar() {
           </div>
         </div>
       </div>
+      
+      <div className="sidebar__widget mb-65">
+        <div className="sidebar__widget-content">
+          <SidebarCta/>
+        </div>
+      </div>
+
 
       {/* Category list */}
       <div className="sidebar__widget mb-65">
@@ -125,20 +140,21 @@ export default function BlogSidebar() {
           <CategoryList />
         </div>
       </div>
-      
-      <div className="tp-footer-3-widget mb-65">
-        <h4 className="tp-footer-2-widget-title">
+
+      <div className={`tp-footer-3-widget mb-65 ${styles.newsletter}`}>
+        <h4 className="sidebar__widget-title">
           Subscribe to our newsletter
         </h4>
         <form
           onSubmit={handleSubscribe}
-          className="tp-footer-3-input-box d-flex align-items-center"
+          className={`tp-footer-3-input-box d-flex align-items-center ${styles.inputBox}`}
         >
           <input
             type="email"
             name="email"
             placeholder="Enter Address..."
             disabled={isSubscribing}
+            className={`form-control ${styles.input}`}
             required
           />
           <button
@@ -151,7 +167,7 @@ export default function BlogSidebar() {
             ) : (
               <>
                 <span className="icon-1">
-                  <RightArrow clr="#19191A" />
+                  <RightArrow clr={arrowClr} />
                 </span>
                 <span className="icon-2">
                   <SvgBgSm />
@@ -162,18 +178,7 @@ export default function BlogSidebar() {
         </form>
         {subscribeMessage && (
           <div
-            style={{
-              marginTop: "10px",
-              padding: "4px 8px",
-              borderRadius: "4px",
-              fontSize: "14px",
-              backgroundColor:
-                subscribeStatus === "success" ? "#d4edda" : "#f8d7da",
-              color: subscribeStatus === "success" ? "#155724" : "#721c24",
-              border: `1px solid ${
-                subscribeStatus === "success" ? "#c3e6cb" : "#f5c6cb"
-              }`,
-            }}
+            className={`${styles.message} ${subscribeStatus === "success" ? styles.messageSuccess : styles.messageError}`}
           >
             {subscribeMessage}
           </div>
@@ -229,60 +234,60 @@ export default function BlogSidebar() {
       </div>
 
       <div className="sidebar__widget mb-65">
-  <h3 className="sidebar__widget-title"></h3>
+        <h3 className="sidebar__widget-title"></h3>
 
-  <div
-    style={{
-      display: 'flex',
-      gap: '12px'
-    }}
-  >
-    <a
-      href="https://biztalbox.com/usa-sitemap.xml"
-      style={{
-        flex: 1,
-        padding: '12px 18px',
-        textAlign: 'center',
-        opacity: 0, // default invisible
-        backgroundColor: '#004240',
-        color: '#ffffff',
-        textDecoration: 'none',
-        borderRadius: '6px',
-        fontWeight: '500',
-        cursor: 'pointer',
-        transition: 'opacity 0.25s ease'
-      }}
-      onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.25')}
-      onMouseLeave={(e) => (e.currentTarget.style.opacity = '0')}
-    >
-      USA County
-    </a>
+        <div
+          style={{
+            display: 'flex',
+            gap: '12px'
+          }}
+        >
+          <a
+            href="https://biztalbox.com/usa-sitemap.xml"
+            style={{
+              flex: 1,
+              padding: '12px 18px',
+              textAlign: 'center',
+              opacity: 0, // default invisible
+              backgroundColor: '#004240',
+              color: '#ffffff',
+              textDecoration: 'none',
+              borderRadius: '6px',
+              fontWeight: '500',
+              cursor: 'pointer',
+              transition: 'opacity 0.25s ease'
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.25')}
+            onMouseLeave={(e) => (e.currentTarget.style.opacity = '0')}
+          >
+            USA County
+          </a>
 
-    <a
-      href="https://biztalbox.com/industry.xml"
-      style={{
-        flex: 1,
-        padding: '12px 18px',
-        textAlign: 'center',
-        opacity: 0, // default invisible
-        backgroundColor: '#004240',
-        color: '#ffffff',
-        textDecoration: 'none',
-        borderRadius: '6px',
-        fontWeight: '500',
-        cursor: 'pointer',
-        transition: 'opacity 0.25s ease'
-      }}
-      onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.25')}
-      onMouseLeave={(e) => (e.currentTarget.style.opacity = '0')}
-    >
-      Industry
-    </a>
-  </div>
-</div>
+          <a
+            href="https://biztalbox.com/industry.xml"
+            style={{
+              flex: 1,
+              padding: '12px 18px',
+              textAlign: 'center',
+              opacity: 0, // default invisible
+              backgroundColor: '#004240',
+              color: '#ffffff',
+              textDecoration: 'none',
+              borderRadius: '6px',
+              fontWeight: '500',
+              cursor: 'pointer',
+              transition: 'opacity 0.25s ease'
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.25')}
+            onMouseLeave={(e) => (e.currentTarget.style.opacity = '0')}
+          >
+            Industry
+          </a>
+        </div>
+      </div>
 
 
-</div>
+    </div>
 
   );
 }
