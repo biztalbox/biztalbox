@@ -907,7 +907,7 @@ const Hero = () => {
       {/* service area end */}
 
 
-      <section id="recieptSection" className="fixed hidden md:block z-20 bottom-0 left-5 bg-white p-3 translate-y-full">
+      <section id="recieptSection" className="fixed hidden lg:block z-20 bottom-0 left-5 bg-white p-3 translate-y-full">
         <div className="flex flex-col gap-1 w-44 divide-y-2 divide-x-0 divide-dashed text-sm font-thin font-mono">
 
           <div className="flex justify-between">
@@ -988,7 +988,7 @@ const Hero = () => {
           <h3 className="text-3xl md:text-4xl lg:text-6xl font-thin uppercase leading-none mx-auto text-center relative z-10">
             Thanks for being here.
           </h3>
-          <div className="h-80 md:h-56 lg:h-48 2xl:h-[30rem]"></div>
+          <div className="h-80 md:h-56 lg:h-[30rem]"></div>
           <Link href="/contact" className="hover:!bg-black group bg-[#F2F2F2] hover:!text-white relative z-10 text-center uppercase text-3xl md:text-5xl lg:text-7xl font-thin mx-auto px-5 py-4 border border-black rounded-full">
 
             Let&apos;s Talk <svg className="group-hover:stroke-white stroke-black"
