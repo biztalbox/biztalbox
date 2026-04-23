@@ -1,0 +1,46 @@
+.root {
+  /* light defaults */
+  --bb-text: #0f172a;
+  --bb-muted: rgba(15, 23, 42, 0.7);
+  --bb-surface: rgba(255, 255, 255, 0.9);
+  --bb-surface-solid: #ffffff;
+  --bb-border: rgba(15, 23, 42, 0.18);
+
+  color: var(--bb-text);
+}
+
+[data-theme="dark"] .root {
+  --bb-text: #ffffff;
+  --bb-muted: rgba(245, 247, 245, 0.65);
+  --bb-surface: rgba(30, 30, 30, 0.92);
+  --bb-surface-solid: #1e1e1e;
+  --bb-border: rgba(234, 234, 235, 0.9);
+}
+
+.iconCircle {
+  border: 1px solid var(--bb-border);
+  color: var(--bb-text);
+}
+
+.itemText {
+  color: var(--bb-text);
+}
+
+.formWrap {
+  /* keep it neutral; sidebar widget usually provides its own bg */
+}
+
+.control {
+  background-color: transparent !important;
+  border-color: var(--bb-border) !important;
+  color: var(--bb-text) !important;
+}
+
+.control::placeholder {
+  color: var(--bb-muted);
+}
+
+.control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(51, 110, 249, 0.25) !important;
+}
+
