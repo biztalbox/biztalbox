@@ -29,7 +29,7 @@ export type LiteScanTimingPreset = {
 
 export const LITE_SCAN_TIMING_DESKTOP: LiteScanTimingPreset = {
   approachScrub: 1.2,
-  scanScrub: 5,
+  scanScrub: 2,
   scanPinStart: "top 28%",
   approachScale: 2.5,
   approachPosition: { x: "-=140", y: "+=70" },
@@ -40,7 +40,7 @@ export const LITE_SCAN_TIMING_DESKTOP: LiteScanTimingPreset = {
 
 export const LITE_SCAN_TIMING_TABLET: LiteScanTimingPreset = {
   approachScrub: 0.9,
-  scanScrub: 3,
+  scanScrub: 1.5,
   scanPinStart: "top 25%",
   approachScale: 2.15,
   approachPosition: { x: "-=115", y: "+=62" },
@@ -51,7 +51,7 @@ export const LITE_SCAN_TIMING_TABLET: LiteScanTimingPreset = {
 
 export const LITE_SCAN_TIMING_MOBILE: LiteScanTimingPreset = {
   approachScrub: 0.65,
-  scanScrub: 1.75,
+  scanScrub: 1,
   scanPinStart: "top 22%",
   approachScale: 1.85,
   approachPosition: { x: "-=85", y: "+=55" },
@@ -298,6 +298,8 @@ export function attachLiteServiceScanPair(options: {
       start: approachScrollStart,
       end: approachScrollEnd,
       scrub: timing.approachScrub,
+      invalidateOnRefresh: true,
+      fastScrollEnd: true,
     },
   });
 
@@ -309,6 +311,7 @@ export function attachLiteServiceScanPair(options: {
       z: scaleTriple.z,
       duration: scaleDur,
       ease: "power1.inOut",
+      overwrite: "auto",
     },
     0,
   );
@@ -320,12 +323,13 @@ export function attachLiteServiceScanPair(options: {
       ...(posTriple.z !== undefined ? { z: posTriple.z } : {}),
       duration: posDur,
       ease: "power1.inOut",
+      overwrite: "auto",
     },
     0,
   );
   approachTl.to(
     group.rotation,
-    { ...rotProps, duration: rotDur, ease: "power1.inOut" },
+    { ...rotProps, duration: rotDur, ease: "power1.inOut", overwrite: "auto" },
     0,
   );
 
@@ -338,8 +342,9 @@ export function attachLiteServiceScanPair(options: {
       pin: true,
       pinSpacing: true,
       anticipatePin: 1,
-      scrub: 1,
+      scrub: timing.scanScrub,
       invalidateOnRefresh: true,
+      fastScrollEnd: true,
       /**
        * Prevent “fast scroll” race where the approach scrub keeps rendering and
        * overwrites scan end-state (e.g. model scale not reaching 0).
@@ -379,7 +384,7 @@ export function attachLiteServiceScanPair(options: {
 
   scanTl.to(
     group.rotation,
-    { y: `+=${spinRad}`, duration: 1, ease: "none" },
+    { y: `+=${spinRad}`, duration: 1, ease: "none", overwrite: "auto" },
     0,
   );
 
@@ -394,7 +399,7 @@ export function attachLiteServiceScanPair(options: {
 
   scanTl.to(
     group.scale,
-    { x: 0, y: 0, z: 0, duration: 0.15, ease: "power1.inOut" },
+    { x: 0, y: 0, z: 0, duration: 0.15, ease: "power1.inOut", overwrite: "auto" },
     0.8,
   );
   // Instead of animating height/width (layout), scale the whole card.
@@ -413,7 +418,6 @@ export function attachLiteServiceScanPair(options: {
   );
   // scanTl.to(scanner, { y: "-=200", duration: 0.3 }, 1.8);
   scanTl.to(scanner, { height: "150px", width: "150px", duration: 0.4 }, 1.2);
-  // scanTl.to(scanner, { scale: 0.86, duration: 0.4, ease: "power1.inOut" }, 1.8);
 
   return () => {
     removeBeepCue();

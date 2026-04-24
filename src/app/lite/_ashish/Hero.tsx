@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import MyCanvas from "./MyCanvas";
-import { AdaptiveDpr } from "@react-three/drei";
+import { AdaptiveDpr, useProgress } from "@react-three/drei";
 import { Perf } from 'r3f-perf'
 import { Canvas, useThree } from "@react-three/fiber";
 import { Suspense, useEffect, useLayoutEffect, useState } from "react";
@@ -29,10 +29,22 @@ const LITE_SERVICE_PAGE_PATHS = {
 
 type LiteServicePageKey = keyof typeof LITE_SERVICE_PAGE_PATHS;
 
-const Loader = dynamic(
-  () => import("@react-three/drei").then((mod) => mod.Loader),
-  { ssr: false },
-);
+function LiteGifLoader({ forceVisible }: { forceVisible: boolean }) {
+  const { active, progress } = useProgress();
+  if (!forceVisible && !active && progress >= 100) return null;
+  return (
+    <div className="fixed inset-0 z-[60] flex items-center justify-center bg-white">
+      <Image
+        src="/assets/loader/white.gif"
+        alt="Loading"
+        width={220}
+        height={220}
+        priority
+        unoptimized
+      />
+    </div>
+  );
+}
 
 function formatReceiptDate(d: Date): string {
   const dd = String(d.getDate()).padStart(2, "0");
@@ -99,6 +111,8 @@ function ResponsiveHeroCamera() {
 const Hero = () => {
   const [showCanvas, setShowCanvas] = useState(false);
   const [viewportWidth, setViewportWidth] = useState(1440);
+  const [forceLoaderVisible, setForceLoaderVisible] = useState(true);
+  const { active: loadingActive, progress: loadingProgress } = useProgress();
 
 
   // useScrollSmooth();
@@ -125,6 +139,27 @@ const Hero = () => {
     };
   }, []);
 
+  // Hide loader only when assets fully loaded.
+  useEffect(() => {
+    if (!loadingActive && loadingProgress >= 100) setForceLoaderVisible(false);
+  }, [loadingActive, loadingProgress]);
+
+  // While loader is visible, freeze page scroll.
+  useEffect(() => {
+    const locked = forceLoaderVisible || loadingActive || loadingProgress < 100;
+    const el = document.documentElement;
+    const body = document.body;
+    if (locked) {
+      body.style.overflow = "hidden";
+      el.style.overflow = "hidden";
+    }
+    return () => {
+      // Restore scrolling once loading is done.
+      body.style.overflow = "auto";
+      el.style.overflow = "auto";
+    };
+  }, [forceLoaderVisible, loadingActive, loadingProgress]);
+
   useEffect(() => {
     const w = globalThis as any;
     const syncViewportWidth = () => setViewportWidth(w?.innerWidth ?? 1440);
@@ -141,6 +176,7 @@ const Hero = () => {
   return (
     <div className="relative">
 
+      <LiteGifLoader forceVisible={forceLoaderVisible} />
       <section id="section0" className="relative min-h-[100svh] overflow-hidden">
         {showCanvas && (
           <Canvas
@@ -163,8 +199,6 @@ const Hero = () => {
             {/* <Perf style={{marginTop:"120px",marginLeft:"50px", height:"200px"}} position="top-left" showGraph /> */}
           </Canvas>
         )}
-
-        <Loader />
 
         {/* Hero Content  */}
         <div className="relative z-10 pt-60 lg:pt-36" >
@@ -988,7 +1022,7 @@ const Hero = () => {
           <h3 className="text-3xl md:text-4xl lg:text-6xl font-thin uppercase leading-none mx-auto text-center relative z-10">
             Thanks for being here.
           </h3>
-          <div className="h-80 md:h-56 lg:h-[30rem]"></div>
+          <div className="h-80 md:h-56 lg:h-72 2xl:h-[30rem]"></div>
           <Link href="/contact" className="hover:!bg-black group bg-[#F2F2F2] hover:!text-white relative z-10 text-center uppercase text-3xl md:text-5xl lg:text-7xl font-thin mx-auto px-5 py-4 border border-black rounded-full">
 
             Let&apos;s Talk <svg className="group-hover:stroke-white stroke-black"

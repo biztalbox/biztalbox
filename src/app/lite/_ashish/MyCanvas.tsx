@@ -303,8 +303,8 @@ const MyCanvas = () => {
       let matchMediaInstance: gsap.MatchMedia | null = null;
       let addToCartTl: gsap.core.Timeline | null = null;
       const ctaCart = resolveCtaCartConfig(layoutBreakpoint);
-      const ctaScrub =
-        layoutBreakpoint === "mobile" ? 2 : layoutBreakpoint === "tablet" ? 8 : 15;
+      // Use immediate scrub for CTA so reverse doesn't "lag" (numeric scrub smooths over seconds).
+      const ctaScrub = true;
 
       const mountScroll = () => {
         if (
@@ -370,7 +370,7 @@ const MyCanvas = () => {
 
         addToCartTl = gsap.timeline({
           defaults: {
-            duration: 1, ease: "power1.inOut"
+            duration: 0.5, ease: "power1.inOut"
           },
           scrollTrigger: {
             trigger: "#ctaSection",
@@ -379,6 +379,19 @@ const MyCanvas = () => {
             scrub: ctaScrub,
             invalidateOnRefresh: true,
             fastScrollEnd: true,
+            onUpdate: (self) => {
+              // Guard tiny reverse progress near start (prevents brief "ghost" visibility).
+              if (self.direction < 0 && self.progress < 0.015) {
+                addToCartTl?.pause(0);
+                addToCartTl?.progress(0);
+              }
+            },
+            onLeaveBack: () => {
+              // When scrolling back above CTA, snap everything to the hidden (t=0) state.
+              // This avoids scrub-smoothing leaving modals/receipt visible for seconds.
+              addToCartTl?.pause(0);
+              addToCartTl?.progress(0);
+            },
           },
         });
 

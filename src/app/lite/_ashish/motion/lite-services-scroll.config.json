@@ -611,7 +611,7 @@
       "modelKey": "algo",
       "scannerId": "lite-scanner-algo",
       "approach": {
-        "trigger": "#section10",
+        "trigger": "#section9",
         "start": "center top",
         "endTrigger": "#lite-scanner-algo"
       },
@@ -625,8 +625,7 @@
             "x": "-=110"
           },
           "rotation": {
-            "x": "+=31.5",
-            "z": "+=0"
+            "x": "+=31.5"
           },
           "scale": 2,
           "durations": {
