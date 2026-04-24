@@ -177,7 +177,7 @@ const Hero = () => {
     <div className="relative">
 
       <LiteGifLoader forceVisible={forceLoaderVisible} />
-      <section id="section0" className="relative min-h-[100svh] overflow-hidden">
+      <section id="section0" className="relative min-h-[100svh] overflow-hidden bg-[#f2f2f2]">
         {showCanvas && (
           <Canvas
             className="!fixed top-0 z-10 h-full w-full inset-0"
@@ -229,7 +229,7 @@ const Hero = () => {
       </section>
 
       {/* about section */}
-      <section id="section1" className="relative" >
+      <section id="section1" className="relative bg-[#f2f2f2]" >
         <div className="container relative py-10">
           {/* Top: centered nav + right pill */}
           <div className="relative z-10 flex flex-col gap-6 lg:flex-row items-center lg:justify-between">

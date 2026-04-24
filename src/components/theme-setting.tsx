@@ -2,13 +2,17 @@
 import React, { useEffect } from "react";
 import { useTheme } from "next-themes";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/navigation";
 const ThemeSetting = () => {
   const { setTheme, theme } = useTheme();
   const [settingOpen, setSettingOpen] = React.useState(false);
 
+  const router = useRouter();
+
   function handleOpenSetting() {
     setSettingOpen(!settingOpen);
   };
+
 
   useEffect(() => {
     // If no theme is set yet, default to light.
@@ -27,7 +31,7 @@ const ThemeSetting = () => {
         <div className="tp-theme-dir mb-20">
           <label className="tp-theme-dir-main" htmlFor="tp-dir-toggler">
             <span
-              onClick={() => setTheme("dark")}
+              onClick={() => {setTheme("dark"); router.push("/?mode=dark");}}
               className={`tp-theme-dir-rtl ${theme === "dark" ? "active" : ""}`}
             >
               Dark

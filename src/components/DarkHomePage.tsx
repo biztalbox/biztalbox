@@ -25,7 +25,7 @@ import HeaderEleven from "@/layouts/headers/header-eleven";
 import PerformanceMonitor from "@/components/PerformanceMonitor";
 import AshishCarousel from "./AshishCarousel";
 
-const HomePage = () => {
+const DarkHomePage = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [componentsLoaded, setComponentsLoaded] = useState<number>(0);
   const loadingRef = useRef<HTMLDivElement>(null);
@@ -265,4 +265,4 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
+export default DarkHomePage;

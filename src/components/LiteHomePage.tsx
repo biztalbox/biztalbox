@@ -1,17 +1,17 @@
-import Header from "./_ashish/Header";
+
+import "@/styles/tailwind-tw.css";
+import Header from "@/app/_lite/_ashish/Header";
 import Wrapper from "@/layouts/wrapper";
-import Hero from "./_ashish/Hero";
+import Hero from "@/app/_lite/_ashish/Hero";
 
 
-const page = () => {
+const LiteHomePage = () => {
   return (
     <Wrapper>
       {/* <main className="bg-neutral-100 text-black"> */}
 
       <Header />
       <div id="litePage">
-
-
         <Hero />
         {/* <MobileSceme /> */}
         {/* </main> */}
@@ -20,4 +20,4 @@ const page = () => {
     </Wrapper>
   );
 };
-export default page;
+export default LiteHomePage;
