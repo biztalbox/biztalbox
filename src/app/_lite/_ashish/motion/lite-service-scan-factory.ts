@@ -35,7 +35,7 @@ export const LITE_SCAN_TIMING_DESKTOP: LiteScanTimingPreset = {
   approachPosition: { x: "-=140", y: "+=70" },
   approachRotationY: 10,
   spinRadians: Math.PI / 1,
-  cardSlideX: "+=600",
+  cardSlideX: "",
 };
 
 export const LITE_SCAN_TIMING_TABLET: LiteScanTimingPreset = {
@@ -46,7 +46,7 @@ export const LITE_SCAN_TIMING_TABLET: LiteScanTimingPreset = {
   approachPosition: { x: "-=115", y: "+=62" },
   approachRotationY: 8,
   spinRadians: Math.PI/ 1,
-  cardSlideX: "+=520",
+  cardSlideX: "",
 };
 
 export const LITE_SCAN_TIMING_MOBILE: LiteScanTimingPreset = {
@@ -57,7 +57,7 @@ export const LITE_SCAN_TIMING_MOBILE: LiteScanTimingPreset = {
   approachPosition: { x: "-=85", y: "+=55" },
   approachRotationY: 6,
   spinRadians: Math.PI/1,
-  cardSlideX: "+=48vw",
+  cardSlideX: "",
 };
 
 type ScanTimingPresetsJson = Partial<
@@ -410,7 +410,7 @@ export function attachLiteServiceScanPair(options: {
   //   1.1,
   // );
   // scanTl.to(scanner, { height: "150px", width: "150px", duration: 0.5, ease: "power1.inOut" }, 1.1);
-  // scanTl.to(scanner, { x: cardX, duration: 1, ease: "power1.inOut" }, 1.2);
+  scanTl.to(scanner, { x: cardX, duration: 1, ease: "power1.inOut" }, 1.2);
   scanTl.to(
     `${scanner} .numberTrack`,
     { x: "-=50%", duration: 0.5, ease: "back.inOut" },

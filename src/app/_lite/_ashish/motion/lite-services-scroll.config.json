@@ -6,7 +6,7 @@
   },
   "scanTimingPresets": {
     "desktop": {
-      "cardSlideX": "+=550"
+      "cardSlideX": "-=400"
     },
     "tablet": {
       "cardSlideX": "0"

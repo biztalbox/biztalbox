@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import MyCanvas from "./MyCanvas";
-import { AdaptiveDpr, useProgress } from "@react-three/drei";
+import { AdaptiveDpr } from "@react-three/drei";
 import { Perf } from 'r3f-perf'
 import { Canvas, useThree } from "@react-three/fiber";
 import { Suspense, useEffect, useLayoutEffect, useState } from "react";
@@ -29,23 +29,6 @@ const LITE_SERVICE_PAGE_PATHS = {
 
 type LiteServicePageKey = keyof typeof LITE_SERVICE_PAGE_PATHS;
 
-function LiteGifLoader({ forceVisible }: { forceVisible: boolean }) {
-  const { active, progress } = useProgress();
-  if (!forceVisible && !active && progress >= 100) return null;
-  return (
-    <div className="fixed inset-0 z-[60] flex items-center justify-center bg-white">
-      <Image
-        src="/assets/loader/white.gif"
-        alt="Loading"
-        width={220}
-        height={220}
-        priority
-        unoptimized
-      />
-    </div>
-  );
-}
-
 function formatReceiptDate(d: Date): string {
   const dd = String(d.getDate()).padStart(2, "0");
   const mm = String(d.getMonth() + 1).padStart(2, "0");
@@ -57,7 +40,8 @@ function LiteServiceViewMoreLink({ service, text = "View More" }: { service: Lit
   return (
     <Link
       href={LITE_SERVICE_PAGE_PATHS[service]}
-      className="relative z-20 mx-auto block w-fit mt-5 rounded-full border border-black bg-[#F2F2F2] px-10 py-2.5 text-sm font-medium uppercase text-black transition-colors hover:bg-black hover:!text-white"
+      className="relative mx-auto block w-fit mt-5 rounded-full border border-black bg-[#F2F2F2] px-10 py-2.5 text-sm font-medium uppercase text-black transition-colors hover:bg-black hover:!text-white"
+      style={{ zIndex: 20 }}
     >
       {text}
     </Link>
@@ -111,9 +95,6 @@ function ResponsiveHeroCamera() {
 const Hero = () => {
   const [showCanvas, setShowCanvas] = useState(false);
   const [viewportWidth, setViewportWidth] = useState(1440);
-  const [forceLoaderVisible, setForceLoaderVisible] = useState(true);
-  const { active: loadingActive, progress: loadingProgress } = useProgress();
-
 
   // useScrollSmooth();
 
@@ -139,27 +120,6 @@ const Hero = () => {
     };
   }, []);
 
-  // Hide loader only when assets fully loaded.
-  useEffect(() => {
-    if (!loadingActive && loadingProgress >= 100) setForceLoaderVisible(false);
-  }, [loadingActive, loadingProgress]);
-
-  // While loader is visible, freeze page scroll.
-  useEffect(() => {
-    const locked = forceLoaderVisible || loadingActive || loadingProgress < 100;
-    const el = document.documentElement;
-    const body = document.body;
-    if (locked) {
-      body.style.overflow = "hidden";
-      el.style.overflow = "hidden";
-    }
-    return () => {
-      // Restore scrolling once loading is done.
-      body.style.overflow = "auto";
-      el.style.overflow = "auto";
-    };
-  }, [forceLoaderVisible, loadingActive, loadingProgress]);
-
   useEffect(() => {
     const w = globalThis as any;
     const syncViewportWidth = () => setViewportWidth(w?.innerWidth ?? 1440);
@@ -175,12 +135,17 @@ const Hero = () => {
 
   return (
     <div className="relative">
-
-      <LiteGifLoader forceVisible={forceLoaderVisible} />
-      <section id="section0" className="relative min-h-[100svh] overflow-hidden bg-[#f2f2f2]">
+      <section id="section0" className="min-h-[100svh] overflow-hidden">
         {showCanvas && (
           <Canvas
-            className="!fixed top-0 z-10 h-full w-full inset-0"
+            // WebGL sits above base content, but below explicit overlay UI.
+            className="!fixed z-10 inset-0 h-full w-full pointer-events-none"
+            style={{
+              position: "fixed",
+              inset: 0,
+              zIndex: 10,
+              pointerEvents: "none",
+            }}
             dpr={canvasDpr}
             performance={{ min: 0.5, max: 1, debounce: 280 }}
             gl={{
@@ -201,11 +166,11 @@ const Hero = () => {
         )}
 
         {/* Hero Content  */}
-        <div className="relative z-10 pt-60 lg:pt-36" >
-          <div className="container flex flex-col gap-16">
+        <div className="relative z-20 pt-60 lg:pt-36" >
+          <div className="container">
             {/* Center — mobile: natural height only; sm+: fills middle row for vertical centering */}
             <div className="flex items-start justify-center pt-2 max-sm:self-start sm:-translate-y-4 sm:items-center sm:pt-0">
-              <div className="w-full max-w-screen text-center flex flex-col gap-0">
+              <div className="w-full max-w-screen text-center flex flex-col gap-0 pt-2">
                 <p className="whitespace-nowrap uppercase text-center"
                 >
                   Creative Souls, Strategic Minds
@@ -229,10 +194,10 @@ const Hero = () => {
       </section>
 
       {/* about section */}
-      <section id="section1" className="relative bg-[#f2f2f2]" >
-        <div className="container relative py-10">
+      <section id="section1" className="" >
+        <div className="container py-10">
           {/* Top: centered nav + right pill */}
-          <div className="relative z-10 flex flex-col gap-6 lg:flex-row items-center lg:justify-between">
+          <div className="relative z-20 flex flex-col gap-6 lg:flex-row items-center lg:justify-between">
             <div className="flex flex-wrap items-center mx-auto justify-center gap-x-5 gap-y-2 text-center text-xs uppercase">
               <span className="whitespace-nowrap">Search Visibility</span>
               <span className="whitespace-nowrap">Brand Strategy</span>
@@ -242,7 +207,7 @@ const Hero = () => {
           </div>
 
           {/* Main headline */}
-          <div className="relative z-10 mx-auto mt-14 max-w-[1100px] sm:mt-20 lg:mt-24">
+          <div className="mx-auto mt-14 max-w-[1100px] sm:mt-20 lg:mt-24">
             <h2 className="text-center"
             >
               We don’t just build a
@@ -252,7 +217,7 @@ const Hero = () => {
           </div>
 
           {/* Bottom two columns + CTA */}
-          <div className="relative z-10 mx-auto mt-16 grid  gap-10 sm:mt-20 lg:mt-28 lg:grid-cols-2 lg:gap-14">
+          <div className="mx-auto mt-16 grid  gap-10 sm:mt-20 lg:mt-28 lg:grid-cols-2 lg:gap-14">
             <p>
               Biztal Box is a marketing agency that enhances brand&apos;s online presence through a range of services including SEO optimization, web development, graphic design, and more. Our dynamic agency crafts strategies that stick while bringing every client&apos;s unique perspective to life.            </p>
             <div className="flex flex-col lg:items-start">
@@ -261,7 +226,11 @@ const Hero = () => {
 
             </div>
           </div>
-          <Link href="/about" className="relative bg-neutral-200 group hover:bg-black hover:text-white z-10 mt-6 w-fit block mx-auto text-center items-center gap-2 px-3 py-2 font-medium border">
+          <Link
+            href="/about"
+            className="relative bg-neutral-200 group hover:bg-black hover:text-white z-20 mt-6 w-fit block mx-auto text-center items-center gap-2 px-3 py-2 font-medium border"
+            style={{ zIndex: 20 }}
+          >
             About Us <svg className="group-hover:stroke-white stroke-black"
               xmlns="http://www.w3.org/2000/svg"
               width="18"
@@ -281,11 +250,11 @@ const Hero = () => {
       </section>
 
       {/* SEO Service Section */}
-      <section id="section2" className="relative bg-[#f2f2f2]">
+      <section id="section2" className="relative">
         <div className="container flex flex-col pt-16">
           {/* Left — PRODUCTS (top, vertical) */}
           <div
-            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8 hidden md:block"
+            className="absolute left-3 top-[18%] sm:left-5 lg:left-8 hidden md:block"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -294,9 +263,11 @@ const Hero = () => {
           </div>
 
           {/* #01 card */}
-          <div className="flex justify-center self-end">
-            <div className="rounded-md border border-black p-3.5 text-center">
-              <p className="text-4xl font-semibold leading-none tracking-tight">#01</p>
+          <div className="flex justify-center self-center lg:self-start">
+            <div className="rounded-md border border-black p-4 text-center">
+            <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
+                  #01
+                </span>
             </div>
           </div>
 
@@ -339,7 +310,11 @@ const Hero = () => {
 
           {/* Center ticket */}
 
-          <div className="relative z-10 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3" style={{ background: "transparent" }} id="lite-scanner-seo">
+          <div
+            className="relative z-50 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
+            id="lite-scanner-seo"
+            style={{ zIndex: 20, background: "transparent" }}
+          >
 
             {/* Two panels in one row: GSAP `xPercent` on the track scrubs forward/back (no DOM text swaps). */}
             <div className="relative overflow-hidden text-left">
@@ -377,10 +352,10 @@ const Hero = () => {
       </section>
 
       {/* SMO Service Section */}
-      <section id="section3" className="relative bg-[#f2f2f2]">
+      <section id="section3" className="relative">
         <div className="container flex flex-col pt-16">
           <div
-            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8 hidden md:block"
+            className="absolute left-3 top-[18%] sm:left-5 lg:left-8 hidden md:block"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -390,7 +365,7 @@ const Hero = () => {
 
           <div className="pt-40 max-w-screen mx-auto">
             <h2 className="text-center whitespace-nowrap">Social Media Optimization</h2>
-            <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative z-20">
+            <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
               Building everyday brand presence
             </h3>
             <div className="grid md:grid-cols-2 md:gap-10 mt-6">
@@ -411,9 +386,9 @@ const Hero = () => {
           </div>
 
           <div
-            className="relative z-10 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
-            style={{ background: "transparent" }}
+            className="relative z-50 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
             id="lite-scanner-smo"
+            style={{ zIndex: 20, background: "transparent" }}
           >
             <div className="relative overflow-hidden text-left">
               <div className="numberTrack flex w-[200%] will-change-transform">
@@ -441,10 +416,10 @@ const Hero = () => {
       </section>
 
       {/* Website Development */}
-      <section id="section4" className="relative bg-[#f2f2f2]">
+      <section id="section4" className="relative">
         <div className="container flex flex-col pt-16">
           <div
-            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8 hidden md:block"
+            className="absolute left-3 top-[18%] sm:left-5 lg:left-8 hidden md:block"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -454,7 +429,7 @@ const Hero = () => {
 
           <div className="pt-40 max-w-screen mx-auto">
             <h2 className="text-center">Website Development</h2>
-            <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative z-20">
+            <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
               Performance-focused websites
             </h3>
             <div className="grid md:grid-cols-2 md:gap-10 mt-6">
@@ -479,9 +454,9 @@ const Hero = () => {
           </div>
 
           <div
-            className="relative z-10 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
-            style={{ background: "transparent" }}
+            className="relative z-50 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
             id="lite-scanner-webdev"
+            style={{ zIndex: 20, background: "transparent" }}
           >
             <div className="relative overflow-hidden text-left">
               <div className="numberTrack flex w-[200%] will-change-transform">
@@ -509,10 +484,10 @@ const Hero = () => {
       </section>
 
       {/* Graphic Designing */}
-      <section id="section5" className="relative bg-[#f2f2f2]">
+      <section id="section5" className="relative">
         <div className="container flex flex-col pt-16">
           <div
-            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8 hidden md:block"
+            className="absolute left-3 top-[18%] sm:left-5 lg:left-8 hidden md:block"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -522,7 +497,7 @@ const Hero = () => {
 
           <div className="pt-40 max-w-screen mx-auto">
             <h2 className="text-center">Graphic Designing</h2>
-            <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative z-20">
+            <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
               Clear and consistent brand identity
             </h3>
             <div className="grid md:grid-cols-2 md:gap-10 mt-6">
@@ -546,9 +521,9 @@ const Hero = () => {
           </div>
 
           <div
-            className="relative z-10 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
-            style={{ background: "transparent" }}
+            className="relative z-50 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
             id="lite-scanner-graphic"
+            style={{ zIndex: 20, background: "transparent" }}
           >
             <div className="relative overflow-hidden text-left">
               <div className="numberTrack flex w-[200%] will-change-transform">
@@ -576,10 +551,10 @@ const Hero = () => {
       </section>
 
       {/* Video Editing / Motion Graphics */}
-      <section id="section6" className="relative bg-[#f2f2f2]">
+      <section id="section6" className="relative">
         <div className="container flex flex-col pt-16">
           <div
-            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8 hidden md:block"
+            className="absolute left-3 top-[18%] sm:left-5 lg:left-8 hidden md:block"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -589,7 +564,7 @@ const Hero = () => {
 
           <div className="pt-40 max-w-screen mx-auto">
             <h2 className="text-center">Motion Graphics</h2>
-            <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative z-20">
+            <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
               Storytelling Through Motion
             </h3>
             <div className="grid md:grid-cols-2 md:gap-10 mt-6">
@@ -615,9 +590,9 @@ const Hero = () => {
           </div>
 
           <div
-            className="relative z-10 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
-            style={{ background: "transparent" }}
+            className="relative z-50 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
             id="lite-scanner-video"
+            style={{ zIndex: 20, background: "transparent" }}
           >
             <div className="relative overflow-hidden text-left">
               <div className="numberTrack flex w-[200%] will-change-transform">
@@ -645,10 +620,10 @@ const Hero = () => {
       </section>
 
       {/* Content Writing */}
-      <section id="section7" className="relative bg-[#f2f2f2]">
+      <section id="section7" className="relative">
         <div className="container flex flex-col pt-16">
           <div
-            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8 hidden md:block"
+            className="absolute left-3 top-[18%] sm:left-5 lg:left-8 hidden md:block"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -658,7 +633,7 @@ const Hero = () => {
 
           <div className="pt-40 max-w-screen mx-auto">
             <h2 className="text-center">Content Writing</h2>
-            <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative z-20">
+            <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
               Words that drive action
             </h3>
             <div className="grid md:grid-cols-2 md:gap-10 mt-6">
@@ -687,9 +662,9 @@ const Hero = () => {
           </div>
 
           <div
-            className="relative z-10 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
-            style={{ background: "transparent" }}
+            className="relative z-50 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
             id="lite-scanner-content"
+            style={{ zIndex: 20, background: "transparent" }}
           >
             <div className="relative overflow-hidden text-left">
               <div className="numberTrack flex w-[200%] will-change-transform">
@@ -717,10 +692,10 @@ const Hero = () => {
       </section>
 
       {/* Performance Marketing */}
-      <section id="section8" className="relative bg-[#f2f2f2]">
+      <section id="section8" className="relative">
         <div className="container flex flex-col pt-16">
           <div
-            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8 hidden md:block"
+            className="absolute left-3 top-[18%] sm:left-5 lg:left-8 hidden md:block"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -730,7 +705,7 @@ const Hero = () => {
 
           <div className="pt-40 max-w-screen mx-auto">
             <h2 className="text-center">Performance Marketing</h2>
-            <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative z-20">
+            <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
               Measurable marketing outcomes
             </h3>
             <div className="grid md:grid-cols-2 md:gap-10 mt-6">
@@ -771,9 +746,9 @@ const Hero = () => {
           </div>
 
           <div
-            className="relative z-10 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
-            style={{ background: "transparent" }}
+            className="relative z-50 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
             id="lite-scanner-ads"
+            style={{ zIndex: 20, background: "transparent" }}
           >
             <div className="relative overflow-hidden text-left">
               <div className="numberTrack flex w-[200%] will-change-transform">
@@ -801,10 +776,10 @@ const Hero = () => {
       </section>
 
       {/* App Development */}
-      <section id="section9" className="relative bg-[#f2f2f2]">
+      <section id="section9" className="relative">
         <div className="container flex flex-col pt-16">
           <div
-            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8 hidden md:block"
+            className="absolute left-3 top-[18%] sm:left-5 lg:left-8 hidden md:block"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -814,7 +789,7 @@ const Hero = () => {
 
           <div className="pt-40 max-w-screen mx-auto">
             <h2 className="text-center">App Development</h2>
-            <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative z-20">
+            <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
               Built for long-term performance
             </h3>
             <div className="grid md:grid-cols-2 md:gap-10 mt-6">
@@ -840,9 +815,9 @@ const Hero = () => {
           </div>
 
           <div
-            className="relative z-10 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
-            style={{ background: "transparent" }}
+            className="relative z-50 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
             id="lite-scanner-appdev"
+            style={{ zIndex: 20, background: "transparent" }}
           >
             <div className="relative overflow-hidden text-left">
               <div className="numberTrack flex w-[200%] will-change-transform">
@@ -870,10 +845,10 @@ const Hero = () => {
       </section>
 
       {/* Algorithm Analysis */}
-      <section id="section10" className="relative bg-[#f2f2f2]">
+      <section id="section10" className="relative">
         <div className="container flex flex-col pt-16">
           <div
-            className="absolute left-3 top-[18%] z-10 sm:left-5 lg:left-8 hidden md:block"
+            className="absolute left-3 top-[18%] sm:left-5 lg:left-8 hidden md:block"
             style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
           >
             <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
@@ -883,7 +858,7 @@ const Hero = () => {
 
           <div className="pt-40 max-w-screen mx-auto">
             <h2 className="text-center">Algorithm Analysis</h2>
-            <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative z-20">
+            <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
               Understanding platform behaviour
             </h3>
             <div className="grid md:grid-cols-2 md:gap-10 mt-6">
@@ -908,9 +883,9 @@ const Hero = () => {
           </div>
 
           <div
-            className="relative z-10 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
-            style={{ background: "transparent" }}
+            className="relative z-50 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
             id="lite-scanner-algo"
+            style={{ zIndex: 20, background: "transparent" }}
           >
             <div className="relative overflow-hidden text-left">
               <div className="numberTrack flex w-[200%] will-change-transform">
@@ -1018,11 +993,11 @@ const Hero = () => {
       </section>
 
       <section id="ctaSection" className="pt-10 pb-5">
-        <div className="container flex flex-col gap-10 overflow-hidden">
+        <div className="container flex flex-col gap-2 overflow-hidden">
+          <div className="h-80 md:h-56 lg:h-72 2xl:h-[30rem]"></div>
           <h3 className="text-3xl md:text-4xl lg:text-6xl font-thin uppercase leading-none mx-auto text-center relative z-10">
             Thanks for being here.
           </h3>
-          <div className="h-80 md:h-56 lg:h-72 2xl:h-[30rem]"></div>
           <Link href="/contact" className="hover:!bg-black group bg-[#F2F2F2] hover:!text-white relative z-10 text-center uppercase text-3xl md:text-5xl lg:text-7xl font-thin mx-auto px-5 py-4 border border-black rounded-full">
 
             Let&apos;s Talk <svg className="group-hover:stroke-white stroke-black"

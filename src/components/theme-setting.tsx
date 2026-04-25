@@ -2,21 +2,48 @@
 import React, { useEffect } from "react";
 import { useTheme } from "next-themes";
 import dynamic from "next/dynamic";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { ScrollSmoother } from "@/plugins";
 const ThemeSetting = () => {
   const { setTheme, theme } = useTheme();
   const [settingOpen, setSettingOpen] = React.useState(false);
-
+  const pathname = usePathname();
   const router = useRouter();
 
   function handleOpenSetting() {
     setSettingOpen(!settingOpen);
   };
 
+  const applyTheme = (nextTheme: "dark" | "light") => {
+    // Only run the smooth-scroll cleanup on the homepage when switching to light.
+    // This prevents unintended side-effects on other routes that may rely on smooth scrolling.
+    if (pathname === "/" && nextTheme === "light") {
+      try {
+        ScrollSmoother.get?.()?.kill?.();
+      } catch {
+        // ignore
+      }
+      document.body.classList.remove("tp-smooth-scroll");
+      document.body.style.removeProperty("height");
+      document.body.style.removeProperty("transform");
+    }
+    setTheme(nextTheme);
+  };
 
   useEffect(() => {
     // If no theme is set yet, default to light.
     if (!theme) setTheme("light");
+
+    if (!theme) return;
+
+    // Persist theme to a cookie so the server (middleware) can route "/" correctly.
+    // next-themes stores preference client-side; cookie enables SSR redirect without DOM flashes.
+    document.cookie = `bb_theme=${theme}; path=/; max-age=31536000; samesite=lax`;
+
+    // If user changes theme while on home, refresh so middleware can serve correct variant.
+    if (pathname === "/") {
+      router.refresh();
+    }
   }, [setTheme, theme]);
   return (
     <div
@@ -31,7 +58,7 @@ const ThemeSetting = () => {
         <div className="tp-theme-dir mb-20">
           <label className="tp-theme-dir-main" htmlFor="tp-dir-toggler">
             <span
-              onClick={() => {setTheme("dark"); router.push("/?mode=dark");}}
+              onClick={() => applyTheme("dark")}
               className={`tp-theme-dir-rtl ${theme === "dark" ? "active" : ""}`}
             >
               Dark
@@ -39,7 +66,7 @@ const ThemeSetting = () => {
             <input type="checkbox" id="tp-dir-toggler" checked={theme === "dark"} readOnly />
             <i className="tp-theme-dir-slide"></i>
             <span
-              onClick={() => setTheme("light")}
+              onClick={() => applyTheme("light")}
               className={`tp-theme-dir-ltr ${theme === "light" ? "active" : ""
                 }`}
             >

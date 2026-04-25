@@ -376,7 +376,7 @@ const MyCanvas = () => {
             trigger: "#ctaSection",
             start: "top bottom",
             end: "top top",
-            scrub: ctaScrub,
+            scrub: 2.5,
             invalidateOnRefresh: true,
             fastScrollEnd: true,
             onUpdate: (self) => {
@@ -400,12 +400,12 @@ const MyCanvas = () => {
 
         addCtaCartTweensToTimeline(addToCartTl, modelRefs, bucketRef, asa1, asa2, ctaCart);
 
-        addToCartTl.to("#recieptSection", { y: "-=520", duration: 4, ease: "back.inOut" }, 1.5)
+        addToCartTl.to("#recieptSection", { y: "-=520", duration: 2, ease: "back.inOut" }, 1.5)
         // addToCartTl.to("#recieptSection", {y: "-=104"}, 1)
-        // addToCartTl.to("#recieptSection", {y: "-=104"}, 1.2)
         // addToCartTl.to("#recieptSection", {y: "-=104"}, 1.4)
-        // addToCartTl.to("#recieptSection", {y: "-=104"}, 1.6)
         // addToCartTl.to("#recieptSection", {y: "-=104"}, 1.8)
+        // addToCartTl.to("#recieptSection", {y: "-=104"}, 2.2)
+        // addToCartTl.to("#recieptSection", {y: "-=104"}, 2.6)
 
         /** Receipt strip ends at 3.8 + 1 = 4.8 — GSAP `call` = zero-duration tween at this time (scrub-safe). */
         addToCartTl.call(

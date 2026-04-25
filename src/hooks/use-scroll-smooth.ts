@@ -100,6 +100,11 @@ export default function useScrollSmooth() {
         smootherRef.current.kill();
         smootherRef.current = null;
       }
+      // ScrollSmoother sets inline styles on <body>. Ensure they never leak
+      // into routes that don't use smooth scrolling.
+      document.body.classList.remove("tp-smooth-scroll");
+      document.body.style.removeProperty("height");
+      document.body.style.removeProperty("transform");
     };
   }, [isMobile, isTablet, isScrollSmooth]);
 }

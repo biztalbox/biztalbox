@@ -1,9 +1,7 @@
 import { Metadata } from "next";
-import HomePage from "@/components/DarkHomePage";
 import { createMetadata, createSchemaProps, createFullUrl } from "@/utils/metadata";
 import SchemaProvider from "@/components/schema/SchemaProvider";
 import { mainReviews, mainAggregateRating } from "@/data/schema-data";
-import LiteHomePage from "@/components/LiteHomePage";
 
 const baseMetadata: Metadata = {
   title: "Best Digital Marketing Agency | Website Development",
@@ -14,7 +12,7 @@ const baseMetadata: Metadata = {
 
 export const metadata = createMetadata(baseMetadata, '/');
 
-export default function Home({
+export default async function Home({
   searchParams,
 }: {
   searchParams?: { mode?: string | string[] };
@@ -27,6 +25,9 @@ export default function Home({
   const modeRaw = searchParams?.mode;
   const mode = Array.isArray(modeRaw) ? modeRaw[0] : modeRaw;
   if (mode === 'dark') {
+    // Important: import dark home only when needed.
+    // DarkHomePage includes global CSS imports which were overriding lite mode when statically imported.
+    const DarkHomePage = (await import("@/components/DarkHomePage")).default;
     return (
       <SchemaProvider
         schemaProps={schemaProps}
@@ -35,11 +36,13 @@ export default function Home({
         description={baseMetadata.description as string}
       >
         <div id="home-route-root">
-          <HomePage />
+          <DarkHomePage />
         </div>
       </SchemaProvider>
     );
   } else {
+    // Import lite home only when needed (keeps CSS isolated per mode).
+    const LiteHomePage = (await import("@/components/LiteHomePage")).default;
     return (
       <SchemaProvider
         schemaProps={schemaProps}

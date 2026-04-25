@@ -1,23 +1,5 @@
-import Header from "./_ashish/Header";
-import Wrapper from "@/layouts/wrapper";
-import Hero from "./_ashish/Hero";
+import LiteHomePage from "@/components/LiteHomePage";
 
-
-const page = () => {
-  return (
-    <Wrapper>
-      {/* <main className="bg-neutral-100 text-black"> */}
-
-      <Header />
-      <div id="litePage" className="bg-[#f2f2f2]">
-
-
-        <Hero />
-        {/* <MobileSceme /> */}
-        {/* </main> */}
-        {/* <FooterFour /> */}
-      </div>
-    </Wrapper>
-  );
-};
-export default page;
+export default function Page() {
+  return <LiteHomePage />;
+}

@@ -33,6 +33,10 @@
     @apply text-[11px] leading-normal uppercase font-thin;
     font-family: "Century Gothic Local" !important;
 }
+#litePage li, #litePage a{
+    font-family: "Century Gothic Local" !important;
+}
+
 
 /* Scope to /lite only — avoids leaking Helvetica Light after client navigation */
 #lite-route-root,

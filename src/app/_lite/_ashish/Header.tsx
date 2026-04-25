@@ -23,10 +23,11 @@ export default function Header() {
 
   return (
     <>
-      <header className="tp-header-height bg-[#f2f2f2]"  ref={headerRef}>
+      {/* Keep header above WebGL + overlay UI */}
+      <header className="tp-header-height relative z-[1000]" ref={headerRef}>
         <div
           id="header-sticky"
-          className={`lite-ashish-header tp-inner-header-area tp-inner-header-style-2 tp-inner-header-mob-space ${sticky ? "header-sticky" : ""}`}
+          className={`lite-ashish-header tp-inner-header-area z-[1000] tp-inner-header-style-2 tp-inner-header-mob-space ${sticky ? "header-sticky" : ""}`}
         >
           <div className="container container-1800">
             <div className="row align-items-center">

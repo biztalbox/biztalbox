@@ -1,6 +1,6 @@
 "use client";
 import { gsap } from "gsap";
-import React, { useEffect, useState, useRef, useCallback } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import useScrollSmooth from "@/hooks/use-scroll-smooth";
 import { usePerformanceOptimization } from "@/hooks/use-performance-optimization";
 import { ScrollSmoother, ScrollTrigger, SplitText } from "@/plugins";
@@ -11,7 +11,6 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 // internal imports
 import Wrapper from "@/layouts/wrapper";
 import HeroBannerFour from "@/components/hero-banner/hero-banner-four";
-import GalleryOne from "@/components/gallery/gallery-one";
 import AboutThree from "@/components/about/about-three";
 import ProjectFour from "@/components/project/project-four";
 import ContactOne from "@/components/contact/contact-one";
@@ -25,17 +24,39 @@ import HeaderEleven from "@/layouts/headers/header-eleven";
 import PerformanceMonitor from "@/components/PerformanceMonitor";
 import AshishCarousel from "./AshishCarousel";
 
+/**
+ * Loader timing — बढ़ाने से लोडर ज़्यादा देर तक दिखेगा।
+ * - `minVisibleFromMountMs`: mount से कम से कम इतनी ms तक (ready जल्दी हो तो बाकी wait)
+ * - `holdAfterReadyMs`: technical ready के बाद extra इतनी ms
+ */
+const LOADER_DISPLAY = {
+  minVisibleFromMountMs: 1200,
+  holdAfterReadyMs: 350,
+} as const;
+
 const DarkHomePage = () => {
-  const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [componentsLoaded, setComponentsLoaded] = useState<number>(0);
-  const loadingRef = useRef<HTMLDivElement>(null);
+  const [showLoader, setShowLoader] = useState(true);
+  const mountAtRef = useRef<number | null>(null);
+  if (mountAtRef.current === null) mountAtRef.current = Date.now();
+
+  useEffect(() => {
+    if (!showLoader) return;
+    const html = document.documentElement;
+    const body = document.body;
+    const prevHtml = html.style.overflow;
+    const prevBody = body.style.overflow;
+    html.style.overflow = "hidden";
+    body.style.overflow = "hidden";
+    return () => {
+      html.style.overflow = prevHtml;
+      body.style.overflow = prevBody;
+    };
+  }, [showLoader]);
+
   const animationInitializedRef = useRef<boolean>(false);
   
   // Use performance optimization hook
   const performanceConfig = usePerformanceOptimization();
-  
-  // Total number of main components to wait for
-  const totalComponents = 8; // HeaderEleven, HeroBannerFour, GalleryOne, AboutThree, ProjectFour, WhyChooseUs, ContactOne, FooterFour
   
   useScrollSmooth();
   
@@ -48,41 +69,45 @@ const DarkHomePage = () => {
     };
   }, []);
   
-  // Optimized loading completion check
   useEffect(() => {
-    if (componentsLoaded >= totalComponents) {
-      // Reduced delay for better performance
-      const hideLoader = setTimeout(() => {
-        if (loadingRef.current) {
-          loadingRef.current.style.opacity = '0';
-          loadingRef.current.style.transition = 'opacity 0.3s ease-out';
-          
-          setTimeout(() => {
-            setIsLoading(false);
-          }, 300); // Reduced from 500ms
-        }
-      }, 400); // Reduced from 800ms
-      
-      return () => clearTimeout(hideLoader);
-    }
-  }, [componentsLoaded, totalComponents]);
+    let cancelled = false;
+    let hideTimer: ReturnType<typeof setTimeout> | undefined;
 
-  // Optimized component loading simulation
-  useEffect(() => {
-    // Faster component loading simulation
-    const loadingTimers = [
-      setTimeout(() => setComponentsLoaded(prev => prev + 1), 100), // Reduced from 200ms
-      setTimeout(() => setComponentsLoaded(prev => prev + 1), 200), // Reduced from 400ms
-      setTimeout(() => setComponentsLoaded(prev => prev + 1), 300), // Reduced from 600ms
-      setTimeout(() => setComponentsLoaded(prev => prev + 1), 400), // Reduced from 800ms
-      setTimeout(() => setComponentsLoaded(prev => prev + 1), 500), // Reduced from 1000ms
-      setTimeout(() => setComponentsLoaded(prev => prev + 1), 600), // Reduced from 1200ms
-      setTimeout(() => setComponentsLoaded(prev => prev + 1), 700), // Reduced from 1400ms
-      setTimeout(() => setComponentsLoaded(prev => prev + 1), 800), // Reduced from 1600ms
-    ];
-    
+    const run = async () => {
+      try {
+        await (document as any).fonts?.ready;
+      } catch {
+        // ignore
+      }
+
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          if (cancelled) return;
+
+          const mountAt = mountAtRef.current ?? Date.now();
+          const readyAt = Date.now();
+          const elapsed = readyAt - mountAt;
+          const minStillNeeded = Math.max(
+            0,
+            LOADER_DISPLAY.minVisibleFromMountMs - elapsed
+          );
+          const hideDelay = Math.max(
+            minStillNeeded,
+            LOADER_DISPLAY.holdAfterReadyMs
+          );
+
+          hideTimer = setTimeout(() => {
+            if (!cancelled) setShowLoader(false);
+          }, hideDelay);
+        });
+      });
+    };
+
+    void run();
+
     return () => {
-      loadingTimers.forEach(timer => clearTimeout(timer));
+      cancelled = true;
+      if (hideTimer) clearTimeout(hideTimer);
     };
   }, []);
 
@@ -124,10 +149,9 @@ const DarkHomePage = () => {
       {/* Performance Monitor (Development Only) */}
       {/* <PerformanceMonitor /> */}
       
-      {/* Optimized Loading UI */}
-      {isLoading && (
+      {/* Readiness-based Loader (no fake progress) */}
+      {showLoader && (
         <div 
-          ref={loadingRef}
           style={{
             position: 'fixed',
             top: 0,
@@ -136,79 +160,22 @@ const DarkHomePage = () => {
             height: '100%',
             backgroundColor: '#000',
             display: 'flex',
-            flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
             zIndex: 9999,
-            transition: 'opacity 0.3s ease-out'
           }}
         >
-          {/* Optimized Loading Spinner */}
-          <div 
+          <img
+            src="/assets/loader/black.gif"
+            alt="Loading"
             style={{
-              width: '50px',
-              height: '50px',
-              border: '3px solid #333',
-              borderTop: '3px solid #fff',
-              borderRadius: '50%',
-              animation: 'spin 1s linear infinite',
-              marginBottom: '20px',
-              willChange: 'transform' // Performance hint
+              width: 120,
+              height: 120,
+              objectFit: "contain",
             }}
           />
-          
-          {/* Loading Text */}
-          <div 
-            style={{
-              color: '#fff',
-              fontSize: '18px',
-              fontWeight: '500',
-              marginBottom: '10px'
-            }}
-          >
-            Loading...
-          </div>
-          
-          {/* Progress Bar */}
-          <div 
-            style={{
-              width: '200px',
-              height: '4px',
-              backgroundColor: '#333',
-              borderRadius: '2px',
-              overflow: 'hidden'
-            }}
-          >
-            <div 
-              style={{
-                width: `${Math.min((componentsLoaded / totalComponents) * 100, 100)}%`,
-                height: '100%',
-                backgroundColor: '#fff',
-                transition: 'width 0.2s ease-out' // Reduced from 0.3s
-              }}
-            />
-          </div>
-          
-          {/* Progress Text */}
-          <div 
-            style={{
-              color: '#ccc',
-              fontSize: '14px',
-              marginTop: '10px'
-            }}
-          >
-            {Math.min(Math.round((componentsLoaded / totalComponents) * 100), 100)}%
-          </div>
         </div>
       )}
-
-      {/* Optimized keyframe animation for spinner */}
-      <style jsx>{`
-        @keyframes spin {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-      `}</style>
 
       <Wrapper>
         {/* header area start */}
