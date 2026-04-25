@@ -418,6 +418,7 @@ export function attachLiteServiceScanPair(options: {
   );
   // scanTl.to(scanner, { y: "-=200", duration: 0.3 }, 1.8);
   scanTl.to(scanner, { height: "150px", width: "150px", duration: 0.4 }, 1.2);
+  scanTl.to(scanner, { height: "150px", width: "150px", duration: 0.4 }, 1.4);
 
   return () => {
     removeBeepCue();

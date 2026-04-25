@@ -27,23 +27,21 @@ const ThemeSetting = () => {
       document.body.style.removeProperty("height");
       document.body.style.removeProperty("transform");
     }
+    // Persist theme to a cookie so middleware can route "/" correctly on the next navigation.
+    // Do this BEFORE navigation so the request includes the updated cookie (important on Vercel).
+    document.cookie = `bb_theme=${nextTheme}; path=/; max-age=31536000; samesite=lax`;
+
     setTheme(nextTheme);
+
+    // On home, perform a real navigation so middleware can redirect correctly in production.
+    if (pathname === "/") {
+      router.push(nextTheme === "dark" ? "/?mode=dark" : "/");
+    }
   };
 
   useEffect(() => {
     // If no theme is set yet, default to light.
     if (!theme) setTheme("light");
-
-    if (!theme) return;
-
-    // Persist theme to a cookie so the server (middleware) can route "/" correctly.
-    // next-themes stores preference client-side; cookie enables SSR redirect without DOM flashes.
-    document.cookie = `bb_theme=${theme}; path=/; max-age=31536000; samesite=lax`;
-
-    // If user changes theme while on home, refresh so middleware can serve correct variant.
-    if (pathname === "/") {
-      router.refresh();
-    }
   }, [setTheme, theme]);
   return (
     <div
