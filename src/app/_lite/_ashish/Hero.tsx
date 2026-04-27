@@ -265,9 +265,9 @@ const Hero = () => {
           {/* #01 card */}
           <div className="flex justify-center self-center lg:self-start">
             <div className="rounded-md border border-black p-4 text-center">
-            <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
-                  #01
-                </span>
+              <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
+                #01
+              </span>
             </div>
           </div>
 
@@ -321,30 +321,32 @@ const Hero = () => {
               <div
                 className="numberTrack flex w-[200%] will-change-transform"
               >
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
+                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
                   #01
                 </span>
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
+                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
                   #02
                 </span>
               </div>
             </div>
 
-            {/* Spacer for 3D “slot” / layout height */}
-            <div className="mt-14 h-44" />
+            <div className="scannerBoxContent">
+              {/* Spacer for 3D “slot” / layout height */}
+              <div className="mt-14 h-44" />
 
-            {/* Barcode + purchased */}
-            <div className="mt-2 flex items-center justify-between gap-4">
-              <div className="relative h-[22px] w-[140px]">
-                <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                <div style={{visibility: "hidden"}} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+              {/* Barcode + purchased */}
+              <div className="mt-2 flex items-center justify-between gap-4">
+                <div className="relative h-[22px] w-[140px]">
+                  <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                  <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+                </div>
+                <div style={{ width: "0", color:"transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+                  PURCHASED
+                </div>
               </div>
-              <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
-                PURCHASED
-              </div>
+
+              <LiteTicketSpecsFooter service="seo" />
             </div>
-
-            <LiteTicketSpecsFooter service="seo" />
           </div>
         </div>
 
@@ -392,25 +394,27 @@ const Hero = () => {
           >
             <div className="relative overflow-hidden text-left">
               <div className="numberTrack flex w-[200%] will-change-transform">
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
+                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
                   #02
                 </span>
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
+                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
                   #03
                 </span>
               </div>
             </div>
-            <div className="mt-14 h-44" />
-            <div className="mt-2 flex items-center justify-between gap-4">
-              <div className="relative h-[22px] w-[140px]">
-                <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                <div style={{visibility: "hidden"}} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+            <div className="scannerBoxContent">
+              <div className="mt-14 h-44" />
+              <div className="mt-2 flex items-center justify-between gap-4">
+                <div className="relative h-[22px] w-[140px]">
+                  <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                  <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+                </div>
+                <div style={{ width: "0", color:"transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+                  PURCHASED
+                </div>
               </div>
-              <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
-                PURCHASED
-              </div>
+              <LiteTicketSpecsFooter service="smo" />
             </div>
-            <LiteTicketSpecsFooter service="smo" />
           </div>
         </div>
       </section>
@@ -460,25 +464,27 @@ const Hero = () => {
           >
             <div className="relative overflow-hidden text-left">
               <div className="numberTrack flex w-[200%] will-change-transform">
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
+                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
                   #03
                 </span>
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
+                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
                   #04
                 </span>
               </div>
             </div>
-            <div className="mt-14 h-44" />
-            <div className="mt-2 flex items-center justify-between gap-4">
-              <div className="relative h-[22px] w-[140px]">
-                <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                <div style={{visibility: "hidden"}} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+            <div className="scannerBoxContent">
+              <div className="mt-14 h-44" />
+              <div className="mt-2 flex items-center justify-between gap-4">
+                <div className="relative h-[22px] w-[140px]">
+                  <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                  <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+                </div>
+                <div style={{ width: "0", color:"transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+                  PURCHASED
+                </div>
               </div>
-              <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
-                PURCHASED
-              </div>
+              <LiteTicketSpecsFooter service="webdev" />
             </div>
-            <LiteTicketSpecsFooter service="webdev" />
           </div>
         </div>
       </section>
@@ -527,25 +533,27 @@ const Hero = () => {
           >
             <div className="relative overflow-hidden text-left">
               <div className="numberTrack flex w-[200%] will-change-transform">
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
+                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
                   #04
                 </span>
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
+                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
                   #05
                 </span>
               </div>
             </div>
-            <div className="mt-14 h-44" />
-            <div className="mt-2 flex items-center justify-between gap-4">
-              <div className="relative h-[22px] w-[140px]">
-                <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                <div style={{visibility: "hidden"}} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+            <div className="scannerBoxContent">
+              <div className="mt-14 h-44" />
+              <div className="mt-2 flex items-center justify-between gap-4">
+                <div className="relative h-[22px] w-[140px]">
+                  <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                  <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+                </div>
+                <div style={{ width: "0", color:"transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+                  PURCHASED
+                </div>
               </div>
-              <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
-                PURCHASED
-              </div>
+              <LiteTicketSpecsFooter service="graphic" />
             </div>
-            <LiteTicketSpecsFooter service="graphic" />
           </div>
         </div>
       </section>
@@ -596,25 +604,27 @@ const Hero = () => {
           >
             <div className="relative overflow-hidden text-left">
               <div className="numberTrack flex w-[200%] will-change-transform">
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
+                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
                   #05
                 </span>
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
+                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
                   #06
                 </span>
               </div>
             </div>
-            <div className="mt-14 h-44" />
-            <div className="mt-2 flex items-center justify-between gap-4">
-              <div className="relative h-[22px] w-[140px]">
-                <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                <div style={{visibility: "hidden"}} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+            <div className="scannerBoxContent">
+              <div className="mt-14 h-44" />
+              <div className="mt-2 flex items-center justify-between gap-4">
+                <div className="relative h-[22px] w-[140px]">
+                  <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                  <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+                </div>
+                <div style={{ width: "0", color:"transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+                  PURCHASED
+                </div>
               </div>
-              <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
-                PURCHASED
-              </div>
+              <LiteTicketSpecsFooter service="video" />
             </div>
-            <LiteTicketSpecsFooter service="video" />
           </div>
         </div>
       </section>
@@ -668,25 +678,27 @@ const Hero = () => {
           >
             <div className="relative overflow-hidden text-left">
               <div className="numberTrack flex w-[200%] will-change-transform">
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
+                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
                   #06
                 </span>
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
+                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
                   #07
                 </span>
               </div>
             </div>
-            <div className="mt-14 h-44" />
-            <div className="mt-2 flex items-center justify-between gap-4">
-              <div className="relative h-[22px] w-[140px]">
-                <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                <div style={{visibility: "hidden"}} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+            <div className="scannerBoxContent">
+              <div className="mt-14 h-44" />
+              <div className="mt-2 flex items-center justify-between gap-4">
+                <div className="relative h-[22px] w-[140px]">
+                  <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                  <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+                </div>
+                <div style={{ width: "0", color:"transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+                  PURCHASED
+                </div>
               </div>
-              <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
-                PURCHASED
-              </div>
+              <LiteTicketSpecsFooter service="content" />
             </div>
-            <LiteTicketSpecsFooter service="content" />
           </div>
         </div>
       </section>
@@ -752,25 +764,27 @@ const Hero = () => {
           >
             <div className="relative overflow-hidden text-left">
               <div className="numberTrack flex w-[200%] will-change-transform">
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
+                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
                   #07
                 </span>
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
+                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
                   #08
                 </span>
               </div>
             </div>
-            <div className="mt-14 h-44" />
-            <div className="mt-2 flex items-center justify-between gap-4">
-              <div className="relative h-[22px] w-[140px]">
-                <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                <div style={{visibility: "hidden"}} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+            <div className="scannerBoxContent">
+              <div className="mt-14 h-44" />
+              <div className="mt-2 flex items-center justify-between gap-4">
+                <div className="relative h-[22px] w-[140px]">
+                  <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                  <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+                </div>
+                <div style={{ width: "0", color:"transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+                  PURCHASED
+                </div>
               </div>
-              <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
-                PURCHASED
-              </div>
+              <LiteTicketSpecsFooter service="ads" />
             </div>
-            <LiteTicketSpecsFooter service="ads" />
           </div>
         </div>
       </section>
@@ -821,25 +835,27 @@ const Hero = () => {
           >
             <div className="relative overflow-hidden text-left">
               <div className="numberTrack flex w-[200%] will-change-transform">
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
+                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
                   #08
                 </span>
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
+                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
                   #09
                 </span>
               </div>
             </div>
-            <div className="mt-14 h-44" />
-            <div className="mt-2 flex items-center justify-between gap-4">
-              <div className="relative h-[22px] w-[140px]">
-                <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                <div style={{visibility: "hidden"}} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+            <div className="scannerBoxContent">
+              <div className="mt-14 h-44" />
+              <div className="mt-2 flex items-center justify-between gap-4">
+                <div className="relative h-[22px] w-[140px]">
+                  <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                  <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+                </div>
+                <div style={{ width: "0", color:"transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+                  PURCHASED
+                </div>
               </div>
-              <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
-                PURCHASED
-              </div>
+              <LiteTicketSpecsFooter service="appdev" />
             </div>
-            <LiteTicketSpecsFooter service="appdev" />
           </div>
         </div>
       </section>
@@ -889,25 +905,27 @@ const Hero = () => {
           >
             <div className="relative overflow-hidden text-left">
               <div className="numberTrack flex w-[200%] will-change-transform">
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
+                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
                   #09
                 </span>
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
-                  
+                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
+                  #09
                 </span>
               </div>
             </div>
-            <div className="mt-14 h-44" />
-            <div className="mt-2 flex items-center justify-between gap-4">
-              <div className="relative h-[22px] w-[140px]">
-                <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                <div style={{visibility: "hidden"}} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+            <div className="scannerBoxContent">
+              <div className="mt-14 h-44" />
+              <div className="mt-2 flex items-center justify-between gap-4">
+                <div className="relative h-[22px] w-[140px]">
+                  <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                  <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+                </div>
+              <div style={{ width: "0", color:"transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+                  PURCHASED
+                </div>
               </div>
-              <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
-                PURCHASED
-              </div>
+              <LiteTicketSpecsFooter service="algo" />
             </div>
-            <LiteTicketSpecsFooter service="algo" />
           </div>
         </div>
       </section>

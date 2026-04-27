@@ -5,7 +5,7 @@ import { Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { SwiperOptions } from "swiper/types";
 import { useSearchParams, useRouter, usePathname } from "next/navigation";
-
+import styles from "./blog-sidebar.module.scss";
 import BlogSidebar from "./blog-sidebar";
 import { blog_classic } from "@/data/blog-data";
 import { Quote, QuoteTwo, RightArrow, SvgBgSm } from "../svg";
@@ -698,62 +698,49 @@ export default function BlogClassicArea({
             {/* blog sidebar area */}
           </div>
         </div>
-        <div className="tp-footer-3-widget mt-40">
-                <h4 className="tp-footer-2-widget-title">
-                  Subscribe to our newsletter
-                </h4>
-                <form
-                  onSubmit={handleSubscribe}
-                  className="tp-footer-3-input-box d-flex align-items-center"
-                >
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Enter Address..."
-                    disabled={isSubscribing}
-                    required
-                  />
-                  <button
-                    type="submit"
-                    className="tp-footer-3-btn p-relative"
-                    disabled={isSubscribing}
-                  >
-                    {isSubscribing ? (
-                      <span style={{ fontSize: "12px", padding: "0 5px" }}>
-                        ...
-                      </span>
-                    ) : (
-                      <>
-                        <span className="icon-1">
-                          <RightArrow clr="#19191A" />
-                        </span>
-                        <span className="icon-2">
-                          <SvgBgSm />
-                        </span>
-                      </>
-                    )}
-                  </button>
-                </form>
-                {subscribeMessage && (
-                  <div
-                    style={{
-                      marginTop: "10px",
-                      padding: "4px 8px",
-                      borderRadius: "4px",
-                      fontSize: "14px",
-                      backgroundColor:
-                        subscribeStatus === "success" ? "#d4edda" : "#f8d7da",
-                      color:
-                        subscribeStatus === "success" ? "#155724" : "#721c24",
-                      border: `1px solid ${
-                        subscribeStatus === "success" ? "#c3e6cb" : "#f5c6cb"
-                      }`,
-                    }}
-                  >
-                    {subscribeMessage}
-                  </div>
-                )}
-              </div>
+        <div className={`tp-footer-3-widget mb-65 ${styles.newsletter}`}>
+        <h4 className="sidebar__widget-title">
+          Subscribe to our newsletter
+        </h4>
+        <form
+          onSubmit={handleSubscribe}
+          className={`tp-footer-3-input-box d-flex align-items-center ${styles.inputBox}`}
+        >
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter Address..."
+            disabled={isSubscribing}
+            className={`form-control ${styles.input}`}
+            required
+          />
+          <button
+            type="submit"
+            className="tp-footer-3-btn p-relative"
+            disabled={isSubscribing}
+          >
+            {isSubscribing ? (
+              <span style={{ fontSize: "12px", padding: "0 5px" }}>...</span>
+            ) : (
+              <>
+                <span className="icon-1">
+                  <RightArrow clr="#000" />
+                </span>
+                <span className="icon-2">
+                  <SvgBgSm />
+                </span>
+              </>
+            )}
+          </button>
+        </form>
+        {subscribeMessage && (
+          <div
+            className={`${styles.message} ${subscribeStatus === "success" ? styles.messageSuccess : styles.messageError}`}
+          >
+            {subscribeMessage}
+          </div>
+        )}
+      </div>
       </div>
     </section>
   );

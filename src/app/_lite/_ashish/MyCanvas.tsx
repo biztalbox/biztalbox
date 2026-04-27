@@ -152,6 +152,11 @@ const MyCanvas = () => {
     algo: true,
   }));
   const [bucketFloatEnabled, setBucketFloatEnabled] = useState(true);
+  const [scanPinnedByKey, setScanPinnedByKey] = useState<Partial<Record<LiteModelKey, boolean>>>(
+    () => ({}),
+  );
+
+  const isFloatOn = (key: LiteModelKey) => !!floatEnabledByKey[key] && !scanPinnedByKey[key];
 
   /**
    * Pause idle float animations when the related DOM section/card is offscreen.
@@ -226,6 +231,21 @@ const MyCanvas = () => {
     };
   }, [layoutBreakpoint]);
 
+  // While a scanner is pinned (active “scan” phase), disable Float for that model.
+  // This prevents Float's internal rAF transforms from fighting GSAP scrubbing on reverse scroll.
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const onPin = (ev: Event) => {
+      const e = ev as CustomEvent<{ key?: LiteModelKey; pinned?: boolean }>;
+      const key = e.detail?.key;
+      const pinned = !!e.detail?.pinned;
+      if (!key) return;
+      setScanPinnedByKey((prev) => ({ ...prev, [key]: pinned }));
+    };
+    window.addEventListener("lite-scan-pin", onPin as EventListener);
+    return () => window.removeEventListener("lite-scan-pin", onPin as EventListener);
+  }, []);
+
   const configureGltfLoader = useMemo(() => {
     return (loader: GLTFLoader) => {
       loader.setMeshoptDecoder(MeshoptDecoder);
@@ -271,6 +291,8 @@ const MyCanvas = () => {
     ScrollTrigger.config({
       // GSAP recommended for mobile address bar resize jitter.
       ignoreMobileResize: true,
+      // Reduces callback churn during scrubbing (helps trackpad “jam” feel).
+      limitCallbacks: true,
     });
 
     const scheduleRefresh = () => {
@@ -335,12 +357,14 @@ const MyCanvas = () => {
         const attachHeroBand = (bp: LiteSceneBreakpoint) => {
           const isNarrow = bp !== "desktop";
           const fadeTl = gsap.timeline({
-            defaults: { duration: 2, ease: "circ.inOut" },
+            // For scrubbed timelines, keep easing minimal to avoid "elastic" feel on trackpad spikes.
+            defaults: { duration: 2, ease: "none" },
             scrollTrigger: {
               trigger: "#section0",
               start: "-120 top",
               end: "top top",
-              scrub: isNarrow ? 1.2 : 2.5,
+              // Silencio-like: low scrub = buttery, less laggy.
+              scrub: isNarrow ? 0.35 : 0.25,
               invalidateOnRefresh: true,
               fastScrollEnd: true,
             },
@@ -349,7 +373,11 @@ const MyCanvas = () => {
             const g = modelRefs[key].current;
             if (!g) continue;
             const dy = getHeroFadeOutYDelta(key, bp);
-            fadeTl.to(g.position, { y: `+=${dy}`, duration: 2, ease: "power3.inOut" }, 0);
+            fadeTl.to(
+              g.position,
+              { y: `+=${dy}`, duration: 2, ease: "power2.inOut" },
+              0,
+            );
           }
           const disposeScans = registerAllLiteServiceScans(
             modelRefs,
@@ -465,7 +493,7 @@ const MyCanvas = () => {
         scale={L.algo!.scale}
         rotation={L.algo!.rotation}
         disableFloat={disableFloat}
-        floatEnabled={floatEnabledByKey.algo}
+        floatEnabled={isFloatOn("algo")}
         floatSoft={floatSoft}
       />
       <WigglingModel
@@ -476,7 +504,7 @@ const MyCanvas = () => {
         scale={L.graphic!.scale}
         rotation={L.graphic!.rotation}
         disableFloat={disableFloat}
-        floatEnabled={floatEnabledByKey.graphic}
+        floatEnabled={isFloatOn("graphic")}
         floatSoft={floatSoft}
       />
 
@@ -488,7 +516,7 @@ const MyCanvas = () => {
         scale={L.webdev!.scale}
         rotation={L.webdev!.rotation}
         disableFloat={disableFloat}
-        floatEnabled={floatEnabledByKey.webdev}
+        floatEnabled={isFloatOn("webdev")}
         floatSoft={floatSoft}
       />
 
@@ -500,7 +528,7 @@ const MyCanvas = () => {
         scale={L.appdev!.scale}
         rotation={L.appdev!.rotation}
         disableFloat={disableFloat}
-        floatEnabled={floatEnabledByKey.appdev}
+        floatEnabled={isFloatOn("appdev")}
         floatSoft={floatSoft}
       />
 
@@ -512,7 +540,7 @@ const MyCanvas = () => {
         scale={L.video!.scale}
         rotation={L.video!.rotation}
         disableFloat={disableFloat}
-        floatEnabled={floatEnabledByKey.video}
+        floatEnabled={isFloatOn("video")}
         floatSoft={floatSoft}
       />
       <WigglingModel
@@ -523,7 +551,7 @@ const MyCanvas = () => {
         scale={L.ads!.scale}
         rotation={L.ads!.rotation}
         disableFloat={disableFloat}
-        floatEnabled={floatEnabledByKey.ads}
+        floatEnabled={isFloatOn("ads")}
         floatSoft={floatSoft}
       />
 
@@ -535,7 +563,7 @@ const MyCanvas = () => {
         scale={L.content!.scale}
         rotation={L.content!.rotation}
         disableFloat={disableFloat}
-        floatEnabled={floatEnabledByKey.content}
+        floatEnabled={isFloatOn("content")}
         floatSoft={floatSoft}
       />
       <WigglingModel
@@ -546,7 +574,7 @@ const MyCanvas = () => {
         scale={L.smo!.scale}
         rotation={L.smo!.rotation}
         disableFloat={disableFloat}
-        floatEnabled={floatEnabledByKey.smo}
+        floatEnabled={isFloatOn("smo")}
         floatSoft={floatSoft}
       />
 
@@ -571,7 +599,7 @@ const MyCanvas = () => {
         scale={L.seo!.scale}
         rotation={L.seo!.rotation}
         disableFloat={disableFloat}
-        floatEnabled={floatEnabledByKey.seo}
+        floatEnabled={isFloatOn("seo")}
         floatSoft={floatSoft}
       />
 

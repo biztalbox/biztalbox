@@ -23,8 +23,6 @@ export default function BlogSidebar() {
     "success" | "error" | ""
   >("");
 
-  const arrowClr = resolvedTheme === "dark" ? "#F3F3F4" : "#19191A";
-
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const searchQuery = (e.target as HTMLFormElement).search.value;
@@ -167,7 +165,7 @@ export default function BlogSidebar() {
             ) : (
               <>
                 <span className="icon-1">
-                  <RightArrow clr={arrowClr} />
+                  <RightArrow clr="#000" />
                 </span>
                 <span className="icon-2">
                   <SvgBgSm />

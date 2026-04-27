@@ -25,7 +25,6 @@ const LITE_LOADER_IMG_SIZE = 120;
 
 const LiteHomePage = () => {
   const [showLoader, setShowLoader] = useState(true);
-  const [showSoundPrompt, setShowSoundPrompt] = useState(false);
   const mountAtRef = useRef<number | null>(null);
   if (mountAtRef.current === null) mountAtRef.current = Date.now();
 
@@ -38,23 +37,23 @@ const LiteHomePage = () => {
       // ignore
     }
     document.body.classList.remove("tp-smooth-scroll");
-    document.body.style.height = "auto !important";
-    document.body.style.transform = "";
-    document.documentElement.style.height = "auto !important";
-    document.documentElement.style.transform = "";
+    document.body.style.removeProperty("height");
+    document.body.style.removeProperty("transform");
+    document.documentElement.style.removeProperty("height");
+    document.documentElement.style.removeProperty("transform");
   }, []);
 
   // Audio unlock (iOS/Safari): preload early + show prompt only if autoplay is blocked.
-  useEffect(() => {
-    preloadLiteSfx();
-    const onNeed = () => {
-      if (!isLiteSfxUnlocked()) setShowSoundPrompt(true);
-    };
-    window.addEventListener("lite-sfx:unlock-needed", onNeed as EventListener);
-    return () => {
-      window.removeEventListener("lite-sfx:unlock-needed", onNeed as EventListener);
-    };
-  }, []);
+  // useEffect(() => {
+  //   preloadLiteSfx();
+  //   const onNeed = () => {
+  //     if (!isLiteSfxUnlocked()) setShowSoundPrompt(true);
+  //   };
+  //   window.addEventListener("lite-sfx:unlock-needed", onNeed as EventListener);
+  //   return () => {
+  //     window.removeEventListener("lite-sfx:unlock-needed", onNeed as EventListener);
+  //   };
+  // }, []);
 
   // Preload loader GIF (cheap hint for the browser).
   useEffect(() => {
@@ -129,7 +128,9 @@ const LiteHomePage = () => {
     };
   }, []);
 
- 
+  // ScrollSmoother is intentionally disabled on /lite for now because it introduces
+  // route-specific edge-cases (we'll revisit smooth-scroll later).
+
 
   return (
     <Wrapper>
@@ -152,20 +153,15 @@ const LiteHomePage = () => {
             />
           </div>
         )}
-        {showSoundPrompt && (
-          <button
-            type="button"
-            onClick={() => {
-              unlockLiteSfx();
-              setShowSoundPrompt(false);
-            }}
-            className="fixed bottom-4 left-4 z-[10000] rounded-full border border-black bg-white/90 px-4 py-2 text-xs font-medium uppercase tracking-widest text-black backdrop-blur"
-          >
-            Enable sound
-          </button>
-        )}
-        <Header />
-        <Hero />
+        
+        {/* NOTE: ScrollSmoother is disabled right now, so don't lock native scroll.
+            These ids are kept for later when we re-enable smooth scrolling. */}
+        <div id="smooth-wrapper" className="relative">
+          <div id="smooth-content" className="relative">
+            <Header />
+            <Hero />
+          </div>
+        </div>
       </div>
     </Wrapper>
   );

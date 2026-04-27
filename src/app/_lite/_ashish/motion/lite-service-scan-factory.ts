@@ -6,6 +6,7 @@ import { addScrubTimelineCue, playLiteSfx } from "../sfx";
 import {
   resolveLiteServiceScans,
   type LiteApproachMotion,
+  type LiteModelKey,
   type LiteModelRefMap,
   type LiteScanMotion,
   type LiteScrollServiceBreakpoint,
@@ -28,8 +29,9 @@ export type LiteScanTimingPreset = {
 };
 
 export const LITE_SCAN_TIMING_DESKTOP: LiteScanTimingPreset = {
-  approachScrub: 1.2,
-  scanScrub: 2,
+  // Lower scrub = less “lag/jam” on trackpads (Silencio-style feel).
+  approachScrub: 0.25,
+  scanScrub: 0.35,
   scanPinStart: "top 28%",
   approachScale: 2.5,
   approachPosition: { x: "-=140", y: "+=70" },
@@ -39,8 +41,8 @@ export const LITE_SCAN_TIMING_DESKTOP: LiteScanTimingPreset = {
 };
 
 export const LITE_SCAN_TIMING_TABLET: LiteScanTimingPreset = {
-  approachScrub: 0.9,
-  scanScrub: 1.5,
+  approachScrub: 0.3,
+  scanScrub: 0.45,
   scanPinStart: "top 25%",
   approachScale: 2.15,
   approachPosition: { x: "-=115", y: "+=62" },
@@ -50,8 +52,8 @@ export const LITE_SCAN_TIMING_TABLET: LiteScanTimingPreset = {
 };
 
 export const LITE_SCAN_TIMING_MOBILE: LiteScanTimingPreset = {
-  approachScrub: 0.65,
-  scanScrub: 1,
+  approachScrub: 0.4,
+  scanScrub: 0.6,
   scanPinStart: "top 22%",
   approachScale: 1.85,
   approachPosition: { x: "-=85", y: "+=55" },
@@ -246,6 +248,7 @@ function addScanWarmTintToTimeline(
  */
 export function attachLiteServiceScanPair(options: {
   group: Group;
+  modelKey: LiteModelKey;
   scannerId: string;
   approachTrigger: string;
   approachEndTrigger: string;
@@ -264,6 +267,7 @@ export function attachLiteServiceScanPair(options: {
 }): () => void {
   const {
     group,
+    modelKey,
     scannerId,
     approachTrigger,
     approachEndTrigger,
@@ -310,7 +314,8 @@ export function attachLiteServiceScanPair(options: {
       y: scaleTriple.y,
       z: scaleTriple.z,
       duration: scaleDur,
-      ease: "power1.inOut",
+      // Scrubbed timelines feel most stable with linear easing (direct scroll→value mapping).
+      ease: "none",
       overwrite: "auto",
     },
     0,
@@ -322,14 +327,14 @@ export function attachLiteServiceScanPair(options: {
       y: posTriple.y,
       ...(posTriple.z !== undefined ? { z: posTriple.z } : {}),
       duration: posDur,
-      ease: "power1.inOut",
+      ease: "none",
       overwrite: "auto",
     },
     0,
   );
   approachTl.to(
     group.rotation,
-    { ...rotProps, duration: rotDur, ease: "power1.inOut", overwrite: "auto" },
+    { ...rotProps, duration: rotDur, ease: "none", overwrite: "auto" },
     0,
   );
 
@@ -341,7 +346,9 @@ export function attachLiteServiceScanPair(options: {
       end: scanPinEnd,
       pin: true,
       pinSpacing: true,
-      anticipatePin: 1,
+      // Helps reduce pin “snap” on fast trackpad scroll.
+      anticipatePin: 2,
+      pinType: "fixed",
       scrub: timing.scanScrub,
       invalidateOnRefresh: true,
       fastScrollEnd: true,
@@ -353,12 +360,42 @@ export function attachLiteServiceScanPair(options: {
        */
       onEnter: () => {
         approachTl.scrollTrigger?.disable(false);
+        // Lock approach to its end-state to avoid boundary jitter.
+        approachTl.progress(1);
+        if (typeof window !== "undefined") {
+          window.dispatchEvent(
+            new CustomEvent("lite-scan-pin", { detail: { key: modelKey, pinned: true } }),
+          );
+        }
       },
       onEnterBack: () => {
         approachTl.scrollTrigger?.disable(false);
+        // When coming back up into the pinned scan, keep approach locked.
+        approachTl.progress(1);
+        if (typeof window !== "undefined") {
+          window.dispatchEvent(
+            new CustomEvent("lite-scan-pin", { detail: { key: modelKey, pinned: true } }),
+          );
+        }
       },
       onLeaveBack: () => {
+        // When leaving the pinned scan upwards, snap scan to its t=0 state first so
+        // approach doesn't fight a lingering scan render for a frame or two.
+        scanTl.pause(0);
+        scanTl.progress(0);
         approachTl.scrollTrigger?.enable(false, false);
+        if (typeof window !== "undefined") {
+          window.dispatchEvent(
+            new CustomEvent("lite-scan-pin", { detail: { key: modelKey, pinned: false } }),
+          );
+        }
+      },
+      onLeave: () => {
+        if (typeof window !== "undefined") {
+          window.dispatchEvent(
+            new CustomEvent("lite-scan-pin", { detail: { key: modelKey, pinned: false } }),
+          );
+        }
       },
     },
   });
@@ -371,16 +408,26 @@ export function attachLiteServiceScanPair(options: {
     transformOrigin: "50% 50%",
   });
   gsap.set(`${scanner} .numberTrack`, {
-    willChange: "visibility",
+    willChange: "transform",
     force3D: true,
   });
   gsap.set(`${scanner} .purchaseStatus`, {
     willChange: "width, color",
     force3D: true,
   });
-  scanTl.to(`${scanner} .purchaseStatus`, { width: "135px", duration: 1 },0);
+  gsap.set(`${scanner} .barcoadCheck`, {
+    willChange: "opacity",
+    force3D: true,
+    autoAlpha: 0,
+  });
+
+  // Ensure a transform-based reveal (avoid animating width -> layout).
+  // gsap.set(`${scanner} .purchaseStatus`, { scaleX: 0, autoAlpha: 0 });
+  // scanTl.to(`${scanner} .purchaseStatus`, { scaleX: 1, autoAlpha: 1, duration: 1 }, 0);
+   scanTl.to(`${scanner} .purchaseStatus`, { width: "135px", duration: 1 },0);
   scanTl.to(`${scanner} .purchaseStatus`, { color: "red", duration: 0 },0.8);
-  scanTl.to(`${scanner} .barcoadCheck`, { visibility: "visible", duration: 0 },0.8);
+  // scanTl.to(`${scanner} .purchaseStatus`, { color: "red", duration: 0 }, 0.8);
+  scanTl.to(`${scanner} .barcoadCheck`, { autoAlpha: 1, duration: 0 }, 0.8);
 
   scanTl.to(
     group.rotation,
@@ -403,22 +450,16 @@ export function attachLiteServiceScanPair(options: {
     0.8,
   );
   // Instead of animating height/width (layout), scale the whole card.
-  // scanTl.fromTo(
-  //   scanner,
-  //   { scale: 1 },
-  //   { scale: 0, duration: 0.5, ease: "power1.inOut" },
-  //   1.1,
-  // );
-  // scanTl.to(scanner, { height: "150px", width: "150px", duration: 0.5, ease: "power1.inOut" }, 1.1);
-  scanTl.to(scanner, { x: cardX, duration: 1, ease: "power1.inOut" }, 1.2);
+  scanTl.to(scanner, { scale: 0.4, duration: 0.4, }, 1.2);
+  scanTl.to(`${scanner} .scannerBoxContent`, {display: "none" }, 0.85);
+  scanTl.to(scanner, { x: cardX, duration: 1, ease: "none" }, 1.2);
   scanTl.to(
     `${scanner} .numberTrack`,
-    { x: "-=50%", duration: 0.5, ease: "back.inOut" },
+    { x: "-=50%", duration: 0.5, ease: "none" },
     1,
   );
   // scanTl.to(scanner, { y: "-=200", duration: 0.3 }, 1.8);
-  scanTl.to(scanner, { height: "150px", width: "150px", duration: 0.4 }, 1.2);
-  scanTl.to(scanner, { height: "150px", width: "150px", duration: 0.4 }, 1.4);
+  // (intentionally no width/height tweens)
 
   return () => {
     removeBeepCue();
@@ -452,6 +493,7 @@ export function registerAllLiteServiceScans(
     disposers.push(
       attachLiteServiceScanPair({
         group,
+        modelKey: def.modelKey,
         scannerId: def.scannerId,
         approachTrigger: def.approach.trigger,
         approachEndTrigger: def.approach.endTrigger,
