@@ -52,8 +52,8 @@ export const LITE_SCAN_TIMING_TABLET: LiteScanTimingPreset = {
 };
 
 export const LITE_SCAN_TIMING_MOBILE: LiteScanTimingPreset = {
-  approachScrub: 0.4,
-  scanScrub: 0.6,
+  approachScrub: 1.5,
+  scanScrub: 1.5,
   scanPinStart: "top 22%",
   approachScale: 1.85,
   approachPosition: { x: "-=85", y: "+=55" },

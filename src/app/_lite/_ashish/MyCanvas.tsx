@@ -404,7 +404,7 @@ const MyCanvas = () => {
             trigger: "#ctaSection",
             start: "top bottom",
             end: "top top",
-            scrub: 2.5,
+            scrub: 3,
             invalidateOnRefresh: true,
             fastScrollEnd: true,
             onUpdate: (self) => {
