@@ -469,7 +469,28 @@ const MyCanvas = () => {
 
         addCtaCartTweensToTimeline(addToCartTl, modelRefs, bucketRef, asa1, asa2, ctaCart);
 
-        addToCartTl.to("#recieptSection", { y: "-=200", duration: 5, ease: "back.inOut" }, 1.5)
+        // Scrubbed timelines can cross the same time multiple times.
+        // Gate the bill SFX so it plays only once per mount.
+        let didPlayCtaBill = false;
+
+        addToCartTl.to(
+          "#recieptSection",
+          {
+            // Start state comes from Tailwind `translate-y-full` (100% of element height).
+            // Use the measured height so the receipt fully clears across OS/font metrics.
+            y: () => {
+              const el = typeof document !== "undefined" ? document.getElementById("recieptSection") : null;
+              if (!el) return -200;
+              const h = el.getBoundingClientRect().height;
+              // Extra few px so it fully clears even with subpixel rounding.
+              return -Math.ceil(h + 8);
+            },
+            duration: 5,
+            ease: "back.inOut",
+            overwrite: "auto",
+          },
+          1.5,
+        );
         // addToCartTl.to("#recieptSection", {y: "-=104"}, 1)
         // addToCartTl.to("#recieptSection", {y: "-=104"}, 1.4)
         // addToCartTl.to("#recieptSection", {y: "-=104"}, 1.8)
@@ -482,6 +503,8 @@ const MyCanvas = () => {
             if (cancelled) return;
             const st = addToCartTl?.scrollTrigger;
             if (st && st.direction < 0) return;
+            if (didPlayCtaBill) return;
+            didPlayCtaBill = true;
             playLiteSfx("bill");
           },
           undefined,

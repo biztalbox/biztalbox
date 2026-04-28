@@ -991,7 +991,7 @@ const Hero = () => {
               <span className="shrink-0 whitespace-nowrap">x1</span>
             </div>
             <div className="flex justify-between gap-2">
-              <span className="min-w-0 break-words">Algorithm Analysis</span>
+              <span className="min-w-0 break-words">Market Analysis</span>
               <span className="shrink-0 whitespace-nowrap">x1</span>
             </div>
             <div className="flex mt-2 justify-between">
