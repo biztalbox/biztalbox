@@ -6,6 +6,7 @@ import { AdaptiveDpr } from "@react-three/drei";
 import { Perf } from 'r3f-perf'
 import { Canvas, useThree } from "@react-three/fiber";
 import { Suspense, useEffect, useLayoutEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import * as THREE from "three";
 import Link from "next/link";
 import WhyChooseUsLite from "./WhyChooseUs";
@@ -136,34 +137,44 @@ const Hero = () => {
   return (
     <div className="relative">
       <section id="section0" className="min-h-[100svh] overflow-hidden">
-        {showCanvas && (
-          <Canvas
-            // WebGL sits above base content, but below explicit overlay UI.
-            className="!fixed z-10 inset-0 h-full w-full pointer-events-none"
-            style={{
-              position: "fixed",
-              inset: 0,
-              zIndex: 10,
-              pointerEvents: "none",
-            }}
-            dpr={canvasDpr}
-            performance={{ min: 0.5, max: 1, debounce: 280 }}
-            gl={{
-              alpha: true,
-              // Antialiasing is expensive on mobile; DPR + post effects are enough here.
-              antialias: !isPhone,
-              powerPreference: "high-performance",
-            }}
-          >
-            <ResponsiveHeroCamera />
-            <AdaptiveDpr />
-            <Suspense fallback={null}>
-              <MyCanvas />
-            </Suspense>
+        {showCanvas &&
+          (() => {
+            const canvas = (
+              <Canvas
+                // WebGL sits above base content, but below explicit overlay UI.
+                className="!fixed z-10 inset-0 h-full w-full pointer-events-none"
+                style={{
+                  position: "fixed",
+                  inset: 0,
+                  zIndex: 10,
+                  pointerEvents: "none",
+                }}
+                dpr={canvasDpr}
+                performance={{ min: 0.5, max: 1, debounce: 280 }}
+                gl={{
+                  alpha: true,
+                  // Antialiasing is expensive on mobile; DPR + post effects are enough here.
+                  antialias: !isPhone,
+                  powerPreference: "high-performance",
+                }}
+              >
+                <ResponsiveHeroCamera />
+                <AdaptiveDpr />
+                <Suspense fallback={null}>
+                  <MyCanvas />
+                </Suspense>
 
-            {/* <Perf style={{marginTop:"120px",marginLeft:"50px", height:"200px"}} position="top-left" showGraph /> */}
-          </Canvas>
-        )}
+                {/* <Perf style={{marginTop:"120px",marginLeft:"50px", height:"200px"}} position="top-left" showGraph /> */}
+              </Canvas>
+            );
+
+            const host =
+              typeof document !== "undefined"
+                ? document.getElementById("lite-canvas-root")
+                : null;
+
+            return host ? createPortal(canvas, host) : canvas;
+          })()}
 
         {/* Hero Content  */}
         <div className="relative z-20 pt-60 lg:pt-36" >
@@ -948,11 +959,11 @@ const Hero = () => {
           {/* Item list and total */}
           <div className="flex flex-col">
             <div className="flex justify-between">
-              <span className="min-w-0 break-words">Search Engine Optimization</span>
+              <span className="min-w-0 break-words">SEO</span>
               <span className="shrink-0 whitespace-nowrap">x1</span>
             </div>
             <div className="flex justify-between gap-2">
-              <span className="min-w-0 break-words">Social Media Optimization</span>
+              <span className="min-w-0 break-words">SMO</span>
               <span className="shrink-0 whitespace-nowrap">x1</span>
             </div>
             <div className="flex justify-between gap-2">
@@ -972,7 +983,7 @@ const Hero = () => {
               <span className="shrink-0 whitespace-nowrap">x1</span>
             </div>
             <div className="flex justify-between gap-2">
-              <span className="min-w-0 break-words">Performance Marketing</span>
+              <span className="min-w-0 break-words">Performance M.</span>
               <span className="shrink-0 whitespace-nowrap">x1</span>
             </div>
             <div className="flex justify-between gap-2">

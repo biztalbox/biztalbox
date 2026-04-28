@@ -2,8 +2,9 @@ import type gsap from "gsap";
 
 const SFX_BEEP_SRC = "/assets/lite_models/beep.mp3";
 const SFX_BILL_SRC = "/assets/lite_models/bill.mp3";
+const SFX_PRINT_SRC = "/assets/lite_models/print.mp3";
 
-export type LiteSfxKind = "beep" | "bill";
+export type LiteSfxKind = "beep" | "bill" | "print";
 
 /** Defaults when `startSeconds` / `durationSeconds` args are omitted. */
 export const LITE_SFX_DEFAULTS: Record<
@@ -12,7 +13,8 @@ export const LITE_SFX_DEFAULTS: Record<
 > = {
   beep: { src: SFX_BEEP_SRC, startTime: 0, durationSec: undefined },
   bill: { src: SFX_BILL_SRC, startTime: 0, durationSec: 8 },
-};
+  print: { src: SFX_PRINT_SRC, startTime: 0, durationSec: undefined },
+  };
 
 const audioBySrc = new Map<string, HTMLAudioElement>();
 const stopTimersBySrc = new Map<string, ReturnType<typeof setTimeout>>();

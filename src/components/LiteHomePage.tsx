@@ -18,7 +18,7 @@ const LITE_LOADER_GIF_SRC = "/assets/loader/white.gif";
  */
 const LITE_LOADER_DISPLAY = {
   minVisibleFromMountMs: 1200,
-  holdAfterReadyMs: 350,
+  holdAfterReadyMs: 2500,
 } as const;
 
 const LITE_LOADER_IMG_SIZE = 120;

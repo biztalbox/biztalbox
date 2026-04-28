@@ -6,7 +6,7 @@ import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { KTX2Loader } from "three/examples/jsm/loaders/KTX2Loader.js";
 import { MeshoptDecoder } from "three/examples/jsm/libs/meshopt_decoder.module.js";
-import type { Group, Object3D } from "three";
+import { Camera, type Group, type Object3D } from "three";
 import type { GLTF } from "three/examples/jsm/loaders/GLTFLoader.js";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -14,7 +14,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { WigglingModel } from "./WigglingModel";
 import type { LiteModelKey, LiteModelRefMap } from "./motion/lite-service-scan-config";
 import { resolveLiteServiceScans } from "./motion/lite-service-scan-config";
-import { getLiteScanTimingForBreakpoint, registerAllLiteServiceScans } from "./motion/lite-service-scan-factory";
+import { billTrigger, getLiteScanTimingForBreakpoint, registerAllLiteServiceScans } from "./motion/lite-service-scan-factory";
 import {
   addCtaCartTweensToTimeline,
   getHeroFadeOutYDelta,
@@ -104,6 +104,7 @@ function useLiteHeroCanvasFrame() {
 }
 
 const ST_REFRESH_DEBOUNCE_MS = 160;
+const ST_REFRESH_RETRY_MS = 120;
 
 const MyCanvas = () => {
   const { root, layouts: L, layoutBreakpoint } = useLiteHeroCanvasFrame();
@@ -112,6 +113,7 @@ const MyCanvas = () => {
   const floatSoft = layoutBreakpoint !== "desktop";
   /** Same HDR file everywhere; intensity only nudges lighting cost/readability — mesh & texture quality unchanged. */
   const envIntensity = layoutBreakpoint === "desktop" ? 1.2 : layoutBreakpoint === "tablet" ? 1.1 : 1.02;
+  const {camera} = useThree();
 
   const smoRef = useRef<Group>(null);
   const adsRef = useRef<Group>(null);
@@ -295,17 +297,36 @@ const MyCanvas = () => {
       limitCallbacks: true,
     });
 
+    const hasActivePinnedScan = () =>
+      ScrollTrigger.getAll().some((trigger) => {
+        const triggerEl = trigger.trigger;
+        return (
+          trigger.isActive &&
+          trigger.pin &&
+          triggerEl instanceof Element &&
+          triggerEl.id.startsWith("lite-scanner-")
+        );
+      });
+
+    const queueRefresh = (delay = ST_REFRESH_DEBOUNCE_MS) => {
+      if (t) clearTimeout(t);
+      t = setTimeout(() => {
+        t = undefined;
+        if (hasActivePinnedScan()) {
+          queueRefresh(ST_REFRESH_RETRY_MS);
+          return;
+        }
+        ScrollTrigger.refresh();
+      }, delay);
+    };
+
     const scheduleRefresh = () => {
       const w = typeof window !== "undefined" ? window : undefined;
       const nextWidth = w?.innerWidth ?? lastWidth;
       const widthChanged = Math.abs(nextWidth - lastWidth) > 8;
       if (!widthChanged) return;
       lastWidth = nextWidth;
-      if (t) clearTimeout(t);
-      t = setTimeout(() => {
-        t = undefined;
-        ScrollTrigger.refresh();
-      }, ST_REFRESH_DEBOUNCE_MS);
+      queueRefresh();
     };
     const w = typeof window !== "undefined" ? window : undefined;
     w?.addEventListener("resize", scheduleRefresh, { passive: true });
@@ -328,6 +349,23 @@ const MyCanvas = () => {
       // Use immediate scrub for CTA so reverse doesn't "lag" (numeric scrub smooths over seconds).
       const ctaScrub = true;
 
+      const snapCtaHidden = () => {
+        // Instantly hide all CTA/cart items on reverse scroll to avoid any “jam” feel.
+        // Use the configured scale0 so all breakpoints behave consistently.
+        for (const key of Object.keys(modelRefs) as LiteModelKey[]) {
+          const g = modelRefs[key].current;
+          if (!g) continue;
+          gsap.set(g.scale, { x: 0, y: 0, z: 0, overwrite: true });
+        }
+        // bucket is stored separately
+        if (bucketRef.current) {
+          gsap.set(bucketRef.current.scale, { x: 0, y: 0, z: 0, overwrite: true });
+        }
+        // snap timeline visuals
+        addToCartTl?.pause(0);
+        addToCartTl?.progress(0);
+      };
+
       const mountScroll = () => {
         if (
           !smoRef.current ||
@@ -347,10 +385,16 @@ const MyCanvas = () => {
         }
         if (cancelled) return;
 
-        const initModals = gsap.timeline({ defaults: { duration: 5, ease: "back.inOut" } });
-        const baseHeroY = heroFadeOutGroupRef.current.position.y;
-        gsap.set(heroFadeOutGroupRef.current.position, { y: baseHeroY + 900 });
-        initModals.to(heroFadeOutGroupRef.current.position, { y: baseHeroY }, 0);
+        const firstTl = gsap.timeline({
+          defaults: { duration: 0,ease: "power4.inOut" }
+        });
+        // firstTl.from(camera.position, { y: 300, z: 300 });
+
+        // const initModals = gsap.timeline({ defaults: { duration: 3 } });
+        // const baseHeroY = heroFadeOutGroupRef.current.position.y;
+        // gsap.set(heroFadeOutGroupRef.current.position, { y: baseHeroY + 900 });
+        // initModals.to(heroFadeOutGroupRef.current.position, { y: baseHeroY, ease: "back.inOut"}, 0);
+        billTrigger({tl: firstTl, up: "-=57"});
 
         matchMediaInstance = gsap.matchMedia();
 
@@ -358,13 +402,13 @@ const MyCanvas = () => {
           const isNarrow = bp !== "desktop";
           const fadeTl = gsap.timeline({
             // For scrubbed timelines, keep easing minimal to avoid "elastic" feel on trackpad spikes.
-            defaults: { duration: 2, ease: "none" },
+            defaults: { duration: 3, ease: "none" },
             scrollTrigger: {
               trigger: "#section0",
               start: "-120 top",
               end: "top top",
               // Silencio-like: low scrub = buttery, less laggy.
-              scrub: isNarrow ? 0.35 : 0.25,
+              scrub: 1,
               invalidateOnRefresh: true,
               fastScrollEnd: true,
             },
@@ -404,21 +448,18 @@ const MyCanvas = () => {
             trigger: "#ctaSection",
             start: "top bottom",
             end: "top top",
+            // Use immediate scrub so reverse is instant (Silencio-like).
             scrub: 3,
             invalidateOnRefresh: true,
             fastScrollEnd: true,
             onUpdate: (self) => {
-              // Guard tiny reverse progress near start (prevents brief "ghost" visibility).
-              if (self.direction < 0 && self.progress < 0.015) {
-                addToCartTl?.pause(0);
-                addToCartTl?.progress(0);
-              }
+              // Keep timeline responsive during scrub; hide is handled onLeaveBack only.
+              // (We don't snap to hidden state on reverse while CTA is still in view.)
             },
             onLeaveBack: () => {
               // When scrolling back above CTA, snap everything to the hidden (t=0) state.
               // This avoids scrub-smoothing leaving modals/receipt visible for seconds.
-              addToCartTl?.pause(0);
-              addToCartTl?.progress(0);
+              snapCtaHidden();
             },
           },
         });
@@ -428,7 +469,7 @@ const MyCanvas = () => {
 
         addCtaCartTweensToTimeline(addToCartTl, modelRefs, bucketRef, asa1, asa2, ctaCart);
 
-        addToCartTl.to("#recieptSection", { y: "-=520", duration: 2, ease: "back.inOut" }, 1.5)
+        addToCartTl.to("#recieptSection", { y: "-=200", duration: 5, ease: "back.inOut" }, 1.5)
         // addToCartTl.to("#recieptSection", {y: "-=104"}, 1)
         // addToCartTl.to("#recieptSection", {y: "-=104"}, 1.4)
         // addToCartTl.to("#recieptSection", {y: "-=104"}, 1.8)
@@ -448,6 +489,9 @@ const MyCanvas = () => {
         );
 
         requestAnimationFrame(() => {
+          if (ScrollTrigger.getAll().some((trigger) => trigger.isActive && trigger.pin)) {
+            return;
+          }
           ScrollTrigger.refresh();
         });
       };

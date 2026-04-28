@@ -234,7 +234,6 @@ export function addCtaCartTweensToTimeline(
     const m = safeModels[key];
     if (!g || !m?.scale0) continue;
     tl.to(g.scale, { x: m.scale0[0], y: m.scale0[1], z: m.scale0[2], duration: 0, ease: ease0 }, t0);
-    tl.set(g.position, { y: "+=60" }, 0);
   }
 
   tl.to(bucket.scale, { x: b.scale0[0], y: b.scale0[1], z: b.scale0[2], duration: 0, ease: ease0 }, t0);
@@ -265,7 +264,6 @@ export function addCtaCartTweensToTimeline(
     if (!g || !m?.scaleArrange) continue;
     const [sx, sy, sz] = m.scaleArrange;
     tl.set(g.scale, { x: sx, y: sy, z: sz, duration: 0, ease: ease0 }, 0);
-    tl.to(g.position, { y: "-=60", duration: 1, ease: ease0 }, times.move);
   }
 
   for (const key of CTA_SCALE0_ORDER) {
@@ -273,7 +271,7 @@ export function addCtaCartTweensToTimeline(
     const m = safeModels[key];
     if (!g || !m?.positionMove) continue;
     const { duration, ease, ...rest } = m.positionMove;
-    tl.to(g.position, { ...rest, duration, ease }, times.move);
+    tl.to(g.position, { ...rest, duration, ease, overwrite: "auto" }, times.move);
   }
 
   if (asa1) {

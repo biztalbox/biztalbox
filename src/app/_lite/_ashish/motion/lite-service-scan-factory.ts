@@ -47,7 +47,7 @@ export const LITE_SCAN_TIMING_TABLET: LiteScanTimingPreset = {
   approachScale: 2.15,
   approachPosition: { x: "-=115", y: "+=62" },
   approachRotationY: 8,
-  spinRadians: Math.PI/ 1,
+  spinRadians: Math.PI / 1,
   cardSlideX: "",
 };
 
@@ -58,7 +58,7 @@ export const LITE_SCAN_TIMING_MOBILE: LiteScanTimingPreset = {
   approachScale: 1.85,
   approachPosition: { x: "-=85", y: "+=55" },
   approachRotationY: 6,
-  spinRadians: Math.PI/1,
+  spinRadians: Math.PI / 1,
   cardSlideX: "",
 };
 
@@ -69,6 +69,21 @@ type ScanTimingPresetsJson = Partial<
 const scrollBundleTiming = scrollBundle as typeof scrollBundle & {
   scanTimingPresets?: ScanTimingPresetsJson;
 };
+
+export function billTrigger({
+  tl,
+  up,
+  delay = 0,
+  sound = "bill",
+}: {
+  tl: gsap.core.Timeline;
+  up: string;
+  delay?: number;
+  sound?: any;
+}) {
+  tl.to("#recieptSection", { y: up }, delay);
+  playLiteSfx(sound);
+}
 
 /**
  * Active timing preset for a breakpoint: TS defaults, shallow-overridden by
@@ -364,7 +379,9 @@ export function attachLiteServiceScanPair(options: {
         approachTl.progress(1);
         if (typeof window !== "undefined") {
           window.dispatchEvent(
-            new CustomEvent("lite-scan-pin", { detail: { key: modelKey, pinned: true } }),
+            new CustomEvent("lite-scan-pin", {
+              detail: { key: modelKey, pinned: true },
+            }),
           );
         }
       },
@@ -374,7 +391,9 @@ export function attachLiteServiceScanPair(options: {
         approachTl.progress(1);
         if (typeof window !== "undefined") {
           window.dispatchEvent(
-            new CustomEvent("lite-scan-pin", { detail: { key: modelKey, pinned: true } }),
+            new CustomEvent("lite-scan-pin", {
+              detail: { key: modelKey, pinned: true },
+            }),
           );
         }
       },
@@ -386,14 +405,18 @@ export function attachLiteServiceScanPair(options: {
         approachTl.scrollTrigger?.enable(false, false);
         if (typeof window !== "undefined") {
           window.dispatchEvent(
-            new CustomEvent("lite-scan-pin", { detail: { key: modelKey, pinned: false } }),
+            new CustomEvent("lite-scan-pin", {
+              detail: { key: modelKey, pinned: false },
+            }),
           );
         }
       },
       onLeave: () => {
         if (typeof window !== "undefined") {
           window.dispatchEvent(
-            new CustomEvent("lite-scan-pin", { detail: { key: modelKey, pinned: false } }),
+            new CustomEvent("lite-scan-pin", {
+              detail: { key: modelKey, pinned: false },
+            }),
           );
         }
       },
@@ -420,20 +443,29 @@ export function attachLiteServiceScanPair(options: {
     force3D: true,
     autoAlpha: 0,
   });
+  gsap.set(`${scanner} .scannerBoxContent`, {
+    willChange: "opacity",
+    force3D: true,
+    autoAlpha: 1,
+    pointerEvents: "auto",
+  });
+  gsap.set(".recieptSection", {
+    willChange: "transform",
+    force3D: true,
+  });
 
   // Ensure a transform-based reveal (avoid animating width -> layout).
   // gsap.set(`${scanner} .purchaseStatus`, { scaleX: 0, autoAlpha: 0 });
   // scanTl.to(`${scanner} .purchaseStatus`, { scaleX: 1, autoAlpha: 1, duration: 1 }, 0);
-   scanTl.to(`${scanner} .purchaseStatus`, { width: "135px", duration: 1 },0);
-  scanTl.to(`${scanner} .purchaseStatus`, { color: "red", duration: 0 },0.8);
-  // scanTl.to(`${scanner} .purchaseStatus`, { color: "red", duration: 0 }, 0.8);
-  scanTl.to(`${scanner} .barcoadCheck`, { autoAlpha: 1, duration: 0 }, 0.8);
 
   scanTl.to(
     group.rotation,
     { y: `+=${spinRad}`, duration: 1, ease: "none", overwrite: "auto" },
     0,
   );
+  scanTl.to(`${scanner} .purchaseStatus`, { width: "135px", duration: 1 }, 0);
+  scanTl.to(`${scanner} .purchaseStatus`, { color: "red", duration: 0 }, 0.8);
+  scanTl.to(`${scanner} .barcoadCheck`, { autoAlpha: 1, duration: 0 }, 0.8);
 
   const removeBeepCue = addScrubTimelineCue(scanTl, 0.8 + 0.1, () => {
     if (!isCancelled()) playLiteSfx("beep");
@@ -443,15 +475,27 @@ export function attachLiteServiceScanPair(options: {
   if (!lowPowerMode) {
     addScanWarmTintToTimeline(scanTl, group, 0.5, 0.36);
   }
+  billTrigger({ tl: scanTl, up: "-=23", delay: 0.8, sound: "print" });
 
   scanTl.to(
     group.scale,
-    { x: 0, y: 0, z: 0, duration: 0.15, ease: "power1.inOut", overwrite: "auto" },
+    {
+      x: 0,
+      y: 0,
+      z: 0,
+      duration: 0.15,
+      ease: "power1.inOut",
+      overwrite: "auto",
+    },
     0.8,
   );
   // Instead of animating height/width (layout), scale the whole card.
-  scanTl.to(scanner, { scale: 0.4, duration: 0.4, }, 1.2);
-  scanTl.to(`${scanner} .scannerBoxContent`, {display: "none" }, 0.85);
+  scanTl.to(scanner, { scale: 0.4, duration: 0.4 }, 1.2);
+  scanTl.to(
+    `${scanner} .scannerBoxContent`,
+    { autoAlpha: 0, pointerEvents: "none", duration: 0.15, ease: "none" },
+    1.2,
+  );
   scanTl.to(scanner, { x: cardX, duration: 1, ease: "none" }, 1.2);
   scanTl.to(
     `${scanner} .numberTrack`,
