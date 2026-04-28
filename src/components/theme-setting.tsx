@@ -49,8 +49,9 @@ const ThemeSetting = () => {
   };
 
   useEffect(() => {
-    // If no theme is set yet, default to light.
-    if (!theme) setTheme("light");
+    // Don't force light on first mount; allow system/resolved theme to drive.
+    // (Forcing light can overwrite `resolvedTheme` and break middleware routing on Vercel.)
+    if (!theme) return;
   }, [setTheme, theme]);
 
   useEffect(() => {

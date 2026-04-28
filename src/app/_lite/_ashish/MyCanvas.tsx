@@ -483,7 +483,7 @@ const MyCanvas = () => {
               if (!el) return -200;
               const h = el.getBoundingClientRect().height;
               // Extra few px so it fully clears even with subpixel rounding.
-              return -Math.ceil(h + 8);
+              return -Math.ceil(h-500);
             },
             duration: 5,
             ease: "back.inOut",

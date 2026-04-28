@@ -132,7 +132,7 @@ const Hero = () => {
   const isPhone = viewportWidth < 640;
   const isTablet = viewportWidth < 1024;
   /** Clamp DPR by tier — full asset quality; AdaptiveDpr only lowers effective DPR when FPS dips. */
-  const canvasDpr: [number, number] = isPhone ? [1, 1.35] : isTablet ? [1, 1.55] : [1, 1.85];
+  const canvasDpr: [number, number] = isPhone ? [1, 1.85] : isTablet ? [1, 1.85] : [1, 1.85];
 
   return (
     <div className="relative">
@@ -154,7 +154,7 @@ const Hero = () => {
                 gl={{
                   alpha: true,
                   // Antialiasing is expensive on mobile; DPR + post effects are enough here.
-                  antialias: !isPhone,
+                  antialias: true,
                   powerPreference: "high-performance",
                 }}
               >

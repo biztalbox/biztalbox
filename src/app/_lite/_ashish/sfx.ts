@@ -163,6 +163,9 @@ function installUnlockListenersOnce(): void {
  */
 export function playLiteSfx(kind: LiteSfxKind, startSeconds?: number, durationSeconds?: number): void {
   if (typeof window === "undefined") return;
+  // Receipt-related SFX should only play on desktop because the receipt UI is hidden on mobile/tablet.
+  // (Also avoids noisy audio on touch devices where users may not expect it.)
+  if ((kind === "bill" || kind === "print") && window.innerWidth < 1024) return;
   // Ensure we have elements ready to prime in the next gesture.
   preloadLiteSfx();
   installUnlockListenersOnce();
