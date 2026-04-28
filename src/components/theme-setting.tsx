@@ -5,13 +5,22 @@ import dynamic from "next/dynamic";
 import { usePathname, useRouter } from "next/navigation";
 import { ScrollSmoother } from "@/plugins";
 const ThemeSetting = () => {
-  const { setTheme, theme } = useTheme();
+  const { setTheme, theme, resolvedTheme } = useTheme();
   const [settingOpen, setSettingOpen] = React.useState(false);
   const pathname = usePathname();
   const router = useRouter();
 
   function handleOpenSetting() {
     setSettingOpen(!settingOpen);
+  };
+
+  const writeThemeCookie = (nextTheme: "dark" | "light") => {
+    const isHttps =
+      typeof window !== "undefined" &&
+      typeof window.location !== "undefined" &&
+      window.location.protocol === "https:";
+    // `Secure` is recommended on Vercel/HTTPS so the cookie is consistently sent.
+    document.cookie = `bb_theme=${nextTheme}; Path=/; Max-Age=31536000; SameSite=Lax${isHttps ? "; Secure" : ""}`;
   };
 
   const applyTheme = (nextTheme: "dark" | "light") => {
@@ -29,12 +38,7 @@ const ThemeSetting = () => {
     }
     // Persist theme to a cookie so middleware can route "/" correctly on the next navigation.
     // Do this BEFORE navigation so the request includes the updated cookie (important on Vercel).
-    const isHttps =
-      typeof window !== "undefined" &&
-      typeof window.location !== "undefined" &&
-      window.location.protocol === "https:";
-    // `Secure` is recommended on Vercel/HTTPS so the cookie is consistently sent.
-    document.cookie = `bb_theme=${nextTheme}; Path=/; Max-Age=31536000; SameSite=Lax${isHttps ? "; Secure" : ""}`;
+    writeThemeCookie(nextTheme);
 
     setTheme(nextTheme);
 
@@ -48,6 +52,13 @@ const ThemeSetting = () => {
     // If no theme is set yet, default to light.
     if (!theme) setTheme("light");
   }, [setTheme, theme]);
+
+  useEffect(() => {
+    // Ensure the middleware cookie is always present, even when theme comes from system preference.
+    const t = (resolvedTheme ?? theme) as unknown;
+    if (t !== "dark" && t !== "light") return;
+    writeThemeCookie(t);
+  }, [resolvedTheme, theme]);
   return (
     <div
       className={`tp-theme-settings-area transition-3 ${settingOpen ? "settings-opened" : ""
