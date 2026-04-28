@@ -29,7 +29,12 @@ const ThemeSetting = () => {
     }
     // Persist theme to a cookie so middleware can route "/" correctly on the next navigation.
     // Do this BEFORE navigation so the request includes the updated cookie (important on Vercel).
-    document.cookie = `bb_theme=${nextTheme}; path=/; max-age=31536000; samesite=lax`;
+    const isHttps =
+      typeof window !== "undefined" &&
+      typeof window.location !== "undefined" &&
+      window.location.protocol === "https:";
+    // `Secure` is recommended on Vercel/HTTPS so the cookie is consistently sent.
+    document.cookie = `bb_theme=${nextTheme}; Path=/; Max-Age=31536000; SameSite=Lax${isHttps ? "; Secure" : ""}`;
 
     setTheme(nextTheme);
 
