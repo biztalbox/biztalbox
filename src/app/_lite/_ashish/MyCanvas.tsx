@@ -366,6 +366,8 @@ const MyCanvas = () => {
         addToCartTl?.progress(0);
       };
 
+      let onMagic: ((ev: Event) => void) | null = null;
+
       const mountScroll = () => {
         if (
           !smoRef.current ||
@@ -386,15 +388,28 @@ const MyCanvas = () => {
         if (cancelled) return;
 
         const firstTl = gsap.timeline({
-          defaults: { duration: 0,ease: "power4.inOut" }
+          defaults: { duration: 1.5 ,ease: "power4.inOut" }
         });
+        // Only run when the user clicks the "Magic" button.
+        firstTl.pause(0);
+        let didRunMagic = false;
+        onMagic = () => {
+          if (cancelled || didRunMagic) return;
+          didRunMagic = true;
+          firstTl.play(0);
+        };
+        if (typeof window !== "undefined") {
+          window.addEventListener("lite:magic", onMagic as EventListener);
+        }
         // firstTl.from(camera.position, { y: 300, z: 300 });
 
         // const initModals = gsap.timeline({ defaults: { duration: 3 } });
         // const baseHeroY = heroFadeOutGroupRef.current.position.y;
         // gsap.set(heroFadeOutGroupRef.current.position, { y: baseHeroY + 900 });
         // initModals.to(heroFadeOutGroupRef.current.position, { y: baseHeroY, ease: "back.inOut"}, 0);
-        billTrigger({tl: firstTl, up: "-=57"});
+        
+          billTrigger({tl: firstTl, up: "-=57", delay: 0.5});
+        
 
         matchMediaInstance = gsap.matchMedia();
 
@@ -523,6 +538,9 @@ const MyCanvas = () => {
 
       return () => {
         cancelled = true;
+        if (typeof window !== "undefined") {
+          if (onMagic) window.removeEventListener("lite:magic", onMagic as EventListener);
+        }
         matchMediaInstance?.revert();
         matchMediaInstance = null;
         pauseLiteSfx("beep");

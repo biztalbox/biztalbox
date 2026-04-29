@@ -944,6 +944,20 @@ const Hero = () => {
       <WhyChooseUsLite />
       {/* service area end */}
 
+      <button
+        className="px-3 py-.5 fixed bottom-3 hover:!bg-black hover:!text-white left-5 bg-white text-black border border-black rounded-full"
+        type="button"
+        onClick={(e) => {
+          try {
+            window.dispatchEvent(new CustomEvent("lite:magic"));
+            e.currentTarget.style.display = "none";
+          } catch {
+            // ignore
+          }
+        }}
+      >
+        Click to see Magic
+      </button>
 
       <section id="recieptSection" className="fixed hidden lg:block z-20 bottom-0 left-5 bg-white p-3 translate-y-full">
         <div className="flex flex-col gap-1 w-44 divide-y-2 divide-x-0 divide-dashed text-sm font-thin font-mono">
