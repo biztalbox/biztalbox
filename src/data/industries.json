@@ -94,6 +94,54 @@
         "name": "Roofing",
         "link": "/roofing-seo",
         "description": "The roofing market is expanding fast. New materials, better systems, evolving standards. As a contractor, you’re expected to keep up. To improve. To stay competitive.But what’s the point if the right customers never find you?"
+    },
+    {
+        "id": 19,
+        "name": "Pharmaceutical",
+        "link": "/pharmaceutical-seo",
+        "description": "The pharmaceutical industry is steadily growing based on the fundamental shifts in the global approach to health and illness. Growth in the pharmaceutical industry is also due to chronic diseases such as diabetes, heart diseases, and cancer."
+    },
+    {
+        "id": 18,
+        "name": "Education",
+        "link": "/education-seo",
+        "description":"The education industry is forecasted to grow at a CAGR of 5.86%, supported by steady structural changes in the ways in which learning is accessed and delivered. "
+    },
+    {
+        "id": 18,
+        "name": "Insurance",
+        "link": "/insurance-seo",
+        "description": "The insurance industry is expanding steadily, shaped by a few strong structural forces rather than short-term trends. Rising incomes are one of the key drivers. As households move into higher income brackets, the focus gradually shift from basic spending to financial protection, resulting in an increased demand for life, health and asset insurance.  "
+    },
+    {
+        "id": 18,
+        "name": "Healthcare",
+        "link": "/healthcare-seo",
+        "description":"healthcare decision today often starts with curiosity or concern, not a hospital visit. They try to understand symptoms, possible treatments, and who they can trust. You may not even realize it, but this early step filters your choices."
+    },
+    {
+        "id": 18,
+        "name": "Painting",
+        "link": "/painting-seo",
+        "description":"Painting services are always in demand. Fresh construction, renovation, or simple maintenance keeps the industry active. But competition is fierce, and getting projects is harder than ever. "
+    },
+    {
+        "id": 18,
+        "name": "Construction",
+        "link": "/construction-seo",
+        "description":"Construction today is quite different from how it used to function before.  It is no longer driven only by large, isolated projects. Instead, it has become more continuous, with steady demand coming from multiple areas at the same time."
+    },
+    {
+        "id": 18,
+        "name": "Movers-packers",
+        "link": "/movers-packers-seo",
+        "description":"The movers and packers industry is growing steadily because people are moving more often than before. A job change, education, or lifestyle upgrade now triggers relocation far more frequently than it used to. "
+    },
+    {
+        "id": 18,
+        "name": "Energy-utilities",
+        "link": "/energy-utilities-seo",
+        "description":"The movers and packers industry is growing steadily because people are moving more often than before. A job change, education, or lifestyle upgrade now triggers relocation far more frequently than it used to. Moving between cities has become normal, especially from smaller towns to metros, and that steady movement keeps demand for shifting services consistently active."
     }
     
 ]
