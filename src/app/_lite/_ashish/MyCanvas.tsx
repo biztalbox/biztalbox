@@ -158,7 +158,9 @@ const MyCanvas = () => {
     () => ({}),
   );
 
-  const isFloatOn = (key: LiteModelKey) => !!floatEnabledByKey[key] && !scanPinnedByKey[key];
+  // TEMP: keep Float enabled even during pinned scans.
+  // Previously: `&& !scanPinnedByKey[key]` (disabled float while scanner is pinned).
+  const isFloatOn = (key: LiteModelKey) => !!floatEnabledByKey[key];
 
   /**
    * Pause idle float animations when the related DOM section/card is offscreen.
@@ -233,20 +235,21 @@ const MyCanvas = () => {
     };
   }, [layoutBreakpoint]);
 
-  // While a scanner is pinned (active “scan” phase), disable Float for that model.
-  // This prevents Float's internal rAF transforms from fighting GSAP scrubbing on reverse scroll.
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const onPin = (ev: Event) => {
-      const e = ev as CustomEvent<{ key?: LiteModelKey; pinned?: boolean }>;
-      const key = e.detail?.key;
-      const pinned = !!e.detail?.pinned;
-      if (!key) return;
-      setScanPinnedByKey((prev) => ({ ...prev, [key]: pinned }));
-    };
-    window.addEventListener("lite-scan-pin", onPin as EventListener);
-    return () => window.removeEventListener("lite-scan-pin", onPin as EventListener);
-  }, []);
+  // TEMP: commenting out pinned-scan float suppression.
+  // While a scanner is pinned (active “scan” phase), we used to disable Float for that model
+  // to prevent Float's internal rAF transforms from fighting GSAP scrubbing.
+  // useEffect(() => {
+  //   if (typeof window === "undefined") return;
+  //   const onPin = (ev: Event) => {
+  //     const e = ev as CustomEvent<{ key?: LiteModelKey; pinned?: boolean }>;
+  //     const key = e.detail?.key;
+  //     const pinned = !!e.detail?.pinned;
+  //     if (!key) return;
+  //     setScanPinnedByKey((prev) => ({ ...prev, [key]: pinned }));
+  //   };
+  //   window.addEventListener("lite-scan-pin", onPin as EventListener);
+  //   return () => window.removeEventListener("lite-scan-pin", onPin as EventListener);
+  // }, []);
 
   const configureGltfLoader = useMemo(() => {
     return (loader: GLTFLoader) => {
@@ -350,18 +353,8 @@ const MyCanvas = () => {
       const ctaScrub = true;
 
       const snapCtaHidden = () => {
-        // Instantly hide all CTA/cart items on reverse scroll to avoid any “jam” feel.
-        // Use the configured scale0 so all breakpoints behave consistently.
-        for (const key of Object.keys(modelRefs) as LiteModelKey[]) {
-          const g = modelRefs[key].current;
-          if (!g) continue;
-          gsap.set(g.scale, { x: 0, y: 0, z: 0, overwrite: true });
-        }
-        // bucket is stored separately
-        if (bucketRef.current) {
-          gsap.set(bucketRef.current.scale, { x: 0, y: 0, z: 0, overwrite: true });
-        }
-        // snap timeline visuals
+        // Reset CTA timeline instantly when scrolling above CTA.
+        // NOTE: Do not touch 3D model scales here — models are reused in hero/service scans.
         addToCartTl?.pause(0);
         addToCartTl?.progress(0);
       };

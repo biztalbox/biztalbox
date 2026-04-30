@@ -374,9 +374,9 @@ export function attachLiteServiceScanPair(options: {
        * user scrolls back above the scan start.
        */
       onEnter: () => {
-        approachTl.scrollTrigger?.disable(false);
+        // approachTl.scrollTrigger?.disable(false);
         // Lock approach to its end-state to avoid boundary jitter.
-        approachTl.progress(1);
+        // approachTl.progress(1);
         if (typeof window !== "undefined") {
           window.dispatchEvent(
             new CustomEvent("lite-scan-pin", {
@@ -386,9 +386,9 @@ export function attachLiteServiceScanPair(options: {
         }
       },
       onEnterBack: () => {
-        approachTl.scrollTrigger?.disable(false);
+        // approachTl.scrollTrigger?.disable(false);
         // When coming back up into the pinned scan, keep approach locked.
-        approachTl.progress(1);
+        // approachTl.progress(1);
         if (typeof window !== "undefined") {
           window.dispatchEvent(
             new CustomEvent("lite-scan-pin", {
@@ -398,11 +398,7 @@ export function attachLiteServiceScanPair(options: {
         }
       },
       onLeaveBack: () => {
-        // When leaving the pinned scan upwards, snap scan to its t=0 state first so
-        // approach doesn't fight a lingering scan render for a frame or two.
-        scanTl.pause(0);
-        scanTl.progress(0);
-        approachTl.scrollTrigger?.enable(false, false);
+        // approachTl.scrollTrigger?.enable(false, false);
         if (typeof window !== "undefined") {
           window.dispatchEvent(
             new CustomEvent("lite-scan-pin", {
