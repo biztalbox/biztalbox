@@ -1,1 +1,2 @@
-*.glb filter=lfs diff=lfs merge=lfs -text
+## Disable Git LFS for binary assets (store in normal Git blobs)
+*.glb -filter -diff -merge -text
