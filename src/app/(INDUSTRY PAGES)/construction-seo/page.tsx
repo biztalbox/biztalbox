@@ -980,7 +980,7 @@ export default function Page() {
                       lock icon.
                     </p>
                   </div>
-                  <div className="content-card" style={{ gridColumn: "1 / -1" }}>
+                  <div className="content-card">
                     <h3 className="section-subheading">
                       7. Fixing Technical Errors
                     </h3>
