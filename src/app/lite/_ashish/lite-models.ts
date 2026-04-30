@@ -70,14 +70,6 @@ export const LITE_MODELS: LiteModel[] = [
     speed: 0.95,
   },
   {
-    id: "graphic",
-    src: "/assets/lite_models/graphic.glb",
-    position: [450, 150, 1],
-    animation: { x: 0.1, y: 0.01, z: 0.02 },
-    phase: 0.10,
-    speed: 0.88,
-  },
-  {
     id: "video",
     src: "/assets/lite_models/video.glb",
     position: [500, 120, 200],
