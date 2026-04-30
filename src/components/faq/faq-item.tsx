@@ -10,7 +10,7 @@ export default function FaqItem({ item }: IProps) {
     <div className="accordion-items">
       <h3 className="accordion-header">
         <button
-          style={{ fontSize: "1.2rem !important" }}
+          style={{ fontSize: "1.1rem !important" }}
           className="accordion-buttons collapsed"
           type="button"
           data-bs-toggle="collapse"

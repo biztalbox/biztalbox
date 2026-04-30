@@ -26,6 +26,83 @@ import Image from "next/image";
 import LeadForm from "@/components/landingPage/LeadForm";
 import BookCallForm from "@/components/landingPage/BookCallForm";
 import Link from "next/link";
+import ModelGLB from "@/components/3d-model-glb";
+import FaqItem from "@/components/faq/faq-item";
+
+const faq_data = [
+  {
+    id: 1,
+    question: "Why has SEO become so important for travel websites in recent years?",
+    answer:
+      "With demand going through the roof and a shift towards digital, online sales now dominate, accounting for an impressive 69.6% of global travel and tourism revenue. Digital discovery is the battleground where brands earn visibility and build trust, making SEO the core of their marketing strategy rather than just an ancillary benefit.",
+  },
+  {
+    id: 2,
+    question: "How does SEO help travel agencies compete with OTAs and large platforms?",
+    answer:
+      "Travel SEO allows small and medium brands to win visibility in specific destinations, niche experiences, and intent-led comparison. It helps build authority in niche areas instead of relying on broad, generic topics.",
+  },
+  {
+    id: 3,
+    question: "What kind of travel searches drive the highest conversions?",
+    answer:
+      "Bottom-of-funnel queries like “best Paris tour package price” or “travel agency near me” reflect readiness to spend. Ranking for these high-intent keywords captures demand at the moment of decision.",
+  },
+  {
+    id: 4,
+    question: "Why is SEO considered a long-term growth channel for travel websites?",
+    answer:
+      "SEO builds assets like destination hubs, content ecosystems, and authoritative pages that continue to generate traffic and inquiries for years, creating compounding growth that paid media cannot match.",
+  },
+  {
+    id: 5,
+    question: "How do leading OTAs like Booking.com use SEO to capture global demand?",
+    answer:
+      "Booking.com uses high-value keyword optimization and location-structured pages for destinations and properties, ensuring visibility at every stage of the traveller journey.",
+  },
+  {
+    id: 6,
+    question: "Why is travel SEO so competitive in 2026?",
+    answer:
+      "OTAs, metasearch platforms, and large publishers dominate broad queries, while Google AI mode and its travel modules are taking over. This makes SEO essential for smaller brands to win visibility in niche, intent-driven searches.",
+  },
+  {
+    id: 7,
+    question: "Can SEO actually reduce customer acquisition costs in travel?",
+    answer:
+      "Strategic SEO allows traffic to build without ongoing payment. Organic search can generate up to 60% of total travel website traffic, often at a fraction of the acquisition cost of paid channels, making growth more reliable and predictable.",
+  },
+  {
+    id: 8,
+    question: "How can I attract eco-conscious travellers to my travel website online?",
+    answer:
+      "Eco-conscious travellers are actively searching for tourism experiences that offer sustainable travel options, including eco-friendly resorts, wildlife-friendly excursions, and destinations with sustainable tourism programs. This segment is booming at a rapid pace. If you optimize your SEO for travel agencies with terms like “eco-friendly resorts USA” or “sustainable travel experiences,” it will help your site to stand out and get noticed by this enthusiastic audience.",
+  },
+  {
+    id: 9,
+    question: "How to do keyword research for travel SEO?",
+    answer:
+      "Keyword research is the backbone of any sustainable travel website SEO plan. The goal isn’t to chase generic high-volume terms but to understand the intent behind how travellers search. Expanding into long-tail travel SEO keywords allows brands to appear in early inspiration searches as well as final booking queries.",
+  },
+  {
+    id: 10,
+    question: "What SEO strategies work best for travel websites?",
+    answer:
+      "An effective travel SEO strategy involves the technical aspect of the website, the quality of the content, correct keyword mapping, and continuous monitoring. Travelers want fast, accurate, and relevant information at every stage, and search engines reward travel brands that provide such convenience have a higher booking intent with higher rankings.",
+  },
+  {
+    id: 11,
+    question: "Why is E-E-A-T important in travel SEO?",
+    answer:
+      "E-E-A-T is important in travel SEO because travellers look for trustworthy and experience-driven information before making decisions. Comprehensive itineraries, local knowledge, customer reviews, safety regulations, and authentic content help signal expertise and trust, which are major factors behind rankings for travel advice.",
+  },
+  {
+    id: 12,
+    question: "Why is technical SEO important for travel websites?",
+    answer:
+      "Travellers are always looking for information while on the move, which makes the technical performance of the site a very important factor. Good technical SEO for travel focuses on mobile-first design, faster loading speed, structured data, HTTPS security, and smooth navigation. Reliability, speed, and clarity improve user engagement and make users more likely to complete bookings.",
+  },
+];
 
 export default function Page() {
   useScrollSmooth();
@@ -1569,6 +1646,39 @@ export default function Page() {
             </div>
 
             <ServiceThree showIndustry={false} />
+            <div className="fq-faq-area fq-faq-bdr">
+              <div className="container">
+                <div className="row flex-column-reverse flex-lg-row">
+                  <div className="col-xl-8 col-lg-8">
+                    <div className="fq-faq-wrapper">
+                      <div className="tp-service-2-accordion-box">
+                        <div className="accordion" id="accordionExample">
+                          {faq_data.map((item) => (
+                            <FaqItem key={item.id} item={item} />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-xl-4 col-lg-4">
+                    <div className="fq-faq-sidebar">
+                      <div className="fq-faq-sidebar-content">
+                        <h3 className="fq-faq-sidebar-title">FAQs</h3>
+                      </div>
+                    </div>
+                    <div className="tp-award-list-thumb-wrap p-relative" style={{ height: "400px" }}>
+                      <div
+                        id="tp-award-thumb"
+                        className="tp-award-list-thumb-1"
+                        style={{ position: "absolute", inset: 0, visibility: "visible", opacity: 1 }}
+                      >
+                        <ModelGLB modelPath="/models/b-logo.glb" autoRotate={true} autoRotateSpeed={2} cameraZ={5} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </main>
           <FooterThree />
         </div>

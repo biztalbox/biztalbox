@@ -27,6 +27,96 @@ import Image from "next/image";
 import LeadForm from "@/components/landingPage/LeadForm";
 import BookCallForm from "@/components/landingPage/BookCallForm";
 import Link from "next/link";
+import ModelGLB from "@/components/3d-model-glb";
+import FaqItem from "@/components/faq/faq-item";
+
+const faq_data = [
+  {
+    id: 1,
+    question: "How does SEO help pest control businesses get more customers?",
+    answer:
+      "SEO helps pest control businesses get more customers by ensuring visibility in the right searches, maps, and directories. Because pest problems are urgent, customers mostly call the first trustworthy company they find. SEO aligns with this behavior, making your business appear when people search for pest removal, inspections, or treatments, helping convert urgent demand into real calls and bookings.",
+  },
+  {
+    id: 2,
+    question: "What SEO strategies work best for pest control companies?",
+    answer:
+      "The best SEO strategies for pest control companies include a strong keyword strategy, content strategy, local SEO, off-page SEO, and technical SEO. This includes service-based, problem-based, and location-based keywords, funnel-based content (awareness, consideration, decision), internal linking, seasonal updates, Google Business Profile optimization, and structured website performance improvements like speed and mobile usability.",
+  },
+  {
+    id: 3,
+    question: "How does local SEO improve pest control business visibility?",
+    answer:
+      "Local SEO ensures pest control businesses appear when nearby homeowners search for solutions. It includes Google Business Profile optimization, consistent contact details, and location-focused content like “rodent control in [city]”. Reviews also build trust and improve visibility. This helps businesses show up in local searches and connect directly with customers in their service areas.",
+  },
+  {
+    id: 4,
+    question: "Why is SEO important for pest control services?",
+    answer:
+      "SEO is important because pest control customers search only when something goes wrong and need immediate solutions. Without SEO, businesses lose these opportunities. SEO increases visibility, builds trust through repeated search presence, and helps businesses appear when people search for urgent pest issues, making it essential for capturing demand at the right moment.",
+  },
+  {
+    id: 5,
+    question: "How do pest control websites generate leads through SEO?",
+    answer:
+      "Pest control websites generate leads through SEO by attracting solution-driven searches. The blog explains that traffic becomes more relevant, conversations become shorter, and leads are easier to convert with proper SEO. When users search for pest problems, SEO ensures they land on service pages that match their intent, leading to direct calls and bookings.",
+  },
+  {
+    id: 6,
+    question: "What type of content works best for pest control SEO?",
+    answer:
+      "The best content follows a funnel approach: awareness content like pest signs and identification, consideration content explaining solutions and methods, and decision content like booking or service pages. FAQs also help capture long-tail searches. Strong content builds trust, educates homeowners, and guides them toward choosing pest control services.",
+  },
+  {
+    id: 7,
+    question: "How do Google rankings affect pest control businesses?",
+    answer:
+      "Google rankings directly impact visibility and customer acquisition. Search engines rank companies based on relevance, clarity, and usefulness—not brand size. Higher rankings mean appearing more often in searches, ahead of competitors, and in front of customers actively searching for pest control services, which increases calls and bookings.",
+  },
+  {
+    id: 8,
+    question: "What are service-based keywords in pest control SEO?",
+    answer:
+      "Service-based keywords include terms like termite removal, rodent control, and bed bug treatment. These are used by people who already know what service they need. Optimizing for these keywords helps businesses appear directly when users are searching for specific pest solutions.",
+  },
+  {
+    id: 9,
+    question: "Why are location-based keywords important for pest control SEO?",
+    answer:
+      "Location-based keywords like “pest control in [city]” or “exterminator near me” are essential because pest control is a local service. These keywords ensure businesses appear in nearby searches and help small companies compete with larger brands in their service areas.",
+  },
+  {
+    id: 10,
+    question: "How does SEO give pest control companies a competitive advantage?",
+    answer:
+      "SEO gives pest control businesses an edge because search engines rank companies based on relevance and usefulness, not brand size. This allows smaller companies to compete with established brands by appearing in relevant searches more often and ahead of competitors relying only on ads or reputation.",
+  },
+  {
+    id: 11,
+    question:
+      "What kind of blog content should pest control companies create for users who are just noticing pest problems?",
+    answer:
+      "Awareness stage content educates users who are just noticing pest problems. Examples include “How to spot termite activity in your home” or “Common signs of a cockroach infestation.” It builds trust and positions the business as a knowledgeable expert early in the journey.",
+  },
+  {
+    id: 12,
+    question: "What type of content helps pest control customers compare different providers?",
+    answer:
+      "Consideration stage content targets users who already know their pest issue and are comparing solutions. Examples include “Effective ways to remove bed bugs from a bedroom” or “Rodent control methods that work,” showing expertise and building confidence in the service.",
+  },
+  {
+    id: 13,
+    question: "What content helps convert users who are ready to book pest control services immediately?",
+    answer:
+      "Decision stage content focuses on users ready to act immediately. Examples include “Schedule termite removal in [city]” or “Book rodent control services near me.” This content includes location details and clear calls to action that encourage quick bookings.",
+  },
+  {
+    id: 14,
+    question: "Why is E-E-A-T important in pest control SEO content?",
+    answer:
+      "E-E-A-T stands for Experience, Expertise, Authoritativeness, and Trustworthiness. It ensures pest control content is reliable and credible. Sharing real tips, proven solutions, and trustworthy advice helps improve rankings and increases customer confidence in hiring the business.",
+  },
+];
 
 export default function Page() {
   useScrollSmooth();
@@ -776,6 +866,41 @@ export default function Page() {
                 </div>
               </section>
 
+            </div>
+
+            <ServiceThree showIndustry={false} />
+            <div className="fq-faq-area fq-faq-bdr">
+              <div className="container">
+                <div className="row flex-column-reverse flex-lg-row">
+                  <div className="col-xl-8 col-lg-8">
+                    <div className="fq-faq-wrapper">
+                      <div className="tp-service-2-accordion-box">
+                        <div className="accordion" id="accordionExample">
+                          {faq_data.map((item) => (
+                            <FaqItem key={item.id} item={item} />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-xl-4 col-lg-4">
+                    <div className="fq-faq-sidebar">
+                      <div className="fq-faq-sidebar-content">
+                        <h3 className="fq-faq-sidebar-title">FAQs</h3>
+                      </div>
+                    </div>
+                    <div className="tp-award-list-thumb-wrap p-relative" style={{ height: "400px" }}>
+                      <div
+                        id="tp-award-thumb"
+                        className="tp-award-list-thumb-1"
+                        style={{ position: "absolute", inset: 0, visibility: "visible", opacity: 1 }}
+                      >
+                        <ModelGLB modelPath="/models/b-logo.glb" autoRotate={true} autoRotateSpeed={2} cameraZ={5} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* call to action section similar to petcare page */}

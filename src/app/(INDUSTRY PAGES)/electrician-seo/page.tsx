@@ -26,6 +26,101 @@ import Image from "next/image";
 import LeadForm from "@/components/landingPage/LeadForm";
 import BookCallForm from "@/components/landingPage/BookCallForm";
 import Link from "next/link";
+import ModelGLB from "@/components/3d-model-glb";
+import FaqItem from "@/components/faq/faq-item";
+
+const faq_data = [
+  {
+    id: 1,
+    question: "What is electrician SEO and how does it help electrical businesses get found online?",
+    answer:
+      "Electrician SEO is the process of improving an electrical company’s visibility when people search for electrical services online. It helps search engines understand what services your business offers, where you operate, and who you serve. This improves your chances of appearing in local search results and turning online searches into real service calls.",
+  },
+  {
+    id: 2,
+    question: "Why is SEO important for electrician companies today?",
+    answer:
+      "Most customers now search online before hiring an electrician. They compare businesses, read reviews, and usually contact the company that appears first and looks trustworthy. SEO helps electrician companies appear in those important search moments, increasing visibility, enquiries, and booked jobs instead of relying only on referrals.",
+  },
+  {
+    id: 3,
+    question: "How do electrician businesses appear in search results?",
+    answer:
+      "Search engines evaluate how clearly an electrician website explains its services, service locations, and overall trustworthiness. They also analyse how users interact with the website over time. Clear and consistent information helps search engines confidently recommend an electrician business in related searches",
+  },
+  {
+    id: 4,
+    question: "How does electrician SEO generate more leads and enquiries?",
+    answer:
+      "Electrician SEO focuses on attracting people who already need electrical help and are ready to take action. Better visibility leads to more website visits, more calls, and more enquiry forms. Since these visitors already have strong intent, the chances of converting them into paying customers become much higher.",
+  },
+  {
+    id: 5,
+    question: "How does local SEO help electricians attract nearby customers?",
+    answer:
+      "Local SEO helps electricians appear in location-based searches like “electrician near me” or “licensed electrician in Gurgaon.” It improves visibility across maps, local listings, and service area searches, making it easier for nearby homeowners and businesses to discover and contact the company.",
+  },
+  {
+    id: 6,
+    question: "What keywords should electricians target for SEO?",
+    answer:
+      "Electricians should target keywords that match how real customers search when they need electrical help. This includes service-based searches like “house rewiring electrician,” location-focused searches like “electrician in Gurgaon,” problem-based searches like “lights flickering in house causes,” and high-intent keywords such as “licensed electrician near me” or “emergency electrician for power failure.”",
+  },
+  {
+    id: 7,
+    question: "Why are service-based keywords important in electrician SEO?",
+    answer:
+      "Service-based keywords directly describe the work customers need. Searches like “commercial electrical wiring services” or “house rewiring electrician” show clear intent. These keywords help search engines understand your services while also connecting your business with users ready to hire an electrician.",
+  },
+  {
+    id: 8,
+    question: "Why is E-E-A-T important for electrician websites?",
+    answer:
+      "Electrical services fall under Your Money or Your Life (YMYL) topics because inaccurate information can affect safety and financial well-being. Search engines therefore prioritise websites that demonstrate experience, expertise, authority, and trustworthiness through reliable and professionally written content.",
+  },
+  {
+    id: 9,
+    question: "What type of content works best for electrician SEO?",
+    answer:
+      "Content that answers real customer questions performs best for electrician SEO. This includes service pages, FAQs, electrical safety guides, troubleshooting articles, local service pages, and educational content related to common electrical problems and repair situations.",
+  },
+  {
+    id: 10,
+    question: "What is off-page SEO for electricians?",
+    answer:
+      "Off-page SEO includes all signals outside the website that strengthen trust and visibility. This includes local business listings, customer reviews, backlinks, online mentions, and citations. These signals help search engines confirm that the electrician business is legitimate and trusted within its local area.",
+  },
+  {
+    id: 11,
+    question: "Is SEO worth it for electricians?",
+    answer:
+      "Yes. SEO creates long-term visibility that continues generating enquiries even without constant advertising spend. It helps electricians attract high-intent local customers, strengthen trust, improve local visibility, and build a steady flow of enquiries over time.",
+  },
+  {
+    id: 12,
+    question: "How should electricians write SEO-friendly content?",
+    answer:
+      "SEO-friendly electrician content should focus on clarity, relevance, and real customer intent. It should answer practical questions, explain services clearly, and help users understand electrical problems and solutions. Strong content also demonstrates expertise, trustworthiness, and real industry experience.",
+  },
+  {
+    id: 13,
+    question: "Why is technical SEO important for electrician websites?",
+    answer:
+      "Technical SEO improves how search engines access and understand the website. It focuses on website speed, mobile responsiveness, secure browsing, crawlability, and clear navigation. These improvements support better rankings while also improving user experience.",
+  },
+  {
+    id: 14,
+    question: "How do electrician SEO agencies help electrical businesses grow?",
+    answer:
+      "Electrician SEO agencies improve search visibility, optimise websites for local searches, strengthen technical performance, build trust signals, and align content with customer intent. Their goal is to help electrical businesses generate more qualified leads, more service calls, and long-term business growth.",
+  },
+  {
+    id: 15,
+    question: "What are the different types of keywords electricians should target for SEO? Give examples.",
+    answer:
+      "Electricians should target different keyword types based on how customers search for electrical services online: Service-based keywords: “fuse box replacement electrician,” “commercial electrical wiring services”. Location-based keywords: “electrician in Manchester”. Problem-based keywords: “burning smell from switchboard,” “no electricity in one room”. Commercial intent keywords: “best electrician for home wiring,” “certified electrician near me”.",
+  },
+];
 
 export default function Page() {
   useScrollSmooth();
@@ -325,6 +420,39 @@ export default function Page() {
             </div>
 
             <ServiceThree showIndustry={false} />
+            <div className="fq-faq-area fq-faq-bdr">
+              <div className="container">
+                <div className="row flex-column-reverse flex-lg-row">
+                  <div className="col-xl-8 col-lg-8">
+                    <div className="fq-faq-wrapper">
+                      <div className="tp-service-2-accordion-box">
+                        <div className="accordion" id="accordionExample">
+                          {faq_data.map((item) => (
+                            <FaqItem key={item.id} item={item} />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-xl-4 col-lg-4">
+                    <div className="fq-faq-sidebar">
+                      <div className="fq-faq-sidebar-content">
+                        <h3 className="fq-faq-sidebar-title">FAQs</h3>
+                      </div>
+                    </div>
+                    <div className="tp-award-list-thumb-wrap p-relative" style={{ height: "400px" }}>
+                      <div
+                        id="tp-award-thumb"
+                        className="tp-award-list-thumb-1"
+                        style={{ position: "absolute", inset: 0, visibility: "visible", opacity: 1 }}
+                      >
+                        <ModelGLB modelPath="/models/b-logo.glb" autoRotate={true} autoRotateSpeed={2} cameraZ={5} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
           </main>
           <FooterThree />

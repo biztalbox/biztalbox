@@ -27,6 +27,101 @@ import Image from "next/image";
 import LeadForm from "@/components/landingPage/LeadForm";
 import BookCallForm from "@/components/landingPage/BookCallForm";
 import Link from "next/link";
+import ModelGLB from "@/components/3d-model-glb";
+import FaqItem from "@/components/faq/faq-item";
+
+const faq_data = [
+  {
+    id: 1,
+    question: "What is SEO for home service businesses?",
+    answer:
+      "SEO for home service businesses is the process of improving your website, local presence, and online credibility so your business appears when homeowners search for services like “AC repair near me” or “emergency plumber today.” It helps businesses capture urgent, local, high-intent searches that often lead directly to calls and bookings.",
+  },
+  {
+    id: 2,
+    question: "How does SEO work for home service companies?",
+    answer:
+      "SEO works for home service companies by aligning services, locations, and trust signals with how homeowners search online. It improves visibility in Google search, Google Maps, service pages, and local listings so businesses appear when people search for urgent or location-based services like plumbing, electrical work, or repairs.",
+  },
+  {
+    id: 3,
+    question: "Why is SEO important for home service businesses?",
+    answer:
+      "SEO is important for home service businesses because homeowners search online when they need immediate help. Businesses that appear first often get the call. SEO improves visibility during these high-intent moments and helps companies generate consistent enquiries, bookings, and long-term local trust.",
+  },
+  {
+    id: 4,
+    question: "Is SEO worth it for home service companies?",
+    answer:
+      "Yes, SEO is worth it for home service companies because it creates a long-term source of organic leads instead of relying completely on paid ads or aggregators. SEO helps businesses attract homeowners actively searching for services, leading to more qualified enquiries and lower customer acquisition costs over time.",
+  },
+  {
+    id: 5,
+    question: "How to find SEO keywords for home service businesses?",
+    answer:
+      "Home service businesses can find SEO keywords by understanding how homeowners search during urgent situations or service needs. Keywords often include local searches, problem-based searches, and urgency-driven terms like “emergency plumber near me,” “AC repair today,” or “water heater installation near me.”",
+  },
+  {
+    id: 6,
+    question: "Why are Google reviews important for home service businesses?",
+    answer:
+      "Google reviews are important because homeowners often check ratings and feedback before contacting a service provider. Reviews help build trust, improve local search visibility, and influence booking decisions. Positive reviews about service quality, professionalism, and response time can directly increase calls and conversions.",
+  },
+  {
+    id: 7,
+    question: "How does home services SEO marketing generate more leads?",
+    answer:
+      "Home services SEO marketing generates leads by helping businesses appear for searches with immediate intent, such as “emergency electrician near me” or “kitchen remodeling near me.” These searches usually come from homeowners actively looking to hire someone, which increases the chances of calls, enquiries, and confirmed bookings.",
+  },
+  {
+    id: 8,
+    question: "How does local SEO help home service businesses grow?",
+    answer:
+      "Local SEO helps home service businesses grow by improving visibility in Google Maps, local searches, and nearby service queries. When homeowners search for “electrician near me” or “plumber in [city],” local SEO ensures your business appears where decisions are being made, increasing calls and bookings.",
+  },
+  {
+    id: 9,
+    question: "Why is Google Maps important for home service companies?",
+    answer:
+      "Google Maps is important because many high-intent actions like calls, navigation requests, and same-day bookings come directly from map listings. For home service businesses, Google Maps often becomes the first point of decision where customers compare ratings, reviews, and proximity before contacting a provider.",
+  },
+  {
+    id: 10,
+    question: "What does a home services SEO agency actually do?",
+    answer:
+      "A home services SEO agency improves search visibility through keyword strategy, local SEO, technical SEO, content creation, Google Business Profile optimization, review management, and service-area targeting. The goal is to help businesses appear when homeowners search for urgent or local home services online.",
+  },
+  {
+    id: 11,
+    question: "How does SEO improve trust for home service businesses?",
+    answer:
+      "SEO improves trust by increasing consistent visibility across Google search, Google Maps, reviews, and service-related content. Homeowners associate businesses that appear frequently with credibility and reliability, especially when they see accurate listings, positive reviews, and clear service information online.",
+  },
+  {
+    id: 12,
+    question: "Is SEO better than paid ads for home service companies?",
+    answer:
+      "SEO creates long-term visibility and a steady flow of organic enquiries, while paid ads stop producing results when budgets end. Home services SEO marketing compounds over time through rankings, reviews, and local authority, making it a more sustainable growth channel for many contractors and service providers.",
+  },
+  {
+    id: 13,
+    question: "What is the role of Google Business Profile in home services SEO?",
+    answer:
+      "Google Business Profile helps businesses appear in Google Maps and local searches. Accurate business information, reviews, service details, photos, and active listing management improve visibility and trust. For home service businesses, this profile often becomes the first interaction homeowners have before making contact.",
+  },
+  {
+    id: 14,
+    question: "Does SEO reduce dependence on home service aggregators?",
+    answer:
+      "SEO helps businesses generate direct enquiries through their own website instead of relying completely on aggregators that charge per lead. Ranking organically for searches like “kitchen remodeling near me” allows businesses to control pricing, customer communication, and follow-ups without paying ongoing commission fees.",
+  },
+  {
+    id: 15,
+    question: "What makes SEO for home service franchises different?",
+    answer:
+      "Home service franchise SEO requires each location to rank independently while maintaining overall brand consistency. Without structured optimization, franchise branches may compete against each other in search results. Effective franchise SEO includes location-specific pages, local reviews, and Google Business Profile management for every branch.",
+  },
+];
 
 export default function Page() {
   useScrollSmooth();
@@ -459,6 +554,39 @@ export default function Page() {
             </div>
 
             <ServiceThree showIndustry={false} />
+            <div className="fq-faq-area fq-faq-bdr">
+              <div className="container">
+                <div className="row flex-column-reverse flex-lg-row">
+                  <div className="col-xl-8 col-lg-8">
+                    <div className="fq-faq-wrapper">
+                      <div className="tp-service-2-accordion-box">
+                        <div className="accordion" id="accordionExample">
+                          {faq_data.map((item) => (
+                            <FaqItem key={item.id} item={item} />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-xl-4 col-lg-4">
+                    <div className="fq-faq-sidebar">
+                      <div className="fq-faq-sidebar-content">
+                        <h3 className="fq-faq-sidebar-title">FAQs</h3>
+                      </div>
+                    </div>
+                    <div className="tp-award-list-thumb-wrap p-relative" style={{ height: "400px" }}>
+                      <div
+                        id="tp-award-thumb"
+                        className="tp-award-list-thumb-1"
+                        style={{ position: "absolute", inset: 0, visibility: "visible", opacity: 1 }}
+                      >
+                        <ModelGLB modelPath="/models/b-logo.glb" autoRotate={true} autoRotateSpeed={2} cameraZ={5} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </main>
           <FooterThree />
         </div>

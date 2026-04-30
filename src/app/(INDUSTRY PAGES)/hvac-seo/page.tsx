@@ -27,6 +27,83 @@ import Image from "next/image";
 import LeadForm from "@/components/landingPage/LeadForm";
 import BookCallForm from "@/components/landingPage/BookCallForm";
 import Link from "next/link";
+import ModelGLB from "@/components/3d-model-glb";
+import FaqItem from "@/components/faq/faq-item";
+
+const faq_data = [
+  {
+    id: 1,
+    question: "What is SEO for HVAC businesses?",
+    answer:
+      "SEO for HVAC businesses is the process of improving a company’s visibility in search engines when people search for heating and cooling services online. It helps HVAC contractors appear for searches related to AC repair, furnace installation, maintenance services, and emergency HVAC support so potential customers can find them more easily.",
+  },
+  {
+    id: 2,
+    question: "How does SEO help HVAC companies get more customers?",
+    answer:
+      "SEO helps HVAC companies appear during high-intent searches like “AC repair near me” or “emergency HVAC service.” Since these searches usually happen when homeowners urgently need help, better visibility increases the chances of getting more phone calls, enquiries, and service bookings from customers actively looking for HVAC solutions.",
+  },
+  {
+    id: 3,
+    question: "Why is SEO important for HVAC services?",
+    answer:
+      "SEO is important for HVAC services because most customers now begin by searching online instead of directly calling a contractor. If an HVAC business does not appear in search results during urgent repair or installation searches, potential customers may choose competitors who are more visible online.",
+  },
+  {
+    id: 4,
+    question: "How can HVAC companies rank higher on Google?",
+    answer:
+      "HVAC companies can rank higher on Google by improving website speed, creating dedicated service pages, targeting local and high-intent keywords, optimizing Google Business Profiles, publishing helpful HVAC content, and maintaining consistent business information across directories and platforms.",
+  },
+  {
+    id: 5,
+    question: "What keywords should HVAC businesses target for SEO?",
+    answer:
+      "HVAC businesses should target informational keywords, transactional keywords, commercial investigation keywords, and local intent keywords. Searches like “why is my AC leaking water,” “emergency HVAC repair,” “best HVAC system for homes,” and “HVAC contractor in [city]” help capture different stages of customer intent.",
+  },
+  {
+    id: 6,
+    question: "What type of content works best for HVAC SEO?",
+    answer:
+      "The best content for HVAC SEO includes service pages, educational blogs, FAQs, maintenance guides, seasonal HVAC content, and location-focused pages. Content that clearly explains common HVAC problems, repair processes, installation options, and maintenance tips helps build trust and improves search visibility.",
+  },
+  {
+    id: 7,
+    question: "How do I choose the right SEO partner for my HVAC business?",
+    answer:
+      "The right HVAC SEO partner should understand how homeowners search during urgent heating and cooling problems. They should focus on local visibility, high-intent keywords, technical SEO, helpful content, and long-term growth rather than shortcuts. A strong SEO agency also adapts strategies based on changing search behaviour and evolving search technology.",
+  },
+  {
+    id: 8,
+    question: "How does technical SEO help HVAC websites?",
+    answer:
+      "Technical SEO improves website speed, mobile usability, navigation, and search engine accessibility. Since many HVAC searches happen during urgent situations on mobile devices, a fast and easy-to-use website helps users quickly find contact information and improves overall search performance.",
+  },
+  {
+    id: 9,
+    question: "How does educational HVAC content improve SEO?",
+    answer:
+      "Educational content helps HVAC companies appear during early-stage searches where homeowners are trying to understand issues with their heating or cooling systems. Helpful articles build trust, improve topical authority, and increase the chances that customers will contact the company later for professional service.",
+  },
+  {
+    id: 10,
+    question: "What is the difference between transactional and commercial investigation keywords in HVAC SEO?",
+    answer:
+      "Transactional keywords show that a customer is ready to book an HVAC service immediately. Searches like “emergency AC repair near me” or “HVAC repair service” usually come from people actively looking for a contractor. Commercial investigation keywords, however, reflect research intent. Searches such as “best HVAC system for large homes” or “AC installation cost” are used when homeowners are comparing options before making a final decision.",
+  },
+  {
+    id: 11,
+    question: "Why is AI search becoming important for HVAC SEO?",
+    answer:
+      "AI search is changing how homeowners find HVAC services online. Instead of typing short phrases, people now ask complete questions through tools like ChatGPT, Google Gemini, and Perplexity AI. HVAC websites now need clear, well-structured content that AI systems can easily understand and recommend in generated answers.",
+  },
+  {
+    id: 12,
+    question: "How can HVAC companies optimize for AI-driven search results?",
+    answer:
+      "HVAC companies can optimize for AI-driven search by creating structured content with clear headings, FAQs, service explanations, and long-tail keywords. AI systems look for websites that clearly explain services, locations, and solutions, making organized and helpful content more important than keyword stuffing.",
+  },
+];
 
 export default function Page() {
   useScrollSmooth();
@@ -1396,6 +1473,39 @@ export default function Page() {
             </div>
 
             <ServiceThree showIndustry={false} />
+            <div className="fq-faq-area fq-faq-bdr">
+              <div className="container">
+                <div className="row flex-column-reverse flex-lg-row">
+                  <div className="col-xl-8 col-lg-8">
+                    <div className="fq-faq-wrapper">
+                      <div className="tp-service-2-accordion-box">
+                        <div className="accordion" id="accordionExample">
+                          {faq_data.map((item) => (
+                            <FaqItem key={item.id} item={item} />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-xl-4 col-lg-4">
+                    <div className="fq-faq-sidebar">
+                      <div className="fq-faq-sidebar-content">
+                        <h3 className="fq-faq-sidebar-title">FAQs</h3>
+                      </div>
+                    </div>
+                    <div className="tp-award-list-thumb-wrap p-relative" style={{ height: "400px" }}>
+                      <div
+                        id="tp-award-thumb"
+                        className="tp-award-list-thumb-1"
+                        style={{ position: "absolute", inset: 0, visibility: "visible", opacity: 1 }}
+                      >
+                        <ModelGLB modelPath="/models/b-logo.glb" autoRotate={true} autoRotateSpeed={2} cameraZ={5} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </main>
           <FooterThree />
         </div>

@@ -27,6 +27,8 @@ import Image from "next/image";
 import LeadForm from "@/components/landingPage/LeadForm";
 import BookCallForm from "@/components/landingPage/BookCallForm";
 import Link from "next/link";
+import ModelGLB from "@/components/3d-model-glb";
+import FaqItem from "@/components/faq/faq-item";
 
 export default function Page() {
   useScrollSmooth();
@@ -54,6 +56,55 @@ export default function Page() {
   useEffect(() => {
     setIsMobile(typeof window !== "undefined" && window.innerWidth < 768);
   }, []);
+
+  const faqs = [
+    {
+      id: 1,
+      question:
+        "What is wellness and beauty SEO and how does it help salons and spas get more bookings?",
+      answer:
+        "Wellness and beauty industry SEO helps your expertise to be showcased exactly when potential clients are looking, builds credibility, and turns interest into bookings. It ensures your business earns visibility at the moment of intent, helping convert searchers into paying clients without depending on ads.",
+    },
+    {
+      id: 2,
+      question:
+        "How does SEO reduce reliance on platforms like Urban Company or Fresha?",
+      answer:
+        "SEO reduces dependency by driving direct discovery through your website and Google presence, helping you retain customer relationships and avoid commissions.",
+    },
+    {
+      id: 3,
+      question: "How can cosmetic brands use SEO to increase online sales?",
+      answer:
+        "Cosmetic brands use SEO to increase online sales by capturing demand when consumers search for specific treatments, products, or solutions. By building visibility through content, trust signals, and optimized pages, brands position themselves as reliable choices, turning search-driven interest into high-intent conversions and consistent revenue growth.",
+    },
+    {
+      id: 4,
+      question: "How does local SEO help beauty brands get more clients?",
+      answer:
+        'Local SEO helps beauty brands get more clients by making them visible in “near me” and location-based searches. Optimizing Google Business Profiles, reviews, and location signals ensures your business appears in Maps and local results, where users have high intent, leading to more calls, walk-ins, and bookings.',
+    },
+    {
+      id: 5,
+      question: "Is SEO worth it for small beauty salons?",
+      answer:
+        "SEO is worth it for small beauty salons because visibility becomes the key differentiator in a highly competitive market. With a growing number of salons, boutique studios, and spas, businesses that do not show up clearly during high-intent searches are quietly filtered out. Consistent rankings create a perception of superiority and help your brand become the default choice over competitors.",
+    },
+    {
+      id: 6,
+      question:
+        "Why is my salon or med spa not showing up in AI Overviews on Google in 2026?",
+      answer:
+        'Your salon or med spa may not be showing up in AI Overviews because your business isn’t technically optimised and “AI-readable.” If you lack structured data, treatment-level authority, local prominence, review sentiment, and consistent brand mentions, AI Overviews exclude you, making your business invisible above the fold while competitors get featured.',
+    },
+    {
+      id: 7,
+      question:
+        "How do I choose the right SEO agency for my salon or med spa in 2026?",
+      answer:
+        "You should choose an SEO agency that understands the psychology of beauty and wellness customers, the technical demands of modern search, and the competitive landscape salons, spas, and med spas operate in. The right partner blends technical precision, content authority, and ongoing optimization to turn visibility into bookings and long-term growth.",
+    },
+  ];
 
   return (
     <Wrapper>
@@ -439,6 +490,44 @@ export default function Page() {
             </div>
 
             <ServiceThree showIndustry={false} />
+            <div className="fq-faq-area fq-faq-bdr">
+              <div className="container">
+                <div className="row flex-column-reverse flex-lg-row">
+                  <div className="col-xl-8 col-lg-8">
+                    <div className="fq-faq-wrapper">
+                      <div className="tp-service-2-accordion-box">
+                        <div className="accordion" id="accordionExample">
+                          {faqs.map((item) => (
+                            <FaqItem key={item.id} item={item} />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-xl-4 col-lg-4">
+                    <div className="fq-faq-sidebar">
+                      <div className="fq-faq-sidebar-content">
+                        <h3 className="fq-faq-sidebar-title">FAQs</h3>
+                      </div>
+                    </div>
+                    <div className="tp-award-list-thumb-wrap p-relative" style={{ height: '400px' }}>
+                      <div
+                        id="tp-award-thumb"
+                        className="tp-award-list-thumb-1"
+                        style={{ position: 'absolute', inset: 0, visibility: 'visible', opacity: 1 }}
+                      >
+                        <ModelGLB
+                          modelPath="/models/b-logo.glb"
+                          autoRotate={true}
+                          autoRotateSpeed={2}
+                          cameraZ={5}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </main>
           <FooterThree />
         </div>

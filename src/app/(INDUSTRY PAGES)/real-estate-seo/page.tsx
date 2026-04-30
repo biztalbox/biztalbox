@@ -26,6 +26,83 @@ import Image from "next/image";
 import LeadForm from "@/components/landingPage/LeadForm";
 import BookCallForm from "@/components/landingPage/BookCallForm";
 import Link from "next/link";
+import ModelGLB from "@/components/3d-model-glb";
+import FaqItem from "@/components/faq/faq-item";
+
+const faq_data = [
+  {
+    id: 1,
+    question: "What is real estate SEO and how does it help buyers find properties online?",
+    answer:
+      "Real estate SEO ensures your expertise is discoverable at the exact moment prospects are searching. When buyers start evaluating neighbourhoods, property types, and pricing trends online, SEO aligns their need with your availability, helping them find relevant businesses first and guiding them through their property search journey.",
+  },
+  {
+    id: 2,
+    question: "Why does real estate SEO generate consistent leads?",
+    answer:
+      "A strategic real estate SEO strategy places your guidance throughout the buyer journey. Since people compare locations, valuations, and financing options for weeks, SEO creates a steady stream of enquiries by aligning your content with how buyers naturally research properties before making decisions.",
+  },
+  {
+    id: 3,
+    question: "How does SEO create long-term visibility for real estate businesses?",
+    answer:
+      "Each neighbourhood guide, market article, or property insight becomes an evergreen asset. Over time, these pages expand your presence across search queries, ensuring consistent discovery even when competition rises or market conditions slow down.",
+  },
+  {
+    id: 4,
+    question: "How does SEO reduce dependency on paid ads in real estate?",
+    answer:
+      "Paid advertising fluctuates due to competition and rising costs. A strong real estate SEO strategy generates a steady flow of organic leads, making cost per lead more predictable and helping businesses grow without relying entirely on paid campaigns",
+  },
+  {
+    id: 5,
+    question: "How does AI affect real estate SEO?",
+    answer:
+      "AI now summarizes price trends, suggests properties, and answers buyer questions before clicks happen. Real estate SEO ensures your guides and insights appear in AI-driven formats like snippets and assistants, influencing first impressions and building trust early in the decision process.",
+  },
+  {
+    id: 6,
+    question: "What kind of content works best for real estate SEO?",
+    answer:
+      "Real Estate content that answers questions, explains markets clearly, and addresses both rational and emotional concerns works best. This includes neighbourhood guides, property comparisons, and market insights that build trust and guide decision-making.",
+  },
+  {
+    id: 7,
+    question: "What kind of awareness-stage content helps attract real estate buyers early in their search?",
+    answer:
+      "Awareness-stage content that answers broad queries like cost of living or lifestyle insights helps attract buyers early. It keeps your brand visible, builds trust, and positions you as an expert before buyers are ready to take action.",
+  },
+  {
+    id: 8,
+    question: "What type of content should real estate websites create for buyers comparing properties or builders?",
+    answer:
+      "Content for buyers comparing properties or builders should include detailed guides, comparisons, and advisory content. This helps users evaluate options and strengthens your positioning as the best choice.",
+  },
+  {
+    id: 9,
+    question: "What content helps convert real estate leads when buyers are ready to make a decision?",
+    answer:
+      "Content that helps convert real estate leads includes listings, service pages, and buying guides. These provide clear information and ensure your brand is visible when buyers are ready to act and choose who to contact",
+  },
+  {
+    id: 10,
+    question: "Why do real estate SEO strategies need to focus on long-tail keywords?",
+    answer:
+      "Real estate SEO strategies focus on long-tail keywords because every search encapsulates motive, immediacy, financial ability, micro-location and trust in the builder, making these queries more precise and aligned with actual buyer intent.",
+  },
+  {
+    id: 11,
+    question: "What are micro-market keywords in real estate SEO and why do they convert so well?",
+    answer:
+      "Micro-market keywords are hyper-local searches like “Miami waterfront property price trends” or “2 BHK Flats in Dubai.” These long-tails convert exceptionally well because buyers already know where they want to live, making them highly intent-driven and easier to convert.",
+  },
+  {
+    id: 12,
+    question: "How do I choose the right SEO partner for my real estate business?",
+    answer:
+      "You should choose an SEO partner that understands market cycles, micro-location dynamics, buyer psychology, and developer reputation rather than relying on generic templates and surface-level optimisation. A specialised partner like Biztalbox combines real estate market intelligence with tailored SEO strategies to drive stronger visibility, better-quality leads, and long-term growth.",
+  },
+];
 
 export default function Page() {
   useScrollSmooth();
@@ -1460,6 +1537,39 @@ export default function Page() {
             </div>
 
             <ServiceThree showIndustry={false} />
+            <div className="fq-faq-area fq-faq-bdr">
+              <div className="container">
+                <div className="row flex-column-reverse flex-lg-row">
+                  <div className="col-xl-8 col-lg-8">
+                    <div className="fq-faq-wrapper">
+                      <div className="tp-service-2-accordion-box">
+                        <div className="accordion" id="accordionExample">
+                          {faq_data.map((item) => (
+                            <FaqItem key={item.id} item={item} />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-xl-4 col-lg-4">
+                    <div className="fq-faq-sidebar">
+                      <div className="fq-faq-sidebar-content">
+                        <h3 className="fq-faq-sidebar-title">FAQs</h3>
+                      </div>
+                    </div>
+                    <div className="tp-award-list-thumb-wrap p-relative" style={{ height: "400px" }}>
+                      <div
+                        id="tp-award-thumb"
+                        className="tp-award-list-thumb-1"
+                        style={{ position: "absolute", inset: 0, visibility: "visible", opacity: 1 }}
+                      >
+                        <ModelGLB modelPath="/models/b-logo.glb" autoRotate={true} autoRotateSpeed={2} cameraZ={5} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </main>
           <FooterThree />
         </div>

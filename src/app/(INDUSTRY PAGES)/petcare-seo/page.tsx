@@ -27,6 +27,83 @@ import Image from "next/image";
 import LeadForm from "@/components/landingPage/LeadForm";
 import BookCallForm from "@/components/landingPage/BookCallForm";
 import Link from "next/link";
+import ModelGLB from "@/components/3d-model-glb";
+import FaqItem from "@/components/faq/faq-item";
+
+const faq_data = [
+  {
+    id: 1,
+    question: "What is pet care SEO and how does it help pet businesses grow online?",
+    answer:
+      "SEO determines which businesses appear when people search for pet-related services, products, or information on Google. It ensures pet businesses show up in searches like “veterinarian near me” or “pet groomer near me,” helping them enter the consideration set of pet owners who are actively looking for care, products, or services.",
+  },
+  {
+    id: 2,
+    question: "Why is SEO important in the pet care industry in 2026?",
+    answer:
+      "SEO is important because pet owners now compare, verify, and evaluate before making decisions. Search has become the primary gateway to trust in the pet care market. SEO ensures businesses appear during these critical search moments, making them visible when pet owners are making informed, research-driven decisions.",
+  },
+  {
+    id: 3,
+    question: "What makes pet industry SEO different from regular SEO?",
+    answer:
+      "Pet industry SEO is different because search intent is highly emotional, urgent, and decision-driven. Pet owners search when they need services or products immediately. SEO ensures businesses appear during these local, informational, or transactional searches that reflect real-time decision-making behavior.",
+  },
+  {
+    id: 4,
+    question: "What are the main benefits of SEO for pet care businesses?",
+    answer:
+      "SEO improves visibility, brings higher-intent enquiries, builds trust, and delivers compounding long-term value. It helps pet businesses appear across search journeys, from local discovery to comparison and decision-making, increasing calls, bookings, and long-term customer relationships.",
+  },
+  {
+    id: 5,
+    question: "Why is SEO better than paid ads for pet businesses in the long run?",
+    answer:
+      "SEO creates compounding value over time. Each optimized page and ranking strengthens future visibility. Unlike ads, SEO builds long-term presence, reduces dependency on paid platforms, and helps pet businesses grow steadily through repeated search exposure.",
+  },
+  {
+    id: 6,
+    question: "How does SEO help pet businesses compete with big brands?",
+    answer:
+      "SEO allows smaller pet businesses to compete with larger platforms by focusing on relevance, niche queries, and local searches. It helps them appear in front of pet owners at the right time, based on intent rather than brand size.",
+  },
+  {
+    id: 7,
+    question: "What type of keywords should pet businesses target for SEO?",
+    answer:
+      "Pet businesses should target high-intent queries like emergency services, long-tail niche keywords like “hypoallergenic cat food online,” and local keywords. These reflect real search behavior and help connect businesses with users ready to take action.",
+  },
+  {
+    id: 8,
+    question: "Why is local SEO important for pet care businesses?",
+    answer:
+      "Local SEO ensures pet businesses appear in searches like “vet near me” or “pet clinic open now.” It improves visibility in map results, builds local trust, and helps businesses attract nearby customers who need immediate services.",
+  },
+  {
+    id: 9,
+    question: "How does SEO help pet businesses during urgent pet care searches?",
+    answer:
+      "Pet care searches are often driven by urgency, such as health concerns or emergencies. SEO ensures businesses appear when pet owners search for immediate solutions, increasing the chance of calls, bookings, and direct contact during critical decision moments.",
+  },
+  {
+    id: 10,
+    question: "How does SEO support veterinary clinics in attracting new patients?",
+    answer:
+      "SEO helps veterinary clinics appear in searches like “veterinarian near me” or symptom-based queries. This ensures clinics are discovered during real-time decision-making when pet owners are actively looking for medical care or consultation.",
+  },
+  {
+    id: 11,
+    question: "How to build effective SEO content for pet care businesses?",
+    answer:
+      "Effective pet care SEO content starts with understanding keywords that reflect real pet owner questions and concerns. Content must also demonstrate expertise and trust through professional advice, credentials, and real insights. It should handle YMYL topics like pet health with accuracy and transparency. Since pet owners rely heavily on online research, trustworthy content becomes essential for visibility, trust, and action.",
+  },
+  {
+    id: 12,
+    question: "What makes Biztalbox the right SEO company for pet care businesses?",
+    answer:
+      "Biztalbox is a specialist pet SEO company that focuses on industry-specific strategies, local demand, and long-term visibility. It combines continuous optimization, transparency, and tailored SEO approaches to help pet businesses grow through sustained search presence and high-intent leads.",
+  },
+];
 
 export default function Page() {
   useScrollSmooth();
@@ -476,6 +553,39 @@ export default function Page() {
             </div>
 
             <ServiceThree showIndustry={false} />
+            <div className="fq-faq-area fq-faq-bdr">
+              <div className="container">
+                <div className="row flex-column-reverse flex-lg-row">
+                  <div className="col-xl-8 col-lg-8">
+                    <div className="fq-faq-wrapper">
+                      <div className="tp-service-2-accordion-box">
+                        <div className="accordion" id="accordionExample">
+                          {faq_data.map((item) => (
+                            <FaqItem key={item.id} item={item} />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-xl-4 col-lg-4">
+                    <div className="fq-faq-sidebar">
+                      <div className="fq-faq-sidebar-content">
+                        <h3 className="fq-faq-sidebar-title">FAQs</h3>
+                      </div>
+                    </div>
+                    <div className="tp-award-list-thumb-wrap p-relative" style={{ height: "400px" }}>
+                      <div
+                        id="tp-award-thumb"
+                        className="tp-award-list-thumb-1"
+                        style={{ position: "absolute", inset: 0, visibility: "visible", opacity: 1 }}
+                      >
+                        <ModelGLB modelPath="/models/b-logo.glb" autoRotate={true} autoRotateSpeed={2} cameraZ={5} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </main>
           <FooterThree />
         </div>

@@ -28,6 +28,89 @@ import Image from "next/image";
 import LeadForm from "@/components/landingPage/LeadForm";
 import BookCallForm from "@/components/landingPage/BookCallForm";
 import Link from "next/link";
+import ModelGLB from "@/components/3d-model-glb";
+import FaqItem from "@/components/faq/faq-item";
+
+const faq_data = [
+  {
+    id: 1,
+    question: "What is hotel SEO and why is it important for hotels in 2026?",
+    answer:
+      "Hotel SEO is the process of strengthening your online presence so your property appears when people search for places to stay. In 2026, it is critical because travellers search on Google before booking, and hotels that are not visible are eliminated before guests even consider them.",
+  },
+  {
+    id: 2,
+    question: "Why is SEO for hotels considered non-negotiable in 2026?",
+    answer:
+      "SEO for hotels in 2026 is non-negotiable because travellers rely heavily on Google Search, Maps, AI Overviews, and mobile search. Without strong SEO, hotels lose visibility, while optimized properties capture demand, increase direct bookings, and reduce OTA dependency.",
+  },
+  {
+    id: 3,
+    question: "How does hotel SEO reduce OTA dependency?",
+    answer:
+      "Hotel SEO reduces OTA dependency by driving guests directly to your website. Instead of relying on platforms that charge commissions, SEO helps you capture bookings through organic search, allowing you to build direct customer relationships and increase revenue retention.",
+  },
+  {
+    id: 4,
+    question: "How does hotel SEO improve guest decision-making?",
+    answer:
+      "Hotel SEO shapes guest decisions before they even reach your website. When travellers see your hotel on Google Search or Maps with clear content and information, they are more likely to trust and choose your property over competitors.",
+  },
+  {
+    id: 5,
+    question: "How does AI affect hotel SEO in 2026?",
+    answer:
+      "AI-powered results like Google AI Overviews are changing how travellers discover hotels. Users now receive instant recommendations without clicking multiple links. Hotels need strong SEO to appear in these AI-generated summaries and stay visible in zero-click search environments.",
+  },
+  {
+    id: 6,
+    question: "What role do reviews play in hotel SEO?",
+    answer:
+      "Reviews play a direct role in ranking and selection. They help Google understand trust and reliability, and they influence guest decisions. Hotels with strong review signals gain better visibility in search results and are more likely to be chosen by travellers.",
+  },
+  {
+    id: 7,
+    question: "How does mobile SEO impact hotel bookings?",
+    answer:
+      "Mobile SEO is essential because a large share of bookings now happen on smartphones. Hotels need fast-loading pages, simple booking flows, and clear calls-to-action. When mobile experience is strong, conversion rates increase at the exact moment users decide to book.",
+  },
+  {
+    id: 8,
+    question: "What type of content works best for hotel SEO?",
+    answer:
+      "The content that works best for hotel SEO is experience-led and intent-focused rather than basic listings. Guests search for detailed information like room types, experiences, amenities, dining, and what staying at the hotel actually feels like. Content such as local travel guides, spa and wellness pages, restaurant highlights, seasonal offers, attraction-based blogs, and wedding or event pages performs strongly.",
+  },
+  {
+    id: 9,
+    question: "How can hotels use SEO to promote wellness retreats and health-focused stays?",
+    answer:
+      "Hotels can optimise their SEO for wellness-oriented travel by creating dedicated content around spa treatments, fitness halls, yoga retreats, nature-based activities, and healthy dining. Using targeted phrases like “Ayurveda spa resort,” “wellness retreat” or “healthy dining hotel” helps attract guests who already intend to book. This also improves visibility for resorts offering leisure or revitalising stays, making it easier for health-conscious travellers to find and choose them.",
+  },
+  {
+    id: 10,
+    question: "How can hotels use SEO to promote workcations and remote-friendly stays?",
+    answer:
+      "Hotels can increase visibility for workcation travellers by optimising their pages using keywords such as “business hotel,” “long-stay rooms,” and “remote work friendly hotel.” Since many guests now combine work and leisure, they look for strong internet, quiet workspaces, and flexible check-in options.",
+  },
+  {
+    id: 11,
+    question: "What keywords should hotels target for SEO?",
+    answer:
+      "Hotels should target high-intent and search-behaviour based keywords that reflect how travellers actually search. This includes terms like “business hotels near airports,” “beachfront resorts with spa facilities,” and “boutique places for couples to stay.” Location-based and experience-driven phrases work best because guests search for specific stays rather than brand names. Using SEO keywords for hotels naturally across landing pages helps attract travellers who are already close to making a booking decision.",
+  },
+  {
+    id: 12,
+    question: "How can hotels compete with booking platforms using SEO?",
+    answer:
+      "Hotels can compete with OTAs and booking platforms by using SEO to drive direct traffic to their own websites. Strong hotel SEO helps properties appear in Google Search, Google Maps, and booking-related queries with high intent, reducing dependence on intermediaries. By optimising content, improving site speed, and strengthening local signals, hotels can attract travellers directly. This not only reduces OTA commissions but also builds stronger customer relationships and increases long-term profitability.",
+  },
+  {
+    id: 13,
+    question: "Which SEO agency is best for hotel businesses?",
+    answer:
+      "The best hotel SEO agency is one that understands hospitality search behaviour, OTA competition, and how travellers move from search to booking. Biztalbox is positioned as a strong choice because it combines technical SEO, local optimisation, and intent-driven content strategy specifically for hotels, resorts, and restaurants. It focuses on increasing direct bookings, improving visibility across Google Search and Maps, and reducing dependence on OTAs while driving long-term revenue growth.",
+  },
+];
 
 export default function Page() {
   useScrollSmooth();
@@ -651,6 +734,39 @@ export default function Page() {
             </div>
 
             <ServiceThree showIndustry={false} />
+            <div className="fq-faq-area fq-faq-bdr">
+              <div className="container">
+                <div className="row flex-column-reverse flex-lg-row">
+                  <div className="col-xl-8 col-lg-8">
+                    <div className="fq-faq-wrapper">
+                      <div className="tp-service-2-accordion-box">
+                        <div className="accordion" id="accordionExample">
+                          {faq_data.map((item) => (
+                            <FaqItem key={item.id} item={item} />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-xl-4 col-lg-4">
+                    <div className="fq-faq-sidebar">
+                      <div className="fq-faq-sidebar-content">
+                        <h3 className="fq-faq-sidebar-title">FAQs</h3>
+                      </div>
+                    </div>
+                    <div className="tp-award-list-thumb-wrap p-relative" style={{ height: "400px" }}>
+                      <div
+                        id="tp-award-thumb"
+                        className="tp-award-list-thumb-1"
+                        style={{ position: "absolute", inset: 0, visibility: "visible", opacity: 1 }}
+                      >
+                        <ModelGLB modelPath="/models/b-logo.glb" autoRotate={true} autoRotateSpeed={2} cameraZ={5} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             {/* <LineTextTwo title="Our Hotel SEO Process" /> */}
           </main>

@@ -26,6 +26,107 @@ import Image from "next/image";
 import LeadForm from "@/components/landingPage/LeadForm";
 import BookCallForm from "@/components/landingPage/BookCallForm";
 import Link from "next/link";
+import ModelGLB from "@/components/3d-model-glb";
+import FaqItem from "@/components/faq/faq-item";
+
+const faq_data = [
+  {
+    id: 1,
+    question: "What is SEO for the food and beverage industry and why is it important?",
+    answer:
+      "SEO in the food and beverage industry ensures your website appears when customers search online for food, drinks, restaurants, or products. Most decisions start online, where people compare options, browse menus, and check reviews before choosing. SEO helps your brand become visible at that exact moment and improves discoverability across search engines and AI tools.",
+  },
+  {
+    id: 2,
+    question: "What are the main benefits of SEO for restaurants?",
+    answer:
+      "SEO offers long-term visibility, lower acquisition costs, and high-intent traffic. It builds authority as your pages rank across searches and improves user experience through better website structure. It also works 24/7, increases direct traffic, and helps restaurants reduce dependency on third-party platforms while improving brand ownership and customer relationships",
+  },
+  {
+    id: 3,
+    question: "How does SEO reduce marketing costs for food businesses?",
+    answer:
+      "SEO reduces marketing costs because organic traffic does not require ongoing ad spend. Once rankings are established, pages continue attracting visitors consistently. Over time, businesses rely less on paid campaigns, lowering acquisition costs. Many food and beverage brands notice significant savings after months of steady organic growth from SEO efforts.",
+  },
+  {
+    id: 4,
+    question: "Why is local SEO important for restaurants?",
+    answer:
+      "Local SEO ensures your restaurant appears when people search for nearby dining options. Most dining decisions depend on proximity and convenience, especially in cities. Optimized listings, accurate business details, and strong reviews help your restaurant show up in “near me” searches and Google Maps, driving more footfall and reservations.",
+  },
+  {
+    id: 5,
+    question: "What role does content play in restaurant SEO?",
+    answer:
+      "Content helps customers understand your food, ingredients, preparation methods, and brand uniqueness. It builds trust by answering common questions that influence buying decisions. Detailed menus, descriptions, and insights improve engagement, reduce hesitation, and help your website attract the right visitors while strengthening overall SEO performance for restaurants and food brands.",
+  },
+  {
+    id: 6,
+    question: "How does SEO help restaurants compete with delivery apps?",
+    answer:
+      "SEO helps restaurants bring customers directly to their own website instead of relying on aggregators. This increases profit margins and allows better customer relationship control. It also helps collect data and build loyalty programs, reducing dependence on platforms that take revenue share and control customer interactions.",
+  },
+  {
+    id: 7,
+    question: "Why is SEO more reliable than social media for restaurants?",
+    answer:
+      "Organic social media reach has dropped significantly, making it less reliable for consistent visibility. SEO provides stable traffic from search engines regardless of algorithm changes. This makes it a more dependable long-term strategy for attracting customers, generating bookings, and maintaining visibility across all seasons and platforms.",
+  },
+  {
+    id: 8,
+    question: "How does SEO help multi-location restaurant chains?",
+    answer:
+      "SEO helps multi-location restaurants by creating location-specific pages, maintaining consistent business information, and optimizing for local searches in each city. This ensures every outlet appears in relevant searches while maintaining brand consistency. It improves visibility across regions and helps each location attract nearby customers effectively.",
+  },
+  {
+    id: 9,
+    question: "How does AI search affect food and beverage SEO?",
+    answer:
+      "AI-powered search tools now provide instant answers without requiring clicks. This means brands must be optimized for AI summaries and recommendations. Well-structured SEO increases chances of appearing in AI-generated results, keeping restaurants and food brands visible even in zero-click search environments.",
+  },
+  {
+    id: 10,
+    question: "Why should food and beverage businesses invest in SEO agencies?",
+    answer:
+      "SEO agencies bring expertise in keyword strategy, content creation, local SEO, and technical optimization. They help restaurants and food brands improve visibility, increase direct traffic, and reduce dependency on aggregators. A strong agency ensures continuous optimization, better rankings, and long-term growth aligned with changing search behavior.",
+  },
+  {
+    id: 11,
+    question: "Why do you need keywords for food and beverage SEO?",
+    answer:
+      "Food and beverage keywords directly match how customers search online. For example, queries like “pasta near me” show immediate intent, while others like “low-sugar drinks” indicate product research. When your website uses these search patterns, it increases visibility and helps your brand reach users at the exact moment of decision-making.",
+  },
+  {
+    id: 12,
+    question: "Why is content important for restaurant SEO strategy?",
+    answer:
+      "Content is important because customers search for more than menus or products. They want to understand dishes, ingredients, preparation, and dietary fit. When your website answers these questions clearly, it builds authority, reduces hesitation, and improves trust, which directly supports better SEO performance and customer decision-making.",
+  },
+  {
+    id: 13,
+    question: "What are the key SEO trends in the food and beverage industry?",
+    answer:
+      "Key SEO trends in the food and beverage industry include the rise of AI-driven search and voice search optimization. Platforms like Google AI Overviews, ChatGPT, and Gemini now deliver instant recommendations directly in search results, often without clicks. At the same time, “near me” and voice searches are growing, making it essential for restaurants and food brands to optimize for local, conversational queries and AI-generated summaries.",
+  },
+  {
+    id: 14,
+    question: "How does SEO help food brands increase online sales?",
+    answer:
+      "SEO for food and beverage industry websites places products at this exact stage of intent, especially when users are researching ingredients or functional beverages. This builds trust early, attracts high-intent traffic, and increases the chances of conversion into online orders and sales.",
+  },
+  {
+    id: 15,
+    question: "How do I choose the right SEO partner for my travel business?",
+    answer:
+      "The partner you choose must not only have theoretical knowledge of SEO for the travel industry but should also be able to demonstrate real-world execution. The right travel SEO agency understands traveller search behaviour, focuses on high-intent keywords, creates content that helps travellers decide, and prioritizes technical performance, local visibility, and seamless user experience. Biztalbox is an SEO agency that fulfills all these criteria.",
+  },
+  {
+    id: 16,
+    question: "How does local SEO help travel websites attract more visitors?",
+    answer:
+      "Local SEO helps travel websites appear in maps, local search results, and “near me” searches when travellers are actively looking for immediate options. By creating region-targeted landing pages and optimizing for local search intent, travel brands can improve visibility and attract high-intent visitors.",
+  },
+];
 
 export default function Page() {
   useScrollSmooth();
@@ -1225,6 +1326,39 @@ export default function Page() {
             </div>
 
             <ServiceThree showIndustry={false} />
+            <div className="fq-faq-area fq-faq-bdr">
+              <div className="container">
+                <div className="row flex-column-reverse flex-lg-row">
+                  <div className="col-xl-8 col-lg-8">
+                    <div className="fq-faq-wrapper">
+                      <div className="tp-service-2-accordion-box">
+                        <div className="accordion" id="accordionExample">
+                          {faq_data.map((item) => (
+                            <FaqItem key={item.id} item={item} />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="col-xl-4 col-lg-4">
+                    <div className="fq-faq-sidebar">
+                      <div className="fq-faq-sidebar-content">
+                        <h3 className="fq-faq-sidebar-title">FAQs</h3>
+                      </div>
+                    </div>
+                    <div className="tp-award-list-thumb-wrap p-relative" style={{ height: "400px" }}>
+                      <div
+                        id="tp-award-thumb"
+                        className="tp-award-list-thumb-1"
+                        style={{ position: "absolute", inset: 0, visibility: "visible", opacity: 1 }}
+                      >
+                        <ModelGLB modelPath="/models/b-logo.glb" autoRotate={true} autoRotateSpeed={2} cameraZ={5} />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </main>
           <FooterThree />
         </div>
