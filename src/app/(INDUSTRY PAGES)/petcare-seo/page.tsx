@@ -279,7 +279,7 @@ export default function Page() {
                     <h3 className="section-subheading">Competitiveness Against Large Digital Players</h3>
                     <p>Major pet e-commerce platforms and online marketplaces continue to capture an increasing share of consumer attention. This means small to medium-sized pet stores aren&apos;t going to be found unless you make your presence known, even if they have products as good as or even better than those of larger <Link href="https://biztalbox.com/blog/seo-competitor-analysis-checklist" className="text-primary">competitors.</Link> Pet company SEO allows those brands to show up next to category leaders in search results, giving you an avenue for competing based on relevance and expertise rather than sheer size alone. By focusing on long-tail queries, breeding questions and local search, pet care SEO helps smaller businesses capture early consideration, retain their market share even with the increased competition and keep themselves visible.</p>
                   </div>
-                  <div className="content-card" style={{ gridColumn: "1 / -1" }}>
+                  <div className="content-card">
                     <h3 className="section-subheading">What These SEO Benefits Mean for Pet Businesses</h3>
                     <p>Collectively, these advantages show why pet industry SEO has become a necessity for businesses that want longer-term visibility, trust and growth. It enables discovery at key decision-making times, increases value over time, and aligns with how pet owners actually make decisions.</p>
                     <p>In the next section, we&apos;ll cover some aspects of the seo strategies for pet care companies, and why SEO works more effectively than surface-level tactics.</p>
