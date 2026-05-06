@@ -3,6 +3,7 @@ import Image from "next/image";
 import logo from "@/assets/img/logo/logo-white.png";
 import { RightArrow, SvgBgSm } from "@/components/svg";
 import Link from "next/link";
+import { FaPinterest } from "react-icons/fa";
 
 export default function FooterFour({ background }: { background?: string }) {
   return (
@@ -81,6 +82,14 @@ export default function FooterFour({ background }: { background?: string }) {
                       target="_blank"
                     >
                       <i className="fa-brands fa-youtube"></i>
+                    </a>
+                    <a
+                      href="https://in.pinterest.com/biztalbox1/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Biztalbox on Pinterest"
+                    >
+                      <FaPinterest className="inline-block text-[1.1em]" aria-hidden />
                     </a>
                   </div>
                   <p className="tp-footer-3-copyright">

@@ -10,13 +10,14 @@ if (typeof window !== "undefined") {
 interface WrapperProps {
   children: React.ReactNode;
   showBackToTop?: boolean;
+  showWhatsApp?: boolean;
 }
 
-const Wrapper = ({ children, showBackToTop=true }: WrapperProps) => {
+const Wrapper = ({ children, showBackToTop = true, showWhatsApp = true }: WrapperProps) => {
   return (
     <React.Fragment>
       {children}
-      <WhatsAppButton />
+      {showWhatsApp && <WhatsAppButton />}
       {showBackToTop && <BackToTop />}
       <ThemeSetting />
     </React.Fragment>

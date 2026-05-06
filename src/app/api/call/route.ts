@@ -61,7 +61,7 @@ export async function POST(req: NextRequest) {
 
         return NextResponse.json({ 
             success: true, 
-            message: 'We have recieved your request. We will contact you soon!' 
+            message: 'We have received your request. We will contact you soon!' 
         }, { status: 200 });
 
     } catch (error: any) {

@@ -8,6 +8,7 @@ import {
 import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
 import "./globals.scss";
+import "@/styles/tailwind-tw.css";
 import "@/styles/marquee.css";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { createMetadata } from "@/utils/metadata";
@@ -139,7 +140,13 @@ export default function RootLayout({
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
         )}
-        <ThemeProvider defaultTheme="dark">{children}</ThemeProvider>
+        <ThemeProvider
+          attribute="data-theme"
+          defaultTheme="dark"
+          enableSystem={false}
+        >
+          {children}
+        </ThemeProvider>
         
         {/* Defer non-critical scripts */}
         <Script

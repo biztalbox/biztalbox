@@ -3,15 +3,50 @@
 @import "swiper/css/bundle";
 @import '../../public/assets/scss/main.scss';
 
-/* Global page background (make the whole site black) */
-html,
-body {
+/* Global page background (synced with next-themes `data-theme` on <html>) */
+html[data-theme="dark"],
+html[data-theme="dark"] body,
+html[data-theme="dark"] #__next {
   background-color: #000 !important;
 }
 
-/* Next.js root container fallback */
-#__next {
+html[data-theme="light"],
+html[data-theme="light"] body,
+html[data-theme="light"] #__next {
+  background-color: #fafafa !important;
+}
+
+/* Ensure Video page sections honor dark theme (protect against legacy CSS overrides). */
+html[data-theme="dark"] [data-video-section="services"] {
   background-color: #000 !important;
+  color: #fff !important;
+}
+
+/* Force Video Contact form fields to true dark inputs */
+html[data-theme="dark"] [data-video-section="contact"] input:not([type="hidden"]),
+html[data-theme="dark"] [data-video-section="contact"] textarea,
+html[data-theme="dark"] [data-video-section="contact"] select {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+/* Force Bouquet section background to dark */
+html[data-theme="dark"] [data-video-section="bouquet"] {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+/* Force Industries section background to dark */
+html[data-theme="dark"] [data-video-section="industries"] {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+/* Force FAQ section background to dark */
+html[data-theme="dark"] [data-video-section="faq"] {
+  background-color: #000 !important;
+  color: #fff !important;
 }
 
 /*
