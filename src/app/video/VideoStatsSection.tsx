@@ -91,7 +91,7 @@ export default function VideoStatsSection() {
 
   return (
     <section className="bg-zinc-60 pb-14 pt-2 dark:bg-[#121212] sm:pb-16">
-      <div className="container mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
+      <div className="container">
         <div className="rounded-3xl bg-zinc-100 px-6 py-8 shadow-sm dark:bg-[#1e1e1e] dark:shadow-none sm:px-8 sm:py-10 lg:px-12 lg:py-12">
           <h3 className="mb-10 text-left text-2xl text-zinc-900 dark:text-white sm:text-2xl">
             Leading Video Editing Agency In UK
@@ -102,7 +102,7 @@ export default function VideoStatsSection() {
             <div className="hidden min-h-0 w-full grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)] items-stretch gap-x-0 md:grid">
               <div className="flex flex-col items-center px-3 py-2 text-center">
                 <div className="relative grid min-h-[5.5rem] place-items-center">
-                  <span className="col-start-1 row-start-1 text-5xl font-bold tabular-nums text-zinc-900/[0.07] sm:text-6xl md:text-7xl dark:text-white/[0.08]">
+                  <span className="col-start-1 row-start-1 text-5xl font-bold tabular-nums text-zinc-900/[0.07] sm:text-6xl md:text-[8rem] dark:text-white/[0.08]">
                     {brands}+
                   </span>
                   <span className="col-start-1 row-start-1 z-10 text-xs font-bold tracking-[0.18em] text-zinc-900 dark:text-white sm:text-sm">
@@ -113,7 +113,7 @@ export default function VideoStatsSection() {
               <RowVerticalRule />
               <div className="flex flex-col items-center px-3 py-2 text-center">
                 <div className="relative grid min-h-[5.5rem] place-items-center">
-                  <span className="col-start-1 row-start-1 text-5xl font-bold tabular-nums text-zinc-900/[0.07] sm:text-6xl md:text-7xl dark:text-white/[0.08]">
+                  <span className="col-start-1 row-start-1 text-5xl font-bold tabular-nums text-zinc-900/[0.07] sm:text-6xl md:text-[8rem] dark:text-white/[0.08]">
                     {videos}+
                   </span>
                   <span className="col-start-1 row-start-1 z-10 text-xs font-bold tracking-[0.18em] text-zinc-900 dark:text-white sm:text-sm">
@@ -124,7 +124,7 @@ export default function VideoStatsSection() {
               <RowVerticalRule />
               <div className="flex flex-col items-center px-3 py-2 text-center">
                 <div className="relative grid min-h-[5.5rem] place-items-center">
-                  <span className="col-start-1 row-start-1 text-5xl font-bold tabular-nums text-zinc-900/[0.07] sm:text-6xl md:text-7xl dark:text-white/[0.08]">
+                  <span className="col-start-1 row-start-1 text-5xl font-bold tabular-nums text-zinc-900/[0.07] sm:text-6xl md:text-[8rem] dark:text-white/[0.08]">
                     {years}+
                   </span>
                   <span className="col-start-1 row-start-1 z-10 max-w-[5.5rem] text-center text-[10px] font-bold leading-snug tracking-[0.12em] text-zinc-900 dark:text-white sm:text-xs sm:tracking-[0.16em]">

@@ -7,6 +7,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import Link from "next/link";
 import Image from "next/image";
 import industriesData from "@/data/industries.json";
+import { useTheme } from "next-themes";
 
 
 
@@ -164,6 +165,13 @@ const industry_carousel_setting: SwiperOptions = {
 
 export default function ServiceThree({ showService = true, showIndustry = true }: { showService?: boolean, showIndustry?: boolean }) {
   const industrySwiperRef = useRef<SwiperType | null>(null);
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+  const isDark = mounted && resolvedTheme === "dark";
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Add styles for pagination bullets
   useEffect(() => {
@@ -175,29 +183,146 @@ export default function ServiceThree({ showService = true, showIndustry = true }
         .industry-pagination-bullet {
           width: 10px !important;
           height: 10px !important;
-          background: rgba(255, 255, 255, 0.25) !important;
+          background: rgba(0, 0, 0, 0.18) !important;
           border-radius: 50% !important;
           opacity: 1 !important;
           margin: 0 3px !important;
           cursor: pointer !important;
           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
           position: relative !important;
-          border: 1px solid rgba(255, 255, 255, 0.15) !important;
+          border: 1px solid rgba(0, 0, 0, 0.14) !important;
         }
         .industry-pagination-bullet:hover {
-          background: rgba(255, 255, 255, 0.4) !important;
+          background: rgba(0, 0, 0, 0.28) !important;
           transform: scale(1.2) !important;
         }
         .industry-pagination-bullet-active {
-          background: rgba(255, 255, 255, 0.95) !important;
+          background: rgba(0, 0, 0, 0.78) !important;
           width: 28px !important;
           height: 10px !important;
           border-radius: 5px !important;
-          border-color: rgba(255, 255, 255, 0.3) !important;
-          box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3) !important;
+          border-color: rgba(0, 0, 0, 0.22) !important;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18) !important;
         }
         .industry-pagination-bullet-active:hover {
           transform: scale(1.05) !important;
+        }
+
+        /* Dark theme overrides (next-themes uses .dark on html) */
+        .dark .industry-pagination-bullet {
+          background: rgba(255, 255, 255, 0.25) !important;
+          border-color: rgba(255, 255, 255, 0.15) !important;
+        }
+        .dark .industry-pagination-bullet:hover {
+          background: rgba(255, 255, 255, 0.4) !important;
+        }
+        .dark .industry-pagination-bullet-active {
+          background: rgba(255, 255, 255, 0.95) !important;
+          border-color: rgba(255, 255, 255, 0.3) !important;
+          box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3) !important;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+  }, []);
+
+  // Theme-adaptive UI for Bootstrap-only pages (no Tailwind required)
+  useEffect(() => {
+    const styleId = "industry-theme-styles";
+    if (!document.getElementById(styleId)) {
+      const style = document.createElement("style");
+      style.id = styleId;
+      style.textContent = `
+        /* Nav buttons */
+        .industry-nav-btn {
+          padding: 0 !important;
+          border-radius: 50% !important;
+          width: 36px !important;
+          height: 36px !important;
+          display: inline-flex !important;
+          align-items: center !important;
+          justify-content: center !important;
+          cursor: pointer !important;
+          transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease !important;
+          outline: none !important;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+          -webkit-tap-highlight-color: transparent !important;
+        }
+        .industry-nav-btn:active { transform: scale(0.95) !important; }
+
+        /* Cards */
+        .industry-card {
+          display: block !important;
+          height: 100% !important;
+          padding: 10px !important;
+          border-radius: 8px !important;
+          text-decoration: none !important;
+          transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease !important;
+          will-change: transform;
+        }
+        .industry-card:hover { transform: translateY(-4px) !important; }
+
+        /* Light theme (default) */
+        [data-video-page], [data-theme="light"] {
+          --industry-card-bg: rgba(0, 0, 0, 0.04);
+          --industry-card-bg-hover: rgba(0, 0, 0, 0.07);
+          --industry-card-border: rgba(0, 0, 0, 0.10);
+          --industry-card-border-hover: rgba(0, 0, 0, 0.18);
+          --industry-title: #18181b; /* zinc-900 */
+          --industry-desc: rgba(24, 24, 27, 0.72);
+          --industry-nav-bg: rgba(0, 0, 0, 0.05);
+          --industry-nav-bg-hover: rgba(0, 0, 0, 0.10);
+          --industry-nav-border: rgba(0, 0, 0, 0.15);
+          --industry-nav-border-hover: rgba(0, 0, 0, 0.22);
+          --industry-nav-color: #18181b;
+        }
+
+        /* Dark theme */
+        [data-theme="dark"] {
+          --industry-card-bg: rgba(255, 255, 255, 0.05);
+          --industry-card-bg-hover: rgba(255, 255, 255, 0.08);
+          --industry-card-border: rgba(255, 255, 255, 0.10);
+          --industry-card-border-hover: rgba(255, 255, 255, 0.20);
+          --industry-title: #ffffff;
+          --industry-desc: rgba(255, 255, 255, 0.70);
+          --industry-nav-bg: rgba(255, 255, 255, 0.12);
+          --industry-nav-bg-hover: rgba(255, 255, 255, 0.20);
+          --industry-nav-border: rgba(255, 255, 255, 0.25);
+          --industry-nav-border-hover: rgba(255, 255, 255, 0.40);
+          --industry-nav-color: #ffffff;
+        }
+
+        [data-theme] .industry-nav-btn {
+          background: var(--industry-nav-bg) !important;
+          border: 1px solid var(--industry-nav-border) !important;
+          color: var(--industry-nav-color) !important;
+        }
+        [data-theme] .industry-nav-btn:hover {
+          background: var(--industry-nav-bg-hover) !important;
+          border-color: var(--industry-nav-border-hover) !important;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) !important;
+          transform: scale(1.05) !important;
+        }
+
+        [data-theme] .industry-card {
+          background: var(--industry-card-bg) !important;
+          border: 1px solid var(--industry-card-border) !important;
+        }
+        [data-theme] .industry-card:hover {
+          background: var(--industry-card-bg-hover) !important;
+          border-color: var(--industry-card-border-hover) !important;
+        }
+        [data-theme] .industry-card-title { color: var(--industry-title) !important; }
+        [data-theme] .industry-card-desc { color: var(--industry-desc) !important; }
+
+        /* Mobile pagination wrapper (Bootstrap-friendly) */
+        .industry-mobile-pagination {
+          margin-top: 32px !important;
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center !important;
+          gap: 6px !important;
+          padding: 8px 0 !important;
         }
       `;
       document.head.appendChild(style);
@@ -209,7 +334,7 @@ export default function ServiceThree({ showService = true, showIndustry = true }
       {/* Services */}
       {showService && (
     <div
-      className="tp-service-4-area pt-60 pb-120 fix"
+      className="tp-service-4-area pt-60 pb-120 bg-black text-white fix"
       data-background="assets/img/home-04/brand/overly.png"
       style={{ backgroundImage: "url(/assets/img/home-04/brand/overly.png)" }}
     >
@@ -285,61 +410,18 @@ export default function ServiceThree({ showService = true, showIndustry = true }
 
     {/* Industry */}
     {showIndustry && (
-    <div className="tp-industry-area pt-40 pb-80">
+    <div className="tp-industry-area pt-20 pb-20" data-theme={isDark ? "dark" : "light"}>
       <div className="container">
-        <div className="row align-items-center mb-40">
+        <div className="row align-items-center mb-10">
           <div className="col-xl-12">
             <div className="tp-industry-title-wrapper d-flex align-items-center justify-content-between">
-              <h2 className="tp-service-4-title text-white">Industry Served</h2>
+              <h2 className={`${isDark ? "text-white" : "text-dark"}`}>Client Industries We Serve</h2>
               {/* Mobile Navigation Buttons */}
+               
               <div className="industry-title-nav d-flex d-md-none gap-2">
                 <button
                   type="button"
-                  className="industry-swiper-button-prev industry-mobile-nav-prev"
-                  style={{
-                    padding: "0",
-                    borderRadius: "50%",
-                    background: "rgba(255, 255, 255, 0.12)",
-                    border: "1px solid rgba(255, 255, 255, 0.25)",
-                    color: "white",
-                    fontSize: "14px",
-                    width: "36px",
-                    height: "36px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    cursor: "pointer",
-                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                    outline: "none",
-                    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.15)",
-                    WebkitTapHighlightColor: "transparent",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "rgba(255, 255, 255, 0.2)";
-                    e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.4)";
-                    e.currentTarget.style.transform = "scale(1.05)";
-                    e.currentTarget.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.25)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "rgba(255, 255, 255, 0.12)";
-                    e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.25)";
-                    e.currentTarget.style.transform = "scale(1)";
-                    e.currentTarget.style.boxShadow = "0 2px 8px rgba(0, 0, 0, 0.15)";
-                  }}
-                  onMouseDown={(e) => {
-                    e.currentTarget.style.transform = "scale(0.95)";
-                  }}
-                  onMouseUp={(e) => {
-                    e.currentTarget.style.transform = "scale(1.05)";
-                  }}
-                  onTouchStart={(e) => {
-                    e.currentTarget.style.transform = "scale(0.95)";
-                    e.currentTarget.style.background = "rgba(255, 255, 255, 0.2)";
-                  }}
-                  onTouchEnd={(e) => {
-                    e.currentTarget.style.transform = "scale(1)";
-                    e.currentTarget.style.background = "rgba(255, 255, 255, 0.12)";
-                  }}
+                  className="industry-nav-btn industry-swiper-button-prev industry-mobile-nav-prev"
                   onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
@@ -353,51 +435,7 @@ export default function ServiceThree({ showService = true, showIndustry = true }
                 </button>
                 <button 
                   type="button"
-                  className="industry-swiper-button-next industry-mobile-nav-next"
-                  style={{
-                    padding: "0",
-                    borderRadius: "50%",
-                    background: "rgba(255, 255, 255, 0.12)",
-                    border: "1px solid rgba(255, 255, 255, 0.25)",
-                    color: "white",
-                    fontSize: "14px",
-                    width: "36px",
-                    height: "36px",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    cursor: "pointer",
-                    transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-                    outline: "none",
-                    boxShadow: "0 2px 8px rgba(0, 0, 0, 0.15)",
-                    WebkitTapHighlightColor: "transparent",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "rgba(255, 255, 255, 0.2)";
-                    e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.4)";
-                    e.currentTarget.style.transform = "scale(1.05)";
-                    e.currentTarget.style.boxShadow = "0 4px 12px rgba(0, 0, 0, 0.25)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "rgba(255, 255, 255, 0.12)";
-                    e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.25)";
-                    e.currentTarget.style.transform = "scale(1)";
-                    e.currentTarget.style.boxShadow = "0 2px 8px rgba(0, 0, 0, 0.15)";
-                  }}
-                  onMouseDown={(e) => {
-                    e.currentTarget.style.transform = "scale(0.95)";
-                  }}
-                  onMouseUp={(e) => {
-                    e.currentTarget.style.transform = "scale(1.05)";
-                  }}
-                  onTouchStart={(e) => {
-                    e.currentTarget.style.transform = "scale(0.95)";
-                    e.currentTarget.style.background = "rgba(255, 255, 255, 0.2)";
-                  }}
-                  onTouchEnd={(e) => {
-                    e.currentTarget.style.transform = "scale(1)";
-                    e.currentTarget.style.background = "rgba(255, 255, 255, 0.12)";
-                  }}
+                  className="industry-nav-btn industry-swiper-button-next industry-mobile-nav-next"
                   onClick={(e) => {
                     e.preventDefault();
                     e.stopPropagation();
@@ -411,6 +449,7 @@ export default function ServiceThree({ showService = true, showIndustry = true }
                 </button>
               </div>
             </div>
+            <hr style={{ width: "100%"}}/>
           </div>
         </div>
         
@@ -424,45 +463,28 @@ export default function ServiceThree({ showService = true, showIndustry = true }
           }}>
             {industriesData.slice(0, 16).map((industry:any) => (
               <div key={industry.id} className="industry-grid-item">
-                <Link href={industry.link} className="industry-card" style={{
-                  display: 'block',
-                  height: '100%',
-                  padding: '10px',
-                  background: 'rgba(255, 255, 255, 0.05)',
-                  borderRadius: '8px',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
-                  transition: 'all 0.3s ease',
-                  textDecoration: 'none'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)';
-                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
-                  e.currentTarget.style.transform = 'translateY(-4px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
-                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                }}
-                >
+                <Link href={industry.link} className="industry-card">
                   <div className="industry-card-inner">
                     <h3 className="industry-card-title" style={{
-                      color: '#fff',
                       fontSize: '18px',
                       fontWeight: '600',
                       marginBottom: '12px',
                       lineHeight: '1.4'
                     }}>{industry.name}</h3>
-                    <p className="industry-card-desc" style={{
-                      color: 'rgba(255, 255, 255, 0.7)',
-                      fontSize: '14px',
-                      lineHeight: '1.6',
-                      margin: 0,
-                      display: '-webkit-box',
-                      WebkitLineClamp: 3,
-                      WebkitBoxOrient: 'vertical',
-                      overflow: 'hidden'
-                    }}>{industry.description}</p>
+                    <p
+                      className="industry-card-desc"
+                      style={{
+                        fontSize: '14px',
+                        lineHeight: '1.6',
+                        margin: 0,
+                        display: "-webkit-box",
+                        WebkitLineClamp: 3,
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                      }}
+                    >
+                      {industry.description}
+                    </p>
                   </div>
                 </Link>
               </div>
@@ -491,34 +513,28 @@ export default function ServiceThree({ showService = true, showIndustry = true }
                 }}>
                   {industriesData.slice(slideIndex * 4, slideIndex * 4 + 4).map((industry:any) => (
                     <div key={industry.id} className="industry-mobile-slide-item">
-                      <Link href={industry.link} className="industry-card" style={{
-                        display: 'block',
-                        height: '100%',
-                        padding: '10px',
-                        background: 'rgba(255, 255, 255, 0.05)',
-                        borderRadius: '8px',
-                        border: '1px solid rgba(255, 255, 255, 0.1)',
-                        transition: 'all 0.3s ease',
-                        textDecoration: 'none'
-                      }}>
+                      <Link href={industry.link} className="industry-card">
                         <div className="industry-card-inner">
                           <h3 className="industry-card-title" style={{
-                            color: '#fff',
                             fontSize: '16px',
                             fontWeight: '600',
                             marginBottom: '8px',
                             lineHeight: '1.4'
                           }}>{industry.name}</h3>
-                          <p className="industry-card-desc" style={{
-                            color: 'rgba(255, 255, 255, 0.7)',
-                            fontSize: '13px',
-                            lineHeight: '1.5',
-                            margin: 0,
-                            display: '-webkit-box',
-                            WebkitLineClamp: 3,
-                            WebkitBoxOrient: 'vertical',
-                            overflow: 'hidden'
-                          }}>{industry.description}</p>
+                          <p
+                            className="industry-card-desc"
+                            style={{
+                              fontSize: '13px',
+                              lineHeight: '1.5',
+                              margin: 0,
+                              display: "-webkit-box",
+                              WebkitLineClamp: 3,
+                              WebkitBoxOrient: "vertical",
+                              overflow: "hidden",
+                            }}
+                          >
+                            {industry.description}
+                          </p>
                         </div>
                       </Link>
                     </div>
@@ -529,14 +545,7 @@ export default function ServiceThree({ showService = true, showIndustry = true }
           </Swiper>
           
           {/* Pagination Dots */}
-          <div className="industry-mobile-pagination" style={{
-            marginTop: '32px',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            gap: '6px',
-            padding: '8px 0',
-          }}></div>
+          <div className="industry-mobile-pagination" />
         </div>
       </div>
     </div>

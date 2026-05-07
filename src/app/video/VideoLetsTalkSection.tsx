@@ -69,7 +69,7 @@ export default function VideoLetsTalkSection() {
 
   return (
     <section className="py-16 text-black dark:bg-black dark:text-white sm:py-20 lg:py-24">
-      <div className="container mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
+      <div className="container">
         <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-0 xl:gap-x-24">
           {/* Left: headline + intro (screenshot: black type on white) */}
           <div className="max-w-[28rem] lg:max-w-none lg:pr-8">

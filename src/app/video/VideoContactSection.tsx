@@ -62,7 +62,7 @@ export default function VideoContactSection() {
   };
 
   const inputClass =
-    "w-full rounded-lg border border-zinc-300 bg-white px-3 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-500 outline-none transition focus:border-zinc-500 focus:ring-1 focus:ring-zinc-500 dark:border-white/15 dark:bg-black dark:text-white dark:placeholder:text-zinc-500 dark:focus:border-white/30 dark:focus:ring-white/20";
+    "w-full rounded-lg w-full border border-zinc-300 bg-white px-3 py-1 text-sm text-zinc-900 placeholder:text-zinc-500 outline-none transition focus:border-zinc-500 focus:ring-1 focus:ring-zinc-500 dark:border-white/15 dark:bg-black dark:text-white dark:placeholder:text-zinc-500 dark:focus:border-white/30 dark:focus:ring-white/20";
 
   const labelClass =
     "mb-2 block text-sm font-medium text-zinc-800  dark:text-zinc-200";
@@ -72,15 +72,15 @@ export default function VideoContactSection() {
       data-video-section="contact"
       className="bg-zinc-50 py-12 text-zinc-900 dark:bg-black dark:text-white sm:py-16"
     >
-      <div className="container mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
+      <div className="container">
         <h2 className="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-white sm:text-3xl">
           Contact Us
         </h2>
         <div className="mt-3 h-px w-full bg-zinc-300 dark:bg-zinc-800" aria-hidden />
 
-        <div className="mx-auto mt-8 w-full rounded-2xl border border-zinc-200/90 bg-zinc-100 p-8 dark:text-white/30 dark:bg-zinc-950/60 sm:p-10 md:p-12 lg:p-14">
+        <div className="mx-auto mt-8 w-full rounded-2xl bg-zinc-100 p-8 dark:text-white/30 dark:bg-[#1E1E1E] sm:p-10 md:p-12 lg:p-14">
           <form onSubmit={handleSubmit}>
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-start md:gap-x-10 md:gap-y-7">
+            <div className="flex flex-col md:grid gap-6 md:!grid-cols-2">
               <div>
                 <label htmlFor="video-contact-name" className={labelClass}>
                   Name
@@ -94,8 +94,10 @@ export default function VideoContactSection() {
                   placeholder="Enter your full name"
                   className={inputClass}
                   autoComplete="name"
+                  
                 />
               </div>
+
               <div>
                 <label htmlFor="video-contact-email" className={labelClass}>
                   Email Address
@@ -111,6 +113,23 @@ export default function VideoContactSection() {
                 />
               </div>
               <div>
+                <label htmlFor="video-contact-phone" className={labelClass}>
+                 Phone No.
+                </label>
+                <input
+                  id="video-contact-phone"
+                  name="phone"
+                  type="tel"
+                  
+                  placeholder="Enter your phone"
+                  className={inputClass}
+                  autoComplete="tel"
+                  minLength={10}
+                  maxLength={15}
+                  inputMode="tel"
+                />
+              </div>
+              <div>
                 <label htmlFor="video-contact-service" className={labelClass}>
                   Select Your Video Editing Service
                 </label>
@@ -119,10 +138,7 @@ export default function VideoContactSection() {
                   name="service"
                   required
                   defaultValue={SERVICE_OPTIONS[0]}
-                  className={`${inputClass} cursor-pointer appearance-none bg-[length:1rem] bg-[right_0.75rem_center] bg-no-repeat pr-10 dark:[color-scheme:dark]`}
-                  style={{
-                    backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23717171'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`,
-                  }}
+                  className={`${inputClass} cursor-pointer py-3`}
                 >
                   {SERVICE_OPTIONS.map((opt) => (
                     <option key={opt} value={opt}>
@@ -133,33 +149,33 @@ export default function VideoContactSection() {
               </div>
               <div>
                 <label htmlFor="video-contact-budget" className={labelClass}>
-                  Budget (optional)
+                  Budget
                 </label>
                 <input
                   id="video-contact-budget"
                   name="budget"
                   type="text"
-                  placeholder="Enter your budget (optional)"
+                  placeholder="Enter your budget"
                   className={inputClass}
                 />
               </div>
               <div>
                 <label htmlFor="video-contact-message" className={labelClass}>
-                  Your message (optional)
+                  Your message
                 </label>
                 <textarea
                   id="video-contact-message"
                   name="message"
                   rows={5}
-                  placeholder="Write your message (optional)"
-                  className={`${inputClass} min-h-[140px] resize-y`}
+                  placeholder="Write your message"
+                  className={`${inputClass}`}
                 />
               </div>
-              <div className="flex flex-col gap-4 md:justify-end">
+              <div className="flex flex-col gap-4 md:justify-end col-span-2">
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-48 rounded-lg bg-zinc-900 dark:bg-zinc-880 px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-zinc-800 disabled:cursor-not-allowed disabled:opacity-60 dark:text-black"
+                  className="w-full rounded-lg bg-zinc-700 px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-zinc-800 disabled:cursor-not-allowed disabled:opacity-60"
                 >
                   {loading ? "Submitting…" : "Submit Form"}
                 </button>

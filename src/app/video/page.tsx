@@ -12,6 +12,7 @@ import VideoFAQSection from "./VideoFAQSection";
 import VideoAgencyServicesSection from "./VideoAgencyServicesSection";
 import VideoLetsTalkSection from "./VideoLetsTalkSection";
 import FooterFour from "@/layouts/footers/footer-four";
+import ServiceThree from "@/components/service/service-three";
 
 function HeroPlayVisual() {
   return (
@@ -57,7 +58,7 @@ function HeroCircularLabel({ pathId }: { pathId: string }) {
 const HERO_VIDEOS = [
   "https://res.cloudinary.com/ddinu18dy/video/upload/v1777978443/Did_you_know_the_BMW_logo_isn_t_just_a_fancy_circle_It_s_packed_with_history.The_blue_and_whi_onpohi.mp4",
   "https://res.cloudinary.com/ddinu18dy/video/upload/v1777980721/You_ve_been_using_the_brand_name_not_the_product_Frisbee_isn_t_what_it_s_called.That_s_just_igqnjr.mp4",
-  "https://res.cloudinary.com/ddinu18dy/video/upload/v1777980069/What_if_Apple_loses_the_one_thing_that_made_it_special_For_years_Apple_built_its_reputation_a_lc6av1.mp4"  ] as const;
+  "https://res.cloudinary.com/ddinu18dy/video/upload/v1777980069/What_if_Apple_loses_the_one_thing_that_made_it_special_For_years_Apple_built_its_reputation_a_lc6av1.mp4"] as const;
 
 function HeroVideoFill({
   src,
@@ -172,9 +173,9 @@ export default function VideoPage() {
 
       <main>
         <section className="bg-zinc-50 py-10 text-zinc-900 dark:bg-[#121212] dark:text-white sm:py-12 lg:py-14">
-          <div className="container mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
+          <div className="container">
             <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-x-10 lg:gap-y-0 xl:gap-x-12">
-              <div className="min-w-0">
+              <div className="">
                 <p className="mb-3 text-2xl tracking-wide text-zinc-800 dark:text-zinc-400">
                   {HERO_COPY.kicker}
                 </p>
@@ -188,7 +189,7 @@ export default function VideoPage() {
                 </p>
               </div>
 
-              <div className="relative mx-auto w-full max-w-[min(100%,340px)] shrink-0 sm:max-w-[min(100%,360px)] lg:mx-0 lg:max-w-[400px] xl:max-w-[430px]">
+              <div className="relative place-self-center md:place-self-end w-full max-w-[min(100%,340px)] shrink-0 sm:max-w-[min(100%,360px)] lg:max-w-[400px] xl:max-w-[430px]">
                 <div
                   className="relative mx-auto hidden w-full lg:ml-0 lg:mr-0 lg:block"
                   style={{ height: GRID.totalH }}
@@ -259,9 +260,9 @@ export default function VideoPage() {
         <VideoServicesSection />
         <VideoContactSection />
         <VideoBouquetServicesSection />
-        <VideoClientIndustriesSection />
+        <ServiceThree showService={false} />
         <VideoProcessSection />
-       
+
         <VideoAgencyServicesSection />
         <VideoFAQSection />
         <VideoLetsTalkSection />

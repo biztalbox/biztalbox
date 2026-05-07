@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { IconType } from "react-icons";
 import { LuUserRound, LuHouse, LuUsersRound, LuDog } from "react-icons/lu";
 import industriesData from "@/data/industries.json";
+import ServiceThree from "@/components/service/service-three";
 
 type IndustryRecord = {
   id: number;
@@ -33,11 +34,13 @@ export default function VideoClientIndustriesSection() {
       data-video-section="industries"
       className="bg-zinc-50 py-12 text-zinc-900 dark:bg-black dark:text-white sm:py-16"
     >
-      <div className="container mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
+      <div className="container mx-auto px-5 sm:px-8 lg:px-10">
         <h2 className="text-left text-xl font-semibold tracking-tight text-zinc-900 dark:text-white sm:text-2xl md:text-[1.65rem]">
           Client Industries We Serve
         </h2>
-        <div className="mt-3 h-px w-full bg-zinc-300 dark:bg-zinc-800/70" aria-hidden />
+        <hr/>
+
+        
 
         <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-9 sm:gap-3.5 md:grid-cols-4 md:gap-3 lg:gap-3.5">
           {industries.map((industry, index) => {
@@ -52,7 +55,7 @@ export default function VideoClientIndustriesSection() {
                   <Icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" aria-hidden />
                 </div> */}
 
-                <h3 className="m-0 text-[13px] font-bold leading-snug tracking-tight text-zinc-900 dark:text-white sm:text-sm">
+                <h3 className="font-bold leading-snug tracking-tight text-zinc-900 dark:text-white sm:text-sm">
                   {industry.name}
                 </h3>
                 <p className="m-0 mt-1 line-clamp-4 text-left text-[11px] font-normal leading-snug text-zinc-600 dark:text-zinc-400 sm:text-xs">
