@@ -91,7 +91,7 @@ export default function VideoStatsSection() {
 
   return (
     <section className="bg-zinc-60 pb-14 pt-2 dark:bg-[#121212] sm:pb-16">
-      <div className="container mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
+      <div className="container mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
         <div className="rounded-3xl bg-zinc-100 px-6 py-8 shadow-sm dark:bg-[#1e1e1e] dark:shadow-none sm:px-8 sm:py-10 lg:px-12 lg:py-12">
           <h3 className="mb-10 text-left text-2xl text-zinc-900 dark:text-white sm:text-2xl">
             Leading Video Editing Agency In UK

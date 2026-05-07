@@ -69,7 +69,7 @@ export default function VideoLetsTalkSection() {
 
   return (
     <section className="py-16 text-black dark:bg-black dark:text-white sm:py-20 lg:py-24">
-      <div className="container mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
+      <div className="container mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-0 xl:gap-x-24">
           {/* Left: headline + intro (screenshot: black type on white) */}
           <div className="max-w-[28rem] lg:max-w-none lg:pr-8">
@@ -88,9 +88,9 @@ export default function VideoLetsTalkSection() {
           </div>
 
           {/* Right: solid black pill card, white inputs, SEND bottom-right */}
-          <div className="rounded-[36px] bg-[#121212] p-9 sm:rounded-[40px] sm:p-11 lg:rounded-[44px] lg:p-12 xl:p-14">
+          <div className="rounded-[36px] bg-[#121212] p-2 sm:rounded-[40px] sm:p-6 lg:rounded-[44px] lg:p-10 xl:p-12">
             <form onSubmit={handleSubmit} className="flex min-h-[280px] flex-col sm:min-h-[300px] lg:min-h-[320px]">
-              <div className="space-y-8 sm:space-y-9 lg:space-y-10">
+              <div className="space-y-5 sm:space-y-7 lg:space-y-10">
                 <div>
                   <label htmlFor="lets-talk-name" className={labelClass}>
                     Name
@@ -164,7 +164,7 @@ export default function VideoLetsTalkSection() {
                 </div>
               </div>
 
-              <div className="mt-auto flex flex-col pt-12 sm:pt-14 lg:pt-16">
+              <div className="mt-auto flex flex-col pt-8 sm:pt-10 lg:pt-16">
                 <div className="flex flex-col items-end gap-2.5">
                   <button
                     type="submit"

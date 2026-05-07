@@ -172,7 +172,7 @@ export default function VideoPage() {
 
       <main>
         <section className="bg-zinc-50 py-10 text-zinc-900 dark:bg-[#121212] dark:text-white sm:py-12 lg:py-14">
-          <div className="container mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
+          <div className="container mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
             <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-x-10 lg:gap-y-0 xl:gap-x-12">
               <div className="min-w-0">
                 <p className="mb-3 text-2xl tracking-wide text-zinc-800 dark:text-zinc-400">

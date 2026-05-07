@@ -33,7 +33,7 @@ export default function VideoClientIndustriesSection() {
       data-video-section="industries"
       className="bg-zinc-50 py-12 text-zinc-900 dark:bg-black dark:text-white sm:py-16"
     >
-      <div className="container mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
+      <div className="container mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
         <h2 className="text-left text-xl font-semibold tracking-tight text-zinc-900 dark:text-white sm:text-2xl md:text-[1.65rem]">
           Client Industries We Serve
         </h2>

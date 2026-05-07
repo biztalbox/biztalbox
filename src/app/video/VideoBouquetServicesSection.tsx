@@ -36,7 +36,7 @@ export default function VideoBouquetServicesSection() {
       data-video-section="bouquet"
       className="bg-white py-14 text-zinc-900 dark:bg-black dark:text-white sm:py-16 md:py-20"
     >
-      <div className="container mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
+      <div className="container mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
         <h2 className="text-left text-2xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-3xl lg:text-[2rem]">
           Our Bouquet Of Video Editing Services
         </h2>

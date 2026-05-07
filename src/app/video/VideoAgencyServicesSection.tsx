@@ -9,7 +9,7 @@ const IMG_REAL_ESTATE =
 export default function VideoAgencyServicesSection() {
   return (
     <section className="bg-zinc-50 py-14 text-zinc-900 dark:bg-[#121212] dark:text-white sm:py-20">
-      <div className="container mx-auto w-full px-5 sm:px-8 lg:px-10">
+      <div className="container mx-auto w-full px-4 sm:px-6 lg:px-8">
         <p className="text-sm font-medium tracking-wide text-zinc-600 dark:text-zinc-400 sm:text-[0.9375rem]">
           Video Editing Agency in UK
         </p>
@@ -72,15 +72,15 @@ export default function VideoAgencyServicesSection() {
             />
           </div>
           <div className="min-w-0 lg:pl-2">
-            <h3 className="text-right text-lg font-bold leading-snug text-zinc-900 dark:text-white sm:text-xl md:text-2xl">
+            <h3 className="text-left text-lg font-bold leading-snug text-zinc-900 dark:text-white sm:text-xl md:text-2xl lg:text-right">
               Real Estate Video Editing Services In UK
             </h3>
-            <p className="mt-4 text-right text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-[0.9375rem]">
+            <p className="mt-4 text-left text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-[0.9375rem] lg:text-right">
               Property buyers decide in minutes. We shape walkthroughs, drone sequences, and agent
               pieces into a clear narrative — brighter interiors, stable colour, and pacing that
               highlights layout, location, and lifestyle without feeling over-produced.
             </p>
-            <p className="mt-4 text-right text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-[0.9375rem]">
+            <p className="mt-4 text-left text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-[0.9375rem] lg:text-right">
               Whether you are a developer, brokerage, or independent videographer outsourcing post, we
               align titles, lower-thirds, and brand palettes so every listing feels premium and ready for
               portals, social teasers, and email campaigns across the UK.

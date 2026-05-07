@@ -72,13 +72,13 @@ export default function VideoContactSection() {
       data-video-section="contact"
       className="bg-zinc-50 py-12 text-zinc-900 dark:bg-black dark:text-white sm:py-16"
     >
-      <div className="container mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
+      <div className="container mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl font-semibold tracking-tight text-zinc-900 dark:text-white sm:text-3xl">
           Contact Us
         </h2>
         <div className="mt-3 h-px w-full bg-zinc-300 dark:bg-zinc-800" aria-hidden />
 
-        <div className="mx-auto mt-8 w-full rounded-2xl border border-zinc-200/90 bg-zinc-100 p-8 dark:text-white/30 dark:bg-zinc-950/60 sm:p-10 md:p-12 lg:p-14">
+        <div className="mx-auto mt-8 w-full rounded-2xl border border-zinc-200/90 bg-zinc-100 p-3 dark:bg-zinc-950/60 dark:text-white/30 sm:p-6 md:p-8 lg:p-10">
           <form onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-start md:gap-x-10 md:gap-y-7">
               <div>

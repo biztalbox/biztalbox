@@ -14,11 +14,11 @@ const LOOP = [...TRUSTED_LOGO_SRCS, ...TRUSTED_LOGO_SRCS];
 export default function VideoTrustedMarquee() {
   return (
     <section className="overflow-x-hidden border-t border-zinc-200 bg-zinc-50 py-12 dark:border-zinc-800 dark:bg-[#121212] sm:py-14">
-      <div className="container mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
+      <div className="container mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
         <h2 className="max-w-4xl text-xl font-thin leading-snug tracking-tight text-zinc-900 dark:text-white sm:text-3xl lg:text-[2rem] xl:text-4xl">
           50+ Happy clients and counting.... We&apos;re trusted by
         </h2>
-        <hr className="mt-6 w-full w-full dark:bg-white" role="presentation" aria-hidden />
+        <hr className="mt-6 w-full dark:bg-white" role="presentation" aria-hidden />
       </div>
 
       {/* Full-bleed marquee — no horizontal padding, edge-to-edge */}

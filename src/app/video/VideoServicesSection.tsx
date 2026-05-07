@@ -162,7 +162,7 @@ export default function VideoServicesSection() {
       data-video-section="services"
       className="bg-white py-14  text-zinc-900 dark:bg-black  sm:py-16 lg:py-20"
     >
-      <div className="container mx-auto max-w-[1800px] px-5 sm:px-8 lg:px-10">
+      <div className="container mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
         <h2 className="text-left text-2xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-3xl lg:text-[2rem] xl:text-4xl">
           Our Video Editing Services
         </h2>

@@ -34,7 +34,7 @@ const STEPS = [
 export default function VideoProcessSection() {
   return (
     <section className="bg-zinc-50 py-14 text-zinc-900 dark:bg-[#121212] dark:text-white sm:py-20">
-      <div className="container mx-auto max-w-[1200px] px-5 sm:px-8 lg:px-10">
+      <div className="container mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8">
         <h2 className="max-w-4xl text-left text-xl font-semibold leading-snug tracking-tight text-zinc-900 dark:text-white sm:text-2xl md:text-[1.65rem] lg:text-[1.75rem]">
           From Footage to Final Cut – The Process
         </h2>
