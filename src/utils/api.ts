@@ -39,7 +39,10 @@ export async function getBlogPostBySlug(slug: string, retryCount = 0): Promise<W
     console.log(`Fetching blog post (attempt ${retryCount + 1}): ${apiUrl}`);
     
     const response = await fetch(apiUrl, { 
-      // next: { revalidate: 3600 }, // Cache for 1 hour
+      next: {
+        revalidate: 300,
+        tags: ['wp-post', `wp-post:${slug}`],
+      },
       headers: {
         'Accept': 'application/json',
         'User-Agent': 'BiztalBox-Website/1.0'

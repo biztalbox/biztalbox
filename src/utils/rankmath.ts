@@ -41,6 +41,10 @@ export async function fetchRankMathData(
 
     
     const response = await fetch(apiUrl, {
+      next: {
+        revalidate: 300,
+        tags: ['rankmath', `rankmath:${postSlug}`],
+      },
       headers: {
         'Accept': 'application/json',
         'User-Agent': 'BiztalBox-Website/1.0'
@@ -360,4 +364,5 @@ export function createMetadataFromRankMath(
     'article:author': 'Biztalbox',
   };
   return metadata;
+
 }

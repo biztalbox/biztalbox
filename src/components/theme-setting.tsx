@@ -13,7 +13,7 @@ const ThemeSetting = () => {
   };
   return (
     <div
-      className={`tp-theme-settings-area transition-3 ${
+      className={`tp-theme-settings-area transition-3 d-none ${
         settingOpen ? "settings-opened" : ""
       }`}
     >
