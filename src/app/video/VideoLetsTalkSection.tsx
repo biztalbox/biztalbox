@@ -88,7 +88,7 @@ export default function VideoLetsTalkSection() {
           </div>
 
           {/* Right: solid black pill card, white inputs, SEND bottom-right */}
-          <div className="rounded-[36px] bg-[#121212] p-2 sm:rounded-[40px] sm:p-6 lg:rounded-[44px] lg:p-10 xl:p-12">
+          <div className="rounded-2xl bg-[#121212] p-4 md:!p-10">
             <form onSubmit={handleSubmit} className="flex min-h-[280px] flex-col sm:min-h-[300px] lg:min-h-[320px]">
               <div className="space-y-5 sm:space-y-7 lg:space-y-10">
                 <div>

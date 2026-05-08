@@ -46,7 +46,7 @@ export default function VideoBouquetServicesSection() {
           {BOUQUET_CARDS.map(({ title, description }) => (
             <Link
               key={title}
-              href="/contact"
+              href="/motion-graphics"
               aria-label={`${title} — get in touch`}
               className="group w-full rounded-2xl flex flex-col gap-0"
             >
@@ -70,7 +70,7 @@ export default function VideoBouquetServicesSection() {
 
               </div>
 
-              <p className="p-4 -mt-4 bg-[#ECECEC] rounded-tr-2xl dark:bg-[#18181B] text-left text-sm font-normal leading-relaxed text-zinc-500 dark:text-zinc-400 md:text-[13px] md:leading-relaxed">
+              <p className="p-4 -mt-4 bg-[#ECECEC] rounded-tr-[32%] dark:bg-[#18181B] text-left text-sm font-normal leading-relaxed text-zinc-500 dark:text-zinc-400 md:text-[13px] md:leading-relaxed">
                 {description}
               </p>
             </Link>

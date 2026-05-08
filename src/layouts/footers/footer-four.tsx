@@ -11,7 +11,7 @@ export default function FooterFour({ background }: { background?: string }) {
       <div
         className={`tp-footer-3-area ${
           background ? "black-bg" : "dark-bg"
-        } pt-40`}
+        } pt-20`}
       >
         <div className="container">
           <div className="row">
@@ -55,7 +55,7 @@ export default function FooterFour({ background }: { background?: string }) {
                   <Link className="tp-footer-3-logo p-relative" href="/">
                     <Image src={logo} alt="logo" />
                   </Link> */}
-                  <div className="tp-footer-3-social mb-20">
+                  <div className="tp-footer-3-social mb-10">
                     <a href="https://x.com/BiztalBox" target="_blank">
                       <i className="fa-brands fa-x"></i>
                     </a>

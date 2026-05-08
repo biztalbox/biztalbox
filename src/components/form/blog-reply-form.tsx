@@ -25,7 +25,7 @@ export default function BlogReplyForm({ postId }: BlogReplyFormProps) {
     if (postId) return postId;
     
     // Try to get post ID from URL
-    const pathSegments = pathname.split('/');
+    const pathSegments = (pathname ?? "").split("/");
     const slug = pathSegments[pathSegments.length - 1];
     
     // If we have a slug, we'll need to fetch the post ID

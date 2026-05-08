@@ -99,8 +99,8 @@ const SERVICES: ServiceItem[] = [
     Icon: IconReels,
   },
   {
-    title: "Corporate Video Editing",
-    description: "Professional polish for presentations & internal comms",
+    title: "2D/3D Video Editing",
+    description: "Professional polish for 2D/3D videos",
     Icon: IconCorporate,
   },
   {

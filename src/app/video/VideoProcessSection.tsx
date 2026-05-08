@@ -1,7 +1,7 @@
 const STEPS = [
   {
     n: "01",
-    title: "Upload Your Footage",
+    title: "Share Your Footage",
     description:
       "Simply upload your raw videos quickly and securely. Your story begins here.",
   },
