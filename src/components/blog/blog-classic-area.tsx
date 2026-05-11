@@ -463,7 +463,7 @@ export default function BlogClassicArea({
     const newPage = event.selected + 1;
     
     // Build new URL with current search params
-    const newUrl = buildBlogUrl(pathname, {
+    const newUrl = buildBlogUrl(pathname ?? "/blog", {
       page: newPage > 1 ? newPage : undefined,
       category: validatedCategorySlug || undefined,
       search: validatedSearchQuery || undefined,
