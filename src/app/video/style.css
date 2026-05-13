@@ -1,3 +1,6 @@
 .video_page a{
     color: royalblue !important;
 }
+p,span,ul,li{
+    color: #f8f8f8 !important;
+}
