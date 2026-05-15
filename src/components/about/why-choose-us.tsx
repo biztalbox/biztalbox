@@ -47,8 +47,8 @@ export default function WhyChooseUs() {
                         <li><b>No Ifs and Buts</b>: We ensure every click turns into customers.</li>
                         <li><b>Experts Who Get It</b>: SEO and Social Media? It&apos;s the air we breathe.</li>
                         <li><b>Bespoke Marketing Solutions</b>: No dull and generic strategies.</li>
-                        <li><b>No Fluff, Just Facts</b>: We’re here round the clock!</li>
-                        <li><b>24/7 Availability</b>: Data-driven results and tangible growth.</li>
+                        <li><b>No Fluff, Just Facts</b>: Data-driven results and tangible growth</li>
+                        <li><b>24/7 Availability</b>: We’re here round the clock!</li>
                       </ul>
                     </div>
                   </div>
