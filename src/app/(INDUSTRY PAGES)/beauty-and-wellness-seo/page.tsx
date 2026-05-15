@@ -10,7 +10,6 @@ import Wrapper from "@/layouts/wrapper";
 import ServiceThree from "@/components/service/service-three";
 import FooterThree from "@/layouts/footers/footer-three";
 import shape from "@/assets/img/home-04/about/about-shape-2.png";
-import shape_2 from "@/assets/img/home-04/about/about-shape-1.png";
 import shape_1 from "@/assets/img/home-01/team/team-details-shape-1.png";
 import team_shape_2 from "@/assets/img/home-01/team/team-details-shape-2.png";
 import {
@@ -432,59 +431,6 @@ export default function Page() {
                     </div>
                   </div>
                   <LeadForm />
-                </div>
-              </div>
-            </div>
-
-            <div className="tp-overlay-bg black-bg-2" style={{ backgroundImage: "url(/assets/img/home-04/hero/overly.png)" }}>
-              <div className="tm-details-wrapper p-relative pt-80 pb-80" style={{ height: "auto" }}>
-                <div className="container">
-                  <div className="row">
-                    <div className="col-xl-10 col-md-10">
-                      <div className={`tp-about-4-title-box ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                        <h3 className="tp-about-4-title">What Makes Biztalbox Different</h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row align-items-center">
-                    <div className="col-xl-3 col-lg-2 col-md-3">
-                      <div className="tp-about-4-shape-1">
-                        <Image src={shape_2} alt="shape-2" />
-                      </div>
-                    </div>
-                    <div className="col-xl-9 col-lg-10 col-md-9">
-                      <div className="tp-about-4-content-wrap">
-                        <div className="row">
-                          <div className="col-xl-6 col-lg-6">
-                            <div className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                              <h3 className="text-white">Industry Intelligence That Shapes Smart Strategy</h3>
-                              <p>Most SEO agencies focus on mechanics; we focus on meaning. The beauty and wellness space is built on perception, emotional comfort, visual storytelling, and service expertise. Our work as a beauty salon SEO agency and beauty salons SEO agency starts with understanding what clients compare, what reassures them, and what ultimately convinces them to book. We study demand patterns, seasonal spikes, competitive gaps, and service psychology.</p>
-                            </div>
-                          </div>
-                          <div className="col-xl-6 col-lg-6">
-                            <div className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                              <h3 className="text-white">A Trust-Driven Approach Designed for High-Intent Clients</h3>
-                              <p>For salons and spas, visibility is important. For med spas, trust is everything. People need reassurance before choosing Botox, laser treatments, or microneedling. We balance clinical accuracy, search expertise, and on-page transparency, using YMYL-aligned approaches when shaping a medical spa SEO strategy that covers treatment education, practitioner credibility, and results-driven content.</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="row mt-30">
-                          <div className="col-xl-6 col-lg-6">
-                            <div className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                              <h3 className="text-white">Precision for Every Service You Offer</h3>
-                              <p>No salon or med spa succeeds with a one-size-fits-all SEO plan. Balayage clients search differently from hydrafacial clients; Botox clients behave differently from massage or keratin clients. The seasoned seo experts at Biztalbox ensure that each service receives its own strategy, keyword profile, format, and conversion journey, so every treatment becomes its own traffic and revenue driver.</p>
-                            </div>
-                          </div>
-                          <div className="col-xl-6 col-lg-6">
-                            <div className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                              <h3 className="text-white">Optimization Built Around How People Book in 2026</h3>
-                              <p>Client journeys today are nonlinear. Someone might discover you on Google Maps, verify credibility on Instagram, read reviews elsewhere, then visit your website before booking. We design for the entire booking path — Maps visibility, AI Overview readiness, social proof integration, service clarity, fast mobile experience, and a booking flow that removes friction.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

@@ -10,7 +10,6 @@ import Wrapper from "@/layouts/wrapper";
 import ServiceThree from "@/components/service/service-three";
 import FooterThree from "@/layouts/footers/footer-three";
 import shape from "@/assets/img/home-04/about/about-shape-2.png";
-import shape_2 from "@/assets/img/home-04/about/about-shape-1.png";
 import shape_1 from "@/assets/img/home-01/team/team-details-shape-1.png";
 import team_shape_2 from "@/assets/img/home-01/team/team-details-shape-2.png";
 import {
@@ -675,120 +674,6 @@ export default function Page() {
                     </div>
                   </div>
                   <LeadForm />
-                </div>
-              </div>
-            </div>
-
-            <div
-              className="tp-overlay-bg black-bg-2"
-              style={{
-                backgroundImage: "url(/assets/img/home-04/hero/overly.png)",
-              }}
-            >
-              <div
-                className="tm-details-wrapper p-relative pt-80 pb-80"
-                style={{ height: "auto" }}
-              >
-                <div className="tp-about-4-shape-2">
-                  <Image className="tp-zoom-in-out" src={shape} alt="shape" />
-                </div>
-                <div className="container">
-                  <div className="row">
-                    <div className="col-xl-10 col-md-10">
-                      <div
-                        className={`tp-about-4-title-box ${
-                          !isMobile ? "tp_fade_bottom" : ""
-                        }`}
-                      >
-                        <h3 className="tp-about-4-title">
-                          What Makes Biztalbox Different
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row align-items-center">
-                    <div className="col-xl-3 col-lg-2 col-md-3">
-                      <div className="tp-about-4-shape-1">
-                        <Image src={shape_2} alt="shape-2" />
-                      </div>
-                    </div>
-                    <div className="col-xl-9 col-lg-10 col-md-9">
-                      <div className="tp-about-4-content-wrap">
-                        <div className="row">
-                          <div className="col-xl-6 col-lg-6">
-                            <div
-                              className={`tp-about-4-content item-1 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
-                            >
-                              <h3 className="text-white">
-                                Roofing Search Strategy Built Around Real Demand
-                              </h3>
-                              <p>
-                                We don’t rely on templates. We build keyword and
-                                content clusters around how homeowners actually
-                                search: emergency repairs, seasonal maintenance,
-                                material comparisons, and local contractor
-                                evaluations.
-                              </p>
-                            </div>
-                          </div>
-                          <div className="col-xl-6 col-lg-6">
-                            <div
-                              className={`tp-about-4-content item-2 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
-                            >
-                              <h3 className="text-white">
-                                Lead Quality Optimisation, Not Just Traffic
-                              </h3>
-                              <p>
-                                We optimize for the calls and quote requests that
-                                turn into projects — targeting intent and
-                                filtering out low-value clicks that waste time.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="row mt-30">
-                          <div className="col-xl-6 col-lg-6">
-                            <div
-                              className={`tp-about-4-content item-1 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
-                            >
-                              <h3 className="text-white">
-                                Strong Local Execution Across Service Areas
-                              </h3>
-                              <p>
-                                We strengthen your local presence through GBP
-                                optimization, citations, location pages, and
-                                localized content so you win in the markets you
-                                serve.
-                              </p>
-                            </div>
-                          </div>
-                          <div className="col-xl-6 col-lg-6">
-                            <div
-                              className={`tp-about-4-content item-2 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
-                            >
-                              <h3 className="text-white">
-                                Technical + Content Systems That Scale
-                              </h3>
-                              <p>
-                                We combine technical SEO, structured content, and
-                                AI-ready formatting so your visibility compounds
-                                over time — and stays resilient as search
-                                evolves.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

@@ -9,7 +9,6 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 import Wrapper from "@/layouts/wrapper";
 import ServiceThree from "@/components/service/service-three";
 import FooterThree from "@/layouts/footers/footer-three";
-import shape_2 from "@/assets/img/home-04/about/about-shape-1.png";
 import shape_1 from "@/assets/img/home-01/team/team-details-shape-1.png";
 import team_shape_2 from "@/assets/img/home-01/team/team-details-shape-2.png";
 import {
@@ -1479,59 +1478,6 @@ export default function Page() {
                     </div>
                   </div>
                   <LeadForm />
-                </div>
-              </div>
-            </div>
-
-            <div className="tp-overlay-bg black-bg-2" style={{ backgroundImage: "url(/assets/img/home-04/hero/overly.png)" }}>
-              <div className="tm-details-wrapper p-relative pt-80 pb-80" style={{ height: "auto" }}>
-                <div className="container">
-                  <div className="row">
-                    <div className="col-xl-10 col-md-10">
-                      <div className={`tp-about-4-title-box ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                        <h3 className="tp-about-4-title">What Makes Biztalbox Different</h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row align-items-center">
-                    <div className="col-xl-3 col-lg-2 col-md-3">
-                      <div className="tp-about-4-shape-1">
-                        <Image src={shape_2} alt="shape-2" />
-                      </div>
-                    </div>
-                    <div className="col-xl-9 col-lg-10 col-md-9">
-                      <div className="tp-about-4-content-wrap">
-                        <div className="row">
-                          <div className="col-xl-6 col-lg-6">
-                            <div className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                              <h3 className="text-white">Market-Grade Search Intelligence That Goes Beyond Keywords</h3>
-                              <p>We treat search behaviour like market behaviour. Our approach blends pricing trends, buyer motivations, supply fluctuations, and developer credibility to build search clusters that general SEO providers cannot replicate. This intelligence shapes real estate SEO strategies that align with actual demand and deliver results that compound over time.</p>
-                            </div>
-                          </div>
-                          <div className="col-xl-6 col-lg-6">
-                            <div className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                              <h3 className="text-white">Lead Quality Optimisation Instead of Chasing Traffic</h3>
-                              <p>We measure success by enquiry quality. Our optimisation framework filters out irrelevant traffic and strengthens visibility for buyers who are serious, financially ready, and aligned with your inventory. The result is a pipeline that grows in value, not noise.</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="row mt-30">
-                          <div className="col-xl-6 col-lg-6">
-                            <div className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                              <h3 className="text-white">Global Search Understanding With Local Execution</h3>
-                              <p>Property search patterns are global, but decisions are always local. Our real estate SEO approach seamlessly combines global demand trends with hyperlocal execution, so that listings, services pages and market insights perform where decisions are actually made.</p>
-                            </div>
-                          </div>
-                          <div className="col-xl-6 col-lg-6">
-                            <div className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                              <h3 className="text-white">Continuous Monitoring and Real-Time Adaptation</h3>
-                              <p>Real estate changes fast. New projects, policy changes or interest rate fluctuations reshape search demand instantly. We constantly adapt your content and web pages so you retain ongoing visibility as markets shift rather than react after competitors have moved ahead.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

@@ -9,7 +9,6 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 import Wrapper from "@/layouts/wrapper";
 import ServiceThree from "@/components/service/service-three";
 import FooterThree from "@/layouts/footers/footer-three";
-import shape_2 from "@/assets/img/home-04/about/about-shape-1.png";
 import shape_1 from "@/assets/img/home-01/team/team-details-shape-1.png";
 import team_shape_2 from "@/assets/img/home-01/team/team-details-shape-2.png";
 import {
@@ -1326,111 +1325,6 @@ export default function Page() {
                   </p>
                 </div>
               </section>
-            </div>
-
-            <div
-              className="tp-overlay-bg black-bg-2"
-              style={{ backgroundImage: "url(/assets/img/home-04/hero/overly.png)" }}
-            >
-              <div
-                className="tm-details-wrapper p-relative pt-80 pb-80"
-                style={{ height: "auto" }}
-              >
-                <div className="container">
-                  <div className="row">
-                    <div className="col-xl-10 col-md-10">
-                      <div
-                        className={`tp-about-4-title-box ${
-                          !isMobile ? "tp_fade_bottom" : ""
-                        }`}
-                      >
-                        <h3 className="tp-about-4-title">
-                          What Makes Biztalbox Different
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row align-items-center">
-                    <div className="col-xl-3 col-lg-2 col-md-3">
-                      <div className="tp-about-4-shape-1">
-                        <Image src={shape_2} alt="shape-2" />
-                      </div>
-                    </div>
-                    <div className="col-xl-9 col-lg-10 col-md-9">
-                      <div className="tp-about-4-content-wrap">
-                        <div className="row">
-                          <div className="col-xl-6 col-lg-6">
-                            <div
-                              className={`tp-about-4-content item-1 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
-                            >
-                              <h3 className="text-white">
-                                High-Intent Visibility
-                              </h3>
-                              <p>
-                                We align SEO with urgent, local relocation
-                                searches so you show up at the exact moment
-                                people are ready to book.
-                              </p>
-                            </div>
-                          </div>
-                          <div className="col-xl-6 col-lg-6">
-                            <div
-                              className={`tp-about-4-content item-2 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
-                            >
-                              <h3 className="text-white">
-                                Trust + Proof Systems
-                              </h3>
-                              <p>
-                                Reviews, visuals, clear service breakdowns, and
-                                consistent mentions — built to reduce hesitation
-                                in a risk-heavy service.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="row mt-30">
-                          <div className="col-xl-6 col-lg-6">
-                            <div
-                              className={`tp-about-4-content item-1 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
-                            >
-                              <h3 className="text-white">
-                                Local SEO That Drives Calls
-                              </h3>
-                              <p>
-                                We optimize maps presence, service-area pages,
-                                and engagement signals to turn searches into
-                                direct enquiries.
-                              </p>
-                            </div>
-                          </div>
-                          <div className="col-xl-6 col-lg-6">
-                            <div
-                              className={`tp-about-4-content item-2 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
-                            >
-                              <h3 className="text-white">
-                                Future-Ready for AI Search
-                              </h3>
-                              <p>
-                                We structure FAQ and question-led content so your
-                                services can appear in AI answers, not just blue
-                                links.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
 
             <ServiceThree showIndustry={false} />

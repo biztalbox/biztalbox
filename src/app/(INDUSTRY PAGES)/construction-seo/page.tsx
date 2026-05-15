@@ -9,7 +9,6 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 import Wrapper from "@/layouts/wrapper";
 import ServiceThree from "@/components/service/service-three";
 import FooterThree from "@/layouts/footers/footer-three";
-import shape_2 from "@/assets/img/home-04/about/about-shape-1.png";
 import shape_1 from "@/assets/img/home-01/team/team-details-shape-1.png";
 import team_shape_2 from "@/assets/img/home-01/team/team-details-shape-2.png";
 import {
@@ -1410,65 +1409,6 @@ export default function Page() {
                   </p>
                 </div>
               </section>
-            </div>
-
-            <div
-              className="tp-overlay-bg black-bg-2"
-              style={{ backgroundImage: "url(/assets/img/home-04/hero/overly.png)" }}
-            >
-              <div
-                className="tm-details-wrapper p-relative pt-80 pb-80"
-                style={{ height: "auto" }}
-              >
-                <div className="container">
-                  <div className="row">
-                    <div className="col-xl-10 col-md-10">
-                      <div className={`tp-about-4-title-box ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                        <h3 className="tp-about-4-title">What Makes Biztalbox Different</h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row align-items-center">
-                    <div className="col-xl-3 col-lg-2 col-md-3">
-                      <div className="tp-about-4-shape-1">
-                        <Image src={shape_2} alt="shape-2" />
-                      </div>
-                    </div>
-                    <div className="col-xl-9 col-lg-10 col-md-9">
-                      <div className="tp-about-4-content-wrap">
-                        <div className="row">
-                          <div className="col-xl-6 col-lg-6">
-                            <div className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                              <h3 className="text-white">Intent-Led Visibility</h3>
-                              <p>We map construction SEO to how buyers search—urgent “near me” needs, project types, and decision-stage comparisons.</p>
-                            </div>
-                          </div>
-                          <div className="col-xl-6 col-lg-6">
-                            <div className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                              <h3 className="text-white">Revenue-Focused Execution</h3>
-                              <p>We optimize for leads that turn into projects, not vanity traffic—service pages, local signals, and trust builders.</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="row mt-30">
-                          <div className="col-xl-6 col-lg-6">
-                            <div className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                              <h3 className="text-white">Local SEO That Drives Calls</h3>
-                              <p>Maps visibility, location pages, reviews, and consistent listings—built to convert local demand into enquiries.</p>
-                            </div>
-                          </div>
-                          <div className="col-xl-6 col-lg-6">
-                            <div className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                              <h3 className="text-white">Future-Ready for AI Search</h3>
-                              <p>We structure content for AI summaries and generative answers so your brand stays visible where shortlists form.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
 
             <ServiceThree showIndustry={false} />

@@ -10,7 +10,6 @@ import Wrapper from "@/layouts/wrapper";
 import ServiceThree from "@/components/service/service-three";
 import FooterThree from "@/layouts/footers/footer-three";
 import shape from "@/assets/img/home-04/about/about-shape-2.png";
-import shape_2 from "@/assets/img/home-04/about/about-shape-1.png";
 import shape_1 from "@/assets/img/home-01/team/team-details-shape-1.png";
 import team_shape_2 from "@/assets/img/home-01/team/team-details-shape-2.png";
 import {
@@ -496,59 +495,6 @@ export default function Page() {
                     </div>
                   </div>
                   <LeadForm />
-                </div>
-              </div>
-            </div>
-
-            <div className="tp-overlay-bg black-bg-2" style={{ backgroundImage: "url(/assets/img/home-04/hero/overly.png)" }}>
-              <div className="tm-details-wrapper p-relative pt-80 pb-80" style={{ height: "auto" }}>
-                <div className="container">
-                  <div className="row">
-                    <div className="col-xl-10 col-md-10">
-                      <div className={`tp-about-4-title-box ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                        <h3 className="tp-about-4-title">What Makes Biztalbox Different</h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row align-items-center">
-                    <div className="col-xl-3 col-lg-2 col-md-3">
-                      <div className="tp-about-4-shape-1">
-                        <Image src={shape_2} alt="shape-2" />
-                      </div>
-                    </div>
-                    <div className="col-xl-9 col-lg-10 col-md-9">
-                      <div className="tp-about-4-content-wrap">
-                        <div className="row">
-                          <div className="col-xl-6 col-lg-6">
-                            <div className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                              <h3 className="text-white">Industry-Specific Home Services SEO</h3>
-                              <p>We structure SEO to generate calls within the right service radius and at the right moment. As a home service SEO company, we ensure our home services SEO services support day-to-day revenue rather than abstract rankings.</p>
-                            </div>
-                          </div>
-                          <div className="col-xl-6 col-lg-6">
-                            <div className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                              <h3 className="text-white">Google Maps Visibility That Converts</h3>
-                              <p>As a local SEO agency for home services, we manage Maps visibility as a revenue channel. We continuously optimise listings for engagement, call actions, and location-specific relevance so your business reaches customers ready to book.</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="row mt-30">
-                          <div className="col-xl-6 col-lg-6">
-                            <div className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                              <h3 className="text-white">Ongoing Local SEO Management</h3>
-                              <p>As a specialised home services local SEO agency, we treat local SEO as an ongoing discipline. We strengthen rankings through continuous review management, listing optimisation, and monitoring of behavioural signals.</p>
-                            </div>
-                          </div>
-                          <div className="col-xl-6 col-lg-6">
-                            <div className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                              <h3 className="text-white">Lead Quality Over Traffic Volume</h3>
-                              <p>As an SEO company for home services, we prioritise users who are ready to take action. This results in stronger lead quality and higher conversion value, keeping marketing investment aligned with real bookings.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

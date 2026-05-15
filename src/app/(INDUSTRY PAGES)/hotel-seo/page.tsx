@@ -11,7 +11,6 @@ import ServiceThree from "@/components/service/service-three";
 import LineTextTwo from "@/components/line-text/line-text-2";
 import FooterThree from "@/layouts/footers/footer-three";
 import shape from "@/assets/img/home-04/about/about-shape-2.png";
-import shape_2 from "@/assets/img/home-04/about/about-shape-1.png";
 import shape_1 from "@/assets/img/home-01/team/team-details-shape-1.png";
 import team_shape_2 from "@/assets/img/home-01/team/team-details-shape-2.png";
 import {
@@ -676,59 +675,6 @@ export default function Page() {
                     </div>
                   </div>
                   <LeadForm />
-                </div>
-              </div>
-            </div>
-
-            <div className="tp-overlay-bg black-bg-2" style={{ backgroundImage: "url(/assets/img/home-04/hero/overly.png)" }}>
-              <div className="tm-details-wrapper p-relative pt-80 pb-80" style={{ height: "auto" }}>
-                <div className="container">
-                  <div className="row">
-                    <div className="col-xl-10 col-md-10">
-                      <div className={`tp-about-4-title-box ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                        <h3 className="tp-about-4-title">What Makes Biztalbox Different</h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row align-items-center">
-                    <div className="col-xl-3 col-lg-2 col-md-3">
-                      <div className="tp-about-4-shape-1">
-                        <Image src={shape_2} alt="shape-2" />
-                      </div>
-                    </div>
-                    <div className="col-xl-9 col-lg-10 col-md-9">
-                      <div className="tp-about-4-content-wrap">
-                        <div className="row">
-                          <div className="col-xl-6 col-lg-6">
-                            <div className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                              <h3 className="text-white">Hospitality Industry Expertise</h3>
-                              <p>As a hotel SEO agency, we don&apos;t just focus on visibility — we understand booking windows, seasonality, rate strategies, and how travelers search. We aim to create a long-term online presence that drives direct bookings and reduces OTA dependence.</p>
-                            </div>
-                          </div>
-                          <div className="col-xl-6 col-lg-6">
-                            <div className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                              <h3 className="text-white">Revenue-Focused Strategy</h3>
-                              <p>We connect SEO outcomes to booking KPIs rather than vanity metrics. Our strategies focus on ADR protection, occupancy lift, demand capture during compression nights, and improved conversion rates across core landing pages.</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="row mt-30">
-                          <div className="col-xl-6 col-lg-6">
-                            <div className={`tp-about-4-content item-1 ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                              <h3 className="text-white">Customized Approach</h3>
-                              <p>Our SEO strategy is strategic, data-informed, and highly tailored to hotels, resorts, and restaurants. We don&apos;t employ a one-size-fits-all approach. Each property we partner with receives a custom plan to fit its particular industry, objectives, and target demographic.</p>
-                            </div>
-                          </div>
-                          <div className="col-xl-6 col-lg-6">
-                            <div className={`tp-about-4-content item-2 ${!isMobile ? "tp_fade_bottom" : ""}`}>
-                              <h3 className="text-white">Ethical SEO Practices</h3>
-                              <p>Being a professional hotel SEO agency, we use only white-hat, Google-approved techniques to develop lasting rankings and sustainable growth. We understand that SEO is not a marketing exercise — it&apos;s a revenue engine.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

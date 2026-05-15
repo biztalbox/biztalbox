@@ -10,7 +10,6 @@ import Wrapper from "@/layouts/wrapper";
 import ServiceThree from "@/components/service/service-three";
 import FooterThree from "@/layouts/footers/footer-three";
 import shape from "@/assets/img/home-04/about/about-shape-2.png";
-import shape_2 from "@/assets/img/home-04/about/about-shape-1.png";
 import shape_1 from "@/assets/img/home-01/team/team-details-shape-1.png";
 import team_shape_2 from "@/assets/img/home-01/team/team-details-shape-2.png";
 import {
@@ -1207,116 +1206,6 @@ export default function Page() {
                   opportunities.
                 </p>
               </section>
-            </div>
-
-            <div
-              className="tp-overlay-bg black-bg-2"
-              style={{
-                backgroundImage: "url(/assets/img/home-04/hero/overly.png)",
-              }}
-            >
-              <div
-                className="tm-details-wrapper p-relative pt-80 pb-80"
-                style={{ height: "auto" }}
-              >
-                <div className="container">
-                  <div className="row">
-                    <div className="col-xl-10 col-md-10">
-                      <div
-                        className={`tp-about-4-title-box ${
-                          !isMobile ? "tp_fade_bottom" : ""
-                        }`}
-                      >
-                        <h3 className="tp-about-4-title">
-                          What Makes Biztalbox Different
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row align-items-center">
-                    <div className="col-xl-3 col-lg-2 col-md-3">
-                      <div className="tp-about-4-shape-1">
-                        <Image src={shape_2} alt="shape-2" />
-                      </div>
-                    </div>
-                    <div className="col-xl-9 col-lg-10 col-md-9">
-                      <div className="tp-about-4-content-wrap">
-                        <div className="row">
-                          <div className="col-xl-6 col-lg-6">
-                            <div
-                              className={`tp-about-4-content item-1 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
-                            >
-                              <h3 className="text-white">
-                                Manufacturing-Specific SEO
-                              </h3>
-                              <p>
-                                We focus on precision-led search visibility for
-                                technical products, capabilities, and
-                                certifications—so you attract fewer, better
-                                enquiries instead of irrelevant traffic.
-                              </p>
-                            </div>
-                          </div>
-                          <div className="col-xl-6 col-lg-6">
-                            <div
-                              className={`tp-about-4-content item-2 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
-                            >
-                              <h3 className="text-white">
-                                Compounding Growth Strategy
-                              </h3>
-                              <p>
-                                We build sustainable rankings across services,
-                                industries, and locations, so your website
-                                becomes an asset that keeps generating pipeline
-                                over time.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="row mt-30">
-                          <div className="col-xl-6 col-lg-6">
-                            <div
-                              className={`tp-about-4-content item-1 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
-                            >
-                              <h3 className="text-white">
-                                Technical + Content Execution
-                              </h3>
-                              <p>
-                                We align site structure, content clarity, and
-                                technical performance so search engines and
-                                buyers can understand what you do quickly.
-                              </p>
-                            </div>
-                          </div>
-                          <div className="col-xl-6 col-lg-6">
-                            <div
-                              className={`tp-about-4-content item-2 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
-                            >
-                              <h3 className="text-white">
-                                Local + AI Search Ready
-                              </h3>
-                              <p>
-                                We optimize for the way buyers search today:
-                                local visibility, structured answers, and
-                                clarity that can be surfaced in AI-driven search
-                                experiences.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
 
             <ServiceThree showIndustry={false} />

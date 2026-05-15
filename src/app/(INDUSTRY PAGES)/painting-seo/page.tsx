@@ -9,7 +9,6 @@ gsap.registerPlugin(useGSAP, ScrollTrigger, ScrollSmoother, SplitText);
 import Wrapper from "@/layouts/wrapper";
 import ServiceThree from "@/components/service/service-three";
 import FooterThree from "@/layouts/footers/footer-three";
-import shape_2 from "@/assets/img/home-04/about/about-shape-1.png";
 import shape_1 from "@/assets/img/home-01/team/team-details-shape-1.png";
 import team_shape_2 from "@/assets/img/home-01/team/team-details-shape-2.png";
 import {
@@ -1445,113 +1444,6 @@ export default function Page() {
                   </p>
                 </div>
               </section>
-            </div>
-
-            <div
-              className="tp-overlay-bg black-bg-2"
-              style={{
-                backgroundImage: "url(/assets/img/home-04/hero/overly.png)",
-              }}
-            >
-              <div
-                className="tm-details-wrapper p-relative pt-80 pb-80"
-                style={{ height: "auto" }}
-              >
-                <div className="container">
-                  <div className="row">
-                    <div className="col-xl-10 col-md-10">
-                      <div
-                        className={`tp-about-4-title-box ${
-                          !isMobile ? "tp_fade_bottom" : ""
-                        }`}
-                      >
-                        <h3 className="tp-about-4-title">
-                          What Makes Biztalbox Different
-                        </h3>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="row align-items-center">
-                    <div className="col-xl-3 col-lg-2 col-md-3">
-                      <div className="tp-about-4-shape-1">
-                        <Image src={shape_2} alt="shape-2" />
-                      </div>
-                    </div>
-                    <div className="col-xl-9 col-lg-10 col-md-9">
-                      <div className="tp-about-4-content-wrap">
-                        <div className="row">
-                          <div className="col-xl-6 col-lg-6">
-                            <div
-                              className={`tp-about-4-content item-1 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
-                            >
-                              <h3 className="text-white">
-                                Local, Trust-Heavy SEO for Painting
-                              </h3>
-                              <p>
-                                We focus on the exact moments people search for
-                                painters — location-first, urgency-driven, and
-                                credibility-led.
-                              </p>
-                            </div>
-                          </div>
-                          <div className="col-xl-6 col-lg-6">
-                            <div
-                              className={`tp-about-4-content item-2 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
-                            >
-                              <h3 className="text-white">
-                                Lead-Focused Execution
-                              </h3>
-                              <p>
-                                Our strategies prioritize enquiries and projects
-                                — not just rankings — by aligning pages with
-                                high-intent and service-area searches.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="row mt-30">
-                          <div className="col-xl-6 col-lg-6">
-                            <div
-                              className={`tp-about-4-content item-1 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
-                            >
-                              <h3 className="text-white">
-                                Portfolio + Proof Built In
-                              </h3>
-                              <p>
-                                Painting is visual. We help you show up with
-                                credibility signals — reviews, photos, and
-                                consistent listings — across the web.
-                              </p>
-                            </div>
-                          </div>
-                          <div className="col-xl-6 col-lg-6">
-                            <div
-                              className={`tp-about-4-content item-2 ${
-                                !isMobile ? "tp_fade_bottom" : ""
-                              }`}
-                            >
-                              <h3 className="text-white">
-                                Future-Ready for AI Search
-                              </h3>
-                              <p>
-                                We structure question-led content so your brand
-                                can appear in AI summaries and recommendations,
-                                not just blue links.
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
 
             <ServiceThree showIndustry={false} />
