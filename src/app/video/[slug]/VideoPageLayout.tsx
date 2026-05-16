@@ -392,8 +392,7 @@ export default function VideoPageLayout({ data }: { data: Record<string, unknown
           <div className="container">
             <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-x-10 lg:gap-y-0 xl:gap-x-12">
               <div className="">
-                <p className="mb-3 text-2xl tracking-wide  ">{heroKicker}</p>
-                <h1 className="mb-5 text-4xl leading-[1.05] tracking-tight  dark:text-white md:text-5xl lg:mb-6 lg:text-6xl lg:leading-[1.08]">
+                <h1 className="mb-5 text-3xl leading-[1.05] tracking-tight  dark:text-white md:text-4xl lg:mb-6 lg:text-5xl lg:leading-[1.08]">
                   {h1Line1}
                   {h1Line2 ? (
                     <>
@@ -402,6 +401,7 @@ export default function VideoPageLayout({ data }: { data: Record<string, unknown
                     </>
                   ) : null}
                 </h1>
+                <p className="mb-3 text-2xl tracking-wide  ">{heroKicker}</p>
                 <p className="mt-7 text-[15px] leading-relaxed   sm:text-base">
                   <SafeHtml html={heroBody} as="p" />
                 </p>
@@ -594,9 +594,9 @@ export default function VideoPageLayout({ data }: { data: Record<string, unknown
 
         <section className="bg-zinc-50 py-14  dark:bg-[#121212] dark:text-white sm:py-20">
           <div className="container">
-            <p className="text-sm font-medium tracking-wide   sm:text-[0.9375rem]">
+            <h4 className="text-sm font-medium tracking-wide   sm:text-[0.9375rem]">
               {str(data, "agencyServicesKicker", "agency_services_kicker") || "Video Editing Agency in UK"}
-            </p>
+            </h4>
             <h2 className="mt-2 max-w-3xl text-left text-2xl font-bold leading-snug tracking-tight  dark:text-white sm:text-3xl md:text-[2rem] lg:text-[2.125rem]">
               {str(data, "agencyServicesHeading", "agency_services_heading") ||
                 "Professional Video Editing Services for Your Business"}
@@ -613,9 +613,9 @@ export default function VideoPageLayout({ data }: { data: Record<string, unknown
                 return (
                   <div key={index} className="grid grid-cols-1 md:grid-cols-2 items-center gap-10">
                     <div className={`flex flex-col !order-2 ${textOrder}`}>
-                      <h3 className="text-left text-lg font-bold leading-snug  dark:text-white sm:text-xl md:text-2xl">
-                        <SafeHtml html={item.title} as="h3" />
-                      </h3>
+                      <h2 className="text-left text-lg font-bold leading-snug text-black  dark:text-white sm:text-xl md:text-2xl">
+                        {item.title}
+                      </h2>
                       {(item.paragraphs.length ? item.paragraphs : [""]).slice(0, 4).map((p, i) => (
                         <p
                           key={i}
