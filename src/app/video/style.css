@@ -1,6 +1,19 @@
 .video_page a{
     color: royalblue !important;
 }
-p,span,ul,h2,h3,h4,li{
+
+[data-theme="dark"] .video_page p,
+[data-theme="dark"] .video_page span
+[data-theme="dark"] .video_page h2,
+[data-theme="dark"] .video_page h3,
+[data-theme="dark"] .video_page h4 {
     color: #f8f8f8 !important;
 }
+
+/* [data-theme="light"] .video_page p,
+[data-theme="light"] .video_page span
+[data-theme="light"] .video_page h2,
+[data-theme="light"] .video_page h3,
+[data-theme="light"] .video_page h4 {
+    color: #000 !important;
+} */
