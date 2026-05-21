@@ -18,6 +18,7 @@ import Image from "next/image";
 import { RiGlobalFill } from "react-icons/ri";
 import { IoChevronDown, IoSettings } from "react-icons/io5";
 import SafeHtml from "@/components/seo-page/SafeHtml";
+import GraphicIndustryCards from "@/components/service/graphic-industry-cards";
 
 function HeroPlayVisual() {
   return (
@@ -589,7 +590,8 @@ export default function VideoPageLayout({ data }: { data: Record<string, unknown
         <VideoServicesSection />
         <VideoContactSection />
         <VideoBouquetServicesSection />
-        <ServiceThree showService={false} />
+        {/* <ServiceThree showService={false} /> */}
+        <GraphicIndustryCards title="Industries We Serve" />
         <VideoProcessSection />
 
         <section className="bg-zinc-50 py-14  dark:bg-[#121212] dark:text-white sm:py-20">

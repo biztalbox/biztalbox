@@ -86,7 +86,7 @@ const BookCallForm = () => {
   };
 
   return (
-    <div className="p-relative pt-120 pb-80">
+    <div className="p-relative pt-120 pb-40">
       {/* Background shapes similar to team details */}
       <div
         className="tm-details-shape-1"

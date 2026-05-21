@@ -58,7 +58,7 @@ const LeadForm = () => {
   };
 
   return (
-    <div className="col-xl-6 col-lg-6 col-md-5 pl-md-40 pb-80" style={{ zIndex: 100 }}>
+    <div className="col-xl-6 col-lg-6 col-md-5 pl-md-40 pb-20" style={{ zIndex: 100 }}>
       <div className="tm-details-cta-form">
         <form onSubmit={handleSubmit} encType="multipart/form-data">
           <div className="row">

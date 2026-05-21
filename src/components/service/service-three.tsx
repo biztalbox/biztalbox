@@ -334,7 +334,7 @@ export default function ServiceThree({ showService = true, showIndustry = true }
       {/* Services */}
       {showService && (
     <div
-      className="tp-service-4-area pt-60 pb-120 bg-black text-white fix"
+      className="tp-service-4-area pt-40 pb-120 bg-black text-white fix"
       data-background="assets/img/home-04/brand/overly.png"
       style={{ backgroundImage: "url(/assets/img/home-04/brand/overly.png)" }}
     >

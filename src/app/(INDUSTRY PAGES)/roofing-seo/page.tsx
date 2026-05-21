@@ -277,7 +277,7 @@ export default function Page() {
               </section>
 
               {/* CTA with form */}
-              <div className="p-relative pt-60 pb-80">
+              <div className="p-relative pt-20 pb-20">
                 <div className="tm-details-shape-1">
                   <Image src={shape_1} alt="shape" />
                 </div>
@@ -637,7 +637,7 @@ export default function Page() {
             </div>
 
             {/* Full-width CTA with form */}
-            <div className="p-relative pt-60 pb-80">
+            <div className="p-relative pt-20 pb-20">
               <div className="tm-details-shape-1">
                 <Image src={shape_1} alt="shape" />
               </div>
