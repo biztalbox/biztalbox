@@ -66,6 +66,13 @@ const graphicIndustriesData = [
     link: "/petcare-video-editing",
   },
   {
+    id: 13,
+    name: "Plumbing",
+    description:
+      "Help plumbing businesses build trust with clean branding, repair walkthroughs, and before-after visuals that convert.",
+    link: "/plumbing-video-editing",
+  },
+  {
     id: 9,
     name: "Pharmaceutical",
     description:
@@ -81,6 +88,90 @@ const graphicIndustriesData = [
   },
   {
     id: 11,
+    name: "Roofing",
+    description:
+      "Build homeowner trust with roofing graphics, before-and-after visuals, and project videos that prove your work quality.",
+    link: "/roofing-video-editing",
+  },
+  {
+    id: 14,
+    name: "Pest Control",
+    description:
+      "Help pest control companies build trust with clean branding, treatment walkthroughs, and before-after visuals that feel safe and professional.",
+    link: "/pest-control-video-editing",
+  },
+  {
+    id: 15,
+    name: "Painting",
+    description:
+      "Showcase painting transformations with polished graphics and edited project videos that help customers see quality before they hire.",
+    link: "/painting-video-editing",
+  },
+  {
+    id: 16,
+    name: "Movers & Packers",
+    description:
+      "Build instant trust for relocation brands with structured graphics, packing walkthroughs, and reassuring behind-the-scenes videos.",
+    link: "/packers-movers-video-editing",
+  },
+  {
+    id: 17,
+    name: "Logistics",
+    description:
+      "Present warehouse operations and fleet workflows with professional logistics graphics and videos that strengthen B2B credibility.",
+    link: "/logistics-video-editing",
+  },
+  {
+    id: 18,
+    name: "Insurance",
+    description:
+      "Simplify complex insurance communication with clear policy graphics, explainer videos, and branding that builds client confidence online.",
+    link: "/insurance-video-editing",
+  },
+  {
+    id: 19,
+    name: "HVAC",
+    description:
+      "Help HVAC businesses look more reliable with consistent branding, installation walkthroughs, and repair videos that reduce customer hesitation.",
+    link: "/hvac-video-editing",
+  },
+  {
+    id: 24,
+    name: "Healthcare",
+    description:
+      "Help healthcare providers build patient trust with clear branding, treatment explainers, and calm visual communication that reduces anxiety.",
+    link: "/healthcare-video-editing",
+  },
+  {
+    id: 20,
+    name: "Home Services",
+    description:
+      "Build trust before the first visit with home service graphics, before-after visuals, and project videos that feel practical and believable.",
+    link: "/home-services-video-editing",
+  },
+  {
+    id: 21,
+    name: "Energy & Utilities",
+    description:
+      "Make technical energy and utility operations easier to understand with structured graphics, facility videos, and investor-ready visuals.",
+    link: "/energy-utilities-video-editing",
+  },
+  {
+    id: 22,
+    name: "Electricians",
+    description:
+      "Help electrical businesses look safer to trust online with branded graphics, installation videos, and lighting project showcases.",
+    link: "/electricians-video-editing",
+  },
+  {
+    id: 23,
+    name: "Construction",
+    description:
+      "Win more projects with construction graphics, site progress videos, and portfolio visuals that prove execution quality clearly.",
+    link: "/construction-video-editing",
+  },
+  {
+    id: 13,
     name: "Travel",
     description:
       "Inspire bookings with travel videos and graphics that create desire long before the journey begins.",
@@ -103,7 +194,7 @@ const industry_carousel_setting: SwiperOptions = {
   },
 };
 
-export default function GraphicIndustryCards({
+export default function({
   title = "Graphic Design & Video Editing Industries We Serve",
 }: {
   title?: string;
