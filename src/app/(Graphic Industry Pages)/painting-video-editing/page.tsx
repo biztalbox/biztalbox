@@ -74,7 +74,7 @@ export default function Page() {
                           <h1 className="text-white tp-char-animation">
                             How Painting Service Providers Use Graphic Design and Video Editing Services to Attract Customers
                           </h1>
-                          <p>The painting services industry has changed significantly in the way customers choose businesses. Someone liked a neighbour's house, asked for the painter's number, and called.</p>
+                          <p>The painting services industry has changed significantly in the way customers choose businesses. Someone liked a neighbour&apos;s house, asked for the painter&apos;s number, and called.</p>
                           <p>Now customers search first. They search on Google, compare social media pages, look through project photos, read reviews, and try to understand which business feels the most reliable.</p>
                           <p>And all of that happens before the first phone call. This shift has made visual communication far more important for painting businesses than it used to be.</p>
                           <p>Customers are no longer looking only at whether a wall was painted properly. They pay attention to how projects are presented online. They notice finishing quality, color combinations, cleanliness, detailing, space transformation, and overall professionalism.</p>
@@ -127,7 +127,7 @@ export default function Page() {
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">2. Makes Quality Easier To Understand</h3>
-                    <p>Most customers don't know painting terminology, but they instantly recognise clean finishes, detailing, and balanced colours.</p>
+                    <p>Most customers don&apos;t know painting terminology, but they instantly recognise clean finishes, detailing, and balanced colours.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">3. Explains Services Clearly</h3>

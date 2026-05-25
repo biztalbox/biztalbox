@@ -74,10 +74,10 @@ export default function Page() {
                           <h1 className="text-white tp-char-animation">
                             Graphic Design and Video Editing Services for Energy and Utilities Industry: Helping Complex Services Feel Clearer and More Trustworthy
                           </h1>
-                          <p>The interesting thing about the energy and utilities industry is that people depend on it constantly, but most rarely understand what's happening behind the scenes.</p>
+                          <p>The interesting thing about the energy and utilities industry is that people depend on it constantly, but most rarely understand what&apos;s happening behind the scenes.</p>
                           <p>Electricity distribution. Renewable energy projects. Water management systems. Industrial utilities. Solar infrastructure. Smart energy solutions. A lot of these services involve technical processes that can feel overwhelming when explained only through documents, numbers, or technical language.</p>
                           <p>And that creates a communication gap. Because whether someone is a residential customer, a commercial client, an investor, or even a government stakeholder, they still want the same basic thing before they trust a company: clarity.</p>
-                          <p>That's why visual communication has become such a big part of this industry now. Graphic design and  <Link href="https://biztalbox.com/blog/best-video-editing-agency-in-the-usa" className="text-primary">video editing services</Link>  for energy and utilities industry are becoming increasingly valuable.</p>
+                          <p>That&apos;s why visual communication has become such a big part of this industry now. Graphic design and  <Link href="https://biztalbox.com/blog/best-video-editing-agency-in-the-usa" className="text-primary">video editing services</Link>  for energy and utilities industry are becoming increasingly valuable.</p>
                           <p>Because strong visuals help technical businesses feel more understandable, more organized, and far more trustworthy.</p>
                         </div>
                       </div>

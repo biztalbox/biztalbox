@@ -123,7 +123,7 @@ export default function Page() {
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">5. Showcases Real Project Capability</h3>
-                    <p>Walkthrough videos, drone footage, and progress edits give clients a much clearer understanding of the company's execution ability.</p>
+                    <p>Walkthrough videos, drone footage, and progress edits give clients a much clearer understanding of the company&apos;s execution ability.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">6. Increases Digital Engagement</h3>
@@ -148,7 +148,7 @@ export default function Page() {
                 <h2 className="section-heading">
                   Why Choosing the Right Creative Partner Matters for Construction Businesses
                 </h2>
-                <p>Construction businesses cannot rely on generic marketing. The clients within this industry aren't interested in any fancy visuals. They want proof of work, clarity in communication, and a sense of reliability.</p>
+                <p>Construction businesses cannot rely on generic marketing. The clients within this industry aren&apos;t interested in any fancy visuals. They want proof of work, clarity in communication, and a sense of reliability.</p>
                 <p>A wrong creative approach can make even good projects look ordinary.</p>
                 <p>A right creative partner understands how to present construction work in a way that feels real and credible without over-editing or exaggeration. Because in construction, presentation directly influences trust.</p>
               </section>

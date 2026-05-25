@@ -163,7 +163,7 @@ export default function Page() {
                 <h2 className="section-heading">
                   Why Choosing the Right Creative Partner Matters for Electrical Businesses
                 </h2>
-                <p>A wrong creative partner makes electrical marketing look aesthetic but unclear, which fails to build trust and leads to fewer inquiries because customers don't feel confident enough to call.</p>
+                <p>A wrong creative partner makes electrical marketing look aesthetic but unclear, which fails to build trust and leads to fewer inquiries because customers don&apos;t feel confident enough to call.</p>
                 <p>The right partner focuses on clear, consistent, and real service presentation through graphic design and video editing services for electricians, which makes the business feel reliable and directly improves lead conversion.</p>
               </section>
 

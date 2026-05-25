@@ -185,7 +185,7 @@ export default function Page() {
                     <h3 className="section-subheading">
                       2. Professional Branding
                     </h3>
-                    <p>Biztalbox's home services graphic design helps businesses look more organized, recognizable, and reliable across platforms.</p>
+                    <p>Biztalbox&apos;s home services graphic design helps businesses look more organized, recognizable, and reliable across platforms.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">

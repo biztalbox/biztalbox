@@ -182,7 +182,7 @@ export default function Page() {
                     <h3 className="section-subheading">
                       2. Professional Pest Control Graphic Design
                     </h3>
-                    <p>Biztalbox's graphic design services make pest control businesses appear more reliable and legitimate. Well-designed graphics make it easier for consumers to choose you over competitors.</p>
+                    <p>Biztalbox&apos;s graphic design services make pest control businesses appear more reliable and legitimate. Well-designed graphics make it easier for consumers to choose you over competitors.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">

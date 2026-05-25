@@ -75,9 +75,9 @@ export default function Page() {
                             How Graphic Design and Video Editing Services Help Movers and Packers Build Instant Trust
                           </h1>
                           <p>People rarely contact movers and packers during calm, easy phases of life.</p>
-                          <p>Usually, it happens in the middle of change. A family is relocating to another city. An office is moving operations. There's already enough uncertainty in the air, which means customers arrive with concerns long before they make the first call.</p>
+                          <p>Usually, it happens in the middle of change. A family is relocating to another city. An office is moving operations. There&apos;s already enough uncertainty in the air, which means customers arrive with concerns long before they make the first call.</p>
                           <p>Will the belongings be handled properly? Will the company stay professional once the payment is made? Will the move become more stressful than it already is?</p>
-                          <p>That's why trust sits at the center of this industry. And today, that trust begins forming online.</p>
+                          <p>That&apos;s why trust sits at the center of this industry. And today, that trust begins forming online.</p>
                           <p>Before reaching out, people observe everything: the website, social media presence, the quality of the visuals. Even something as small as how a quotation is presented influences perception.</p>
                           <p>This is exactly why graphic design and video editing are so valuable for movers and packers companies.</p>
                         </div>

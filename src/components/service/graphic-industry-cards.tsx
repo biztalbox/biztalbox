@@ -194,7 +194,7 @@ const industry_carousel_setting: SwiperOptions = {
   },
 };
 
-export default function({
+export default function GraphicIndustryCards({
   title = "Graphic Design & Video Editing Industries We Serve",
 }: {
   title?: string;
