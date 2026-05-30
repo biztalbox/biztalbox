@@ -3,7 +3,7 @@
 import "@/styles/tailwind-tw.css";
 import Header from "@/app/_lite/_ashish/Header";
 import Wrapper from "@/layouts/wrapper";
-import Hero from "@/app/_lite/_ashish/Hero";
+import { LiteHero } from "@/components/ashish3dComp";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { ScrollSmoother } from "@/plugins";
@@ -159,7 +159,7 @@ const LiteHomePage = () => {
         <div id="smooth-wrapper" className="relative">
           <div id="smooth-content" className="relative">
             <Header />
-            <Hero />
+            <LiteHero />
           </div>
         </div>
       </div>

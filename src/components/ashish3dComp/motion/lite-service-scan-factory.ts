@@ -2,7 +2,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import * as THREE from "three";
 import type { Group } from "three";
-import { addScrubTimelineCue, playLiteSfx } from "../sfx";
+import { addScrubTimelineCue, playLiteSfx } from "@/app/_lite/_ashish/sfx";
 import {
   resolveLiteServiceScans,
   type LiteApproachMotion,
@@ -66,7 +66,7 @@ type ScanTimingPresetsJson = Partial<
   Record<LiteScrollServiceBreakpoint, Partial<LiteScanTimingPreset>>
 >;
 
-const scrollBundleTiming = scrollBundle as typeof scrollBundle & {
+type ScrollBundleTiming = typeof scrollBundle & {
   scanTimingPresets?: ScanTimingPresetsJson;
 };
 
@@ -98,7 +98,7 @@ export function getLiteScanTimingForBreakpoint(
       : breakpoint === "tablet"
         ? LITE_SCAN_TIMING_TABLET
         : LITE_SCAN_TIMING_DESKTOP;
-  const over = scrollBundleTiming.scanTimingPresets?.[breakpoint];
+  const over = (scrollBundle as ScrollBundleTiming).scanTimingPresets?.[breakpoint];
   return over ? { ...base, ...over } : base;
 }
 

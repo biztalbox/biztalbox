@@ -153,9 +153,7 @@ const CTA_SCALE0_ORDER: LiteModelKey[] = [
   "video",
   "content",
   "ads",
-  "algo",
   "graphic",
-  "appdev",
 ];
 
 function isNonEmptyObject(v: unknown): v is Record<string, unknown> {

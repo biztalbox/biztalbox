@@ -30,11 +30,14 @@
       "motion": {
         "approach": {
           "position": {
-            "y": "+=100"
+            "y": "-=120",
+            "x": "+=320"
           },
           "rotation": {
-            "y": "+=11"
+            "z": "+=7",
+            "y": "+=4"
           },
+          "scale": 0.5,
           "durations": {
             "position": 1,
             "scale": 1,
@@ -94,14 +97,14 @@
       "motion": {
         "approach": {
           "position": {
-            "y": "-=580",
-            "x": "+=150"
+            "y": "-=350",
+            "x": "-=200"
           },
           "rotation": {
             "x": "+=25.2",
-            "z": "0"
+            "z": "0.1"
           },
-          "scale": 0.45,
+          "scale": 0.6,
           "durations": {
             "position": 1,
             "scale": 1,
@@ -169,15 +172,16 @@
       "motion": {
         "approach": {
           "position": {
-            "x": "+=390",
-            "y": "-=450"
+            "y": "-=400",
+            "x": "+=50"
+
+
           },
           "rotation": {
             "x": "+=9.5",
-            "y": "+=5",
-            "z": "+=3.2"
+            "z": "+=3.1"
           },
-          "scale": 1,
+          "scale": "6",
           "durations": {
             "position": 1,
             "scale": 1,
@@ -244,16 +248,16 @@
       "motion": {
         "approach": {
           "position": {
-            "y": "-=370",
-            "x": "-=200",
-            "z": "+=40"
+            "y": "-=350",
+            "x": "-=290",
+            "z": "+=200"
           },
           "rotation": {
             "x": "+=3.5",
             "y": "+=34.5",
             "z": "+=3.2"
           },
-          "scale": 1,
+          "scale": 6,
           "durations": {
             "position": 1,
             "scale": 1,
@@ -321,8 +325,8 @@
       "motion": {
         "approach": {
           "position": {
-            "y": "-=560",
-            "x": "+=180"
+            "y": "-=300",
+            "x": "+=310"
           },
           "rotation": {
             "x": "+=9.2",
@@ -395,13 +399,13 @@
       "motion": {
         "approach": {
           "position": {
-            "y": "-=430",
-            "x": "+=10"
+            "y": "-=400",
+            "x": "-=60"
           },
           "rotation": {
             "x": "+=31.5"
           },
-          "scale": 0.8,
+          "scale": 3,
           "durations": {
             "position": 1,
             "scale": 1,
@@ -465,17 +469,18 @@
         "endTrigger": "#lite-scanner-ads"
       },
       "scan": {
-        "endTrigger": "#section9"
+        "endTrigger": "#section11"
       },
       "motion": {
         "approach": {
           "position": {
-            "y": "-=530",
-            "x": "-=60"
+            "y": "-=260",
+            "x": "-=150"
           },
           "rotation": {
             "x": "+=31.5",
-            "z": "+=0"
+            "z": "+=3.2",
+            "y": "+=1.5"
           },
           "scale": 0.17,
           "durations": {
@@ -519,156 +524,6 @@
                 "x": "-=130"
               },
               "scale": 0.4,
-              "rotation": {
-                "x": "+=34.5",
-                "z": "+=3.2"
-              },
-              "duration": {
-                "rotation": 3
-              }
-            }
-          }
-        }
-      }
-    },
-    {
-      "modelKey": "appdev",
-      "scannerId": "lite-scanner-appdev",
-      "approach": {
-        "trigger": "#section8",
-        "start": "top top",
-        "endTrigger": "#lite-scanner-appdev"
-      },
-      "scan": {
-        "endTrigger": "#section10"
-      },
-      "motion": {
-        "approach": {
-          "position": {
-            "y": "-=500",
-            "x": "+=180"
-          },
-          "rotation": {
-            "x": "+=32.5",
-            "z": "+=0",
-            "y": "-=0.5"
-          },
-          "scale": 0.5,
-          "durations": {
-            "position": 1,
-            "scale": 1,
-            "rotation": 1
-          }
-        }
-      },
-      "responsive": {
-        "mobile": {
-          "approach": {
-            "start": "bottom bottom"
-          },
-          "motion": {
-            "approach": {
-              "position": {
-                "y": "-=500",
-                "x": "+=150"
-              },
-              "scale": 1.4,
-              "rotation": {
-                "x": "+=9.5",
-                "z": "+=3.5",
-                "y": "+=2.5"
-              },
-              "duration": {
-                "rotation": 3
-              }
-            }
-          }
-        },
-        "tablet": {
-          "approach": {
-            "start": "bottom bottom"
-          },
-          "motion": {
-            "approach": {
-              "position": {
-                "y": "-=300",
-                "x": "+=160"
-              },
-              "scale": 0.6,
-              "rotation": {
-                "x": "+=34.5",
-                "z": "+=3.2"
-              },
-              "duration": {
-                "rotation": 3
-              }
-            }
-          }
-        }
-      }
-    },
-    {
-      "modelKey": "algo",
-      "scannerId": "lite-scanner-algo",
-      "approach": {
-        "trigger": "#section9",
-        "start": "center top",
-        "endTrigger": "#lite-scanner-algo"
-      },
-      "scan": {
-        "endTrigger": "#section11"
-      },
-      "motion": {
-        "approach": {
-          "position": {
-            "y": "-=390",
-            "x": "-=110"
-          },
-          "rotation": {
-            "x": "+=31.5"
-          },
-          "scale": 2,
-          "durations": {
-            "position": 1,
-            "scale": 1,
-            "rotation": 1
-          }
-        }
-      },
-      "responsive": {
-        "mobile": {
-          "approach": {
-            "start": "top bottom"
-          },
-          "motion": {
-            "approach": {
-              "position": {
-                "y": "-=1000",
-                "x": "-=150"
-              },
-              "scale": 7,
-              "rotation": {
-                "x": "+=9.5",
-                "z": "+=3.2",
-                "y": "0"
-              },
-              "duration": {
-                "rotation": 3
-              }
-            }
-          }
-        },
-        "tablet": {
-          "approach": {
-            "start": "bottom bottom"
-          },
-          "motion": {
-            "approach": {
-              "position": {
-                "y": "-=900",
-                "x": "-=150"
-              },
-              "scale": 3.4,
               "rotation": {
                 "x": "+=34.5",
                 "z": "+=3.2"
