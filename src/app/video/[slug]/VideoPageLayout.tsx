@@ -286,7 +286,7 @@ function toStringArray(val: unknown): string[] {
 
 export default function VideoPageLayout({ data }: { data: Record<string, unknown> }) {
   const heroObj = data.hero && typeof data.hero === "object" ? (data.hero as Record<string, unknown>) : null;
-
+  
   const heroKicker =
     str(heroObj, "kicker") || str(data, "hero_kicker", "heroKicker", "kicker") || HERO_COPY_FALLBACK.kicker;
 
@@ -305,7 +305,7 @@ export default function VideoPageLayout({ data }: { data: Record<string, unknown
 
   const statsTitle =
     str(data, "statsTitle", "stats_title", "statsHeading", "stats_heading") ||
-    "Leading Video Editing Agency In UK";
+    `Leading Video Editing Agency In ${data.county}`;
 
   const { ref: statsRef, inView: statsInView } = useStatsInView();
   const brands = useCountUp(Number(str(data, "brands", "stats_brands")) || 100, 1400, statsInView);
@@ -463,7 +463,7 @@ export default function VideoPageLayout({ data }: { data: Record<string, unknown
         <section className="bg-zinc-60 pb-14 pt-2 dark:bg-[#121212] sm:pb-16">
           <div className="container">
             <div className="rounded-3xl bg-zinc-100 px-6 py-8 shadow-sm dark:bg-[#1e1e1e] dark:shadow-none sm:px-8 sm:py-10 lg:px-12 lg:py-12">
-              <h3 className="mb-10 text-left text-2xl  dark:text-white sm:text-2xl">{statsTitle}</h3>
+              <h2 className="mb-10 text-left text-2xl  dark:text-white sm:text-2xl">{statsTitle}</h2>
 
               <div ref={statsRef} className="flex flex-col">
                 <div className="hidden min-h-0 w-full grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)] items-stretch gap-x-0 md:grid">
