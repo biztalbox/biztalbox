@@ -596,9 +596,9 @@ export default function VideoPageLayout({ data }: { data: Record<string, unknown
 
         <section className="bg-zinc-50 py-14  dark:bg-[#121212] dark:text-white sm:py-20">
           <div className="container">
-            <h4 className="text-sm font-medium tracking-wide   sm:text-[0.9375rem]">
+            {/* <h4 className="text-sm font-medium tracking-wide   sm:text-[0.9375rem]">
               {str(data, "agencyServicesKicker", "agency_services_kicker") || "Video Editing Agency in UK"}
-            </h4>
+            </h4> */}
             <h2 className="mt-2 max-w-3xl text-left text-2xl font-bold leading-snug tracking-tight  dark:text-white sm:text-3xl md:text-[2rem] lg:text-[2.125rem]">
               {str(data, "agencyServicesHeading", "agency_services_heading") ||
                 "Professional Video Editing Services for Your Business"}
