@@ -240,7 +240,7 @@
       "scannerId": "lite-scanner-graphic",
       "approach": {
         "trigger": "#section4",
-        "start": "top top",
+        "start": "40% top",
         "endTrigger": "#lite-scanner-graphic"
       },
       "scan": {
