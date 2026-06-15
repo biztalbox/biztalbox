@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect } from "react";
+import React, { useEffect, useLayoutEffect } from "react";
 import { useTheme } from "next-themes";
 import dynamic from "next/dynamic";
 import { usePathname, useRouter } from "next/navigation";
@@ -54,8 +54,8 @@ const ThemeSetting = () => {
     if (!theme) return;
   }, [setTheme, theme]);
 
-  useEffect(() => {
-    // Ensure the middleware cookie is always present, even when theme comes from system preference.
+  useLayoutEffect(() => {
+    // Sync cookie before paint so the first navigation to "/" includes bb_theme (Vercel).
     const t = (resolvedTheme ?? theme) as unknown;
     if (t !== "dark" && t !== "light") return;
     writeThemeCookie(t);

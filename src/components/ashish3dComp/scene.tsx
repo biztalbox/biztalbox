@@ -389,17 +389,16 @@ const Ashish3dScene = () => {
         matchMediaInstance = gsap.matchMedia();
 
         const attachHeroBand = (bp: LiteSceneBreakpoint) => {
-          const isNarrow = bp !== "desktop";
+          const isDesktop = bp === "desktop";
           const fadeTl = gsap.timeline({
-            // For scrubbed timelines, keep easing minimal to avoid "elastic" feel on trackpad spikes.
             defaults: { duration: 3, ease: "none" },
             scrollTrigger: {
               trigger: "#section0",
               start: "-120 top",
               end: "top top",
-              scrub: bp === "desktop" ? 4 : 2,
+              scrub: isDesktop ? 6 : 2,
               invalidateOnRefresh: true,
-              fastScrollEnd: true,
+              fastScrollEnd: !isDesktop,
             },
           });
           for (const key of HERO_FADE_OUT_KEYS) {
@@ -408,7 +407,7 @@ const Ashish3dScene = () => {
             const dy = getHeroFadeOutYDelta(key, bp);
             fadeTl.to(
               g.position,
-              { y: `+=${dy}`, duration: 2, ease: "power2.inOut" },
+              { y: `+=${dy}`, duration: 2, ease: "none" },
               0,
             );
           }
@@ -437,9 +436,9 @@ const Ashish3dScene = () => {
             trigger: "#ctaSection",
             start: "top bottom",
             end: "top top",
-            scrub: layoutBreakpoint === "desktop" ? 7 : 4.5,
+            scrub: layoutBreakpoint === "desktop" ? 9 : 4.5,
             invalidateOnRefresh: true,
-            fastScrollEnd: true,
+            fastScrollEnd: layoutBreakpoint !== "desktop",
             onUpdate: (self) => {
               // Keep timeline responsive during scrub; hide is handled onLeaveBack only.
               // (We don't snap to hidden state on reverse while CTA is still in view.)
