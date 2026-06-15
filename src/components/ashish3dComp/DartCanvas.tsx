@@ -79,7 +79,7 @@ export default function DartCanvas({ onEnter }: { onEnter: () => void }) {
         }}
         onClick={() => {shootRef.current?.(); onEnter()}}
       >
-        HIT
+        HIT!
       </button>
     </section>
   );
