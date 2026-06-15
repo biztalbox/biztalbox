@@ -92,7 +92,7 @@
       "content": {
         "position": [
           300,
-          20,
+          30,
           200
         ],
         "scale": 5.5,
@@ -309,7 +309,7 @@
       "content": {
         "position": [
           240,
-          -350,
+          -300,
           0
         ],
         "scale": 0.9,
@@ -525,7 +525,7 @@
       "video": 450,
       "smo": 300,
       "graphic": 450,
-      "content": 500,
+      "content": 550,
       "ads": 200,
       "webdev": 250
     }
