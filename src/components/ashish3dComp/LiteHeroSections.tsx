@@ -14,7 +14,7 @@ export default function LiteHeroSections() {
     <>
       <section id="section0" className="min-h-[100svh] overflow-hidden">
         {/* Hero Content  */}
-        <div className="relative z-20 pt-60 lg:pt-32 2xl:pt-60" >
+        <div className="relative z-20 pt-60 lg:pt-32 2xl:pt-72" >
           <div className="container">
             {/* Center — mobile: natural height only; sm+: fills middle row for vertical centering */}
             <div className="flex items-start justify-center pt-2 max-sm:self-start sm:-translate-y-4 sm:items-center sm:pt-0">

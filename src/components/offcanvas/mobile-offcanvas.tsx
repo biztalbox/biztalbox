@@ -67,7 +67,7 @@ export default function MobileOffcanvas({
               <MobileMenus />
             </div>
             <div className="tp-offcanvas-content">
-              <h3 className="tp-offcanvas-title">Services</h3>
+              <Link href="/services" className="tp-offcanvas-title">Services</Link>
             </div>
             
             <div className="tp-offcanvas-gallery">
