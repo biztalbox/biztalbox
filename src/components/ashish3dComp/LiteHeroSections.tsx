@@ -604,11 +604,11 @@ export default function LiteHeroSections() {
                 </div> */}
               </div>
             </div>
-            <div className="flex gap-5 justify-center">
+            <div className="flex gap-10 justify-center">
               
 
-              <LiteServiceViewMoreLink service="google" text="Google Ads" cls="justify-end" />
-              <LiteServiceViewMoreLink service="meta" text="Meta Ads" cls="justify-start"/>
+              <LiteServiceViewMoreLink service="google" text="Google Ads" />
+              <LiteServiceViewMoreLink service="meta" text="Meta Ads"/>
 
             </div>
           </div>

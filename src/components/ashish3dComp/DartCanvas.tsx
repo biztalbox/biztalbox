@@ -71,7 +71,7 @@ export default function DartCanvas({ onEnter }: { onEnter: () => void }) {
       </Canvas>
       <button
         type="button"
-        className="fixed z-[60] pointer-events-auto border border-black bg-transparent px-4 py-2 rounded-full text-black hover:bg-black hover:text-white transition-colors"
+        className="fixed z-[60] pointer-events-auto border border-black bg-transparent px-4 py-4 rounded-full text-black hover:bg-black hover:text-white transition-colors"
         style={{
           left: cursor.x,
           top: cursor.y,
@@ -79,7 +79,7 @@ export default function DartCanvas({ onEnter }: { onEnter: () => void }) {
         }}
         onClick={() => {shootRef.current?.(); onEnter()}}
       >
-        THROW
+        HIT
       </button>
     </section>
   );
