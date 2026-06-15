@@ -87,7 +87,8 @@
       "scannerId": "lite-scanner-smo",
       "approach": {
         "trigger": "#section2",
-        "endTrigger": "#lite-scanner-smo"
+        "endTrigger": "#lite-scanner-smo",
+        "start": "40% top"
       },
       "scan": {
         "endTrigger": "#section4",
@@ -97,7 +98,7 @@
       "motion": {
         "approach": {
           "position": {
-            "y": "-=300",
+            "y": "-=285",
             "x": "-=200"
           },
           "rotation": {
@@ -172,7 +173,7 @@
       "motion": {
         "approach": {
           "position": {
-            "y": "-=300",
+            "y": "-=320",
             "x": "+=50"
 
 
@@ -325,7 +326,7 @@
       "motion": {
         "approach": {
           "position": {
-            "y": "-=300",
+            "y": "-=320",
             "x": "+=310"
           },
           "rotation": {

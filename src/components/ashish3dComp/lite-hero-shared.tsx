@@ -31,14 +31,16 @@ export function formatReceiptDate(d: Date): string {
 export function LiteServiceViewMoreLink({
   service,
   text = "View More",
+  cls = "mx-auto",
 }: {
   service: LiteServicePageKey;
   text?: string;
+  cls?: string;
 }) {
   return (
     <Link
       href={LITE_SERVICE_PAGE_PATHS[service]}
-      className="relative mx-auto block w-fit mt-5 rounded-full border border-black bg-[#F2F2F2] px-10 py-2.5 text-sm font-medium uppercase text-black transition-colors hover:bg-black hover:!text-white"
+      className={`relative ${cls} block w-fit mt-5 rounded-full border border-black bg-[#F2F2F2] px-10 py-2.5 text-sm font-medium uppercase text-black transition-colors hover:bg-black hover:!text-white`}
       style={{ zIndex: 20 }}
     >
       {text}

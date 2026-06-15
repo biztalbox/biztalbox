@@ -14,12 +14,12 @@ export default function LiteHeroSections() {
     <>
       <section id="section0" className="min-h-[100svh] overflow-hidden">
         {/* Hero Content  */}
-        <div className="relative z-20 pt-60 lg:pt-36 2xl:pt-64" >
+        <div className="relative z-20 pt-60 lg:pt-32 2xl:pt-60" >
           <div className="container">
             {/* Center — mobile: natural height only; sm+: fills middle row for vertical centering */}
             <div className="flex items-start justify-center pt-2 max-sm:self-start sm:-translate-y-4 sm:items-center sm:pt-0">
               <div className="w-full max-w-screen text-center flex flex-col gap-0 pt-2">
-                <p className="whitespace-nowrap uppercase text-center"
+                <p className="whitespace-nowrap uppercase text-center -mb-2"
                 >
                   Creative Souls, Strategic Minds
                 </p>
@@ -77,7 +77,7 @@ export default function LiteHeroSections() {
           </div>
           <Link
             href="/about"
-            className="relative bg-neutral-200 group hover:bg-black hover:text-white z-20 mt-6 w-fit block mx-auto text-center items-center gap-2 px-3 py-2 font-medium border"
+            className="relative rounded-full bg-neutral-200 group hover:bg-black hover:text-white z-20 mt-6 w-fit block mx-auto text-center items-center gap-2 px-3 py-2 font-medium border"
             style={{ zIndex: 20 }}
           >
             About Us <svg className="group-hover:stroke-white stroke-black"
@@ -189,7 +189,7 @@ export default function LiteHeroSections() {
                   <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
                   <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
                 </div>
-                <div style={{ width: "0", color:"transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+                <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
                   PURCHASED
                 </div>
               </div>
@@ -258,7 +258,7 @@ export default function LiteHeroSections() {
                   <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
                   <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
                 </div>
-                <div style={{ width: "0", color:"transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+                <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
                   PURCHASED
                 </div>
               </div>
@@ -328,7 +328,7 @@ export default function LiteHeroSections() {
                   <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
                   <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
                 </div>
-                <div style={{ width: "0", color:"transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+                <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
                   PURCHASED
                 </div>
               </div>
@@ -397,7 +397,7 @@ export default function LiteHeroSections() {
                   <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
                   <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
                 </div>
-                <div style={{ width: "0", color:"transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+                <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
                   PURCHASED
                 </div>
               </div>
@@ -468,7 +468,7 @@ export default function LiteHeroSections() {
                   <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
                   <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
                 </div>
-                <div style={{ width: "0", color:"transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+                <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
                   PURCHASED
                 </div>
               </div>
@@ -542,7 +542,7 @@ export default function LiteHeroSections() {
                   <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
                   <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
                 </div>
-                <div style={{ width: "0", color:"transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+                <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
                   PURCHASED
                 </div>
               </div>
@@ -579,10 +579,10 @@ export default function LiteHeroSections() {
 
                   We evaluate the entire journey together as part of a full funnel performance marketing strategy.
                 </p>
-                <div className="md:block w-fit md:ml-auto hidden">
+                {/* <div className="md:block w-fit md:ml-auto hidden">
 
                   <LiteServiceViewMoreLink service="google" text="Google Ads" />
-                </div>
+                </div> */}
               </div>
               <div className="flex flex-col ">
 
@@ -594,15 +594,22 @@ export default function LiteHeroSections() {
 
                 </p>
 
-                <div className="block w-fit mx-auto md:mx-0 md:mr-auto">
+                {/* <div className="block w-fit mx-auto md:mx-0 md:mr-auto">
 
                   <LiteServiceViewMoreLink service="meta" text="Meta Ads" />
                   <div className="md:hidden block w-fit">
 
                     <LiteServiceViewMoreLink service="google" text="Google Ads" />
                   </div>
-                </div>
+                </div> */}
               </div>
+            </div>
+            <div className="flex gap-5 justify-center">
+              
+
+              <LiteServiceViewMoreLink service="google" text="Google Ads" cls="justify-end" />
+              <LiteServiceViewMoreLink service="meta" text="Meta Ads" cls="justify-start"/>
+
             </div>
           </div>
 
@@ -628,7 +635,7 @@ export default function LiteHeroSections() {
                   <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
                   <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
                 </div>
-                <div style={{ width: "0", color:"transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+                <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
                   PURCHASED
                 </div>
               </div>

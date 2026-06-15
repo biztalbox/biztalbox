@@ -63,7 +63,7 @@ export default function MobileOffcanvas({
             </div>
           </div>
           <div className="tp-offcanvas-main">
-          <div className="tp-main-menu-mobile d-xl-none">
+          <div className="tp-main-menu-mobile">
               <MobileMenus />
             </div>
             <div className="tp-offcanvas-content">

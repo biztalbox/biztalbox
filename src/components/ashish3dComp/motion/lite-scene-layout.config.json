@@ -27,7 +27,7 @@
         "position": [
           -20,
           90,
-          300
+          250
         ],
         "scale": 2.5,
         "rotation": [
@@ -73,11 +73,11 @@
           110,
           250
         ],
-        "scale": 7.4,
+        "scale": [7, 7.7, 7],
         "rotation": [
-          -0.1,
-          0.2,
-          -0.2
+          0.1,
+          2.8,
+          0.3
         ],
         "float": {
           "speed": 5,
@@ -137,14 +137,14 @@
         "position": [
           0,
           300,
-          300
+          360
         ],
         "rotation": [
           -0.5,
           -0.2,
           -0.8
         ],
-        "scale": 0.45,
+        "scale": 0.40,
         "float": {
           "speed": 3,
           "rotationIntensity": 0.3,
@@ -522,7 +522,7 @@
   },
   "heroFadeOut": {
     "desktop": {
-      "video": 420,
+      "video": 450,
       "smo": 300,
       "graphic": 450,
       "content": 500,

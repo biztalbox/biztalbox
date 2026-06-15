@@ -1,11 +1,12 @@
 "use client";
 
-import { AdaptiveDpr } from "@react-three/drei";
+import { AdaptiveDpr, Environment } from "@react-three/drei";
 import { Canvas, useThree } from "@react-three/fiber";
 import { Suspense, useEffect, useLayoutEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import * as THREE from "three";
 import Ashish3dScene from "./scene";
+import DartScene from "./DartScene";
 
 /** Tweaks perspective camera on resize so the scene reads on phones and tablets. */
 function ResponsiveHeroCamera() {
@@ -97,6 +98,7 @@ export default function Ashish3dCanvas() {
       <Suspense fallback={null}>
         <Ashish3dScene />
       </Suspense>
+      <Environment files="/assets/hdr/scene.hdr" resolution={1024} backgroundIntensity={1}/>
     </Canvas>
   );
 

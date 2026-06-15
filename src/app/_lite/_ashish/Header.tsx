@@ -24,13 +24,13 @@ export default function Header() {
   return (
     <>
       {/* Keep header above WebGL + overlay UI */}
-      <header className="tp-header-height relative z-[1000]" ref={headerRef}>
+      <header className="tp-header-height h-32 relative z-[1000]" ref={headerRef}>
         <div
           id="header-sticky"
-          className={`lite-ashish-header tp-inner-header-area z-[1000] tp-inner-header-style-2 tp-inner-header-mob-space ${sticky ? "header-sticky" : ""}`}
+          className={`lite-ashish-header tp-inner-header-area z-[1000] tp-inner-header-style-2 tp-inner-header-mob-space `}
         >
           <div className="container container-1800">
-            <div className="row align-items-center">
+            <div className="row align-items-center" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "20px 0" }}>
               <div className="col-xl-2 col-lg-6 col-md-6 col-6">
                 <div className="tp-inner-header-logo tp-header-logo">
                   {/* Single black logo — avoids global dark-theme .logo-1/.logo-2 swap */}
@@ -39,7 +39,7 @@ export default function Header() {
                   </Link>
                 </div>
               </div>
-              <div className="col-xl-8 col-lg-8 d-none d-xl-block">
+              {/* <div className="col-xl-8 col-lg-8 d-none d-xl-block">
                 <div className="tp-inner-header-right-wrap text-center">
                   <div className="tp-inner-header-menu header-main-menu">
                     <nav className="tp-main-menu-content">
@@ -47,7 +47,7 @@ export default function Header() {
                     </nav>
                   </div>
                 </div>
-              </div>
+              </div> */}
               <div className="col-xl-2 col-lg-6 col-md-6 col-6">
                 <div className="tp-inner-header-right-action text-end">
                   <ul>

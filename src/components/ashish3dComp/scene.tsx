@@ -635,7 +635,9 @@ const Ashish3dScene = () => {
         floatEnabled={isFloatOn("seo")}
         floatSoft={floatSoft}
       />
-      <Environment files="/assets/hdr/scene.hdr" resolution={1024} />
+      {/* <Environment files="/assets/hdr/scene.hdr" resolution={1024} backgroundIntensity={1} backgroundRotation={356} /> */}
+
+      {/* <directionalLight intensity={1} position={[0, 50, 1000]} intensity={5} /> */}
     </group>
   );
 };
