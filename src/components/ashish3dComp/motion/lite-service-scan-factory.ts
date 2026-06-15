@@ -29,9 +29,8 @@ export type LiteScanTimingPreset = {
 };
 
 export const LITE_SCAN_TIMING_DESKTOP: LiteScanTimingPreset = {
-  // Lower scrub = less “lag/jam” on trackpads (Silencio-style feel).
-  approachScrub: 0.25,
-  scanScrub: 0.35,
+  approachScrub: 1.5,
+  scanScrub: 2,
   scanPinStart: "top 28%",
   approachScale: 2.5,
   approachPosition: { x: "-=140", y: "+=70" },
@@ -41,8 +40,8 @@ export const LITE_SCAN_TIMING_DESKTOP: LiteScanTimingPreset = {
 };
 
 export const LITE_SCAN_TIMING_TABLET: LiteScanTimingPreset = {
-  approachScrub: 0.3,
-  scanScrub: 0.45,
+  approachScrub: 0.9,
+  scanScrub: 1.2,
   scanPinStart: "top 25%",
   approachScale: 2.15,
   approachPosition: { x: "-=115", y: "+=62" },
@@ -52,8 +51,8 @@ export const LITE_SCAN_TIMING_TABLET: LiteScanTimingPreset = {
 };
 
 export const LITE_SCAN_TIMING_MOBILE: LiteScanTimingPreset = {
-  approachScrub: 1.5,
-  scanScrub: 1.5,
+  approachScrub: 2,
+  scanScrub: 2,
   scanPinStart: "top 22%",
   approachScale: 1.85,
   approachPosition: { x: "-=85", y: "+=55" },

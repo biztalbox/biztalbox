@@ -5,7 +5,7 @@ import Header from "@/app/_lite/_ashish/Header";
 import Wrapper from "@/layouts/wrapper";
 import { LiteHero } from "@/components/ashish3dComp";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { ScrollSmoother } from "@/plugins";
 import { isLiteSfxUnlocked, preloadLiteSfx, unlockLiteSfx } from "@/app/_lite/_ashish/sfx";
 
@@ -27,6 +27,33 @@ const LiteHomePage = () => {
   const [showLoader, setShowLoader] = useState(true);
   const mountAtRef = useRef<number | null>(null);
   if (mountAtRef.current === null) mountAtRef.current = Date.now();
+
+  // Reload at bottom should always land on hero — before ScrollTrigger measures layout.
+  useLayoutEffect(() => {
+    const previousRestoration =
+      "scrollRestoration" in history ? history.scrollRestoration : null;
+    if (previousRestoration !== null) {
+      history.scrollRestoration = "manual";
+    }
+
+    const scrollTop = () => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    };
+
+    scrollTop();
+
+    const onPageShow = () => scrollTop();
+    window.addEventListener("pageshow", onPageShow);
+
+    return () => {
+      window.removeEventListener("pageshow", onPageShow);
+      if (previousRestoration !== null) {
+        history.scrollRestoration = previousRestoration;
+      }
+    };
+  }, []);
 
   // Safety cleanup: if user navigates from a smooth-scrolling page,
   // ensure ScrollSmoother is fully torn down so body doesn't keep a stale height/transform.
@@ -83,6 +110,14 @@ const LiteHomePage = () => {
       html.style.overflow = prevHtml;
       body.style.overflow = prevBody;
     };
+  }, [showLoader]);
+
+  useEffect(() => {
+    if (showLoader) return;
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    window.dispatchEvent(new CustomEvent("lite:loader-hidden"));
   }, [showLoader]);
 
   // Readiness: fonts + next paint, then minimum / hold timing (matches dark home).

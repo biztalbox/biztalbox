@@ -14,7 +14,11 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { WigglingModel } from "./WigglingModel";
 import type { LiteModelKey, LiteModelRefMap } from "./motion/lite-service-scan-config";
 import { resolveLiteServiceScans } from "./motion/lite-service-scan-config";
-import { billTrigger, getLiteScanTimingForBreakpoint, registerAllLiteServiceScans } from "./motion/lite-service-scan-factory";
+import {
+  billTrigger,
+  getLiteScanTimingForBreakpoint,
+  registerAllLiteServiceScans,
+} from "./motion/lite-service-scan-factory";
 import {
   addCtaCartTweensToTimeline,
   getHeroFadeOutYDelta,
@@ -334,6 +338,9 @@ const Ashish3dScene = () => {
       const maxAttempts = 120;
       let matchMediaInstance: gsap.MatchMedia | null = null;
       let addToCartTl: gsap.core.Timeline | null = null;
+      let introTl: gsap.core.Timeline | null = null;
+      let introPlayed = false;
+      let onLoaderHidden: (() => void) | null = null;
       const ctaCart = resolveCtaCartConfig(layoutBreakpoint);
       // Use immediate scrub for CTA so reverse doesn't "lag" (numeric scrub smooths over seconds).
       const ctaScrub = true;
@@ -344,8 +351,6 @@ const Ashish3dScene = () => {
         addToCartTl?.pause(0);
         addToCartTl?.progress(0);
       };
-
-      let onMagic: ((ev: Event) => void) | null = null;
 
       const mountScroll = () => {
         if (
@@ -364,29 +369,22 @@ const Ashish3dScene = () => {
         }
         if (cancelled) return;
 
-        const firstTl = gsap.timeline({
-          defaults: { duration: 1.5 ,ease: "power4.inOut" }
-        });
-        // Only run when the user clicks the "Magic" button.
-        firstTl.pause(0);
-        let didRunMagic = false;
-        onMagic = () => {
-          if (cancelled || didRunMagic) return;
-          didRunMagic = true;
-          firstTl.play(0);
+        const runIntroReceipt = () => {
+          if (cancelled || introPlayed) return;
+          introPlayed = true;
+          introTl?.kill();
+          introTl = gsap.timeline({
+            defaults: { duration: 1.5, ease: "power4.inOut" },
+          });
+          billTrigger({ tl: introTl, up: "-=57", delay: 0.5 });
         };
-        if (typeof window !== "undefined") {
-          window.addEventListener("lite:magic", onMagic as EventListener);
-        }
-        // firstTl.from(camera.position, { y: 300, z: 300 });
 
-        // const initModals = gsap.timeline({ defaults: { duration: 3 } });
-        // const baseHeroY = heroFadeOutGroupRef.current.position.y;
-        // gsap.set(heroFadeOutGroupRef.current.position, { y: baseHeroY + 900 });
-        // initModals.to(heroFadeOutGroupRef.current.position, { y: baseHeroY, ease: "back.inOut"}, 0);
-        
-          billTrigger({tl: firstTl, up: "-=57", delay: 0.5});
-        
+        onLoaderHidden = () => runIntroReceipt();
+        if (typeof window !== "undefined") {
+          window.addEventListener("lite:loader-hidden", onLoaderHidden);
+          const loaderBusy = document.querySelector("#litePage [aria-busy='true']");
+          if (!loaderBusy) runIntroReceipt();
+        }
 
         matchMediaInstance = gsap.matchMedia();
 
@@ -399,8 +397,7 @@ const Ashish3dScene = () => {
               trigger: "#section0",
               start: "-120 top",
               end: "top top",
-              // Silencio-like: low scrub = buttery, less laggy.
-              scrub: 1,
+              scrub: bp === "desktop" ? 4 : 2,
               invalidateOnRefresh: true,
               fastScrollEnd: true,
             },
@@ -440,8 +437,7 @@ const Ashish3dScene = () => {
             trigger: "#ctaSection",
             start: "top bottom",
             end: "top top",
-            // Use immediate scrub so reverse is instant (Silencio-like).
-            scrub: 3,
+            scrub: layoutBreakpoint === "desktop" ? 7 : 4.5,
             invalidateOnRefresh: true,
             fastScrollEnd: true,
             onUpdate: (self) => {
@@ -475,7 +471,7 @@ const Ashish3dScene = () => {
               if (!el) return -200;
               const h = el.getBoundingClientRect().height;
               // Extra few px so it fully clears even with subpixel rounding.
-              return -Math.ceil(h-500);
+              return -Math.ceil(h-475);
             },
             duration: 5,
             ease: "back.inOut",
@@ -515,9 +511,11 @@ const Ashish3dScene = () => {
 
       return () => {
         cancelled = true;
-        if (typeof window !== "undefined") {
-          if (onMagic) window.removeEventListener("lite:magic", onMagic as EventListener);
+        if (typeof window !== "undefined" && onLoaderHidden) {
+          window.removeEventListener("lite:loader-hidden", onLoaderHidden);
         }
+        introTl?.kill();
+        introTl = null;
         matchMediaInstance?.revert();
         matchMediaInstance = null;
         pauseLiteSfx("beep");
