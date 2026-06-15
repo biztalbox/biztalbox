@@ -400,13 +400,14 @@
       "motion": {
         "approach": {
           "position": {
-            "y": "-=350",
-            "x": "-=170"
+            "y": "-=300",
+            "x": "-=150"
+            
           },
           "rotation": {
             "x": "+=31.5"
           },
-          "scale": 6,
+          "scale": 4,
           "durations": {
             "position": 1,
             "scale": 1,
