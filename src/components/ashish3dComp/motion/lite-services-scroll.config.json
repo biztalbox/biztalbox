@@ -30,14 +30,14 @@
       "motion": {
         "approach": {
           "position": {
-            "y": "-=120",
-            "x": "+=320"
+            "y": "-=90",
+            "x": "+=300"
           },
           "rotation": {
             "z": "+=7",
             "y": "+=4"
           },
-          "scale": 0.5,
+          "scale": 0.3,
           "durations": {
             "position": 1,
             "scale": 1,
@@ -97,14 +97,14 @@
       "motion": {
         "approach": {
           "position": {
-            "y": "-=350",
+            "y": "-=300",
             "x": "-=200"
           },
           "rotation": {
             "x": "+=25.2",
             "z": "0.1"
           },
-          "scale": 0.6,
+          "scale": 0.5,
           "durations": {
             "position": 1,
             "scale": 1,
@@ -172,7 +172,7 @@
       "motion": {
         "approach": {
           "position": {
-            "y": "-=400",
+            "y": "-=300",
             "x": "+=50"
 
 
@@ -181,7 +181,7 @@
             "x": "+=9.5",
             "z": "+=3.1"
           },
-          "scale": "6",
+          "scale": "5",
           "durations": {
             "position": 1,
             "scale": 1,
@@ -399,13 +399,13 @@
       "motion": {
         "approach": {
           "position": {
-            "y": "-=400",
-            "x": "-=60"
+            "y": "-=350",
+            "x": "-=170"
           },
           "rotation": {
             "x": "+=31.5"
           },
-          "scale": 3,
+          "scale": 6,
           "durations": {
             "position": 1,
             "scale": 1,
