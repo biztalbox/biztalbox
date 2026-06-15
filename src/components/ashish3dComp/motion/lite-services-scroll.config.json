@@ -400,8 +400,8 @@
       "motion": {
         "approach": {
           "position": {
-            "y": "-=300",
-            "x": "-=150"
+            "y": "-=340",
+            "x": "-=5"
             
           },
           "rotation": {
