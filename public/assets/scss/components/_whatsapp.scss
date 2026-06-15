@@ -37,8 +37,7 @@
 	justify-content: center;
 	width: 46px;
 	height: 46px;
-	background: #25D366; // WhatsApp brand color
-	box-shadow: 0px 8px 16px rgba(37, 211, 102, 0.4);
+	background: rgb(70, 70, 70); // WhatsApp brand color
 	color: var(--tp-common-white);
 	border-radius: 50%;
 	text-decoration: none;
@@ -51,8 +50,7 @@
 
 	&:hover {
 		@include transform(translateY(-4px) scale(1.05));
-		box-shadow: 0px 12px 20px rgba(37, 211, 102, 0.5);
-		background: #128C7E; // Darker WhatsApp green on hover
+		background: rgb(56, 56, 56); // Darker WhatsApp green on hover
 		color: var(--tp-common-white);
 	}
 }
