@@ -17,6 +17,7 @@ import meta from "@/assets/image/new_avatar/meta.webp";
 import appdev from "@/assets/image/new_avatar/appdev.webp";
 
 import MobileMenus from "./mobile-menus";
+import HomeLink from "@/components/HomeLink";
 import Link from "next/link";
 
 const gallery_images = [
@@ -48,9 +49,9 @@ export default function MobileOffcanvas({
         <div className="tp-offcanvas-wrapper">
           <div className="tp-offcanvas-top d-flex align-items-center justify-content-between">
             <div className="tp-offcanvas-logo">
-              <Link href="/">
+              <HomeLink>
                 <Image src={logo_white} alt="logo" />
-              </Link>
+              </HomeLink>
             </div>
             <div className="tp-offcanvas-close">
               <button

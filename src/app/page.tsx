@@ -1,7 +1,9 @@
 import { Metadata } from "next";
+import { cookies } from "next/headers";
 import { createMetadata, createSchemaProps, createFullUrl } from "@/utils/metadata";
 import SchemaProvider from "@/components/schema/SchemaProvider";
 import { mainReviews, mainAggregateRating } from "@/data/schema-data";
+import { resolveDarkHomeMode } from "@/utils/home-theme";
 
 const baseMetadata: Metadata = {
   title: "Best Digital Marketing Agency | Website Development",
@@ -11,6 +13,9 @@ const baseMetadata: Metadata = {
 
 
 export const metadata = createMetadata(baseMetadata, '/');
+
+/** Re-read cookie on every request so Vercel never serves a stale lite/dark variant. */
+export const dynamic = "force-dynamic";
 
 export default async function Home({
   searchParams,
@@ -24,7 +29,10 @@ export default async function Home({
 
   const modeRaw = searchParams?.mode;
   const mode = Array.isArray(modeRaw) ? modeRaw[0] : modeRaw;
-  if (mode === 'dark') {
+  const themeCookie = cookies().get("bb_theme")?.value;
+  const isDark = resolveDarkHomeMode(mode, themeCookie);
+
+  if (isDark) {
     // Important: import dark home only when needed.
     // DarkHomePage includes global CSS imports which were overriding lite mode when statically imported.
     const DarkHomePage = (await import("@/components/DarkHomePage")).default;

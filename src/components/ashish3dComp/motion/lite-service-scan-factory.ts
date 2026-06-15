@@ -19,6 +19,9 @@ gsap.registerPlugin(ScrollTrigger);
 export type LiteScanTimingPreset = {
   approachScrub: number;
   scanScrub: number;
+  /** When false, scroll animations ease out without fast-scroll snap (smoother on desktop). */
+  fastScrollEnd: boolean;
+  anticipatePin: number;
   scanPinStart: string;
   approachScale: number;
   approachPosition: { x: string; y: string };
@@ -29,8 +32,10 @@ export type LiteScanTimingPreset = {
 };
 
 export const LITE_SCAN_TIMING_DESKTOP: LiteScanTimingPreset = {
-  approachScrub: 1.5,
-  scanScrub: 2,
+  approachScrub: 2.5,
+  scanScrub: 3,
+  fastScrollEnd: false,
+  anticipatePin: 1,
   scanPinStart: "top 28%",
   approachScale: 2.5,
   approachPosition: { x: "-=140", y: "+=70" },
@@ -42,6 +47,8 @@ export const LITE_SCAN_TIMING_DESKTOP: LiteScanTimingPreset = {
 export const LITE_SCAN_TIMING_TABLET: LiteScanTimingPreset = {
   approachScrub: 0.9,
   scanScrub: 1.2,
+  fastScrollEnd: true,
+  anticipatePin: 2,
   scanPinStart: "top 25%",
   approachScale: 2.15,
   approachPosition: { x: "-=115", y: "+=62" },
@@ -53,6 +60,8 @@ export const LITE_SCAN_TIMING_TABLET: LiteScanTimingPreset = {
 export const LITE_SCAN_TIMING_MOBILE: LiteScanTimingPreset = {
   approachScrub: 2,
   scanScrub: 2,
+  fastScrollEnd: true,
+  anticipatePin: 2,
   scanPinStart: "top 22%",
   approachScale: 1.85,
   approachPosition: { x: "-=85", y: "+=55" },
@@ -317,7 +326,7 @@ export function attachLiteServiceScanPair(options: {
       end: approachScrollEnd,
       scrub: timing.approachScrub,
       invalidateOnRefresh: true,
-      fastScrollEnd: true,
+      fastScrollEnd: timing.fastScrollEnd,
     },
   });
 
@@ -360,12 +369,11 @@ export function attachLiteServiceScanPair(options: {
       end: scanPinEnd,
       pin: true,
       pinSpacing: true,
-      // Helps reduce pin “snap” on fast trackpad scroll.
-      anticipatePin: 2,
+      anticipatePin: timing.anticipatePin,
       pinType: "fixed",
       scrub: timing.scanScrub,
       invalidateOnRefresh: true,
-      fastScrollEnd: true,
+      fastScrollEnd: timing.fastScrollEnd,
       /**
        * Prevent “fast scroll” race where the approach scrub keeps rendering and
        * overwrites scan end-state (e.g. model scale not reaching 0).
