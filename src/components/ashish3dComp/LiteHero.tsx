@@ -10,17 +10,22 @@ import { useState } from "react";
  */
 export default function LiteHero() {
   const [showDartCanvas, setShowDartCanvas] = useState(true);
+  const [showAshish3dCanvas, setShowAshish3dCanvas] = useState(false);
   const handleEnter = () => {
 
     setTimeout(() => {
       setShowDartCanvas(false);
       document.body.style.overflow = 'auto';
-    }, 2500);
+    }, 2800);
+
+    setTimeout(() => {
+      setShowAshish3dCanvas(true);
+    }, 1000);
   }
   return (
     <div className="relative">
       {showDartCanvas && <DartCanvas onEnter={handleEnter} />}
-      <Ashish3dCanvas />
+      {showAshish3dCanvas && <Ashish3dCanvas />}
       <LiteHeroSections />
     </div>
   );

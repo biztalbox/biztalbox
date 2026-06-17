@@ -53,6 +53,13 @@ function findChildByName(root: Object3D, name: string): Object3D | null {
   return found;
 }
 
+/** Drop distance for hero intro (all models enter from above). */
+function getHeroIntroDropY(bp: LiteSceneBreakpoint): number {
+  if (bp === "desktop") return 800;
+  if (bp === "tablet") return 520;
+  return 360;
+}
+
 /** Same order as the original hero fade timeline (all at label 0). */
 const HERO_FADE_OUT_KEYS: LiteModelKey[] = [
   "video",
@@ -369,13 +376,30 @@ const Ashish3dScene = () => {
         }
         if (cancelled) return;
 
+        const heroGroup = heroFadeOutGroupRef.current;
+        const heroIntroTargetY = heroGroup.position.y;
+        const heroIntroDropY = getHeroIntroDropY(layoutBreakpoint);
+        gsap.set(heroGroup.position, { y: heroIntroTargetY + heroIntroDropY });
+
         const runIntroReceipt = () => {
           if (cancelled || introPlayed) return;
+          if (!heroFadeOutGroupRef.current) return;
+
           introPlayed = true;
           introTl?.kill();
           introTl = gsap.timeline({
-            defaults: { duration: 1.5, ease: "power4.inOut" },
+            defaults: { duration: 1.5, ease: "power4.out" },
           });
+
+          introTl.to(
+            heroFadeOutGroupRef.current.position,
+            {
+              y: heroIntroTargetY,
+              duration: 2,
+              ease: "back.inOut",
+            },
+            0,
+          );
           billTrigger({ tl: introTl, up: "-=57", delay: 0.5, music: false });
         };
 
@@ -540,7 +564,8 @@ const Ashish3dScene = () => {
   }
 
   return (
-    <group ref={heroFadeOutGroupRef} position={root.position} scale={root.scale}>
+    <group position={root.position} scale={root.scale}>
+      <group ref={heroFadeOutGroupRef}>
       <WigglingModel
         scene={graphicScene}
         groupRef={graphicRef}
@@ -638,6 +663,7 @@ const Ashish3dScene = () => {
       {/* <Environment files="/assets/hdr/scene.hdr" resolution={1024} backgroundIntensity={1} backgroundRotation={356} /> */}
 
       {/* <directionalLight intensity={1} position={[0, 50, 1000]} intensity={5} /> */}
+      </group>
     </group>
   );
 };

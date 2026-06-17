@@ -80,7 +80,7 @@ export default function DartCanvas({ onEnter }: { onEnter: () => void }) {
   };
 
   const hitButtonClass =
-    "pointer-events-auto border border-black bg-transparent px-4 py-4 rounded-full text-black hover:bg-black hover:text-white transition-colors";
+    "pointer-events-auto border border-black bg-transparent px-4 py-4 rounded-full focus:bg-black focus:text-white text-black hover:bg-black hover:text-white transition-colors";
 
   return (
     <section className="fixed z-50 inset-0 overflow-hidden h-screen w-screen bg-white">
