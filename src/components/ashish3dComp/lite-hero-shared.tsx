@@ -48,6 +48,31 @@ export function LiteServiceViewMoreLink({
   );
 }
 
+/** Rotated label on the left edge of each lite scanner ticket box. */
+export const LITE_SCANNER_BOX_LABELS: Record<LiteServiceTicketSpecKey, string> = {
+  seo: "Search Engine Optimization",
+  smo: "Social Media Optimization",
+  webdev: "Website Development",
+  graphic: "Graphic Designing",
+  video: "Motion Graphics",
+  content: "Content Writing",
+  ads: "Performance Marketing",
+};
+
+export function LiteScannerBoxLabel({ service }: { service: LiteServiceTicketSpecKey }) {
+  return (
+    <span
+      className="pointer-events-none absolute left-0 top-[30%] text-muted z-10 text-xs leading-none whitespace-nowrap"
+      style={{
+        transform: "translateX(-85%) rotate(-90deg)",
+        transformOrigin: "right center",
+      }}
+    >
+      {LITE_SCANNER_BOX_LABELS[service]}
+    </span>
+  );
+}
+
 export function LiteTicketSpecsFooter({ service }: { service: LiteServiceTicketSpecKey }) {
   const { left, right } = getTicketSpecNameColumns(service);
   return (
