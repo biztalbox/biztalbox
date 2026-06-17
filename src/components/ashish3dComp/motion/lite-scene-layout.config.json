@@ -181,11 +181,11 @@
     "mobile": {
       "webdev": {
         "position": [
-          110,
-          270,
+          280,
+          180,
           0
         ],
-        "scale": 0.6,
+        "scale": 4,
         "rotation": [
           0.4,
           0.7,
@@ -204,10 +204,10 @@
       "video": {
         "position": [
           100,
-          35,
+          -380,
           0
         ],
-        "scale": 1.6,
+        "scale": 2.4,
         "float": {
           "speed": 5,
           "rotationIntensity": 1,
@@ -220,11 +220,11 @@
       },
       "ads": {
         "position": [
-          390,
-          50,
+          400,
+          360,
           0
         ],
-        "scale": 0.31,
+        "scale": 0.40,
         "rotation": [
           0,
           -0.5,
@@ -246,7 +246,7 @@
           -200,
           0
         ],
-        "scale": 1.6,
+        "scale": 7,
         "rotation": [
           0,
           -0.9,
@@ -264,11 +264,11 @@
       },
       "smo": {
         "position": [
-          100,
-          -400,
+          390,
+          60,
           0
         ],
-        "scale": 0.38,
+        "scale": 0.50,
         "rotation": [
           -0.4,
           0,
@@ -286,13 +286,13 @@
       },
       "seo": {
         "position": [
-          390,
-          -340,
+          90,
+          300,
           0
         ],
-        "scale": 2,
+        "scale": 0.4,
         "rotation": [
-          0,
+          0, 
           -1,
           0
         ],
@@ -308,11 +308,11 @@
       },
       "content": {
         "position": [
-          240,
-          -300,
+          200,
+          -100,
           0
         ],
-        "scale": 0.9,
+        "scale": 5,
         "float": {
           "speed": 5,
           "rotationIntensity": 1,
@@ -376,7 +376,7 @@
       },
       "ads": {
         "position": [
-          290,
+          -100,
           260,
           0
         ],
@@ -437,7 +437,7 @@
       },
       "seo": {
         "position": [
-          290,
+          100,
           60,
           0
         ],
@@ -459,7 +459,7 @@
       },
       "video": {
         "position": [
-          32,
+          35,
           250,
           0
         ],
@@ -522,6 +522,22 @@
   },
   "heroFadeOut": {
     "desktop": {
+      "video": 450,
+      "smo": 300,
+      "graphic": 450,
+      "content": 550,
+      "ads": 200,
+      "webdev": 250
+    },
+    "mobile": {
+      "video": 990,
+      "smo": 550,
+      "graphic": 850,
+      "content": 750,
+      "ads": 300,
+      "webdev": 450
+    },
+    "tablet": {
       "video": 450,
       "smo": 300,
       "graphic": 450,
