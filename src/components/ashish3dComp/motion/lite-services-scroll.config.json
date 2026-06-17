@@ -102,7 +102,7 @@
             "x": "-=200"
           },
           "rotation": {
-            "x": "+=25.2",
+            "x": "+=12",
             "z": "0.1"
           },
           "scale": 0.5,
@@ -179,7 +179,7 @@
 
           },
           "rotation": {
-            "x": "+=9.5",
+            "x": "+=7",
             "z": "+=3.1"
           },
           "scale": "5",
@@ -240,7 +240,7 @@
       "scannerId": "lite-scanner-graphic",
       "approach": {
         "trigger": "#section4",
-        "start": "top top",
+        "start": "40% top",
         "endTrigger": "#lite-scanner-graphic"
       },
       "scan": {
@@ -255,7 +255,7 @@
           },
           "rotation": {
             "x": "+=3.5",
-            "y": "+=34.5",
+            "y": "+=17",
             "z": "+=3.2"
           },
           "scale": 6,
@@ -405,7 +405,7 @@
             
           },
           "rotation": {
-            "x": "+=31.5"
+            "x": "+=12"
           },
           "scale": 4,
           "durations": {

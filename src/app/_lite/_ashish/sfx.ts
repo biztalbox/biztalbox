@@ -274,6 +274,12 @@ function scrubCueOnUpdate(tl: gsap.core.Timeline): void {
   scrubCueLastTime.set(tl, t);
 }
 
+export function resetScrubTimelineCueBaseline(tl: gsap.core.Timeline): void {
+  if (scrubCueBuckets.has(tl)) {
+    scrubCueLastTime.set(tl, tl.time());
+  }
+}
+
 export function addScrubTimelineCue(tl: gsap.core.Timeline, at: number, fn: () => void): () => void {
   const cue: ScrubCue = { at, fn };
 

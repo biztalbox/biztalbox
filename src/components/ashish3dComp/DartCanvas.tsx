@@ -2,18 +2,41 @@
 
 import { AdaptiveDpr, Environment, OrbitControls } from "@react-three/drei";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Suspense, useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useLayoutEffect, useRef, useState } from "react";
+import * as THREE from "three";
+import { preloadLiteSfx, unlockLiteSfx } from "@/app/_lite/_ashish/sfx";
 import DartScene from "./DartScene";
 
-/**
- * Fixed WebGL layer for the lite hero. Mounted after idle so GLBs do not block first paint.
- */
+function ResponsiveHeroCamera() {
+  const { camera, size } = useThree();
+  useLayoutEffect(() => {
+    if (!(camera instanceof THREE.PerspectiveCamera)) return;
+    const w = size.width;
+    if (w < 480) {
+      camera.fov = 23;
+      camera.position.set(0, 0, 100);
+    } else if (w < 640) {
+      camera.fov = 20;
+      camera.position.set(0, 0, 100);
+    } else if (w < 1024) {
+      camera.fov = 20;
+      camera.position.set(0, 0, 100);
+    } else {
+      camera.fov = 20;
+      camera.position.set(0, 0, 100);
+    }
+    camera.updateProjectionMatrix();
+  }, [camera, size.width]);
+  return null;
+}
+
 export default function DartCanvas({ onEnter }: { onEnter: () => void }) {
   const [cursor, setCursor] = useState({ x: 0, y: 0 });
   const shootRef = useRef<(() => void) | null>(null);
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';
+    preloadLiteSfx();
   }, []);
 
   useEffect(() => {
@@ -50,11 +73,19 @@ export default function DartCanvas({ onEnter }: { onEnter: () => void }) {
   }
 
 
+  const handleHit = () => {
+    unlockLiteSfx();
+    shootRef.current?.();
+    onEnter();
+  };
+
+  const hitButtonClass =
+    "pointer-events-auto border border-black bg-transparent px-4 py-4 rounded-full focus:bg-black focus:text-white text-black hover:bg-black hover:text-white transition-colors";
+
   return (
     <section className="fixed z-50 inset-0 overflow-hidden h-screen w-screen bg-white">
       <Canvas
         className="!fixed z-50 inset-0 h-full w-full pointer-events-none"
-        camera={{ position: [0, 0, 100], fov: 20 }}
         gl={{
           alpha: true,
           antialias: true,
@@ -62,6 +93,7 @@ export default function DartCanvas({ onEnter }: { onEnter: () => void }) {
         }}
         dpr={1}
       >
+        <ResponsiveHeroCamera />
         <AdaptiveDpr />
         <Suspense fallback={null}>
           <DartScene onShootReady={(shoot) => { shootRef.current = shoot; }} />
@@ -71,13 +103,20 @@ export default function DartCanvas({ onEnter }: { onEnter: () => void }) {
       </Canvas>
       <button
         type="button"
-        className="fixed z-[60] pointer-events-auto border border-black bg-transparent px-4 py-4 rounded-full text-black hover:bg-black hover:text-white transition-colors"
+        className={`fixed z-[60] hidden md:block ${hitButtonClass}`}
         style={{
           left: cursor.x,
           top: cursor.y,
           transform: "translate(-50%, -50%)",
         }}
-        onClick={() => {shootRef.current?.(); onEnter()}}
+        onClick={handleHit}
+      >
+        HIT!
+      </button>
+      <button
+        type="button"
+        className={`fixed z-[60] md:hidden bottom-16 left-1/2 -translate-x-1/2 ${hitButtonClass}`}
+        onClick={handleHit}
       >
         HIT!
       </button>
