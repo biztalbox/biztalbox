@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import WhyChooseUsLite from "@/app/_lite/_ashish/WhyChooseUs";
 import {
+  LiteScannerBoxLabel,
   LiteServiceViewMoreLink,
   LiteTicketSpecsFooter,
   formatReceiptDate,
@@ -160,7 +161,7 @@ export default function LiteHeroSections() {
           {/* Center ticket */}
 
           <div
-            className="relative z-50 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
+            className="relative z-50 mt-40 w-80 mx-auto overflow-visible rounded-[14px] border border-black px-3 pb-4 pt-3"
             id="lite-scanner-seo"
             style={{ zIndex: 20, background: "transparent" }}
           >
@@ -178,6 +179,8 @@ export default function LiteHeroSections() {
                 </span>
               </div>
             </div>
+
+            <LiteScannerBoxLabel service="seo" />
 
             <div className="scannerBoxContent">
               {/* Spacer for 3D “slot” / layout height */}
@@ -237,7 +240,7 @@ export default function LiteHeroSections() {
           </div>
 
           <div
-            className="relative z-50 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
+            className="relative z-50 mt-40 w-80 mx-auto overflow-visible rounded-[14px] border border-black px-3 pb-4 pt-3"
             id="lite-scanner-smo"
             style={{ zIndex: 20, background: "transparent" }}
           >
@@ -251,6 +254,7 @@ export default function LiteHeroSections() {
                 </span>
               </div>
             </div>
+            <LiteScannerBoxLabel service="smo" />
             <div className="scannerBoxContent">
               <div className="mt-14 h-44" />
               <div className="mt-2 flex items-center justify-between gap-4">
@@ -307,7 +311,7 @@ export default function LiteHeroSections() {
           </div>
 
           <div
-            className="relative z-50 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
+            className="relative z-50 mt-40 w-80 mx-auto overflow-visible rounded-[14px] border border-black px-3 pb-4 pt-3"
             id="lite-scanner-webdev"
             style={{ zIndex: 20, background: "transparent" }}
           >
@@ -321,6 +325,7 @@ export default function LiteHeroSections() {
                 </span>
               </div>
             </div>
+            <LiteScannerBoxLabel service="webdev" />
             <div className="scannerBoxContent">
               <div className="mt-14 h-44" />
               <div className="mt-2 flex items-center justify-between gap-4">
@@ -376,7 +381,7 @@ export default function LiteHeroSections() {
           </div>
 
           <div
-            className="relative z-50 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
+            className="relative z-50 mt-40 w-80 mx-auto overflow-visible rounded-[14px] border border-black px-3 pb-4 pt-3"
             id="lite-scanner-graphic"
             style={{ zIndex: 20, background: "transparent" }}
           >
@@ -390,6 +395,7 @@ export default function LiteHeroSections() {
                 </span>
               </div>
             </div>
+            <LiteScannerBoxLabel service="graphic" />
             <div className="scannerBoxContent">
               <div className="mt-14 h-44" />
               <div className="mt-2 flex items-center justify-between gap-4">
@@ -447,7 +453,7 @@ export default function LiteHeroSections() {
           </div>
 
           <div
-            className="relative z-50 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
+            className="relative z-50 mt-40 w-80 mx-auto overflow-visible rounded-[14px] border border-black px-3 pb-4 pt-3"
             id="lite-scanner-video"
             style={{ zIndex: 20, background: "transparent" }}
           >
@@ -461,6 +467,7 @@ export default function LiteHeroSections() {
                 </span>
               </div>
             </div>
+            <LiteScannerBoxLabel service="video" />
             <div className="scannerBoxContent">
               <div className="mt-14 h-44" />
               <div className="mt-2 flex items-center justify-between gap-4">
@@ -521,7 +528,7 @@ export default function LiteHeroSections() {
           </div>
 
           <div
-            className="relative z-50 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
+            className="relative z-50 mt-40 w-80 mx-auto overflow-visible rounded-[14px] border border-black px-3 pb-4 pt-3"
             id="lite-scanner-content"
             style={{ zIndex: 20, background: "transparent" }}
           >
@@ -535,6 +542,7 @@ export default function LiteHeroSections() {
                 </span>
               </div>
             </div>
+            <LiteScannerBoxLabel service="content" />
             <div className="scannerBoxContent">
               <div className="mt-14 h-44" />
               <div className="mt-2 flex items-center justify-between gap-4">
@@ -614,7 +622,7 @@ export default function LiteHeroSections() {
           </div>
 
           <div
-            className="relative z-50 mt-40 w-80 mx-auto overflow-hidden rounded-[14px] border border-black px-3 pb-4 pt-3"
+            className="relative z-50 mt-40 w-80 mx-auto overflow-visible rounded-[14px] border border-black px-3 pb-4 pt-3"
             id="lite-scanner-ads"
             style={{ zIndex: 20, background: "transparent" }}
           >
@@ -628,6 +636,7 @@ export default function LiteHeroSections() {
                 </span>
               </div>
             </div>
+            <LiteScannerBoxLabel service="ads" />
             <div className="scannerBoxContent">
               <div className="mt-14 h-44" />
               <div className="mt-2 flex items-center justify-between gap-4">
