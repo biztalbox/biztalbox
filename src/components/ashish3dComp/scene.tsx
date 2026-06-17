@@ -376,7 +376,7 @@ const Ashish3dScene = () => {
           introTl = gsap.timeline({
             defaults: { duration: 1.5, ease: "power4.inOut" },
           });
-          billTrigger({ tl: introTl, up: "-=57", delay: 0.5 });
+          billTrigger({ tl: introTl, up: "-=57", delay: 0.5, music: false });
         };
 
         onLoaderHidden = () => runIntroReceipt();

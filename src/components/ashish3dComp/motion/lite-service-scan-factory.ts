@@ -2,7 +2,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import * as THREE from "three";
 import type { Group } from "three";
-import { addScrubTimelineCue, playLiteSfx } from "@/app/_lite/_ashish/sfx";
+import { addScrubTimelineCue, playLiteSfx, resetScrubTimelineCueBaseline, type LiteSfxKind } from "@/app/_lite/_ashish/sfx";
 import {
   resolveLiteServiceScans,
   type LiteApproachMotion,
@@ -83,14 +83,25 @@ export function billTrigger({
   up,
   delay = 0,
   sound = "bill",
+  music = true,
+  isCancelled,
 }: {
   tl: gsap.core.Timeline;
   up: string;
   delay?: number;
-  sound?: any;
-}) {
+  sound?: LiteSfxKind;
+  music?: boolean;
+  isCancelled?: () => boolean;
+}): (() => void) | undefined {
   tl.to("#recieptSection", { y: up }, delay);
-  playLiteSfx(sound);
+  if (!music) return undefined;
+
+  return addScrubTimelineCue(tl, delay, () => {
+    if (isCancelled?.()) return;
+    const st = tl.scrollTrigger;
+    if (st && st.direction < 0) return;
+    playLiteSfx(sound);
+  });
 }
 
 /**
@@ -381,6 +392,7 @@ export function attachLiteServiceScanPair(options: {
        * user scrolls back above the scan start.
        */
       onEnter: () => {
+        resetScrubTimelineCueBaseline(scanTl);
         // approachTl.scrollTrigger?.disable(false);
         // Lock approach to its end-state to avoid boundary jitter.
         // approachTl.progress(1);
@@ -393,6 +405,7 @@ export function attachLiteServiceScanPair(options: {
         }
       },
       onEnterBack: () => {
+        resetScrubTimelineCueBaseline(scanTl);
         // approachTl.scrollTrigger?.disable(false);
         // When coming back up into the pinned scan, keep approach locked.
         // approachTl.progress(1);
@@ -478,7 +491,13 @@ export function attachLiteServiceScanPair(options: {
   if (!lowPowerMode) {
     addScanWarmTintToTimeline(scanTl, group, 0.5, 0.36);
   }
-  billTrigger({ tl: scanTl, up: "-=23", delay: 0.8, sound: "print" });
+  const removePrintCue = billTrigger({
+    tl: scanTl,
+    up: "-=23",
+    delay: 0.8,
+    sound: "print",
+    isCancelled,
+  });
 
   scanTl.to(
     group.scale,
@@ -510,6 +529,7 @@ export function attachLiteServiceScanPair(options: {
 
   return () => {
     removeBeepCue();
+    removePrintCue?.();
     approachTl.scrollTrigger?.kill();
     approachTl.kill();
     scanTl.scrollTrigger?.kill();
