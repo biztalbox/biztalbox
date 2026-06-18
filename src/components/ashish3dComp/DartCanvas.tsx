@@ -80,7 +80,7 @@ export default function DartCanvas({ onEnter }: { onEnter: () => void }) {
   };
 
   const hitButtonClass =
-    "pointer-events-auto border border-black bg-transparent px-4 py-4 rounded-full focus:bg-black focus:text-white text-black hover:bg-black hover:text-white transition-colors";
+    "pointer-events-auto border bg-transparent px-4 py-4 rounded-full text-red-600";
 
   return (
     <section className="fixed z-50 inset-0 overflow-hidden h-screen w-screen bg-white">
@@ -108,15 +108,19 @@ export default function DartCanvas({ onEnter }: { onEnter: () => void }) {
           left: cursor.x,
           top: cursor.y,
           transform: "translate(-50%, -50%)",
+          borderColor: "red",
+          borderWidth: "3px",
         }}
         onClick={handleHit}
+        
       >
         HIT!
       </button>
       <button
         type="button"
-        className={`fixed z-[60] md:hidden bottom-16 left-1/2 -translate-x-1/2 ${hitButtonClass}`}
+        className={`fixed z-[60] xl:hidden bottom-16 left-1/2 -translate-x-1/2 ${hitButtonClass}`}
         onClick={handleHit}
+        style={{borderColor: "red", borderWidth: "3px"}}
       >
         HIT!
       </button>
