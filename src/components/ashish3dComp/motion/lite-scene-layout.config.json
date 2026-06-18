@@ -248,9 +248,9 @@
         ],
         "scale": 7,
         "rotation": [
-          0,
-          -0.9,
-          0
+          0.1,
+          2.8,
+          0.3
         ],
         "float": {
           "speed": 5,
@@ -292,9 +292,9 @@
         ],
         "scale": 0.4,
         "rotation": [
-          0, 
-          -1,
-          0
+          0.1,
+          0.3,
+          -0.8
         ],
         "float": {
           "speed": 3,
@@ -354,11 +354,11 @@
     "tablet": {
       "webdev": {
         "position": [
-          50,
-          440,
+          180,
+          410,
           0
         ],
-        "scale": 0.5,
+        "scale": 3,
         "rotation": [
           0.4,
           0.9,
@@ -376,11 +376,11 @@
       },
       "ads": {
         "position": [
-          -100,
-          260,
+          310,
+          540,
           0
         ],
-        "scale": 0.23,
+        "scale": 0.35,
         "rotation": [
           0,
           -0.5,
@@ -402,11 +402,11 @@
           120,
           0
         ],
-        "scale": 1.6,
+        "scale": 6.5,
         "rotation": [
-          0,
-          -0.5,
-          0
+          0.1,
+          2.8,
+          0.3
         ],
         "float": {
           "speed": 5,
@@ -420,11 +420,11 @@
       },
       "smo": {
         "position": [
-          40,
-          -50,
+          300,
+          300,
           0
         ],
-        "scale": 0.4,
+        "scale": 0.6,
         "float": {
           "speed": 4,
           "rotationIntensity": 0.5,
@@ -437,15 +437,15 @@
       },
       "seo": {
         "position": [
-          100,
-          60,
+          -20,
+          450,
           0
         ],
-        "scale": 2,
+        "scale": 0.4,
         "rotation": [
-          0,
-          1.5,
-          0
+          0.1,
+          0.3,
+          -0.8
         ],
         "float": {
           "speed": 6,
@@ -459,11 +459,11 @@
       },
       "video": {
         "position": [
-          35,
-          250,
+          20,
+          50,
           0
         ],
-        "scale": 1.3,
+        "scale": 1.8,
         "float": {
           "speed": 5,
           "rotationIntensity": 1,
@@ -477,10 +477,10 @@
       "content": {
         "position": [
           160,
-          20,
+          170,
           0
         ],
-        "scale": 1,
+        "scale": 3,
         "float": {
           "speed": 5,
           "rotationIntensity": 1,
@@ -538,9 +538,9 @@
       "webdev": 450
     },
     "tablet": {
-      "video": 450,
-      "smo": 300,
-      "graphic": 450,
+      "video": 650,
+      "smo": 400,
+      "graphic": 580,
       "content": 550,
       "ads": 200,
       "webdev": 250
