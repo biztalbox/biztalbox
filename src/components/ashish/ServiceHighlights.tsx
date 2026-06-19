@@ -187,8 +187,12 @@ const ServiceHighlights = ({
         .service-pill.active {
           background: ${color};
           border-color: ${color};
-          color: #000;
+          color: #fff;
           font-weight: 600;
+        }
+
+        .service-pill.active .service-pill-name {
+          color: #fff;
         }
 
         .service-pill-dots {
