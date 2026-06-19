@@ -476,7 +476,7 @@
       "motion": {
         "approach": {
           "position": {
-            "y": "-=100",
+            "y": "-=250",
             "x": "-=150"
           },
           "rotation": {
@@ -484,7 +484,7 @@
             "z": "+=3.2",
             "y": "+=1.5"
           },
-          "scale": 0.32,
+          "scale": 0.2,
           "durations": {
             "position": 1,
             "scale": 1,
