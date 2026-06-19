@@ -1,5 +1,6 @@
 "use client";
 
+import Header from "@/app/_lite/_ashish/Header";
 import Ashish3dCanvas from "./Ashish3dCanvas";
 import DartCanvas from "./DartCanvas";
 import LiteHeroSections from "./LiteHeroSections";
@@ -24,6 +25,7 @@ export default function LiteHero() {
   }
   return (
     <div className="relative">
+      <Header />
       {showDartCanvas && <DartCanvas onEnter={handleEnter} />}
       {showAshish3dCanvas && <Ashish3dCanvas />}
       <LiteHeroSections />

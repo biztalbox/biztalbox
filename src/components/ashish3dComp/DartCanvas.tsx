@@ -80,7 +80,7 @@ export default function DartCanvas({ onEnter }: { onEnter: () => void }) {
   };
 
   const hitButtonClass =
-    "pointer-events-auto border bg-transparent px-4 py-4 rounded-full text-red-600";
+    "pointer-events-auto border z-[2000] border-2 font-bold !border-red-600 bg-transparent px-3 py-3 rounded-full text-red-600";
 
   return (
     <section className="fixed z-50 inset-0 overflow-hidden h-screen w-screen bg-white">
@@ -103,13 +103,9 @@ export default function DartCanvas({ onEnter }: { onEnter: () => void }) {
       </Canvas>
       <button
         type="button"
-        className={`fixed z-[60] hidden md:block ${hitButtonClass}`}
+        className={`fixed hidden md:block ${hitButtonClass}`}
         style={{
-          left: cursor.x,
-          top: cursor.y,
-          transform: "translate(-50%, -50%)",
-          borderColor: "red",
-          borderWidth: "3px",
+          transform: `translate3d(${cursor.x}px, ${cursor.y}px, 0) translate(-50%, -50%)`
         }}
         onClick={handleHit}
         
@@ -118,9 +114,9 @@ export default function DartCanvas({ onEnter }: { onEnter: () => void }) {
       </button>
       <button
         type="button"
-        className={`fixed z-[60] xl:hidden bottom-16 left-1/2 -translate-x-1/2 ${hitButtonClass}`}
+        className={`fixed xl:hidden bottom-16 left-1/2 -translate-x-1/2 ${hitButtonClass}`}
         onClick={handleHit}
-        style={{borderColor: "red", borderWidth: "3px"}}
+        // style={{borderColor: "red", borderWidth: "3px"}}
       >
         HIT!
       </button>
