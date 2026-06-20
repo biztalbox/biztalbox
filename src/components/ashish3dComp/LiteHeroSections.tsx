@@ -13,596 +13,596 @@ import {
 export default function LiteHeroSections() {
   return (
     <>
-      <section id="section0" className="min-h-[100svh] overflow-hidden">
-        {/* Hero Content  */}
-        <div className="relative z-20 pt-48 md:pt-80 lg:pt-40 xl:pt-36 2xl:pt-48 3xl:pt-72" >
-          <div className="container">
-            {/* Center — mobile: natural height only; sm+: fills middle row for vertical centering */}
-            <div className="flex items-start justify-center pt-2 max-sm:self-start sm:-translate-y-4 sm:items-center sm:pt-0">
-              <div className="w-full max-w-screen text-center flex flex-col gap-0 pt-2">
-                <p className="whitespace-nowrap uppercase text-center -mb-2"
-                >
-                  Creative Souls, Strategic Minds
-                </p>
+        <section id="section0" className="min-h-[100svh] overflow-hidden">
+          {/* Hero Content  */}
+          <div className="relative z-20 pt-48 md:pt-80 lg:pt-40 xl:pt-36 2xl:pt-48 3xl:pt-72" >
+            <div className="container">
+              {/* Center — mobile: natural height only; sm+: fills middle row for vertical centering */}
+              <div className="flex items-start justify-center pt-2 max-sm:self-start sm:-translate-y-4 sm:items-center sm:pt-0">
+                <div className="w-full max-w-screen text-center flex flex-col gap-0 pt-2">
+                  <p className="whitespace-nowrap uppercase text-center -mb-2"
+                  >
+                    Creative Souls, Strategic Minds
+                  </p>
 
-                <h1 className="font-century-gothic">biztalbox</h1>
-                {/* <span className="h-[1px] w-40 mx-auto bg-black"></span> */}
+                  <h1 className="font-century-gothic">biztalbox</h1>
+                  {/* <span className="h-[1px] w-40 mx-auto bg-black"></span> */}
 
-                <h3 className="text-[16px] md:!text-[22px]">Breakthrough Marketing Solutions,<br /> Igniting Brand Potential</h3>
-                <p className="uppercase">
-                  Sustainable Growth Guided by Expertise, Rooted in Partnership
-                </p>
+                  <h3 className="text-[16px] md:!text-[22px]">Breakthrough Marketing Solutions,<br /> Igniting Brand Potential</h3>
+                  <p className="uppercase">
+                    Sustainable Growth Guided by Expertise, Rooted in Partnership
+                  </p>
 
 
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </section>
+
+
+        {/* about section */}
+        <section id="section1" className="" >
+          <div className="container py-10">
+            {/* Top: centered nav + right pill */}
+            <div className="relative z-20 flex flex-col gap-6 lg:flex-row items-center lg:justify-between">
+              <div className="flex flex-wrap items-center mx-auto justify-center gap-x-5 gap-y-2 text-center text-xs uppercase">
+                <span className="whitespace-nowrap">Search Visibility</span>
+                <span className="whitespace-nowrap">Brand Strategy</span>
+                <span className="whitespace-nowrap">Visual Design</span>
+                <span className="whitespace-nowrap">Business Growth</span>
               </div>
             </div>
 
-
-          </div>
-        </div>
-      </section>
-
-
-      {/* about section */}
-      <section id="section1" className="" >
-        <div className="container py-10">
-          {/* Top: centered nav + right pill */}
-          <div className="relative z-20 flex flex-col gap-6 lg:flex-row items-center lg:justify-between">
-            <div className="flex flex-wrap items-center mx-auto justify-center gap-x-5 gap-y-2 text-center text-xs uppercase">
-              <span className="whitespace-nowrap">Search Visibility</span>
-              <span className="whitespace-nowrap">Brand Strategy</span>
-              <span className="whitespace-nowrap">Visual Design</span>
-              <span className="whitespace-nowrap">Business Growth</span>
+            {/* Main headline */}
+            <div className="mx-auto mt-14 max-w-[1100px] sm:mt-20 lg:mt-24">
+              <h2 className="text-center"
+              >
+                We don’t just build a
+                brand’s reputation
+                — we set brands ablaze.
+              </h2>
             </div>
-          </div>
 
-          {/* Main headline */}
-          <div className="mx-auto mt-14 max-w-[1100px] sm:mt-20 lg:mt-24">
-            <h2 className="text-center"
-            >
-              We don’t just build a
-              brand’s reputation
-              — we set brands ablaze.
-            </h2>
-          </div>
-
-          {/* Bottom two columns + CTA */}
-          <div className="mx-auto mt-16 grid  gap-10 sm:mt-20 lg:mt-28 lg:grid-cols-2 lg:gap-14">
-            <p>
-              Biztal Box is a marketing agency that enhances brand&apos;s online presence through a range of services including SEO optimization, web development, graphic design, and more. Our dynamic agency crafts strategies that stick while bringing every client&apos;s unique perspective to life.            </p>
-            <div className="flex flex-col lg:items-start">
+            {/* Bottom two columns + CTA */}
+            <div className="mx-auto mt-16 grid  gap-10 sm:mt-20 lg:mt-28 lg:grid-cols-2 lg:gap-14">
               <p>
-                We understand a brand’s goals and ideas to the finest detail by immersing ourselves in its unique vision. By brainstorming creative solutions, we improve visibility and ensure that every interaction with your audience leaves a memorable mark.              </p>
+                Biztal Box is a marketing agency that enhances brand&apos;s online presence through a range of services including SEO optimization, web development, graphic design, and more. Our dynamic agency crafts strategies that stick while bringing every client&apos;s unique perspective to life.            </p>
+              <div className="flex flex-col lg:items-start">
+                <p>
+                  We understand a brand’s goals and ideas to the finest detail by immersing ourselves in its unique vision. By brainstorming creative solutions, we improve visibility and ensure that every interaction with your audience leaves a memorable mark.              </p>
 
+              </div>
             </div>
-          </div>
-          <Link
-            href="/about"
-            className="relative rounded-full bg-neutral-200 group hover:bg-black hover:text-white z-20 mt-6 w-fit block mx-auto text-center items-center gap-2 px-3 py-2 font-medium border"
-            style={{ zIndex: 20 }}
-          >
-            About Us <svg className="group-hover:stroke-white stroke-black"
-              xmlns="http://www.w3.org/2000/svg"
-              width="18"
-              height="18"
-              fill="currentColor"
-              viewBox="0 -960 960 960"
+            <Link
+              href="/about"
+              className="relative rounded-full bg-neutral-200 group hover:bg-black hover:text-white z-20 mt-6 w-fit block mx-auto text-center items-center gap-2 px-3 py-2 font-medium border"
+              style={{ zIndex: 20 }}
             >
-              <path d="m242-246-42-42 412-412H234v-60h480v480h-60v-378z"></path>
-            </svg>
-          </Link>
-          {/* Receipt — monospace, thin border, taller middle line */}
+              About Us <svg className="group-hover:stroke-white stroke-black"
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                fill="currentColor"
+                viewBox="0 -960 960 960"
+              >
+                <path d="m242-246-42-42 412-412H234v-60h480v480h-60v-378z"></path>
+              </svg>
+            </Link>
+            {/* Receipt — monospace, thin border, taller middle line */}
 
 
-        </div>
-
-
-      </section>
-
-      {/* SEO Service Section */}
-      <section id="section2" className="relative">
-        <div className="container flex flex-col pt-16">
-          {/* Left — PRODUCTS (top, vertical) */}
-          <div
-            className="absolute left-3 top-[18%] sm:left-5 lg:left-8 hidden md:block"
-            style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
-          >
-            <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
-              Search Engine Optimization
-            </span>
           </div>
 
-          {/* #01 card */}
-          <div className="flex justify-center self-center lg:self-start">
-            <div className="rounded-md border border-black p-4 text-center">
-              <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
-                #01
+
+        </section>
+
+        {/* SEO Service Section */}
+        <section id="section2" className="relative">
+          <div className="container flex flex-col pt-16">
+            {/* Left — PRODUCTS (top, vertical) */}
+            <div
+              className="absolute left-3 top-[18%] sm:left-5 lg:left-8 hidden md:block"
+              style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
+            >
+              <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
+                Search Engine Optimization
               </span>
             </div>
-          </div>
 
-
-          <div className="pt-40 max-w-screen mx-auto">
-            {/* Center-left pill badge */}
-
-            <h2 className="text-center whitespace-nowrap">Search Engine Optimization</h2>
-
-            <h3
-              className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative z-20"
-            >
-              Organic Growth through search
-            </h3>
-            {/* Two-column body */}
-            <div className="grid md:grid-cols-2 md:gap-10 mt-6">
-              <p>
-                At Biztalbox, we approach SEO as a long-term system that begins with a thorough audit. We understand how your website performs on search engines, where it falls short, and how it compares within its competitive space. This allows every subsequent step to remain grounded and precise.
-
-
-                We prioritize search intent, focusing on behavioural patterns beyond just keywords. Then we refine the technical foundation of your website, bringing greater coherence to its structure, speed, and internal movement.
-              </p>
-              <p>
-                Content at Biztalbox is crafted with patience. It connects with your audience, builds trust and builds authority over time. Our Off-page SEO services add another layer by strengthening your overall brand reputation.
-
-                Our SEO experts revisit and refine the work regularly as search behaviour continues to evolve.  We always keep the client in the loop with clear reporting so that they have a clear view of progress and business growth.
-
-                Biztalbox builds an online presence that leads to tangible business growth.
-
-              </p>
-            </div>
-
-
-            <LiteServiceViewMoreLink service="seo" />
-          </div>
-
-
-
-
-
-          {/* Center ticket */}
-
-          <div
-            className="relative z-50 mt-40 w-80 mx-auto overflow-visible rounded-[14px] border border-black px-3 pb-4 pt-3"
-            id="lite-scanner-seo"
-            style={{ zIndex: 20, background: "transparent" }}
-          >
-
-            {/* Two panels in one row: GSAP `xPercent` on the track scrubs forward/back (no DOM text swaps). */}
-            <div className="relative overflow-hidden text-left">
-              <div
-                className="numberTrack flex w-[200%] will-change-transform"
-              >
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
+            {/* #01 card */}
+            <div className="flex justify-center self-center lg:self-start">
+              <div className="rounded-md border border-black p-4 text-center">
+                <span className="basis-1/2 shrink-0 grow-0 text-left text-[34px] font-semibold leading-none tracking-tight">
                   #01
                 </span>
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
-                  #02
-                </span>
               </div>
             </div>
 
-            <LiteScannerBoxLabel service="seo" />
 
-            <div className="scannerBoxContent">
-              {/* Spacer for 3D “slot” / layout height */}
-              <div className="mt-14 h-44" />
+            <div className="pt-40 max-w-screen mx-auto">
+              {/* Center-left pill badge */}
 
-              {/* Barcode + purchased */}
-              <div className="mt-2 flex items-center justify-between gap-4">
-                <div className="relative h-[22px] w-[140px]">
-                  <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                  <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
-                </div>
-                <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
-                  PURCHASED
-                </div>
-              </div>
+              <h2 className="text-center whitespace-nowrap">Search Engine Optimization</h2>
 
-              <LiteTicketSpecsFooter service="seo" />
-            </div>
-          </div>
-        </div>
-
-
-      </section>
-
-      {/* SMO Service Section */}
-      <section id="section3" className="relative">
-        <div className="container flex flex-col pt-16">
-          <div
-            className="absolute left-3 top-[18%] sm:left-5 lg:left-8 hidden md:block"
-            style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
-          >
-            <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
-              Social Media Optimization
-            </span>
-          </div>
-
-          <div className="pt-40 max-w-screen mx-auto">
-            <h2 className="text-center whitespace-nowrap">Social Media Optimization</h2>
-            <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
-              Building everyday brand presence
-            </h3>
-            <div className="grid md:grid-cols-2 md:gap-10 mt-6">
-              <p>
-                The social media team at Biztalbox, we begin by understanding your brand, your audience, and how your competitors are positioning themselves. This helps us set a clear direction before we put anything out in the world. Then we create content calendars that bring structure and consistency to your social presence.
-
-                We don&apos;t just chase trends or push for viral moments. The focus stays on building a presence that feels true to your brand. We focus on making content that fits your brand and makes sense to your audience.
-              </p>
-              <p>We also pay attention to how people respond. What they engage with and ignore. And what brings them back again? This helps us understand what your brand should keep doing and what it should leave behind.
-
-                Over time, this builds familiarity. Your brand starts to feel recognisable, not because of one post, but because of consistent presence.
-
-                Biztalbox aims to make your brand feel active, relevant, and easy to connect with.
-
-              </p>
-            </div>
-            <LiteServiceViewMoreLink service="smo" />
-          </div>
-
-          <div
-            className="relative z-50 mt-40 w-80 mx-auto overflow-visible rounded-[14px] border border-black px-3 pb-4 pt-3"
-            id="lite-scanner-smo"
-            style={{ zIndex: 20, background: "transparent" }}
-          >
-            <div className="relative overflow-hidden text-left">
-              <div className="numberTrack flex w-[200%] will-change-transform">
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
-                  #02
-                </span>
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
-                  #03
-                </span>
-              </div>
-            </div>
-            <LiteScannerBoxLabel service="smo" />
-            <div className="scannerBoxContent">
-              <div className="mt-14 h-44" />
-              <div className="mt-2 flex items-center justify-between gap-4">
-                <div className="relative h-[22px] w-[140px]">
-                  <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                  <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
-                </div>
-                <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
-                  PURCHASED
-                </div>
-              </div>
-              <LiteTicketSpecsFooter service="smo" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Website Development */}
-      <section id="section4" className="relative">
-        <div className="container flex flex-col pt-16">
-          <div
-            className="absolute left-3 top-[18%] sm:left-5 lg:left-8 hidden md:block"
-            style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
-          >
-            <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
-              Website Development
-            </span>
-          </div>
-
-          <div className="pt-40 max-w-screen mx-auto">
-            <h2 className="text-center">Website Development</h2>
-            <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
-              Performance-focused websites
-            </h3>
-            <div className="grid md:grid-cols-2 md:gap-10 mt-6">
-              <p>
-                At Biztalbox, we believe a website should make things easier for your users, not more complicated. Our web development approach reflects that thinking.
-
-                We begin with understanding what the business actually needs the website to carry. What should be seen first, what should be understood next, and what should lead a user toward action? This thinking sets the foundation before any layout is discussed.
-
-
-              </p>
-              <p>
-                We approached through structure first, not visuals. Our web development experts focus on making websites that offer a guided experience, rather than isolated pages. Information is arranged to reduce effort for the user, so nothing feels misplaced or difficult to reach. The goal is simple navigation that still feels intentional.
-
-
-                Our web development firm takes pride in the quality of our execution. Clean development practices, consistent responsiveness, and reliable performance are maintained across every project.
-
-                Lastly, Biztalbox always ensure the website remains manageable after it goes live.
-
-              </p>
-            </div>
-            <LiteServiceViewMoreLink service="webdev" />
-          </div>
-
-          <div
-            className="relative z-50 mt-40 w-80 mx-auto overflow-visible rounded-[14px] border border-black px-3 pb-4 pt-3"
-            id="lite-scanner-webdev"
-            style={{ zIndex: 20, background: "transparent" }}
-          >
-            <div className="relative overflow-hidden text-left">
-              <div className="numberTrack flex w-[200%] will-change-transform">
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
-                  #03
-                </span>
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
-                  #04
-                </span>
-              </div>
-            </div>
-            <LiteScannerBoxLabel service="webdev" />
-            <div className="scannerBoxContent">
-              <div className="mt-14 h-44" />
-              <div className="mt-2 flex items-center justify-between gap-4">
-                <div className="relative h-[22px] w-[140px]">
-                  <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                  <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
-                </div>
-                <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
-                  PURCHASED
-                </div>
-              </div>
-              <LiteTicketSpecsFooter service="webdev" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Graphic Designing */}
-      <section id="section5" className="relative">
-        <div className="container flex flex-col pt-16">
-          <div
-            className="absolute left-3 top-[18%] sm:left-5 lg:left-8 hidden md:block"
-            style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
-          >
-            <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
-              Graphic Designing
-            </span>
-          </div>
-
-          <div className="pt-40 max-w-screen mx-auto">
-            <h2 className="text-center">Graphic Designing</h2>
-            <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
-              Clear and consistent brand identity
-            </h3>
-            <div className="grid md:grid-cols-2 md:gap-10 mt-6">
-              <p>
-                At Biztalbox, we understand that visual design plays a defining role in how a brand is interpreted and remembered. We treat graphic design as a connected system rather than standalone visuals. Every piece we create works with the next one. This makes the brand feel consistent wherever it shows up.
-
-
-                We focus on how information is perceived. Typography, spacing, colour, and layout are crafted so that the design feels easy to read and naturally organised.
-
-              </p>
-              <p>
-                We keep attention where it matters. Important information is made clear at first glance. Supporting elements stay in the background without distracting from the message.
-                We stay consistent across every asset we create. So your brand does not feel different on each platform. It feels like one identity, carried forward with discipline.
-
-                Each design decision at Biztalbox is made with one goal in mind: To make your brand easier to recognise, easier to understand, and harder to forget.
-
-
-              </p>
-            </div>
-            <LiteServiceViewMoreLink service="graphic" />
-          </div>
-
-          <div
-            className="relative z-50 mt-40 w-80 mx-auto overflow-visible rounded-[14px] border border-black px-3 pb-4 pt-3"
-            id="lite-scanner-graphic"
-            style={{ zIndex: 20, background: "transparent" }}
-          >
-            <div className="relative overflow-hidden text-left">
-              <div className="numberTrack flex w-[200%] will-change-transform">
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
-                  #04
-                </span>
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
-                  #05
-                </span>
-              </div>
-            </div>
-            <LiteScannerBoxLabel service="graphic" />
-            <div className="scannerBoxContent">
-              <div className="mt-14 h-44" />
-              <div className="mt-2 flex items-center justify-between gap-4">
-                <div className="relative h-[22px] w-[140px]">
-                  <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                  <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
-                </div>
-                <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
-                  PURCHASED
-                </div>
-              </div>
-              <LiteTicketSpecsFooter service="graphic" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Video Editing / Motion Graphics */}
-      <section id="section6" className="relative">
-        <div className="container flex flex-col pt-16">
-          <div
-            className="absolute left-3 top-[18%] sm:left-5 lg:left-8 hidden md:block"
-            style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
-          >
-            <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
-              Motion Graphics
-            </span>
-          </div>
-
-          <div className="pt-40 max-w-screen mx-auto">
-            <h2 className="text-center">Motion Graphics</h2>
-            <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
-              Storytelling Through Motion
-            </h3>
-            <div className="grid md:grid-cols-2 md:gap-10 mt-6">
-              <p>
-                At Biztalbox, we turn to motion graphics when a message is too layered to be understood in a single static frame.
-
-                Motion graphic designers at Biztalbox approach motion as a way to sharpen brand communication. We start by looking at how your brand currently shows up visually and where its communication weakens.
-
-
-                This helps us decide the structure, sequence, and emphasis each part needs.
-              </p>
-              <p>
-                We design motion around how attention actually moves. What draws focus, what holds it, and what needs to be reinforced before moving forward. This is where our process stays deliberate rather than decorative.
-
-                Our motion graphics agency brings consistency to every layer, from typography to transitions to rhythm. Everything works together, so the viewer is not interpreting multiple signals at once.
-
-                Biztalbox keeps motion purposeful. It exists only to make the idea easier to follow and quicker to absorb. Every piece is designed to support how your brand is perceived.
-
-
-              </p>
-            </div>
-            <LiteServiceViewMoreLink service="video" />
-          </div>
-
-          <div
-            className="relative z-50 mt-40 w-80 mx-auto overflow-visible rounded-[14px] border border-black px-3 pb-4 pt-3"
-            id="lite-scanner-video"
-            style={{ zIndex: 20, background: "transparent" }}
-          >
-            <div className="relative overflow-hidden text-left">
-              <div className="numberTrack flex w-[200%] will-change-transform">
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
-                  #05
-                </span>
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
-                  #06
-                </span>
-              </div>
-            </div>
-            <LiteScannerBoxLabel service="video" />
-            <div className="scannerBoxContent">
-              <div className="mt-14 h-44" />
-              <div className="mt-2 flex items-center justify-between gap-4">
-                <div className="relative h-[22px] w-[140px]">
-                  <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                  <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
-                </div>
-                <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
-                  PURCHASED
-                </div>
-              </div>
-              <LiteTicketSpecsFooter service="video" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Content Writing */}
-      <section id="section7" className="relative">
-        <div className="container flex flex-col pt-16">
-          <div
-            className="absolute left-3 top-[18%] sm:left-5 lg:left-8 hidden md:block"
-            style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
-          >
-            <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
-              Copywriting
-            </span>
-          </div>
-
-          <div className="pt-40 max-w-screen mx-auto">
-            <h2 className="text-center">Content Writing</h2>
-            <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
-              Words that drive action
-            </h3>
-            <div className="grid md:grid-cols-2 md:gap-10 mt-6">
-              <p>
-                At Biztalbox, we see copywriting as the layer that decides how your brand is experienced.
-
-
-                Biztalbox&apos;s copywriting services have helped brands improve how they express value and position themselves. This has led to clearer responses, stronger engagement, and more confident decision-making.
-
-                Our copywriting experts begin by understanding how your audience evaluates a brand like yours. What they compare. What they doubt. What they need to take you seriously.
-              </p>
-              <p>
-                From there, we focus on the decision-making process. Copy is written to reduce hesitation, close interpretation gaps, and bring clarity to what would otherwise feel uncertain or incomplete.
-
-                The same offering can feel ordinary or credible depending on how it is expressed. And Biztalbox’s content plays a direct role in that shift.
-
-
-
-                We maintain consistency over tone and voice so the brand feels aligned in every context it appears in. This consistency is what builds recognition and trust over time.
-
-
-
-              </p>
-            </div>
-            <LiteServiceViewMoreLink service="content" />
-          </div>
-
-          <div
-            className="relative z-50 mt-40 w-80 mx-auto overflow-visible rounded-[14px] border border-black px-3 pb-4 pt-3"
-            id="lite-scanner-content"
-            style={{ zIndex: 20, background: "transparent" }}
-          >
-            <div className="relative overflow-hidden text-left">
-              <div className="numberTrack flex w-[200%] will-change-transform">
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
-                  #06
-                </span>
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
-                  #07
-                </span>
-              </div>
-            </div>
-            <LiteScannerBoxLabel service="content" />
-            <div className="scannerBoxContent">
-              <div className="mt-14 h-44" />
-              <div className="mt-2 flex items-center justify-between gap-4">
-                <div className="relative h-[22px] w-[140px]">
-                  <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                  <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
-                </div>
-                <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
-                  PURCHASED
-                </div>
-              </div>
-              <LiteTicketSpecsFooter service="content" />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Performance Marketing */}
-      <section id="section8" className="relative">
-        <div className="container flex flex-col pt-16">
-          <div
-            className="absolute left-3 top-[18%] sm:left-5 lg:left-8 hidden md:block"
-            style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
-          >
-            <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
-              Performance Marketing
-            </span>
-          </div>
-
-          <div className="pt-40 max-w-screen mx-auto">
-            <h2 className="text-center">Performance Marketing</h2>
-            <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
-              Measurable marketing outcomes
-            </h3>
-            <div className="grid md:grid-cols-2 md:gap-10 mt-6">
-              <div className="flex flex-col">
-
+              <h3
+                className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative z-20"
+              >
+                Organic Growth through search
+              </h3>
+              {/* Two-column body */}
+              <div className="grid md:grid-cols-2 md:gap-10 mt-6">
                 <p>
-                  Biztalbox views Performance marketing as a revenue system first. Every part of it supports a clear commercial outcome.
+                  At Biztalbox, we approach SEO as a long-term system that begins with a thorough audit. We understand how your website performs on search engines, where it falls short, and how it compares within its competitive space. This allows every subsequent step to remain grounded and precise.
 
-                  We begin by looking at how growth is currently being generated and where it is breaking down. Then we figure out the real constraints, not just the visible symptoms.
 
-                  We evaluate the entire journey together as part of a full funnel performance marketing strategy.
+                  We prioritize search intent, focusing on behavioural patterns beyond just keywords. Then we refine the technical foundation of your website, bringing greater coherence to its structure, speed, and internal movement.
                 </p>
-                {/* <div className="md:block w-fit md:ml-auto hidden">
+                <p>
+                  Content at Biztalbox is crafted with patience. It connects with your audience, builds trust and builds authority over time. Our Off-page SEO services add another layer by strengthening your overall brand reputation.
+
+                  Our SEO experts revisit and refine the work regularly as search behaviour continues to evolve.  We always keep the client in the loop with clear reporting so that they have a clear view of progress and business growth.
+
+                  Biztalbox builds an online presence that leads to tangible business growth.
+
+                </p>
+              </div>
+
+
+              <LiteServiceViewMoreLink service="seo" />
+            </div>
+
+
+
+
+
+            {/* Center ticket */}
+
+            <div
+              className="relative z-50 mt-40 w-80 mx-auto overflow-visible rounded-[14px] border border-black px-3 pb-4 pt-3"
+              id="lite-scanner-seo"
+              style={{ zIndex: 20, background: "transparent" }}
+            >
+
+              {/* Two panels in one row: GSAP `xPercent` on the track scrubs forward/back (no DOM text swaps). */}
+              <div className="relative overflow-hidden text-left">
+                <div
+                  className="numberTrack flex w-[200%] will-change-transform"
+                >
+                  <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
+                    #01
+                  </span>
+                  <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
+                    #02
+                  </span>
+                </div>
+              </div>
+
+              <LiteScannerBoxLabel service="seo" />
+
+              <div className="scannerBoxContent">
+                {/* Spacer for 3D “slot” / layout height */}
+                <div className="mt-14 h-44" />
+
+                {/* Barcode + purchased */}
+                <div className="mt-2 flex items-center justify-between gap-4">
+                  <div className="relative h-[22px] w-[140px]">
+                    <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                    <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+                  </div>
+                  <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+                    PURCHASED
+                  </div>
+                </div>
+
+                <LiteTicketSpecsFooter service="seo" />
+              </div>
+            </div>
+          </div>
+
+
+        </section>
+
+        {/* SMO Service Section */}
+        <section id="section3" className="relative">
+          <div className="container flex flex-col pt-16">
+            <div
+              className="absolute left-3 top-[18%] sm:left-5 lg:left-8 hidden md:block"
+              style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
+            >
+              <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
+                Social Media Optimization
+              </span>
+            </div>
+
+            <div className="pt-40 max-w-screen mx-auto">
+              <h2 className="text-center whitespace-nowrap">Social Media Optimization</h2>
+              <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
+                Building everyday brand presence
+              </h3>
+              <div className="grid md:grid-cols-2 md:gap-10 mt-6">
+                <p>
+                  The social media team at Biztalbox, we begin by understanding your brand, your audience, and how your competitors are positioning themselves. This helps us set a clear direction before we put anything out in the world. Then we create content calendars that bring structure and consistency to your social presence.
+
+                  We don&apos;t just chase trends or push for viral moments. The focus stays on building a presence that feels true to your brand. We focus on making content that fits your brand and makes sense to your audience.
+                </p>
+                <p>We also pay attention to how people respond. What they engage with and ignore. And what brings them back again? This helps us understand what your brand should keep doing and what it should leave behind.
+
+                  Over time, this builds familiarity. Your brand starts to feel recognisable, not because of one post, but because of consistent presence.
+
+                  Biztalbox aims to make your brand feel active, relevant, and easy to connect with.
+
+                </p>
+              </div>
+              <LiteServiceViewMoreLink service="smo" />
+            </div>
+
+            <div
+              className="relative z-50 mt-40 w-80 mx-auto overflow-visible rounded-[14px] border border-black px-3 pb-4 pt-3"
+              id="lite-scanner-smo"
+              style={{ zIndex: 20, background: "transparent" }}
+            >
+              <div className="relative overflow-hidden text-left">
+                <div className="numberTrack flex w-[200%] will-change-transform">
+                  <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
+                    #02
+                  </span>
+                  <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
+                    #03
+                  </span>
+                </div>
+              </div>
+              <LiteScannerBoxLabel service="smo" />
+              <div className="scannerBoxContent">
+                <div className="mt-14 h-44" />
+                <div className="mt-2 flex items-center justify-between gap-4">
+                  <div className="relative h-[22px] w-[140px]">
+                    <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                    <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+                  </div>
+                  <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+                    PURCHASED
+                  </div>
+                </div>
+                <LiteTicketSpecsFooter service="smo" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Website Development */}
+        <section id="section4" className="relative">
+          <div className="container flex flex-col pt-16">
+            <div
+              className="absolute left-3 top-[18%] sm:left-5 lg:left-8 hidden md:block"
+              style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
+            >
+              <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
+                Website Development
+              </span>
+            </div>
+
+            <div className="pt-40 max-w-screen mx-auto">
+              <h2 className="text-center">Website Development</h2>
+              <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
+                Performance-focused websites
+              </h3>
+              <div className="grid md:grid-cols-2 md:gap-10 mt-6">
+                <p>
+                  At Biztalbox, we believe a website should make things easier for your users, not more complicated. Our web development approach reflects that thinking.
+
+                  We begin with understanding what the business actually needs the website to carry. What should be seen first, what should be understood next, and what should lead a user toward action? This thinking sets the foundation before any layout is discussed.
+
+
+                </p>
+                <p>
+                  We approached through structure first, not visuals. Our web development experts focus on making websites that offer a guided experience, rather than isolated pages. Information is arranged to reduce effort for the user, so nothing feels misplaced or difficult to reach. The goal is simple navigation that still feels intentional.
+
+
+                  Our web development firm takes pride in the quality of our execution. Clean development practices, consistent responsiveness, and reliable performance are maintained across every project.
+
+                  Lastly, Biztalbox always ensure the website remains manageable after it goes live.
+
+                </p>
+              </div>
+              <LiteServiceViewMoreLink service="webdev" />
+            </div>
+
+            <div
+              className="relative z-50 mt-40 w-80 mx-auto overflow-visible rounded-[14px] border border-black px-3 pb-4 pt-3"
+              id="lite-scanner-webdev"
+              style={{ zIndex: 20, background: "transparent" }}
+            >
+              <div className="relative overflow-hidden text-left">
+                <div className="numberTrack flex w-[200%] will-change-transform">
+                  <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
+                    #03
+                  </span>
+                  <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
+                    #04
+                  </span>
+                </div>
+              </div>
+              <LiteScannerBoxLabel service="webdev" />
+              <div className="scannerBoxContent">
+                <div className="mt-14 h-44" />
+                <div className="mt-2 flex items-center justify-between gap-4">
+                  <div className="relative h-[22px] w-[140px]">
+                    <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                    <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+                  </div>
+                  <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+                    PURCHASED
+                  </div>
+                </div>
+                <LiteTicketSpecsFooter service="webdev" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Graphic Designing */}
+        <section id="section5" className="relative">
+          <div className="container flex flex-col pt-16">
+            <div
+              className="absolute left-3 top-[18%] sm:left-5 lg:left-8 hidden md:block"
+              style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
+            >
+              <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
+                Graphic Designing
+              </span>
+            </div>
+
+            <div className="pt-40 max-w-screen mx-auto">
+              <h2 className="text-center">Graphic Designing</h2>
+              <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
+                Clear and consistent brand identity
+              </h3>
+              <div className="grid md:grid-cols-2 md:gap-10 mt-6">
+                <p>
+                  At Biztalbox, we understand that visual design plays a defining role in how a brand is interpreted and remembered. We treat graphic design as a connected system rather than standalone visuals. Every piece we create works with the next one. This makes the brand feel consistent wherever it shows up.
+
+
+                  We focus on how information is perceived. Typography, spacing, colour, and layout are crafted so that the design feels easy to read and naturally organised.
+
+                </p>
+                <p>
+                  We keep attention where it matters. Important information is made clear at first glance. Supporting elements stay in the background without distracting from the message.
+                  We stay consistent across every asset we create. So your brand does not feel different on each platform. It feels like one identity, carried forward with discipline.
+
+                  Each design decision at Biztalbox is made with one goal in mind: To make your brand easier to recognise, easier to understand, and harder to forget.
+
+
+                </p>
+              </div>
+              <LiteServiceViewMoreLink service="graphic" />
+            </div>
+
+            <div
+              className="relative z-50 mt-40 w-80 mx-auto overflow-visible rounded-[14px] border border-black px-3 pb-4 pt-3"
+              id="lite-scanner-graphic"
+              style={{ zIndex: 20, background: "transparent" }}
+            >
+              <div className="relative overflow-hidden text-left">
+                <div className="numberTrack flex w-[200%] will-change-transform">
+                  <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
+                    #04
+                  </span>
+                  <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
+                    #05
+                  </span>
+                </div>
+              </div>
+              <LiteScannerBoxLabel service="graphic" />
+              <div className="scannerBoxContent">
+                <div className="mt-14 h-44" />
+                <div className="mt-2 flex items-center justify-between gap-4">
+                  <div className="relative h-[22px] w-[140px]">
+                    <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                    <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+                  </div>
+                  <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+                    PURCHASED
+                  </div>
+                </div>
+                <LiteTicketSpecsFooter service="graphic" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Video Editing / Motion Graphics */}
+        <section id="section6" className="relative">
+          <div className="container flex flex-col pt-16">
+            <div
+              className="absolute left-3 top-[18%] sm:left-5 lg:left-8 hidden md:block"
+              style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
+            >
+              <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
+                Motion Graphics
+              </span>
+            </div>
+
+            <div className="pt-40 max-w-screen mx-auto">
+              <h2 className="text-center">Motion Graphics</h2>
+              <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
+                Storytelling Through Motion
+              </h3>
+              <div className="grid md:grid-cols-2 md:gap-10 mt-6">
+                <p>
+                  At Biztalbox, we turn to motion graphics when a message is too layered to be understood in a single static frame.
+
+                  Motion graphic designers at Biztalbox approach motion as a way to sharpen brand communication. We start by looking at how your brand currently shows up visually and where its communication weakens.
+
+
+                  This helps us decide the structure, sequence, and emphasis each part needs.
+                </p>
+                <p>
+                  We design motion around how attention actually moves. What draws focus, what holds it, and what needs to be reinforced before moving forward. This is where our process stays deliberate rather than decorative.
+
+                  Our motion graphics agency brings consistency to every layer, from typography to transitions to rhythm. Everything works together, so the viewer is not interpreting multiple signals at once.
+
+                  Biztalbox keeps motion purposeful. It exists only to make the idea easier to follow and quicker to absorb. Every piece is designed to support how your brand is perceived.
+
+
+                </p>
+              </div>
+              <LiteServiceViewMoreLink service="video" />
+            </div>
+
+            <div
+              className="relative z-50 mt-40 w-80 mx-auto overflow-visible rounded-[14px] border border-black px-3 pb-4 pt-3"
+              id="lite-scanner-video"
+              style={{ zIndex: 20, background: "transparent" }}
+            >
+              <div className="relative overflow-hidden text-left">
+                <div className="numberTrack flex w-[200%] will-change-transform">
+                  <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
+                    #05
+                  </span>
+                  <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
+                    #06
+                  </span>
+                </div>
+              </div>
+              <LiteScannerBoxLabel service="video" />
+              <div className="scannerBoxContent">
+                <div className="mt-14 h-44" />
+                <div className="mt-2 flex items-center justify-between gap-4">
+                  <div className="relative h-[22px] w-[140px]">
+                    <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                    <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+                  </div>
+                  <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+                    PURCHASED
+                  </div>
+                </div>
+                <LiteTicketSpecsFooter service="video" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Content Writing */}
+        <section id="section7" className="relative">
+          <div className="container flex flex-col pt-16">
+            <div
+              className="absolute left-3 top-[18%] sm:left-5 lg:left-8 hidden md:block"
+              style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
+            >
+              <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
+                Copywriting
+              </span>
+            </div>
+
+            <div className="pt-40 max-w-screen mx-auto">
+              <h2 className="text-center">Content Writing</h2>
+              <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
+                Words that drive action
+              </h3>
+              <div className="grid md:grid-cols-2 md:gap-10 mt-6">
+                <p>
+                  At Biztalbox, we see copywriting as the layer that decides how your brand is experienced.
+
+
+                  Biztalbox&apos;s copywriting services have helped brands improve how they express value and position themselves. This has led to clearer responses, stronger engagement, and more confident decision-making.
+
+                  Our copywriting experts begin by understanding how your audience evaluates a brand like yours. What they compare. What they doubt. What they need to take you seriously.
+                </p>
+                <p>
+                  From there, we focus on the decision-making process. Copy is written to reduce hesitation, close interpretation gaps, and bring clarity to what would otherwise feel uncertain or incomplete.
+
+                  The same offering can feel ordinary or credible depending on how it is expressed. And Biztalbox’s content plays a direct role in that shift.
+
+
+
+                  We maintain consistency over tone and voice so the brand feels aligned in every context it appears in. This consistency is what builds recognition and trust over time.
+
+
+
+                </p>
+              </div>
+              <LiteServiceViewMoreLink service="content" />
+            </div>
+
+            <div
+              className="relative z-50 mt-40 w-80 mx-auto overflow-visible rounded-[14px] border border-black px-3 pb-4 pt-3"
+              id="lite-scanner-content"
+              style={{ zIndex: 20, background: "transparent" }}
+            >
+              <div className="relative overflow-hidden text-left">
+                <div className="numberTrack flex w-[200%] will-change-transform">
+                  <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
+                    #06
+                  </span>
+                  <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
+                    #07
+                  </span>
+                </div>
+              </div>
+              <LiteScannerBoxLabel service="content" />
+              <div className="scannerBoxContent">
+                <div className="mt-14 h-44" />
+                <div className="mt-2 flex items-center justify-between gap-4">
+                  <div className="relative h-[22px] w-[140px]">
+                    <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                    <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+                  </div>
+                  <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+                    PURCHASED
+                  </div>
+                </div>
+                <LiteTicketSpecsFooter service="content" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Performance Marketing */}
+        <section id="section8" className="relative">
+          <div className="container flex flex-col pt-16">
+            <div
+              className="absolute left-3 top-[18%] sm:left-5 lg:left-8 hidden md:block"
+              style={{ transform: "rotate(-90deg)", transformOrigin: "left center" }}
+            >
+              <span className="block whitespace-nowrap text-[11px] font-normal uppercase tracking-[0.2em] sm:text-xs">
+                Performance Marketing
+              </span>
+            </div>
+
+            <div className="pt-40 max-w-screen mx-auto">
+              <h2 className="text-center">Performance Marketing</h2>
+              <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
+                Measurable marketing outcomes
+              </h3>
+              <div className="grid md:grid-cols-2 md:gap-10 mt-6">
+                <div className="flex flex-col">
+
+                  <p>
+                    Biztalbox views Performance marketing as a revenue system first. Every part of it supports a clear commercial outcome.
+
+                    We begin by looking at how growth is currently being generated and where it is breaking down. Then we figure out the real constraints, not just the visible symptoms.
+
+                    We evaluate the entire journey together as part of a full funnel performance marketing strategy.
+                  </p>
+                  {/* <div className="md:block w-fit md:ml-auto hidden">
 
                   <LiteServiceViewMoreLink service="google" text="Google Ads" />
                 </div> */}
-              </div>
-              <div className="flex flex-col ">
+                </div>
+                <div className="flex flex-col ">
 
-                <p>
-                  Biztalbox evaluates performance beyond surface metrics. We consider lead quality, drop-off behaviour, and consistency of results over time. These patterns show what is working and what is not.
+                  <p>
+                    Biztalbox evaluates performance beyond surface metrics. We consider lead quality, drop-off behaviour, and consistency of results over time. These patterns show what is working and what is not.
 
-                  The goal of our performance marketing services is to generate meaningful actions that contribute to business growth. This includes audience targeting, messaging, creative direction, landing experience, and tracking. If even one of these is misaligned, performance stays capped regardless of spend.
+                    The goal of our performance marketing services is to generate meaningful actions that contribute to business growth. This includes audience targeting, messaging, creative direction, landing experience, and tracking. If even one of these is misaligned, performance stays capped regardless of spend.
 
 
-                </p>
+                  </p>
 
-                {/* <div className="block w-fit mx-auto md:mx-0 md:mr-auto">
+                  {/* <div className="block w-fit mx-auto md:mx-0 md:mr-auto">
 
                   <LiteServiceViewMoreLink service="meta" text="Meta Ads" />
                   <div className="md:hidden block w-fit">
@@ -610,50 +610,49 @@ export default function LiteHeroSections() {
                     <LiteServiceViewMoreLink service="google" text="Google Ads" />
                   </div>
                 </div> */}
-              </div>
-            </div>
-            <div className="flex gap-10 justify-center">
-              
-
-              <LiteServiceViewMoreLink service="google" text="Google Ads" />
-              <LiteServiceViewMoreLink service="meta" text="Meta Ads"/>
-
-            </div>
-          </div>
-
-          <div
-            className="relative z-50 mt-40 w-80 mx-auto overflow-visible rounded-[14px] border border-black px-3 pb-4 pt-3"
-            id="lite-scanner-ads"
-            style={{ zIndex: 20, background: "transparent" }}
-          >
-            <div className="relative overflow-hidden text-left">
-              <div className="numberTrack flex w-[200%] will-change-transform">
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
-                  #07
-                </span>
-                <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
-                  #08
-                </span>
-              </div>
-            </div>
-            <LiteScannerBoxLabel service="ads" />
-            <div className="scannerBoxContent">
-              <div className="mt-14 h-44" />
-              <div className="mt-2 flex items-center justify-between gap-4">
-                <div className="relative h-[22px] w-[140px]">
-                  <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
-                  <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
-                </div>
-                <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
-                  PURCHASED
                 </div>
               </div>
-              <LiteTicketSpecsFooter service="ads" />
+              <div className="flex gap-10 justify-center">
+
+
+                <LiteServiceViewMoreLink service="google" text="Google Ads" />
+                <LiteServiceViewMoreLink service="meta" text="Meta Ads" />
+
+              </div>
+            </div>
+
+            <div
+              className="relative z-50 mt-40 w-80 mx-auto overflow-visible rounded-[14px] border border-black px-3 pb-4 pt-3"
+              id="lite-scanner-ads"
+              style={{ zIndex: 20, background: "transparent" }}
+            >
+              <div className="relative overflow-hidden text-left">
+                <div className="numberTrack flex w-[200%] will-change-transform">
+                  <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
+                    #07
+                  </span>
+                  <span className="basis-1/2 shrink-0 grow-0 text-left text-5xl font-semibold leading-none tracking-tight">
+                    #08
+                  </span>
+                </div>
+              </div>
+              <LiteScannerBoxLabel service="ads" />
+              <div className="scannerBoxContent">
+                <div className="mt-14 h-44" />
+                <div className="mt-2 flex items-center justify-between gap-4">
+                  <div className="relative h-[22px] w-[140px]">
+                    <div className="barcode absolute inset-0 h-full w-full bg-[repeating-linear-gradient(90deg,#000_0px,#000_2px,transparent_2px,transparent_4px)] opacity-80" />
+                    <div style={{ visibility: "hidden" }} className="barcoadCheck absolute inset-0 top-1/2 h-[2px] !w-full scale-110 rotate-2 -translate-y-1/2 bg-red-500" />
+                  </div>
+                  <div style={{ width: "0", color: "transparent" }} className="purchaseStatus mr-auto overflow-hidden rounded-full border border-red-500 text-red-500 px-3 py-1 text-xs font-semibold uppercase tracking-widest">
+                    PURCHASED
+                  </div>
+                </div>
+                <LiteTicketSpecsFooter service="ads" />
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-
+        </section>
       <WhyChooseUsLite />
       {/* service area end */}
 
@@ -725,26 +724,6 @@ export default function LiteHeroSections() {
         </div>
       </section>
 
-      <section id="ctaSection" className="pt-10 pb-5">
-        <div className="container flex flex-col gap-2 overflow-hidden">
-          <div className="h-80 md:h-56 lg:h-72 2xl:h-[30rem]"></div>
-          <h3 className="text-3xl md:text-4xl lg:text-6xl font-thin uppercase leading-none mx-auto text-center relative z-10">
-            Thanks for being here.
-          </h3>
-          <Link href="/contact" className="hover:!bg-black group bg-[#F2F2F2] hover:!text-white relative z-10 text-center uppercase text-3xl md:text-5xl lg:text-7xl font-thin mx-auto px-5 py-4 border border-black rounded-full">
-
-            Let&apos;s Talk <svg className="group-hover:stroke-white stroke-black"
-              xmlns="http://www.w3.org/2000/svg"
-              width="48"
-              height="48"
-              fill="currentColor"
-              viewBox="0 -960 960 960"
-            >
-              <path d="m242-246-42-42 412-412H234v-60h480v480h-60v-378z"></path>
-            </svg>
-          </Link>
-        </div>
-      </section>
     </>
   );
 }

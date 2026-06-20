@@ -167,7 +167,7 @@ const LiteHomePage = () => {
 
 
   return (
-    <Wrapper>
+    <>
       {/* `isolate` ensures predictable stacking vs the fixed WebGL canvas */}
       <div id="litePage" className="relative isolate bg-[#f2f2f2]">
         {showLoader && (
@@ -197,7 +197,7 @@ const LiteHomePage = () => {
           </div>
         </div>
       </div>
-    </Wrapper>
+    </>
   );
 };
 export default LiteHomePage;

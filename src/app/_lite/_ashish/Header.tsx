@@ -24,7 +24,7 @@ export default function Header() {
   return (
     <>
       {/* Keep header above WebGL + overlay UI */}
-      <header className="tp-header-height h-32 relative z-[1000]" ref={headerRef}>
+      <header className="tp-header-height h-32 relative z-40" ref={headerRef}>
         <div
           id="header-sticky"
           className={`lite-ashish-header tp-inner-header-area z-[1000] tp-inner-header-style-2 tp-inner-header-mob-space `}

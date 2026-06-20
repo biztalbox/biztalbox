@@ -6,7 +6,7 @@ import { DRACOLoader } from "three/examples/jsm/loaders/DRACOLoader.js";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { KTX2Loader } from "three/examples/jsm/loaders/KTX2Loader.js";
 import { MeshoptDecoder } from "three/examples/jsm/libs/meshopt_decoder.module.js";
-import { Camera, type Group, type Object3D } from "three";
+import { type Group } from "three";
 import type { GLTF } from "three/examples/jsm/loaders/GLTFLoader.js";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -20,15 +20,12 @@ import {
   registerAllLiteServiceScans,
 } from "./motion/lite-service-scan-factory";
 import {
-  addCtaCartTweensToTimeline,
   getHeroFadeOutYDelta,
   getLiteSceneBreakpoint,
   getResolvedModelLayouts,
-  resolveCtaCartConfig,
   type LiteSceneBreakpoint,
 } from "./motion/lite-scene-layout";
 import { pauseLiteSfx, playLiteSfx } from "@/app/_lite/_ashish/sfx";
-import { Environment } from "@react-three/drei";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -43,15 +40,6 @@ const LITE_GLB_URLS = [
   "/assets/lite_models/minified/video.glb",
   "/assets/lite_models/minified/box.glb",
 ] as const;
-
-function findChildByName(root: Object3D, name: string): Object3D | null {
-  let found: Object3D | null = null;
-  root.traverse((obj) => {
-    if (found || obj.name !== name) return;
-    found = obj;
-  });
-  return found;
-}
 
 /** Drop distance for hero intro (all models enter from above). */
 function getHeroIntroDropY(bp: LiteSceneBreakpoint): number {
@@ -113,15 +101,12 @@ function useLiteHeroCanvasFrame() {
 const ST_REFRESH_DEBOUNCE_MS = 160;
 const ST_REFRESH_RETRY_MS = 120;
 
-/** R3F scene: GLB models, scroll-linked GSAP, CTA cart. */
+/** R3F scene: GLB models, scroll-linked GSAP, service scans. */
 const Ashish3dScene = () => {
   const { root, layouts: L, layoutBreakpoint } = useLiteHeroCanvasFrame();
-  const { gl, size } = useThree();
+  const { gl } = useThree();
   const disableFloat = false;
   const floatSoft = layoutBreakpoint !== "desktop";
-  /** Same HDR file everywhere; intensity only nudges lighting cost/readability — mesh & texture quality unchanged. */
-  const envIntensity = layoutBreakpoint === "desktop" ? 1.2 : layoutBreakpoint === "tablet" ? 1.1 : 1.02;
-  const {camera} = useThree();
 
   const smoRef = useRef<Group>(null);
   const adsRef = useRef<Group>(null);
@@ -156,11 +141,6 @@ const Ashish3dScene = () => {
     ads: true,
   }));
   const [bucketFloatEnabled, setBucketFloatEnabled] = useState(true);
-  const [scanPinnedByKey, setScanPinnedByKey] = useState<Partial<Record<LiteModelKey, boolean>>>(
-    () => ({}),
-  );
-  // TEMP: keep Float enabled even during pinned scans.
-  // Previously: `&& !scanPinnedByKey[key]` (disabled float while scanner is pinned).
   const isFloatOn = (key: LiteModelKey) => !!floatEnabledByKey[key];
 
   /**
@@ -233,22 +213,6 @@ const Ashish3dScene = () => {
       io.disconnect();
     };
   }, [layoutBreakpoint]);
-
-  // TEMP: commenting out pinned-scan float suppression.
-  // While a scanner is pinned (active “scan” phase), we used to disable Float for that model
-  // to prevent Float's internal rAF transforms from fighting GSAP scrubbing.
-  // useEffect(() => {
-  //   if (typeof window === "undefined") return;
-  //   const onPin = (ev: Event) => {
-  //     const e = ev as CustomEvent<{ key?: LiteModelKey; pinned?: boolean }>;
-  //     const key = e.detail?.key;
-  //     const pinned = !!e.detail?.pinned;
-  //     if (!key) return;
-  //     setScanPinnedByKey((prev) => ({ ...prev, [key]: pinned }));
-  //   };
-  //   window.addEventListener("lite-scan-pin", onPin as EventListener);
-  //   return () => window.removeEventListener("lite-scan-pin", onPin as EventListener);
-  // }, []);
 
   const configureGltfLoader = useMemo(() => {
     return (loader: GLTFLoader) => {
@@ -344,19 +308,14 @@ const Ashish3dScene = () => {
       let attempts = 0;
       const maxAttempts = 120;
       let matchMediaInstance: gsap.MatchMedia | null = null;
-      let addToCartTl: gsap.core.Timeline | null = null;
+      let receiptTl: gsap.core.Timeline | null = null;
       let introTl: gsap.core.Timeline | null = null;
       let introPlayed = false;
       let onLoaderHidden: (() => void) | null = null;
-      const ctaCart = resolveCtaCartConfig(layoutBreakpoint);
-      // Use immediate scrub for CTA so reverse doesn't "lag" (numeric scrub smooths over seconds).
-      const ctaScrub = true;
 
-      const snapCtaHidden = () => {
-        // Reset CTA timeline instantly when scrolling above CTA.
-        // NOTE: Do not touch 3D model scales here — models are reused in hero/service scans.
-        addToCartTl?.pause(0);
-        addToCartTl?.progress(0);
+      const snapReceiptHidden = () => {
+        receiptTl?.pause(0);
+        receiptTl?.progress(0);
       };
 
       const mountScroll = () => {
@@ -441,6 +400,12 @@ const Ashish3dScene = () => {
             () => cancelled,
             bp,
           );
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              ScrollTrigger.refresh();
+              window.dispatchEvent(new CustomEvent("lite:scroll-layout-ready"));
+            });
+          });
           return () => {
             fadeTl.scrollTrigger?.kill();
             fadeTl.kill();
@@ -452,7 +417,7 @@ const Ashish3dScene = () => {
         matchMediaInstance.add("(min-width: 640px) and (max-width: 1023px)", () => attachHeroBand("tablet"));
         matchMediaInstance.add("(min-width: 1024px)", () => attachHeroBand("desktop"));
 
-        addToCartTl = gsap.timeline({
+        receiptTl = gsap.timeline({
           defaults: {
             duration: 0.5, ease: "power1.inOut"
           },
@@ -463,38 +428,20 @@ const Ashish3dScene = () => {
             scrub: layoutBreakpoint === "desktop" ? 9 : 4.5,
             invalidateOnRefresh: true,
             fastScrollEnd: layoutBreakpoint !== "desktop",
-            onUpdate: (self) => {
-              // Keep timeline responsive during scrub; hide is handled onLeaveBack only.
-              // (We don't snap to hidden state on reverse while CTA is still in view.)
-            },
-            onLeaveBack: () => {
-              // When scrolling back above CTA, snap everything to the hidden (t=0) state.
-              // This avoids scrub-smoothing leaving modals/receipt visible for seconds.
-              snapCtaHidden();
-            },
+            onLeaveBack: snapReceiptHidden,
           },
         });
 
-        const asa1 = findChildByName(bucketRef.current, "flap_1");
-        const asa2 = findChildByName(bucketRef.current, "flap_2");
-
-        addCtaCartTweensToTimeline(addToCartTl, modelRefs, bucketRef, asa1, asa2, ctaCart);
-
-        // Scrubbed timelines can cross the same time multiple times.
-        // Gate the bill SFX so it plays only once per mount.
         let didPlayCtaBill = false;
 
-        addToCartTl.to(
+        receiptTl.to(
           "#recieptSection",
           {
-            // Start state comes from Tailwind `translate-y-full` (100% of element height).
-            // Use the measured height so the receipt fully clears across OS/font metrics.
             y: () => {
               const el = typeof document !== "undefined" ? document.getElementById("recieptSection") : null;
               if (!el) return -200;
               const h = el.getBoundingClientRect().height;
-              // Extra few px so it fully clears even with subpixel rounding.
-              return -Math.ceil(h-475);
+              return -Math.ceil(h - 475);
             },
             duration: 5,
             ease: "back.inOut",
@@ -502,17 +449,11 @@ const Ashish3dScene = () => {
           },
           1.5,
         );
-        // addToCartTl.to("#recieptSection", {y: "-=104"}, 1)
-        // addToCartTl.to("#recieptSection", {y: "-=104"}, 1.4)
-        // addToCartTl.to("#recieptSection", {y: "-=104"}, 1.8)
-        // addToCartTl.to("#recieptSection", {y: "-=104"}, 2.2)
-        // addToCartTl.to("#recieptSection", {y: "-=104"}, 2.6)
 
-        /** Receipt strip ends at 3.8 + 1 = 4.8 — GSAP `call` = zero-duration tween at this time (scrub-safe). */
-        addToCartTl.call(
+        receiptTl.call(
           () => {
             if (cancelled) return;
-            const st = addToCartTl?.scrollTrigger;
+            const st = receiptTl?.scrollTrigger;
             if (st && st.direction < 0) return;
             if (didPlayCtaBill) return;
             didPlayCtaBill = true;
@@ -523,10 +464,10 @@ const Ashish3dScene = () => {
         );
 
         requestAnimationFrame(() => {
-          if (ScrollTrigger.getAll().some((trigger) => trigger.isActive && trigger.pin)) {
-            return;
-          }
-          ScrollTrigger.refresh();
+          requestAnimationFrame(() => {
+            ScrollTrigger.refresh();
+            window.dispatchEvent(new CustomEvent("lite:scroll-layout-ready"));
+          });
         });
       };
 
@@ -543,9 +484,9 @@ const Ashish3dScene = () => {
         matchMediaInstance = null;
         pauseLiteSfx("beep");
         pauseLiteSfx("bill");
-        addToCartTl?.scrollTrigger?.kill();
-        addToCartTl?.kill();
-        addToCartTl = null;
+        receiptTl?.scrollTrigger?.kill();
+        receiptTl?.kill();
+        receiptTl = null;
       };
     },
     { dependencies: [sceneBySrc, modelRefs, layoutBreakpoint], revertOnUpdate: true },
@@ -648,7 +589,6 @@ const Ashish3dScene = () => {
         floatEnabled={bucketFloatEnabled}
         floatSoft={floatSoft}
       />
-      {/* </group> */}
       <WigglingModel
         scene={seoScene}
         groupRef={seoRef}
@@ -660,9 +600,6 @@ const Ashish3dScene = () => {
         floatEnabled={isFloatOn("seo")}
         floatSoft={floatSoft}
       />
-      {/* <Environment files="/assets/hdr/scene.hdr" resolution={1024} backgroundIntensity={1} backgroundRotation={356} /> */}
-
-      {/* <directionalLight intensity={1} position={[0, 50, 1000]} intensity={5} /> */}
       </group>
     </group>
   );

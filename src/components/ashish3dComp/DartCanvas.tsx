@@ -80,10 +80,10 @@ export default function DartCanvas({ onEnter }: { onEnter: () => void }) {
   };
 
   const hitButtonClass =
-    "pointer-events-auto border z-[2000] border-2 font-bold !border-red-600 bg-transparent px-3 py-3 rounded-full text-red-600";
+    "pointer-events-auto border z-[2000] border font-bold !border-black bg-white px-3 py-3 rounded-full text-black !cursor-none";
 
   return (
-    <section className="fixed z-50 inset-0 overflow-hidden h-screen w-screen bg-white">
+    <section className="fixed z-[2000] inset-0 overflow-hidden h-screen w-screen bg-white !cursor-none">
       <Canvas
         className="!fixed z-50 inset-0 h-full w-full pointer-events-none"
         gl={{
