@@ -414,7 +414,7 @@ function GoodGraphicDesignSection({ isDark }: { isDark: boolean }) {
 
   return (
     <section className="graphic-design-elements pb-12 pt-4 sm:pb-20 sm:pt-6">
-      <div className="mx-auto px-3 sm:px-5 lg:px-8">
+      <div className="container">
         <h2
           className="graphic-section-title text-[1.65rem] font-light leading-tight tracking-tight sm:text-[2rem] md:text-[2.35rem] lg:text-[2.75rem]"
          
@@ -622,10 +622,10 @@ function CreativeServicesSection({
 
   return (
     <section className="graphic-creative-services pb-12 pt-4 sm:pb-20 sm:pt-6">
-      <div className="mx-auto max-w-[1800px] px-3 sm:px-5 lg:px-8">
+      <div className="container">
         <h2
           className="graphic-section-title text-[1.65rem] font-light leading-tight tracking-tight sm:text-[2rem] md:text-[2.35rem] lg:text-[2.75rem]"
-          style={{ fontFamily: "var(--tp-ff-syne), sans-serif" }}
+          
         >
           Creative Services
         </h2>
@@ -821,7 +821,7 @@ function GraphicQuoteSection({ isDark }: { isDark: boolean }) {
 
   return (
     <section className="graphic-quote pb-16 pt-8 sm:pb-24 sm:pt-12 lg:pb-28">
-      <div className="mx-auto px-3 sm:px-5 lg:px-8">
+      <div className="container">
         <div
           className="graphic-quote-panel mx-auto rounded-2xl px-4 py-10 text-center sm:rounded-3xl sm:px-6 sm:py-14 md:px-8 md:py-16 lg:px-10 lg:py-20"
           style={{ backgroundColor: panelBg }}
@@ -1044,8 +1044,8 @@ export default function GraphicPage() {
 
         <main>
           <section>
-            <div className="mx-auto px-3 pb-12 pt-8 sm:px-5 sm:pb-16 sm:pt-10 lg:px-8 lg:pb-20 lg:pt-10">
-              <div className="grid min-h-0 grid-cols-1 items-center gap-8 sm:gap-10 lg:min-h-[calc(100vh-140px)] lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 xl:min-h-[calc(100vh-160px)]">
+            <div className="container pb-12  sm:pb-16 sm:pt-10 lg:pb-20 lg:pt-10">
+              <div className="grid min-h-0 grid-cols-1 items-center gap-8 sm:gap-10  lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 ">
                 <div className="">
                   {/* <p className="graphic-muted mb-6 text-[11px] font-light uppercase tracking-[0.32em] sm:mb-8 sm:text-xs">
                     UK GRAPHIC DESIGN STUDIO
@@ -1063,13 +1063,13 @@ export default function GraphicPage() {
 
                   <p className="graphic-muted graphic-body mb-8 text-sm font-light leading-relaxed sm:mb-12 sm:text-[15px] sm:leading-7  lg:text-base">
                   Bring your content to new heights using professional video editing solutions in Gibraltar made for
-business makers, creators, and brands. Biztalbox assists in transforming raw footage into engaging
-visual stories that boost customer engagement, establish trust, and help support the long-term
-growth of businesses. As a top video editing firm in Gibraltar, we combine the power of strategy,
-creativity, and technical know-how to create content specifically designed for the latest digital
-platforms. Whether you require YouTube videos for your social channels, advertising campaign
-content, or animation-related projects, Biztalbox provides solutions focused on results. We are a
-trusted video editing company 
+                  business makers, creators, and brands. Biztalbox assists in transforming raw footage into engaging
+                  visual stories that boost customer engagement, establish trust, and help support the long-term
+                  growth of businesses. As a top video editing firm in Gibraltar, we combine the power of strategy,
+                  creativity, and technical know-how to create content specifically designed for the latest digital
+                  platforms. Whether you require YouTube videos for your social channels, advertising campaign
+                  content, or animation-related projects, Biztalbox provides solutions focused on results. We are a
+                  trusted video editing company 
                   </p>
 
                   <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
@@ -1120,30 +1120,32 @@ trusted video editing company
             />
 
             <div className="py-5 sm:py-6">
-              <Marquee speed={35} autoFill gradient={false} pauseOnHover={false}>
-                {SERVICES.map((service) => (
-                  <span
-                    key={service}
-                    className="flex shrink-0 items-center"
-                  >
-                    <span className="graphic-marquee-text whitespace-nowrap text-xs font-light uppercase tracking-[0.14em] sm:text-sm sm:tracking-[0.18em] md:text-base lg:text-lg">
-                      {service}
-                    </span>
+              <div className="w-full">
+                <Marquee speed={35} autoFill gradient={false} pauseOnHover={false}>
+                  {SERVICES.map((service) => (
                     <span
-                      className="mx-6 flex shrink-0 items-center text-xl text-[#ff6b2b] sm:mx-8 sm:text-2xl md:text-3xl"
-                      aria-hidden
+                      key={service}
+                      className="flex shrink-0 items-center"
                     >
-                      ★
+                      <span className="graphic-marquee-text whitespace-nowrap text-xs font-light uppercase tracking-[0.14em] sm:text-sm sm:tracking-[0.18em] md:text-base lg:text-lg">
+                        {service}
+                      </span>
+                      <span
+                        className="mx-6 flex shrink-0 items-center text-xl text-[#ff6b2b] sm:mx-8 sm:text-2xl md:text-3xl"
+                        aria-hidden
+                      >
+                        ★
+                      </span>
                     </span>
-                  </span>
-                ))}
-              </Marquee>
+                  ))}
+                </Marquee>
+              </div>
             </div>
           </section>
 
           {/* Trusted by */}
           {/* <section className="graphic-trusted overflow-x-hidden pb-10 pt-12 sm:pb-12 sm:pt-14 lg:pt-16">
-            <div className="mx-auto max-w-[1800px] px-3 sm:px-5 lg:px-8">
+            <div className="container max-w-[1800px]">
               <h2
                 className="graphic-section-title max-w-5xl text-2xl font-light leading-snug tracking-tight sm:text-3xl lg:text-[2rem] xl:text-4xl"
                 style={{ fontFamily: "var(--tp-ff-syne), sans-serif" }}
@@ -1177,7 +1179,7 @@ trusted video editing company
 
           {/* How we work */}
           <section className="graphic-process pb-12 pt-4 sm:pb-20 sm:pt-6 lg:pb-24">
-            <div className="mx-auto px-3 sm:px-5 lg:px-8">
+            <div className="container">
               <p className="graphic-muted mb-4 text-[11px] font-light uppercase tracking-[0.28em] sm:text-xs">
                 HOW WE WORK
               </p>
@@ -1246,10 +1248,10 @@ trusted video editing company
           />
 
           <section className="graphic-why-choose pb-16 pt-2 sm:pb-24">
-            <div className="mx-auto max-w-[1800px] px-3 sm:px-5 lg:px-8">
+            <div className="container">
               <h2
                 className="graphic-section-title text-[1.65rem] font-light leading-tight tracking-tight sm:text-[2rem] md:text-[2.35rem]"
-                style={{ fontFamily: "var(--tp-ff-syne), sans-serif" }}
+                
               >
                 Why Choose Creative Biztalbox
               </h2>
@@ -1307,10 +1309,10 @@ trusted video editing company
                 backgroundColor: isDark ? "#f3f3f3" : "#1a1a1a",
               }}
             >
-              <div className="mx-auto px-3 sm:px-5 lg:px-8">
+              <div className="container">
                 <h2
-                  className="max-w-5xl text-[1.75rem] font-bold leading-[1.1] tracking-tight sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
-                  style={{ fontFamily: "var(--tp-ff-syne), sans-serif" }}
+                  className="text-[1.75rem] font-bold leading-[1.1] tracking-tight sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl"
+                  
                 >
                   <span
                     className="box-decoration-clone px-1.5 py-1 leading-[1.12] sm:px-2"
@@ -1324,9 +1326,9 @@ trusted video editing company
                 </h2>
 
                 <p
-                  className="mt-6 max-w-4xl text-lg font-light leading-[1.3] sm:mt-10 sm:text-[1.65rem] sm:leading-[1.25] md:mt-12 md:text-[2.15rem] lg:mt-14 lg:text-[2.65rem] lg:leading-[1.2]"
+                  className="mt-6  text-lg font-light leading-[1.3] sm:mt-10 sm:text-[1.65rem] sm:leading-[1.25] md:mt-12 md:text-[2.15rem] lg:mt-14 lg:text-[2.65rem] lg:leading-[1.2]"
                   style={{
-                    fontFamily: "var(--tp-ff-syne), sans-serif",
+                    
                     color: isDark ? "#18181b" : "#ffffff",
                   }}
                 >
@@ -1350,10 +1352,10 @@ trusted video editing company
           </section>
 
           <section className="graphic-faq pb-16 pt-8 sm:pb-24 sm:pt-12 lg:pb-28">
-            <div className="mx-auto max-w-[1800px] px-3 sm:px-5 lg:px-8">
+            <div className="container">
               <h2
                 className="graphic-section-title text-[1.65rem] font-light leading-tight tracking-tight sm:text-[2rem] md:text-[2.35rem] lg:text-[2.75rem]"
-                style={{ fontFamily: "var(--tp-ff-syne), sans-serif" }}
+               
               >
                 Frequently asked questions
               </h2>

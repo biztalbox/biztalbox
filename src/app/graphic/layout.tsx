@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { createMetadata } from "@/utils/metadata";
+import "./graphic.css";
 
 const baseMetadata: Metadata = {
   title: "UK Graphic Design Studio | Biztalbox",
