@@ -16,6 +16,7 @@ import HeaderEleven from "@/layouts/headers/header-eleven";
 import FooterFour from "@/layouts/footers/footer-four";
 import SafeHtml from "@/components/seo-page/SafeHtml";
 import type { GraphicPageData } from "@/lib/cms-graphic-pages";
+import GraphicIndustryCards from "@/components/service/graphic-industry-cards";
 
 const SERVICES = [
   "ILLUSTRATION",
@@ -170,8 +171,14 @@ const DEFAULT_CREATIVE_SERVICES_HEADING = "Creative Services";
 
 const DEFAULT_FAQ_HEADING = "Frequently asked questions";
 
-type CreativeServiceBase = (typeof CREATIVE_SERVICES)[number];
-type CreativeService = CreativeServiceBase & { paragraph: string };
+type CreativeService = {
+  id: number;
+  title: string;
+  paragraph: string;
+  layout: "a" | "b";
+  row: 0 | 1;
+  image: string;
+};
 
 function CreativeServiceArrowIcon({
   isDark,
@@ -293,7 +300,7 @@ function CreativeServiceDetailPanel({
       <div style={{ color: isDark ? "rgba(255,255,255,0.88)" : "rgba(24,24,27,0.82)" }}>
         <SafeHtml
           html={html}
-          className="text-[11px] font-medium uppercase leading-[1.85] tracking-[0.06em] sm:text-xs sm:leading-[1.9]"
+          className="text-[11px] font-medium leading-[1.85] tracking-[0.06em] sm:text-xs sm:leading-[1.9]"
         />
       </div>
     </div>
@@ -452,7 +459,7 @@ function GoodGraphicDesignSection({
 
         <SafeHtml
           html={paragraph}
-          className="mt-6 text-[11px] uppercase leading-[1.85] tracking-[0.05em] sm:mt-8 sm:text-xs sm:leading-[1.9] graphic-muted"
+          className="mt-6 text-[11px] leading-[1.85] tracking-[0.05em] sm:mt-8 sm:text-xs sm:leading-[1.9] graphic-muted"
         />
 
         <p
@@ -541,7 +548,7 @@ function GoodGraphicDesignSection({
 
           <article className={`${row2Card} lg:col-span-2`} style={{ borderColor, backgroundColor: cardBg }}>
             <div className="flex h-full flex-col items-start gap-3 sm:flex-row sm:items-center">
-              <div className="flex shrink-0 flex-col font-bold uppercase leading-[0.9]" style={{ color: textColor }}>
+              <div className="flex shrink-0 flex-col font-bold leading-[0.9]" style={{ color: textColor }}>
                 {Array.from({ length: 6 }, (_, i) => (
                   <span
                     key={i}
@@ -1039,12 +1046,53 @@ function ProcessArrowIcon() {
   );
 }
 
-export default function GraphicPage() {
+export default function GraphicPageLayout({ data }: { data: GraphicPageData }) {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [hoveredWhyChoose, setHoveredWhyChoose] = useState<string | null>(null);
   const [openFaqId, setOpenFaqId] = useState<number | null>(1);
   const [openCreativeServiceId, setOpenCreativeServiceId] = useState<number | null>(null);
+
+  const creativeServices = useMemo<CreativeService[]>(() => {
+    return CREATIVE_SERVICES.map((service, index) => {
+      const cmsCard = data.creativeServices.cards[index];
+      return {
+        ...service,
+        title: cmsCard?.title?.trim() || service.title,
+        paragraph: cmsCard?.paragraph?.trim() || CREATIVE_SERVICE_DETAIL_LOREM,
+      };
+    });
+  }, [data.creativeServices.cards]);
+
+  const faqItems = useMemo(() => {
+    const fromCms = data.faqs.filter((item) => item.question.trim() || item.answer.trim());
+    if (fromCms.length > 0) {
+      return fromCms.map((item, index) => ({
+        id: index + 1,
+        question: item.question,
+        answer: item.answer,
+      }));
+    }
+
+    return FAQ_ITEMS.map((item) => ({
+      id: item.id,
+      question: item.question,
+      answer: FAQ_LOREM,
+    }));
+  }, [data.faqs]);
+
+  const faqSplitIndex = Math.ceil(faqItems.length / 2);
+
+  const heroHeading = data.hero.heading.trim() || DEFAULT_HERO_HEADING;
+  const heroParagraph = data.hero.paragraph.trim() || DEFAULT_HERO_PARAGRAPH;
+  const howWeWorkSubtitle = data.howWeWork.subtitle.trim() || DEFAULT_HOW_WE_WORK.subtitle;
+  const howWeWorkHeading = data.howWeWork.heading.trim() || DEFAULT_HOW_WE_WORK.heading;
+  const howWeWorkParagraph = data.howWeWork.paragraph.trim() || DEFAULT_HOW_WE_WORK.paragraph;
+  const goodDesignHeading = data.goodDesign.heading.trim() || DEFAULT_GOOD_DESIGN_HEADING;
+  const goodDesignParagraph = data.goodDesign.paragraph.trim() || DESIGN_ELEMENTS_INTRO;
+  const creativeServicesHeading =
+    data.creativeServices.heading.trim() || DEFAULT_CREATIVE_SERVICES_HEADING;
+  const faqHeading = data.faqHeading.trim() || DEFAULT_FAQ_HEADING;
 
   const handleFaqToggle = (id: number) => {
     setOpenFaqId((current) => (current === id ? null : id));
@@ -1074,26 +1122,15 @@ export default function GraphicPage() {
                     UK GRAPHIC DESIGN STUDIO
                   </p> */}
 
-                  <h1
+                  <SafeHtml
+                    html={heroHeading}
                     className="graphic-heading mb-6 text-[1.85rem] font-bold leading-[1.05] tracking-tight sm:mb-8 sm:text-5xl sm:leading-[1.02] lg:mb-10 lg:text-[3.35rem] xl:text-[3.75rem]"
-                  >
-                    Graphic Designing
-                    
-                    Services in Gibraltar
+                  />
 
-                    UK.
-                  </h1>
-
-                  <p className="graphic-muted graphic-body mb-8 text-sm font-light leading-relaxed sm:mb-12 sm:text-[15px] sm:leading-7  lg:text-base">
-                  Bring your content to new heights using professional video editing solutions in Gibraltar made for
-                  business makers, creators, and brands. Biztalbox assists in transforming raw footage into engaging
-                  visual stories that boost customer engagement, establish trust, and help support the long-term
-                  growth of businesses. As a top video editing firm in Gibraltar, we combine the power of strategy,
-                  creativity, and technical know-how to create content specifically designed for the latest digital
-                  platforms. Whether you require YouTube videos for your social channels, advertising campaign
-                  content, or animation-related projects, Biztalbox provides solutions focused on results. We are a
-                  trusted video editing company 
-                  </p>
+                  <SafeHtml
+                    html={heroParagraph}
+                    className="graphic-muted graphic-body mb-8 text-sm font-light leading-relaxed sm:mb-12 sm:text-[15px] sm:leading-7 lg:text-base"
+                  />
 
                   <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
                   <Link
@@ -1101,7 +1138,7 @@ export default function GraphicPage() {
                       className={`graphic-btn-secondary inline-flex w-full items-center justify-center border px-7 py-3.5 text-[11px] font-medium uppercase tracking-[0.22em] transition-colors sm:min-w-[168px] sm:w-auto sm:px-8 sm:text-xs ${
                         isDark
                           ? "border-white text-white hover:bg-white hover:!text-black !font-bold "
-                          : "border-zinc-900 text-zinc-900 hover:bg-black hover:!text-white !font-bold "
+                          : "border-zinc-900 !text-zinc-900 hover:bg-black hover:!text-white !font-bold "
                       }`}
                     >
                       Start a Project
@@ -1194,12 +1231,12 @@ export default function GraphicPage() {
           <section className="graphic-process pb-12 pt-4 sm:pb-20 sm:pt-6 lg:pb-24">
             <div className="container">
               <p className="graphic-muted mb-4 text-[11px] font-light uppercase tracking-[0.28em] sm:text-xs">
-                HOW WE WORK
+                {howWeWorkSubtitle}
               </p>
               <h2
                 className="graphic-section-title text-[1.65rem] font-light leading-tight tracking-tight sm:text-3xl md:text-4xl lg:text-[2.75rem]"
               >
-                A process built for results
+                {howWeWorkHeading}
               </h2>
               <div
                 className="graphic-divider mt-6 h-px w-full "
@@ -1207,10 +1244,10 @@ export default function GraphicPage() {
                 role="presentation"
                 aria-hidden
               />
-              <p className="graphic-muted mt-6 text-sm leading-relaxed sm:text-[15px] sm:leading-7 lg:text-base">
-                Every project follows our proven four-stage process - from discovery to delivery, keeping
-                you informed and in control throughout.
-              </p>
+              <SafeHtml
+                html={howWeWorkParagraph}
+                className="graphic-muted mt-6 text-sm leading-relaxed sm:text-[15px] sm:leading-7 lg:text-base"
+              />
 
               <div className="mt-10 grid grid-cols-1 gap-x-5 gap-y-12 sm:mt-14 sm:grid-cols-2 sm:gap-y-14 md:gap-y-16 xl:grid-cols-4">
                 {PROCESS_STEPS.map((step) => (
@@ -1252,12 +1289,18 @@ export default function GraphicPage() {
             </div>
           </section>
 
-          <GoodGraphicDesignSection isDark={isDark} />
+          <GoodGraphicDesignSection
+            isDark={isDark}
+            heading={goodDesignHeading}
+            paragraph={goodDesignParagraph}
+          />
 
           <CreativeServicesSection
             isDark={isDark}
             openId={openCreativeServiceId}
             onToggle={handleCreativeServiceToggle}
+            sectionHeading={creativeServicesHeading}
+            services={creativeServices}
           />
 
           <section className="graphic-why-choose pb-16 pt-2 sm:pb-24">
@@ -1315,6 +1358,8 @@ export default function GraphicPage() {
             </div>
           </section>
 
+          <GraphicIndustryCards title="Industries We Serve" />
+
           <section className="graphic-cta">
             <div
               className="graphic-cta-panel w-full py-12 sm:py-20 md:py-24 lg:py-28"
@@ -1368,9 +1413,8 @@ export default function GraphicPage() {
             <div className="container">
               <h2
                 className="graphic-section-title text-[1.65rem] font-light leading-tight tracking-tight sm:text-[2rem] md:text-[2.35rem] lg:text-[2.75rem]"
-               
               >
-                Frequently asked questions
+                {faqHeading}
               </h2>
               <div
                 className="graphic-divider mt-5 h-px w-full"
@@ -1380,12 +1424,12 @@ export default function GraphicPage() {
               />
 
               <div className="mt-6 flex flex-col gap-2 sm:mt-8 sm:gap-2.5 lg:hidden">
-                {FAQ_ITEMS.map((item) => (
+                {faqItems.map((item) => (
                   <GraphicFaqItem
                     key={item.id}
                     id={item.id}
                     question={item.question}
-                    answer={FAQ_LOREM}
+                    answer={item.answer}
                     isOpen={openFaqId === item.id}
                     onToggle={() => handleFaqToggle(item.id)}
                     isDark={isDark}
@@ -1395,12 +1439,12 @@ export default function GraphicPage() {
 
               <div className="mt-6 hidden gap-3 sm:mt-8 lg:grid lg:grid-cols-2 lg:gap-x-10">
                 <div className="flex flex-col gap-3">
-                  {FAQ_ITEMS.slice(0, 4).map((item) => (
+                  {faqItems.slice(0, faqSplitIndex).map((item) => (
                     <GraphicFaqItem
                       key={item.id}
                       id={item.id}
                       question={item.question}
-                      answer={FAQ_LOREM}
+                      answer={item.answer}
                       isOpen={openFaqId === item.id}
                       onToggle={() => handleFaqToggle(item.id)}
                       isDark={isDark}
@@ -1408,12 +1452,12 @@ export default function GraphicPage() {
                   ))}
                 </div>
                 <div className="flex flex-col gap-3">
-                  {FAQ_ITEMS.slice(4).map((item) => (
+                  {faqItems.slice(faqSplitIndex).map((item) => (
                     <GraphicFaqItem
                       key={item.id}
                       id={item.id}
                       question={item.question}
-                      answer={FAQ_LOREM}
+                      answer={item.answer}
                       isOpen={openFaqId === item.id}
                       onToggle={() => handleFaqToggle(item.id)}
                       isDark={isDark}

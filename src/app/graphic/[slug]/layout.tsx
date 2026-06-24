@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import MarketingPageSchema from "@/components/schema/MarketingPageSchema";
 import { createMarketingPageData } from "@/utils/marketing-page-data";
 import { createFullUrl } from "@/utils/metadata";
-import { fetchGraphicPage, str } from "@/lib/cms-graphic-pages";
+import { fetchGraphicPage } from "@/lib/cms-graphic-pages";
 import "../graphic.css";
 
 export const dynamic = "force-dynamic";

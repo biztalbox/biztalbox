@@ -78,3 +78,7 @@ html[data-theme="light"] [data-graphic-page] .ab-logo-1,
 html[data-theme="light"] [data-graphic-page] .ab-logo-2 {
   display: none !important;
 }
+
+[data-graphic-page]  a{
+  color: royalblue !important;
+}

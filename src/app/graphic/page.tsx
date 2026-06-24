@@ -5,5 +5,5 @@ import { permanentRedirect } from "next/navigation";
  * Location-specific pages live at /graphic/[slug] (e.g. /graphic/test).
  */
 export default function GraphicIndexPage() {
-  permanentRedirect("/graphic/graphic");
+  permanentRedirect("/");
 }
