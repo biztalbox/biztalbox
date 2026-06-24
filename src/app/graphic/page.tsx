@@ -85,73 +85,67 @@ const GRAPHIC_SERVICE_OPTIONS = [
   "Motion Graphics",
 ] as const;
 
-const CREATIVE_SERVICE_IMAGES = [
-  "https://images.unsplash.com/photo-1611241893603-3c359704e0ee?w=600&auto=format&fit=crop&q=60",
-  "https://plus.unsplash.com/premium_photo-1661284886711-4eaee4fa7771?w=600&auto=format&fit=crop&q=60",
-  "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=600&auto=format&fit=crop&q=60",
-] as const;
-
-const CREATIVE_SERVICE_DETAIL_LOREM =
-  "OUR COMPREHENSIVE GRAPHIC DESIGN SERVICES EMPOWER YOUR BUSINESS TO STAND OUT IN A COMPETITIVE MARKETPLACE. FROM CONCEPT TO DELIVERY, WE CREATE VISUALS THAT CAPTURE ATTENTION, BUILD TRUST, AND DRIVE RESULTS. LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA.";
-
 const CREATIVE_SERVICES = [
   {
     id: 1,
     title: "Marketing & Advertising Graphic Design Services",
     layout: "a",
     row: 0,
-    image: CREATIVE_SERVICE_IMAGES[0],
+    image: "/graphic/creative-services/marketing-advertising.png",
   },
   {
     id: 2,
     title: "Social Media Graphic Design Services",
     layout: "b",
     row: 0,
-    image: CREATIVE_SERVICE_IMAGES[1],
+    image: "/graphic/creative-services/social-media.png",
   },
   {
     id: 3,
     title: "eBook, Report & Presentation Graphic Design Services",
     layout: "a",
     row: 0,
-    image: CREATIVE_SERVICE_IMAGES[2],
+    image: "/graphic/creative-services/ebook-report-presentation.png",
   },
   {
     id: 4,
     title: "Print & Packaging Graphic Design Services",
     layout: "b",
     row: 0,
-    image: CREATIVE_SERVICE_IMAGES[0],
+    image: "/graphic/creative-services/print-packaging.png",
   },
   {
     id: 5,
     title: "Branding & Brand Identity Graphic Design Services",
     layout: "a",
     row: 1,
-    image: CREATIVE_SERVICE_IMAGES[1],
+    image: "/graphic/creative-services/branding-identity.png",
   },
   {
     id: 6,
     title: "Website & UI/UX Graphic Design Services",
     layout: "b",
     row: 1,
-    image: CREATIVE_SERVICE_IMAGES[2],
+    image: "/graphic/creative-services/website-ui-ux.png",
   },
   {
     id: 7,
     title: "Illustration & Digital Artwork Graphic Design Services",
     layout: "a",
     row: 1,
-    image: CREATIVE_SERVICE_IMAGES[0],
+    image: "/graphic/creative-services/illustration-artwork.png",
   },
   {
     id: 8,
     title: "Marketing Collateral Graphic Design Services",
     layout: "b",
     row: 1,
-    image: CREATIVE_SERVICE_IMAGES[1],
+    image: "/graphic/creative-services/marketing-collateral.png",
   },
 ] as const;
+
+const CREATIVE_SERVICE_DETAIL_LOREM =
+  "OUR COMPREHENSIVE GRAPHIC DESIGN SERVICES EMPOWER YOUR BUSINESS TO STAND OUT IN A COMPETITIVE MARKETPLACE. FROM CONCEPT TO DELIVERY, WE CREATE VISUALS THAT CAPTURE ATTENTION, BUILD TRUST, AND DRIVE RESULTS. LOREM IPSUM DOLOR SIT AMET, CONSECTETUR ADIPISCING ELIT, SED DO EIUSMOD TEMPOR INCIDIDUNT UT LABORE ET DOLORE MAGNA ALIQUA.";
 
 type CreativeService = (typeof CREATIVE_SERVICES)[number];
 
@@ -249,10 +243,11 @@ function CreativeServiceImageBlock({
           src={service.image}
           alt={service.title}
           fill
-          className="object-cover transition-transform duration-500 group-hover/image:scale-105"
+          className="object-contain p-2 transition-transform duration-500 group-hover/image:scale-105 sm:p-3"
           sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
         />
-        <div className="absolute inset-0 bg-black/10 transition-colors duration-300 group-hover/image:bg-black/30" />
+        <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover/image:bg-black/10" />
+        
         <CreativeServiceLearnMore
           isDark={isDark}
           isOpen={isOpen}
