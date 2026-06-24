@@ -10,10 +10,10 @@ import { IoPersonOutline } from "react-icons/io5";
 import { BsTelephoneInbound } from "react-icons/bs";
 import { HiOutlineLightBulb } from "react-icons/hi";
 import { FaRegClock } from "react-icons/fa6";
-import { IoChevronDown, IoChevronForward } from "react-icons/io5";
-import { HiOutlineArrowUpRight } from "react-icons/hi2";
+import { IoChevronDown, IoChevronForward, IoChevronUp } from "react-icons/io5";
 import Wrapper from "@/layouts/wrapper";
 import HeaderEleven from "@/layouts/headers/header-eleven";
+import FooterFour from "@/layouts/footers/footer-four";
 
 const SERVICES = [
   "ILLUSTRATION",
@@ -77,12 +77,14 @@ const WHY_CHOOSE_ITEMS = [
 ] as const;
 
 const GRAPHIC_SERVICE_OPTIONS = [
-  "Brand Identity",
+  "Ad Design",
+  "Social Design",
+  "Presentation Design",
   "Print Design",
-  "UI/UX Design",
-  "Illustration",
-  "Packaging Design",
-  "Motion Graphics",
+  "Branding",
+  "UI/UX",
+  "Illustrations",
+  "Collateral Design",
 ] as const;
 
 const CREATIVE_SERVICES = [
@@ -149,33 +151,25 @@ const CREATIVE_SERVICE_DETAIL_LOREM =
 
 type CreativeService = (typeof CREATIVE_SERVICES)[number];
 
-const CREATIVE_SERVICES_MOBILE_MAX_WIDTH = 1023;
+function CreativeServiceArrowIcon({
+  isDark,
+  isOpen,
+  direction,
+}: {
+  isDark: boolean;
+  isOpen?: boolean;
+  direction: "up" | "down";
+}) {
+  const showUp = isOpen ? direction === "down" : direction === "up";
+  const ArrowIcon = showUp ? IoChevronUp : IoChevronDown;
 
-function useMaxWidth(maxWidth: number) {
-  const [matches, setMatches] = useState(false);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia(`(max-width: ${maxWidth}px)`);
-    const handleChange = () => setMatches(mediaQuery.matches);
-
-    handleChange();
-    mediaQuery.addEventListener("change", handleChange);
-    return () => mediaQuery.removeEventListener("change", handleChange);
-  }, [maxWidth]);
-
-  return matches;
-}
-
-function CreativeServiceArrowIcon({ isDark, isOpen }: { isDark: boolean; isOpen?: boolean }) {
   return (
     <span
-      className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-transform duration-300 group-hover/learn:scale-110 ${
-        isOpen ? "rotate-45" : ""
-      }`}
+      className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-transform duration-300 group-hover/learn:scale-110"
       style={{ backgroundColor: isDark ? "#ffffff" : "#18181b" }}
       aria-hidden
     >
-      <HiOutlineArrowUpRight
+      <ArrowIcon
         className="h-4 w-4"
         style={{ color: isDark ? "#18181b" : "#ffffff" }}
       />
@@ -214,7 +208,11 @@ function CreativeServiceLearnMore({
           {isOpen ? "Show less" : "Learn more"}
         </span>
       </span>
-      <CreativeServiceArrowIcon isDark={isDark} isOpen={isOpen} />
+      <CreativeServiceArrowIcon
+        isDark={isDark}
+        isOpen={isOpen}
+        direction={overlayPosition === "top" ? "up" : "down"}
+      />
     </button>
   );
 }
@@ -262,15 +260,14 @@ function CreativeServiceImageBlock({
 function CreativeServiceDetailPanel({
   isDark,
   text,
+  plain = false,
 }: {
   isDark: boolean;
   text: string;
+  plain?: boolean;
 }) {
   return (
-    <div
-      className="rounded-xl px-4 py-4 sm:rounded-2xl sm:px-5 sm:py-5"
-      style={{ backgroundColor: isDark ? "#1e1e1e" : "#e0e0e0" }}
-    >
+    <div className={plain ? undefined : "rounded-xl px-4 py-4 sm:rounded-2xl sm:px-5 sm:py-5"} style={plain ? undefined : { backgroundColor: isDark ? "#1e1e1e" : "#e0e0e0" }}>
       <p
         className="text-[11px] font-medium uppercase leading-[1.85] tracking-[0.06em] sm:text-xs sm:leading-[1.9]"
         style={{ color: isDark ? "rgba(255,255,255,0.88)" : "rgba(24,24,27,0.82)" }}
@@ -310,7 +307,9 @@ function CreativeServiceCard({
 
   return (
     <article
-      className="flex h-full flex-col overflow-hidden rounded-2xl"
+      className={`flex w-full flex-col overflow-hidden rounded-2xl ${
+        expandInline ? "self-start" : "h-full"
+      }`}
       style={{ backgroundColor: cardBg }}
     >
       {service.layout === "b" ? (
@@ -325,12 +324,18 @@ function CreativeServiceCard({
               isOpen={isOpen}
             />
           </div>
-          <div className="flex flex-1 flex-col px-3 py-4 pt-3 sm:px-5 sm:py-5 sm:pt-4">{titleBlock}</div>
+          <div
+            className={`flex flex-col px-3 py-4 pt-3 sm:px-5 sm:py-5 sm:pt-4 ${
+              expandInline ? "" : "flex-1"
+            }`}
+          >
+            {titleBlock}
+          </div>
         </>
       ) : (
         <>
           <div className="px-3 py-4 pb-3 sm:px-5 sm:py-5 sm:pb-4">{titleBlock}</div>
-          <div className="mt-auto w-full px-2.5 sm:px-4">
+          <div className={`w-full px-2.5 sm:px-4 ${expandInline ? "" : "mt-auto"}`}>
             <CreativeServiceImageBlock
               service={service}
               isDark={isDark}
@@ -343,18 +348,9 @@ function CreativeServiceCard({
         </>
       )}
 
-      {expandInline ? (
-        <div
-          className={`grid transition-[grid-template-rows] duration-300 ease-in-out motion-reduce:transition-none ${
-            isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-          }`}
-          aria-hidden={!isOpen}
-        >
-          <div className="overflow-hidden">
-            <div className="px-2.5 pb-3 pt-1 sm:px-4 sm:pb-4">
-              <CreativeServiceDetailPanel isDark={isDark} text={CREATIVE_SERVICE_DETAIL_LOREM} />
-            </div>
-          </div>
+      {expandInline && isOpen ? (
+        <div className="px-3 pb-4 pt-1 sm:px-5 sm:pb-5">
+          <CreativeServiceDetailPanel isDark={isDark} text={CREATIVE_SERVICE_DETAIL_LOREM} plain />
         </div>
       ) : null}
     </article>
@@ -458,7 +454,7 @@ function GoodGraphicDesignSection({ isDark }: { isDark: boolean }) {
           </article>
 
           <article
-            className={`${row1Card} relative lg:col-span-4`}
+            className={`${row1Card} relative min-h-[130px] sm:min-h-[150px] lg:col-span-4`}
             style={{
               borderColor,
               backgroundColor: cardBg,
@@ -473,7 +469,7 @@ function GoodGraphicDesignSection({ isDark }: { isDark: boolean }) {
           </article>
 
           <article
-            className={`${row1Card} relative lg:col-span-2`}
+            className={`${row1Card} relative min-h-[130px] sm:min-h-[150px] lg:col-span-2`}
             style={{
               borderColor,
               backgroundImage: `url(${TEXTURE_BG})`,
@@ -582,7 +578,6 @@ function CreativeServicesSection({
   openId: number | null;
   onToggle: (id: number) => void;
 }) {
-  const isMobileLayout = useMaxWidth(CREATIVE_SERVICES_MOBILE_MAX_WIDTH);
   const openService = CREATIVE_SERVICES.find((service) => service.id === openId) ?? null;
 
   const renderDesktopRow = (row: 0 | 1) => {
@@ -636,25 +631,24 @@ function CreativeServicesSection({
           aria-hidden
         />
 
-        {isMobileLayout ? (
-          <div className="mt-6 grid grid-cols-1 gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4">
-            {CREATIVE_SERVICES.map((service) => (
+        <div className="mt-6 grid auto-rows-min grid-cols-1 items-start gap-3 sm:mt-8 sm:grid-cols-2 sm:gap-4 lg:hidden">
+          {CREATIVE_SERVICES.map((service) => (
+            <div key={service.id} className="min-w-0 self-start">
               <CreativeServiceCard
-                key={service.id}
                 service={service}
                 isDark={isDark}
                 isOpen={openId === service.id}
                 expandInline
                 onToggle={() => onToggle(service.id)}
               />
-            ))}
-          </div>
-        ) : (
-          <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:gap-4 lg:gap-5">
-            {renderDesktopRow(0)}
-            {renderDesktopRow(1)}
-          </div>
-        )}
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-6 hidden flex-col gap-3 sm:mt-8 sm:gap-4 lg:flex lg:gap-5">
+          {renderDesktopRow(0)}
+          {renderDesktopRow(1)}
+        </div>
       </div>
     </section>
   );
@@ -694,7 +688,7 @@ function GraphicFaqItem({
 
   return (
     <article
-      className="rounded-2xl px-4 py-3.5 sm:px-6 sm:py-4"
+      className="rounded-2xl px-4 py-3 sm:px-6 sm:py-4"
       style={{
         backgroundColor: isDark ? "#2a2a2a" : "#ececec",
       }}
@@ -747,6 +741,7 @@ function GraphicQuoteSection({ isDark }: { isDark: boolean }) {
   const [isLoading, setIsLoading] = useState(false);
   const [formMessage, setFormMessage] = useState<string | null>(null);
   const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
+  const [selectedService, setSelectedService] = useState("");
 
   const panelBg = isDark ? "#0a0a0a" : "#f3f3f3";
   const inputBg = isDark ? "#333333" : "#e0e0e0";
@@ -754,11 +749,10 @@ function GraphicQuoteSection({ isDark }: { isDark: boolean }) {
   const textColor = isDark ? "#ffffff" : "#18181b";
   const mutedText = isDark ? "rgba(255,255,255,0.92)" : "rgba(24,24,27,0.78)";
   const placeholderClass = isDark ? "placeholder:text-white/40" : "placeholder:text-zinc-600/50";
-  const fieldClass = `h-[52px] w-full rounded-lg border-0 px-5 text-base outline-none ring-0 focus:outline-none sm:h-[54px] ${placeholderClass}`;
-  const selectClass = `${fieldClass} cursor-pointer appearance-none bg-[length:16px] bg-[right_1.25rem_center] bg-no-repeat pr-12 ${
-    isDark ? "invalid:text-white/40" : "invalid:text-zinc-600/50"
-  }`;
-  const textareaClass = `w-full resize-none overflow-hidden rounded-lg border-0 px-5 py-3 outline-none ring-0 focus:outline-none [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden ${placeholderClass}`;
+  const placeholderTextClass = isDark ? "text-white/40" : "text-zinc-600/50";
+  const fieldClass = `h-[52px] w-full min-w-0 max-w-full rounded-lg border-0 px-4 text-base font-normal outline-none ring-0 focus:outline-none sm:h-[54px] sm:px-5 ${placeholderClass}`;
+  const selectClass = `${fieldClass} cursor-pointer appearance-none truncate bg-[length:14px] bg-[right_0.875rem_center] bg-no-repeat pr-10 sm:bg-[length:16px] sm:bg-[right_1.25rem_center] sm:pr-12`;
+  const textareaClass = `w-full min-w-0 max-w-full resize-none overflow-hidden rounded-lg border-0 px-4 py-3 text-base font-normal outline-none ring-0 focus:outline-none [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden sm:px-5 ${placeholderClass}`;
   const selectArrow = isDark
     ? "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23ffffff66' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"
     : "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2318181b66' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E";
@@ -794,6 +788,7 @@ function GraphicQuoteSection({ isDark }: { isDark: boolean }) {
       if (result.success) {
         setFormMessage(result.message);
         setIsSuccess(true);
+        setSelectedService("");
         (e.target as HTMLFormElement).reset();
       } else {
         throw new Error(
@@ -820,10 +815,10 @@ function GraphicQuoteSection({ isDark }: { isDark: boolean }) {
   };
 
   return (
-    <section className="graphic-quote pb-16 pt-8 sm:pb-24 sm:pt-12 lg:pb-28">
+    <section id="graphic-quote-section" className="graphic-quote pt-8 sm:pb-24 sm:pt-12 lg:pb-28">
       <div className="container">
         <div
-          className="graphic-quote-panel mx-auto rounded-2xl px-4 py-10 text-center sm:rounded-3xl sm:px-6 sm:py-14 md:px-8 md:py-16 lg:px-10 lg:py-20"
+          className="graphic-quote-panel mx-auto min-w-0 overflow-hidden rounded-2xl px-4 py-10 text-center sm:rounded-3xl sm:px-6 sm:py-14 md:px-8 md:py-16 lg:px-10 lg:py-20"
           style={{ backgroundColor: panelBg }}
         >
           <p
@@ -836,7 +831,7 @@ function GraphicQuoteSection({ isDark }: { isDark: boolean }) {
           <h2
             className="mt-5 text-[2rem] font-bold uppercase leading-[0.95] tracking-tight sm:mt-6 sm:text-[2.75rem] md:mt-7 md:text-[3.5rem] lg:text-[4.25rem]"
             style={{
-              fontFamily: "var(--tp-ff-syne), sans-serif",
+              
               color: textColor,
             }}
           >
@@ -859,9 +854,9 @@ function GraphicQuoteSection({ isDark }: { isDark: boolean }) {
             </a>
           </p>
 
-          <form onSubmit={handleSubmit} className="mx-auto mt-8 max-w-4xl text-left sm:mt-12 md:mt-14">
-            <div className="grid grid-cols-1 gap-5 sm:gap-6 md:grid-cols-2">
-              <div>
+          <form onSubmit={handleSubmit} className="mx-auto mt-8 max-w-4xl min-w-0 text-left sm:mt-12 md:mt-14">
+            <div className="grid min-w-0 grid-cols-1 gap-3 sm:gap-6 md:grid-cols-2">
+              <div className="min-w-0">
                 <input
                   id="graphic-quote-name"
                   name="name"
@@ -876,7 +871,7 @@ function GraphicQuoteSection({ isDark }: { isDark: boolean }) {
                 />
               </div>
 
-              <div>
+              <div className="min-w-0">
                 <input
                   id="graphic-quote-email"
                   name="email"
@@ -890,7 +885,7 @@ function GraphicQuoteSection({ isDark }: { isDark: boolean }) {
                 />
               </div>
 
-              <div>
+              <div className="min-w-0">
                 <input
                   id="graphic-quote-phone"
                   name="phone"
@@ -906,14 +901,15 @@ function GraphicQuoteSection({ isDark }: { isDark: boolean }) {
                 />
               </div>
 
-              <div>
+              <div className="min-w-0">
                 <select
                   id="graphic-quote-service"
                   name="service"
                   required
-                  defaultValue=""
+                  value={selectedService}
+                  onChange={(e) => setSelectedService(e.target.value)}
                   aria-label="Select Your Graphic Design Service"
-                  className={selectClass}
+                  className={`${selectClass} ${selectedService === "" ? placeholderTextClass : ""}`}
                   style={selectStyle}
                 >
                   <option value="" disabled>
@@ -927,7 +923,7 @@ function GraphicQuoteSection({ isDark }: { isDark: boolean }) {
                 </select>
               </div>
 
-              <div>
+              <div className="min-w-0">
                 <input
                   id="graphic-quote-budget"
                   name="budget"
@@ -939,7 +935,7 @@ function GraphicQuoteSection({ isDark }: { isDark: boolean }) {
                 />
               </div>
 
-              <div>
+              <div className="min-w-0">
                 <textarea
                   id="graphic-quote-message"
                   name="message"
@@ -952,11 +948,11 @@ function GraphicQuoteSection({ isDark }: { isDark: boolean }) {
                 />
               </div>
 
-              <div className="md:col-span-2">
+              <div className="flex justify-end md:col-span-2">
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="inline-flex w-full items-center justify-center gap-2.5 rounded-lg px-8 py-3.5 text-base font-bold uppercase tracking-wide transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+                  className="inline-flex w-auto min-w-[9.5rem] items-center justify-center gap-2.5 rounded-lg px-8 py-3.5 text-base font-bold uppercase tracking-wide transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 sm:min-w-0"
                   style={{
                     fontFamily: "var(--tp-ff-syne), sans-serif",
                     backgroundColor: isDark ? "#ffffff" : "#18181b",
@@ -1045,8 +1041,8 @@ export default function GraphicPage() {
         <main>
           <section>
             <div className="container pb-12  sm:pb-16 sm:pt-10 lg:pb-20 lg:pt-10">
-              <div className="grid min-h-0 grid-cols-1 items-center gap-8 sm:gap-10  lg:grid-cols-[1.05fr_0.95fr] lg:gap-10 ">
-                <div className="">
+              <div className="grid min-h-0 grid-cols-1 items-center gap-8 sm:gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
+                <div className="max-lg:order-2">
                   {/* <p className="graphic-muted mb-6 text-[11px] font-light uppercase tracking-[0.32em] sm:mb-8 sm:text-xs">
                     UK GRAPHIC DESIGN STUDIO
                   </p> */}
@@ -1074,29 +1070,19 @@ export default function GraphicPage() {
 
                   <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
                   <Link
-                      href="/graphic-designing"
+                      href="#graphic-quote-section"
                       className={`graphic-btn-secondary inline-flex w-full items-center justify-center border px-7 py-3.5 text-[11px] font-medium uppercase tracking-[0.22em] transition-colors sm:min-w-[168px] sm:w-auto sm:px-8 sm:text-xs ${
                         isDark
-                          ? "border-white text-white hover:bg-zinc-800 "
-                          : "border-zinc-900 text-zinc-900 hover:bg-zinc-900/5"
+                          ? "border-white text-white hover:bg-white hover:!text-black !font-bold "
+                          : "border-zinc-900 text-zinc-900 hover:bg-black hover:!text-white !font-bold "
                       }`}
                     >
                       Start a Project
                     </Link>
-                    <Link
-                      href="/graphic-designing"
-                      className={`graphic-btn-secondary inline-flex w-full items-center justify-center border px-7 py-3.5 text-[11px] font-medium uppercase tracking-[0.22em] transition-colors sm:min-w-[168px] sm:w-auto sm:px-8 sm:text-xs ${
-                        isDark
-                          ? "border-white text-white hover:bg-zinc-800"
-                          : "border-zinc-900 text-zinc-900 hover:bg-zinc-900/5"
-                      }`}
-                    >
-                      VIEW WORK
-                    </Link>
                   </div>
                 </div>
 
-                <div className="relative mx-auto flex w-full max-w-[320px] items-center justify-center sm:max-w-[420px] lg:mx-0 lg:max-w-none lg:justify-end">
+                <div className="relative max-lg:order-1 mx-auto flex w-full max-w-[320px] items-center justify-center sm:max-w-[420px] lg:mx-0 lg:max-w-none lg:justify-end">
                   <div className="relative aspect-square w-full max-w-[min(100%,280px)] sm:max-w-[min(100%,420px)] lg:max-w-[min(100%,480px)]">
                     <Image
                       src="/graphic/hero-visual.gif"
@@ -1366,7 +1352,21 @@ export default function GraphicPage() {
                 aria-hidden
               />
 
-              <div className="mt-6 grid grid-cols-1 gap-5 sm:mt-8 sm:gap-6 md:mt-10 lg:grid-cols-2 lg:gap-x-10">
+              <div className="mt-6 flex flex-col gap-2 sm:mt-8 sm:gap-2.5 lg:hidden">
+                {FAQ_ITEMS.map((item) => (
+                  <GraphicFaqItem
+                    key={item.id}
+                    id={item.id}
+                    question={item.question}
+                    answer={FAQ_LOREM}
+                    isOpen={openFaqId === item.id}
+                    onToggle={() => handleFaqToggle(item.id)}
+                    isDark={isDark}
+                  />
+                ))}
+              </div>
+
+              <div className="mt-6 hidden gap-3 sm:mt-8 lg:grid lg:grid-cols-2 lg:gap-x-10">
                 <div className="flex flex-col gap-3">
                   {FAQ_ITEMS.slice(0, 4).map((item) => (
                     <GraphicFaqItem
@@ -1400,6 +1400,8 @@ export default function GraphicPage() {
           <GraphicQuoteSection isDark={isDark} />
         </main>
       </div>
+
+      <FooterFour />
     </Wrapper>
   );
 }
