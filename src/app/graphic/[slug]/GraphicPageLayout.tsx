@@ -464,7 +464,7 @@ const SHAPE_BG = "/graphic/shape-bg.png";
 const TEXTURE_BG = "/graphic/texture-bg.png";
 
 const DESIGN_ELEMENTS_INTRO =
-  "DESIGN IS ALL ABOUT COMBINING IMAGES, TEXTS AND IDEAS TO COMMUNICATE THE VALUE OF A COMPANY — VISUALLY, AND INSTANTLY. BY USING VISUAL ELEMENTS SUCH AS TYPOGRAPHY, PHOTOGRAPHS, COLOUR AND LAYOUT, GRAPHIC DESIGNERS HELP BUSINESSES CONNECT WITH THEIR AUDIENCE AND CREATE A LASTING IMPRESSION.";
+"Great design brings together images, typography, colour, and layout to communicate ideas clearly and effectively. By thoughtfully arranging visual elements, designers create engaging experiences that guide attention and strengthen messages. The result is visual storytelling that drives connection and action.";
 
 const COLOUR_SWATCHES = ["#1a2744", "#6b8fa3", "#e8c547", "#d4c4a8", "#8fa68f", "#2d4a3e"] as const;
 
