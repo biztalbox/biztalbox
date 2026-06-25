@@ -9,9 +9,7 @@ html[data-theme="dark"] [data-graphic-page] {
 
 html[data-theme="dark"] [data-graphic-page] .graphic-heading,
 html[data-theme="dark"] [data-graphic-page] .graphic-marquee-text,
-html[data-theme="dark"] [data-graphic-page] .graphic-section-title,
-html[data-theme="dark"] [data-graphic-page] .graphic-process-title,
-html[data-theme="dark"] [data-graphic-page] .graphic-process-num {
+html[data-theme="dark"] [data-graphic-page] .graphic-section-title {
   color: #ffffff !important;
 }
 
@@ -43,9 +41,7 @@ html[data-theme="light"] [data-graphic-page] {
 
 html[data-theme="light"] [data-graphic-page] .graphic-heading,
 html[data-theme="light"] [data-graphic-page] .graphic-marquee-text,
-html[data-theme="light"] [data-graphic-page] .graphic-section-title,
-html[data-theme="light"] [data-graphic-page] .graphic-process-title,
-html[data-theme="light"] [data-graphic-page] .graphic-process-num {
+html[data-theme="light"] [data-graphic-page] .graphic-section-title {
   color: #18181b !important;
 }
 
@@ -93,4 +89,89 @@ html[data-theme="light"] [data-graphic-page] .ab-logo-2 {
 
 [data-theme="dark"] [data-graphic-page] .black_text{
   color: black !important;
+}
+
+@keyframes graphic-panel-fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes graphic-panel-fade-in-down {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(px);
+  }
+}
+
+[data-graphic-page] .graphic-creative-panel--above {
+  animation: graphic-panel-fade-in-up 0.35s ease-out both;
+}
+
+[data-graphic-page] .graphic-creative-panel--below {
+  animation: graphic-panel-fade-in-down 0.35s ease-out both;
+}
+
+[data-graphic-page] .graphic-process-card {
+  transition: background-color 0.3s ease;
+}
+
+[data-graphic-page] .graphic-process-card .graphic-process-num,
+[data-graphic-page] .graphic-process-card .graphic-process-title,
+[data-graphic-page] .graphic-process-card .graphic-process-text,
+[data-graphic-page] .graphic-process-card .graphic-process-icon {
+  transition: color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
+}
+
+html[data-theme="dark"] [data-graphic-page] .graphic-process-card:not(:hover) .graphic-process-num,
+html[data-theme="dark"] [data-graphic-page] .graphic-process-card:not(:hover) .graphic-process-title,
+html[data-theme="dark"] [data-graphic-page] .graphic-process-card:not(:hover) .graphic-process-text {
+  color: rgba(255, 255, 255, 0.42) !important;
+}
+
+html[data-theme="dark"] [data-graphic-page] .graphic-process-card:not(:hover) .graphic-process-icon {
+  color: rgba(255, 255, 255, 0.42) !important;
+  border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+html[data-theme="dark"] [data-graphic-page] .graphic-process-card:hover .graphic-process-num,
+html[data-theme="dark"] [data-graphic-page] .graphic-process-card:hover .graphic-process-title,
+html[data-theme="dark"] [data-graphic-page] .graphic-process-card:hover .graphic-process-text {
+  color: #ffffff !important;
+}
+
+html[data-theme="dark"] [data-graphic-page] .graphic-process-card:hover .graphic-process-icon {
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0.35) !important;
+}
+
+html[data-theme="light"] [data-graphic-page] .graphic-process-card:not(:hover) .graphic-process-num,
+html[data-theme="light"] [data-graphic-page] .graphic-process-card:not(:hover) .graphic-process-title,
+html[data-theme="light"] [data-graphic-page] .graphic-process-card:not(:hover) .graphic-process-text {
+  color: rgba(24, 24, 27, 0.38) !important;
+}
+
+html[data-theme="light"] [data-graphic-page] .graphic-process-card:not(:hover) .graphic-process-icon {
+  color: rgba(24, 24, 27, 0.38) !important;
+  border-color: rgba(0, 0, 0, 0.12) !important;
+}
+
+html[data-theme="light"] [data-graphic-page] .graphic-process-card:hover .graphic-process-num,
+html[data-theme="light"] [data-graphic-page] .graphic-process-card:hover .graphic-process-title,
+html[data-theme="light"] [data-graphic-page] .graphic-process-card:hover .graphic-process-text {
+  color: #18181b !important;
+}
+
+html[data-theme="light"] [data-graphic-page] .graphic-process-card:hover .graphic-process-icon {
+  color: #18181b !important;
+  border-color: rgba(0, 0, 0, 0.32) !important;
 }

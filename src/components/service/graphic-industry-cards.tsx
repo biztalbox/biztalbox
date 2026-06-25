@@ -367,7 +367,7 @@ export default function GraphicIndustryCards({
   return (
     <section>
       <div
-        className="tp-industry-area pt-20 pb-20"
+        className="tp-industry-area pt-16 pb-20"
         data-theme={isDark ? "dark" : "light"}
       >
         <div className="container">

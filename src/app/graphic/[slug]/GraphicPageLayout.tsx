@@ -180,6 +180,36 @@ type CreativeService = {
   image: string;
 };
 
+function getCreativeServiceConnectedEdge(
+  service: CreativeService,
+  isOpen: boolean,
+): "top" | "bottom" | null {
+  if (!isOpen) return null;
+  return service.layout === "b" ? "top" : "bottom";
+}
+
+function getCreativeServiceCardShiftClass(service: CreativeService, isOpen: boolean) {
+  if (!isOpen) return "transition-transform duration-300 ease-out";
+
+  if (service.layout === "b") {
+    return "relative z-[2] -translate-y-[11px] transition-transform duration-300 ease-out sm:-translate-y-3";
+  }
+
+  return "relative z-[2] translate-y-[11px] transition-transform duration-300 ease-out sm:translate-y-3";
+}
+
+function getCreativeServiceSurface(isDark: boolean, isOpen: boolean) {
+  return {
+    cardBg: isOpen ? (isDark ? "#343434" : "#dedede") : isDark ? "#2a2a2a" : "#ececec",
+    borderColor: isOpen
+      ? isDark
+        ? "rgba(255,255,255,0.28)"
+        : "rgba(24,24,27,0.16)"
+      : "transparent",
+    dividerColor: isDark ? "rgba(255,255,255,0.12)" : "rgba(24,24,27,0.08)",
+  };
+}
+
 function CreativeServiceArrowIcon({
   isDark,
   isOpen,
@@ -195,12 +225,12 @@ function CreativeServiceArrowIcon({
   return (
     <span
       className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-transform duration-300 group-hover/learn:scale-110"
-      style={{ backgroundColor: isDark ? "#ffffff" : "#18181b" }}
+      style={{ backgroundColor: "gray" }}
       aria-hidden
     >
       <ArrowIcon
         className="h-4 w-4"
-        style={{ color: isDark ? "#18181b" : "#ffffff" }}
+        style={{ color: "#ffffff" }}
       />
     </span>
   );
@@ -222,12 +252,20 @@ function CreativeServiceLearnMore({
       type="button"
       onClick={onClick}
       aria-expanded={isOpen}
-      className={`group/learn absolute inset-x-0 z-10 flex w-full items-center justify-between gap-3 px-3 py-3 text-left transition-all duration-300 sm:px-4 sm:py-3.5 ${
+      className={`group/learn absolute inset-x-0 z-10 flex w-full items-center justify-between gap-3 px-3 py-2.5 text-left transition-all duration-300 sm:px-3.5 sm:py-3 ${
         overlayPosition === "top" ? "top-0" : "bottom-0"
       }`}
     >
       <span
-        className="text-sm font-medium transition-all duration-300 group-hover/learn:font-semibold sm:text-[15px]"
+        className={`absolute inset-x-0 ${overlayPosition === "top" ? "top-0" : "bottom-0"} h-20 pointer-events-none ${
+          overlayPosition === "top"
+            ? "bg-gradient-to-b from-black/70 via-black/35 to-transparent"
+            : "bg-gradient-to-t from-black/75 via-black/35 to-transparent"
+        }`}
+        aria-hidden
+      />
+      <span
+        className="relative z-[1] rounded-full bg-black/40 px-3 py-1.5 text-sm font-medium text-white shadow-[0_8px_20px_rgba(0,0,0,0.25)] backdrop-blur-[2px] transition-all duration-300 group-hover/learn:bg-black/55 group-hover/learn:font-semibold sm:text-[15px]"
         style={{
           color: "#ffffff",
           textShadow: "0 1px 6px rgba(0,0,0,0.45)",
@@ -261,16 +299,16 @@ function CreativeServiceImageBlock({
   learnMorePosition: "top" | "bottom";
   flushEdge: "top" | "bottom";
 }) {
-  const edgeRadius = flushEdge === "top" ? "rounded-b-2xl" : "rounded-t-2xl";
+  const edgeRadius = flushEdge === "top" ? "rounded-b-[20px]" : "rounded-t-[20px]";
 
   return (
     <div className={`group/image relative w-full overflow-hidden bg-white ${edgeRadius}`}>
-      <div className="relative min-h-[180px] w-full sm:min-h-[220px] lg:min-h-[240px]">
+      <div className="relative aspect-[1.35/1] w-full">
         <Image
           src={service.image}
           alt={service.title}
           fill
-          className="object-contain p-2 transition-transform duration-500 group-hover/image:scale-105 sm:p-3"
+          className="object-contain p-2 transition-transform duration-500 group-hover/image:scale-[1.03] sm:p-2.5"
           sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
         />
         <div className="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover/image:bg-black/10" />
@@ -313,14 +351,16 @@ function CreativeServiceCard({
   isOpen,
   expandInline,
   onToggle,
+  connectedEdge = null,
 }: {
   service: CreativeService;
   isDark: boolean;
   isOpen: boolean;
   expandInline: boolean;
   onToggle: () => void;
+  connectedEdge?: "top" | "bottom" | null;
 }) {
-  const cardBg = isDark ? "#2a2a2a" : "#ececec";
+  const surface = getCreativeServiceSurface(isDark, isOpen);
   const titleColor = isDark ? "#ffffff" : "#18181b";
 
   const titleBlock = (
@@ -334,14 +374,19 @@ function CreativeServiceCard({
 
   return (
     <article
-      className={`flex w-full flex-col overflow-hidden rounded-2xl ${
-        expandInline ? "self-start" : "h-full"
-      }`}
-      style={{ backgroundColor: cardBg }}
+      className={`flex w-full flex-col overflow-hidden transition-[background-color,border-color] duration-200 ease-out ${
+        expandInline ? "self-start rounded-2xl" : "h-full rounded-2xl"
+      } ${isOpen ? "border" : ""} ${
+        connectedEdge === "top" ? "rounded-t-none !border-t-0" : ""
+      } ${connectedEdge === "bottom" ? "rounded-b-none !border-b-0" : ""}`}
+      style={{
+        backgroundColor: surface.cardBg,
+        borderColor: surface.borderColor,
+      }}
     >
       {service.layout === "b" ? (
         <>
-          <div className="px-2.5 sm:px-4">
+          <div className="px-2.5 pt-2.5 sm:px-3 sm:pt-3">
             <CreativeServiceImageBlock
               service={service}
               isDark={isDark}
@@ -352,7 +397,7 @@ function CreativeServiceCard({
             />
           </div>
           <div
-            className={`flex flex-col px-3 py-4 pt-3 sm:px-5 sm:py-5 sm:pt-4 ${
+            className={`flex flex-col px-3 pb-3.5 pt-2.5 sm:px-4 sm:pb-4 sm:pt-2.5 ${
               expandInline ? "" : "flex-1"
             }`}
           >
@@ -361,8 +406,8 @@ function CreativeServiceCard({
         </>
       ) : (
         <>
-          <div className="px-3 py-4 pb-3 sm:px-5 sm:py-5 sm:pb-4">{titleBlock}</div>
-          <div className={`w-full px-2.5 sm:px-4 ${expandInline ? "" : "mt-auto"}`}>
+          <div className="px-3 pb-2.5 pt-3 sm:px-4 sm:pb-2.5 sm:pt-4">{titleBlock}</div>
+          <div className={`w-full px-2.5 pb-2.5 sm:px-3 sm:pb-3 ${expandInline ? "" : "mt-auto"}`}>
             <CreativeServiceImageBlock
               service={service}
               isDark={isDark}
@@ -376,11 +421,42 @@ function CreativeServiceCard({
       )}
 
       {expandInline && isOpen ? (
-        <div className="px-3 pb-4 pt-1 sm:px-5 sm:pb-5">
+        <div
+          className="border-t px-3 pb-4 pt-3 sm:px-4 sm:pb-4"
+          style={{ borderColor: surface.dividerColor }}
+        >
           <CreativeServiceDetailPanel isDark={isDark} html={service.paragraph} plain />
         </div>
       ) : null}
     </article>
+  );
+}
+
+function CreativeServiceRowPanel({
+  isDark,
+  html,
+  position,
+}: {
+  isDark: boolean;
+  html: string;
+  position: "above" | "below";
+}) {
+  const surface = getCreativeServiceSurface(isDark, true);
+
+  return (
+    <div
+      className={`graphic-creative-panel--${position} relative z-[1] border px-4 py-4 sm:px-5 sm:py-5 ${
+        position === "above"
+          ? "rounded-t-[22px] rounded-b-none border-b-0"
+          : "rounded-b-[22px] rounded-t-none border-t-0"
+      }`}
+      style={{
+        backgroundColor: surface.cardBg,
+        borderColor: surface.borderColor,
+      }}
+    >
+      <CreativeServiceDetailPanel isDark={isDark} html={html} plain />
+    </div>
   );
 }
 
@@ -441,7 +517,7 @@ function GoodGraphicDesignSection({
   const row2Card = "overflow-hidden rounded-[18px] border p-4 sm:p-4 lg:h-[165px]";
   const row1Title = "text-[1.35rem] font-bold uppercase sm:text-[1.5rem]";
   const row2Title = "text-[1.2rem] font-bold uppercase leading-none tracking-tight sm:text-[1.35rem]";
-  const bodySm = "text-[11px] sm:text-xs sm:leading-4";
+  const bodySm = "text-xs sm:leading-4";
 
   return (
     <section className="graphic-design-elements pb-12 pt-4 sm:pb-20 sm:pt-6">
@@ -563,7 +639,7 @@ function GoodGraphicDesignSection({
                 ))}
               </div>
               <p className={`${bodySm} pt-3`} style={{ color: bodyText }}>
-                Size is simply how small or large something is. Size can be used to create emphasis or visual hierarchy.
+                Size is used to create emphasis or visual hierarchy.
               </p>
             </div>
           </article>
@@ -617,42 +693,54 @@ function CreativeServicesSection({
 
   const renderDesktopRow = (row: 0 | 1) => {
     const rowServices = services.filter((service) => service.row === row);
-    const showAbove = openService?.row === row && openService.layout === "b";
-    const showBelow = openService?.row === row && openService.layout === "a";
+    const showPanelAbove = openService?.row === row && openService.layout === "b";
+    const showPanelBelow = openService?.row === row && openService.layout === "a";
     const openParagraph = openService?.paragraph ?? CREATIVE_SERVICE_DETAIL_LOREM;
 
     return (
-      <div key={row}>
-        {showAbove ? (
-          <div className="mb-4 sm:mb-5">
-            <CreativeServiceDetailPanel isDark={isDark} html={openParagraph} />
-          </div>
+      <div key={row} className="flex flex-col gap-2.5">
+        {showPanelAbove ? (
+          <CreativeServiceRowPanel
+            key={`panel-above-${openId}`}
+            isDark={isDark}
+            html={openParagraph}
+            position="above"
+          />
         ) : null}
 
-        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:gap-5 xl:grid-cols-4 xl:gap-6">
-          {rowServices.map((service) => (
-            <CreativeServiceCard
-              key={service.id}
-              service={service}
-              isDark={isDark}
-              isOpen={openId === service.id}
-              expandInline={false}
-              onToggle={() => onToggle(service.id)}
-            />
-          ))}
+        <div className="grid grid-cols-1 gap-3 md:gap-2 xl:gap-4 md:grid-cols-4">
+          {rowServices.map((service) => {
+            const isOpen = openId === service.id;
+
+            return (
+              <div key={service.id} className={`h-full w-full ${getCreativeServiceCardShiftClass(service, isOpen)}`}>
+                <CreativeServiceCard
+                  service={service}
+                  isDark={isDark}
+                  isOpen={isOpen}
+                  expandInline={false}
+                  onToggle={() => onToggle(service.id)}
+                  connectedEdge={getCreativeServiceConnectedEdge(service, isOpen)}
+                />
+              </div>
+            );
+          })}
         </div>
 
-        {showBelow ? (
-          <div className="mb-6 mt-4 sm:mt-5 sm:mb-8">
-            <CreativeServiceDetailPanel isDark={isDark} html={openParagraph} />
-          </div>
+        {showPanelBelow ? (
+          <CreativeServiceRowPanel
+            key={`panel-below-${openId}`}
+            isDark={isDark}
+            html={openParagraph}
+            position="below"
+          />
         ) : null}
       </div>
     );
   };
 
   return (
-    <section className="graphic-creative-services pb-12 pt-4 sm:pb-20 sm:pt-6">
+    <section className="graphic-creative-services py-12">
       <div className="container">
         <SafeHtml
           html={sectionHeading}
@@ -849,10 +937,10 @@ function GraphicQuoteSection({ isDark }: { isDark: boolean }) {
   };
 
   return (
-    <section id="graphic-quote-section" className="graphic-quote pt-8 sm:pb-24 sm:pt-12 lg:pb-28">
+    <section id="graphic-quote-section" className="graphic-quote pt-10">
       <div className="container">
         <div
-          className="graphic-quote-panel mx-auto min-w-0 overflow-hidden rounded-2xl px-4 py-10 text-center sm:rounded-3xl sm:px-6 sm:py-14 md:px-8 md:py-16 lg:px-10 lg:py-20"
+          className="graphic-quote-panel mx-auto min-w-0 overflow-hidden rounded-t-2xl px-4 py-10 text-center sm:px-6 sm:py-14 md:px-8 md:py-16 lg:px-10 lg:py-20"
           style={{ backgroundColor: panelBg }}
         >
           <p
@@ -873,18 +961,17 @@ function GraphicQuoteSection({ isDark }: { isDark: boolean }) {
           </h2>
 
           <p
-            className="mx-auto mt-5 max-w-2xl text-sm font-normal leading-relaxed sm:mt-6 sm:text-base md:mt-7 md:text-[17px] md:leading-8"
+            className="mx-auto mt-5 text-sm font-normal leading-relaxed sm:mt-6 sm:text-base md:mt-7 md:text-[17px] md:leading-8"
             style={{ color: mutedText }}
           >
-            Let our experienced designers create unique visual art for you.
             <br />
-            If you want to ask a question or speak directly to the team, please call us{" "}
+            If you want to ask a question or speak directly to the team, please call us {" "}
             <a
-              href="tel:07546681556"
+              href="tel:919485699709"
               className="transition-opacity hover:opacity-80"
               style={{ color: textColor }}
             >
-              07546 681 556
+               +91 9485699709
             </a>
           </p>
 
@@ -907,13 +994,11 @@ function GraphicQuoteSection({ isDark }: { isDark: boolean }) {
 
               <div className="min-w-0">
                 <input
-                  id="graphic-quote-email"
-                  name="email"
-                  type="email"
-                  required
-                  placeholder="Enter your email"
-                  autoComplete="email"
-                  aria-label="Email Address"
+                  id="graphic-quote-budget"
+                  name="budget"
+                  type="text"
+                  placeholder="Enter your budget"
+                  aria-label="Budget"
                   className={fieldClass}
                   style={fieldStyle}
                 />
@@ -959,15 +1044,19 @@ function GraphicQuoteSection({ isDark }: { isDark: boolean }) {
 
               <div className="min-w-0">
                 <input
-                  id="graphic-quote-budget"
-                  name="budget"
-                  type="text"
-                  placeholder="Enter your budget"
-                  aria-label="Budget"
+                  id="graphic-quote-email"
+                  name="email"
+                  type="email"
+                  required
+                  placeholder="Enter your email"
+                  autoComplete="email"
+                  aria-label="Email Address"
                   className={fieldClass}
                   style={fieldStyle}
                 />
               </div>
+
+              
 
               <div className="min-w-0">
                 <textarea
@@ -986,7 +1075,7 @@ function GraphicQuoteSection({ isDark }: { isDark: boolean }) {
                 <button
                   type="submit"
                   disabled={isLoading}
-                  className="inline-flex w-auto min-w-[9.5rem] items-center justify-center gap-2.5 rounded-lg px-8 py-3.5 text-base font-bold uppercase tracking-wide transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 sm:min-w-0"
+                  className="w-fit mx-auto items-center justify-center gap-2.5 rounded-lg px-8 py-3.5 text-base font-bold uppercase tracking-wide transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
                   style={{
                     fontFamily: "var(--tp-ff-syne), sans-serif",
                     backgroundColor: isDark ? "#ffffff" : "#18181b",
@@ -1110,7 +1199,7 @@ export default function GraphicPageLayout({ data }: { data: GraphicPageData }) {
 
   return (
     <Wrapper>
-      <div data-graphic-page className="graphic-page min-h-screen overflow-x-hidden">
+      <div data-graphic-page className="graphic-page overflow-x-hidden">
         <HeaderEleven transparent={isDark} cls={isDark ? "" : "tp-inner-header-border"} />
 
         <main>
@@ -1220,24 +1309,17 @@ export default function GraphicPageLayout({ data }: { data: GraphicPageData }) {
                 {PROCESS_STEPS.map((step) => (
                   <div key={step.num} className="relative pt-7 sm:pt-10">
                     <article
-                      className="graphic-process-card relative flex min-h-[220px] flex-col rounded-2xl px-5 pb-7 pt-12 sm:min-h-[260px] sm:px-6 sm:pb-8 sm:pt-14 md:min-h-[280px] md:px-7 md:pb-9 md:pt-16"
+                      className="graphic-process-card group relative flex min-h-[220px] cursor-default flex-col rounded-2xl px-5 pb-7 pt-12 transition-colors duration-300 sm:min-h-[260px] sm:px-6 sm:pb-8 sm:pt-14 md:min-h-[280px] md:px-7 md:pb-9 md:pt-16"
                       style={{
                         backgroundColor: isDark ? "#1e1e1e" : "#f3f3f3",
                       }}
                     >
                       <span
                         className="graphic-process-num pointer-events-none absolute -top-7 left-4 z-10 text-[3.25rem] font-bold leading-none sm:-top-8 sm:left-5 sm:text-[4.5rem] md:-top-10 md:left-6 md:text-[5.5rem]"
-                        
                       >
                         {step.num}
                       </span>
-                      <span
-                        className="graphic-process-icon absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full border sm:right-6 sm:top-6"
-                        style={{
-                          borderColor: isDark ? "rgba(255,255,255,0.2)" : "rgba(0,0,0,0.15)",
-                          color: isDark ? "#ffffff" : "#18181b",
-                        }}
-                      >
+                      <span className="graphic-process-icon absolute right-5 top-5 flex h-9 w-9 items-center justify-center rounded-full border sm:right-6 sm:top-6">
                         <ProcessArrowIcon />
                       </span>
                       <h3
@@ -1246,7 +1328,7 @@ export default function GraphicPageLayout({ data }: { data: GraphicPageData }) {
                       >
                         {step.title}
                       </h3>
-                      <p className="graphic-muted graphic-process-text text-center text-sm leading-relaxed sm:text-[15px]">
+                      <p className="graphic-process-text text-center text-sm leading-relaxed sm:text-[15px]">
                         {step.text}
                       </p>
                     </article>
@@ -1270,7 +1352,7 @@ export default function GraphicPageLayout({ data }: { data: GraphicPageData }) {
             services={creativeServices}
           />
 
-          <section className="graphic-why-choose pb-16 pt-2 sm:pb-24">
+          <section className="graphic-why-choose py-16">
             <div className="container">
               <h2
                 className="graphic-section-title text-[1.65rem] font-light leading-tight tracking-tight sm:text-[2rem] md:text-[2.35rem]"
@@ -1327,7 +1409,7 @@ export default function GraphicPageLayout({ data }: { data: GraphicPageData }) {
 
           <GraphicIndustryCards title="Industries We Serve" />
 
-          <section className="graphic-cta">
+          <section className="graphic-cta py-12">
             <div
               className="graphic-cta-panel w-full py-12 sm:py-20 md:py-24 lg:py-28"
               style={{
@@ -1376,7 +1458,7 @@ export default function GraphicPageLayout({ data }: { data: GraphicPageData }) {
             </div>
           </section>
 
-          <section className="graphic-faq pb-16 pt-8 sm:pb-24 sm:pt-12 lg:pb-28">
+          <section className="graphic-faq py-12">
             <div className="container">
               <h2
                 className="graphic-section-title text-[1.65rem] font-light leading-tight tracking-tight sm:text-[2rem] md:text-[2.35rem] lg:text-[2.75rem]"
@@ -1438,8 +1520,6 @@ export default function GraphicPageLayout({ data }: { data: GraphicPageData }) {
           <GraphicQuoteSection isDark={isDark} />
         </main>
       </div>
-
-      <FooterFour />
     </Wrapper>
   );
 }
