@@ -441,7 +441,7 @@ function GoodGraphicDesignSection({
   const row2Card = "overflow-hidden rounded-[18px] border p-4 sm:p-4 lg:h-[165px]";
   const row1Title = "text-[1.35rem] font-bold uppercase sm:text-[1.5rem]";
   const row2Title = "text-[1.2rem] font-bold uppercase leading-none tracking-tight sm:text-[1.35rem]";
-  const bodySm = "text-[11px] leading-relaxed sm:text-xs sm:leading-5";
+  const bodySm = "text-[11px] sm:text-xs sm:leading-4";
 
   return (
     <section className="graphic-design-elements pb-12 pt-4 sm:pb-20 sm:pt-6">
@@ -494,7 +494,7 @@ function GoodGraphicDesignSection({
               backgroundPosition: "center",
             }}
           >
-            <h3 className={row1Title}>
+            <h3 className={`${row1Title} black_text`}>
               Shape
             </h3>
           </article>
@@ -508,7 +508,7 @@ function GoodGraphicDesignSection({
               backgroundPosition: "center",
             }}
           >
-            <h3 className={row1Title} style={{ color: textColor }}>
+            <h3 className={`${row1Title} black_text`}>
               Texture
             </h3>
           </article>
@@ -562,7 +562,7 @@ function GoodGraphicDesignSection({
                   </span>
                 ))}
               </div>
-              <p className={`${bodySm} leading-4`} style={{ color: bodyText }}>
+              <p className={`${bodySm} pt-3`} style={{ color: bodyText }}>
                 Size is simply how small or large something is. Size can be used to create emphasis or visual hierarchy.
               </p>
             </div>
@@ -579,7 +579,7 @@ function GoodGraphicDesignSection({
                 ))}
               </div>
             </div>
-            <p className={bodySm} style={{ color: bodyText }}>
+            <p className={`${bodySm} pt-3`} style={{ color: bodyText }}>
               Colour helps set the mood and tone of a design. It can be used to create contrast, emphasis and visual
               interest.
             </p>
@@ -1122,14 +1122,13 @@ export default function GraphicPageLayout({ data }: { data: GraphicPageData }) {
                     UK GRAPHIC DESIGN STUDIO
                   </p> */}
 
-                  <SafeHtml
-                    html={heroHeading}
-                    className="graphic-heading mb-6 text-[1.85rem] font-bold leading-[1.05] tracking-tight sm:mb-8 sm:text-5xl sm:leading-[1.02] lg:mb-10 lg:text-[3.35rem] xl:text-[3.75rem]"
-                  />
+                  <h1 className="graphic-heading mb-6 text-[1.85rem] font-bold leading-[1.05] tracking-tight sm:mb-8 sm:text-5xl sm:leading-[1.02] lg:mb-10 lg:text-[3.35rem] xl:text-[3.75rem]">
+                    { heroHeading }
+                  </h1>
 
                   <SafeHtml
                     html={heroParagraph}
-                    className="graphic-muted graphic-body mb-8 text-sm font-light leading-relaxed sm:mb-12 sm:text-[15px] sm:leading-7 lg:text-base"
+                    as="p"
                   />
 
                   <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
@@ -1180,12 +1179,12 @@ export default function GraphicPageLayout({ data }: { data: GraphicPageData }) {
                       <span className="graphic-marquee-text whitespace-nowrap text-xs font-light uppercase tracking-[0.14em] sm:text-sm sm:tracking-[0.18em] md:text-base lg:text-lg">
                         {service}
                       </span>
-                      <span
-                        className="mx-6 flex shrink-0 items-center text-xl text-[#ff6b2b] sm:mx-8 sm:text-2xl md:text-3xl"
+                      <li
+                        className="mx-6 flex shrink-0 items-center text-xl !text-[#ff6b2b] sm:mx-8 sm:text-2xl md:text-3xl"
                         aria-hidden
                       >
                         ★
-                      </span>
+                      </li>
                     </span>
                   ))}
                 </Marquee>
@@ -1383,15 +1382,15 @@ export default function GraphicPageLayout({ data }: { data: GraphicPageData }) {
                   </span>
                 </h2>
 
-                <p
+                <div
                   className="mt-6  text-lg font-light leading-[1.3] sm:mt-10 sm:text-[1.65rem] sm:leading-[1.25] md:mt-12 md:text-[2.15rem] lg:mt-14 lg:text-[2.65rem] lg:leading-[1.2]"
                   style={{
                     
                     color: isDark ? "#18181b" : "#ffffff",
                   }}
                 >
-                  Let&apos;s discuss your graphic design project — no obligation.
-                </p>
+                  Let&apos;s discuss your graphic design project - no obligation.
+                </div>
 
                 <Link
                   href="/contact"

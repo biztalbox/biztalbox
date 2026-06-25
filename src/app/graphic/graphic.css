@@ -82,3 +82,16 @@ html[data-theme="light"] [data-graphic-page] .ab-logo-2 {
 [data-graphic-page]  a{
   color: royalblue !important;
 }
+
+
+[data-theme="dark"] [data-graphic-page] p,
+[data-theme="dark"] [data-graphic-page] span,
+[data-theme="dark"] [data-graphic-page] h2,
+[data-theme="dark"] [data-graphic-page] h3,
+[data-theme="dark"] [data-graphic-page] h4 {
+  color: #d1d1d1 !important;
+}
+
+[data-theme="dark"] [data-graphic-page] .black_text{
+  color: black !important;
+}
