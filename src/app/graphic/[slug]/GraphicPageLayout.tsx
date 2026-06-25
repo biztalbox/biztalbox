@@ -1122,7 +1122,7 @@ export default function GraphicPageLayout({ data }: { data: GraphicPageData }) {
                     UK GRAPHIC DESIGN STUDIO
                   </p> */}
 
-                  <h1 className="graphic-heading mb-6 text-[1.85rem] font-bold leading-[1.05] tracking-tight sm:mb-8 sm:text-5xl sm:leading-[1.02] lg:mb-10 lg:text-[3.35rem] xl:text-[3.75rem]">
+                  <h1 className="graphic-heading mb-6 text-[1.85rem] font-bold leading-[1.05] tracking-tight sm:mb-8 sm:text-5xl sm:leading-[1.02] lg:mb-10 lg:text-[3rem] xl:text-[3.3rem]">
                     { heroHeading }
                   </h1>
 
@@ -1168,7 +1168,7 @@ export default function GraphicPageLayout({ data }: { data: GraphicPageData }) {
               aria-hidden
             />
 
-            <div className="py-5 sm:py-6">
+            <div className="pt-3 sm:py-4">
               <div className="w-full">
                 <Marquee speed={35} autoFill gradient={false} pauseOnHover={false}>
                   {SERVICES.map((service) => (
@@ -1192,42 +1192,10 @@ export default function GraphicPageLayout({ data }: { data: GraphicPageData }) {
             </div>
           </section>
 
-          {/* Trusted by */}
-          {/* <section className="graphic-trusted overflow-x-hidden pb-10 pt-12 sm:pb-12 sm:pt-14 lg:pt-16">
-            <div className="container max-w-[1800px]">
-              <h2
-                className="graphic-section-title max-w-5xl text-2xl font-light leading-snug tracking-tight sm:text-3xl lg:text-[2rem] xl:text-4xl"
-                style={{ fontFamily: "var(--tp-ff-syne), sans-serif" }}
-              >
-                100+ Happy clients and counting.... We&apos;re trusted by
-              </h2>
-              <div
-                className="graphic-divider mt-6 h-px w-full"
-                style={{ backgroundColor: isDark ? "#ffffff" : "#18181b" }}
-                role="presentation"
-                aria-hidden
-              />
-            </div>
-
-            <div
-              className="graphic-logo-track relative mt-6 min-h-[96px] w-full overflow-hidden sm:mt-8 sm:min-h-[112px]"
-              style={{ backgroundColor: isDark ? "rgba(255,255,255,0.06)" : "rgba(0,0,0,0.06)" }}
-            >
-              <Marquee speed={32} pauseOnHover gradient={false} className="py-8 sm:py-10">
-                {CLIENT_LOGOS.map((src, i) => (
-                  <div
-                    key={`${src}-${i}`}
-                    className="relative mx-8 flex h-[72px] w-[140px] shrink-0 items-center justify-center sm:mx-10 sm:h-[80px] sm:w-[160px]"
-                  >
-                    <Image src={src} alt="Client logo" fill className="object-contain" sizes="160px" />
-                  </div>
-                ))}
-              </Marquee>
-            </div>
-          </section> */}
+          
 
           {/* How we work */}
-          <section className="graphic-process pb-12 pt-4 sm:pb-20 sm:pt-6 lg:pb-24">
+          <section className="graphic-process py-12 sm:py-20 sm:pt-6 lg:py-24">
             <div className="container">
               <p className="graphic-muted mb-4 text-[11px] font-light uppercase tracking-[0.28em] sm:text-xs">
                 {howWeWorkSubtitle}
@@ -1259,7 +1227,7 @@ export default function GraphicPageLayout({ data }: { data: GraphicPageData }) {
                     >
                       <span
                         className="graphic-process-num pointer-events-none absolute -top-7 left-4 z-10 text-[3.25rem] font-bold leading-none sm:-top-8 sm:left-5 sm:text-[4.5rem] md:-top-10 md:left-6 md:text-[5.5rem]"
-                        style={{ fontFamily: "var(--tp-ff-syne), sans-serif" }}
+                        
                       >
                         {step.num}
                       </span>
