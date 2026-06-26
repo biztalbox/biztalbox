@@ -535,6 +535,7 @@ function GoodGraphicDesignSection({
 
         <SafeHtml
           html={paragraph}
+          as="p"
            />
 
         <p
