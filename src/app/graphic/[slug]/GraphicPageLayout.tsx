@@ -535,8 +535,7 @@ function GoodGraphicDesignSection({
 
         <SafeHtml
           html={paragraph}
-          className="mt-6 text-[11px] leading-[1.85] tracking-[0.05em] sm:mt-8 sm:text-xs sm:leading-[1.9] graphic-muted"
-        />
+           />
 
         <p
           className="mt-8 text-sm font-bold uppercase dark:text-white tracking-[0.04em] sm:mt-10 sm:text-[15px]"
