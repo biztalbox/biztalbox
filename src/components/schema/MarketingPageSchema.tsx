@@ -201,7 +201,7 @@ export default function MarketingPageSchema({
 
   return (
     <>
-      {schemas.map((schema, index) => (
+      {/* {schemas.map((schema, index) => (
         <Script
           key={index}
           id={`marketing-schema-${index}`}
@@ -210,7 +210,7 @@ export default function MarketingPageSchema({
             __html: JSON.stringify(schema, null, 2)
           }}
         />
-      ))}
+      ))} */}
     </>
   );
 }
