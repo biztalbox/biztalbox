@@ -172,6 +172,7 @@ const DEFAULT_CREATIVE_SERVICES_HEADING = "Creative Services";
 const DEFAULT_FAQ_HEADING = "Frequently asked questions";
 
 type CreativeService = {
+  imageAlt: string;
   id: number;
   title: string;
   paragraph: string;
@@ -306,7 +307,7 @@ function CreativeServiceImageBlock({
       <div className="relative aspect-[1.35/1] w-full">
         <Image
           src={service.image}
-          alt={service.title}
+          alt={service.imageAlt}
           fill
           className="object-contain p-2 transition-transform duration-500 group-hover/image:scale-[1.03] sm:p-2.5"
           sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
@@ -1148,7 +1149,8 @@ export default function GraphicPageLayout({ data }: { data: GraphicPageData }) {
       return {
         ...service,
         title: cmsCard?.title?.trim() || service.title,
-        paragraph: cmsCard?.paragraph?.trim() || CREATIVE_SERVICE_DETAIL_LOREM,
+        paragraph: cmsCard?.paragraph?.trim(),
+        imageAlt: cmsCard?.imageAlt?.trim(),
       };
     });
   }, [data.creativeServices.cards]);

@@ -3,6 +3,7 @@ const CMS_API_URL =
   process.env.CMS_API_URL ?? (IS_DEV ? "http://localhost:3002" : "https://cms.biztalbox.com");
 
 export interface GraphicPageCreativeServiceCard {
+  imageAlt: any;
   title: string;
   paragraph: string;
 }
@@ -100,6 +101,7 @@ export function normalizeGraphicPageData(raw: unknown, fallbackSlug: string): Gr
   const cards = arr(creativeServices, "cards", (card) => ({
     title: str(card, "title"),
     paragraph: str(card, "paragraph", "body", "description"),
+    imageAlt: str(card, "imageAlt", "image_alt", "alt", "altText", "alt_text"),
   }));
 
   const faqs = arr(page, "faqs", (item) => ({
