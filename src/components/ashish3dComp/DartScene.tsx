@@ -24,8 +24,6 @@ export type DartShootOptions = {
 
 type DartSceneProps = {
   onShootReady?: (shoot: (options?: DartShootOptions) => boolean) => void;
-  setWow?: (wow: boolean) => void;
-  setDiss?: (diss: boolean) => void;
 };
 
 function isTargetDartMesh(object: THREE.Object3D | null | undefined) {
@@ -40,7 +38,7 @@ function isTargetDartMesh(object: THREE.Object3D | null | undefined) {
   return false;
 }
 
-const DartScene = ({ onShootReady, setWow, setDiss }: DartSceneProps) => {
+const DartScene = ({ onShootReady }: DartSceneProps) => {
   const dartModel = useGLTF("/assets/lite_models/dartboard2.glb");
   const { actions } = useAnimations(dartModel.animations, dartModel.scene);
   const { camera, size } = useThree();
@@ -79,7 +77,6 @@ const DartScene = ({ onShootReady, setWow, setDiss }: DartSceneProps) => {
   );
 
   const playShootAnimation = useCallback(() => {
-    setWow?.(true);
     if (!actions["Animation"]) return false;
 
     const dart = actions["Animation"];
@@ -105,11 +102,9 @@ const DartScene = ({ onShootReady, setWow, setDiss }: DartSceneProps) => {
       if (isDartDesktopViewport() && source === "button") {
         const { screenX, screenY } = options;
         if (screenX == null || screenY == null) {
-          setDiss?.(true);
           return false;
         }
         if (!isScreenPointOnTargetMesh(screenX, screenY)) {
-          setDiss?.(true);
           return false;
         }
       }

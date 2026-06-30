@@ -8,9 +8,6 @@ import { preloadLiteSfx, unlockLiteSfx } from "@/app/_lite/_ashish/sfx";
 import DartScene, { type DartShootOptions } from "./DartScene";
 import { DART_DESKTOP_MIN_WIDTH_PX } from "./dart-viewport";
 
-const DART_GIF_FADE_IN_MS = 450;
-const DART_GIF_HOLD_MS = 2000;
-
 function ResponsiveHeroCamera() {
   const { camera, size } = useThree();
   useLayoutEffect(() => {
@@ -39,37 +36,11 @@ export default function DartCanvas({ onEnter }: { onEnter: () => void }) {
   const [isDesktop, setIsDesktop] = useState(false);
   const [hideDesktopHitButton, setHideDesktopHitButton] = useState(false);
   const shootRef = useRef<((options?: DartShootOptions) => boolean) | null>(null);
-  const [showWowGif, setShowWowGif] = useState(false);
-  const [showDissGif, setShowDissGif] = useState(false);
-  const [wowPulse, setWowPulse] = useState(0);
-  const [dissPulse, setDissPulse] = useState(0);
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
     preloadLiteSfx();
   }, []);
-
-  useEffect(() => {
-    if (wowPulse === 0) return;
-
-    setShowWowGif(true);
-    const timer = window.setTimeout(
-      () => setShowWowGif(false),
-      DART_GIF_FADE_IN_MS + DART_GIF_HOLD_MS,
-    );
-    return () => window.clearTimeout(timer);
-  }, [wowPulse]);
-
-  useEffect(() => {
-    if (dissPulse === 0) return;
-
-    setShowDissGif(true);
-    const timer = window.setTimeout(
-      () => setShowDissGif(false),
-      DART_GIF_FADE_IN_MS + DART_GIF_HOLD_MS,
-    );
-    return () => window.clearTimeout(timer);
-  }, [dissPulse]);
 
   useEffect(() => {
     const media = window.matchMedia(`(min-width: ${DART_DESKTOP_MIN_WIDTH_PX}px)`);
@@ -152,8 +123,6 @@ export default function DartCanvas({ onEnter }: { onEnter: () => void }) {
             onShootReady={(shoot) => {
               shootRef.current = shoot;
             }}
-            setWow={() => setWowPulse((n) => n + 1)}
-            setDiss={() => setDissPulse((n) => n + 1)}
           />
         </Suspense>
         <Environment files="/assets/hdr/scene.hdr" resolution={1024} backgroundIntensity={1} />
@@ -182,23 +151,6 @@ export default function DartCanvas({ onEnter }: { onEnter: () => void }) {
       >
         HIT!
       </button>
-
-      <img
-        key={wowPulse}
-        src="/assets/lite_models/wow.gif"
-        className={`absolute bottom-5 right-2 w-40 lg:w-60 pointer-events-none hidden md:block ${
-          showWowGif ? "animate-dart-fade-in-up" : "opacity-0 translate-y-full"
-        }`}
-        alt="wow"
-      />
-      <img
-        key={dissPulse}
-        src="/assets/lite_models/diss.gif"
-        className={`absolute bottom-5 left-2 w-40 lg:w-60 pointer-events-none hidden md:block ${
-          showDissGif ? "animate-dart-fade-in-up" : "opacity-0 translate-y-full"
-        }`}
-        alt="diss"
-      />
     </section>
   );
 }

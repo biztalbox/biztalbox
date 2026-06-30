@@ -3,16 +3,40 @@ import Image from "next/image";
 
 import { ProjectShape, RightArrow } from "../svg";
 
-import algo from "@/assets/image/new_avatar/algo.webp";
-import video from "@/assets/image/new_avatar/video.webp";
-import webdev from "@/assets/image/new_avatar/webdev.webp";
-import seo from "@/assets/image/new_avatar/seo.webp";
-import graphic from "@/assets/image/new_avatar/graphic.webp";
-import content from "@/assets/image/new_avatar/content.webp";
-import smo from "@/assets/image/new_avatar/smo.webp";
-import google from "@/assets/image/new_avatar/google.webp";
-import meta from "@/assets/image/new_avatar/meta.webp";
-import appdev from "@/assets/image/new_avatar/appdev.webp";
+// import algo from "@/assets/image/new_avatar/algo.webp";
+// import video from "@/assets/image/new_avatar/video.webp";
+// import webdev from "@/assets/image/new_avatar/webdev.webp";
+// import seo from "@/assets/image/new_avatar/seo.webp";
+// import graphic from "@/assets/image/new_avatar/graphic.webp";
+// import content from "@/assets/image/new_avatar/content.webp";
+// import smo from "@/assets/image/new_avatar/smo.webp";
+// import google from "@/assets/image/new_avatar/google.webp";
+// import meta from "@/assets/image/new_avatar/meta.webp";
+// import appdev from "@/assets/image/new_avatar/appdev.webp";
+
+
+import algo from "@/assets/blacknwhite/color/algo.webp";
+import video from "@/assets/blacknwhite/color/video.webp";
+import webdev from "@/assets/blacknwhite/color/webdev.webp";
+import seo from "@/assets/blacknwhite/color/seo.webp";
+import graphic from "@/assets/blacknwhite/color/graphic.webp";
+import content from "@/assets/blacknwhite/color/content.webp";
+import smo from "@/assets/blacknwhite/color/smo.webp";
+import google from "@/assets/blacknwhite/color/google.webp";
+import meta from "@/assets/blacknwhite/color/meta.webp";
+import appdev from "@/assets/blacknwhite/color/appdev.webp";
+
+
+// import algo from "@/assets/blacknwhite/bnw/algo.webp";
+// import video from "@/assets/blacknwhite/bnw/video.webp";
+// import webdev from "@/assets/blacknwhite/bnw/webdev.webp";
+// import seo from "@/assets/blacknwhite/bnw/seo.webp";
+// import graphic from "@/assets/blacknwhite/bnw/graphic.webp";
+// import content from "@/assets/blacknwhite/bnw/content.webp";
+// import smo from "@/assets/blacknwhite/bnw/smo.webp";
+// import google from "@/assets/blacknwhite/bnw/google.webp";
+// import meta from "@/assets/blacknwhite/bnw/meta.webp";
+// import appdev from "@/assets/blacknwhite/bnw/appdev.webp";
 
 import Link from "next/link";
 
@@ -117,8 +141,11 @@ type IProps = {
 export default function ProjectFour({ style_2 = false }: IProps) {
   return (
     <div
+      style={{
+        background: "#262626"
+      }}
       className={`tp-project-3-area ${
-        style_2 ? "pt-60 pw-project-style" : "pt-130 black-bg"
+        style_2 ? "pt-60 pw-project-style" : "pt-130"
       }`}
     >
       <div className="container container-1720 overflow-hidden">
@@ -148,7 +175,12 @@ export default function ProjectFour({ style_2 = false }: IProps) {
         <div className="row">
           <div className="col-xl-12">
             {project_data.map((item, i) => (
-              <div key={item.id} className="tp-project-3-wrap">
+              <div
+                key={item.id}
+                className={`tp-project-3-wrap ${
+                  i % 2 === 0 ? "tp-pcard--left" : "tp-pcard--right"
+                }`}
+              >
                 <div className="row">
                   <div className="col-xl-4 col-lg-4 col-md-6">
                     <div className="tp-project-3-thumb pro-img-1">

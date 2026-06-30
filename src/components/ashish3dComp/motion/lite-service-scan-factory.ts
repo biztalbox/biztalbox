@@ -58,8 +58,11 @@ export const LITE_SCAN_TIMING_TABLET: LiteScanTimingPreset = {
 };
 
 export const LITE_SCAN_TIMING_MOBILE: LiteScanTimingPreset = {
-  approachScrub: 2,
-  scanScrub: 2,
+  // Keep approach < scan (like tablet/desktop) so the model settles into its
+  // approach end-state before the pinned scan takes over the same transforms.
+  // Equal scrubs here caused an approach/scan race → model "glitch" after webdev.
+  approachScrub: 1.5,
+  scanScrub: 2.5,
   fastScrollEnd: true,
   anticipatePin: 2,
   scanPinStart: "top 22%",

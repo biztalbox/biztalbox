@@ -490,14 +490,14 @@
             width: 240px;
             height: 20px;
             border-radius: 100px;
-            background: linear-gradient(90deg, rgba(76, 73, 104, 0.70) 0%, rgba(115, 3, 192, 0.70) 33.33%, rgba(236, 56, 188, 0.70) 66.67%, rgba(253, 239, 249, 0.70) 100%);
+            background: linear-gradient(90deg, #111111 0%, #494949 33.33%, #7A7A7A 66.67%, #D6D6D6 100%);
             display: inline-block;
         }
 
         &.color {
             &-2 {
                 & span {
-                    background: linear-gradient(90deg, rgba(26, 42, 108, 0.70) 0%, rgba(178, 31, 31, 0.70) 50%, rgba(253, 187, 45, 0.70) 100%);
+                    background: linear-gradient(90deg, rgba(26, 42, 108, 0.70) 10%, rgba(178, 31, 31, 0.70) 50%, rgba(253, 187, 45, 0.70) 100%);
                 }
             }
 
