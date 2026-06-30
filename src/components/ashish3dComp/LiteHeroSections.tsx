@@ -9,6 +9,7 @@ import {
   LiteTicketSpecsFooter,
   formatReceiptDate,
 } from "./lite-hero-shared";
+import { LiteServiceParagraphs } from "./LiteServiceParagraphs";
 
 export default function LiteHeroSections() {
   return (
@@ -133,22 +134,26 @@ export default function LiteHeroSections() {
                 Organic Growth through search
               </h3>
               {/* Two-column body */}
-              <div className="grid md:grid-cols-2 md:gap-10 mt-6">
-                <p>
-                  At Biztalbox, we approach SEO as a long-term system that begins with a thorough audit. We understand how your website performs on search engines, where it falls short, and how it compares within its competitive space. This allows every subsequent step to remain grounded and precise.
+              <LiteServiceParagraphs
+                first={
+                  <p>
+                    At Biztalbox, we approach SEO as a long-term system that begins with a thorough audit. We understand how your website performs on search engines, where it falls short, and how it compares within its competitive space. This allows every subsequent step to remain grounded and precise.
 
 
-                  We prioritize search intent, focusing on behavioural patterns beyond just keywords. Then we refine the technical foundation of your website, bringing greater coherence to its structure, speed, and internal movement.
-                </p>
-                <p>
-                  Content at Biztalbox is crafted with patience. It connects with your audience, builds trust and builds authority over time. Our Off-page SEO services add another layer by strengthening your overall brand reputation.
+                    We prioritize search intent, focusing on behavioural patterns beyond just keywords. Then we refine the technical foundation of your website, bringing greater coherence to its structure, speed, and internal movement.
+                  </p>
+                }
+                second={
+                  <p>
+                    Content at Biztalbox is crafted with patience. It connects with your audience, builds trust and builds authority over time. Our Off-page SEO services add another layer by strengthening your overall brand reputation.
 
-                  Our SEO experts revisit and refine the work regularly as search behaviour continues to evolve.  We always keep the client in the loop with clear reporting so that they have a clear view of progress and business growth.
+                    Our SEO experts revisit and refine the work regularly as search behaviour continues to evolve.  We always keep the client in the loop with clear reporting so that they have a clear view of progress and business growth.
 
-                  Biztalbox builds an online presence that leads to tangible business growth.
+                    Biztalbox builds an online presence that leads to tangible business growth.
 
-                </p>
-              </div>
+                  </p>
+                }
+              />
 
 
               <LiteServiceViewMoreLink service="seo" />
@@ -222,20 +227,24 @@ export default function LiteHeroSections() {
               <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
                 Building everyday brand presence
               </h3>
-              <div className="grid md:grid-cols-2 md:gap-10 mt-6">
-                <p>
-                  The social media team at Biztalbox, we begin by understanding your brand, your audience, and how your competitors are positioning themselves. This helps us set a clear direction before we put anything out in the world. Then we create content calendars that bring structure and consistency to your social presence.
+              <LiteServiceParagraphs
+                first={
+                  <p>
+                    The social media team at Biztalbox, we begin by understanding your brand, your audience, and how your competitors are positioning themselves. This helps us set a clear direction before we put anything out in the world. Then we create content calendars that bring structure and consistency to your social presence.
 
-                  We don&apos;t just chase trends or push for viral moments. The focus stays on building a presence that feels true to your brand. We focus on making content that fits your brand and makes sense to your audience.
-                </p>
-                <p>We also pay attention to how people respond. What they engage with and ignore. And what brings them back again? This helps us understand what your brand should keep doing and what it should leave behind.
+                    We don&apos;t just chase trends or push for viral moments. The focus stays on building a presence that feels true to your brand. We focus on making content that fits your brand and makes sense to your audience.
+                  </p>
+                }
+                second={
+                  <p>We also pay attention to how people respond. What they engage with and ignore. And what brings them back again? This helps us understand what your brand should keep doing and what it should leave behind.
 
-                  Over time, this builds familiarity. Your brand starts to feel recognisable, not because of one post, but because of consistent presence.
+                    Over time, this builds familiarity. Your brand starts to feel recognisable, not because of one post, but because of consistent presence.
 
-                  Biztalbox aims to make your brand feel active, relevant, and easy to connect with.
+                    Biztalbox aims to make your brand feel active, relevant, and easy to connect with.
 
-                </p>
-              </div>
+                  </p>
+                }
+              />
               <LiteServiceViewMoreLink service="smo" />
             </div>
 
@@ -289,24 +298,28 @@ export default function LiteHeroSections() {
               <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
                 Performance-focused websites
               </h3>
-              <div className="grid md:grid-cols-2 md:gap-10 mt-6">
-                <p>
-                  At Biztalbox, we believe a website should make things easier for your users, not more complicated. Our web development approach reflects that thinking.
+              <LiteServiceParagraphs
+                first={
+                  <p>
+                    At Biztalbox, we believe a website should make things easier for your users, not more complicated. Our web development approach reflects that thinking.
 
-                  We begin with understanding what the business actually needs the website to carry. What should be seen first, what should be understood next, and what should lead a user toward action? This thinking sets the foundation before any layout is discussed.
-
-
-                </p>
-                <p>
-                  We approached through structure first, not visuals. Our web development experts focus on making websites that offer a guided experience, rather than isolated pages. Information is arranged to reduce effort for the user, so nothing feels misplaced or difficult to reach. The goal is simple navigation that still feels intentional.
+                    We begin with understanding what the business actually needs the website to carry. What should be seen first, what should be understood next, and what should lead a user toward action? This thinking sets the foundation before any layout is discussed.
 
 
-                  Our web development firm takes pride in the quality of our execution. Clean development practices, consistent responsiveness, and reliable performance are maintained across every project.
+                  </p>
+                }
+                second={
+                  <p>
+                    We approached through structure first, not visuals. Our web development experts focus on making websites that offer a guided experience, rather than isolated pages. Information is arranged to reduce effort for the user, so nothing feels misplaced or difficult to reach. The goal is simple navigation that still feels intentional.
 
-                  Lastly, Biztalbox always ensure the website remains manageable after it goes live.
 
-                </p>
-              </div>
+                    Our web development firm takes pride in the quality of our execution. Clean development practices, consistent responsiveness, and reliable performance are maintained across every project.
+
+                    Lastly, Biztalbox always ensure the website remains manageable after it goes live.
+
+                  </p>
+                }
+              />
               <LiteServiceViewMoreLink service="webdev" />
             </div>
 
@@ -360,23 +373,27 @@ export default function LiteHeroSections() {
               <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
                 Clear and consistent brand identity
               </h3>
-              <div className="grid md:grid-cols-2 md:gap-10 mt-6">
-                <p>
-                  At Biztalbox, we understand that visual design plays a defining role in how a brand is interpreted and remembered. We treat graphic design as a connected system rather than standalone visuals. Every piece we create works with the next one. This makes the brand feel consistent wherever it shows up.
+              <LiteServiceParagraphs
+                first={
+                  <p>
+                    At Biztalbox, we understand that visual design plays a defining role in how a brand is interpreted and remembered. We treat graphic design as a connected system rather than standalone visuals. Every piece we create works with the next one. This makes the brand feel consistent wherever it shows up.
 
 
-                  We focus on how information is perceived. Typography, spacing, colour, and layout are crafted so that the design feels easy to read and naturally organised.
+                    We focus on how information is perceived. Typography, spacing, colour, and layout are crafted so that the design feels easy to read and naturally organised.
 
-                </p>
-                <p>
-                  We keep attention where it matters. Important information is made clear at first glance. Supporting elements stay in the background without distracting from the message.
-                  We stay consistent across every asset we create. So your brand does not feel different on each platform. It feels like one identity, carried forward with discipline.
+                  </p>
+                }
+                second={
+                  <p>
+                    We keep attention where it matters. Important information is made clear at first glance. Supporting elements stay in the background without distracting from the message.
+                    We stay consistent across every asset we create. So your brand does not feel different on each platform. It feels like one identity, carried forward with discipline.
 
-                  Each design decision at Biztalbox is made with one goal in mind: To make your brand easier to recognise, easier to understand, and harder to forget.
+                    Each design decision at Biztalbox is made with one goal in mind: To make your brand easier to recognise, easier to understand, and harder to forget.
 
 
-                </p>
-              </div>
+                  </p>
+                }
+              />
               <LiteServiceViewMoreLink service="graphic" />
             </div>
 
@@ -430,25 +447,29 @@ export default function LiteHeroSections() {
               <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
                 Storytelling Through Motion
               </h3>
-              <div className="grid md:grid-cols-2 md:gap-10 mt-6">
-                <p>
-                  At Biztalbox, we turn to motion graphics when a message is too layered to be understood in a single static frame.
+              <LiteServiceParagraphs
+                first={
+                  <p>
+                    At Biztalbox, we turn to motion graphics when a message is too layered to be understood in a single static frame.
 
-                  Motion graphic designers at Biztalbox approach motion as a way to sharpen brand communication. We start by looking at how your brand currently shows up visually and where its communication weakens.
-
-
-                  This helps us decide the structure, sequence, and emphasis each part needs.
-                </p>
-                <p>
-                  We design motion around how attention actually moves. What draws focus, what holds it, and what needs to be reinforced before moving forward. This is where our process stays deliberate rather than decorative.
-
-                  Our motion graphics agency brings consistency to every layer, from typography to transitions to rhythm. Everything works together, so the viewer is not interpreting multiple signals at once.
-
-                  Biztalbox keeps motion purposeful. It exists only to make the idea easier to follow and quicker to absorb. Every piece is designed to support how your brand is perceived.
+                    Motion graphic designers at Biztalbox approach motion as a way to sharpen brand communication. We start by looking at how your brand currently shows up visually and where its communication weakens.
 
 
-                </p>
-              </div>
+                    This helps us decide the structure, sequence, and emphasis each part needs.
+                  </p>
+                }
+                second={
+                  <p>
+                    We design motion around how attention actually moves. What draws focus, what holds it, and what needs to be reinforced before moving forward. This is where our process stays deliberate rather than decorative.
+
+                    Our motion graphics agency brings consistency to every layer, from typography to transitions to rhythm. Everything works together, so the viewer is not interpreting multiple signals at once.
+
+                    Biztalbox keeps motion purposeful. It exists only to make the idea easier to follow and quicker to absorb. Every piece is designed to support how your brand is perceived.
+
+
+                  </p>
+                }
+              />
               <LiteServiceViewMoreLink service="video" />
             </div>
 
@@ -502,28 +523,32 @@ export default function LiteHeroSections() {
               <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
                 Words that drive action
               </h3>
-              <div className="grid md:grid-cols-2 md:gap-10 mt-6">
-                <p>
-                  At Biztalbox, we see copywriting as the layer that decides how your brand is experienced.
+              <LiteServiceParagraphs
+                first={
+                  <p>
+                    At Biztalbox, we see copywriting as the layer that decides how your brand is experienced.
 
 
-                  Biztalbox&apos;s copywriting services have helped brands improve how they express value and position themselves. This has led to clearer responses, stronger engagement, and more confident decision-making.
+                    Biztalbox&apos;s copywriting services have helped brands improve how they express value and position themselves. This has led to clearer responses, stronger engagement, and more confident decision-making.
 
-                  Our copywriting experts begin by understanding how your audience evaluates a brand like yours. What they compare. What they doubt. What they need to take you seriously.
-                </p>
-                <p>
-                  From there, we focus on the decision-making process. Copy is written to reduce hesitation, close interpretation gaps, and bring clarity to what would otherwise feel uncertain or incomplete.
+                    Our copywriting experts begin by understanding how your audience evaluates a brand like yours. What they compare. What they doubt. What they need to take you seriously.
+                  </p>
+                }
+                second={
+                  <p>
+                    From there, we focus on the decision-making process. Copy is written to reduce hesitation, close interpretation gaps, and bring clarity to what would otherwise feel uncertain or incomplete.
 
-                  The same offering can feel ordinary or credible depending on how it is expressed. And Biztalbox’s content plays a direct role in that shift.
-
-
-
-                  We maintain consistency over tone and voice so the brand feels aligned in every context it appears in. This consistency is what builds recognition and trust over time.
+                    The same offering can feel ordinary or credible depending on how it is expressed. And Biztalbox’s content plays a direct role in that shift.
 
 
 
-                </p>
-              </div>
+                    We maintain consistency over tone and voice so the brand feels aligned in every context it appears in. This consistency is what builds recognition and trust over time.
+
+
+
+                  </p>
+                }
+              />
               <LiteServiceViewMoreLink service="content" />
             </div>
 
@@ -577,41 +602,30 @@ export default function LiteHeroSections() {
               <h3 className="text-black mt-10 uppercase text-center text-lg md:text-xl lg:text-3xl relative">
                 Measurable marketing outcomes
               </h3>
-              <div className="grid md:grid-cols-2 md:gap-10 mt-6">
-                <div className="flex flex-col">
+              <LiteServiceParagraphs
+                first={
+                  <div className="flex flex-col">
+                    <p>
+                      Biztalbox views Performance marketing as a revenue system first. Every part of it supports a clear commercial outcome.
 
-                  <p>
-                    Biztalbox views Performance marketing as a revenue system first. Every part of it supports a clear commercial outcome.
+                      We begin by looking at how growth is currently being generated and where it is breaking down. Then we figure out the real constraints, not just the visible symptoms.
 
-                    We begin by looking at how growth is currently being generated and where it is breaking down. Then we figure out the real constraints, not just the visible symptoms.
-
-                    We evaluate the entire journey together as part of a full funnel performance marketing strategy.
-                  </p>
-                  {/* <div className="md:block w-fit md:ml-auto hidden">
-
-                  <LiteServiceViewMoreLink service="google" text="Google Ads" />
-                </div> */}
-                </div>
-                <div className="flex flex-col ">
-
-                  <p>
-                    Biztalbox evaluates performance beyond surface metrics. We consider lead quality, drop-off behaviour, and consistency of results over time. These patterns show what is working and what is not.
-
-                    The goal of our performance marketing services is to generate meaningful actions that contribute to business growth. This includes audience targeting, messaging, creative direction, landing experience, and tracking. If even one of these is misaligned, performance stays capped regardless of spend.
-
-
-                  </p>
-
-                  {/* <div className="block w-fit mx-auto md:mx-0 md:mr-auto">
-
-                  <LiteServiceViewMoreLink service="meta" text="Meta Ads" />
-                  <div className="md:hidden block w-fit">
-
-                    <LiteServiceViewMoreLink service="google" text="Google Ads" />
+                      We evaluate the entire journey together as part of a full funnel performance marketing strategy.
+                    </p>
                   </div>
-                </div> */}
-                </div>
-              </div>
+                }
+                second={
+                  <div className="flex flex-col">
+                    <p>
+                      Biztalbox evaluates performance beyond surface metrics. We consider lead quality, drop-off behaviour, and consistency of results over time. These patterns show what is working and what is not.
+
+                      The goal of our performance marketing services is to generate meaningful actions that contribute to business growth. This includes audience targeting, messaging, creative direction, landing experience, and tracking. If even one of these is misaligned, performance stays capped regardless of spend.
+
+
+                    </p>
+                  </div>
+                }
+              />
               <div className="flex gap-10 justify-center">
 
 

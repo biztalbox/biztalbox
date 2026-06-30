@@ -186,7 +186,7 @@ export default function DartCanvas({ onEnter }: { onEnter: () => void }) {
       <img
         key={wowPulse}
         src="/assets/lite_models/wow.gif"
-        className={`absolute bottom-5 right-2 w-40 lg:w-60 pointer-events-none ${
+        className={`absolute bottom-5 right-2 w-40 lg:w-60 pointer-events-none hidden md:block ${
           showWowGif ? "animate-dart-fade-in-up" : "opacity-0 translate-y-full"
         }`}
         alt="wow"
@@ -194,7 +194,7 @@ export default function DartCanvas({ onEnter }: { onEnter: () => void }) {
       <img
         key={dissPulse}
         src="/assets/lite_models/diss.gif"
-        className={`absolute bottom-5 left-2 w-40 lg:w-60 pointer-events-none ${
+        className={`absolute bottom-5 left-2 w-40 lg:w-60 pointer-events-none hidden md:block ${
           showDissGif ? "animate-dart-fade-in-up" : "opacity-0 translate-y-full"
         }`}
         alt="diss"

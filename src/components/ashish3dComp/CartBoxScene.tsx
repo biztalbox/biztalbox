@@ -99,7 +99,7 @@ const CartBoxScene = () => {
         trigger: triggerEl,
         start: "top bottom",
         end: "top top",
-        scrub: 7,
+        scrub: window.innerWidth < 768 ? 2.5 : 7,
         invalidateOnRefresh: true,
         fastScrollEnd: window.innerWidth < 1024,
         animation: tl,

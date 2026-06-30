@@ -101,7 +101,7 @@ export default function CartCanvas() {
         />
       </Canvas>
       <div className="container flex flex-col gap-2 overflow-hidden relative z-10">
-        <div id="ctaScrollAnchor" className="h-[60vh] 2xl:h-[35rem]" />
+        <div id="ctaScrollAnchor" className="h-[48vh] md:h-[60vh] 2xl:h-[35rem]" />
         <h3 className="text-3xl md:text-4xl lg:text-6xl font-thin uppercase leading-none mx-auto text-center relative z-10">
           Thanks for being here.
         </h3>
