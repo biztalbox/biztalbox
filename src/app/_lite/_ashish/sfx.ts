@@ -14,7 +14,7 @@ export const LITE_SFX_DEFAULTS: Record<
   beep: { src: SFX_BEEP_SRC, startTime: 0, durationSec: undefined },
   bill: { src: SFX_BILL_SRC, startTime: 0, durationSec: 8 },
   print: { src: SFX_PRINT_SRC, startTime: 0, durationSec: undefined },
-  };
+};
 
 const audioBySrc = new Map<string, HTMLAudioElement>();
 const stopTimersBySrc = new Map<string, ReturnType<typeof setTimeout>>();
@@ -25,6 +25,11 @@ let audioCtx: AudioContext | null = null;
 
 const SILENT_WAV =
   "data:audio/wav;base64,UklGRigAAABXQVZFZm10IBIAAAABAAEARKwAAIhYAQACABAAAABkYXRhAgAAAAEA";
+
+/** Receipt UI is desktop-only (`lg:block` on `#recieptSection`). */
+export function isLiteReceiptSfxEnabled(): boolean {
+  return typeof window !== "undefined" && window.innerWidth >= 1024;
+}
 
 function getOrCreateAudio(src: string): HTMLAudioElement {
   let el = audioBySrc.get(src);
@@ -45,21 +50,6 @@ function clearStopTimerForSrc(src: string): void {
   }
 }
 
-function primeAudioInGesture(el: HTMLAudioElement): void {
-  const prevVol = el.volume;
-  el.volume = 0;
-  void el
-    .play()
-    .then(() => {
-      el.pause();
-      el.currentTime = 0;
-      el.volume = prevVol;
-    })
-    .catch(() => {
-      el.volume = prevVol;
-    });
-}
-
 function getOrCreateAudioContext(): AudioContext | null {
   if (typeof window === "undefined") return null;
   const Ctx = (window.AudioContext || (window as any).webkitAudioContext) as
@@ -74,9 +64,7 @@ function unlockWithAudioContext(): void {
   const ctx = getOrCreateAudioContext();
   if (!ctx) return;
   try {
-    // Resume is required on iOS/Safari in a user gesture.
     void ctx.resume();
-    // Also start a near-silent oscillator (some Safari versions "resume" but still need a start).
     const osc = ctx.createOscillator();
     const gain = ctx.createGain();
     gain.gain.value = 0.00001;
@@ -90,7 +78,6 @@ function unlockWithAudioContext(): void {
 }
 
 export function preloadLiteSfx(): void {
-  // Create audio elements early so they can be primed on the first gesture.
   for (const k of Object.keys(LITE_SFX_DEFAULTS) as LiteSfxKind[]) {
     getOrCreateAudio(LITE_SFX_DEFAULTS[k].src);
   }
@@ -103,8 +90,10 @@ export function unlockLiteSfx(): void {
   sfxUnlocked = true;
   unlockWithAudioContext();
 
+  // Unlock HTMLAudio without playing real SFX (avoids bill/print leaking on first tap).
   const silent = new Audio(SILENT_WAV);
   silent.volume = 0;
+  silent.muted = true;
   void silent.play().then(
     () => {
       silent.pause();
@@ -114,10 +103,6 @@ export function unlockLiteSfx(): void {
       silent.src = "";
     },
   );
-
-  audioBySrc.forEach((el) => {
-    primeAudioInGesture(el);
-  });
 }
 
 export function isLiteSfxUnlocked(): boolean {
@@ -131,29 +116,22 @@ function installUnlockListenersOnce(): void {
   const onGesture = (): void => unlockLiteSfx();
 
   window.addEventListener("pointerdown", onGesture, { capture: true, passive: true });
-  window.addEventListener("pointerup", onGesture, { capture: true, passive: true });
   window.addEventListener("keydown", onGesture, { capture: true, passive: true });
   window.addEventListener("touchstart", onGesture, { capture: true, passive: true });
-  window.addEventListener("touchend", onGesture, { capture: true, passive: true });
-  // Desktop users often "interact" first by scrolling (trackpad/mouse wheel) without a click.
-  // Without listening to wheel, audio can remain locked until a later gesture (e.g. volume keys).
-  window.addEventListener("wheel", onGesture, { capture: true, passive: true });
 }
 
 /**
- * Lite page SFX — ek hi function.
- * @param kind `"beep"` | `"bill"`
- * @param startSeconds seek (seconds); omit → `LITE_SFX_DEFAULTS[kind].startTime`
- * @param durationSeconds play this many seconds then stop; omit → default; `undefined` from default = natural end / no timer
+ * Lite page SFX — only after an explicit user gesture unlocked audio.
+ * Receipt sounds (bill/print) are desktop-only because the receipt UI is hidden below lg.
  */
-export function playLiteSfx(kind: LiteSfxKind, startSeconds?: number, durationSeconds?: number): void {
+export function playLiteSfx(
+  kind: LiteSfxKind,
+  startSeconds?: number,
+  durationSeconds?: number,
+): void {
   if (typeof window === "undefined") return;
-  // Receipt-related SFX should only play on desktop because the receipt UI is hidden on mobile/tablet.
-  // (Also avoids noisy audio on touch devices where users may not expect it.)
-  if ((kind === "bill" || kind === "print") && window.innerWidth < 1024) return;
-  // Ensure we have elements ready to prime in the next gesture.
-  preloadLiteSfx();
-  installUnlockListenersOnce();
+  if (!sfxUnlocked) return;
+  if ((kind === "bill" || kind === "print") && !isLiteReceiptSfxEnabled()) return;
 
   const def = LITE_SFX_DEFAULTS[kind];
   const start = startSeconds ?? def.startTime;
@@ -163,6 +141,8 @@ export function playLiteSfx(kind: LiteSfxKind, startSeconds?: number, durationSe
   const src = def.src;
 
   const run = (): void => {
+    if (!sfxUnlocked) return;
+
     clearStopTimerForSrc(src);
 
     try {
@@ -173,15 +153,8 @@ export function playLiteSfx(kind: LiteSfxKind, startSeconds?: number, durationSe
 
     const p = el.play();
     if (p != null) {
-      void p.catch((err: DOMException) => {
-        if (err?.name === "NotAllowedError") {          installUnlockListenersOnce();
-          // Optional UX hook: allow UI to prompt the user to tap to enable audio.
-          try {
-            window.dispatchEvent(new CustomEvent("lite-sfx:unlock-needed"));
-          } catch {
-            // ignore
-          }
-        }
+      void p.catch(() => {
+        /* blocked — do not queue for later replay */
       });
     }
 
@@ -235,9 +208,24 @@ type ScrubCue = { at: number; fn: () => void };
 const scrubCueBuckets = new WeakMap<gsap.core.Timeline, ScrubCue[]>();
 const scrubCueLastTime = new WeakMap<gsap.core.Timeline, number>();
 
+/** Scrub sounds only while this timeline's ScrollTrigger is active and scrolling forward. */
+function canFireScrubTimelineCue(tl: gsap.core.Timeline): boolean {
+  if (!sfxUnlocked) return false;
+  const st = tl.scrollTrigger;
+  if (!st?.isActive) return false;
+  if (st.direction < 1) return false;
+  return true;
+}
+
 function scrubCueOnUpdate(tl: gsap.core.Timeline): void {
   const t = tl.time();
-  let prevT = scrubCueLastTime.get(tl);
+  const prevT = scrubCueLastTime.get(tl);
+
+  if (!canFireScrubTimelineCue(tl)) {
+    scrubCueLastTime.set(tl, t);
+    return;
+  }
+
   if (prevT === undefined) {
     scrubCueLastTime.set(tl, t);
     return;
@@ -263,7 +251,11 @@ export function resetScrubTimelineCueBaseline(tl: gsap.core.Timeline): void {
   }
 }
 
-export function addScrubTimelineCue(tl: gsap.core.Timeline, at: number, fn: () => void): () => void {
+export function addScrubTimelineCue(
+  tl: gsap.core.Timeline,
+  at: number,
+  fn: () => void,
+): () => void {
   const cue: ScrubCue = { at, fn };
 
   let cues = scrubCueBuckets.get(tl);
@@ -287,4 +279,3 @@ export function addScrubTimelineCue(tl: gsap.core.Timeline, at: number, fn: () =
     }
   };
 }
-

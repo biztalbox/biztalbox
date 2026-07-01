@@ -25,7 +25,7 @@ import {
   getResolvedModelLayouts,
   type LiteSceneBreakpoint,
 } from "./motion/lite-scene-layout";
-import { pauseLiteSfx, playLiteSfx } from "@/app/_lite/_ashish/sfx";
+import { isLiteReceiptSfxEnabled, isLiteSfxUnlocked, pauseLiteSfx, playLiteSfx } from "@/app/_lite/_ashish/sfx";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -453,8 +453,9 @@ const Ashish3dScene = () => {
         receiptTl.call(
           () => {
             if (cancelled) return;
+            if (!isLiteSfxUnlocked() || !isLiteReceiptSfxEnabled()) return;
             const st = receiptTl?.scrollTrigger;
-            if (st && st.direction < 0) return;
+            if (!st?.isActive || st.direction < 1) return;
             if (didPlayCtaBill) return;
             didPlayCtaBill = true;
             playLiteSfx("bill");
@@ -484,6 +485,7 @@ const Ashish3dScene = () => {
         matchMediaInstance = null;
         pauseLiteSfx("beep");
         pauseLiteSfx("bill");
+        pauseLiteSfx("print");
         receiptTl?.scrollTrigger?.kill();
         receiptTl?.kill();
         receiptTl = null;
