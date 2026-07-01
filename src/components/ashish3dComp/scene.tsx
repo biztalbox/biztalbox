@@ -101,18 +101,6 @@ function useLiteHeroCanvasFrame() {
 const ST_REFRESH_DEBOUNCE_MS = 160;
 const ST_REFRESH_RETRY_MS = 120;
 
-/**
- * Mobile-only fast-scroll jitter fix.
- * Touch scrolling on phones is delivered async / off the main thread, so the
- * pinned scan sections (pinType:"fixed") can't keep up on a fast flick and the
- * 3D model appears to "jump"/gitter. GSAP's `normalizeScroll` moves touch
- * scrolling onto the main JS thread and syncs it with ScrollTrigger, which
- * removes that class of jitter. It is scoped to touch input only, so desktop
- * mouse/trackpad behaviour is left exactly as-is.
- * Set to `false` to fully revert this behaviour.
- */
-const ENABLE_MOBILE_NORMALIZE_SCROLL = true;
-
 /** R3F scene: GLB models, scroll-linked GSAP, service scans. */
 const Ashish3dScene = () => {
   const { root, layouts: L, layoutBreakpoint } = useLiteHeroCanvasFrame();
@@ -273,21 +261,6 @@ const Ashish3dScene = () => {
       limitCallbacks: true,
     });
 
-    // Enable JS-synced touch scrolling ONLY on touch devices (phones/tablets).
-    // This is what stops the pinned 3D model from jumping on a fast flick.
-    // `type: "touch"` leaves desktop wheel/trackpad scrolling completely native.
-    const canTouch =
-      typeof window !== "undefined" &&
-      ("ontouchstart" in window ||
-        (typeof navigator !== "undefined" && (navigator.maxTouchPoints ?? 0) > 0));
-    const normalizeEnabled = ENABLE_MOBILE_NORMALIZE_SCROLL && canTouch;
-    if (normalizeEnabled) {
-      ScrollTrigger.normalizeScroll({
-        type: "touch", // only intercept touch scrolling
-        allowNestedScroll: true, // any inner scrollable area still scrolls natively
-      });
-    }
-
     const hasActivePinnedScan = () =>
       ScrollTrigger.getAll().some((trigger) => {
         const triggerEl = trigger.trigger;
@@ -326,10 +299,6 @@ const Ashish3dScene = () => {
       if (t) clearTimeout(t);
       w?.removeEventListener("resize", scheduleRefresh);
       w?.removeEventListener("orientationchange", scheduleRefresh);
-      // Undo the touch-scroll normalization when the scene unmounts.
-      if (normalizeEnabled) {
-        ScrollTrigger.normalizeScroll(false);
-      }
     };
   }, []);
 
@@ -410,7 +379,7 @@ const Ashish3dScene = () => {
               trigger: "#section0",
               start: "-120 top",
               end: "top top",
-              scrub: isDesktop ? 6 : 1.2,
+              scrub: isDesktop ? 6 : 1.3,
               invalidateOnRefresh: true,
               fastScrollEnd: !isDesktop,
             },
