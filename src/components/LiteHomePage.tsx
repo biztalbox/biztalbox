@@ -1,8 +1,8 @@
 "use client";
 
-import "@/styles/tailwind-tw.css";
 import Wrapper from "@/layouts/wrapper";
 import { LiteHero } from "@/components/ashish3dComp";
+import TailwindScope from "@/components/TailwindScope";
 import Image from "next/image";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { ScrollSmoother } from "@/plugins";
@@ -169,7 +169,7 @@ const LiteHomePage = () => {
   return (
     <>
       {/* `isolate` ensures predictable stacking vs the fixed WebGL canvas */}
-      <div id="litePage" className="relative isolate bg-[#f2f2f2]">
+      <TailwindScope id="litePage" className="relative isolate bg-[#f2f2f2]">
         {showLoader && (
           <div
             className="fixed inset-0 z-[9999] flex items-center justify-center bg-white"
@@ -196,7 +196,7 @@ const LiteHomePage = () => {
             <LiteHero />
           </div>
         </div>
-      </div>
+      </TailwindScope>
     </>
   );
 };

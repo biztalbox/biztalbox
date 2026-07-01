@@ -1,14 +1,25 @@
 import type { Config } from "tailwindcss";
 
 /**
- * Tailwind uses the `tw-` prefix so utilities never clash with Bootstrap
- * (e.g. `.container`, `.flex`, `.text-center`).
+ * Tailwind is scoped to `[data-tw-scope]` only (see `TailwindScope` + route layouts).
+ * Preflight is off so Bootstrap / SCSS are not reset.
  *
- * Preflight is disabled so Tailwind’s CSS reset does not fight Bootstrap / existing SCSS.
- * Use `tw-` utilities on top of your current styles.
+ * Import `tailwind-tw.css` only via `TailwindScope` on: lite home, /lite, career,
+ * graphic, and video routes.
  */
 const config: Config = {
-  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+  important: "[data-tw-scope]",
+  content: [
+    "./src/components/ashish3dComp/**/*.{js,ts,jsx,tsx}",
+    "./src/components/LiteHomePage.tsx",
+    "./src/components/TailwindScope.tsx",
+    "./src/components/career/**/*.{js,ts,jsx,tsx}",
+    "./src/app/_lite/**/*.{js,ts,jsx,tsx}",
+    "./src/app/career/**/*.{js,ts,jsx,tsx}",
+    "./src/app/graphic/**/*.{js,ts,jsx,tsx}",
+    "./src/app/video/**/*.{js,ts,jsx,tsx}",
+    "./src/styles/tailwind-tw.css",
+  ],
   theme: {},
   plugins: [],
   corePlugins: {

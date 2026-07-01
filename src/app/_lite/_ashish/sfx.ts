@@ -19,13 +19,6 @@ export const LITE_SFX_DEFAULTS: Record<
 const audioBySrc = new Map<string, HTMLAudioElement>();
 const stopTimersBySrc = new Map<string, ReturnType<typeof setTimeout>>();
 
-type PendingPlay = {
-  kind: LiteSfxKind;
-  startSeconds?: number;
-  durationSeconds?: number;
-};
-const pendingAfterUnlock: PendingPlay[] = [];
-
 let unlockInstalled = false;
 let sfxUnlocked = false;
 let audioCtx: AudioContext | null = null;
@@ -65,13 +58,6 @@ function primeAudioInGesture(el: HTMLAudioElement): void {
     .catch(() => {
       el.volume = prevVol;
     });
-}
-
-function flushPendingAfterUnlock(): void {
-  const queued = pendingAfterUnlock.splice(0, pendingAfterUnlock.length);
-  for (const p of queued) {
-    playLiteSfx(p.kind, p.startSeconds, p.durationSeconds);
-  }
 }
 
 function getOrCreateAudioContext(): AudioContext | null {
@@ -132,7 +118,6 @@ export function unlockLiteSfx(): void {
   audioBySrc.forEach((el) => {
     primeAudioInGesture(el);
   });
-  flushPendingAfterUnlock();
 }
 
 export function isLiteSfxUnlocked(): boolean {
@@ -189,9 +174,7 @@ export function playLiteSfx(kind: LiteSfxKind, startSeconds?: number, durationSe
     const p = el.play();
     if (p != null) {
       void p.catch((err: DOMException) => {
-        if (err?.name === "NotAllowedError") {
-          pendingAfterUnlock.push({ kind, startSeconds, durationSeconds });
-          installUnlockListenersOnce();
+        if (err?.name === "NotAllowedError") {          installUnlockListenersOnce();
           // Optional UX hook: allow UI to prompt the user to tap to enable audio.
           try {
             window.dispatchEvent(new CustomEvent("lite-sfx:unlock-needed"));
@@ -304,3 +287,4 @@ export function addScrubTimelineCue(tl: gsap.core.Timeline, at: number, fn: () =
     }
   };
 }
+
