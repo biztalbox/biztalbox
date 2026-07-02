@@ -39,25 +39,31 @@ body {
   background-color: #000 !important;
 }
 
-html:not(:has(#lite-route-root)):not(:has(#home-route-root)),
-body:not(:has(#lite-route-root)):not(:has(#home-route-root)),
-#__next:not(:has(#lite-route-root)):not(:has(#home-route-root)) {
+html:not(:has(#lite-route-root)):not(:has(#litePage)):not(:has(#home-route-root)),
+body:not(:has(#lite-route-root)):not(:has(#litePage)):not(:has(#home-route-root)),
+#__next:not(:has(#lite-route-root)):not(:has(#litePage)):not(:has(#home-route-root)) {
   background-color: var(--app-surface) !important;
   color: var(--app-text) !important;
 }
 
-/* /lite route: drop global black chrome (html/body/#__next) while on this section */
+/* Lite homepage + /lite: always light chrome (ignore system/dark data-theme on first paint) */
 html:has(#lite-route-root),
-body:has(#lite-route-root) {
-  background-color: #f5f5f5 !important;
+html:has(#litePage),
+body:has(#lite-route-root),
+body:has(#litePage) {
+  background-color: #f2f2f2 !important;
+  color: #000 !important;
 }
 
-#__next:has(#lite-route-root) {
-  background-color: #f5f5f5 !important;
+#__next:has(#lite-route-root),
+#__next:has(#litePage) {
+  background-color: #f2f2f2 !important;
 }
 
-[data-theme="dark"] body:has(#lite-route-root) {
-  background-color: #f5f5f5 !important;
+[data-theme="dark"] body:has(#lite-route-root),
+[data-theme="dark"] body:has(#litePage) {
+  background-color: #f2f2f2 !important;
+  color: #000 !important;
 }
 
 /* Lite header: transparent at top; frosted translucent bar once sticky (scroll) */

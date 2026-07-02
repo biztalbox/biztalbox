@@ -2,7 +2,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import * as THREE from "three";
 import type { Group } from "three";
-import { addScrubTimelineCue, isLiteReceiptSfxEnabled, isLiteSfxUnlocked, playLiteSfx, resetScrubTimelineCueBaseline, type LiteSfxKind } from "@/app/_lite/_ashish/sfx";
+import { addScrubTimelineCue, isLiteReceiptSfxEnabled, playLiteScanSfx, resetScrubTimelineCueBaseline, type LiteSfxKind } from "@/app/_lite/_ashish/sfx";
 import {
   resolveLiteServiceScans,
   type LiteApproachMotion,
@@ -103,10 +103,7 @@ export function billTrigger({
 
   return addScrubTimelineCue(tl, delay, () => {
     if (isCancelled?.()) return;
-    if (!isLiteSfxUnlocked()) return;
-    const st = tl.scrollTrigger;
-    if (!st?.isActive || st.direction < 1) return;
-    playLiteSfx(sound);
+    playLiteScanSfx(tl, "print", delay);
   });
 }
 
@@ -489,12 +486,10 @@ export function attachLiteServiceScanPair(options: {
   scanTl.to(`${scanner} .purchaseStatus`, { color: "red", duration: 0 }, 0.8);
   scanTl.to(`${scanner} .barcoadCheck`, { autoAlpha: 1, duration: 0 }, 0.8);
 
-  const removeBeepCue = addScrubTimelineCue(scanTl, 0.8 + 0.1, () => {
+  const beepAt = 0.8 + 0.1;
+  const removeBeepCue = addScrubTimelineCue(scanTl, beepAt, () => {
     if (isCancelled()) return;
-    if (!isLiteSfxUnlocked()) return;
-    const st = scanTl.scrollTrigger;
-    if (!st?.isActive || st.direction < 1) return;
-    playLiteSfx("beep");
+    playLiteScanSfx(scanTl, "beep", beepAt);
   });
 
   /** Warm rosy “scan” read on the GLB, peaking as the model vanishes (scrub reverses cleanly). */

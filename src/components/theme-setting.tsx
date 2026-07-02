@@ -55,11 +55,14 @@ const ThemeSetting = () => {
   }, [setTheme, theme]);
 
   useLayoutEffect(() => {
-    // Sync cookie before paint so the first navigation to "/" includes bb_theme (Vercel).
     const t = (resolvedTheme ?? theme) as unknown;
-    if (t !== "dark" && t !== "light") return;
+    if (t !== "dark" && t !== "light") {
+      setTheme("light");
+      writeThemeCookie("light");
+      return;
+    }
     writeThemeCookie(t);
-  }, [resolvedTheme, theme]);
+  }, [resolvedTheme, theme, setTheme]);
   return (
     <div
       className={`tp-theme-settings-area transition-3 ${settingOpen ? "settings-opened" : ""

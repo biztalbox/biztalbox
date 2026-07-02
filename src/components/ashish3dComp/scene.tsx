@@ -455,7 +455,7 @@ const Ashish3dScene = () => {
             if (cancelled) return;
             if (!isLiteSfxUnlocked() || !isLiteReceiptSfxEnabled()) return;
             const st = receiptTl?.scrollTrigger;
-            if (!st?.isActive || st.direction < 1) return;
+            if (!st || st.direction < 1) return;
             if (didPlayCtaBill) return;
             didPlayCtaBill = true;
             playLiteSfx("bill");

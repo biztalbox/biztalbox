@@ -6,7 +6,7 @@ import TailwindScope from "@/components/TailwindScope";
 import Image from "next/image";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { ScrollSmoother } from "@/plugins";
-import { isLiteSfxUnlocked, preloadLiteSfx, unlockLiteSfx } from "@/app/_lite/_ashish/sfx";
+import { preloadLiteSfx } from "@/app/_lite/_ashish/sfx";
 
 /** Same file as `public/assets/loader/white.gif`. */
 const LITE_LOADER_GIF_SRC = "/assets/loader/white.gif";
@@ -69,17 +69,14 @@ const LiteHomePage = () => {
     document.documentElement.style.removeProperty("transform");
   }, []);
 
-  // Audio unlock (iOS/Safari): preload early + show prompt only if autoplay is blocked.
-  // useEffect(() => {
-  //   preloadLiteSfx();
-  //   const onNeed = () => {
-  //     if (!isLiteSfxUnlocked()) setShowSoundPrompt(true);
-  //   };
-  //   window.addEventListener("lite-sfx:unlock-needed", onNeed as EventListener);
-  //   return () => {
-  //     window.removeEventListener("lite-sfx:unlock-needed", onNeed as EventListener);
-  //   };
-  // }, []);
+  useLayoutEffect(() => {
+    document.documentElement.setAttribute("data-theme", "light");
+    document.documentElement.style.colorScheme = "light";
+  }, []);
+
+  useEffect(() => {
+    preloadLiteSfx();
+  }, []);
 
   // Preload loader GIF (cheap hint for the browser).
   useEffect(() => {
