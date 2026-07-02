@@ -5,15 +5,11 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 
-import g_1 from "@/assets/img/profile/Artboard 1.webp";
-import g_2 from "@/assets/img/profile/Artboard 2.webp";
-import g_3 from "@/assets/img/profile/Artboard 3.webp";
-import g_4 from "@/assets/img/profile/Artboard 4.webp";
-import g_5 from "@/assets/img/profile/Artboard 5.webp";
-import g_6 from "@/assets/img/profile/Artboard 6.webp";
-import g_7 from "@/assets/img/profile/Artboard 7.webp";
-import g_17 from "@/assets/img/profile/Artboard 17.webp";
-import g_18 from "@/assets/img/profile/Artboard 18.webp";
+import g_1 from "@/assets/img/profile/1.webp";
+import g_2 from "@/assets/img/profile/2.webp";
+import g_3 from "@/assets/img/profile/3.webp";
+import g_4 from "@/assets/img/profile/4.webp";
+import g_5 from "@/assets/img/profile/5.webp";
 
 import "swiper/css";
 
@@ -23,10 +19,6 @@ const galleryImages = [
   { src: g_3, alt: "Gallery 3" },
   { src: g_4, alt: "Gallery 4" },
   { src: g_5, alt: "Gallery 5" },
-  { src: g_6, alt: "Gallery 6" },
-  { src: g_7, alt: "Gallery 7" },
-  { src: g_17, alt: "Gallery 17" },
-  { src: g_18, alt: "Gallery 18" },
 ];
 
 const AshishCarousel: React.FC = () => {

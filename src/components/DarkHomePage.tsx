@@ -23,6 +23,7 @@ import WhyChooseUs from "@/components/about/why-choose-us";
 import HeaderEleven from "@/layouts/headers/header-eleven";
 import PerformanceMonitor from "@/components/PerformanceMonitor";
 import AshishCarousel from "./AshishCarousel";
+import HeaderDarkHome from "@/layouts/headers/header-dark-home";
 
 /**
  * Loader timing — बढ़ाने से लोडर ज़्यादा देर तक दिखेगा।
@@ -179,7 +180,7 @@ const DarkHomePage = () => {
 
       <Wrapper>
         {/* header area start */}
-        <HeaderEleven transparent={true} />
+        <HeaderDarkHome transparent={true} />
         {/* header area end */}
 
         <div id="smooth-wrapper">
