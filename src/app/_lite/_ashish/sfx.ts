@@ -58,12 +58,12 @@ function clearStopTimerForSrc(src: string): void {
 }
 
 function freezeAllScrubCueBaselines(): void {
-  for (const tl of scrubCueTimelines) {
+  scrubCueTimelines.forEach((tl) => {
     const t = tl.time();
     scrubCueLastTime.set(tl, t);
     postUnlockMinTimeByTimeline.set(tl, t);
     scrubCueFiredAt.get(tl)?.clear();
-  }
+  });
 }
 
 function hasScrubbedForwardSinceUnlock(tl: gsap.core.Timeline): boolean {
