@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import WhyChooseUsLite from "@/app/_lite/_ashish/WhyChooseUs";
+import WhyChooseUsLite from "./WhyChooseUs";
 import {
   LiteScannerBoxLabel,
   LiteServiceViewMoreLink,
