@@ -1,5 +1,5 @@
-import LiteHomePage from "@/components/LiteHomePage";
+import LiteHomePageShell from "@/components/LiteHomePageShell";
 
 export default function Page() {
-  return <LiteHomePage />;
+  return <LiteHomePageShell />;
 }

@@ -50,7 +50,7 @@ export default async function Home({
     );
   } else {
     // Import lite home only when needed (keeps CSS isolated per mode).
-    const LiteHomePage = (await import("@/components/LiteHomePage")).default;
+    const LiteHomePageShell = (await import("@/components/LiteHomePageShell")).default;
     return (
       <SchemaProvider
         schemaProps={schemaProps}
@@ -58,7 +58,7 @@ export default async function Home({
         title={baseMetadata.title as string}
         description={baseMetadata.description as string}
       >
-        <LiteHomePage />
+        <LiteHomePageShell />
       </SchemaProvider>
     );
   }

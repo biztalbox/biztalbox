@@ -7,6 +7,10 @@ import Image from "next/image";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { ScrollSmoother } from "@/plugins";
 import { preloadLiteSfx } from "@/app/_lite/_ashish/sfx";
+import {
+  enableLiteHomeScrollRestoreFix,
+  resetLiteHomeScroll,
+} from "@/utils/lite-scroll-restore";
 
 /** Same file as `public/assets/loader/white.gif`. */
 const LITE_LOADER_GIF_SRC = "/assets/loader/white.gif";
@@ -27,32 +31,8 @@ const LiteHomePage = () => {
   const mountAtRef = useRef<number | null>(null);
   if (mountAtRef.current === null) mountAtRef.current = Date.now();
 
-  // Reload at bottom should always land on hero — before ScrollTrigger measures layout.
-  useLayoutEffect(() => {
-    const previousRestoration =
-      "scrollRestoration" in history ? history.scrollRestoration : null;
-    if (previousRestoration !== null) {
-      history.scrollRestoration = "manual";
-    }
-
-    const scrollTop = () => {
-      window.scrollTo(0, 0);
-      document.documentElement.scrollTop = 0;
-      document.body.scrollTop = 0;
-    };
-
-    scrollTop();
-
-    const onPageShow = () => scrollTop();
-    window.addEventListener("pageshow", onPageShow);
-
-    return () => {
-      window.removeEventListener("pageshow", onPageShow);
-      if (previousRestoration !== null) {
-        history.scrollRestoration = previousRestoration;
-      }
-    };
-  }, []);
+  // Reload should always open at hero — keep manual restoration for this route only.
+  useLayoutEffect(() => enableLiteHomeScrollRestoreFix(), []);
 
   // Safety cleanup: if user navigates from a smooth-scrolling page,
   // ensure ScrollSmoother is fully torn down so body doesn't keep a stale height/transform.
@@ -110,9 +90,7 @@ const LiteHomePage = () => {
 
   useEffect(() => {
     if (showLoader) return;
-    window.scrollTo(0, 0);
-    document.documentElement.scrollTop = 0;
-    document.body.scrollTop = 0;
+    resetLiteHomeScroll();
     window.dispatchEvent(new CustomEvent("lite:loader-hidden"));
   }, [showLoader]);
 
