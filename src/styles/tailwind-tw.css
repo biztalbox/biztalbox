@@ -11,13 +11,10 @@
   @apply mx-auto px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12;
 }
 
-/*
-  /lite typography — quoted family name required (spaces).
-  Win over `.font-century-gothic` on hero h1 (class also uses !important).
-*/
 #litePage h1,
 #litePage h1 {
   @apply text-[44px] md:text-[60px] lg:!text-[99px] leading-none font-light;
+  font-family: "Century Gothic Local" !important;
 }
 
 #litePage h2 {
@@ -39,7 +36,7 @@
   font-family: "Century Gothic Local" !important;
 }
 
-/* Scope to /lite only — avoids leaking Helvetica Light after client navigation */
+/* Scope to /lite only — Century Gothic Local site-wide */
 #lite-route-root,
 #lite-route-root h4,
 #lite-route-root h5,

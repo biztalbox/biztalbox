@@ -1,6 +1,6 @@
-// Site-wide text stack (all former display fonts map to this for consistency).
+// Site-wide text stack — all theme font tokens map to Century Gothic Local.
 
-$font-stack: "Helvetica, Arial, sans-serif";
+$font-stack: "Century Gothic Local";
 
 // font family — each key becomes --tp-ff-<key> in :root (see _root.scss)
 $font-family: (

@@ -17,7 +17,7 @@ const HeroBannerFour = () => {
 
         <div className="contentBox">
           <div className="container">
-            <p>CREATIVE SOULS, STRATEGIC MINDS</p>
+            <p style={{marginBottom: '30px'}}>CREATIVE SOULS, STRATEGIC MINDS</p>
             <h1>biztalbox</h1>
             <h3>Breakthrough Marketing Solutions, Igniting Brand Potential</h3>
             <div className="chipText">

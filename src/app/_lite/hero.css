@@ -5,8 +5,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  font-family: var(--tp-ff-syne), system-ui, -apple-system, BlinkMacSystemFont,
-      "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Century Gothic Local";
   color: #111111;
   position: relative;
   overflow: hidden;
@@ -362,8 +361,7 @@ body {
   display: grid;
   grid-template-columns: auto 1fr;
   column-gap: 40px;
-  font-family: var(--tp-ff-syne), system-ui, -apple-system, BlinkMacSystemFont,
-      "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Century Gothic Local";
 }
 
 .lite-section__vertical {
@@ -433,8 +431,7 @@ body {
   grid-template-columns: auto 1fr;
   column-gap: 40px;
   align-items: center;
-  font-family: var(--tp-ff-syne), system-ui, -apple-system, BlinkMacSystemFont,
-      "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Century Gothic Local";
 }
 
 .lite-bold__vertical {
@@ -562,7 +559,7 @@ body {
   height: 100vh;
   z-index: 100;
   pointer-events: none;
-  font-family: var(--tp-ff-syne), sans-serif;
+  font-family: "Century Gothic Local";
   font-size: clamp(32px, 4.5vw, 64px);
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -631,7 +628,7 @@ body {
   display: flex;
   flex-direction: column;
   color: #000000;
-  font-family: var(--tp-ff-syne), sans-serif;
+  font-family: "Century Gothic Local";
   overflow: hidden;
 }
 
@@ -755,7 +752,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-family: var(--tp-ff-syne), sans-serif;
+  font-family: "Century Gothic Local";
   color: #000000;
 }
 
@@ -780,7 +777,7 @@ body {
   border: 1px solid #000000;
   border-radius: 999px;
   background: transparent;
-  font-family: var(--tp-ff-syne), sans-serif;
+  font-family: "Century Gothic Local";
   font-size: 12px;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -976,7 +973,7 @@ body {
   background: #e9e9e9;
   padding: 60px 80px 80px 140px;
   position: relative;
-  font-family: var(--tp-ff-syne), sans-serif;
+  font-family: "Century Gothic Local";
   color: #000000;
 }
 
@@ -1193,7 +1190,7 @@ body {
   min-height: 115vh;
   padding: 70px 70px 84px 100px;
   position: relative;
-  font-family: var(--tp-ff-syne), system-ui, sans-serif;
+  font-family: "Century Gothic Local";
 }
 
 .lite-projects__vertical {
@@ -1338,7 +1335,7 @@ body {
   min-height: 100vh;
   padding: 58px 70px 72px 100px;
   position: relative;
-  font-family: var(--tp-ff-syne), system-ui, sans-serif;
+  font-family: "Century Gothic Local";
   color: #000;
 }
 
@@ -1496,7 +1493,7 @@ body {
   min-height: 100vh;
   position: relative;
   padding: 44px 70px 70px 100px;
-  font-family: var(--tp-ff-syne), system-ui, sans-serif;
+  font-family: "Century Gothic Local";
   overflow: hidden;
 }
 
@@ -1580,7 +1577,7 @@ body {
 .lite-scattered {
   background: #000000;
   padding: 58px 70px 92px 100px;
-  font-family: var(--tp-ff-syne), system-ui, sans-serif;
+  font-family: "Century Gothic Local";
   overflow: hidden;
 }
 
@@ -1782,7 +1779,7 @@ body {
   background: #e9e4dc;
   color: #0b0b0b;
   padding: 38px 70px 70px 70px;
-  font-family: var(--tp-ff-syne), system-ui, sans-serif;
+  font-family: "Century Gothic Local";
 }
 
 .lite-thanks__wrap {

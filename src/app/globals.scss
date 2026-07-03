@@ -19,8 +19,34 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Century Gothic Local";
+  src: url("/assets/fonts/CenturyGothicPaneuropeanBold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Century Gothic Local";
+  src: url("/assets/fonts/CenturyGothicPaneuropeanExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 .font-century-gothic {
-  font-family: "Century Gothic Local", "Century Gothic", Helvetica, Arial, sans-serif !important;
+  font-family: "Century Gothic Local" !important;
+}
+
+:root {
+  --bs-body-font-family: "Century Gothic Local";
+  --bs-font-sans-serif: "Century Gothic Local";
+}
+
+html,
+body {
+  font-family: "Century Gothic Local";
 }
 
 /* App-wide theme tokens (used for all pages except home + /lite). */

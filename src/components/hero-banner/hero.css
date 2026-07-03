@@ -24,7 +24,7 @@
 
 .darkHomepageHero h1 {
   font-size: 5.5rem;
-  font-family: "Century Gothic Local", "Century Gothic", Helvetica, Arial, sans-serif;
+  font-family: "Century Gothic Local";
   font-weight: 300;
   color: white;
   line-height: 0.9;
@@ -43,7 +43,7 @@
   }
 }
 .darkHomepageHero h3 {
-  font-family: "Century Gothic Local", "Century Gothic", Helvetica, Arial, sans-serif;
+  font-family: "Century Gothic Local";
   font-weight: 400;
   color: white;
 }
