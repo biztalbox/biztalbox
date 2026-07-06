@@ -38,8 +38,8 @@ const getResponsiveSettings = () => {
     return {
       modelScale: 40,
       cameraZ: 4,
-      cameraFOV: 45,
-      modelY: 0.15
+      cameraFOV: 50,
+      modelY: 0.75
     };
   } else if (width <= 767) {
     return {
@@ -366,7 +366,7 @@ const EyeBall: React.FC = memo(() => {
 
     // Load the 3D model with BULLETPROOF animation handling
     gltfLoader.load(
-      '/models/eyeball_animate.glb',
+      '/eyeball.glb',
       (gltf) => {
         try {
           const model = gltf.scene;

@@ -23,7 +23,7 @@ const TARGETS = [
   'public/assets/lite_models/minified/webdev.glb',
   'public/assets/lite_models/dartboard2.glb',
   'public/models/b-logo.glb',
-  'public/models/eyeball_animate.glb',
+  'public/models/eyeball.glb',
 ];
 
 for (const file of TARGETS) {
