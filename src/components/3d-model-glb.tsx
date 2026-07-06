@@ -38,7 +38,7 @@ const ModelGLB: React.FC<ModelGLBProps> = ({
     // outputColorSpace set BEFORE any texture upload prevents
     // GL_INVALID_OPERATION: glTexStorage2D: Texture is immutable
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     renderer.setClearColor(0x000000, 0);
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -120,17 +120,43 @@ const ModelGLB: React.FC<ModelGLBProps> = ({
     ro.observe(wrapper);
     syncSize();
 
-    // ── Render loop ────────────────────────────────────────────────────────
+    // ── Render loop (paused while off-screen / tab hidden — perf) ──────────
+    let visible = true;
     const animate = () => {
+      if (!visible || document.hidden) {
+        rafRef.current = null;
+        return;
+      }
       rafRef.current = requestAnimationFrame(animate);
       controls.update();
       renderer.render(scene, camera);
     };
-    animate();
+    const requestRender = () => {
+      if (rafRef.current === null && visible && !document.hidden) {
+        rafRef.current = requestAnimationFrame(animate);
+      }
+    };
+    let vio: IntersectionObserver | null = null;
+    if (typeof IntersectionObserver !== 'undefined') {
+      visible = false;
+      vio = new IntersectionObserver(
+        (entries) => {
+          visible = entries.some((e) => e.isIntersecting);
+          requestRender();
+        },
+        { rootMargin: '10% 0px' },
+      );
+      vio.observe(wrapper);
+    }
+    const onVisibilityChange = () => requestRender();
+    document.addEventListener('visibilitychange', onVisibilityChange);
+    requestRender();
 
     // ── Cleanup ────────────────────────────────────────────────────────────
     return () => {
       if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+      document.removeEventListener('visibilitychange', onVisibilityChange);
+      vio?.disconnect();
       ro.disconnect();
       controls.dispose();
       if (model) {

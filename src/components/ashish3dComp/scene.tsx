@@ -38,7 +38,6 @@ const LITE_GLB_URLS = [
   "/assets/lite_models/minified/webdev.glb",
   "/assets/lite_models/minified/graphic.glb",
   "/assets/lite_models/minified/video.glb",
-  "/assets/lite_models/minified/box.glb",
 ] as const;
 
 /** Drop distance for hero intro (all models enter from above). */
@@ -115,7 +114,6 @@ const Ashish3dScene = () => {
   const webdevRef = useRef<Group>(null);
   const graphicRef = useRef<Group>(null);
   const videoRef = useRef<Group>(null);
-  const bucketRef = useRef<Group>(null);
   const heroFadeOutGroupRef = useRef<Group>(null);
 
   const modelRefs = useMemo<LiteModelRefMap>(
@@ -140,7 +138,6 @@ const Ashish3dScene = () => {
     content: true,
     ads: true,
   }));
-  const [bucketFloatEnabled, setBucketFloatEnabled] = useState(true);
   const isFloatOn = (key: LiteModelKey) => !!floatEnabledByKey[key];
 
   /**
@@ -180,7 +177,6 @@ const Ashish3dScene = () => {
         if (visible.has(a.id)) next[a.key] = true;
       }
       setFloatEnabledByKey(next);
-      setBucketFloatEnabled(heroOn || visible.has("ctaSection"));
     };
 
     const io = new IntersectionObserver(
@@ -245,7 +241,6 @@ const Ashish3dScene = () => {
   const webdevScene = sceneBySrc.get("/assets/lite_models/minified/webdev.glb");
   const graphicScene = sceneBySrc.get("/assets/lite_models/minified/graphic.glb");
   const videoScene = sceneBySrc.get("/assets/lite_models/minified/video.glb");
-  const bucketScene = sceneBySrc.get("/assets/lite_models/minified/box.glb");
 
   useEffect(() => {
     let t: ReturnType<typeof setTimeout> | undefined;
@@ -327,7 +322,6 @@ const Ashish3dScene = () => {
           !webdevRef.current ||
           !graphicRef.current ||
           !videoRef.current ||
-          !bucketRef.current ||
           !heroFadeOutGroupRef.current
         ) {
           if (!cancelled && attempts++ < maxAttempts) requestAnimationFrame(mountScroll);
@@ -580,17 +574,6 @@ const Ashish3dScene = () => {
       />
 
 
-      <WigglingModel
-        scene={bucketScene!}
-        groupRef={bucketRef}
-        position={L.bucket!.position}
-        floatConfig={L.bucket!.float}
-        scale={L.bucket!.scale}
-        rotation={L.bucket!.rotation}
-        disableFloat={disableFloat}
-        floatEnabled={bucketFloatEnabled}
-        floatSoft={floatSoft}
-      />
       <WigglingModel
         scene={seoScene}
         groupRef={seoRef}

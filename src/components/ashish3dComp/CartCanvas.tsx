@@ -2,12 +2,44 @@
 
 import { AdaptiveDpr, Environment } from "@react-three/drei";
 import { Canvas, useThree } from "@react-three/fiber";
-import { Suspense, useEffect, useLayoutEffect } from "react";
+import { Suspense, useEffect, useLayoutEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import CartBoxScene from "./CartBoxScene";
 import Link from "next/link";
+
+/**
+ * Mounts the WebGL canvas only when the CTA section approaches the viewport
+ * (~1.5 screens away). Keeps the big cart model + WebGL context completely
+ * out of the critical path for initial page load (huge LCP/TBT win).
+ */
+function useNearViewport<T extends HTMLElement>(rootMargin = "150% 0px") {
+  const ref = useRef<T | null>(null);
+  const [near, setNear] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || near) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setNear(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setNear(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [near, rootMargin]);
+
+  return { ref, near };
+}
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -36,6 +68,8 @@ function ResponsiveHeroCamera() {
 }
 
 export default function CartCanvas() {
+  const { ref: sectionRef, near: canvasReady } = useNearViewport<HTMLElement>();
+
   useEffect(() => {
     let refreshTimer: ReturnType<typeof setTimeout> | undefined;
     let lastWidth = window.innerWidth;
@@ -77,29 +111,31 @@ export default function CartCanvas() {
   }, []);
 
   return (
-    <section id="ctaSection" className="pt-10 pb-5 relative">
-      <Canvas
-        className="!absolute inset-0 h-full w-full pointer-events-none"
-        gl={{
-          alpha: true,
-          antialias: true,
-          powerPreference: "high-performance",
-        }}
-        dpr={1}
-      >
-        <ResponsiveHeroCamera />
-        <AdaptiveDpr />
-        {/* <ambientLight intensity={0.55} />
-        <directionalLight position={[40, 60, 80]} intensity={0.85} /> */}
-        <Suspense fallback={null}>
-          <CartBoxScene />
-        </Suspense>
-        <Environment
-          files="/assets/hdr/scene.hdr"
-          resolution={1024}
-          backgroundIntensity={1}
-        />
-      </Canvas>
+    <section id="ctaSection" ref={sectionRef} className="pt-10 pb-5 relative">
+      {canvasReady && (
+        <Canvas
+          className="!absolute inset-0 h-full w-full pointer-events-none"
+          gl={{
+            alpha: true,
+            antialias: true,
+            powerPreference: "high-performance",
+          }}
+          dpr={1}
+        >
+          <ResponsiveHeroCamera />
+          <AdaptiveDpr />
+          {/* <ambientLight intensity={0.55} />
+          <directionalLight position={[40, 60, 80]} intensity={0.85} /> */}
+          <Suspense fallback={null}>
+            <CartBoxScene />
+          </Suspense>
+          <Environment
+            files="/assets/hdr/scene.hdr"
+            resolution={1024}
+            backgroundIntensity={1}
+          />
+        </Canvas>
+      )}
       <div className="container flex flex-col gap-2 overflow-hidden relative z-10">
         <div id="ctaScrollAnchor" className="h-[48vh] md:h-[60vh] 2xl:h-[35rem]" />
         <h3 className="text-3xl md:text-4xl lg:text-6xl font-thin uppercase leading-none mx-auto text-center relative z-10">

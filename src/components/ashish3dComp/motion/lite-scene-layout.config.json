@@ -158,28 +158,6 @@
             0.1
           ]
         }
-      },
-      "bucket": {
-        "position": [
-          300,
-          100,
-          300
-        ],
-        "scale": 0,
-        "rotation": [
-          1,
-          0,
-          0
-        ],
-        "float": {
-          "speed": 3,
-          "rotationIntensity": 0.3,
-          "floatIntensity": 0.8,
-          "floatingRange": [
-            -0.1,
-            0.1
-          ]
-        }
       }
     },
     "mobile": {
@@ -331,28 +309,6 @@
           -0.2,
           0
         ]
-      },
-      "bucket": {
-        "position": [
-          200,
-          -300,
-          300
-        ],
-        "scale": 0,
-        "rotation": [
-          1,
-          0,
-          0
-        ],
-        "float": {
-          "speed": 3,
-          "rotationIntensity": 0.3,
-          "floatIntensity": 0.8,
-          "floatingRange": [
-            -0.1,
-            0.1
-          ]
-        }
       }
     },
     "tablet": {
@@ -499,28 +455,6 @@
           0,
           0
         ]
-      },
-      "bucket": {
-        "position": [
-          150,
-          200,
-          200
-        ],
-        "scale": 0,
-        "rotation": [
-          1,
-          0,
-          0
-        ],
-        "float": {
-          "speed": 3,
-          "rotationIntensity": 0.3,
-          "floatIntensity": 0.8,
-          "floatingRange": [
-            -0.1,
-            0.1
-          ]
-        }
       }
     }
   },
