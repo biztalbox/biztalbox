@@ -2,7 +2,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import * as THREE from "three";
 import type { Group } from "three";
-import { addScrubTimelineCue, isLiteReceiptSfxEnabled, playLiteScanSfx, resetScrubTimelineCueBaseline, type LiteSfxKind } from "@/app/_lite/_ashish/sfx";
+import { addScrubTimelineCue, catchUpScrubTimelineCues, isLiteReceiptSfxEnabled, playLiteScanSfx, resetScrubTimelineCueBaseline, type LiteSfxKind } from "@/app/_lite/_ashish/sfx";
 import {
   resolveLiteServiceScans,
   type LiteApproachMotion,
@@ -395,7 +395,8 @@ export function attachLiteServiceScanPair(options: {
        * user scrolls back above the scan start.
        */
       onEnter: () => {
-        resetScrubTimelineCueBaseline(scanTl);
+        resetScrubTimelineCueBaseline(scanTl, 0);
+        catchUpScrubTimelineCues(scanTl, 0);
         // approachTl.scrollTrigger?.disable(false);
         // Lock approach to its end-state to avoid boundary jitter.
         // approachTl.progress(1);

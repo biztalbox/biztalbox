@@ -12,8 +12,8 @@ import {
   resetLiteHomeScroll,
 } from "@/utils/lite-scroll-restore";
 
-/** Same file as `public/assets/loader/white.gif`. */
-const LITE_LOADER_GIF_SRC = "/assets/loader/white.gif";
+/** Optimized animated WebP loader (was white.gif — 178KB, now ~19KB). */
+const LITE_LOADER_GIF_SRC = "/assets/loader/white.webp";
 
 /**
  * Same behaviour as `DarkHomePage` loader timing.

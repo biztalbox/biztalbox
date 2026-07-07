@@ -85,28 +85,30 @@ export default function DartCanvas({ onEnter }: { onEnter: () => void }) {
     );
   }
 
+  const handleDartEnter = () => {
+    if (hideDesktopHitButton) return;
+    unlockLiteSfx();
+    const didShoot = shootRef.current?.({
+      source: "button",
+      onBeforeAnimate: () => setHideDesktopHitButton(true),
+    });
+    if (didShoot) onEnter();
+  };
+
   const handleFixedHit = () => {
     unlockLiteSfx();
     const didShoot = shootRef.current?.({ source: "button" });
     if (didShoot) onEnter();
   };
 
-  const handleDesktopHitButton = (e: React.MouseEvent<HTMLButtonElement>) => {
-    unlockLiteSfx();
-    const didShoot = shootRef.current?.({
-      source: "button",
-      screenX: e.clientX,
-      screenY: e.clientY,
-      onBeforeAnimate: () => setHideDesktopHitButton(true),
-    });
-    if (didShoot) onEnter();
-  };
-
-  const hitButtonClass =
-    "pointer-events-auto border z-[2000] font-bold !border-black bg-white px-3 py-3 rounded-full text-black !cursor-none";
+  const hitButtonVisualClass =
+    "border z-[2000] font-bold !border-black bg-white px-3 py-3 rounded-full text-black !cursor-none";
 
   return (
-    <section className="fixed z-[2000] inset-0 overflow-hidden h-screen w-screen bg-white !cursor-none">
+    <section
+      className="fixed z-[2000] inset-0 overflow-hidden h-screen w-screen bg-white !cursor-none"
+      onClick={isDesktop ? handleDartEnter : undefined}
+    >
       <Canvas
         className="!fixed z-50 inset-0 h-full w-full pointer-events-none"
         gl={{
@@ -129,25 +131,27 @@ export default function DartCanvas({ onEnter }: { onEnter: () => void }) {
         <MouseOrbit />
       </Canvas>
 
-      {/* Desktop: cursor HIT — raycast at click position must land on target mesh */}
+      {/* Desktop: cursor HIT label — full screen click triggers dart + enter */}
       {!hideDesktopHitButton && (
-        <button
-          type="button"
-          className={`fixed left-0 top-0 hidden lg:block ${hitButtonClass}`}
+        <span
+          aria-hidden
+          className={`fixed left-0 top-0 hidden lg:block pointer-events-none ${hitButtonVisualClass}`}
           style={{
             transform: `translate3d(${cursor.x}px, ${cursor.y}px, 0) translate(-50%, -50%)`,
           }}
-          onClick={handleDesktopHitButton}
         >
           HIT!
-        </button>
+        </span>
       )}
 
       {/* Mobile + tablet: fixed bottom HIT */}
       <button
         type="button"
-        className={`fixed lg:hidden bottom-16 left-1/2 -translate-x-1/2 ${hitButtonClass}`}
-        onClick={handleFixedHit}
+        className={`fixed lg:hidden bottom-16 left-1/2 -translate-x-1/2 pointer-events-auto ${hitButtonVisualClass}`}
+        onClick={(e) => {
+          e.stopPropagation();
+          handleFixedHit();
+        }}
       >
         HIT!
       </button>

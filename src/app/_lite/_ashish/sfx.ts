@@ -266,6 +266,7 @@ function scrubCueOnUpdate(tl: gsap.core.Timeline): void {
   const prevT = scrubCueLastTime.get(tl) ?? t;
   const cues = scrubCueBuckets.get(tl);
   const fired = getScrubCueFiredSet(tl);
+  const st = tl.scrollTrigger;
 
   if (cues?.length) {
     for (const c of cues) {
@@ -276,6 +277,11 @@ function scrubCueOnUpdate(tl: gsap.core.Timeline): void {
   }
 
   if (!canFireScrubTimelineCue(tl) || !cues?.length) {
+    // Scrub can run before the pin is active (e.g. webdev after smo handoff).
+    // Do not advance prevT forward while inactive or cue crossings are lost.
+    if (!st?.isActive && t >= prevT) {
+      return;
+    }
     scrubCueLastTime.set(tl, t);
     return;
   }
@@ -289,9 +295,40 @@ function scrubCueOnUpdate(tl: gsap.core.Timeline): void {
   scrubCueLastTime.set(tl, t);
 }
 
-export function resetScrubTimelineCueBaseline(tl: gsap.core.Timeline): void {
+/** Fire any cues already passed when entering a scan pin (first forward entry). */
+export function catchUpScrubTimelineCues(
+  tl: gsap.core.Timeline,
+  baselineTime = 0,
+): void {
+  if (!scrubCueBuckets.has(tl)) return;
+
+  const cues = scrubCueBuckets.get(tl);
+  const fired = getScrubCueFiredSet(tl);
+  const t = tl.time();
+
+  scrubCueLastTime.set(tl, baselineTime);
+  postUnlockMinTimeByTimeline.delete(tl);
+
+  if (!canFireScrubTimelineCue(tl) || !cues?.length) {
+    scrubCueLastTime.set(tl, t);
+    return;
+  }
+
+  for (const c of cues) {
+    if (t >= c.at && !fired.has(c.at)) {
+      fired.add(c.at);
+      c.fn();
+    }
+  }
+  scrubCueLastTime.set(tl, t);
+}
+
+export function resetScrubTimelineCueBaseline(
+  tl: gsap.core.Timeline,
+  baselineTime?: number,
+): void {
   if (scrubCueBuckets.has(tl)) {
-    scrubCueLastTime.set(tl, tl.time());
+    scrubCueLastTime.set(tl, baselineTime ?? tl.time());
     postUnlockMinTimeByTimeline.delete(tl);
     scrubCueFiredAt.get(tl)?.clear();
   }

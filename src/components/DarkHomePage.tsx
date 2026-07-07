@@ -167,7 +167,7 @@ const DarkHomePage = () => {
           }}
         >
           <img
-            src="/assets/loader/black.gif"
+            src="/assets/loader/black.webp"
             alt="Loading"
             style={{
               width: 120,

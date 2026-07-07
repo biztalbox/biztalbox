@@ -14,7 +14,10 @@ const CTA_SCROLL_ANCHOR = "#ctaScrollAnchor";
 const CTA_SECTION = "#ctaSection";
 const LITE_SCROLL_LAYOUT_READY = "lite:scroll-layout-ready";
 
-useGLTF.preload(CART_BOX_GLB);
+// NOTE: module-level `useGLTF.preload(CART_BOX_GLB)` was removed on purpose.
+// It forced the (large) cart model to download during the initial page load,
+// destroying LCP/TBT. The model now loads only when <CartCanvas /> mounts its
+// lazy canvas (see CartCanvas.tsx), shortly before the section scrolls into view.
 
 function findAnimationClip(animations: THREE.AnimationClip[]) {
   return (

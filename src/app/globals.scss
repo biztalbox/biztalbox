@@ -5,7 +5,8 @@
 
 @font-face {
   font-family: "Century Gothic Local";
-  src: url("/assets/fonts/centurygothic300.ttf") format("truetype");
+  src: url("/assets/fonts/centurygothic300.woff") format("woff"),
+       url("/assets/fonts/centurygothic300.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -13,7 +14,8 @@
 
 @font-face {
   font-family: "Century Gothic Local";
-  src: url("/assets/fonts/centurygothic.ttf") format("truetype");
+  src: url("/assets/fonts/centurygothic.woff") format("woff"),
+       url("/assets/fonts/centurygothic.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -21,7 +23,8 @@
 
 @font-face {
   font-family: "Century Gothic Local";
-  src: url("/assets/fonts/CenturyGothicPaneuropeanBold.ttf") format("truetype");
+  src: url("/assets/fonts/CenturyGothicPaneuropeanBold.woff") format("woff"),
+       url("/assets/fonts/CenturyGothicPaneuropeanBold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -29,7 +32,8 @@
 
 @font-face {
   font-family: "Century Gothic Local";
-  src: url("/assets/fonts/CenturyGothicPaneuropeanExtraBold.ttf") format("truetype");
+  src: url("/assets/fonts/CenturyGothicPaneuropeanExtraBold.woff") format("woff"),
+       url("/assets/fonts/CenturyGothicPaneuropeanExtraBold.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
   font-display: swap;

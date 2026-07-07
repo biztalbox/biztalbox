@@ -10,7 +10,8 @@
     "clean": "node -e \"require('fs').rmSync('.next',{recursive:true,force:true});\"",
     "start": "next start",
     "start:ip": "next start --hostname 192.168.1.17 --port 3005",
-    "lint": "next lint"
+    "lint": "next lint",
+    "optimize:models": "node scripts/optimize-models.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
