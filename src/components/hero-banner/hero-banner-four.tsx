@@ -10,12 +10,9 @@ const HeroBannerFour = () => {
 
       <div className="wrapper">
 
-        <div style={{ zIndex: 3 }}>
-          {/* <div style={{zIndex: 3}}> */}
+        <div>
           <EyeBall />
-          {/* </div> */}
         </div>
-        {/* <img src="/darkhome-eclips.webp" alt="darkhome-eclips" className="darkeyebgimg" /> */}
 
 
         <div className="contentBox">
