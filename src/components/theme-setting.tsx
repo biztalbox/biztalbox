@@ -69,17 +69,13 @@ const ThemeSetting = () => {
         }`}
     >
       <div className="tp-theme-wrapper">
-        <div className="tp-theme-header text-center">
-          <h4 className="tp-theme-header-title">Mode Settings</h4>
-        </div>
-
-        <div className="tp-theme-dir mb-20">
+        <div className="tp-theme-dir mt-10">
           <label className="tp-theme-dir-main" htmlFor="tp-dir-toggler">
             <span
               onClick={() => applyTheme("dark")}
               className={`tp-theme-dir-rtl ${theme === "dark" ? "active" : ""}`}
             >
-              Dark
+              <i className="fa-solid fa-moon"></i>
             </span>
             <input type="checkbox" id="tp-dir-toggler" checked={theme === "dark"} readOnly />
             <i className="tp-theme-dir-slide"></i>
@@ -88,7 +84,7 @@ const ThemeSetting = () => {
               className={`tp-theme-dir-ltr ${theme === "light" ? "active" : ""
                 }`}
             >
-              Light
+              <i className="fa-solid fa-sun-bright"></i>
             </span>
           </label>
         </div>
@@ -101,7 +97,7 @@ const ThemeSetting = () => {
                 onClick={handleOpenSetting}
               >
                 <span className="tp-theme-settings-gear">
-                  <i className="fa-light fa-gear"></i>
+                  <i className="fa-solid fa-circle-half-stroke"></i>
                 </span>
                 <span className="tp-theme-settings-close">
                   <i className="fa-regular fa-xmark"></i>
