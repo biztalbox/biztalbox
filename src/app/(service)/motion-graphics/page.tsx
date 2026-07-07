@@ -19,7 +19,7 @@ import { faq_data, powers, servicesData } from "./data";
 
 const MotionGraphicsPage = () => {
   const [activePower, setActivePower] = React.useState<number | null>(1);
-  const highlightColor = "#b5547a"; // You can change this color or make it a prop
+  const highlightColor = "#6bcd71"; // You can change this color or make it a prop
 
   // Memoize RGB values to prevent repeated parsing
   const colorRGB = useMemo(() => {
@@ -69,7 +69,7 @@ const MotionGraphicsPage = () => {
             <ScrollPinImage
               imageSrc="/assets/img/services/CAPTAIN_CUT.webp"
               imageAlt="CAPTAIN CUT Video Editing / Motion Graphics"
-              videoSrc="https://res.cloudinary.com/djoiovkr1/video/upload/Motion_Graphics_2_klp401.webm"
+              videoSrc="/assets/image/new_avatar/video/video.webm"
             >
               <div className="p-relative" style={{padding: "50px 30px"}}> 
               {/* previously used this class on above div - project-details-1-right */}
@@ -83,7 +83,7 @@ const MotionGraphicsPage = () => {
                   <h2
                     className="project-details-1"
                     style={{
-                      color: "white",
+                      color: "var(--app-text)",
                       fontSize: "2.2rem",
                       fontWeight: 700,
                     }}
@@ -180,11 +180,11 @@ const MotionGraphicsPage = () => {
         .power-pill {
           display: inline-flex;
           align-items: center;
-          background: rgba(255, 255, 255, 0.08);
+          background: rgba(0, 0, 0, 0.06);
           border: 2px solid rgba(${colorRGB.r}, ${colorRGB.g}, ${colorRGB.b}, 0.4);
           border-radius: 50px;
           padding: 8px 16px;
-          color: #e0e0e0;
+          color: var(--app-text);
           font-size: 0.9rem;
           font-weight: 500;
           cursor: pointer;
@@ -210,12 +210,13 @@ const MotionGraphicsPage = () => {
         .power-pill-name {
           font-size: 0.85rem;
           letter-spacing: 0.5px;
+          color: var(--app-text);
         }
 
         .active-power-description {
           margin-top: 20px;
           padding: 20px;
-          background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
+          background: linear-gradient(145deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.02));
           border: 1px solid rgba(${colorRGB.r}, ${colorRGB.g}, ${colorRGB.b}, 0.3);
           border-radius: 15px;
           backdrop-filter: blur(10px);
@@ -234,10 +235,19 @@ const MotionGraphicsPage = () => {
         }
 
         .description-text {
-          color: #e0e0e0;
+          color: var(--app-text);
           font-size: 0.95rem;
           line-height: 1.6;
           margin: 0;
+        }
+
+        /* Dark mode tweaks (keep the same “glass” look but readable) */
+        :global([data-theme="dark"]) .power-pill {
+          background: rgba(255, 255, 255, 0.08);
+        }
+
+        :global([data-theme="dark"]) .active-power-description {
+          background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.04));
         }
 
         @keyframes slideDown {

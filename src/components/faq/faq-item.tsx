@@ -1,4 +1,6 @@
-import React, { useId, useMemo, useState } from "react";
+"use client";
+
+import React, { useState } from "react";
 import SafeHtml from "@/components/seo-page/SafeHtml";
 
 type IProps = {
@@ -7,46 +9,70 @@ type IProps = {
   onToggle?: () => void;
 };
 
-export default function FaqItem({ item, isOpen, onToggle }: IProps) {
-  const reactId = useId();
-  const [uncontrolledOpen, setUncontrolledOpen] = useState(false);
-  const open = isOpen ?? uncontrolledOpen;
-  const handleToggle = onToggle ?? (() => setUncontrolledOpen((v) => !v));
-  const answerId = useMemo(
-    () => `faq-answer-${item.id}-${reactId}`,
-    [item.id, reactId],
-  );
+export default function FaqItem({ item }: IProps) {
+  const [isOpen, setIsOpen] = useState(false);
+  const panelId = `collapse-${item.id}`;
 
   return (
-    <div className="accordion-items">
+    <div className="accordion-items bb-faq-item">
       <h3 className="accordion-header">
         <button
-          style={{ fontSize: "20px", lineHeight: 1.2 }}
-          className={`accordion-buttons ${open ? "" : "collapsed"}`}
+          style={{ fontSize: "1.2rem !important" }}
+          className={`accordion-buttons${isOpen ? "" : " collapsed"}`}
           type="button"
-          onClick={handleToggle}
-          aria-expanded={open}
-          aria-controls={answerId}
+          aria-expanded={isOpen}
+          aria-controls={panelId}
+          onClick={() => setIsOpen((prev) => !prev)}
         >
           {item.question}
           <span className="accordion-icon"></span>
         </button>
       </h3>
-      {open ? (
+      <div
+        id={panelId}
+        className={`bb-faq-panel${isOpen ? " bb-faq-panel--open" : ""}`}
+        role="region"
+        aria-hidden={!isOpen}
+      >
         <div
-          id={answerId}
-          className="accordion-body"
-          style={{
-            paddingLeft: "30px",
-            paddingBottom: "20px",
-            color: "#929298",
-          }}
+          className="accordion-body bb-faq-answer"
+          style={{ paddingLeft: "30px", paddingBottom: "20px" }}
         >
-          <div style={{ fontSize: "16px", lineHeight: 1.7, color: "inherit" }}>
+          <div className="bb-faq-answer-inner" style={{ fontSize: "1rem !important" }}>
             <SafeHtml html={item.answer} />
           </div>
         </div>
-      ) : null}
+      </div>
+
+      <style jsx>{`
+        .bb-faq-panel:not(.bb-faq-panel--open) {
+          display: none !important;
+        }
+
+        .bb-faq-panel--open {
+          display: block !important;
+          height: auto !important;
+          max-height: none !important;
+          overflow: visible !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+        }
+
+        .bb-faq-panel--open :global(.bb-faq-answer),
+        .bb-faq-panel--open :global(.bb-faq-answer-inner),
+        .bb-faq-panel--open :global(.bb-faq-answer p),
+        .bb-faq-panel--open :global(.bb-faq-answer li),
+        .bb-faq-panel--open :global(.bb-faq-answer span),
+        .bb-faq-panel--open :global(.bb-faq-answer div) {
+          color: var(--app-text) !important;
+          opacity: 1 !important;
+          visibility: visible !important;
+          height: auto !important;
+          max-height: none !important;
+          overflow: visible !important;
+          transform: none !important;
+        }
+      `}</style>
     </div>
   );
 }

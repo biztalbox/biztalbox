@@ -1,11 +1,4 @@
 import type { Metadata } from "next";
-import {
-  Syne,
-  Aladin,
-  Big_Shoulders_Display,
-  Marcellus,
-} from "next/font/google";
-import localFont from "next/font/local";
 import { ThemeProvider } from "next-themes";
 import "./globals.scss";
 import "@/styles/tailwind-tw.css";
@@ -13,53 +6,6 @@ import "@/styles/marquee.css";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { createMetadata } from "@/utils/metadata";
 import Script from "next/script";
-
-const gellery = localFont({
-  src: [
-    {
-      path: "../../public/assets/fonts/gallerymodern-webfont.woff2",
-      weight: "400",
-      style: "normal",
-    },
-    {
-      path: "../../public/assets/fonts/gallerymodern-webfont.woff",
-      weight: "400",
-      style: "normal",
-    },
-  ],
-  variable: "--tp-ff-gallery",
-  display: "swap",
-  preload: true,
-});
-
-const aladin = Aladin({
-  weight: ["400"],
-  subsets: ["latin"],
-  variable: "--tp-ff-aladin",
-  display: "swap",
-});
-
-// Optimize Syne font by using a single definition with all weights
-const syne = Syne({
-  weight: ["400", "500", "600", "700", "800"],
-  subsets: ["latin"],
-  variable: "--tp-ff-syne",
-  display: "swap",
-});
-
-const big_shoulders = Big_Shoulders_Display({
-  weight: ["400", "500", "600", "700", "800"],
-  subsets: ["latin"],
-  variable: "--tp-ff-shoulders",
-  display: "swap",
-});
-
-const marcellus = Marcellus({
-  weight: ["400"],
-  subsets: ["latin"],
-  variable: "--tp-ff-marcellus",
-  display: "swap",
-});
 
 const baseMetadata: Metadata = {
   title: "Best Digital Marketing Agency | Website Development",
@@ -79,20 +25,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <head>
-        {/* Preload critical font */}
-        <link
-          rel="preload"
-          href="/assets/fonts/gallerymodern-webfont.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        
         {/* Preconnect to external domains to reduce connection time */}
         <link rel="preconnect" href="https://blog.biztalbox.com" />
         <link rel="dns-prefetch" href="https://blog.biztalbox.com" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <meta name="robots" content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"/>
         {/* Add resource hints */}
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -124,7 +59,7 @@ export default function RootLayout({
       <body
         id="body"
         suppressHydrationWarning={true}
-        className={`${gellery.variable} ${aladin.variable} ${syne.variable} ${big_shoulders.variable} ${marcellus.variable} font-optimization-applied`}
+        className="font-optimization-applied"
       >
         {/* Google Tag Manager (noscript) */}
         <noscript>
@@ -140,11 +75,7 @@ export default function RootLayout({
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
         )}
-        <ThemeProvider
-          attribute="data-theme"
-          defaultTheme="dark"
-          enableSystem={false}
-        >
+        <ThemeProvider defaultTheme="light" enableSystem={false} attribute="data-theme">
           {children}
         </ThemeProvider>
         

@@ -3,6 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import HomeLink from "@/components/HomeLink";
 
 const HeaderMenus = () => {
   const pathname = usePathname();
@@ -11,7 +12,7 @@ const HeaderMenus = () => {
     <ul>
       {pathname !== "/" && (
         <li className="has-dropdown">
-          <Link href="/">Home</Link>
+          <HomeLink>Home</HomeLink>
         </li>
       )}
       <li className="has-dropdown">

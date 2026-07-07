@@ -3,16 +3,40 @@ import Image from "next/image";
 
 import { ProjectShape, RightArrow } from "../svg";
 
-import port_1 from "@/assets/img/services/ALGANIX.webp";
-import port_2 from "@/assets/img/services/CAPTAIN_CUT.webp";
-import port_3 from "@/assets/img/services/WEBDEV.webp";
-import port_4 from "@/assets/img/services/seo.webp";
-import port_5 from "@/assets/img/services/VECTOR.webp";
-import port_6 from "@/assets/img/services/CONTENT.webp";
-import port_7 from "@/assets/img/services/social.webp";
-import port_8 from "@/assets/img/services/GOOGLE_ADS.webp";
-import port_9 from "@/assets/img/services/META.webp";
-import port_10 from "@/assets/img/services/app_dev.webp";
+// import algo from "@/assets/image/new_avatar/algo.webp";
+// import video from "@/assets/image/new_avatar/video.webp";
+// import webdev from "@/assets/image/new_avatar/webdev.webp";
+// import seo from "@/assets/image/new_avatar/seo.webp";
+// import graphic from "@/assets/image/new_avatar/graphic.webp";
+// import content from "@/assets/image/new_avatar/content.webp";
+// import smo from "@/assets/image/new_avatar/smo.webp";
+// import google from "@/assets/image/new_avatar/google.webp";
+// import meta from "@/assets/image/new_avatar/meta.webp";
+// import appdev from "@/assets/image/new_avatar/appdev.webp";
+
+
+import algo from "@/assets/blacknwhite/color/algo.webp";
+import video from "@/assets/blacknwhite/color/video.webp";
+import webdev from "@/assets/blacknwhite/color/webdev.webp";
+import seo from "@/assets/blacknwhite/color/seo.webp";
+import graphic from "@/assets/blacknwhite/color/graphic.webp";
+import content from "@/assets/blacknwhite/color/content.webp";
+import smo from "@/assets/blacknwhite/color/smo.webp";
+import google from "@/assets/blacknwhite/color/google.webp";
+import meta from "@/assets/blacknwhite/color/meta.webp";
+import appdev from "@/assets/blacknwhite/color/appdev.webp";
+
+
+// import algo from "@/assets/blacknwhite/bnw/algo.webp";
+// import video from "@/assets/blacknwhite/bnw/video.webp";
+// import webdev from "@/assets/blacknwhite/bnw/webdev.webp";
+// import seo from "@/assets/blacknwhite/bnw/seo.webp";
+// import graphic from "@/assets/blacknwhite/bnw/graphic.webp";
+// import content from "@/assets/blacknwhite/bnw/content.webp";
+// import smo from "@/assets/blacknwhite/bnw/smo.webp";
+// import google from "@/assets/blacknwhite/bnw/google.webp";
+// import meta from "@/assets/blacknwhite/bnw/meta.webp";
+// import appdev from "@/assets/blacknwhite/bnw/appdev.webp";
 
 import Link from "next/link";
 
@@ -20,7 +44,7 @@ import Link from "next/link";
 const project_data = [
   {
     id: 1,
-    img_1: port_4,
+    img_1: seo,
     // img_2: port_4,
     title: "SEO",
     desc: "Search Engine Optimization (SEO) is the key to make sure your website stands out digitally. It enhances your website for search engines, resulting in improved ranks and increased visibility.",
@@ -30,7 +54,7 @@ const project_data = [
   {
     id: 2,
     // img_1: port_6,
-    img_2: port_7,
+    img_2: smo,
     title: "Social Media",
     desc: "Social media Marketing is the digital arena where brands connect, captivate, and communicate with their audience.",
     slug: "social-media-marketing",
@@ -38,7 +62,7 @@ const project_data = [
   },
   {
     id: 3,
-    img_1: port_3,
+    img_1: webdev,
     // img_2: port_6,
     title: "Web Development",
     desc: "A Web Development is a digital architect who builds, optimizes, and secures seamless websites.",
@@ -48,7 +72,7 @@ const project_data = [
   {
     id: 4,
     // img_2: port_6,
-    img_2: port_10,
+    img_2: appdev,
     title: "App Development",
     desc: "An App Developer is a mobile maestro who builds the next killer app and delivers unparalleled performance to keep users coming back for more.",
     slug: "app-development",
@@ -56,7 +80,7 @@ const project_data = [
   },
   {
     id: 5,
-    img_1: port_1,
+    img_1: algo,
     // img_2: port_2,
     title: "Analysis Algorithm",
     desc: "An algorithm is a precision powerhouse that can instantly analyse vast amount of data to find hidden patterns and insights.",
@@ -66,7 +90,7 @@ const project_data = [
   {
     id: 6,
     // img_1: port_3,
-    img_2: port_2,
+    img_2: video,
     title: "Motion Graphics",
     desc: "A video editing is a multimedia guru who turns in raw footage into cinematic masterpieces.",
     slug: "motion-graphics",
@@ -74,7 +98,7 @@ const project_data = [
   },
   {
     id: 7,
-    img_1: port_5,
+    img_1: graphic,
     // img_2: port_2,
     title: "Graphic Designing",
     desc: "A graphic designing is a creative force that turns concepts into recognised piece of art.",
@@ -84,7 +108,7 @@ const project_data = [
   {
     id: 8,
     // img_1: port_3,
-    img_2: port_6,
+    img_2: content,
     title: "Copy Writing",
     desc: "Content creation combines crafting high-quality, SEO-optimized material that engages users and search engines.",
     slug: "content-marketing",
@@ -92,7 +116,7 @@ const project_data = [
   },
   {
     id: 9,
-    img_1: port_8,
+    img_1: google,
     // img_1: port_7,
     title: "Performance Marketing",
     desc: "Google Ads is a versatile tool that makes every click an instant hit. It improves return on investment (ROI) and generates high-value leads through strategic bidding.",
@@ -102,7 +126,7 @@ const project_data = [
   {
     id: 10,
     // img_2: port_2,
-    img_2: port_9,
+    img_2: meta,
     title: "Meta Ads",
     desc: "Throughout its ecosystem, Meta Ads creates visually striking ads with precise targeting, turning it into a digital powerhouse.",
     slug: "facebook-ads-service",
@@ -117,18 +141,21 @@ type IProps = {
 export default function ProjectFour({ style_2 = false }: IProps) {
   return (
     <div
+      style={{
+        background: "#262626"
+      }}
       className={`tp-project-3-area ${
-        style_2 ? "pt-60 pw-project-style" : "pt-130 black-bg"
+        style_2 ? "pt-60 pw-project-style" : "pt-130"
       }`}
     >
       <div className="container container-1720 overflow-hidden">
         {!style_2 && (
           <div className="row justify-content-center">
-            <div className="col-xl-7">
+            <div className="col-xl-8">
               <div className="tp-project-3-title-box p-relative mb-150">
-                <h4 className="tp-section-title-200 tp_reveal_anim">
+                <h3 className="tp-section-title-200 tp_reveal_anim">
                   Our <span>Services</span>
-                </h4>
+                </h3>
                 <div className="tp-project-3-btn-box">
                   <Link
                     className="tp-btn-zikzak p-relative"
@@ -148,7 +175,12 @@ export default function ProjectFour({ style_2 = false }: IProps) {
         <div className="row">
           <div className="col-xl-12">
             {project_data.map((item, i) => (
-              <div key={item.id} className="tp-project-3-wrap">
+              <div
+                key={item.id}
+                className={`tp-project-3-wrap ${
+                  i % 2 === 0 ? "tp-pcard--left" : "tp-pcard--right"
+                }`}
+              >
                 <div className="row">
                   <div className="col-xl-4 col-lg-4 col-md-6">
                     <div className="tp-project-3-thumb pro-img-1">
@@ -157,6 +189,7 @@ export default function ProjectFour({ style_2 = false }: IProps) {
                           src={item.img_1}
                           alt={item.alt}
                           style={{ height: "auto" }}
+                          className="outlinedImg"
                         />
                       )}
                     </div>
@@ -187,6 +220,7 @@ export default function ProjectFour({ style_2 = false }: IProps) {
                           src={item.img_2}
                            alt={item.alt}
                           style={{ height: "auto" }}
+                          className="outlinedImg"
                         />
                       )}
                     </div>

@@ -3,7 +3,7 @@
   min-height: 60vh;
   /* Extra top padding so the dept label / title sit below the transparent header + logo */
   padding: clamp(5rem, 12vw, 7.5rem) 1.25rem 4rem;
-  font-family: var(--tp-ff-syne), "Syne", system-ui, sans-serif;
+  font-family: "Century Gothic Local";
 }
 
 .layout {
@@ -298,7 +298,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
-  font-family: var(--tp-ff-syne), "Syne", system-ui, sans-serif;
+  font-family: "Century Gothic Local";
 
   @media (max-width: 991px) {
     position: relative;
@@ -316,7 +316,7 @@
   /* Dark inputs everywhere (overrides browser defaults + autofill yellow/white) */
   .input,
   .textarea {
-    font-family: var(--tp-ff-syne), "Syne", system-ui, sans-serif;
+    font-family: "Century Gothic Local";
     background-color: #0d0d0d !important;
     background-image: none !important;
     color: #fff !important;
@@ -384,7 +384,7 @@
 .textarea {
   width: 100%;
   padding: 0.65rem 0.85rem;
-  font-family: var(--tp-ff-syne), "Syne", system-ui, sans-serif;
+  font-family: "Century Gothic Local";
   font-size: 0.875rem;
   color: #fff;
   background-color: #0d0d0d;

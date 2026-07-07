@@ -11,9 +11,12 @@ import { validateSearchQuery, buildBlogUrl } from "@/utils/blog-utils";
 import BookCallForm from "../landingPage/BookCallForm";
 import Callback from "../landingPage/Callback";
 import SidebarCta from "./SidebarCta";
+import { useTheme } from "next-themes";
+import styles from "./blog-sidebar.module.scss";
 
 export default function BlogSidebar() {
   const router = useRouter();
+  const { resolvedTheme } = useTheme();
   const [isSubscribing, setIsSubscribing] = useState(false);
   const [subscribeMessage, setSubscribeMessage] = useState<string>("");
   const [subscribeStatus, setSubscribeStatus] = useState<
@@ -120,11 +123,13 @@ export default function BlogSidebar() {
           </div>
         </div>
       </div>
+      
       <div className="sidebar__widget mb-65">
         <div className="sidebar__widget-content">
           <SidebarCta/>
         </div>
       </div>
+
 
       {/* Category list */}
       <div className="sidebar__widget mb-65">
@@ -134,19 +139,20 @@ export default function BlogSidebar() {
         </div>
       </div>
 
-      <div className="tp-footer-3-widget mb-65">
-        <h4 className="tp-footer-2-widget-title">
+      <div className={`tp-footer-3-widget mb-65 ${styles.newsletter}`}>
+        <h4 className="sidebar__widget-title">
           Subscribe to our newsletter
         </h4>
         <form
           onSubmit={handleSubscribe}
-          className="tp-footer-3-input-box d-flex align-items-center"
+          className={`tp-footer-3-input-box d-flex align-items-center ${styles.inputBox}`}
         >
           <input
             type="email"
             name="email"
             placeholder="Enter Address..."
             disabled={isSubscribing}
+            className={`form-control ${styles.input}`}
             required
           />
           <button
@@ -159,7 +165,7 @@ export default function BlogSidebar() {
             ) : (
               <>
                 <span className="icon-1">
-                  <RightArrow clr="#19191A" />
+                  <RightArrow clr="#000" />
                 </span>
                 <span className="icon-2">
                   <SvgBgSm />
@@ -170,17 +176,7 @@ export default function BlogSidebar() {
         </form>
         {subscribeMessage && (
           <div
-            style={{
-              marginTop: "10px",
-              padding: "4px 8px",
-              borderRadius: "4px",
-              fontSize: "14px",
-              backgroundColor:
-                subscribeStatus === "success" ? "#d4edda" : "#f8d7da",
-              color: subscribeStatus === "success" ? "#155724" : "#721c24",
-              border: `1px solid ${subscribeStatus === "success" ? "#c3e6cb" : "#f5c6cb"
-                }`,
-            }}
+            className={`${styles.message} ${subscribeStatus === "success" ? styles.messageSuccess : styles.messageError}`}
           >
             {subscribeMessage}
           </div>

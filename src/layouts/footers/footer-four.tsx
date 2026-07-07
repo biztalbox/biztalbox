@@ -11,7 +11,7 @@ export default function FooterFour({ background }: { background?: string }) {
       <div
         className={`tp-footer-3-area ${
           background ? "black-bg" : "dark-bg"
-        } pt-20`}
+        } pt-10`}
       >
         <div className="container">
           <div className="row">

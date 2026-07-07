@@ -38,8 +38,8 @@ const getResponsiveSettings = () => {
     return {
       modelScale: 40,
       cameraZ: 4,
-      cameraFOV: 45,
-      modelY: 0.15
+      cameraFOV: 50,
+      modelY: 0.75
     };
   } else if (width <= 767) {
     return {
@@ -205,13 +205,22 @@ const EyeBall: React.FC = memo(() => {
     }, 300); // Increased debounce for mobile viewport changes
   }, [isScrolling]);
 
-    // AGGRESSIVE animation loop - ALWAYS runs, no conditions
+    // Animation loop — the rAF chain always stays alive (cheap), but the
+    // expensive work (mixer update + WebGL render) is skipped while the
+    // canvas is off-screen or the tab is hidden. Rendering a full-screen
+    // shadow-mapped scene unconditionally used to peg the main thread and
+    // made Lighthouse report "page stopped responding" for the dark home.
   const animate = useCallback(() => {
-    // ALWAYS continue the animation loop - no stopping
+    // Keep the loop ticking so we resume instantly when visible again.
     animationIdRef.current = requestAnimationFrame(animate);
 
     // Skip SSR but ALWAYS run in browser - remove all blocking conditions
     if (typeof window === 'undefined') {
+      return;
+    }
+
+    // Skip all heavy work while nothing can actually be seen.
+    if (document.hidden || !screenVisibleRef.current) {
       return;
     }
 
@@ -268,8 +277,10 @@ const EyeBall: React.FC = memo(() => {
 
   // Simplified observer - always keep visible for reliable animations
   const observerCallback = useCallback((entries: IntersectionObserverEntry[]) => {
-    // FORCE visibility to always be true for reliable animations
-    screenVisibleRef.current = true;
+    // Track real visibility so the render loop can pause off-screen.
+    // (forceAnimationRef stays true so the animation state machine never
+    // resets — we only skip the per-frame GPU/mixer work while hidden.)
+    screenVisibleRef.current = entries.some((e) => e.isIntersecting);
     forceAnimationRef.current = true;
   }, []);
 
@@ -355,7 +366,7 @@ const EyeBall: React.FC = memo(() => {
 
     // Load the 3D model with BULLETPROOF animation handling
     gltfLoader.load(
-      '/models/eyeball_animate.glb',
+      '/eyeball.glb',
       (gltf) => {
         try {
           const model = gltf.scene;

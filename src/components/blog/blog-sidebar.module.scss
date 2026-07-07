@@ -1,0 +1,71 @@
+.newsletter {
+  /* light defaults */
+  --bb-text: #0f172a;
+  --bb-muted: rgba(15, 23, 42, 0.7);
+  --bb-border: rgba(15, 23, 42, 0.18);
+  --bb-input-bg: rgba(255, 255, 255, 0.9);
+
+  --bb-success-bg: #d4edda;
+  --bb-success-text: #155724;
+  --bb-success-border: #c3e6cb;
+
+  --bb-error-bg: #f8d7da;
+  --bb-error-text: #721c24;
+  --bb-error-border: #f5c6cb;
+
+  color: var(--bb-text);
+}
+
+[data-theme="dark"] .newsletter {
+  --bb-text: #ffffff;
+  --bb-muted: rgba(245, 247, 245, 0.65);
+  --bb-border: rgba(234, 234, 235, 0.35);
+  --bb-input-bg: rgba(30, 30, 30, 0.6);
+
+  --bb-success-bg: rgba(46, 160, 67, 0.18);
+  --bb-success-text: #b7f5c6;
+  --bb-success-border: rgba(46, 160, 67, 0.35);
+
+  --bb-error-bg: rgba(248, 81, 73, 0.16);
+  --bb-error-text: #ffb4b0;
+  --bb-error-border: rgba(248, 81, 73, 0.35);
+}
+
+.inputBox {
+  gap: 8px;
+}
+
+.input {
+  background-color: var(--bb-input-bg) !important;
+  border-color: var(--bb-border) !important;
+  color: var(--bb-text) !important;
+}
+
+.input::placeholder {
+  color: var(--bb-muted);
+}
+
+.input:focus {
+  box-shadow: 0 0 0 0.2rem rgba(51, 110, 249, 0.25) !important;
+}
+
+.message {
+  margin-top: 10px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  border: 1px solid transparent;
+}
+
+.messageSuccess {
+  background-color: var(--bb-success-bg);
+  color: var(--bb-success-text);
+  border-color: var(--bb-success-border);
+}
+
+.messageError {
+  background-color: var(--bb-error-bg);
+  color: var(--bb-error-text);
+  border-color: var(--bb-error-border);
+}
+

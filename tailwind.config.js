@@ -1,24 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  /** Must match `next-themes` `attribute="data-theme"` on `<html>` (Tailwind CLI loads this file, not `.ts`). */
-  darkMode: ["selector", '[data-theme="dark"]'],
-  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
-  theme: {
-    extend: {
-      animation: {
-        "hero-orbit": "hero-orbit 22s linear infinite",
-      },
-      keyframes: {
-        "hero-orbit": {
-          from: { transform: "rotate(0deg)" },
-          to: { transform: "rotate(360deg)" },
-        },
-      },
-    },
-  },
+  important: "[data-tw-scope]",
+  content: [
+    "./src/components/ashish3dComp/**/*.{js,ts,jsx,tsx}",
+    "./src/components/LiteHomePage.tsx",
+    "./src/components/TailwindScope.tsx",
+    "./src/components/career/**/*.{js,ts,jsx,tsx}",
+    "./src/app/_lite/**/*.{js,ts,jsx,tsx}",
+    "./src/app/career/**/*.{js,ts,jsx,tsx}",
+    "./src/app/graphic/**/*.{js,ts,jsx,tsx}",
+    "./src/app/video/**/*.{js,ts,jsx,tsx}",
+    "./src/styles/tailwind-tw.css",
+  ],
+  theme: {},
   plugins: [],
   corePlugins: {
     preflight: false,
   },
 };
-

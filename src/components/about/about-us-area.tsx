@@ -21,6 +21,7 @@ export default function AboutUsArea() {
                   src={ab_1}
                   alt="about-img"
                   style={{ height: "auto" }}
+                  className="outlinedImg"
                 />
               </div>
             </div>
@@ -28,7 +29,7 @@ export default function AboutUsArea() {
               <div className="ab-about-right-thumb p-relative">
                 <Image
                   data-speed="1.1"
-                  className="inner-img z-index-5"
+                  className="inner-img z-index-5 outlinedImg"
                   src={ab_2}
                   alt="about-img"
                   style={{ height: "auto", }}
@@ -38,6 +39,7 @@ export default function AboutUsArea() {
                   src={ab_3}
                   alt="about-img"
                   style={{ height: "auto", width: "100%" }}
+                  className="outlinedImg"
                 />
               </div>
             </div>

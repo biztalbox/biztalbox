@@ -1,5 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+// This route depends on request URL + external WP, so it must be dynamic.
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 // WordPress API response interface
 interface WordPressPost {
   id: number;
@@ -55,9 +59,14 @@ const validateCategorySlug = (category: string): string => {
 
 // Helper function to decode HTML entities
 const decodeHtmlEntities = (text: string): string => {
-  const textarea = document.createElement("textarea");
-  textarea.innerHTML = text;
-  return textarea.value;
+  // Server-safe minimal entity decoding (covers WP titles/excerpts).
+  return text
+    .replace(/&nbsp;/g, " ")
+    .replace(/&amp;/g, "&")
+    .replace(/&quot;/g, '"')
+    .replace(/&#039;/g, "'")
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">");
 };
 
 export async function GET(request: NextRequest) {

@@ -1,0 +1,487 @@
+{
+  "modelLayouts": {
+    "desktop": {
+      "webdev": {
+        "position": [
+          300,
+          340,
+          150
+        ],
+        "rotation": [
+          0.65,
+          0.8,
+          -0.2
+        ],
+        "scale": 4.4,
+        "float": {
+          "speed": 3,
+          "rotationIntensity": 0.3,
+          "floatIntensity": 1,
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
+        }
+      },
+      "video": {
+        "position": [
+          -20,
+          90,
+          250
+        ],
+        "scale": 2.5,
+        "rotation": [
+          0,
+          2.2,
+          -0.5
+        ],
+        "float": {
+          "speed": 3,
+          "rotationIntensity": 0.3,
+          "floatIntensity": 1,
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
+        }
+      },
+      "ads": {
+        "position": [
+          450,
+          280,
+          500
+        ],
+        "scale": 0.22,
+        "rotation": [
+          -0.8,
+          -1.4,
+          0.9
+        ],
+        "float": {
+          "speed": 3,
+          "rotationIntensity": 0.3,
+          "floatIntensity": 1,
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
+        }
+      },
+      "graphic": {
+        "position": [
+          600,
+          110,
+          250
+        ],
+        "scale": [
+          6,
+          6.7,
+          6
+        ],
+        "rotation": [
+          0.1,
+          2.8,
+          0.3
+        ],
+        "float": {
+          "speed": 5,
+          "rotationIntensity": 0.5,
+          "floatIntensity": 1,
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
+        }
+      },
+      "content": {
+        "position": [
+          300,
+          50,
+          200
+        ],
+        "scale": 5.5,
+        "rotation": [
+          -0.1,
+          0.1,
+          -0.1
+        ],
+        "float": {
+          "speed": 3,
+          "rotationIntensity": 0.3,
+          "floatIntensity": 1,
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
+        }
+      },
+      "smo": {
+        "position": [
+          500,
+          250,
+          350
+        ],
+        "scale": 0.35,
+        "rotation": [
+          -0.5,
+          0.2,
+          0
+        ],
+        "float": {
+          "speed": 4,
+          "rotationIntensity": 0.5,
+          "floatIntensity": 1.5,
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
+        }
+      },
+      "seo": {
+        "position": [
+          0,
+          300,
+          360
+        ],
+        "rotation": [
+          -0.5,
+          -0.2,
+          -0.8
+        ],
+        "scale": 0.4,
+        "float": {
+          "speed": 3,
+          "rotationIntensity": 0.3,
+          "floatIntensity": 0.5,
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
+        }
+      }
+    },
+    "mobile": {
+      "webdev": {
+        "position": [
+          280,
+          180,
+          0
+        ],
+        "scale": 4,
+        "rotation": [
+          0.4,
+          0.7,
+          -0.1
+        ],
+        "float": {
+          "speed": 5,
+          "rotationIntensity": 0.2,
+          "floatIntensity": 1,
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
+        }
+      },
+      "video": {
+        "position": [
+          100,
+          -380,
+          0
+        ],
+        "scale": 2.4,
+        "float": {
+          "speed": 5,
+          "rotationIntensity": 1,
+          "floatIntensity": 1,
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
+        }
+      },
+      "ads": {
+        "position": [
+          400,
+          360,
+          0
+        ],
+        "scale": 0.4,
+        "rotation": [
+          0,
+          -0.5,
+          0
+        ],
+        "float": {
+          "speed": 3,
+          "rotationIntensity": 0.5,
+          "floatIntensity": 1,
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
+        }
+      },
+      "graphic": {
+        "position": [
+          390,
+          -200,
+          0
+        ],
+        "scale": 7,
+        "rotation": [
+          0.1,
+          2.8,
+          0.3
+        ],
+        "float": {
+          "speed": 5,
+          "rotationIntensity": 0.5,
+          "floatIntensity": 1,
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
+        }
+      },
+      "smo": {
+        "position": [
+          390,
+          60,
+          0
+        ],
+        "scale": 0.5,
+        "rotation": [
+          -0.4,
+          0,
+          0.3
+        ],
+        "float": {
+          "speed": 4,
+          "rotationIntensity": 0.5,
+          "floatIntensity": 1.5,
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
+        }
+      },
+      "seo": {
+        "position": [
+          90,
+          300,
+          0
+        ],
+        "scale": 0.4,
+        "rotation": [
+          0.1,
+          0.3,
+          -0.8
+        ],
+        "float": {
+          "speed": 3,
+          "rotationIntensity": 0.3,
+          "floatIntensity": 0.5,
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
+        }
+      },
+      "content": {
+        "position": [
+          200,
+          -100,
+          0
+        ],
+        "scale": 5,
+        "float": {
+          "speed": 5,
+          "rotationIntensity": 1,
+          "floatIntensity": 1,
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
+        },
+        "rotation": [
+          0.1,
+          -0.2,
+          0
+        ]
+      }
+    },
+    "tablet": {
+      "webdev": {
+        "position": [
+          180,
+          410,
+          0
+        ],
+        "scale": 3,
+        "rotation": [
+          0.4,
+          0.9,
+          0
+        ],
+        "float": {
+          "speed": 5,
+          "rotationIntensity": 0.2,
+          "floatIntensity": 1,
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
+        }
+      },
+      "ads": {
+        "position": [
+          310,
+          540,
+          0
+        ],
+        "scale": 0.35,
+        "rotation": [
+          0,
+          -0.5,
+          0
+        ],
+        "float": {
+          "speed": 3,
+          "rotationIntensity": 0.5,
+          "floatIntensity": 1,
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
+        }
+      },
+      "graphic": {
+        "position": [
+          330,
+          120,
+          0
+        ],
+        "scale": 6.5,
+        "rotation": [
+          0.1,
+          2.8,
+          0.3
+        ],
+        "float": {
+          "speed": 5,
+          "rotationIntensity": 0.5,
+          "floatIntensity": 1,
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
+        }
+      },
+      "smo": {
+        "position": [
+          300,
+          300,
+          0
+        ],
+        "scale": 0.6,
+        "float": {
+          "speed": 4,
+          "rotationIntensity": 0.5,
+          "floatIntensity": 1.5,
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
+        }
+      },
+      "seo": {
+        "position": [
+          -20,
+          450,
+          0
+        ],
+        "scale": 0.4,
+        "rotation": [
+          0.1,
+          0.3,
+          -0.8
+        ],
+        "float": {
+          "speed": 6,
+          "rotationIntensity": 0.3,
+          "floatIntensity": 0.5,
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
+        }
+      },
+      "video": {
+        "position": [
+          20,
+          50,
+          0
+        ],
+        "scale": 1.8,
+        "float": {
+          "speed": 5,
+          "rotationIntensity": 1,
+          "floatIntensity": 1,
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
+        }
+      },
+      "content": {
+        "position": [
+          160,
+          170,
+          0
+        ],
+        "scale": 3,
+        "float": {
+          "speed": 5,
+          "rotationIntensity": 1,
+          "floatIntensity": 1,
+          "floatingRange": [
+            -0.1,
+            0.1
+          ]
+        },
+        "rotation": [
+          0.3,
+          0,
+          0
+        ]
+      }
+    }
+  },
+  "heroFadeOut": {
+    "desktop": {
+      "video": 450,
+      "smo": 300,
+      "graphic": 450,
+      "content": 550,
+      "ads": 200,
+      "webdev": 250
+    },
+    "mobile": {
+      "video": 990,
+      "smo": 550,
+      "graphic": 850,
+      "content": 750,
+      "ads": 300,
+      "webdev": 450
+    },
+    "tablet": {
+      "video": 650,
+      "smo": 400,
+      "graphic": 580,
+      "content": 550,
+      "ads": 200,
+      "webdev": 250
+    }
+  }
+}

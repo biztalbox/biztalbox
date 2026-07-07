@@ -1,19 +1,19 @@
 /* Enhanced Mobile Performance Optimizations */
 
 /* Base performance optimizations for all devices */
-* {
+#home-route-root * {
   box-sizing: border-box;
 }
 
 /* Optimize smooth scrolling container */
-#smooth-wrapper {
+#home-route-root #smooth-wrapper {
   overflow: hidden;
   position: relative;
   width: 100%;
   height: 100vh;
 }
 
-#smooth-content {
+#home-route-root #smooth-content {
   min-height: 100vh;
   position: relative;
 }
@@ -21,10 +21,10 @@
 /* Mobile-specific optimizations */
 @media (max-width: 991px) {
   /* Optimize animated elements with will-change */
-  .tp_fade_bottom, 
-  .tp_fade_top, 
-  .tp_fade_left,
-  .tp_fade_right {
+  #home-route-root .tp_fade_bottom, 
+  #home-route-root .tp_fade_top, 
+  #home-route-root .tp_fade_left,
+  #home-route-root .tp_fade_right {
     will-change: transform, opacity;
     transform: translateZ(0); /* Force hardware acceleration */
     -webkit-backface-visibility: hidden;
@@ -32,7 +32,7 @@
   }
   
   /* Optimize smooth content for better performance */
-  #smooth-content {
+  #home-route-root #smooth-content {
     will-change: transform;
     transform: translateZ(0);
     -webkit-backface-visibility: hidden;
@@ -42,24 +42,24 @@
   }
   
   /* Optimize heavy animation elements */
-  .gsap-split-word, 
-  .gsap-split-chars,
-  .tp-reveal-line,
-  .tp-reveal-line-2 {
+  #home-route-root .gsap-split-word, 
+  #home-route-root .gsap-split-chars,
+  #home-route-root .tp-reveal-line,
+  #home-route-root .tp-reveal-line-2 {
     will-change: transform;
     transform: translateZ(0);
   }
   
   /* Reduce motion for users who prefer it */
   @media (prefers-reduced-motion: reduce) {
-    .tp_fade_bottom, 
-    .tp_fade_top, 
-    .tp_fade_left,
-    .tp_fade_right,
-    .gsap-split-word, 
-    .gsap-split-chars,
-    .tp-reveal-line,
-    .tp-reveal-line-2 {
+    #home-route-root .tp_fade_bottom, 
+    #home-route-root .tp_fade_top, 
+    #home-route-root .tp_fade_left,
+    #home-route-root .tp_fade_right,
+    #home-route-root .gsap-split-word, 
+    #home-route-root .gsap-split-chars,
+    #home-route-root .tp-reveal-line,
+    #home-route-root .tp-reveal-line-2 {
       will-change: auto;
       transform: none;
       animation: none !important;
@@ -69,7 +69,7 @@
   
   /* iOS-specific optimizations */
   @supports (-webkit-touch-callout: none) {
-    body {
+    body.tp-smooth-scroll {
       /* iOS-specific optimizations */
       -webkit-overflow-scrolling: touch;
       -webkit-text-size-adjust: 100%;
@@ -78,12 +78,12 @@
     }
     
     /* Force hardware acceleration on iOS devices */
-    #smooth-wrapper,
-    #smooth-content,
-    .tp_fade_bottom, 
-    .tp_fade_top, 
-    .tp_fade_left,
-    .tp_fade_right {
+    #home-route-root #smooth-wrapper,
+    #home-route-root #smooth-content,
+    #home-route-root .tp_fade_bottom, 
+    #home-route-root .tp_fade_top, 
+    #home-route-root .tp_fade_left,
+    #home-route-root .tp_fade_right {
       -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0);
       -webkit-backface-visibility: hidden;
@@ -91,22 +91,22 @@
     }
     
     /* Optimize scrolling performance on iOS */
-    .tp-smooth-scroll {
+    body.tp-smooth-scroll {
       -webkit-overflow-scrolling: touch;
     }
   }
   
   /* Android-specific optimizations */
   @supports not (-webkit-touch-callout: none) {
-    body {
+    body.tp-smooth-scroll {
       /* Android optimizations */
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
     
     /* Optimize for Android Chrome */
-    #smooth-wrapper,
-    #smooth-content {
+    #home-route-root #smooth-wrapper,
+    #home-route-root #smooth-content {
       transform: translateZ(0);
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
@@ -116,15 +116,15 @@
 
 /* Tablet optimizations */
 @media (min-width: 768px) and (max-width: 1024px) {
-  .tp_fade_bottom, 
-  .tp_fade_top, 
-  .tp_fade_left,
-  .tp_fade_right {
+  #home-route-root .tp_fade_bottom, 
+  #home-route-root .tp_fade_top, 
+  #home-route-root .tp_fade_left,
+  #home-route-root .tp_fade_right {
     will-change: transform, opacity;
     transform: translateZ(0);
   }
   
-  #smooth-content {
+  #home-route-root #smooth-content {
     will-change: transform;
     transform: translateZ(0);
   }
@@ -133,20 +133,20 @@
 /* Desktop optimizations */
 @media (min-width: 1025px) {
   /* Optimize for high-performance devices */
-  .tp_fade_bottom, 
-  .tp_fade_top, 
-  .tp_fade_left,
-  .tp_fade_right {
+  #home-route-root .tp_fade_bottom, 
+  #home-route-root .tp_fade_top, 
+  #home-route-root .tp_fade_left,
+  #home-route-root .tp_fade_right {
     will-change: transform, opacity;
   }
   
-  #smooth-content {
+  #home-route-root #smooth-content {
     will-change: transform;
   }
 }
 
 /* Performance optimizations for images */
-img {
+#home-route-root img {
   max-width: 100%;
   height: auto;
   -webkit-user-drag: none;
@@ -157,30 +157,28 @@ img {
 }
 
 /* Optimize for better touch response */
-button, 
-a, 
-[role="button"] {
+#home-route-root button, 
+#home-route-root a, 
+#home-route-root [role="button"] {
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
 
 /* Optimize for better scroll performance */
-html {
-  scroll-behavior: smooth;
-}
+/* (Intentionally not global) */
 
 /* Reduce layout thrashing */
-.container,
-.container-fluid {
+#home-route-root .container,
+#home-route-root .container-fluid {
   contain: layout style paint;
 }
 
 /* Optimize for better rendering performance */
-.tp-section {
+#home-route-root .tp-section {
   contain: layout style;
 }
 
 /* Optimize for better animation performance */
-.tp-animation {
+#home-route-root .tp-animation {
   contain: layout style paint;
 } 

@@ -37,7 +37,7 @@ const AboutPage = () => {
   return (
     <Wrapper>
       {/* header area start */}
-      <HeaderEleven transparent={true} />
+      <HeaderEleven transparent={false} />
       {/* header area end */}
 
       <div id="smooth-wrapper">

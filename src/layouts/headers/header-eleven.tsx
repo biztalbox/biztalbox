@@ -1,8 +1,8 @@
 'use client';
 import React, { useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import HeaderMenus from "./header-menus";
+import HomeLink from "@/components/HomeLink";
 import useSticky from "@/hooks/use-sticky";
 import white_logo from "@/assets/img/logo/white.png";
 import black_logo from "@/assets/img/logo/black.png";
@@ -35,12 +35,12 @@ export default function HeaderEleven({transparent=false,cls=''}: IProps) {
             <div className="row align-items-center">
               <div className="col-xl-2 col-lg-6 col-md-6 col-6">
                 <div className="tp-inner-header-logo tp-header-logo">
-                  <Link className={`${transparent?'ab-logo-1':'logo-1'}`} href="/">
+                  <HomeLink className={`${transparent?'ab-logo-1':'logo-1'}`}>
                     <Image src={transparent?white_logo:black_logo} alt="logo" />
-                  </Link>
-                  <Link className={`${transparent?'ab-logo-2':'logo-2'}`} href="/">
+                  </HomeLink>
+                  <HomeLink className={`${transparent?'ab-logo-2':'logo-2'}`}>
                     <Image src={transparent?black_logo:white_logo} alt="logo" />
-                  </Link>
+                  </HomeLink>
                 </div>
               </div>
               <div className="col-xl-8 col-lg-8 d-none d-xl-block">
