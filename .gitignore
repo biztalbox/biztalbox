@@ -13,6 +13,7 @@
 /.next/
 /out/
 /html
+/_perf_optimizations
 
 # production
 /build
