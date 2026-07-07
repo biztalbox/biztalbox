@@ -1,12 +1,192 @@
-p{
-  color: rgb(173, 173, 173) !important;
+html[data-theme="light"] [data-cms-seo-page] {
+  background-color: #fafafa !important;
+  color: #18181b !important;
 }
 
-main p > a{
+html[data-theme="light"] [data-cms-seo-page] #smooth-wrapper,
+html[data-theme="light"] [data-cms-seo-page] #smooth-content,
+html[data-theme="light"] [data-cms-seo-page] main {
+  background-color: #fafafa !important;
+}
+
+html[data-theme="light"] [data-cms-seo-page] .tp-inner-header-area .tp-inner-header-menu > nav > ul > li > a {
+  color: #141414 !important;
+}
+
+html[data-theme="light"] [data-cms-seo-page] .tp-inner-header-area.transparent .tp-header-bar button span,
+html[data-theme="light"] [data-cms-seo-page] .header-sticky.tp-inner-header-area .tp-header-bar button span {
+  background-color: #141414 !important;
+}
+
+html[data-theme="light"] [data-cms-seo-page] .header-sticky.tp-inner-header-area .tp-inner-header-menu > nav > ul > li > a {
+  color: #141414 !important;
+}
+
+html[data-theme="light"] [data-cms-seo-page] .header-sticky.tp-inner-header-area {
+  background: rgba(255, 255, 255, 0.94) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-theme="light"] [data-cms-seo-page] .tp-inner-header-area.transparent .ab-logo-1,
+html[data-theme="light"] [data-cms-seo-page] .tp-inner-header-area.transparent.header-sticky .ab-logo-1 {
+  display: none !important;
+}
+
+html[data-theme="light"] [data-cms-seo-page] .tp-inner-header-area.transparent .ab-logo-2,
+html[data-theme="light"] [data-cms-seo-page] .tp-inner-header-area.transparent.header-sticky .ab-logo-2 {
+  display: block !important;
+}
+
+html[data-theme="light"] [data-cms-seo-page] p,
+html[data-theme="light"] [data-cms-seo-page] li,
+html[data-theme="light"] [data-cms-seo-page] .cms-rich-content,
+html[data-theme="light"] [data-cms-seo-page] .cms-rich-content p,
+html[data-theme="light"] [data-cms-seo-page] .service-details__fea-list ul li,
+html[data-theme="light"] [data-cms-seo-page] .tp-about-4-content p,
+html[data-theme="light"] [data-cms-seo-page] .fq-faq-sidebar-content p,
+html[data-theme="light"] [data-cms-seo-page] .tp-hero-4-achievement p {
+  color: #3f3f46 !important;
+}
+
+html[data-theme="light"] [data-cms-seo-page] h1,
+html[data-theme="light"] [data-cms-seo-page] h2,
+html[data-theme="light"] [data-cms-seo-page] h3,
+html[data-theme="light"] [data-cms-seo-page] h4,
+html[data-theme="light"] [data-cms-seo-page] .tp-about-4-title,
+html[data-theme="light"] [data-cms-seo-page] .fq-faq-sidebar-title,
+html[data-theme="light"] [data-cms-seo-page] .tm-details-title,
+html[data-theme="light"] [data-cms-seo-page] .tm-details-social-title,
+html[data-theme="light"] [data-cms-seo-page] .accordion-buttons,
+html[data-theme="light"] [data-cms-seo-page] .tp-hero-4-achievement span {
+  color: #18181b !important;
+}
+
+html[data-theme="light"] [data-cms-seo-page] .tp-hero-4-content h1,
+html[data-theme="light"] [data-cms-seo-page] .tp-hero-4-content p,
+html[data-theme="light"] [data-cms-seo-page] .tp-hero-4-content .text-white,
+html[data-theme="light"] [data-cms-seo-page] .bb-faq-answer,
+html[data-theme="light"] [data-cms-seo-page] .bb-faq-answer-inner,
+html[data-theme="light"] [data-cms-seo-page] .bb-faq-answer p {
+  color: #18181b !important;
+}
+
+/* Black background sections — keep text white in light theme */
+html[data-theme="light"] [data-cms-seo-page] .black-bg,
+html[data-theme="light"] [data-cms-seo-page] .black-bg-2,
+html[data-theme="light"] [data-cms-seo-page] .tp-overlay-bg.black-bg-2,
+html[data-theme="light"] [data-cms-seo-page] .tp-studio-testimonial-area.black-bg {
+  background-color: #000 !important;
+}
+
+html[data-theme="light"] [data-cms-seo-page] .black-bg p,
+html[data-theme="light"] [data-cms-seo-page] .black-bg h1,
+html[data-theme="light"] [data-cms-seo-page] .black-bg h2,
+html[data-theme="light"] [data-cms-seo-page] .black-bg h3,
+html[data-theme="light"] [data-cms-seo-page] .black-bg h4,
+html[data-theme="light"] [data-cms-seo-page] .black-bg span,
+html[data-theme="light"] [data-cms-seo-page] .black-bg li,
+html[data-theme="light"] [data-cms-seo-page] .black-bg strong,
+html[data-theme="light"] [data-cms-seo-page] .black-bg-2 p,
+html[data-theme="light"] [data-cms-seo-page] .black-bg-2 h1,
+html[data-theme="light"] [data-cms-seo-page] .black-bg-2 h2,
+html[data-theme="light"] [data-cms-seo-page] .black-bg-2 h3,
+html[data-theme="light"] [data-cms-seo-page] .black-bg-2 h4,
+html[data-theme="light"] [data-cms-seo-page] .black-bg-2 span,
+html[data-theme="light"] [data-cms-seo-page] .black-bg-2 li,
+html[data-theme="light"] [data-cms-seo-page] .black-bg-2 strong,
+html[data-theme="light"] [data-cms-seo-page] .black-bg .text-white,
+html[data-theme="light"] [data-cms-seo-page] .black-bg-2 .text-white,
+html[data-theme="light"] [data-cms-seo-page] .black-bg .tp-about-4-title,
+html[data-theme="light"] [data-cms-seo-page] .black-bg-2 .tp-about-4-title,
+html[data-theme="light"] [data-cms-seo-page] .black-bg .tm-details-title,
+html[data-theme="light"] [data-cms-seo-page] .black-bg-2 .tm-details-title,
+html[data-theme="light"] [data-cms-seo-page] .black-bg .service-details__fea-list ul li,
+html[data-theme="light"] [data-cms-seo-page] .black-bg-2 .service-details__fea-list ul li,
+html[data-theme="light"] [data-cms-seo-page] .black-bg .tp-studio-testimonial-text p,
+html[data-theme="light"] [data-cms-seo-page] .black-bg .tp-studio-testimonial-user-name,
+html[data-theme="light"] [data-cms-seo-page] .black-bg .tp-studio-testimonial-top-title span,
+html[data-theme="light"] [data-cms-seo-page] .black-bg .tp-studio-funfact-title,
+html[data-theme="light"] [data-cms-seo-page] .black-bg .tp-studio-funfact-item span {
+  color: #fff !important;
+}
+
+html[data-theme="light"] [data-cms-seo-page] .black-bg .tp-studio-testimonial-user-info span,
+html[data-theme="light"] [data-cms-seo-page] .black-bg-2 .tp-about-4-content p {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+html[data-theme="light"] [data-cms-seo-page] .black-bg .tp-studio-testimonial-title {
+  color: rgba(255, 255, 255, 0.03) !important;
+}
+
+html[data-theme="light"] [data-cms-seo-page] .black-bg-2 a:not(.tp-btn):not([class*="btn"]) {
+  color: #93c5fd !important;
+}
+
+html[data-theme="light"] [data-cms-seo-page] .tm-hero-subtitle {
+  color: #71717a !important;
+}
+
+html[data-theme="light"] [data-cms-seo-page] .tm-details-cta-form > form .form-label.text-white {
+  color: #18181b !important;
+}
+
+html[data-theme="light"] [data-cms-seo-page] .tm-details-cta-form > form input,
+html[data-theme="light"] [data-cms-seo-page] .tm-details-cta-form > form select,
+html[data-theme="light"] [data-cms-seo-page] .tm-details-cta-form > form textarea {
+  color: #18181b !important;
+  border-color: #d4d4d8 !important;
+  background-color: #fff !important;
+}
+
+html[data-theme="light"] [data-cms-seo-page] main p > a,
+html[data-theme="light"] [data-cms-seo-page] main li a,
+html[data-theme="light"] [data-cms-seo-page] .cms-rich-content a {
   color: royalblue !important;
 }
 
-.tp-footer-3-menu ul {
+html[data-theme="light"] [data-cms-seo-page] .tp-service-4-area,
+html[data-theme="light"] [data-cms-seo-page] footer .tp-footer-4-area,
+html[data-theme="light"] [data-cms-seo-page] footer .tp-footer-2-area,
+html[data-theme="light"] [data-cms-seo-page] footer .tp-copyright-2-area,
+html[data-theme="light"] [data-cms-seo-page] .black-bg-2 {
+  background-color: #000 !important;
+}
+
+html[data-theme="light"] [data-cms-seo-page] footer p,
+html[data-theme="light"] [data-cms-seo-page] footer h2,
+html[data-theme="light"] [data-cms-seo-page] footer h3,
+html[data-theme="light"] [data-cms-seo-page] footer h4,
+html[data-theme="light"] [data-cms-seo-page] footer .tp-footer-2-widget-title,
+html[data-theme="light"] [data-cms-seo-page] footer .tp-footer-2-widget-text p,
+html[data-theme="light"] [data-cms-seo-page] footer .tp-footer-4-top-left p,
+html[data-theme="light"] [data-cms-seo-page] footer .tp-footer-3-copyright,
+html[data-theme="light"] [data-cms-seo-page] footer .tp-footer-4-big-title,
+html[data-theme="light"] [data-cms-seo-page] footer .tp-footer-4-big-title span,
+html[data-theme="light"] [data-cms-seo-page] .tp-service-4-area h2,
+html[data-theme="light"] [data-cms-seo-page] .tp-service-4-area h4,
+html[data-theme="light"] [data-cms-seo-page] .tp-service-4-area p,
+html[data-theme="light"] [data-cms-seo-page] .tp-service-4-area .tp-service-4-title-sm,
+html[data-theme="light"] [data-cms-seo-page] .tp-service-4-area .tp-service-4-title-sm a,
+html[data-theme="light"] [data-cms-seo-page] .tp-service-4-area .tp-service-4-link,
+html[data-theme="light"] [data-cms-seo-page] .tp-service-4-area a {
+  color: #fff !important;
+}
+
+html[data-theme="light"] [data-cms-seo-page] footer .tp-footer-2-widget-menu ul li a,
+html[data-theme="light"] [data-cms-seo-page] footer .tp-footer-2-contact-item span,
+html[data-theme="light"] [data-cms-seo-page] footer .tp-footer-2-contact-item a,
+html[data-theme="light"] [data-cms-seo-page] footer .tp-footer-3-social a {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+html[data-theme="light"] [data-cms-seo-page] footer .tp-footer-2-widget-menu ul li a:hover,
+html[data-theme="light"] [data-cms-seo-page] footer .tp-footer-2-contact-item a:hover,
+html[data-theme="light"] [data-cms-seo-page] footer .tp-footer-3-social a:hover {
+  color: #fff !important;
+}
+
+[data-cms-seo-page] .tp-footer-3-menu ul {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 100% !important;
@@ -15,17 +195,17 @@ main p > a{
 }
 
 @media screen and (max-width:767px){
-  .tp-footer-3-menu ul {
+  [data-cms-seo-page] .tp-footer-3-menu ul {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media screen and (min-width:768px) and (max-width:1023px){
-  .tp-footer-3-menu ul {
+  [data-cms-seo-page] .tp-footer-3-menu ul {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.tp-footer-3-menu ul li {
+[data-cms-seo-page] .tp-footer-3-menu ul li {
   width: auto !important;
   list-style: disc;
   text-transform: capitalize;
