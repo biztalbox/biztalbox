@@ -24,7 +24,8 @@ export default function HeaderEleven({transparent=false,cls=''}: IProps) {
   return (
     <>
       <header
-        className="tp-header-height relative z-[1000]"
+        className="tp-header-height"
+        style={{zIndex: 2000, position: 'relative'}}
         ref={headerRef}
       >  
         <div

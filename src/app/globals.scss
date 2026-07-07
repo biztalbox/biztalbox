@@ -68,8 +68,7 @@ body {
   Default keep the existing home chrome (black background),
   but for all non-home, non-/lite routes apply theme surface + text.
 */
-html,
-body {
+
 /* Global page background (synced with next-themes `data-theme` on <html>) */
 html[data-theme="dark"],
 html[data-theme="dark"] body,
@@ -77,10 +76,20 @@ html[data-theme="dark"] #__next {
   background-color: #000 !important;
 }
 
+html[data-theme="light"],
+html[data-theme="light"] body,
+html[data-theme="light"] #__next {
+  background-color: #fafafa !important;
+}
+
+html,
+body {
+  background-color: #000 !important;
+}
+
 /* Next.js root container fallback */
 #__next {
   background-color: #000 !important;
-  color: #fff !important;
 }
 
 html:not(:has(#lite-route-root)):not(:has(#litePage)):not(:has(#home-route-root)),
@@ -152,76 +161,6 @@ body:has(#litePage) {
 [data-theme="dark"] .header-sticky.lite-ashish-header .tp-header-bar button span {
   background-color: #000 !important;
   color: #fff !important;
-}
-
-html:not(:has(#lite-route-root)):not(:has(#litePage)):not(:has(#home-route-root)),
-body:not(:has(#lite-route-root)):not(:has(#litePage)):not(:has(#home-route-root)),
-#__next:not(:has(#lite-route-root)):not(:has(#litePage)):not(:has(#home-route-root)) {
-  background-color: var(--app-surface) !important;
-  color: var(--app-text) !important;
-}
-
-/* Lite homepage + /lite: always light chrome (ignore system/dark data-theme on first paint) */
-html:has(#lite-route-root),
-html:has(#litePage),
-body:has(#lite-route-root),
-body:has(#litePage) {
-  background-color: #f2f2f2 !important;
-  color: #000 !important;
-}
-
-#__next:has(#lite-route-root),
-#__next:has(#litePage) {
-  background-color: #f2f2f2 !important;
-}
-
-[data-theme="dark"] body:has(#lite-route-root),
-[data-theme="dark"] body:has(#litePage) {
-  background-color: #f2f2f2 !important;
-  color: #000 !important;
-}
-
-/* Lite header: transparent at top; frosted translucent bar once sticky (scroll) */
-.lite-ashish-header.tp-inner-header-area {
-  background: transparent !important;
-  box-shadow: none !important;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-}
-
-.header-sticky.lite-ashish-header.tp-inner-header-area {
-  background: rgba(255, 255, 255, 0.58) !important;
-  backdrop-filter: blur(14px) saturate(1.2);
-  -webkit-backdrop-filter: blur(14px) saturate(1.2);
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06) !important;
-}
-
-[data-theme="dark"] .header-sticky.lite-ashish-header.tp-inner-header-area {
-  /* Lite route keeps light page chrome; match frosted bar for readability */
-  background: rgba(255, 255, 255, 0.58) !important;
-  backdrop-filter: blur(14px) saturate(1.2);
-  -webkit-backdrop-filter: blur(14px) saturate(1.2);
-}
-
-.header-sticky.lite-ashish-header.tp-inner-header-area::after {
-  display: none !important;
-}
-
-/* Lite /lite header: black nav + black hamburger even in app dark theme */
-[data-theme="dark"] .lite-ashish-header.tp-inner-header-style-2 .tp-inner-header-menu nav ul li a,
-[data-theme="dark"] .lite-ashish-header.tp-inner-header-style-2 .tp-inner-header-menu nav > ul > li > a {
-  color: #000 !important;
-}
-
-[data-theme="dark"] .lite-ashish-header.tp-inner-header-style-2 .tp-inner-header-right-action ul li .tp-inner-bar,
-[data-theme="dark"] .header-sticky.lite-ashish-header.tp-inner-header-area .tp-inner-header-menu > nav > ul > li > a,
-[data-theme="dark"] .header-sticky.lite-ashish-header.tp-inner-header-area .tp-inner-header-right-action ul li .tp-inner-bar {
-  color: #000 !important;
-}
-
-[data-theme="dark"] .lite-ashish-header .tp-header-bar button span,
-[data-theme="dark"] .header-sticky.lite-ashish-header .tp-header-bar button span {
-  background-color: #000 !important;
 }
 
 /*
