@@ -145,7 +145,7 @@ export default async function CMSPageLayout({
   return (
     <>
       <MarketingPageSchema pageData={pageData} currentUrl={currentUrl} />
-      {children}
+      <div data-cms-seo-page>{children}</div>
     </>
   );
 }
