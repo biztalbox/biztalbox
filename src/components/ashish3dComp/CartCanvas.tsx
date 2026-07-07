@@ -90,23 +90,15 @@ export default function CartCanvas() {
       }, 150);
     };
 
-    const refreshAfterLayout = () => {
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => ScrollTrigger.refresh());
-      });
-    };
-
     window.addEventListener("resize", scheduleRefresh, { passive: true });
     window.addEventListener("orientationchange", scheduleRefresh, {
       passive: true,
     });
-    window.addEventListener("lite:scroll-layout-ready", refreshAfterLayout);
 
     return () => {
       if (refreshTimer) clearTimeout(refreshTimer);
       window.removeEventListener("resize", scheduleRefresh);
       window.removeEventListener("orientationchange", scheduleRefresh);
-      window.removeEventListener("lite:scroll-layout-ready", refreshAfterLayout);
     };
   }, []);
 

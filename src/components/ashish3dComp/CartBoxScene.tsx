@@ -12,12 +12,6 @@ const CART_BOX_GLB = "/assets/lite_models/minified/cart_box.glb";
 const ANIMATION_CLIP_NAME = "Animation";
 const CTA_SCROLL_ANCHOR = "#ctaScrollAnchor";
 const CTA_SECTION = "#ctaSection";
-const LITE_SCROLL_LAYOUT_READY = "lite:scroll-layout-ready";
-
-// NOTE: module-level `useGLTF.preload(CART_BOX_GLB)` was removed on purpose.
-// It forced the (large) cart model to download during the initial page load,
-// destroying LCP/TBT. The model now loads only when <CartCanvas /> mounts its
-// lazy canvas (see CartCanvas.tsx), shortly before the section scrolls into view.
 
 function findAnimationClip(animations: THREE.AnimationClip[]) {
   return (
@@ -41,6 +35,9 @@ const CartBoxScene = () => {
   useEffect(() => {
     const clip = findAnimationClip(animations);
     if (!clip) return;
+
+    const triggerEl = resolveCtaTriggerEl();
+    if (!triggerEl) return;
 
     const mixer = new THREE.AnimationMixer(model);
     const action = mixer.clipAction(clip);
@@ -72,68 +69,39 @@ const CartBoxScene = () => {
     }
 
     const progress = { value: 0 };
-    let tl: gsap.core.Timeline | null = null;
-    let scrollTrigger: ScrollTrigger | null = null;
+    const tl = gsap.timeline({ paused: true });
+    tl.to(progress, {
+      value: 1,
+      duration: 1,
+      ease: "none",
+      onUpdate: () => applyTime(progress.value),
+    });
 
-    const disposeScroll = () => {
-      scrollTrigger?.kill();
-      scrollTrigger = null;
-      tl?.kill();
-      tl = null;
-      progress.value = 0;
-      applyTime(0);
+    const isMobile = window.innerWidth < 768;
+    const scrollTrigger = ScrollTrigger.create({
+      trigger: triggerEl,
+      start: "top bottom",
+      end: "top top",
+      scrub: isMobile ? 2.5 : 7,
+      invalidateOnRefresh: true,
+      fastScrollEnd: window.innerWidth < 1024,
+      animation: tl,
+    });
+
+    // Lazy canvas can mount while user is already mid-CTA — snap scrub to real scroll once.
+    const syncScrubToScroll = () => {
+      ScrollTrigger.refresh();
+      tl.progress(scrollTrigger.progress);
+      applyTime(progress.value);
     };
 
-    const mountScroll = () => {
-      const triggerEl = resolveCtaTriggerEl();
-      if (!triggerEl) return;
-
-      disposeScroll();
-
-      tl = gsap.timeline({ paused: true });
-      tl.to(progress, {
-        value: 1,
-        duration: 1,
-        ease: "none",
-        onUpdate: () => applyTime(progress.value),
-      });
-
-      scrollTrigger = ScrollTrigger.create({
-        trigger: triggerEl,
-        start: "top bottom",
-        end: "top top",
-        scrub: window.innerWidth < 768 ? 5 : 7,
-        invalidateOnRefresh: true,
-        fastScrollEnd: window.innerWidth < 1024,
-        animation: tl,
-        onLeaveBack: () => {
-          tl?.pause(0);
-          tl?.progress(0);
-          progress.value = 0;
-          applyTime(0);
-        },
-      });
-
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => ScrollTrigger.refresh());
-      });
-    };
-
-    const onLayoutReady = () => mountScroll();
-
-    window.addEventListener(LITE_SCROLL_LAYOUT_READY, onLayoutReady);
-    window.addEventListener("lite:loader-hidden", onLayoutReady);
-
-    // If service scan pins never mount (no hero canvas), still enable CTA scrub.
-    const fallbackTimer = window.setTimeout(() => {
-      if (!scrollTrigger) mountScroll();
-    }, 3000);
+    requestAnimationFrame(() => {
+      requestAnimationFrame(syncScrubToScroll);
+    });
 
     return () => {
-      window.clearTimeout(fallbackTimer);
-      window.removeEventListener(LITE_SCROLL_LAYOUT_READY, onLayoutReady);
-      window.removeEventListener("lite:loader-hidden", onLayoutReady);
-      disposeScroll();
+      scrollTrigger.kill();
+      tl.kill();
       action.stop();
       mixer.stopAllAction();
       mixer.uncacheRoot(model);
