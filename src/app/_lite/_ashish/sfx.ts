@@ -190,7 +190,13 @@ export function playLiteScanSfx(
   if (kind === "print" && !isLiteReceiptSfxEnabled()) return;
 
   const st = tl.scrollTrigger;
-  if (!st?.isActive || st.direction < 1) return;
+  // Don't require st.isActive: with a high scrub value the timeline keeps
+  // catching up (playing forward) AFTER the trigger goes inactive on a fast
+  // scroll. Requiring isActive dropped late cues — the scan "beep" fires at
+  // 0.9, just after "print" at 0.8, so on a fast scroll print played but beep
+  // was skipped. The forward-direction, unlock and forward-crossing guards
+  // still prevent firing on reverse scroll or non-scan updates.
+  if (!st || st.direction < 1) return;
   if (!hasScrubbedForwardSinceUnlock(tl)) return;
   if (tl.time() < cueAt - 0.02) return;
 
@@ -256,7 +262,12 @@ function getScrubCueFiredSet(tl: gsap.core.Timeline): Set<number> {
 function canFireScrubTimelineCue(tl: gsap.core.Timeline): boolean {
   if (!sfxUnlocked) return false;
   const st = tl.scrollTrigger;
-  if (!st?.isActive || st.direction < 1) return false;
+  // Intentionally not gated on st.isActive — the scrubbed scan timeline can
+  // still be catching up forward after the pin goes inactive on a fast scroll,
+  // and cues (e.g. the beep at 0.9) must still fire during that window. Forward
+  // direction + scrubbed-forward-since-unlock keep reverse / pre-interaction
+  // updates silent.
+  if (!st || st.direction < 1) return false;
   if (!hasScrubbedForwardSinceUnlock(tl)) return false;
   return true;
 }

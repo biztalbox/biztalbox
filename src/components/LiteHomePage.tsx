@@ -7,6 +7,7 @@ import Image from "next/image";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { ScrollSmoother } from "@/plugins";
 import { preloadLiteSfx } from "@/app/_lite/_ashish/sfx";
+import { preloadLiteModelAssets } from "@/components/ashish3dComp/lite-model-assets";
 import {
   enableLiteHomeScrollRestoreFix,
   resetLiteHomeScroll,
@@ -56,6 +57,10 @@ const LiteHomePage = () => {
 
   useEffect(() => {
     preloadLiteSfx();
+    // Warm the GLB + HDR cache now, while the loader / Dart intro is still on
+    // screen, so the hero models are ready when the idle-deferred canvas mounts
+    // (avoids the mid-view "pop-in" when they finish downloading).
+    preloadLiteModelAssets();
   }, []);
 
   // Preload loader GIF (cheap hint for the browser).
