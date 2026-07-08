@@ -30,7 +30,7 @@ export default function WhyChooseUsLite() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
   return (
-    <div id="section11" className={`bg-black min-h-screen relative z-10 ab-about-area md:bg-[url('/whychooseus.webp')] bg-cover xl:bg-cover bg-center bg-no-repeat md:h-[1000px] lg:h-[1200px] 2xl:h-[1600px] py-20 md:py-36 2xl:!py-48 z-index-5 why_choose_us_wrapper`}>
+    <div id="section11" className={`bg-black min-h-screen relative z-10 ab-about-area md:bg-[url('/whychooseus.webp')] bg-cover xl:bg-cover bg-center bg-no-repeat md:h-[1000px] lg:h-[1200px] 2xl:h-[1600px] py-20 md:pb-8 xl:py-28 2xl:!py-48 z-index-5 why_choose_us_wrapper`}>
 
 
       <div className="container flex flex-col gap-10 h-full justify-between">
@@ -43,7 +43,7 @@ export default function WhyChooseUsLite() {
 
         </div>
 
-        <div className="ab-about-category-list category-space-1 text-white self-end">
+        <div className="ab-about-category-list category-space-1 text-white self-end max-w-xl">
           <ul className="text-white">
             <li><b>No Ifs and Buts</b>: We ensure every click turns into customers.</li>
             <li><b>Experts Who Get It</b>: SEO and Social Media? It&apos;s the air we breathe.</li>
