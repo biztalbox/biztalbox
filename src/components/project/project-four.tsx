@@ -141,9 +141,6 @@ type IProps = {
 export default function ProjectFour({ style_2 = false }: IProps) {
   return (
     <div
-      style={{
-        background: "#262626"
-      }}
       className={`tp-project-3-area ${
         style_2 ? "pt-60 pw-project-style" : "pt-130"
       }`}
