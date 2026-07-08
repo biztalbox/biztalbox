@@ -19,6 +19,42 @@ const ROOT_X_POSITION_FACTOR = 200;
 const ANIMATION_FPS = 120;
 const SCROLL_DEBOUNCE_TIME = 100; // Reduced from 50ms for better mobile performance
 
+const EYEBALL_GLB_URL = '/eyeball.glb';
+const DRACO_DECODER_PATH = 'https://www.gstatic.com/draco/versioned/decoders/1.5.6/';
+
+// Shared DRACO decoder — created once and kept warm for the app lifetime (never
+// disposed per mount), so the eyeball's draco-compressed geometry decodes
+// without a cold cross-origin decoder fetch + wasm compile every time.
+let sharedDracoLoader: DRACOLoader | null = null;
+function getDracoLoader(): DRACOLoader {
+  if (!sharedDracoLoader) {
+    sharedDracoLoader = new DRACOLoader();
+    sharedDracoLoader.setDecoderPath(DRACO_DECODER_PATH);
+  }
+  return sharedDracoLoader;
+}
+
+// The moment this module is evaluated (dark-home chunk load, during hydration),
+// warm everything the eyeball needs so it doesn't appear late:
+//  - the GLB bytes (HTTP cache the loader's XHR reuses; body discarded),
+//  - a preconnect to gstatic so the decoder fetch skips DNS/TLS setup,
+//  - the DRACO decoder itself (files download + wasm compile) via preload().
+if (typeof window !== 'undefined') {
+  void fetch(EYEBALL_GLB_URL, { cache: 'force-cache' }).catch(() => {
+    /* best-effort cache warm */
+  });
+  try {
+    const preconnect = document.createElement('link');
+    preconnect.rel = 'preconnect';
+    preconnect.href = 'https://www.gstatic.com';
+    preconnect.crossOrigin = 'anonymous';
+    document.head.appendChild(preconnect);
+  } catch {
+    /* ignore */
+  }
+  getDracoLoader().preload();
+}
+
 // Responsive settings with memoization - made more stable and SSR-safe
 const getResponsiveSettings = () => {
   // Check if we're in the browser environment
@@ -331,12 +367,10 @@ const EyeBall: React.FC = memo(() => {
     });
     observer.observe(currentCanvasRef);
 
-    // Optimized loaders setup
-    const dracoLoader = new DRACOLoader();
-    dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/');
-    
+    // Optimized loaders setup — reuse the shared, preloaded DRACO decoder so the
+    // eyeball geometry decodes from an already-warm worker/cache.
     const gltfLoader = new GLTFLoader();
-    gltfLoader.setDRACOLoader(dracoLoader);
+    gltfLoader.setDRACOLoader(getDracoLoader());
 
     // FORCE enable all animation states immediately - NO CONDITIONS
     isPlayingRef.current = true;
@@ -366,7 +400,7 @@ const EyeBall: React.FC = memo(() => {
 
     // Load the 3D model with BULLETPROOF animation handling
     gltfLoader.load(
-      '/eyeball.glb',
+      EYEBALL_GLB_URL,
       (gltf) => {
         try {
           const model = gltf.scene;
@@ -629,8 +663,9 @@ const EyeBall: React.FC = memo(() => {
       }
       
       renderer.dispose();
-      dracoLoader.dispose();
-      
+      // NOTE: don't dispose the DRACO decoder here — it's shared/kept warm for
+      // the app lifetime so remounts don't pay the decoder cold-start again.
+
       // Reset refs
       modelRef.current = null;
       eyeBoneRef.current = null;

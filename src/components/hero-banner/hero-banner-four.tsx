@@ -26,7 +26,7 @@ const HeroBannerFour = () => {
             </div>
 
             <div className="rightText">
-              <h4 style={{ color: "white" }}>Breakthrough Marketing Solutions, Igniting Brand Potential</h4>
+              <h3 style={{ color: "white" }}>Breakthrough Marketing <br/> Solutions</h3>
               <span className="lineWhite"></span>
               <Link href="/contact" style={{ display: "block", width: "fit-content" }} className="tp-btn-black-2">Get in Touch</Link>
             </div>

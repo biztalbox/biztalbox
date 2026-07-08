@@ -30,7 +30,7 @@ export default function WhyChooseUsLite() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
   return (
-    <div id="section11" className={`bg-black min-h-screen relative z-10 ab-about-area md:bg-[url('/whychooseus.webp')] bg-cover xl:bg-cover bg-center bg-no-repeat md:h-[1000px] lg:h-[1200px] 2xl:h-[1600px] py-20 md:py-36 2xl:!py-56 z-index-5 why_choose_us_wrapper`}>
+    <div id="section11" className={`bg-black min-h-screen relative z-10 ab-about-area md:bg-[url('/whychooseus.webp')] bg-cover xl:bg-cover bg-center bg-no-repeat md:h-[1000px] lg:h-[1200px] 2xl:h-[1600px] py-20 md:py-36 2xl:!pt-56 2xl:!pb-52 z-index-5 why_choose_us_wrapper`}>
 
 
       <div className="container flex flex-col gap-10 h-full justify-between">

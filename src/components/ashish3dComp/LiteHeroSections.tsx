@@ -21,7 +21,7 @@ export default function LiteHeroSections() {
               {/* Center — mobile: natural height only; sm+: fills middle row for vertical centering */}
               <div className="flex items-start justify-center pt-2 max-sm:self-start sm:-translate-y-4 sm:items-center sm:pt-0">
                 <div className="w-full max-w-screen text-center flex flex-col gap-0 pt-2">
-                  <p className="whitespace-nowrap uppercase text-center -mb-2"
+                  <p className="whitespace-nowrap uppercase text-center xl:-mb-2"
                   >
                     Creative Souls, Strategic Minds
                   </p>
@@ -29,7 +29,7 @@ export default function LiteHeroSections() {
                   <h1 className="font-century-gothic">biztalbox</h1>
                   {/* <span className="h-[1px] w-40 mx-auto bg-black"></span> */}
 
-                  <h3 className="text-[16px] md:!text-[22px]">Breakthrough Marketing Solutions,<br /> Igniting Brand Potential</h3>
+                  <h3 className="text-[16px] md:!text-[22px]">Breakthrough Marketing Solutions</h3>
                   <p className="uppercase">
                     Sustainable Growth Guided by Expertise, Rooted in Partnership
                   </p>

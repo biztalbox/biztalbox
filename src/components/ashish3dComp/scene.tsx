@@ -26,19 +26,9 @@ import {
   type LiteSceneBreakpoint,
 } from "./motion/lite-scene-layout";
 import { isLiteReceiptSfxEnabled, isLiteSfxUnlocked, pauseLiteSfx, playLiteSfx } from "@/app/_lite/_ashish/sfx";
+import { LITE_GLB_URLS } from "./lite-model-assets";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
-
-/** All lite hero GLBs passed to useLoader / preload (order does not matter). */
-const LITE_GLB_URLS = [
-  "/assets/lite_models/minified/smo.glb",
-  "/assets/lite_models/minified/ads.glb",
-  "/assets/lite_models/minified/content.glb",
-  "/assets/lite_models/minified/seo.glb",
-  "/assets/lite_models/minified/webdev.glb",
-  "/assets/lite_models/minified/graphic.glb",
-  "/assets/lite_models/minified/video.glb",
-] as const;
 
 /** Drop distance for hero intro (all models enter from above). */
 function getHeroIntroDropY(bp: LiteSceneBreakpoint): number {
