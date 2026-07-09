@@ -18,7 +18,7 @@
             @include transform(translateY(-50%) translateX(calc(100% - 52px)));
             z-index: 991;
             direction: ltr;
-    
+            transition: transform 0.55s ease-in-out !important;
             &.settings-opened{
                 @include transform(translateY(-50%) translateX(0%));
             }
@@ -83,6 +83,8 @@
         letter-spacing: 0.08em;
         line-height: 1;
         cursor: pointer;
+        overflow: hidden;
+        perspective: 600px;
         transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 
         svg{
@@ -103,6 +105,37 @@
             background-color: #111;
             color: #fff;
             border-color: #111;
+        }
+    }
+    &-mode-flip{
+        position: relative;
+        width: 100%;
+        min-height: 40px;
+        transform-style: preserve-3d;
+        transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+
+        &.show-lite{
+            transform: rotateY(0deg);
+        }
+
+        &.show-dark{
+            transform: rotateY(180deg);
+        }
+    }
+    &-mode-face{
+        position: absolute;
+        inset: 0;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 0 14px;
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        transform-style: preserve-3d;
+
+        &-dark{
+            transform: rotateY(180deg);
         }
     }
 

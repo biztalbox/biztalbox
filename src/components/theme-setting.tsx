@@ -103,17 +103,16 @@ const ThemeSetting = () => {
           onClick={toggleTheme}
           aria-label={isDark ? "Switch to lite mode" : "Switch to dark mode"}
         >
-          {isDark ? (
-            <>
+          <span className={`tp-theme-mode-flip ${isDark ? "show-lite" : "show-dark"}`}>
+            <span className="tp-theme-mode-face tp-theme-mode-face-lite">
               <FiSun aria-hidden="true" />
               <span>LITE</span>
-            </>
-          ) : (
-            <>
+            </span>
+            <span className="tp-theme-mode-face tp-theme-mode-face-dark">
               <FiMoon aria-hidden="true" />
               <span>DARK</span>
-            </>
-          )}
+            </span>
+          </span>
         </button>
       </div>
     </div>
