@@ -30,6 +30,7 @@ const ContactPage = () => {
 
   return (
     <Wrapper>
+      <div data-contact-page>
       {/* header area start */}
       <HeaderEleven transparent={false} />
       {/* header area end */}
@@ -125,6 +126,7 @@ const ContactPage = () => {
             {/* footer area */}
           </div>
         </div>
+      </div>
       </div>
     </Wrapper>
   );

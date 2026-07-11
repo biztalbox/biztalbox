@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import ContactPage from "@/components/contact/ContactPage";
 import { createMetadata } from "@/utils/metadata";
 import ContactPageSchema from "@/components/schema/ContactPageSchema";
+import "./styles.css";
 
 const baseMetadata: Metadata = {
   title: "Contact Us - Biztal Box",
