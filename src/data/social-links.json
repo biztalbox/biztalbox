@@ -1,0 +1,37 @@
+{
+  "liteOrder": ["instagram", "facebook", "youtube", "linkedin", "x"],
+  "footerOrder": ["x", "facebook", "instagram", "linkedin", "youtube", "pinterest"],
+  "links": {
+    "x": {
+      "href": "https://x.com/BiztalBox",
+      "icon": "fa-brands fa-x",
+      "ariaLabel": "Biztalbox on X"
+    },
+    "facebook": {
+      "href": "https://www.facebook.com/BiztalBox",
+      "icon": "fa-brands fa-facebook-f",
+      "ariaLabel": "Biztalbox on Facebook"
+    },
+    "instagram": {
+      "href": "https://www.instagram.com/biztalbox",
+      "icon": "fa-brands fa-instagram",
+      "ariaLabel": "Biztalbox on Instagram"
+    },
+    "linkedin": {
+      "href": "https://www.linkedin.com/company/biztal",
+      "icon": "fa-brands fa-linkedin-in",
+      "ariaLabel": "Biztalbox on LinkedIn"
+    },
+    "youtube": {
+      "href": "https://m.youtube.com/@biztalboxofficial",
+      "icon": "fa-brands fa-youtube",
+      "ariaLabel": "Biztalbox on YouTube"
+    },
+    "pinterest": {
+      "href": "https://in.pinterest.com/biztalbox1/",
+      "icon": "fa-pinterest",
+      "iconType": "react-icon",
+      "ariaLabel": "Biztalbox on Pinterest"
+    }
+  }
+}

@@ -85,7 +85,7 @@ const ThemeSetting = () => {
           aria-label={settingOpen ? "Close theme settings" : "Open theme settings"}
         >
           <Image
-            src="/assets/img/theme-toggle-icon.png"
+            src="/assets/img/theme-toggles-icon.png"
             alt="Theme"
             width={52}
             height={52}

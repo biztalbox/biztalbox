@@ -8,6 +8,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import CartBoxScene from "./CartBoxScene";
 import Link from "next/link";
+import SocialLinks from "@/components/social/SocialLinks";
 
 /**
  * Mounts the WebGL canvas only when the CTA section approaches the viewport
@@ -149,6 +150,7 @@ export default function CartCanvas() {
             <path d="m242-246-42-42 412-412H234v-60h480v480h-60v-378z"></path>
           </svg>
         </Link>
+        <SocialLinks variant="lite-footer" className="mt-6 mb-2" />
       </div>
     </section>
   );
