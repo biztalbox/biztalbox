@@ -1,24 +1,82 @@
-/* Contact page keeps a dark hero/background in lite theme — header must stay light-on-dark */
-html[data-theme="light"] [data-contact-page] .tp-inner-header-style-2 .tp-inner-header-menu > nav > ul > li > a {
-  color: #fff !important;
+/* ── Lite theme page shell ── */
+html[data-theme="light"] [data-contact-page] {
+  background-color: #fafafa;
 }
 
-html[data-theme="light"] [data-contact-page] .tp-inner-header-style-2 .tp-inner-header-right-action ul li .tp-inner-bar {
-  color: #fff !important;
+[data-contact-page] {
+  overflow-x: clip;
+  width: 100%;
+  max-width: 100%;
 }
 
-html[data-theme="light"] [data-contact-page] .tp-inner-header-style-2 .logo-1 {
-  display: none !important;
+html[data-theme="light"] [data-contact-page] #smooth-wrapper,
+html[data-theme="light"] [data-contact-page] #smooth-content,
+html[data-theme="light"] [data-contact-page] main {
+  background-color: #fafafa;
 }
 
-html[data-theme="light"] [data-contact-page] .tp-inner-header-style-2 .logo-2 {
+/* Prevent ScrollSmoother / particles from causing a right-side gap on mobile */
+[data-contact-page] #smooth-wrapper {
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+[data-contact-page] #smooth-content {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 991px) {
+  html[data-theme="light"]:has([data-contact-page]),
+  html[data-theme="light"]:has([data-contact-page]) body {
+    overflow-x: clip;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  [data-contact-page] #smooth-wrapper,
+  [data-contact-page] #smooth-content,
+  [data-contact-page] .inner-bg,
+  [data-contact-page] main,
+  [data-contact-page] .ab-inner-hero-area {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+  }
+
+  [data-contact-page] .ab-inner-hero-area #tsparticles,
+  [data-contact-page] .ab-inner-hero-area #tsparticles canvas {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/*
+ * Lite theme header at top sits on the white page background (outside the dark hero).
+ * Use dark logo + dark menu icon until sticky, then switch to light-on-dark bar.
+ */
+html[data-theme="light"] [data-contact-page] .tp-inner-header-style-2:not(.header-sticky) .tp-inner-header-menu > nav > ul > li > a {
+  color: #141414 !important;
+}
+
+html[data-theme="light"] [data-contact-page] .tp-inner-header-style-2:not(.header-sticky) .tp-inner-header-right-action ul li .tp-inner-bar {
+  color: #141414 !important;
+}
+
+html[data-theme="light"] [data-contact-page] .tp-inner-header-style-2:not(.header-sticky) .logo-1 {
   display: block !important;
 }
 
-html[data-theme="light"] [data-contact-page] .tp-inner-header-area .tp-header-bar button span {
-  background-color: #fff !important;
+html[data-theme="light"] [data-contact-page] .tp-inner-header-style-2:not(.header-sticky) .logo-2 {
+  display: none !important;
 }
 
+html[data-theme="light"] [data-contact-page] .tp-inner-header-area:not(.header-sticky) .tp-header-bar button span {
+  background-color: #141414 !important;
+}
+
+/* Sticky header over page content — dark frosted bar with light elements */
 html[data-theme="light"] [data-contact-page] .header-sticky.tp-inner-header-area {
   background: rgba(36, 36, 36, 0.85);
 }
@@ -31,6 +89,21 @@ html[data-theme="light"] [data-contact-page] .header-sticky.tp-inner-header-area
   color: #fff !important;
 }
 
+html[data-theme="light"] [data-contact-page] .header-sticky.tp-inner-header-area .logo-1 {
+  display: none !important;
+}
+
+html[data-theme="light"] [data-contact-page] .header-sticky.tp-inner-header-area .logo-2 {
+  display: block !important;
+}
+
 html[data-theme="light"] [data-contact-page] .header-sticky.tp-inner-header-area .tp-header-bar button span {
   background-color: #fff !important;
+}
+
+/* Hero text stays white on the dark hero block in lite theme */
+html[data-theme="light"] [data-contact-page] .ab-inner-hero-area .tm-hero-subtitle,
+html[data-theme="light"] [data-contact-page] .ab-inner-hero-area .tm-hero-title-big,
+html[data-theme="light"] [data-contact-page] .ab-inner-hero-area .text-white {
+  color: #fff !important;
 }
