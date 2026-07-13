@@ -208,37 +208,37 @@
 
 .catEngineering {
   @include category-pill;
-  color: #d4d4d4;
+  color: color-mix(in srgb, var(--app-text) 65%, transparent);
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid color-mix(in srgb, var(--app-text) 22%, transparent);
 }
 
 .catDesign {
   @include category-pill;
-  color: #d4d4d4;
+  color: color-mix(in srgb, var(--app-text) 65%, transparent);
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid color-mix(in srgb, var(--app-text) 22%, transparent);
 }
 
 .catProduct {
   @include category-pill;
-  color: #d4d4d4;
+  color: color-mix(in srgb, var(--app-text) 65%, transparent);
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid color-mix(in srgb, var(--app-text) 22%, transparent);
 }
 
 .catMarketing {
   @include category-pill;
-  color: #d4d4d4;
+  color: color-mix(in srgb, var(--app-text) 65%, transparent);
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid color-mix(in srgb, var(--app-text) 22%, transparent);
 }
 
 .catDefault {
   @include category-pill;
-  color: #d4d4d4;
+  color: color-mix(in srgb, var(--app-text) 65%, transparent);
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid color-mix(in srgb, var(--app-text) 22%, transparent);
 }
 
 .loading,
@@ -308,6 +308,31 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+:global([data-theme="dark"]) .cardTitle {
+  color: #fff;
+}
+
+:global([data-theme="dark"]) .cardDesc,
+:global([data-theme="dark"]) .locRow,
+:global([data-theme="dark"]) .metaItem,
+:global([data-theme="dark"]) .emptyState {
+  color: #a3a3a3;
+}
+
+:global([data-theme="dark"]) .locRow svg,
+:global([data-theme="dark"]) .metaItem svg {
+  color: #737373;
+}
+
+:global([data-theme="dark"]) .catEngineering,
+:global([data-theme="dark"]) .catDesign,
+:global([data-theme="dark"]) .catProduct,
+:global([data-theme="dark"]) .catMarketing,
+:global([data-theme="dark"]) .catDefault {
+  color: #d4d4d4;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
 .applyLink {
   display: block;
   width: 100%;
@@ -337,11 +362,11 @@
   flex-shrink: 0;
   font-size: 0.8125rem;
   font-weight: 500;
-  color: #a3a3a3;
+  color: color-mix(in srgb, var(--app-text) 60%, transparent);
 
   svg {
     flex-shrink: 0;
-    color: #737373;
+    color: color-mix(in srgb, var(--app-text) 50%, transparent);
   }
 }
 
@@ -350,14 +375,14 @@
   font-size: 1.125rem;
   font-weight: 700;
   line-height: 1.35;
-  color: #fff;
+  color: var(--app-text);
 }
 
 .cardDesc {
   margin: 0 0 1.1rem;
   font-size: 0.875rem;
   line-height: 1.55;
-  color: #a3a3a3;
+  color: color-mix(in srgb, var(--app-text) 60%, transparent);
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -378,11 +403,11 @@
   gap: 0.4rem;
   font-size: 0.8125rem;
   font-weight: 500;
-  color: #a3a3a3;
+  color: color-mix(in srgb, var(--app-text) 60%, transparent);
 
   svg {
     flex-shrink: 0;
-    color: #737373;
+    color: color-mix(in srgb, var(--app-text) 50%, transparent);
   }
 }
 
@@ -494,7 +519,7 @@
 
 .emptyState {
   text-align: center;
-  color: #a3a3a3;
+  color: color-mix(in srgb, var(--app-text) 60%, transparent);
   margin-top: 2rem;
   font-size: 0.9375rem;
 }

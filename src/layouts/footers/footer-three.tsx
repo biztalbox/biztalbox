@@ -4,6 +4,7 @@ import LineTextThree from "@/components/line-text/line-text-3";
 import logo from "@/assets/img/logo/white.png";
 import { RightArrow } from "@/components/svg";
 import Link from "next/link";
+import SocialLinks from "@/components/social/SocialLinks";
 
 export default function FooterThree() {
   return (
@@ -118,35 +119,7 @@ export default function FooterThree() {
                   <h4 className="tp-footer-2-widget-title">
                     Follow Us On Social Media
                   </h4>
-                  <div className="tp-footer-3-social mb-20">
-                    <a href="https://x.com/BiztalBox" target="_blank">
-                      <i className="fa-brands fa-x"></i>
-                    </a>
-                    <a
-                      href="https://www.facebook.com/BiztalBox"
-                      target="_blank"
-                    >
-                      <i className="fa-brands fa-facebook-f"></i>
-                    </a>
-                    <a
-                      href="https://www.instagram.com/biztalbox"
-                      target="_blank"
-                    >
-                      <i className="fa-brands fa-instagram"></i>
-                    </a>
-                    <a
-                      href="https://www.linkedin.com/company/biztal"
-                      target="_blank"
-                    >
-                      <i className="fa-brands fa-linkedin-in"></i>
-                    </a>
-                    <a
-                      href="https://m.youtube.com/@biztalboxofficial"
-                      target="_blank"
-                    >
-                      <i className="fa-brands fa-youtube"></i>
-                    </a>
-                  </div>
+                  <SocialLinks variant="dark-footer" className="mb-20" />
                 </div>
               </div>
             </div>

@@ -1,0 +1,36 @@
+/* Contact page keeps a dark hero/background in lite theme — header must stay light-on-dark */
+html[data-theme="light"] [data-contact-page] .tp-inner-header-style-2 .tp-inner-header-menu > nav > ul > li > a {
+  color: #fff !important;
+}
+
+html[data-theme="light"] [data-contact-page] .tp-inner-header-style-2 .tp-inner-header-right-action ul li .tp-inner-bar {
+  color: #fff !important;
+}
+
+html[data-theme="light"] [data-contact-page] .tp-inner-header-style-2 .logo-1 {
+  display: none !important;
+}
+
+html[data-theme="light"] [data-contact-page] .tp-inner-header-style-2 .logo-2 {
+  display: block !important;
+}
+
+html[data-theme="light"] [data-contact-page] .tp-inner-header-area .tp-header-bar button span {
+  background-color: #fff !important;
+}
+
+html[data-theme="light"] [data-contact-page] .header-sticky.tp-inner-header-area {
+  background: rgba(36, 36, 36, 0.85);
+}
+
+html[data-theme="light"] [data-contact-page] .header-sticky.tp-inner-header-area .tp-inner-header-menu > nav > ul > li > a {
+  color: #fff !important;
+}
+
+html[data-theme="light"] [data-contact-page] .header-sticky.tp-inner-header-area .tp-inner-header-right-action ul li .tp-inner-bar {
+  color: #fff !important;
+}
+
+html[data-theme="light"] [data-contact-page] .header-sticky.tp-inner-header-area .tp-header-bar button span {
+  background-color: #fff !important;
+}

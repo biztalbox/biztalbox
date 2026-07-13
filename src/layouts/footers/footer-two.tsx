@@ -4,6 +4,7 @@ import Link from "next/link";
 import logo from "@/assets/img/logo/logo-white.png";
 import logo_2 from "@/assets/img/logo/logo.png";
 import { RightArrow } from "@/components/svg";
+import SocialLinks from "@/components/social/SocialLinks";
 
 // prop type
 type IProps = {
@@ -177,13 +178,7 @@ export default function FooterTwo({ whiteFooter = false,topCls='footer-top' }: I
                 <Link className="tp-footer-3-logo p-relative" href="/">
                   <Image src={logo} alt="logo" />
                 </Link> */}
-                <div className="tp-footer-3-social mb-20">
-                  <a href="https://x.com/BiztalBox" target='_blank'><i className="fa-brands fa-x"></i></a>
-                  <a href="https://www.facebook.com/BiztalBox" target='_blank'><i className="fa-brands fa-facebook-f"></i></a>
-                  <a href="https://www.instagram.com/biztalbox" target='_blank'><i className="fa-brands fa-instagram"></i></a>
-                  <a href="https://www.linkedin.com/company/biztal" target='_blank'><i className="fa-brands fa-linkedin-in"></i></a>
-                  <a href="https://m.youtube.com/@biztalboxofficial" target='_blank'><i className="fa-brands fa-youtube"></i></a>
-                </div>
+                <SocialLinks variant="dark-footer" className="mb-20" />
                 <p className="tp-footer-3-copyright">
                 © biztalbox {new Date().getFullYear()} | All rights reserved
                 </p>

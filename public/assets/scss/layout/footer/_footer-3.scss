@@ -113,7 +113,9 @@
             border-radius: 50%;
             line-height: 44px;
             text-align: center;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             margin-right: 6px;
             color: var(--tp-common-white);
             border: 1px solid rgba(255, 255, 255, 0.12);
@@ -122,6 +124,33 @@
                 background-color: var(--tp-common-white);
                 border-color: var(--tp-common-white);
                 color: var(--tp-common-black);
+            }
+        }
+
+        &--lite{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            & a{
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                height: 44px;
+                width: 44px;
+                margin-right: 0;
+                line-height: 1;
+                background-color: #111;
+                border: 1px solid #111;
+                color: var(--tp-common-white);
+
+                &:hover{
+                    background-color: rgb(70, 70, 70);
+                    border-color: rgb(70, 70, 70);
+                    color: var(--tp-common-white);
+                }
             }
         }
     }

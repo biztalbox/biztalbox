@@ -25,13 +25,10 @@ const ThemeSetting = () => {
       typeof window !== "undefined" &&
       typeof window.location !== "undefined" &&
       window.location.protocol === "https:";
-    // `Secure` is recommended on Vercel/HTTPS so the cookie is consistently sent.
     document.cookie = `bb_theme=${nextTheme}; Path=/; Max-Age=31536000; SameSite=Lax${isHttps ? "; Secure" : ""}`;
   };
 
   const applyTheme = (nextTheme: "dark" | "light") => {
-    // Only run the smooth-scroll cleanup on the homepage when switching to light.
-    // This prevents unintended side-effects on other routes that may rely on smooth scrolling.
     if (pathname === "/" && nextTheme === "light") {
       try {
         ScrollSmoother.get?.()?.kill?.();
@@ -42,25 +39,25 @@ const ThemeSetting = () => {
       document.body.style.removeProperty("height");
       document.body.style.removeProperty("transform");
     }
-    // Persist theme to a cookie so middleware can route "/" correctly on the next navigation.
-    // Do this BEFORE navigation so the request includes the updated cookie (important on Vercel).
     writeThemeCookie(nextTheme);
-
     setTheme(nextTheme);
 
-    // On home, perform a real navigation so middleware can redirect correctly in production.
     if (pathname === "/") {
       router.push(nextTheme === "dark" ? "/?mode=dark" : "/");
     }
   };
 
-  const toggleTheme = () => {
-    applyTheme(isDark ? "light" : "dark");
+  const setLiteTheme = () => {
+    if (!isDark) return;
+    applyTheme("light");
+  };
+
+  const setDarkTheme = () => {
+    if (isDark) return;
+    applyTheme("dark");
   };
 
   useEffect(() => {
-    // Don't force light on first mount; allow system/resolved theme to drive.
-    // (Forcing light can overwrite `resolvedTheme` and break middleware routing on Vercel.)
     if (!theme) return;
   }, [setTheme, theme]);
 
@@ -76,9 +73,10 @@ const ThemeSetting = () => {
 
   return (
     <div
-      className={`tp-theme-settings-area transition-3 ${
+      className={`tp-theme-settings-area ${
         settingOpen ? "settings-opened" : ""
       }`}
+      aria-expanded={settingOpen}
     >
       <div className="tp-theme-box">
         <button
@@ -88,33 +86,40 @@ const ThemeSetting = () => {
           aria-label={settingOpen ? "Close theme settings" : "Open theme settings"}
         >
           <Image
-            src="/assets/img/theme-yin-yang.png"
+            src="/assets/img/theme-toggles-icon.png"
             alt="Theme"
-            width={48}
-            height={48}
+            width={42}
+            height={42}
             className="tp-theme-settings-yin-yang"
             priority
           />
         </button>
 
-        <button
-          type="button"
-          className={`tp-theme-mode-label ${isDark ? "is-lite-target" : "is-dark-target"}`}
-          onClick={toggleTheme}
-          aria-label={isDark ? "Switch to lite mode" : "Switch to dark mode"}
+        <div
+          className={`tp-theme-mode-switch ${isDark ? "is-dark" : "is-lite"}`}
+          role="group"
+          aria-label="Theme mode"
         >
-          {isDark ? (
-            <>
-              <FiSun aria-hidden="true" />
-              <span>LITE</span>
-            </>
-          ) : (
-            <>
-              <FiMoon aria-hidden="true" />
-              <span>DARK</span>
-            </>
-          )}
-        </button>
+          <span className="tp-theme-mode-indicator" aria-hidden="true" />
+          <button
+            type="button"
+            className={`tp-theme-mode-option ${isDark ? "is-active" : ""}`}
+            onClick={setDarkTheme}
+            aria-label="Switch to dark mode"
+            aria-pressed={isDark}
+          >
+            <FiMoon aria-hidden="true" />
+          </button>
+          <button
+            type="button"
+            className={`tp-theme-mode-option ${!isDark ? "is-active" : ""}`}
+            onClick={setLiteTheme}
+            aria-label="Switch to lite mode"
+            aria-pressed={!isDark}
+          >
+            <FiSun aria-hidden="true" />
+          </button>
+        </div>
       </div>
     </div>
   );
