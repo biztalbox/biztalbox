@@ -1,5 +1,13 @@
 import React from "react";
-import { FaPinterest } from "react-icons/fa";
+import type { IconType } from "react-icons";
+import {
+  FaXTwitter,
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaYoutube,
+  FaPinterest,
+} from "react-icons/fa6";
 import socialLinksData from "@/data/social-links.json";
 
 type SocialLinkItem = {
@@ -19,6 +27,21 @@ const socialLinksConfig = socialLinksData as SocialLinksConfig;
 
 type SocialLinkKey = keyof typeof socialLinksConfig.links;
 type SocialLinksVariant = "dark-footer" | "lite-footer";
+
+/**
+ * Render each social platform with an inline SVG (react-icons) instead of a
+ * Font Awesome `<i>` glyph. The bundled Font Awesome Pro 6.0.0 brand webfont
+ * doesn't load reliably on every route (e.g. Tailwind-scoped pages), so the
+ * `<i>` icons showed up as empty circles. SVGs always render.
+ */
+const iconByKey: Record<string, IconType> = {
+  x: FaXTwitter,
+  facebook: FaFacebookF,
+  instagram: FaInstagram,
+  linkedin: FaLinkedinIn,
+  youtube: FaYoutube,
+  pinterest: FaPinterest,
+};
 
 type SocialLinksProps = {
   variant?: SocialLinksVariant;
@@ -48,6 +71,8 @@ export default function SocialLinks({
         const item = socialLinksConfig.links[key];
         if (!item) return null;
 
+        const Icon = iconByKey[key];
+
         return (
           <a
             key={key}
@@ -56,8 +81,8 @@ export default function SocialLinks({
             rel="noopener noreferrer"
             aria-label={item.ariaLabel}
           >
-            {item.iconType === "react-icon" ? (
-              <FaPinterest className="inline-block text-[1.1em]" aria-hidden />
+            {Icon ? (
+              <Icon className="inline-block text-[1.05em]" aria-hidden />
             ) : (
               <i className={item.icon} aria-hidden />
             )}

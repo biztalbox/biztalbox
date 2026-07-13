@@ -73,9 +73,10 @@ const ThemeSetting = () => {
 
   return (
     <div
-      className={`tp-theme-settings-area transition-3 ${
+      className={`tp-theme-settings-area ${
         settingOpen ? "settings-opened" : ""
       }`}
+      aria-expanded={settingOpen}
     >
       <div className="tp-theme-box">
         <button

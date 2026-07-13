@@ -113,7 +113,9 @@
             border-radius: 50%;
             line-height: 44px;
             text-align: center;
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
             margin-right: 6px;
             color: var(--tp-common-white);
             border: 1px solid rgba(255, 255, 255, 0.12);

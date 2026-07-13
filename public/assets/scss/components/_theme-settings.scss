@@ -20,22 +20,50 @@
             position: fixed;
             top: 50%;
             right: 14px;
-            width: 236px;
+            width: 196px;
             background-color: transparent;
             border: 0;
             @include transform(translateY(-50%) translateX(calc(100% - 44px)));
             z-index: 991;
             direction: ltr;
-            transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1), right 0.55s cubic-bezier(0.22, 1, 0.36, 1) !important;
+            will-change: transform, right;
+            transition:
+                transform 0.65s ease-in-out,
+                right 0.65s ease-in-out;
 
             &.settings-opened{
                 right: 0;
-                @include transform(translateY(-50%) translateX(0%));
+                @include transform(translateY(-50%) translateX(0));
 
                 #{$self}-box{
                     border-right: 0;
                     border-radius: 999px 0 0 999px;
-                    padding-right: 8px;
+                    padding-right: 6px;
+                    box-shadow: 0 8px 28px rgba(17, 17, 26, 0.14);
+                }
+
+                #{$self}-mode-switch{
+                    opacity: 1;
+                    transform: translateX(0) scale(1);
+                    pointer-events: auto;
+                    transition-delay: 0.2s;
+                }
+            }
+
+            &:not(.settings-opened){
+                #{$self}-mode-switch{
+                    opacity: 0;
+                    transform: translateX(14px) scale(0.94);
+                    pointer-events: none;
+                    transition-delay: 0s;
+                }
+            }
+
+            @media (prefers-reduced-motion: reduce){
+                transition: transform 0.2s ease, right 0.2s ease;
+
+                &.settings-opened #{$self}-mode-switch{
+                    transition-delay: 0s;
                 }
             }
         }
@@ -73,7 +101,11 @@
         border: 2px solid #e8e8ee;
         border-radius: 999px;
         box-shadow: 0 4px 16px rgba(17, 17, 26, 0.08);
-        transition: border-radius 0.55s cubic-bezier(0.22, 1, 0.36, 1), padding 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+        overflow: hidden;
+        transition:
+            border-radius 0.65s ease-in-out,
+            padding 0.65s ease-in-out,
+            box-shadow 0.5s ease-in-out;
     }
     &-mode-switch{
         position: relative;
@@ -89,6 +121,13 @@
         border-radius: 999px;
         border: 2px solid #e8e8ee;
         background: #fff;
+        opacity: 0;
+        transform: translateX(14px) scale(0.94);
+        transform-origin: left center;
+        pointer-events: none;
+        transition:
+            opacity 0.45s ease-in-out,
+            transform 0.55s ease-in-out;
 
         &.is-lite #{$self}-mode-indicator{
             left: calc(50% + 2px);
