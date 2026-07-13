@@ -87,8 +87,8 @@ const ThemeSetting = () => {
           <Image
             src="/assets/img/theme-toggles-icon.png"
             alt="Theme"
-            width={52}
-            height={52}
+            width={42}
+            height={42}
             className="tp-theme-settings-yin-yang"
             priority
           />

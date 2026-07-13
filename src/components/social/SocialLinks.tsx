@@ -1,6 +1,21 @@
 import React from "react";
 import { FaPinterest } from "react-icons/fa";
-import socialLinksConfig from "@/data/social-links.json";
+import socialLinksData from "@/data/social-links.json";
+
+type SocialLinkItem = {
+  href: string;
+  icon: string;
+  ariaLabel: string;
+  iconType?: "react-icon";
+};
+
+type SocialLinksConfig = {
+  liteOrder: string[];
+  footerOrder: string[];
+  links: Record<string, SocialLinkItem>;
+};
+
+const socialLinksConfig = socialLinksData as SocialLinksConfig;
 
 type SocialLinkKey = keyof typeof socialLinksConfig.links;
 type SocialLinksVariant = "dark-footer" | "lite-footer";
