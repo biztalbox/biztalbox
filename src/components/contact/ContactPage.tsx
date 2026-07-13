@@ -44,7 +44,7 @@ const ContactPage = () => {
                 "url(/assets/img/home-01/team/team-details-bg.png)",
             }}
           >
-            <main style={{ overflow: "hidden" }}>
+            <main>
               {/* hero area start */}
               <div className="ab-inner-hero-area ab-inner-hero-bg p-relative dark-bg partcle_bg">
                 <ParticleComponent />

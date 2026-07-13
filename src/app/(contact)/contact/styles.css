@@ -3,46 +3,31 @@ html[data-theme="light"] [data-contact-page] {
   background-color: #fafafa;
 }
 
-[data-contact-page] {
-  overflow-x: clip;
-  width: 100%;
-  max-width: 100%;
-}
-
 html[data-theme="light"] [data-contact-page] #smooth-wrapper,
 html[data-theme="light"] [data-contact-page] #smooth-content,
-html[data-theme="light"] [data-contact-page] main {
+html[data-theme="light"] [data-contact-page] main,
+html[data-theme="light"] [data-contact-page] .inner-bg {
   background-color: #fafafa;
 }
 
-/* Prevent ScrollSmoother / particles from causing a right-side gap on mobile */
-[data-contact-page] #smooth-wrapper {
-  overflow: hidden;
-  width: 100%;
-  max-width: 100%;
+/* Keep dark sections dark in lite theme (same as dark mode layout) */
+html[data-theme="light"] [data-contact-page] .black-bg,
+html[data-theme="light"] [data-contact-page] .dark-bg,
+html[data-theme="light"] [data-contact-page] .ab-inner-hero-area,
+html[data-theme="light"] [data-contact-page] .tp-footer-2-area.black-bg,
+html[data-theme="light"] [data-contact-page] .tp-footer-3-area.black-bg {
+  background-color: #121212 !important;
 }
 
-[data-contact-page] #smooth-content {
-  width: 100%;
-  max-width: 100%;
+html[data-theme="light"] [data-contact-page] .cn-contact-2-content {
+  background-color: #1e1e1e !important;
 }
 
+/* Hero right-edge gap on mobile — clip particles only, don't touch page scroll */
 @media (max-width: 991px) {
-  html[data-theme="light"]:has([data-contact-page]),
-  html[data-theme="light"]:has([data-contact-page]) body {
-    overflow-x: clip;
-    width: 100%;
-    max-width: 100%;
-  }
-
-  [data-contact-page] #smooth-wrapper,
-  [data-contact-page] #smooth-content,
-  [data-contact-page] .inner-bg,
-  [data-contact-page] main,
   [data-contact-page] .ab-inner-hero-area {
+    overflow: hidden;
     width: 100%;
-    max-width: 100%;
-    overflow-x: clip;
   }
 
   [data-contact-page] .ab-inner-hero-area #tsparticles,
@@ -101,9 +86,18 @@ html[data-theme="light"] [data-contact-page] .header-sticky.tp-inner-header-area
   background-color: #fff !important;
 }
 
-/* Hero text stays white on the dark hero block in lite theme */
+/* Hero + dark section text stays light in lite theme */
 html[data-theme="light"] [data-contact-page] .ab-inner-hero-area .tm-hero-subtitle,
 html[data-theme="light"] [data-contact-page] .ab-inner-hero-area .tm-hero-title-big,
-html[data-theme="light"] [data-contact-page] .ab-inner-hero-area .text-white {
+html[data-theme="light"] [data-contact-page] .ab-inner-hero-area .text-white,
+html[data-theme="light"] [data-contact-page] .black-bg .field-label,
+html[data-theme="light"] [data-contact-page] .cn-contactform-support-text span,
+html[data-theme="light"] [data-contact-page] .cn-contact-2-title,
+html[data-theme="light"] [data-contact-page] .cn-contact-2-info-details a,
+html[data-theme="light"] [data-contact-page] .cn-contact-2-info-details span {
   color: #fff !important;
+}
+
+html[data-theme="light"] [data-contact-page] .cn-contact-2-info-details a:hover {
+  color: rgba(255, 255, 255, 0.8) !important;
 }
