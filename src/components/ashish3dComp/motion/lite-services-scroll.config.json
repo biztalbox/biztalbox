@@ -414,8 +414,8 @@
           "motion": {
             "approach": {
               "position": {
-                "y": "-=550",
-                "x": "-=0"
+                "y": "-=700",
+                "x": "+=150"
               },
               "scale": 5.2,
               "rotation": {
