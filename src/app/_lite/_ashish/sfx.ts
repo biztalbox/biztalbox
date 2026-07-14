@@ -26,6 +26,7 @@ const scrubCueTimelines = new Set<gsap.core.Timeline>();
 let unlockInstalled = false;
 let sfxUnlocked = false;
 let audioCtx: AudioContext | null = null;
+let audioSessionConfigured = false;
 
 /** Per-timeline minimum time at unlock — scan SFX only after forward scrub past this. */
 const postUnlockMinTimeByTimeline = new WeakMap<gsap.core.Timeline, number>();
@@ -91,6 +92,39 @@ function getOrCreateAudioContext(): AudioContext | null {
   return audioCtx;
 }
 
+/**
+ * iOS 16.4+: claim a "playback" audio session so Web Audio is audible even with
+ * the hardware ring/silent switch on. No-op where the API is unavailable.
+ */
+function configureAudioSession(): void {
+  if (audioSessionConfigured || typeof navigator === "undefined") return;
+  try {
+    const session = (navigator as any).audioSession;
+    if (session && session.type !== "playback") {
+      session.type = "playback";
+    }
+    audioSessionConfigured = true;
+  } catch {
+    // ignore — unsupported browser
+  }
+}
+
+/**
+ * Keep the AudioContext in the "running" state. iOS suspends/interrupts it on
+ * lock, tab switch, calls, and momentum settle; without re-resuming, the
+ * WebAudio path stops producing sound and the (gesture-only) HTMLAudio fallback
+ * is blocked mid-scroll. Safe to call on every gesture / visibility change.
+ */
+function resumeAudioContext(): void {
+  const ctx = audioCtx;
+  if (!ctx) return;
+  if (ctx.state !== "running") {
+    void ctx.resume().catch(() => {
+      /* ignore */
+    });
+  }
+}
+
 function ensureAudioBuffer(src: string): void {
   if (bufferBySrc.has(src) || bufferLoadBySrc.has(src)) return;
 
@@ -139,7 +173,14 @@ function playViaWebAudio(
 ): boolean {
   const ctx = getOrCreateAudioContext();
   const buffer = bufferBySrc.get(src);
-  if (!ctx || !buffer || ctx.state !== "running") return false;
+  if (!ctx || !buffer) return false;
+
+  // Context drifted out of "running" (iOS interruption). Kick a resume so the
+  // NEXT cue can play, and bail on this one — a suspended ctx makes no sound.
+  if (ctx.state !== "running") {
+    resumeAudioContext();
+    return false;
+  }
 
   try {
     const source = ctx.createBufferSource();
@@ -193,6 +234,11 @@ export function preloadLiteSfx(): void {
 
 export function unlockLiteSfx(): void {
   if (typeof window === "undefined") return;
+
+  // Always keep the context alive on a gesture, even after the first unlock.
+  configureAudioSession();
+  resumeAudioContext();
+
   if (sfxUnlocked) return;
   sfxUnlocked = true;
   freezeAllScrubCueBaselines();
@@ -231,6 +277,18 @@ function installUnlockListenersOnce(): void {
   window.addEventListener("touchstart", onGesture, { capture: true, passive: true });
   window.addEventListener("keydown", onGesture, { capture: true, passive: true });
   window.addEventListener("wheel", onGesture, { capture: true, passive: true });
+
+  // Recover the AudioContext after iOS interruptions (lock screen, tab switch,
+  // incoming call). Without this it stays "suspended"/"interrupted" and WebAudio
+  // goes silent for the rest of the session.
+  const onResume = (): void => {
+    if (sfxUnlocked) resumeAudioContext();
+  };
+  document.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "visible") onResume();
+  });
+  window.addEventListener("pageshow", onResume);
+  window.addEventListener("focus", onResume);
 }
 
 function runPlay(kind: LiteSfxKind, startSeconds?: number, durationSeconds?: number): void {
@@ -262,7 +320,7 @@ function runPlay(kind: LiteSfxKind, startSeconds?: number, durationSeconds?: num
   const p = el.play();
   if (p != null) {
     void p.catch(() => {
-      /* blocked */
+      /* blocked (expected on iOS off-gesture) */
     });
   }
 
