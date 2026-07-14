@@ -153,7 +153,7 @@ export default function DartCanvas({ onEnter }: { onEnter: () => void }) {
           handleFixedHit();
         }}
       >
-        HIT!
+        Click to Enter
       </button>
     </section>
   );
