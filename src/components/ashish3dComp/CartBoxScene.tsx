@@ -115,7 +115,7 @@ const CartBoxScene = () => {
       trigger: triggerEl,
       start: "top bottom",
       end: "top top",
-      scrub: isMobile ? 2.5 : 7,
+      scrub: isMobile ? 7 : 7,
       invalidateOnRefresh: true,
       fastScrollEnd: window.innerWidth < 1024,
       animation: tl,
