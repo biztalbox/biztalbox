@@ -47,7 +47,8 @@ export interface CMSPageData {
   conclusion_content?: string;
   faqs: { question: string; answer: string }[];
   country_id:number;
-  state_id:number
+  state_id:number;
+  structured_data?: unknown;
 }
 
 export interface CMSSettings {

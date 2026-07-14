@@ -9,6 +9,22 @@ export const dynamic = "force-dynamic";
 
 const DOMAIN = process.env.NEXT_PUBLIC_DOMAIN ?? "https://biztalbox.com";
 
+function renderJsonLdSchemas(schemas: unknown[]) {
+  return (
+    <>
+      {schemas.map((schema, index) => (
+        <script
+          // eslint-disable-next-line react/no-danger
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+          key={index}
+          type="application/ld+json"
+          suppressHydrationWarning
+        />
+      ))}
+    </>
+  );
+}
+
 // Hardcoded testimonial
 const testimonial = [
   {
@@ -83,12 +99,9 @@ export async function generateMetadata({
 }
 
 /**
- * Layout injects all JSON-LD schemas for the CMS page:
- *  1. Organization
- *  2. Service + LocalBusiness (with AggregateRating & Reviews)
- *  3. FAQPage  (only when the page has FAQs)
- *  4. BreadcrumbList
- *  5. WebPage
+ * Layout injects JSON-LD schemas for the CMS SEO page.
+ * Uses `structured_data` from CMS when present; otherwise falls back to
+ * generated MarketingPageSchema (Organization, Service, FAQ, Breadcrumb, WebPage).
  */
 export default async function CMSPageLayout({
   children,
@@ -118,6 +131,14 @@ export default async function CMSPageLayout({
     ? "Digital Marketing Services"
     : "SEO Services";
 
+  const schemasFromApi = (page.structured_data ? page.structured_data : null) as unknown;
+  const schemaPayload = Array.isArray(schemasFromApi)
+    ? schemasFromApi
+    : schemasFromApi && typeof schemasFromApi === "object"
+      ? [schemasFromApi]
+      : [];
+  const hasApiSchemas = schemaPayload.length > 0;
+
   const pageData = createMarketingPageData({
     title: page.title,
     description: page.description,
@@ -144,7 +165,11 @@ export default async function CMSPageLayout({
 
   return (
     <>
-      <MarketingPageSchema pageData={pageData} currentUrl={currentUrl} />
+      {hasApiSchemas ? (
+        renderJsonLdSchemas(schemaPayload)
+      ) : (
+        <MarketingPageSchema pageData={pageData} currentUrl={currentUrl} />
+      )}
       <div data-cms-seo-page>{children}</div>
     </>
   );

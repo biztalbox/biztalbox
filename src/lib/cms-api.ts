@@ -115,7 +115,8 @@ export function normalizePageData(raw: unknown, fallbackSlug: string): CMSPageDa
     answer: str(i, "answer"),
   })),
   country_id: page.country_id as number,
-  state_id: page.state_id as number
+  state_id: page.state_id as number,
+  structured_data: page.structured_data ?? page.structuredData,
 };
 }
 
