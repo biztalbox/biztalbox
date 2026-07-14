@@ -18,6 +18,8 @@ export const LITE_SFX_DEFAULTS: Record<
 };
 
 const audioBySrc = new Map<string, HTMLAudioElement>();
+const bufferBySrc = new Map<string, AudioBuffer>();
+const bufferLoadBySrc = new Map<string, Promise<AudioBuffer | null>>();
 const stopTimersBySrc = new Map<string, ReturnType<typeof setTimeout>>();
 const scrubCueTimelines = new Set<gsap.core.Timeline>();
 
@@ -33,6 +35,12 @@ const SILENT_WAV =
 
 const MIN_SCRUB_AFTER_UNLOCK = 0.03;
 
+type LiteScrollTrigger = {
+  direction: number;
+  isActive: boolean;
+  progress: number;
+};
+
 /** Receipt slide + CTA bill sound — desktop only (`#recieptSection` is `lg:block`). */
 export function isLiteReceiptSfxEnabled(): boolean {
   return typeof window !== "undefined" && window.innerWidth >= 1024;
@@ -44,6 +52,7 @@ function getOrCreateAudio(src: string): HTMLAudioElement {
     el = new Audio(src);
     el.preload = "auto";
     el.setAttribute("playsinline", "");
+    el.setAttribute("webkit-playsinline", "true");
     audioBySrc.set(src, el);
   }
   return el;
@@ -82,6 +91,29 @@ function getOrCreateAudioContext(): AudioContext | null {
   return audioCtx;
 }
 
+function ensureAudioBuffer(src: string): void {
+  if (bufferBySrc.has(src) || bufferLoadBySrc.has(src)) return;
+
+  const load = (async (): Promise<AudioBuffer | null> => {
+    const ctx = getOrCreateAudioContext();
+    if (!ctx) return null;
+    try {
+      const res = await fetch(src);
+      if (!res.ok) return null;
+      const arr = await res.arrayBuffer();
+      const buffer = await ctx.decodeAudioData(arr.slice(0));
+      bufferBySrc.set(src, buffer);
+      return buffer;
+    } catch {
+      return null;
+    } finally {
+      bufferLoadBySrc.delete(src);
+    }
+  })();
+
+  bufferLoadBySrc.set(src, load);
+}
+
 function unlockWithAudioContext(): void {
   const ctx = getOrCreateAudioContext();
   if (!ctx) return;
@@ -99,9 +131,62 @@ function unlockWithAudioContext(): void {
   }
 }
 
+/** iOS: HTMLAudio blocked off-gesture — Web Audio works after ctx.resume() on unlock. */
+function playViaWebAudio(
+  src: string,
+  startSeconds = 0,
+  durationSeconds?: number,
+): boolean {
+  const ctx = getOrCreateAudioContext();
+  const buffer = bufferBySrc.get(src);
+  if (!ctx || !buffer || ctx.state !== "running") return false;
+
+  try {
+    const source = ctx.createBufferSource();
+    source.buffer = buffer;
+    const gain = ctx.createGain();
+    gain.gain.value = 1;
+    source.connect(gain);
+    gain.connect(ctx.destination);
+
+    const offset = Math.max(0, Math.min(startSeconds, buffer.duration));
+    source.start(0, offset);
+
+    if (
+      durationSeconds != null &&
+      Number.isFinite(durationSeconds) &&
+      durationSeconds > 0
+    ) {
+      source.stop(ctx.currentTime + durationSeconds);
+    }
+
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function isScrollingBackward(st: LiteScrollTrigger | undefined | null): boolean {
+  return !!st && st.direction === -1;
+}
+
+function isScrubbingForward(
+  tl: gsap.core.Timeline,
+  st: LiteScrollTrigger | undefined | null,
+  prevT?: number,
+): boolean {
+  if (!st || st.direction === -1) return false;
+  if (st.direction >= 1) return true;
+  // iOS touch momentum: direction can be 0 while the scrub timeline still advances.
+  const t = tl.time();
+  return prevT !== undefined && t > prevT + 0.0001;
+}
+
 export function preloadLiteSfx(): void {
   for (const k of Object.keys(LITE_SFX_DEFAULTS) as LiteSfxKind[]) {
-    getOrCreateAudio(LITE_SFX_DEFAULTS[k].src);
+    const src = LITE_SFX_DEFAULTS[k].src;
+    getOrCreateAudio(src);
+    ensureAudioBuffer(src);
   }
   installUnlockListenersOnce();
 }
@@ -112,6 +197,10 @@ export function unlockLiteSfx(): void {
   sfxUnlocked = true;
   freezeAllScrubCueBaselines();
   unlockWithAudioContext();
+
+  for (const k of Object.keys(LITE_SFX_DEFAULTS) as LiteSfxKind[]) {
+    ensureAudioBuffer(LITE_SFX_DEFAULTS[k].src);
+  }
 
   // Silent unlock only — never play beep/print/bill on first gesture.
   const silent = new Audio(SILENT_WAV);
@@ -148,11 +237,21 @@ function runPlay(kind: LiteSfxKind, startSeconds?: number, durationSeconds?: num
   const def = LITE_SFX_DEFAULTS[kind];
   const start = startSeconds ?? def.startTime;
   const duration = durationSeconds !== undefined ? durationSeconds : def.durationSec;
-
-  const el = getOrCreateAudio(def.src);
   const src = def.src;
 
   clearStopTimerForSrc(src);
+
+  if (playViaWebAudio(src, start, duration)) {
+    if (duration != null && Number.isFinite(duration) && duration > 0) {
+      const id = setTimeout(() => {
+        stopTimersBySrc.delete(src);
+      }, duration * 1000);
+      stopTimersBySrc.set(src, id);
+    }
+    return;
+  }
+
+  const el = getOrCreateAudio(src);
 
   try {
     el.currentTime = Math.max(0, start);
@@ -190,13 +289,7 @@ export function playLiteScanSfx(
   if (kind === "print" && !isLiteReceiptSfxEnabled()) return;
 
   const st = tl.scrollTrigger;
-  // Don't require st.isActive: with a high scrub value the timeline keeps
-  // catching up (playing forward) AFTER the trigger goes inactive on a fast
-  // scroll. Requiring isActive dropped late cues — the scan "beep" fires at
-  // 0.9, just after "print" at 0.8, so on a fast scroll print played but beep
-  // was skipped. The forward-direction, unlock and forward-crossing guards
-  // still prevent firing on reverse scroll or non-scan updates.
-  if (!st || st.direction < 1) return;
+  if (!st || isScrollingBackward(st)) return;
   if (!hasScrubbedForwardSinceUnlock(tl)) return;
   if (tl.time() < cueAt - 0.02) return;
 
@@ -214,10 +307,15 @@ export function playLiteSfx(
   if (kind === "bill" && !isLiteReceiptSfxEnabled()) return;
 
   const def = LITE_SFX_DEFAULTS[kind];
-  const el = getOrCreateAudio(def.src);
+  const src = def.src;
+  const el = getOrCreateAudio(src);
 
-  if (el.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+  const playWhenReady = (): void => {
     runPlay(kind, startSeconds, durationSeconds);
+  };
+
+  if (bufferBySrc.has(src) || el.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) {
+    playWhenReady();
     return;
   }
 
@@ -227,7 +325,7 @@ export function playLiteSfx(
     ran = true;
     el.removeEventListener("canplaythrough", onReady);
     el.removeEventListener("canplay", onReady);
-    runPlay(kind, startSeconds, durationSeconds);
+    playWhenReady();
   };
   el.addEventListener("canplaythrough", onReady);
   el.addEventListener("canplay", onReady);
@@ -259,15 +357,13 @@ function getScrubCueFiredSet(tl: gsap.core.Timeline): Set<number> {
   return set;
 }
 
-function canFireScrubTimelineCue(tl: gsap.core.Timeline): boolean {
+function canFireScrubTimelineCue(
+  tl: gsap.core.Timeline,
+  prevT?: number,
+): boolean {
   if (!sfxUnlocked) return false;
   const st = tl.scrollTrigger;
-  // Intentionally not gated on st.isActive — the scrubbed scan timeline can
-  // still be catching up forward after the pin goes inactive on a fast scroll,
-  // and cues (e.g. the beep at 0.9) must still fire during that window. Forward
-  // direction + scrubbed-forward-since-unlock keep reverse / pre-interaction
-  // updates silent.
-  if (!st || st.direction < 1) return false;
+  if (!isScrubbingForward(tl, st, prevT)) return false;
   if (!hasScrubbedForwardSinceUnlock(tl)) return false;
   return true;
 }
@@ -287,7 +383,7 @@ function scrubCueOnUpdate(tl: gsap.core.Timeline): void {
     }
   }
 
-  if (!canFireScrubTimelineCue(tl) || !cues?.length) {
+  if (!canFireScrubTimelineCue(tl, prevT) || !cues?.length) {
     // Scrub can run before the pin is active (e.g. webdev after smo handoff).
     // Do not advance prevT forward while inactive or cue crossings are lost.
     if (!st?.isActive && t >= prevT) {
@@ -316,11 +412,17 @@ export function catchUpScrubTimelineCues(
   const cues = scrubCueBuckets.get(tl);
   const fired = getScrubCueFiredSet(tl);
   const t = tl.time();
+  const st = tl.scrollTrigger;
 
   scrubCueLastTime.set(tl, baselineTime);
   postUnlockMinTimeByTimeline.delete(tl);
 
-  if (!canFireScrubTimelineCue(tl) || !cues?.length) {
+  if (
+    !sfxUnlocked ||
+    !cues?.length ||
+    isScrollingBackward(st) ||
+    !hasScrubbedForwardSinceUnlock(tl)
+  ) {
     scrubCueLastTime.set(tl, t);
     return;
   }
