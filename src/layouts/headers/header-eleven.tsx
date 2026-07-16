@@ -17,6 +17,10 @@ export default function HeaderEleven({transparent=false,cls=''}: IProps) {
   const { sticky, headerRef, headerFullWidth } = useSticky();
   const [openCartMini, setOpenCartMini] = React.useState(false);
   const [openOffCanvas, setOpenOffCanvas] = React.useState(false);
+
+  const hamburgerSpanStyle =
+    transparent && !sticky ? { backgroundColor: "#ffffff" } : undefined;
+
   useEffect(() => {
     headerFullWidth();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -74,9 +78,9 @@ export default function HeaderEleven({transparent=false,cls=''}: IProps) {
                     <li>
                       <div className="tp-inner-bar tp-header-bar">
                         <button onClick={()=> setOpenOffCanvas(true)} className="tp-offcanvas-open-btn">
-                          <span style={{backgroundColor:'#808080'}}></span>
-                          <span style={{backgroundColor:'#808080'}}></span>
-                          <span style={{backgroundColor:'#808080'}}></span>
+                          <span style={hamburgerSpanStyle}></span>
+                          <span style={hamburgerSpanStyle}></span>
+                          <span style={hamburgerSpanStyle}></span>
                         </button>
                       </div>
                     </li>

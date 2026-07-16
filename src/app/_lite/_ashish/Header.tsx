@@ -27,7 +27,7 @@ export default function Header() {
       <header className="tp-header-height h-32 relative z-40" ref={headerRef}>
         <div
           id="header-sticky"
-          className={`lite-ashish-header tp-inner-header-area z-[1000] tp-inner-header-style-2 tp-inner-header-mob-space `}
+          className={`lite-ashish-header tp-inner-header-area z-[1000] tp-inner-header-style-2 tp-inner-header-mob-space ${sticky ? "header-sticky" : ""}`}
         >
           <div className="container container-1800">
             <div className="row align-items-center" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "20px 0" }}>

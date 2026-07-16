@@ -38,8 +38,8 @@ html[data-theme="light"] [data-contact-page] .cn-contact-2-content {
 }
 
 /*
- * Lite theme header at top sits on the white page background (outside the dark hero).
- * Use dark logo + dark menu icon until sticky, then switch to light-on-dark bar.
+ * Lite theme: transparent header over dark hero (white menu at top).
+ * On sticky, white bar with black logo/text — same as about page.
  */
 html[data-theme="light"] [data-contact-page] .tp-inner-header-style-2:not(.header-sticky) .tp-inner-header-menu > nav > ul > li > a {
   color: #141414 !important;
@@ -57,32 +57,62 @@ html[data-theme="light"] [data-contact-page] .tp-inner-header-style-2:not(.heade
   display: none !important;
 }
 
-html[data-theme="light"] [data-contact-page] .tp-inner-header-area:not(.header-sticky) .tp-header-bar button span {
+html[data-theme="light"] [data-contact-page] .tp-inner-header-style-2:not(.header-sticky) .tp-header-bar button span {
   background-color: #141414 !important;
 }
 
-/* Sticky header over page content — dark frosted bar with light elements */
+html[data-theme="light"] [data-contact-page] .tp-inner-header-area.transparent:not(.header-sticky) .tp-header-bar button span {
+  background-color: #ffffff !important;
+}
+
+/* Sticky header — white frosted bar with dark elements (same as about page) */
 html[data-theme="light"] [data-contact-page] .header-sticky.tp-inner-header-area {
-  background: rgba(36, 36, 36, 0.85);
+  background: rgba(255, 255, 255, 0.94) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
 }
 
 html[data-theme="light"] [data-contact-page] .header-sticky.tp-inner-header-area .tp-inner-header-menu > nav > ul > li > a {
-  color: #fff !important;
+  color: #141414 !important;
 }
 
 html[data-theme="light"] [data-contact-page] .header-sticky.tp-inner-header-area .tp-inner-header-right-action ul li .tp-inner-bar {
-  color: #fff !important;
+  color: #141414 !important;
 }
 
-html[data-theme="light"] [data-contact-page] .header-sticky.tp-inner-header-area .logo-1 {
+html[data-theme="light"] [data-contact-page] .header-sticky.tp-inner-header-area.transparent .ab-logo-1 {
   display: none !important;
 }
 
-html[data-theme="light"] [data-contact-page] .header-sticky.tp-inner-header-area .logo-2 {
+html[data-theme="light"] [data-contact-page] .header-sticky.tp-inner-header-area.transparent .ab-logo-2 {
   display: block !important;
 }
 
 html[data-theme="light"] [data-contact-page] .header-sticky.tp-inner-header-area .tp-header-bar button span {
+  background-color: #141414 !important;
+}
+
+/* Dark mode sticky — dark bar, white logo + white menu icon */
+html[data-theme="dark"] [data-contact-page] .header-sticky.tp-inner-header-area {
+  background: rgba(36, 36, 36, 0.85);
+}
+
+html[data-theme="dark"] [data-contact-page] .header-sticky.tp-inner-header-area.transparent .ab-logo-1 {
+  display: block !important;
+}
+
+html[data-theme="dark"] [data-contact-page] .header-sticky.tp-inner-header-area.transparent .ab-logo-2 {
+  display: none !important;
+}
+
+html[data-theme="dark"] [data-contact-page] .header-sticky.tp-inner-header-area .tp-inner-header-menu > nav > ul > li > a {
+  color: #fff !important;
+}
+
+html[data-theme="dark"] [data-contact-page] .header-sticky.tp-inner-header-area .tp-inner-header-right-action ul li .tp-inner-bar {
+  color: #fff !important;
+}
+
+html[data-theme="dark"] [data-contact-page] .header-sticky.tp-inner-header-area .tp-header-bar button span {
   background-color: #fff !important;
 }
 
@@ -91,11 +121,17 @@ html[data-theme="light"] [data-contact-page] .ab-inner-hero-area .tm-hero-subtit
 html[data-theme="light"] [data-contact-page] .ab-inner-hero-area .tm-hero-title-big,
 html[data-theme="light"] [data-contact-page] .ab-inner-hero-area .text-white,
 html[data-theme="light"] [data-contact-page] .black-bg .field-label,
-html[data-theme="light"] [data-contact-page] .cn-contactform-support-text span,
 html[data-theme="light"] [data-contact-page] .cn-contact-2-title,
 html[data-theme="light"] [data-contact-page] .cn-contact-2-info-details a,
 html[data-theme="light"] [data-contact-page] .cn-contact-2-info-details span {
   color: #fff !important;
+}
+
+/* Support section sits on light page background in lite theme */
+html[data-theme="light"] [data-contact-page] .cn-contactform-support-text,
+html[data-theme="light"] [data-contact-page] .cn-contactform-support-text span,
+html[data-theme="light"] [data-contact-page] .cn-contactform-support-text .tooltip-text-main {
+  color: #141414 !important;
 }
 
 html[data-theme="light"] [data-contact-page] .cn-contact-2-info-details a:hover {

@@ -163,6 +163,21 @@ body:has(#litePage) {
   color: #fff !important;
 }
 
+/* Transparent HeaderEleven: white hamburger on light theme until sticky */
+html[data-theme="light"] .tp-inner-header-area.transparent:not(.header-sticky) .tp-header-bar button span {
+  background-color: #ffffff !important;
+}
+
+/* Light sticky on white bar — contact page overrides via [data-contact-page] */
+html[data-theme="light"] .header-sticky.tp-inner-header-area:not(.lite-ashish-header) .tp-header-bar button span {
+  background-color: #000000 !important;
+}
+
+/* Dark mode sticky — white menu icon (exclude lite homepage bar) */
+html[data-theme="dark"] .header-sticky.tp-inner-header-area:not(.lite-ashish-header) .tp-header-bar button span {
+  background-color: #ffffff !important;
+}
+
 /*
  Designed & Developed by Ashish Raj Verma
  Portfolio: https://ashishrv.vercel.app

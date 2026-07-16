@@ -13,7 +13,10 @@ html[data-theme="light"] [data-cms-seo-page] .tp-inner-header-area .tp-inner-hea
   color: #141414 !important;
 }
 
-html[data-theme="light"] [data-cms-seo-page] .tp-inner-header-area.transparent .tp-header-bar button span,
+html[data-theme="light"] [data-cms-seo-page] .tp-inner-header-area.transparent:not(.header-sticky) .tp-header-bar button span {
+  background-color: #ffffff !important;
+}
+
 html[data-theme="light"] [data-cms-seo-page] .header-sticky.tp-inner-header-area .tp-header-bar button span {
   background-color: #141414 !important;
 }

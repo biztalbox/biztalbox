@@ -118,7 +118,11 @@ html[data-theme="light"] [data-industry-page] .tp-inner-header-area .tp-inner-he
   color: #141414 !important;
 }
 
-html[data-theme="light"] [data-industry-page] .tp-inner-header-area.transparent .tp-header-bar button span {
+html[data-theme="light"] [data-industry-page] .tp-inner-header-area.transparent:not(.header-sticky) .tp-header-bar button span {
+  background-color: #ffffff !important;
+}
+
+html[data-theme="light"] [data-industry-page] .header-sticky.tp-inner-header-area .tp-header-bar button span {
   background-color: #141414 !important;
 }
 
