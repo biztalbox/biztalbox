@@ -207,26 +207,28 @@ export default function RelatedPostGrid({
               <div key={post.id} className="col-xl-4 col-lg-6 col-md-6 mb-50">
                 <div className="tp-blog-item tp_fade_bottom">
                   <div className="tp-blog-thumb fix p-relative">
-                    {post._embedded?.['wp:featuredmedia']?.[0]?.source_url ? (
-                      <Image 
-                        src={post._embedded['wp:featuredmedia'][0].source_url} 
-                        alt={decodeHtml(post.title.rendered)}
-                        width={400} 
-                        height={250} 
-                        style={{ objectFit: "cover", }} 
-                      />
-                    ) : (
-                      <div style={{ 
-                        width: '100%', 
-                        height: '250px', 
-                        backgroundColor: 'rgba(172, 171, 171, 0.1)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center'
-                      }}>
-                        <span style={{ color: 'rgba(172, 171, 171, 0.5)' }}>No image</span>
-                      </div>
-                    )}
+                    <Link href={`/blog/${post.slug}`}>
+                      {post._embedded?.['wp:featuredmedia']?.[0]?.source_url ? (
+                        <Image 
+                          src={post._embedded['wp:featuredmedia'][0].source_url} 
+                          alt={decodeHtml(post.title.rendered)}
+                          width={400} 
+                          height={250} 
+                          style={{ objectFit: "cover", }} 
+                        />
+                      ) : (
+                        <div style={{ 
+                          width: '100%', 
+                          height: '250px', 
+                          backgroundColor: 'rgba(172, 171, 171, 0.1)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center'
+                        }}>
+                          <span style={{ color: 'rgba(172, 171, 171, 0.5)' }}>No image</span>
+                        </div>
+                      )}
+                    </Link>
                     <div className="tp-blog-meta">
                       <span>{formatDate(post.date)}</span>
                     </div>

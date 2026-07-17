@@ -61,12 +61,12 @@ export default function ContactSection() {
       {/* Light header section */}
       <div className="header-section bg-light d-flex flex-column flex-xl-row justify-content-between align-items-xl-end gap-4 gap-md-0">
         <h1 className="title order-2 order-xl-1 text-start">How can we address you?</h1>
-        <div className="d-flex flex-column gap-5 header_content_links order-1 order-xl-2 fs-5 fs-md-4 text-black align-items-end">
-          <div className="d-flex flex-column gap-0 align-items-end">
+        <div className="d-flex flex-column gap-5 header_content_links order-1 order-xl-2 fs-5 fs-md-4 text-black align-items-xl-end">
+          <div className="d-flex flex-column gap-0 align-items-xl-end">
             <span>DROP US A LINE AT</span>
             <Link href="mailto:info@biztalbox.com" target="_blank" rel="noopener noreferrer nofollow">INFO@BIZTALBOX.COM</Link>
           </div>
-          <div className="d-flex flex-row gap-3">
+          <div className="social-links d-flex flex-row flex-wrap gap-2 gap-md-3">
             <Link href="https://www.instagram.com/biztalbox" target="_blank" rel="noopener noreferrer nofollow">Instagram</Link>
             <Link href="https://www.facebook.com/BiztalBox" target="_blank" rel="noopener noreferrer nofollow">Facebook</Link>
             <Link href="https://x.com/BiztalBox" target="_blank" rel="noopener noreferrer nofollow">Twitter</Link>
@@ -162,6 +162,51 @@ export default function ContactSection() {
           border-radius: 10px;
           padding-left: 1rem;
           padding-right: 1rem;
+          overflow: hidden;
+        }
+
+        .header_content_links {
+          width: 100%;
+          align-items: flex-start;
+        }
+
+        .header_content_links > div:first-child {
+          align-items: flex-start;
+          text-align: left;
+        }
+
+        .social-links {
+          width: 100%;
+          justify-content: flex-start;
+          row-gap: 0.5rem;
+        }
+
+        .social-links a {
+          white-space: nowrap;
+          font-size: 0.95rem;
+        }
+
+        @media (min-width: 768px) {
+          .social-links a {
+            font-size: inherit;
+          }
+        }
+
+        @media (min-width: 1200px) {
+          .header_content_links {
+            width: auto;
+            align-items: flex-end;
+          }
+
+          .header_content_links > div:first-child {
+            align-items: flex-end;
+            text-align: right;
+          }
+
+          .social-links {
+            justify-content: flex-end;
+            width: auto;
+          }
         }
 
         @media (min-width: 768px) {

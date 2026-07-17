@@ -19,9 +19,9 @@ const HeroBannerFour = () => {
           <div className="container contentDiv">
             <div className="leftText">
               <span className="linePink"></span>
-              <p>Creative Souls, Strategic Minds</p>
+              <p className="leftText-sub">Creative Souls, Strategic Minds</p>
               <h1>biztalbox</h1>
-              <p>Sustainable Growth Guided by Expertise, Rooted in Partnership</p>
+              <p className="leftText-sub">Sustainable Growth Guided by Expertise, Rooted in Partnership</p>
               
             </div>
 

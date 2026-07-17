@@ -1,7 +1,8 @@
 .root {
   /* light defaults */
   --bb-text: #0f172a;
-  --bb-muted: rgba(15, 23, 42, 0.7);
+  --bb-muted: #6b7280;
+  --bb-placeholder: #6b7280;
   --bb-surface: rgba(255, 255, 255, 0.9);
   --bb-surface-solid: #ffffff;
   --bb-border: rgba(15, 23, 42, 0.18);
@@ -11,10 +12,11 @@
 
 [data-theme="dark"] .root {
   --bb-text: #ffffff;
-  --bb-muted: rgba(245, 247, 245, 0.65);
+  --bb-muted: rgba(245, 247, 245, 0.72);
+  --bb-placeholder: rgba(245, 247, 245, 0.72);
   --bb-surface: rgba(30, 30, 30, 0.92);
   --bb-surface-solid: #1e1e1e;
-  --bb-border: rgba(234, 234, 235, 0.9);
+  --bb-border: rgba(234, 234, 235, 0.35);
 }
 
 .iconCircle {
@@ -31,16 +33,80 @@
 }
 
 .control {
-  background-color: transparent !important;
+  background-color: var(--bb-surface-solid) !important;
   border-color: var(--bb-border) !important;
   color: var(--bb-text) !important;
 }
 
-.control::placeholder {
-  color: var(--bb-muted);
+.control::placeholder,
+.control::-webkit-input-placeholder,
+.control::-moz-placeholder,
+.control:-ms-input-placeholder {
+  color: var(--bb-placeholder) !important;
+  opacity: 1 !important;
 }
 
 .control:focus {
   box-shadow: 0 0 0 0.2rem rgba(51, 110, 249, 0.25) !important;
+  border-color: rgba(51, 110, 249, 0.55) !important;
 }
 
+/* date / time empty state */
+.control::-webkit-datetime-edit,
+.control::-webkit-datetime-edit-fields-wrapper,
+.control::-webkit-datetime-edit-text,
+.control::-webkit-datetime-edit-month-field,
+.control::-webkit-datetime-edit-day-field,
+.control::-webkit-datetime-edit-year-field,
+.control::-webkit-datetime-edit-hour-field,
+.control::-webkit-datetime-edit-minute-field {
+  color: var(--bb-placeholder);
+}
+
+.control:focus::-webkit-datetime-edit,
+.control:focus::-webkit-datetime-edit-fields-wrapper,
+.control:focus::-webkit-datetime-edit-text,
+.control:focus::-webkit-datetime-edit-month-field,
+.control:focus::-webkit-datetime-edit-day-field,
+.control:focus::-webkit-datetime-edit-year-field,
+.control:focus::-webkit-datetime-edit-hour-field,
+.control:focus::-webkit-datetime-edit-minute-field,
+.control:not(:placeholder-shown)::-webkit-datetime-edit,
+.control:not(:placeholder-shown)::-webkit-datetime-edit-fields-wrapper {
+  color: var(--bb-text);
+}
+
+.submitBtn {
+  border: none !important;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff !important;
+  background: #111111 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.18);
+  transition: all 0.3s ease;
+}
+
+.submitBtn:hover:not(:disabled),
+.submitBtn:focus:not(:disabled) {
+  background: #000000 !important;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.24);
+}
+
+.submitBtn:disabled {
+  background: #ccc !important;
+  opacity: 0.7;
+}
+
+[data-theme="dark"] .root .submitBtn {
+  background: linear-gradient(135deg, #336ef9 0%, #eb5939 100%) !important;
+  box-shadow: 0 4px 15px rgba(51, 110, 249, 0.3);
+}
+
+[data-theme="dark"] .root .submitBtn:hover:not(:disabled),
+[data-theme="dark"] .root .submitBtn:focus:not(:disabled) {
+  background: linear-gradient(135deg, #336ef9 0%, #eb5939 100%) !important;
+  box-shadow: 0 6px 20px rgba(51, 110, 249, 0.4);
+}
