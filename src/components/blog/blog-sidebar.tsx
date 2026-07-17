@@ -157,7 +157,7 @@ export default function BlogSidebar() {
           />
           <button
             type="submit"
-            className="tp-footer-3-btn p-relative"
+            className={`tp-footer-3-btn p-relative ${styles.submitBtn}`}
             disabled={isSubscribing}
           >
             {isSubscribing ? (

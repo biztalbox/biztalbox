@@ -1,9 +1,10 @@
 .newsletter {
   /* light defaults */
-  --bb-text: #0f172a;
-  --bb-muted: rgba(15, 23, 42, 0.7);
+  --bb-text: #000000;
+  --bb-muted: rgba(0, 0, 0, 0.55);
   --bb-border: rgba(15, 23, 42, 0.18);
   --bb-input-bg: rgba(255, 255, 255, 0.9);
+  --bb-btn-bg: #111111;
 
   --bb-success-bg: #d4edda;
   --bb-success-text: #155724;
@@ -14,6 +15,48 @@
   --bb-error-border: #f5c6cb;
 
   color: var(--bb-text);
+
+  :global(.tp-footer-3-input-box) {
+    .input {
+      background-color: var(--bb-input-bg) !important;
+      border-color: var(--bb-border) !important;
+      color: #000000 !important;
+
+      &::placeholder {
+        color: var(--bb-muted) !important;
+        opacity: 1;
+      }
+
+      &::-webkit-input-placeholder {
+        color: var(--bb-muted) !important;
+        opacity: 1;
+      }
+
+      &::-moz-placeholder {
+        color: var(--bb-muted) !important;
+        opacity: 1;
+      }
+
+      &:focus {
+        border-color: var(--bb-border) !important;
+        box-shadow: 0 0 0 0.2rem rgba(51, 110, 249, 0.25) !important;
+      }
+    }
+  }
+
+  .submitBtn {
+    :global(.icon-2) svg path:first-of-type {
+      fill: var(--bb-btn-bg) !important;
+    }
+
+    :global(.icon-2) svg path:last-of-type {
+      stroke: rgba(255, 255, 255, 0.12) !important;
+    }
+
+    :global(.icon-1) svg path {
+      fill: #ffffff !important;
+    }
+  }
 }
 
 [data-theme="dark"] .newsletter {
@@ -21,6 +64,7 @@
   --bb-muted: rgba(245, 247, 245, 0.65);
   --bb-border: rgba(234, 234, 235, 0.35);
   --bb-input-bg: rgba(30, 30, 30, 0.6);
+  --bb-btn-bg: #ffffff;
 
   --bb-success-bg: rgba(46, 160, 67, 0.18);
   --bb-success-text: #b7f5c6;
@@ -29,6 +73,28 @@
   --bb-error-bg: rgba(248, 81, 73, 0.16);
   --bb-error-text: #ffb4b0;
   --bb-error-border: rgba(248, 81, 73, 0.35);
+
+  :global(.tp-footer-3-input-box) {
+    .input {
+      color: var(--bb-text) !important;
+
+      &::placeholder,
+      &::-webkit-input-placeholder,
+      &::-moz-placeholder {
+        color: var(--bb-muted) !important;
+      }
+
+      &:focus {
+        border-color: rgba(234, 234, 235, 0.35) !important;
+      }
+    }
+  }
+
+  .submitBtn {
+    :global(.icon-1) svg path {
+      fill: #000000 !important;
+    }
+  }
 }
 
 .inputBox {
@@ -68,4 +134,3 @@
   color: var(--bb-error-text);
   border-color: var(--bb-error-border);
 }
-
