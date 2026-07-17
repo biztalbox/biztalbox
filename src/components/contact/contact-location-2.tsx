@@ -105,15 +105,20 @@ const ContactLocationTwo = () => {
                 className="cn-contact-2-info-details"
                 style={{ maxWidth: "auto", margin: "auto" }}
               >
-                <p
+                <a
                   style={{
+                   
                     fontSize: "22px",
                     paddingLeft: 0,
-                    margin: "auto",
+                    margin:"auto",
                     textAlign: "center",
+                    
                   }}
+                  href="https://www.google.com/maps/@23.8223596,90.3656686,15z?entry=ttu"
+                  target="_blank"
                 >
-                  A-11, 2nd Floor, sector 8 Dwarka 110077 New Delhi</p>
+                  A-11, 2nd Floor, sector 8 Dwarka 110077 New Delhi
+                  </a>
               </div>
             </div>
           </div>
