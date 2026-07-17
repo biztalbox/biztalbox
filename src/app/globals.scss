@@ -244,6 +244,19 @@ strong {
   bottom: -95px;
 }
 
+.ab-funfact-item span.ab-funfact-infinity-wrap {
+  line-height: 0.1;
+  overflow: visible;
+}
+
+.ab-funfact-item span i.ab-funfact-infinity {
+  font-size: 155px !important;
+  line-height: 100px !important;
+  display: inline-block;
+  font-style: normal;
+  vertical-align: top;
+}
+
 .tp-award-list-thumb-wrap {
   margin-left: 0px !important;
 }
@@ -348,6 +361,11 @@ strong {
   .infinity_ashish {
     font-size: 110px !important;
     line-height: 0.1 !important;
+  }
+
+  .ab-funfact-item span i.ab-funfact-infinity {
+    font-size: 130px !important;
+    line-height: 80px !important;
   }
 
   // .tp-section-title-90{

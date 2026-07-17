@@ -50,9 +50,9 @@ export default function FunFactOne() {
                 {counter_data.map((item) => (
                   <div key={item.id} className="col-xl-6 col-lg-6 col-md-6">
                     <div className="ab-funfact-item mb-90">
-                      <span>
+                      <span className={item.id === 4 ? "ab-funfact-infinity-wrap" : undefined}>
                         {item.id === 4 ? (
-                          <i>{item.count}</i>
+                          <i className="ab-funfact-infinity">{item.count}</i>
                         ) : (
                           <>
                             <CounterItem min={0} max={typeof item.count === 'number' ? item.count : 0} suffix={item.text} />
