@@ -8,7 +8,7 @@ type IProps = {
 
 export default function BigText({cls=""}: IProps) {
   return (
-    <div className={`sv-big-text-area pb-80 ${cls}`}>
+    <div className={`sv-big-text-area pt-80 pb-80 ${cls}`}>
       <div className="container container-1530">
         <div className="sv-small-text-box d-flex justify-content-between">
           <span>Creative Digital Agency</span>

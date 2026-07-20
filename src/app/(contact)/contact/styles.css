@@ -61,8 +61,17 @@ html[data-theme="light"] [data-contact-page] .tp-inner-header-style-2:not(.heade
   background-color: #141414 !important;
 }
 
+/* Lite theme: transparent header sits on light page bg — black logo + menu (mobile + desktop) */
+html[data-theme="light"] [data-contact-page] .tp-inner-header-area.transparent:not(.header-sticky) .ab-logo-1 {
+  display: none !important;
+}
+
+html[data-theme="light"] [data-contact-page] .tp-inner-header-area.transparent:not(.header-sticky) .ab-logo-2 {
+  display: block !important;
+}
+
 html[data-theme="light"] [data-contact-page] .tp-inner-header-area.transparent:not(.header-sticky) .tp-header-bar button span {
-  background-color: #ffffff !important;
+  background-color: #141414 !important;
 }
 
 /* Sticky header — white frosted bar with dark elements (same as about page) */

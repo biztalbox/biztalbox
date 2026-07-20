@@ -244,6 +244,19 @@ strong {
   bottom: -95px;
 }
 
+.ab-funfact-item span.ab-funfact-infinity-wrap {
+  line-height: 0.1;
+  overflow: visible;
+}
+
+.ab-funfact-item span i.ab-funfact-infinity {
+  font-size: 155px !important;
+  line-height: 100px !important;
+  display: inline-block;
+  font-style: normal;
+  vertical-align: top;
+}
+
 .tp-award-list-thumb-wrap {
   margin-left: 0px !important;
 }
@@ -251,6 +264,126 @@ strong {
 .person_3d {
   display: flex;
   justify-content: center;
+}
+
+/* About page FAQ accordion (dark section) */
+.ab-award-faq-section .ab-award-faq-heading,
+.ab-award-faq-section .ab-award-faq-heading span,
+.ab-award-faq-section .ab-award-title-sm {
+  color: #ffffff !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  margin-bottom: 24px;
+}
+
+.ab-award-faq-col {
+  display: block !important;
+  justify-content: flex-start !important;
+  padding-top: 10px;
+}
+
+.ab-award-faq-wrap {
+  width: 100%;
+  max-width: 820px;
+  margin-left: auto;
+}
+
+.ab-award-faq-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.ab-award-faq-item:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.ab-award-faq-question {
+  width: 100% !important;
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: space-between !important;
+  gap: 20px !important;
+  padding: 26px 4px 26px 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  text-align: left !important;
+  cursor: pointer !important;
+  color: #ffffff !important;
+}
+
+.ab-award-faq-q-text {
+  flex: 1;
+  color: #ffffff !important;
+  font-size: 22px !important;
+  font-weight: 500 !important;
+  line-height: 1.35 !important;
+  letter-spacing: -0.02em;
+}
+
+.ab-award-faq-icon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.ab-award-faq-icon::before,
+.ab-award-faq-icon::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  background: #ffffff !important;
+  border-radius: 2px;
+  transform: translate(-50%, -50%);
+  transition: transform 0.25s ease;
+}
+
+.ab-award-faq-icon::before {
+  width: 2px;
+  height: 16px;
+}
+
+.ab-award-faq-icon::after {
+  width: 16px;
+  height: 2px;
+}
+
+.ab-award-faq-item.is-open .ab-award-faq-icon::before {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.ab-award-faq-answer {
+  padding: 0 36px 28px 0;
+}
+
+.ab-award-faq-answer p {
+  margin: 0 !important;
+  color: rgba(255, 255, 255, 0.78) !important;
+  font-size: 17px !important;
+  font-weight: 400 !important;
+  line-height: 1.7 !important;
+}
+
+@media (max-width: 991px) {
+  .ab-award-faq-wrap {
+    max-width: 100%;
+    margin-top: 20px;
+  }
+
+  .ab-award-faq-q-text {
+    font-size: 18px !important;
+  }
+
+  .ab-award-faq-answer p {
+    font-size: 15px !important;
+  }
+
+  .ab-award-faq-question {
+    padding: 20px 0 !important;
+  }
 }
 
 #service_img,
@@ -348,6 +481,11 @@ strong {
   .infinity_ashish {
     font-size: 110px !important;
     line-height: 0.1 !important;
+  }
+
+  .ab-funfact-item span i.ab-funfact-infinity {
+    font-size: 130px !important;
+    line-height: 80px !important;
   }
 
   // .tp-section-title-90{

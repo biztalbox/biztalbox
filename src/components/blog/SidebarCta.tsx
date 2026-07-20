@@ -7,35 +7,6 @@ const SidebarCta = () => {
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
 
-    const submitButtonStyle: React.CSSProperties = {
-        background: loading
-            ? "#ccc"
-            : "linear-gradient(135deg, #336EF9 0%, #EB5939 100%)",
-        border: "none",
-        borderRadius: "8px",
-        fontSize: "16px",
-        fontWeight: 600,
-        color:"white",
-        transition: "all 0.3s ease",
-        boxShadow: "0 4px 15px rgba(51, 110, 249, 0.3)",
-        opacity: loading ? 0.7 : 1,
-    };
-
-    const handleSubmitButtonMouseEnter: React.MouseEventHandler<
-        HTMLButtonElement
-    > = (e) => {
-        if (loading) return;
-        e.currentTarget.style.transform = "translateY(-2px)";
-        e.currentTarget.style.boxShadow = "0 6px 20px rgba(51, 110, 249, 0.4)";
-    };
-
-    const handleSubmitButtonMouseLeave: React.MouseEventHandler<
-        HTMLButtonElement
-    > = (e) => {
-        e.currentTarget.style.transform = "translateY(0)";
-        e.currentTarget.style.boxShadow = "0 4px 15px rgba(51, 110, 249, 0.3)";
-    };
-
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
@@ -238,11 +209,8 @@ const SidebarCta = () => {
 
                             <button
                                 type="submit"
-                                className="btn w-100 py-3"
+                                className={`btn w-100 py-3 ${styles.submitBtn}`}
                                 disabled={loading}
-                                style={submitButtonStyle}
-                                onMouseEnter={handleSubmitButtonMouseEnter}
-                                onMouseLeave={handleSubmitButtonMouseLeave}
                             >
                                 {/* <i className="fas fa-calendar-check me-2"></i> */}
                                 {loading ? "Scheduling..." : "Book Free Call"}

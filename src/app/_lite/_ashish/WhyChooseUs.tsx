@@ -37,23 +37,23 @@ export default function WhyChooseUsLite() {
 
         <div className="grid md:grid-cols-5 gap-5">
           <Image className="h-fit hidden md:block" width={570} height={720} src={seo} alt="seo" />
-          <h1 className="text-white text-center col-span-3">WHY CHOOSE US</h1>
+          <h1 className="!text-white text-center col-span-3">WHY CHOOSE US</h1>
           <Image className="h-fit hidden md:block" width={570} height={720} src={smo} alt="smo" />
 
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 place-items-center gap-10">
-          <h4 className="text-white">
+          <h4 style={{ color: "rgba(255, 255, 255, 0.78)" }}>
             We believe every brand without a voice is just a name — and we&apos;re here to make yours heard! No shortcuts or gimmicks, just pure creativity and authentic marketing.
           </h4>
           <Image className="h-80 w-fit hidden md:block" width={570} height={720} src={webdev} alt="webdev" />
           <Image className="h-80 w-fit hidden md:block" width={570} height={720} src={graphic} alt="graphic" />
-          <div className="ab-about-category-list category-space-1 text-white">
+          <div className="ab-about-category-list category-space-1">
             <ul>
-              <li><b>No Ifs and Buts</b>: We ensure every click turns into customers.</li>
-              <li><b>Experts Who Get It</b>: SEO and Social Media? It&apos;s the air we breathe.</li>
-              <li><b>Bespoke Marketing Solutions</b>: No dull and generic strategies.</li>
-              <li><b>No Fluff, Just Facts</b>: Data-driven results and tangible growth.</li>
-              <li><b>24/7 Availability</b>: We’re here round the clock!</li>
+              <li style={{ color: "rgba(255, 255, 255, 0.72)" }}><b className="!text-white">No Ifs and Buts</b>: We ensure every click turns into customers.</li>
+              <li style={{ color: "rgba(255, 255, 255, 0.72)" }}><b className="!text-white">Experts Who Get It</b>: SEO and Social Media? It&apos;s the air we breathe.</li>
+              <li style={{ color: "rgba(255, 255, 255, 0.72)" }}><b className="!text-white">Bespoke Marketing Solutions</b>: No dull and generic strategies.</li>
+              <li style={{ color: "rgba(255, 255, 255, 0.72)" }}><b className="!text-white">No Fluff, Just Facts</b>: Data-driven results and tangible growth.</li>
+              <li style={{ color: "rgba(255, 255, 255, 0.72)" }}><b className="!text-white">24/7 Availability</b>: We’re here round the clock!</li>
             </ul>
           </div>
 
