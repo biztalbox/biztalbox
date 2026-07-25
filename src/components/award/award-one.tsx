@@ -51,39 +51,39 @@ const award_data = [
 const about_faq_data = [
   {
     id: 1,
-    question: "What services does Biztalbox offer?",
+    question: "What services does biztalbox offer?",
     answer:
-      "Biztalbox offers everything you need to build and grow your brand online. Our services include branding, website development, SEO, social media marketing, content writing, graphic design, video editing, and paid advertising. You can choose a single service or partner with Biztalbox for complete digital marketing support.",
+      "biztalbox offers everything you need to build and grow your brand online. Our services include branding, website development, SEO, social media marketing, content writing, graphic design, video editing, and paid advertising. You can choose a single service or partner with biztalbox for complete digital marketing support.",
   },
   {
     id: 2,
-    question: "What kind of businesses does Biztalbox work with?",
+    question: "What kind of businesses does biztalbox work with?",
     answer:
-      "Biztalbox supports businesses at every stage of their journey. We work with startups, growing businesses, and established brands across a wide range of industries.",
+      "biztalbox supports businesses at every stage of their journey. We work with startups, growing businesses, and established brands across a wide range of industries.",
   },
   {
     id: 3,
-    question: "Can I hire Biztalbox for just one service?",
+    question: "Can I hire biztalbox for just one service?",
     answer:
-      "Yes. Biztalbox begins every project with a consultation. And then we take the time to consider your needs and goals before making a decision. Some businesses only need a new website or SEO. Others need a complete digital marketing strategy. We don't believe in selling services you won't benefit from.",
+      "Yes. biztalbox begins every project with a consultation. And then we take the time to consider your needs and goals before making a decision. Some businesses only need a new website or SEO. Others need a complete digital marketing strategy. We don't believe in selling services you won't benefit from.",
   },
   {
     id: 4,
-    question: "How does Biztalbox approach a new project?",
+    question: "How does biztalbox approach a new project?",
     answer:
-      "At Biztalbox, we start with a thorough research. We take the time to understand your business, your audience, and your competitors before making recommendations. When the strategy is clear, our team brings it to life through design, content, development, and marketing.",
+      "At biztalbox, we start with a thorough research. We take the time to understand your business, your audience, and your competitors before making recommendations. When the strategy is clear, our team brings it to life through design, content, development, and marketing.",
   },
   {
     id: 5,
-    question: "Does Biztalbox work with international clients?",
+    question: "Does biztalbox work with international clients?",
     answer:
-      "Yes. Biztalbox works with businesses all over the world. We work remotely with clear communication at every stage.",
+      "Yes. biztalbox works with businesses all over the world. We work remotely with clear communication at every stage.",
   },
   {
     id: 6,
-    question: "What makes Biztal Box different from other digital marketing agencies?",
+    question: "What makes biztalbox different from other digital marketing agencies?",
     answer:
-      "Biztal Box believes every good strategy starts with research. We don't rely on assumptions or copy the same approach for every client. We study your business, understand your audience, and analyze your competitors before making decisions. This helps us create marketing strategies that are thoughtful, practical as well as sustainable.",
+      "biztalbox believes every good strategy starts with research. We don't rely on assumptions or copy the same approach for every client. We study your business, understand your audience, and analyze your competitors before making decisions. This helps us create marketing strategies that are thoughtful, practical as well as sustainable.",
   },
 ];
 

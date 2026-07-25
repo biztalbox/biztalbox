@@ -107,7 +107,7 @@ export default function DartCanvas({ onEnter }: { onEnter: () => void }) {
   return (
     <section
       className="fixed z-[2000] inset-0 overflow-hidden h-screen w-screen bg-white !cursor-none"
-      onClick={isDesktop ? handleDartEnter : undefined}
+      onClick={isDesktop ? handleDartEnter : handleFixedHit}
     >
       <Canvas
         className="!fixed z-50 inset-0 h-full w-full pointer-events-none"

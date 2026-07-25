@@ -1,12 +1,49 @@
 import React, { useState } from "react";
 import { Row, Form, Badge } from "react-bootstrap";
 import styles from "./SidebarCta.module.scss";
+
+type DateTimeFieldProps = {
+    type: "date" | "time";
+    name: string;
+    placeholder: string;
+    min?: string;
+    required?: boolean;
+};
+
+function DateTimeField({ type, name, placeholder, min, required }: DateTimeFieldProps) {
+    const [value, setValue] = useState("");
+
+    return (
+        <div
+            className={`${styles.dateTimeField} ${
+                value ? styles.dateTimeFieldFilled : styles.dateTimeFieldEmpty
+            }`}
+        >
+            <Form.Control
+                type={type}
+                name={name}
+                required={required}
+                min={min}
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+                className={styles.control}
+                aria-label={placeholder}
+            />
+            {!value && (
+                <span className={styles.dateTimePlaceholder} aria-hidden="true">
+                    {placeholder}
+                </span>
+            )}
+        </div>
+    );
+}
+
 const SidebarCta = () => {
 
     const [successMessage, setSuccessMessage] = useState<string | null>(null);
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
     const [loading, setLoading] = useState(false);
-
+    const [formKey, setFormKey] = useState(0);
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
@@ -42,10 +79,9 @@ const SidebarCta = () => {
 
             if (result.success) {
                 setSuccessMessage(result.message);
-                // Reset form after successful submission
                 (e.target as HTMLFormElement).reset();
-            } else {
-                setErrorMessage(
+                setFormKey((key) => key + 1);
+            } else {                setErrorMessage(
                     result.message ||
                     "Sorry, there was an error submitting your enquiry. Please try again."
                 );
@@ -142,8 +178,7 @@ const SidebarCta = () => {
             <div>
                 <div className="tm-details-cta-form pl-md-40">
                     <div className={styles.formWrap}>
-                        <Form onSubmit={handleSubmit}>
-                            <Row>
+                        <Form key={formKey} onSubmit={handleSubmit}>                            <Row>
                                 <div className="mb-3">
                                     <Form.Group>
                                         <Form.Control
@@ -183,29 +218,26 @@ const SidebarCta = () => {
                             <Row>
                                 <div className="mb-3">
                                     <Form.Group>
-                                        <Form.Control
+                                        <DateTimeField
                                             type="date"
                                             name="date"
                                             required
                                             min={new Date().toISOString().split("T")[0]}
-                                            className={styles.control}
                                             placeholder="Select Date"
                                         />
                                     </Form.Group>
                                 </div>
 
                                 <div className="mb-3">
-                                    <Form.Group className="">
-                                        <input
+                                    <Form.Group>
+                                        <DateTimeField
                                             type="time"
-                                            className={`form-control ${styles.control}`}
                                             name="time"
                                             required
                                             placeholder="Select Time"
                                         />
                                     </Form.Group>
-                                </div>
-                            </Row>
+                                </div>                            </Row>
 
                             <button
                                 type="submit"

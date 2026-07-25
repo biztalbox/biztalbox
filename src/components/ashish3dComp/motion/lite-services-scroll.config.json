@@ -308,7 +308,7 @@
       "scannerId": "lite-scanner-video",
       "approach": {
         "trigger": "#section5",
-        "start": "center top",
+        "start": "40% top",
         "endTrigger": "#lite-scanner-video"
       },
       "scan": {
@@ -382,7 +382,7 @@
       "scannerId": "lite-scanner-content",
       "approach": {
         "trigger": "#section6",
-        "start": "center top",
+        "start": "40% top",
         "endTrigger": "#lite-scanner-content"
       },
       "scan": {
@@ -458,7 +458,7 @@
       "scannerId": "lite-scanner-ads",
       "approach": {
         "trigger": "#section7",
-        "start": "top top",
+        "start": "40% top",
         "endTrigger": "#lite-scanner-ads"
       },
       "scan": {

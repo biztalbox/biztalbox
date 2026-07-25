@@ -51,31 +51,52 @@
   border-color: rgba(51, 110, 249, 0.55) !important;
 }
 
-/* date / time empty state */
-.control::-webkit-datetime-edit,
-.control::-webkit-datetime-edit-fields-wrapper,
-.control::-webkit-datetime-edit-text,
-.control::-webkit-datetime-edit-month-field,
-.control::-webkit-datetime-edit-day-field,
-.control::-webkit-datetime-edit-year-field,
-.control::-webkit-datetime-edit-hour-field,
-.control::-webkit-datetime-edit-minute-field {
+/* date / time — native placeholder unsupported on mobile; overlay label instead */
+.dateTimeField {
+  position: relative;
+}
+
+.dateTimePlaceholder {
+  position: absolute;
+  left: 1.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
   color: var(--bb-placeholder);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  z-index: 2;
 }
 
-.control:focus::-webkit-datetime-edit,
-.control:focus::-webkit-datetime-edit-fields-wrapper,
-.control:focus::-webkit-datetime-edit-text,
-.control:focus::-webkit-datetime-edit-month-field,
-.control:focus::-webkit-datetime-edit-day-field,
-.control:focus::-webkit-datetime-edit-year-field,
-.control:focus::-webkit-datetime-edit-hour-field,
-.control:focus::-webkit-datetime-edit-minute-field,
-.control:not(:placeholder-shown)::-webkit-datetime-edit,
-.control:not(:placeholder-shown)::-webkit-datetime-edit-fields-wrapper {
-  color: var(--bb-text);
+.dateTimeFieldEmpty .control {
+  color: transparent !important;
 }
 
+.dateTimeFieldEmpty .control::-webkit-datetime-edit,
+.dateTimeFieldEmpty .control::-webkit-datetime-edit-fields-wrapper,
+.dateTimeFieldEmpty .control::-webkit-datetime-edit-text,
+.dateTimeFieldEmpty .control::-webkit-datetime-edit-month-field,
+.dateTimeFieldEmpty .control::-webkit-datetime-edit-day-field,
+.dateTimeFieldEmpty .control::-webkit-datetime-edit-year-field,
+.dateTimeFieldEmpty .control::-webkit-datetime-edit-hour-field,
+.dateTimeFieldEmpty .control::-webkit-datetime-edit-minute-field {
+  color: transparent !important;
+}
+
+.dateTimeFieldFilled .control {
+  color: var(--bb-text) !important;
+}
+
+.dateTimeFieldFilled .control::-webkit-datetime-edit,
+.dateTimeFieldFilled .control::-webkit-datetime-edit-fields-wrapper,
+.dateTimeFieldFilled .control::-webkit-datetime-edit-text,
+.dateTimeFieldFilled .control::-webkit-datetime-edit-month-field,
+.dateTimeFieldFilled .control::-webkit-datetime-edit-day-field,
+.dateTimeFieldFilled .control::-webkit-datetime-edit-year-field,
+.dateTimeFieldFilled .control::-webkit-datetime-edit-hour-field,
+.dateTimeFieldFilled .control::-webkit-datetime-edit-minute-field {
+  color: var(--bb-text) !important;
+}
 .submitBtn {
   border: none !important;
   border-radius: 8px;
