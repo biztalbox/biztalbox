@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { CloseTwo, Facebook, InstagramTwo, Linkdin, Twitter, Youtube } from "../svg";
+import { CloseTwo, Facebook, InstagramTwo, Linkdin, Pinterest, Twitter, Youtube } from "../svg";
 
 // images
 import logo_white from "@/assets/img/logo/white.png";
@@ -154,6 +154,15 @@ export default function MobileOffcanvas({
                     rel="noopener noreferrer nofollow"
                   >
                     <Youtube />
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="https://in.pinterest.com/biztalbox/"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                  >
+                    <Pinterest />
                   </Link>
                 </li>
               </ul>

@@ -20,7 +20,7 @@ import Location,{LocationTwo} from "./location";
 import {NextArrow,PrevArrow,NextArrowTwo} from './prev-next-arr';
 import Share,{ShareTwo} from "./share";
 import DownArrow from "./down-arrow";
-import {Facebook,Instagram,Linkdin,Twitter,Behance,Dribble,InstagramTwo,Youtube} from './social';
+import {Facebook,Instagram,Linkdin,Twitter,Behance,Dribble,InstagramTwo,Youtube,Pinterest} from './social';
 import ScrollDown,{ScrollDownTwo} from "./scroll-down";
 import {Quote,QuoteTwo,QuoteThree} from './quote';
 import Tag from "./tag";
@@ -113,5 +113,6 @@ export {
   Dribble,
   Youtube,
   InstagramTwo,
+  Pinterest,
   CloseThree,
 }
