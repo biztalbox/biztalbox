@@ -608,7 +608,7 @@ export default function Page() {
                     content that is helpful, clear, and trustworthy at the same
                     time.{" "}
                     <Link
-                      href="https://biztalbox.com/blog/what-is-eeat-vs-eat"
+                      href="https://biztalbox.com/blog/how-to-do-an-seo-audit"
                       className="text-primary"
                     >
                       Content
@@ -826,7 +826,7 @@ export default function Page() {
                     <p>
                       Painting is a{" "}
                       <Link
-                        href="https://biztalbox.com/blog/what-is-visual-search-seo"
+                        href="https://biztalbox.com/blog/types-of-seo-and-why-you-need-an-agency-to-do-it"
                         className="text-primary"
                       >
                         visual
@@ -918,7 +918,7 @@ export default function Page() {
                       Compressing images and keeping pages light makes a big
                       difference in performance and in painting{" "}
                       <Link
-                        href="https://biztalbox.com/blog/what-is-visual-search-seo"
+                        href="https://biztalbox.com/blog/types-of-seo-and-why-you-need-an-agency-to-do-it"
                         className="text-primary"
                       >
                         SEO
@@ -1025,7 +1025,7 @@ export default function Page() {
                 </p>
                 <p>
                   <Link
-                    href="https://biztalbox.com/blog/free-google-seo-tools"
+                    href="https://biztalbox.com/blog/google-seo-tools"
                     className="text-primary"
                   >
                     Google
@@ -1123,7 +1123,7 @@ export default function Page() {
                     </h3>
                     <p>
                       <Link
-                        href="https://biztalbox.com/blog/seo-tools-you-need-in-2025-top-picks-to-improve-your-rankings"
+                        href="https://biztalbox.com/blog/best-seo-chrome-extensions"
                         className="text-primary"
                       >
                         AI tools

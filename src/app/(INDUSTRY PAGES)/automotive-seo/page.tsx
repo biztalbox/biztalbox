@@ -163,7 +163,7 @@ export default function Page() {
                   the right audience. Buyers, suppliers, and partners are researching
                   online first. Your manufacturing expertise, digital{" "}
                   <Link
-                    href="https://biztalbox.com/blog/seo-tools-you-need-in-2025-top-picks-to-improve-your-rankings"
+                    href="https://biztalbox.com/blog/best-seo-chrome-extensions"
                     className="text-primary"
                   >
                     tools
@@ -618,7 +618,7 @@ export default function Page() {
                     <p>“schedule test drive today”</p>
                     <p>
                       For parts sellers, targeting the best{" "}
-                      <Link href="https://biztalbox.com/blog/how-to-do-keyword-research-for-seo" className="text-primary">
+                      <Link href="https://biztalbox.com/blog/seo-keyword-research" className="text-primary">
                         keywords
                       </Link>{" "}
                       for automotive parts SEO at this stage is essential. These users often
@@ -657,7 +657,7 @@ export default function Page() {
                       chances here. They research deeply and compare carefully.
                     </p>
                     <p>
-                      <Link href="https://biztalbox.com/blog/what-is-eeat-vs-eat" className="text-primary">
+                      <Link href="https://biztalbox.com/blog/how-to-do-an-seo-audit" className="text-primary">
                         E-E-A-T stands for Experience, Expertise, Authoritativeness, and Trustworthiness.
                       </Link>{" "}
                       It means that your content needs to demonstrate that you are really
@@ -1027,7 +1027,7 @@ export default function Page() {
                 <h3 className="section-subheading">4. Consistent Listings Across Automotive Platforms</h3>
                 <p>
                   Search engines check your business’s presence across the web.{" "}
-                  <Link href="https://biztalbox.com/blog/free-google-seo-tools" className="text-primary">
+                  <Link href="https://biztalbox.com/blog/google-seo-tools" className="text-primary">
                     Google
                   </Link>
                   , maps, local directories, and niche automotive sites require consistent information. Even

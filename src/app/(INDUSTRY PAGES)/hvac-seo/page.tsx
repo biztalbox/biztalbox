@@ -728,7 +728,7 @@ export default function Page() {
                       or odd sounds from the furnace helps in capturing these
                       searches. This type of{" "}
                       <Link
-                        href="https://biztalbox.com/blog/what-is-eeat-vs-eat"
+                        href="https://biztalbox.com/blog/how-to-do-an-seo-audit"
                         className="text-primary"
                       >
                         content helps in winning the trust
@@ -937,7 +937,7 @@ export default function Page() {
                     </p>
                     <p>
                       <Link
-                        href="https://biztalbox.com/blog/what-is-visual-search-seo"
+                        href="https://biztalbox.com/blog/types-of-seo-and-why-you-need-an-agency-to-do-it"
                         className="text-primary"
                       >
                         Optimizing images,
@@ -1168,7 +1168,7 @@ export default function Page() {
                 <p className="mt-20">
                   HVAC SEO success includes{" "}
                   <Link
-                    href="https://biztalbox.com/blog/how-to-do-keyword-research-for-seo"
+                    href="https://biztalbox.com/blog/seo-keyword-research"
                     className="text-primary"
                   >
                     keyword research
@@ -1183,7 +1183,7 @@ export default function Page() {
                   With a clear strategy in place, the next step is leveraging the
                   right{" "}
                   <Link
-                    href="https://biztalbox.com/blog/seo-tools-you-need-in-2025-top-picks-to-improve-your-rankings"
+                    href="https://biztalbox.com/blog/best-seo-chrome-extensions"
                     className="text-primary"
                   >
                     SEO tools to improve your rankings.

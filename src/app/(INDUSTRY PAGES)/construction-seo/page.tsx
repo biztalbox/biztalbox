@@ -417,7 +417,7 @@ export default function Page() {
                 </h2>
                 <p>
                   <Link
-                    href="https://biztalbox.com/blog/seo-tools-you-need-in-2025-top-picks-to-improve-your-rankings"
+                    href="https://biztalbox.com/blog/best-seo-chrome-extensions"
                     className="text-primary"
                   >
                     SEO
@@ -453,7 +453,7 @@ export default function Page() {
                 <p>
                   This is where{" "}
                   <Link
-                    href="https://biztalbox.com/blog/free-google-seo-tools"
+                    href="https://biztalbox.com/blog/google-seo-tools"
                     className="text-primary"
                   >
                     SEO
@@ -621,7 +621,7 @@ export default function Page() {
                 <p>
                   Good content should also incorporate{" "}
                   <Link
-                    href="https://biztalbox.com/blog/what-is-eeat-vs-eat"
+                    href="https://biztalbox.com/blog/how-to-do-an-seo-audit"
                     className="text-primary"
                   >
                     EEAT indicators, i.e., Expertise, Experience, Authority, and
@@ -789,7 +789,7 @@ export default function Page() {
                       Customer reviews act as strong social proof in construction
                       decisions. Positive feedback on{" "}
                       <Link
-                        href="https://biztalbox.com/blog/free-google-seo-tools"
+                        href="https://biztalbox.com/blog/google-seo-tools"
                         className="text-primary"
                       >
                         Google
@@ -928,7 +928,7 @@ export default function Page() {
                       Construction websites often become slow because of large
                       project{" "}
                       <Link
-                        href="https://biztalbox.com/blog/what-is-visual-search-seo"
+                        href="https://biztalbox.com/blog/types-of-seo-and-why-you-need-an-agency-to-do-it"
                         className="text-primary"
                       >
                         images and visuals.

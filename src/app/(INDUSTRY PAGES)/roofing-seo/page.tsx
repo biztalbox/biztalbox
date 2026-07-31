@@ -341,7 +341,7 @@ export default function Page() {
                       Keywords reveal intent: emergency fixes, scheduled work, or
                       advice. A well-researched{" "}
                       <Link
-                        href="https://biztalbox.com/blog/how-to-do-keyword-research-for-seo"
+                        href="https://biztalbox.com/blog/seo-keyword-research"
                         className="text-primary"
                       >
                         keyword strategy
@@ -537,7 +537,7 @@ export default function Page() {
                 <p className="mt-20">
                   Once your foundation is in place, leverage the right{" "}
                   <Link
-                    href="https://biztalbox.com/blog/seo-tools-you-need-in-2025-top-picks-to-improve-your-rankings"
+                    href="https://biztalbox.com/blog/best-seo-chrome-extensions"
                     className="text-primary"
                   >
                     SEO tools

@@ -526,7 +526,7 @@ export default function Page() {
                       listings, Structured data and a continuous stream of
                       real reviews make it easy for{" "}
                       <Link
-                        href="https://biztalbox.com/blog/free-google-seo-tools"
+                        href="https://biztalbox.com/blog/google-seo-tools"
                         className="text-primary"
                       >
                         Google
@@ -576,7 +576,7 @@ export default function Page() {
                       take a heavy percentage of the revenue but also control
                       customer relationships. By investing in{" "}
                       <Link
-                        href="https://biztalbox.com/blog/what-is-visual-search-seo"
+                        href="https://biztalbox.com/blog/types-of-seo-and-why-you-need-an-agency-to-do-it"
                         className="text-primary"
                       >
                         SEO
@@ -728,7 +728,7 @@ export default function Page() {
                       choose where to eat or what to buy. The right
                       restaurant{" "}
                       <Link
-                        href="https://biztalbox.com/blog/how-to-do-keyword-research-for-seo"
+                        href="https://biztalbox.com/blog/seo-keyword-research"
                         className="text-primary"
                       >
                         SEO keywords
@@ -794,7 +794,7 @@ export default function Page() {
                       tips for restaurants because they match real
                       customer intent.{" "}
                       <Link
-                        href="https://biztalbox.com/blog/what-is-e-e-a-t-vs-e-a-t"
+                        href="https://biztalbox.com/blog/seo-in-2025-how-ai-is-changing-search"
                         className="text-primary"
                       >
                         Quality content draws the appropriate visitors,
@@ -896,7 +896,7 @@ export default function Page() {
                       a major increase in direct traffic, reservations
                       and repeat visits. With great local{" "}
                       <Link
-                        href="https://biztalbox.com/blog/seo-tools-you-need-in-2025-top-picks-to-improve-your-rankings"
+                        href="https://biztalbox.com/blog/best-seo-chrome-extensions"
                         className="text-primary"
                       >
                         SEO tools

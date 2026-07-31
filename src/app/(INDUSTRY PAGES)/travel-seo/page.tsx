@@ -11,6 +11,9 @@ import ServiceThree from "@/components/service/service-three";
 import FooterThree from "@/layouts/footers/footer-three";
 import shape_1 from "@/assets/img/home-01/team/team-details-shape-1.png";
 import team_shape_2 from "@/assets/img/home-01/team/team-details-shape-2.png";
+import travelTrendsImg from "@/assets/img/industry/travel-seo/2026-travel-trends-seo-strategy.jpg";
+import travelSeoStrategyImg from "@/assets/img/industry/travel-seo/ultimate-travel-seo-strategy-funnel.jpg";
+import travelSeoBenefitsImg from "@/assets/img/industry/travel-seo/key-benefits-roi-travel-seo.jpg";
 import {
   bounceAnimation,
   charAnimation,
@@ -296,14 +299,7 @@ export default function Page() {
               {/* What Is Travel SEO */}
               <section className="content-section content-prose">
                 <h2 className="section-heading">
-                  What Is{" "}
-                  <Link
-                    href="https://biztalbox.com/blog/travel-marketing-in-the-ai-era"
-                    className="text-primary"
-                  >
-                    Travel SEO
-                  </Link>{" "}
-                  and Why Every Travel Agency, Tour
+                  What Is Travel SEO and Why Every Travel Agency, Tour
                   Operator, and Blogger Needs It in {currentYear}?
                 </h2>
                 <p>
@@ -318,7 +314,13 @@ export default function Page() {
                   Maps, YouTube, and Google.
                 </p>
                 <p>
-                  Travel SEO is the practice of positioning your brand along
+                  <Link
+                    href="https://biztalbox.com/travel-seo"
+                    className="text-primary"
+                  >
+                    Travel SEO
+                  </Link>{" "}
+                  is the practice of positioning your brand along
                   that increasingly intricate journey by improving how your
                   site looks, operates and converts through these search
                   touchpoints.
@@ -395,7 +397,7 @@ export default function Page() {
                   circuits. For a travel blogger, SEO ensures that your
                   expertise is visible in a world where{" "}
                   <Link
-                    href="https://biztalbox.com/blog/what-is-e-e-a-t-vs-e-a-t"
+                    href="https://biztalbox.com/blog/seo-in-2025-how-ai-is-changing-search"
                     className="text-primary"
                   >
                     E-E-A-T
@@ -509,7 +511,7 @@ export default function Page() {
                   move on to intensive research, and finally, they
                   choose the brands they trust the most. Travel{" "}
                   <Link
-                    href="https://biztalbox.com/blog/what-is-visual-search-seo"
+                    href="https://biztalbox.com/blog/types-of-seo-and-why-you-need-an-agency-to-do-it"
                     className="text-primary"
                   >
                     SEO
@@ -525,6 +527,15 @@ export default function Page() {
                   Let&apos;s dive into some of the top SEO benefits
                   from the many that exist:
                 </p>
+                <div style={{ marginBottom: "1.5rem", maxWidth: "560px", marginLeft: "auto", marginRight: "auto" }}>
+                  <Image
+                    src={travelSeoBenefitsImg}
+                    alt="What Are the Key Benefits and ROI of Travel SEO Services for Agencies, Tour Companies, and Travel Websites?"
+                    width={964}
+                    height={1024}
+                    style={{ width: "100%", height: "auto" }}
+                  />
+                </div>
                 <div className="content-grid-2">
                   <div className="content-card">
                     <h3 className="section-subheading">
@@ -595,14 +606,7 @@ export default function Page() {
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">
-                      3.{" "}
-                      <Link
-                        href="https://biztalbox.com/blog/travel-marketing-in-the-ai-era"
-                        className="text-primary"
-                      >
-                        Travel SEO
-                      </Link>{" "}
-                      Builds Authority Market Where
+                      3. Travel SEO Builds Authority Market Where
                       Trust Drives Bookings
                     </h3>
                     <p>
@@ -613,12 +617,12 @@ export default function Page() {
                       company is experienced and has a strong track
                       record of delivering on what they promise. This
                       explains why authority-building is the primary
-                      concern that a travel industry{" "}
+                      concern that{" "}
                       <Link
-                        href="https://biztalbox.com/blog/top-wordpress-seo-tools"
+                        href="https://biztalbox.com/travel-seo"
                         className="text-primary"
                       >
-                        SEO
+                        Travel SEO
                       </Link>{" "}
                       addresses. Comprehensive itineraries, fair pricing
                       pages, local knowledge, customer reviews, safety
@@ -863,18 +867,27 @@ export default function Page() {
               {/* Key SEO Strategies */}
               <section className="content-section">
                 <h2 className="section-heading">
-                  The Ultimate{" "}
-                  <Link
-                    href="https://biztalbox.com/blog/travel-marketing-in-the-ai-era"
-                    className="text-primary"
-                  >
-                    Travel SEO
-                  </Link>{" "}
-                  Strategy to Increase Bookings
+                  The Ultimate Travel SEO Strategy to Increase Bookings
                   and Visibility
                 </h2>
+                <div style={{ marginBottom: "1.5rem", maxWidth: "720px", marginLeft: "auto", marginRight: "auto" }}>
+                  <Image
+                    src={travelSeoStrategyImg}
+                    alt="Ultimate Travel SEO Strategy to Increase Bookings and Visibility"
+                    width={632}
+                    height={1024}
+                    style={{ width: "100%", height: "auto" }}
+                  />
+                </div>
                 <p className="content-prose">
-                  An effective travel SEO strategy involves the
+                  An effective{" "}
+                  <Link
+                    href="https://biztalbox.com/travel-seo"
+                    className="text-primary"
+                  >
+                    travel SEO
+                  </Link>{" "}
+                  strategy involves the
                   technical aspect of the website, the quality of
                   the content, correct keyword mapping, and
                   continuous monitoring. Travelers want fast,
@@ -943,7 +956,7 @@ export default function Page() {
                     </h3>
                     <p>
                       <Link
-                        href="https://biztalbox.com/blog/what-is-e-e-a-t-vs-e-a-t"
+                        href="https://biztalbox.com/blog/seo-in-2025-how-ai-is-changing-search"
                         className="text-primary"
                       >
                         Authoritative and experientially-driven content
@@ -1102,6 +1115,15 @@ export default function Page() {
                   2026 Travel Market Trends and SEO Opportunities for
                   Travel Companies
                 </h2>
+                <div style={{ marginBottom: "1.5rem", maxWidth: "780px", marginLeft: "auto", marginRight: "auto" }}>
+                  <Image
+                    src={travelTrendsImg}
+                    alt="Illustration of 2026 travel trends shaping SEO strategies for travel companies"
+                    width={1024}
+                    height={553}
+                    style={{ width: "100%", height: "auto" }}
+                  />
+                </div>
                 <p className="content-prose">
                   If you desire to have a travel SEO strategy that brings
                   results in 2026, then understanding how travel behaviour
