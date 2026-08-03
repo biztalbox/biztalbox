@@ -213,3 +213,7 @@ html[data-theme="light"] [data-cms-seo-page] footer .tp-footer-3-social a:hover 
   list-style: disc;
   text-transform: capitalize;
 }
+
+[data-cms-seo-page] .tp-hero-4-content-wrap{
+  padding-top: 80px !important;
+}

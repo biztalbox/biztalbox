@@ -318,7 +318,7 @@ export default function SEOPageLayout({ data, settings, countyList }: SEOPageLay
                         <div style={{ height: "500px", overflow: "hidden" }}>
                           <video
                             className="videoby_ashish"
-                            src="https://res.cloudinary.com/djoiovkr1/video/upload/SEO_Stricker_2_aqk6qd.webm"
+                            src="https://biztalbox.com/assets/image/new_avatar/video/seo.webm"
                             autoPlay
                             loop
                             muted
