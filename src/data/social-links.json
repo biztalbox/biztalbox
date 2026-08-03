@@ -1,5 +1,5 @@
 {
-  "liteOrder": ["instagram", "facebook", "youtube", "linkedin", "x"],
+  "liteOrder": ["x", "facebook", "instagram", "linkedin", "youtube", "pinterest"],
   "footerOrder": ["x", "facebook", "instagram", "linkedin", "youtube", "pinterest"],
   "links": {
     "x": {
@@ -26,9 +26,9 @@
       "href": "https://m.youtube.com/@biztalboxofficial",
       "icon": "fa-brands fa-youtube",
       "ariaLabel": "Biztalbox on YouTube"
-    },
+    },  
     "pinterest": {
-      "href": "https://in.pinterest.com/biztalbox1/",
+      "href": "https://in.pinterest.com/biztalbox/",
       "icon": "fa-pinterest",
       "iconType": "react-icon",
       "ariaLabel": "Biztalbox on Pinterest"

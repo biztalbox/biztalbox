@@ -160,7 +160,7 @@ export default function Page() {
                 <p>
                   Pharmaceutical{" "}
                   <Link
-                    href="https://biztalbox.com/blog/what-is-visual-search-seo"
+                    href="https://biztalbox.com/blog/types-of-seo-and-why-you-need-an-agency-to-do-it"
                     className="text-primary"
                   >
                     SEO
@@ -541,7 +541,7 @@ export default function Page() {
                   falls under YMYL, which stands for Your Money or Your Life. It
                   means that Google applies stricter standards here.{" "}
                   <Link
-                    href="https://biztalbox.com/blog/what-is-eeat-vs-eat"
+                    href="https://biztalbox.com/blog/how-to-do-an-seo-audit"
                     className="text-primary"
                   >
                     Information must be accurate, clear, and trustworthy.

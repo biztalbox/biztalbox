@@ -287,7 +287,7 @@ export default function Page() {
                 <p>
                   Real estate{" "}
                   <Link
-                    href="https://biztalbox.com/blog/what-is-visual-search-seo"
+                    href="https://biztalbox.com/blog/types-of-seo-and-why-you-need-an-agency-to-do-it"
                     className="text-primary"
                   >
                     SEO
@@ -407,7 +407,7 @@ export default function Page() {
                       instinctively view you as someone who understands
                       their area—exactly what effective{" "}
                       <Link
-                        href="https://biztalbox.com/blog/free-google-seo-tools"
+                        href="https://biztalbox.com/blog/google-seo-tools"
                         className="text-primary"
                       >
                         SEO
@@ -592,7 +592,7 @@ export default function Page() {
                       the market guides, real estate analyses, and local
                       insights are visible in these{" "}
                       <Link
-                        href="https://biztalbox.com/blog/how-to-do-keyword-research-for-seo"
+                        href="https://biztalbox.com/blog/seo-keyword-research"
                         className="text-primary"
                       >
                         AI-driven formats such as featured snippets, digital
@@ -763,7 +763,7 @@ export default function Page() {
                         Support the broader SEO marketing efforts
                         including{" "}
                         <Link
-                          href="https://biztalbox.com/blog/how-to-do-keyword-research-for-seo"
+                          href="https://biztalbox.com/blog/seo-keyword-research"
                           className="text-primary"
                         >
                           keyword targeting
@@ -859,7 +859,7 @@ export default function Page() {
                       demonstrate Expertise, Authority, and
                       Trustworthiness{" "}
                       <Link
-                        href="https://biztalbox.com/blog/what-is-e-e-a-t-vs-e-a-t"
+                        href="https://biztalbox.com/blog/seo-in-2025-how-ai-is-changing-search"
                         className="text-primary"
                       >
                         (E-E-A-T)

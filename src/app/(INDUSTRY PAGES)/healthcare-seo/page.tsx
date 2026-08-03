@@ -463,7 +463,7 @@ export default function Page() {
                   In healthcare SEO, visibility begins with understanding how
                   people search. Every search on{" "}
                   <Link
-                    href="https://biztalbox.com/blog/free-google-seo-tools"
+                    href="https://biztalbox.com/blog/google-seo-tools"
                     className="text-primary"
                   >
                     Google
@@ -565,7 +565,7 @@ export default function Page() {
                 </h3>
                 <p>
                   <Link
-                    href="https://biztalbox.com/blog/what-is-visual-search-seo"
+                    href="https://biztalbox.com/blog/types-of-seo-and-why-you-need-an-agency-to-do-it"
                     className="text-primary"
                   >
                     SEO
@@ -632,7 +632,7 @@ export default function Page() {
                     concerns both patient safety and informed decision-making, it
                     makes{" "}
                     <Link
-                      href="https://biztalbox.com/blog/what-is-eeat-vs-eat"
+                      href="https://biztalbox.com/blog/how-to-do-an-seo-audit"
                       className="text-primary"
                     >
                       E-E-A-T (Experience, Expertise, Authoritativeness,
@@ -1025,7 +1025,7 @@ export default function Page() {
                   the same time, people ask questions and receive answers
                   instantly using{" "}
                   <Link
-                    href="https://biztalbox.com/blog/seo-tools-you-need-in-2025-top-picks-to-improve-your-rankings"
+                    href="https://biztalbox.com/blog/best-seo-chrome-extensions"
                     className="text-primary"
                   >
                     AI tools

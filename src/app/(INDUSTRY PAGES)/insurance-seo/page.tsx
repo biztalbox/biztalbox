@@ -410,7 +410,7 @@ export default function Page() {
                   comparing, while others are already ready to act. A strong
                   insurance{" "}
                   <Link
-                    href="https://biztalbox.com/blog/seo-tools-you-need-in-2025-top-picks-to-improve-your-rankings"
+                    href="https://biztalbox.com/blog/best-seo-chrome-extensions"
                     className="text-primary"
                   >
                     seo
@@ -577,7 +577,7 @@ export default function Page() {
                   <p>
                     This is why content quality matters deeply. In this space,{" "}
                     <Link
-                      href="https://biztalbox.com/blog/what-is-eeat-vs-eat"
+                      href="https://biztalbox.com/blog/how-to-do-an-seo-audit"
                       className="text-primary"
                     >
                       EEAT (Experience, Expertise, Authoritativeness,
@@ -827,7 +827,7 @@ export default function Page() {
                   build familiarity. PR builds credibility. Social keeps presence
                   alive. This makes insurance company{" "}
                   <Link
-                    href="https://biztalbox.com/blog/what-is-visual-search-seo"
+                    href="https://biztalbox.com/blog/types-of-seo-and-why-you-need-an-agency-to-do-it"
                     className="text-primary"
                   >
                     seo
@@ -994,7 +994,7 @@ export default function Page() {
                   Insurance search has moved past the stage of simple rankings.
                   The search results on{" "}
                   <Link
-                    href="https://biztalbox.com/blog/free-google-seo-tools"
+                    href="https://biztalbox.com/blog/google-seo-tools"
                     className="text-primary"
                   >
                     Google

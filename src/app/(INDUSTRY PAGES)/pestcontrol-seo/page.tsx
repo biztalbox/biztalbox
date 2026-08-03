@@ -281,13 +281,13 @@ export default function Page() {
                   rodents, or wildlife.
                 </p>
                 <p>
-                  <Link href="https://biztalbox.com/blog/what-is-visual-search-seo" className="text-primary">
+                  <Link href="https://biztalbox.com/blog/types-of-seo-and-why-you-need-an-agency-to-do-it" className="text-primary">
                     SEO
                   </Link>{' '}
                   for pest control companies focuses on making service pages,
                   locations, and information easy for search engines to interpret.
                   The system enables{' '}
-                  <Link href="https://biztalbox.com/blog/free-google-seo-tools" className="text-primary">
+                  <Link href="https://biztalbox.com/blog/google-seo-tools" className="text-primary">
                     Google
                   </Link>{' '}
                   to link search terms about infestations and inspections and
@@ -315,7 +315,7 @@ export default function Page() {
                 </p>
                 <p>
                   In other words, pest control{' '}
-                  <Link href="https://biztalbox.com/blog/seo-tools-you-need-in-2025-top-picks-to-improve-your-rankings" className="text-primary">
+                  <Link href="https://biztalbox.com/blog/best-seo-chrome-extensions" className="text-primary">
                     SEO
                   </Link>{' '}
                   is how search engines can clearly understand three things: what
@@ -594,7 +594,7 @@ export default function Page() {
                   <p>
                     E-E-A-T stands for Experience, Expertise, Authoritativeness, and
                     Trustworthiness.{' '}
-                    <Link href="https://biztalbox.com/blog/what-is-e-e-a-t-vs-e-a-t" className="text-primary">
+                    <Link href="https://biztalbox.com/blog/seo-in-2025-how-ai-is-changing-search" className="text-primary">
                       It shows that your pest control content comes from real
                       knowledge and can be trusted.
                     </Link>

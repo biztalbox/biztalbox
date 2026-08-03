@@ -186,7 +186,7 @@ export default function Page() {
                 </p>
                 <p>
                   <Link
-                    href="https://biztalbox.com/blog/seo-tools-you-need-in-2025-top-picks-to-improve-your-rankings"
+                    href="https://biztalbox.com/blog/best-seo-chrome-extensions"
                     className="text-primary"
                   >
                     SEO
@@ -242,7 +242,7 @@ export default function Page() {
                 <p>
                   When done right,{" "}
                   <Link
-                    href="https://biztalbox.com/blog/free-google-seo-tools"
+                    href="https://biztalbox.com/blog/google-seo-tools"
                     className="text-primary"
                   >
                     SEO
@@ -601,7 +601,7 @@ export default function Page() {
                     is entrust their possessions, memories, and valuables to
                     someone. For this reason, content should naturally convey{" "}
                     <Link
-                      href="https://biztalbox.com/blog/what-is-eeat-vs-eat"
+                      href="https://biztalbox.com/blog/how-to-do-an-seo-audit"
                       className="text-primary"
                     >
                       EEAT (Experience Expertise Authority, Trust)
@@ -848,7 +848,7 @@ export default function Page() {
                       during urgent moves. Websites in this industry often use
                       heavy{" "}
                       <Link
-                        href="https://biztalbox.com/blog/what-is-visual-search-seo"
+                        href="https://biztalbox.com/blog/types-of-seo-and-why-you-need-an-agency-to-do-it"
                         className="text-primary"
                       >
                         images
