@@ -104,7 +104,7 @@ const ContentMarketingPage = () => {
                     just make things sound pretty — they do the heavy lifting.
                     It is the voice behind a brand, the hook that captures you
                     in an ad, and the warmth that greets you in an email.
-                    Copywriters aren&apos;t ust writers, they&apos;re
+                    Copywriters aren&apos;t just writers, they&apos;re
                     strategists who can spin browsers into buyers. Their words
                     lead, woo, convert. Every sentence on websites, campaigns,
                     social media moves the reader a step closer to action.
