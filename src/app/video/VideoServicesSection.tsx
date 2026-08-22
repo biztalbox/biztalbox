@@ -143,12 +143,12 @@ function ServiceCell({ item }: { item: ServiceItem }) {
   const { title, description, Icon } = item;
   return (
     <div className={CELL_BASE}>
-      <Icon className="h-11 w-11 shrink-0  group-hover:text-black text-zinc-500 transition-colors dark:text-zinc-400 dark:group-hover:text-zinc-300 sm:h-12 sm:w-12" />
-      <div className="flex w-full flex-col dark:group-hover:text-white group-hover:text-black items-center gap-0 text-center">
-        <h3 className="m-0 max-w-[11rem] dark:group-hover:text-white group-hover:text-black text-[0.875rem] font-bold leading-snug hover:text-black text-zinc-500 dark:text-white sm:max-w-[12rem] sm:text-[0.9375rem]">
+      <Icon className="h-11 w-11 shrink-0 text-zinc-500 transition-colors group-hover:text-black dark:text-zinc-300 dark:group-hover:text-white sm:h-12 sm:w-12" />
+      <div className="flex w-full flex-col items-center gap-0 text-center group-hover:text-black dark:group-hover:text-white">
+        <h3 className="m-0 max-w-[11rem] text-[0.875rem] font-bold leading-snug text-zinc-900 group-hover:text-black dark:text-white dark:group-hover:text-white sm:max-w-[12rem] sm:text-[0.9375rem]">
           {title}
         </h3>
-        <p className="m-0 max-w-[11rem] text-[12px] dark:group-hover:text-white group-hover:text-black font-normal leading-snug hover:text-black text-zinc-600 dark:text-zinc-400 sm:max-w-[12rem] sm:text-[13px]">
+        <p className="m-0 max-w-[11rem] text-[12px] font-normal leading-snug text-zinc-600 group-hover:text-black dark:text-zinc-400 dark:group-hover:text-zinc-300 sm:max-w-[12rem] sm:text-[13px]">
           {description}
         </p>
       </div>
@@ -160,15 +160,15 @@ export default function VideoServicesSection() {
   return (
     <section
       data-video-section="services"
-      className="bg-white py-14  text-zinc-900 dark:bg-black  sm:py-16 lg:py-20"
+      className="bg-white py-14 text-zinc-900 dark:bg-black dark:text-white sm:py-16 lg:py-20"
     >
       <div className="container">
         <h2 className="text-left text-2xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-3xl lg:text-[2rem] xl:text-4xl">
           Our Video Editing Services
         </h2>
-        <div className="mt-6 h-px hover:text-black w-full dark: text-white/30 bg-zinc-300 dark:text-white/30" role="presentation" aria-hidden />
+        <div className="mt-6 h-px w-full bg-zinc-300 dark:bg-zinc-700" role="presentation" aria-hidden />
 
-        <div className="mt-10 w-full grid grid-cols-2 gap-x-4 border-radius-2xl dark:text-white/30 gap-y-10 sm:mt-12 sm:gap-x-5 sm:gap-y-12 lg:mt-14 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-12 xl:gap-x-8">
+        <div className="mt-10 grid w-full grid-cols-2 gap-x-4 gap-y-10 sm:mt-12 sm:gap-x-5 sm:gap-y-12 lg:mt-14 lg:grid-cols-4 lg:gap-x-6 lg:gap-y-12 xl:gap-x-8">
           {SERVICES.map((item) => (
             <div key={item.title} className="flex min-w-0 justify-center">
               <ServiceCell item={item} />

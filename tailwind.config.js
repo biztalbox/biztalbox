@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ["selector", '[data-theme="dark"]'],
   important: "[data-tw-scope]",
   content: [
     "./src/components/ashish3dComp/**/*.{js,ts,jsx,tsx}",

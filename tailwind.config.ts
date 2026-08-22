@@ -8,6 +8,7 @@ import type { Config } from "tailwindcss";
  * graphic, and video routes.
  */
 const config: Config = {
+  darkMode: ["selector", '[data-theme="dark"]'],
   important: "[data-tw-scope]",
   content: [
     "./src/components/ashish3dComp/**/*.{js,ts,jsx,tsx}",

@@ -34,13 +34,13 @@ export default function VideoBouquetServicesSection() {
   return (
     <section
       data-video-section="bouquet"
-      className="bg-white py-14 text-zinc-900 dark:bg-black dark:text-white sm:py-16 md:py-20"
+      className="bg-white py-14 text-zinc-900 sm:py-16 md:py-20"
     >
       <div className="container">
-        <h2 className="text-left text-2xl font-bold tracking-tight text-zinc-900 dark:text-white sm:text-3xl lg:text-[2rem]">
+        <h2 className="text-left text-2xl font-bold tracking-tight text-zinc-900 sm:text-3xl lg:text-[2rem]">
           Our Bouquet Of Video Editing Services
         </h2>
-        <div className="mt-5 h-px w-full bg-zinc-300 dark:bg-zinc-800" aria-hidden />
+        <div className="mt-5 h-px w-full bg-zinc-300" aria-hidden />
 
         <div className="mt-10 grid grid-cols-1 justify-items-center gap-8 md:mt-12 md:grid-cols-3 md:gap-x-8 md:gap-y-8 lg:gap-x-10">
           {BOUQUET_CARDS.map(({ title, description }) => (
@@ -53,15 +53,15 @@ export default function VideoBouquetServicesSection() {
               <div className="flex justify-between">
 
                 {/* Detached arrow disc (separate from the card shell). */}
-                <div className="flex flex-col p-4 pb-0 rounded-tr-2xl w-full relative bg-[#ECECEC] dark:bg-[#18181B]">
-                  <h3 className="grow text-lg mb-0 font-bold text-zinc-900 dark:text-white">
+                <div className="flex flex-col p-4 pb-0 rounded-tr-2xl w-full relative bg-[#ECECEC]">
+                  <h3 className="grow text-lg mb-0 font-bold text-zinc-900">
                     {title}
                   </h3>
-                  <div className="h-px w-8 bg-zinc-400 dark:bg-zinc-500 sm:mt-3 sm:w-9" aria-hidden />
+                  <div className="h-px w-8 bg-zinc-400 sm:mt-3 sm:w-9" aria-hidden />
                 </div>
-                <div className="p-2 h-full z-10 rounded-bl-2xl bg-white dark:!bg-black">
+                <div className="p-2 h-full z-10 rounded-bl-2xl bg-white">
                   <LuArrowUpRight
-                    className="text-white p-2 rounded-full mt-2 bg-black dark:!bg-white dark:!text-black"
+                    className="text-white p-2 rounded-full mt-2 bg-black"
                     strokeWidth={3.25}
                     size={40}
 
@@ -70,7 +70,7 @@ export default function VideoBouquetServicesSection() {
 
               </div>
 
-              <p className="p-4 -mt-4 bg-[#ECECEC] rounded-tr-[32%] dark:bg-[#18181B] text-left text-sm font-normal leading-relaxed text-zinc-500 dark:text-zinc-400 md:text-[13px] md:leading-relaxed">
+              <p className="p-4 -mt-4 bg-[#ECECEC] rounded-tr-[32%] text-left text-sm font-normal leading-relaxed text-zinc-500 md:text-[13px] md:leading-relaxed">
                 {description}
               </p>
             </Link>
