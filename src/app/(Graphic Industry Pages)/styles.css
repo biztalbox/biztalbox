@@ -229,9 +229,12 @@ html[data-theme="light"] [data-graphic-industry-page] footer .tp-footer-3-social
 }
 
 html[data-theme="light"] [data-graphic-industry-page] footer .tp-footer-2-widget-menu ul li a:hover,
-html[data-theme="light"] [data-graphic-industry-page] footer .tp-footer-2-contact-item a:hover,
-html[data-theme="light"] [data-graphic-industry-page] footer .tp-footer-3-social a:hover {
+html[data-theme="light"] [data-graphic-industry-page] footer .tp-footer-2-contact-item a:hover {
   color: #fff !important;
+}
+
+html[data-theme="light"] [data-graphic-industry-page] footer .tp-footer-3-social a:hover {
+  color: #111 !important;
 }
 
 html[data-theme="light"] [data-graphic-industry-page] .tp-service-4-area h2,
