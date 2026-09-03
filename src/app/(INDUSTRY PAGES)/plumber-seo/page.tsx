@@ -70,8 +70,7 @@ export default function Page() {
                       <div className="p-relative">
                         <div className="tp-hero-4-content p-relative" style={{ marginBottom: "0" }}>
                           <h1 className="text-white tp-char-animation">
-                            The Plumbing Industry Landscape and Why SEO Is Central to Long-Term Growth
-                          </h1>
+                          Plumbing SEO That Turns Local Searches Into Booked Appointments  Without the Guesswork                          </h1>
                           <p>
                             Plumbing is no longer a background trade that people notice only when something breaks. It has become a fast-moving, high-demand service industry tied closely to urban growth, infrastructure spending, and changing consumer expectations.{" "}
                             <Link href="https://www.technavio.com/report/plumbing-market-industry-analysis#:~:text=Plumbing%20Market%20Size%202025%2D2029,by%20urbanization%20and%20infrastructure%20development." target="_blank" rel="noopener noreferrer" className="text-primary">Between 2025 and 2029, the global plumbing market is projected to grow by USD 27.59 billion</Link>, reflecting how essential and constantly active this sector has become.

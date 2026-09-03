@@ -5,9 +5,9 @@ import { createMarketingPageData } from "@/utils/marketing-page-data";
 import "@/app/(INDUSTRY PAGES)/styles.css";
 
 const baseMetadata: Metadata = {
-  title: "E-commerce SEO Services | Drive Traffic, Sales & Growth",
+  title: "Ecommerce SEO Strategy: The Ultimate Guide for Ecommerce Websites",
   description:
-    "E-commerce is more competitive than ever. Discover e-commerce SEO strategies to improve search visibility, attract buyers, and grow your online store sustainably.",
+    "Struggling to grow organic traffic? Discover the ecommerce SEO strategies and SEO for ecommerce websites that help online stores rank higher and sell more.",
 };
 
 export const metadata = createMetadata(baseMetadata, "/ecommerce-seo");

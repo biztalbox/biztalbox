@@ -5,9 +5,9 @@ import { createMarketingPageData } from "@/utils/marketing-page-data";
 import "@/app/(INDUSTRY PAGES)/styles.css";
 
 const baseMetadata: Metadata = {
-  title: "Plumbing Industry Landscape: Why SEO Drives Long-Term Growth",
+  title: "Plumbing SEO Agency | Biztalbox – Get More Local Leads",
   description:
-    "Explore the plumbing industry landscape and learn why SEO is essential for sustainable visibility, lead generation, and long-term business growth profitability",
+    "Biztalbox helps plumbing companies rank higher, generate high-intent local leads, and reduce ad spend with proven SEO strategies. Book a free consult today.",
 };
 
 export const metadata = createMetadata(

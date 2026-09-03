@@ -1455,6 +1455,22 @@ export default function Page() {
                   </div>
                 </div>
               </section>
+
+              <section className="content-section content-prose">
+                <h2 className="section-heading">
+                  Trying to build your healthcare presence online?
+                </h2>
+                <p>
+                  Visibility in healthcare is not just about showing up.
+                  It&apos;s about showing up the right way. At Biztalbox, we
+                  build healthcare SEO strategies that support both discovery
+                  and decision-making.
+                </p>
+                <p>
+                  If you&apos;re ready to strengthen your presence with a team
+                  that understands both, let&apos;s get started.
+                </p>
+              </section>
             </div>
 
             <ServiceThree showIndustry={false} />

@@ -728,7 +728,7 @@ export default function Page() {
                       or odd sounds from the furnace helps in capturing these
                       searches. This type of{" "}
                       <Link
-                        href="https://biztalbox.com/blog/how-to-do-an-seo-audit"
+                        href="https://biztalbox.com/blog/what-is-eeat-vs-eat"
                         className="text-primary"
                       >
                         content helps in winning the trust
@@ -937,7 +937,7 @@ export default function Page() {
                     </p>
                     <p>
                       <Link
-                        href="https://biztalbox.com/blog/types-of-seo-and-why-you-need-an-agency-to-do-it"
+                        href="https://biztalbox.com/blog/what-is-visual-search-seo"
                         className="text-primary"
                       >
                         Optimizing images,
@@ -1087,7 +1087,14 @@ export default function Page() {
               {/* Local SEO */}
               <section className="content-section content-prose">
                 <h2 className="section-heading">
-                  Dominate Local Searches: HVAC Local SEO Strategy That Converts
+                  Dominate Local Searches: HVAC Local{" "}
+                  <Link
+                    href="https://biztalbox.com/blog/types-of-seo-and-why-you-need-an-agency-to-do-it"
+                    className="text-primary"
+                  >
+                    SEO Strategy
+                  </Link>{" "}
+                  That Converts
                 </h2>
                 <p>
                   For HVAC contractors, being listed in local searches can mean
@@ -1168,7 +1175,7 @@ export default function Page() {
                 <p className="mt-20">
                   HVAC SEO success includes{" "}
                   <Link
-                    href="https://biztalbox.com/blog/seo-keyword-research"
+                    href="https://biztalbox.com/blog/how-to-do-keyword-research-for-seo"
                     className="text-primary"
                   >
                     keyword research
@@ -1183,7 +1190,7 @@ export default function Page() {
                   With a clear strategy in place, the next step is leveraging the
                   right{" "}
                   <Link
-                    href="https://biztalbox.com/blog/best-seo-chrome-extensions"
+                    href="https://biztalbox.com/blog/seo-tools-you-need-in-2025-top-picks-to-improve-your-rankings"
                     className="text-primary"
                   >
                     SEO tools to improve your rankings.
@@ -1194,8 +1201,14 @@ export default function Page() {
               {/* Why Biztalbox */}
               <section className="content-section content-prose">
                 <h2 className="section-heading">
-                  Why Partner With Biztalbox: Trusted HVAC SEO Agency Driving
-                  Real Growth
+                  Why Partner With Biztalbox: Trusted HVAC{" "}
+                  <Link
+                    href="https://biztalbox.com/best-seo-agency"
+                    className="text-primary"
+                  >
+                    SEO Agency
+                  </Link>{" "}
+                  Driving Real Growth
                 </h2>
                 <p>
                   The determining factor between being visible to potential
@@ -1211,8 +1224,15 @@ export default function Page() {
                 </p>
                 <h3 className="section-subheading">1. Transparent Process and Clear Communication</h3>
                 <p>
-                  Every step is visible — from keyword research to technical fixes
-                  to performance tracking. You know what&apos;s being done and why.
+                  Successful SEO requires trust and clarity. At Biztalbox, every
+                  project is handled with full transparency. Every step is
+                  visible—from keyword research to technical fixes to performance
+                  tracking. You know what&apos;s being done and why.
+                </p>
+                <p>
+                  Our HVAC SEO experts handle the strategy, but you&apos;re never
+                  left guessing. Clear communication and consistent updates make
+                  it easier to trust the process.
                 </p>
                 <h3 className="section-subheading">
                   2. Deep Understanding of the HVAC Industry

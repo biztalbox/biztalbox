@@ -5,7 +5,7 @@ import { createMarketingPageData } from "@/utils/marketing-page-data";
 import "@/app/(INDUSTRY PAGES)/styles.css";
 
 const baseMetadata: Metadata = {
-  title: "Logistics SEO Services | Strategies That Drive Traffic & Clients",
+  title: "The Ultimate Logistics SEO Guide: Strategies That Drive Traffic and Clients",
   description:
     "Struggling to get clients online? Discover the ultimate logistics SEO strategies, and insights that help logistics companies rank higher and attract real business.",
 };
