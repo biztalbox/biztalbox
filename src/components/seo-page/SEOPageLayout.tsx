@@ -315,13 +315,14 @@ export default function SEOPageLayout({ data, settings, countyList }: SEOPageLay
                         </div>
                       </div>
                       <div className="col-xl-5 col-lg-5">
-                        <div style={{ height: "500px", overflow: "hidden" }}>
+                        <div className="seo-benefits-video">
                           <video
                             className="videoby_ashish"
                             src="https://biztalbox.com/assets/image/new_avatar/video/seo.webm"
                             autoPlay
                             loop
                             muted
+                            playsInline
                           />
                         </div>
                       </div>
