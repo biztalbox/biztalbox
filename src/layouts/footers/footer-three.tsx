@@ -15,7 +15,7 @@ export default function FooterThree() {
       >
         <div className="container-fluid">
           <div className="row">
-            <div className="col-xl-12">
+          <div className="col-xl-12">
               <LineTextThree />
             </div>
           </div>
@@ -71,7 +71,7 @@ export default function FooterThree() {
                       <Link href="/">Home</Link>
                     </li>
                     <li>
-                      <Link href=".about">About</Link>
+                      <Link href="/about">About</Link>
                     </li>
                     <li>
                       <Link href="/services">Services</Link>
@@ -92,7 +92,7 @@ export default function FooterThree() {
                 <div className="tp-footer-2-contact-item">
                   <span>
                     <a
-                      href="https://www.google.com/maps/@23.8223596,90.3656686,15z?entry=ttu"
+                      href="https://maps.app.goo.gl/XcgJQLkNL8vXPQa78"
                       target="_blank"
                     >
                       A-11, 2nd Floor, sector 8 Dwarka 110077 New Delhi

@@ -83,7 +83,7 @@ export default function Page() {
                             your online presence is often your first impression,
                             not your website or sales pitch. If that presence is
                             weak or invisible, the opportunity is lost before
-                            the conversation even begins. SEO for painters and
+                            the conversation even begins. SEO for packers and
                             movers fixes that.
                           </p>
                           <p>
@@ -541,7 +541,7 @@ export default function Page() {
                 </div>
 
                 <h3 className="section-subheading">
-                  How to Use Keywords in Painter SEO Strategically?
+                  How to Use Keywords in Packers SEO Strategically?
                 </h3>
                 <p>
                   This packers and movers SEO{" "}
