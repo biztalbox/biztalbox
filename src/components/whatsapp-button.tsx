@@ -2,7 +2,7 @@
 import React from "react";
 
 export default function WhatsAppButton() {
-  const phoneNumber = "9485699709"; // +91 9485699709 without special characters
+  const phoneNumber = "+919485699709"; // +91 9485699709 without special characters
   const message = encodeURIComponent("Text us before your competitor does 😉");
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
 
@@ -59,5 +59,5 @@ export default function WhatsAppButton() {
       </a>
     </div>
   );
-}
+} 
 

@@ -88,7 +88,7 @@ const ContactLocationTwo = () => {
                     margin: "auto",
                     textAlign: "center",
                   }}
-                  href="tel:9485699709"
+                  href="tel:+91 9485699709"
                 >
                   +91 9485699709
                 </a>
