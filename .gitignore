@@ -41,3 +41,4 @@ wordpress-mu-plugin-usa-rewrite-fix.php
 wordpress-usa-diagnostic.php
 docs/CMS-IMPLEMENTATION-PLAN.md
 prompts/video-cms-integration-prompt.md
+.env*

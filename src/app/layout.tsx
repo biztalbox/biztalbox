@@ -55,6 +55,52 @@ export default function RootLayout({
           `}
         </Script>
         {/* End Microsoft Clarity */}
+
+        {/* Tab attention title — runs on every page */}
+        <Script id="tab-attention-title" strategy="afterInteractive">
+          {`
+            (function() {
+              const attentionMessages = [
+                "✨ Distinguish Your Brand",
+                "🏆 Outpace Your Competitors",
+                "🌐 Drive Website Traffic"
+              ].filter(function(msg) { return msg.trim() !== ""; });
+
+              if (attentionMessages.length === 0) return;
+
+              let isTabActive = !document.hidden;
+              let messageIndex = 0;
+              let blinkInterval;
+              let originalTitle = document.title;
+
+              const startBlinking = function() {
+                if (blinkInterval) clearInterval(blinkInterval);
+                originalTitle = document.title;
+                blinkInterval = setInterval(function() {
+                  if (isTabActive) {
+                    clearInterval(blinkInterval);
+                    blinkInterval = null;
+                    document.title = originalTitle;
+                  } else {
+                    document.title = attentionMessages[messageIndex];
+                    messageIndex = (messageIndex + 1) % attentionMessages.length;
+                  }
+                }, 1000);
+              };
+
+              document.addEventListener("visibilitychange", function() {
+                isTabActive = !document.hidden;
+                if (isTabActive) {
+                  if (blinkInterval) clearInterval(blinkInterval);
+                  blinkInterval = null;
+                  document.title = originalTitle;
+                } else {
+                  startBlinking();
+                }
+              });
+            })();
+          `}
+        </Script>
       </head>
       <body
         id="body"
