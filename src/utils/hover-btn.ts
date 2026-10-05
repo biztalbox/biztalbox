@@ -1,5 +1,5 @@
 import $ from "jquery";
-import { gsap, Power2 } from "gsap";
+import { gsap } from "gsap";
 function hoverBtn() {
 
   $('.tp-hover-btn').on('mouseenter', function (e: any) {
@@ -38,17 +38,19 @@ function hoverBtn() {
       const relX = e.pageX - $this.offset().left;
       const relY = e.pageY - $this.offset().top;
 
-      gsap.to(target, 1, {
+      gsap.to(target, {
+        duration: 1,
         x: ((relX - $this.width() / 2) / $this.width()) * movement,
         y: ((relY - $this.height() / 2) / $this.height()) * movement,
-        ease: Power2.easeOut,
+        ease: "power2.out",
       });
     }
     $(btn).mouseleave(function (e) {
-      gsap.to(hoverBtnItem[i], 1, {
+      gsap.to(hoverBtnItem[i], {
+        duration: 1,
         x: 0,
         y: 0,
-        ease: Power2.easeOut,
+        ease: "power2.out",
       });
     });
   });
