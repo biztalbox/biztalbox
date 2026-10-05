@@ -30,12 +30,12 @@ export default function LineTextThree({cls="",data_2=false}:IProps) {
         <Marquee speed={100} autoFill={true}>
           {textArray.map((text, index) => (
             <div key={index} className="tp-line-content">
-              <h4 className="tp-footer-4-big-title">
+              <p className="tp-footer-4-big-title">
                 <span className="d-none d-md-inline-block mr-40">
                   <StarSquare />
                 </span>
                 {text}
-              </h4>
+              </p>
             </div>
           ))}
         </Marquee>

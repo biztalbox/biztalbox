@@ -65,7 +65,7 @@ export default function FooterThree() {
             <div className="col-xl-2 col-lg-3 col-md-6 mb-50">
               <div className="tp-footer-2-widget footer-col-2-2">
                 <div className="tp-footer-2-widget-menu">
-                  <h4 className="tp-footer-2-widget-title">Sitemap</h4>
+                  <p className="tp-footer-2-widget-title">Sitemap</p>
                   <ul>
                     <li>
                       <Link href="/">Home</Link>
@@ -88,7 +88,7 @@ export default function FooterThree() {
             </div>
             <div className="col-xl-3 col-lg-5 col-md-6 mb-50">
               <div className="tp-footer-2-widget footer-col-2-3">
-                <h4 className="tp-footer-2-widget-title">Office</h4>
+                <p className="tp-footer-2-widget-title">Office</p>
                 <div className="tp-footer-2-contact-item">
                   <span>
                     <a
@@ -116,9 +116,9 @@ export default function FooterThree() {
             <div className="col-xl-4 col-lg-5 col-md-6 mb-50">
               <div className="tp-footer-2-widget footer-col-2-4">
                 <div className="tp-footer-2-widget-newslatter">
-                  <h4 className="tp-footer-2-widget-title">
+                  <p className="tp-footer-2-widget-title">
                     Follow Us On Social Media
-                  </h4>
+                  </p>
                   <SocialLinks variant="dark-footer" className="mb-20" />
                 </div>
               </div>

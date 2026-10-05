@@ -135,7 +135,7 @@ const BookCallForm = () => {
             <div className="z-index-5">
               <div className="tm-details-title-box mb-20">
                 <span className="tm-hero-subtitle">Ready to Schedule Your</span>
-                <h4 className="tm-details-title">Free Consultation Call?</h4>
+                <p className="tm-details-title">Free Consultation Call?</p>
               </div>
               <div className="tm-details-text">
                 <p>
@@ -165,7 +165,7 @@ const BookCallForm = () => {
                       style={{ fontSize: "14px" }}
                     ></i>
                   </div>
-                  <h6 className="text-white">Free 30-minute consultation</h6>
+                  <p className="text-white mb-0">Free 30-minute consultation</p>
                 </div>
                 <div className="d-flex align-items-center">
                   <div
@@ -186,9 +186,9 @@ const BookCallForm = () => {
                       style={{ fontSize: "14px" }}
                     ></i>
                   </div>
-                  <h6 className="text-white">
+                  <p className="text-white mb-0">
                     No obligation, just valuable insights
-                  </h6>
+                  </p>
                 </div>
                 <div className="d-flex align-items-center">
                   <div
@@ -209,9 +209,9 @@ const BookCallForm = () => {
                       style={{ fontSize: "14px" }}
                     ></i>
                   </div>
-                  <h6 className="text-white">
+                  <p className="text-white mb-0">
                     Expert advice tailored to your business
-                  </h6>
+                  </p>
                 </div>
               </div>
             </div>

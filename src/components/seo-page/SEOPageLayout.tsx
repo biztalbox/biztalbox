@@ -120,7 +120,7 @@ function CtaBlock({ subtitle, title, body, phone, email }: CtaBlockProps) {
                   <span className="tm-hero-subtitle">{subtitle}</span>
                 )}
                 {title && (
-                  <h3 className="tm-details-title">{title}</h3>
+                  <p className="tm-details-title">{title}</p>
                 )}
               </div>
               {body && (
@@ -291,7 +291,7 @@ export default function SEOPageLayout({ data, settings, countyList }: SEOPageLay
                         <div className="service-details__left-wrap">
                           <div className="tm-details-title-box mb-20">
                             {data.benefits_title && (
-                              <h3 className="text-white">{data.benefits_title}</h3>
+                              <p className="text-white">{data.benefits_title}</p>
                             )}
                             {data.benefits_subtitle && (
                               <h2 className="tm-details-title">{data.benefits_subtitle}</h2>

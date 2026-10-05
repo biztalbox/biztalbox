@@ -69,7 +69,7 @@ export default function StudioPanelFour({style_2=false, testimonials=[]}: IProps
     <div className={`${style_2?'':'panel-2 tp-studio-height'}`}>
       <div className={`tp-studio-testimonial-area tp-studio-plr black-bg p-relative fix tp-studio-testimonial-xs-space ${style_2?'tm-testimonial-height':'tp-studio-height'}`}>
         <div className="tp-studio-testimonial-title-box d-none d-md-block" style={{bottom: "7%"}}>
-          <h4 className="tp-studio-testimonial-title">What Our Clients Say</h4>
+          <p className="tp-studio-testimonial-title">What Our Clients Say</p>
         </div>
         <div className="container container-1330">
           <div className="tp-studio-funfact-wrap">
@@ -105,9 +105,9 @@ export default function StudioPanelFour({style_2=false, testimonials=[]}: IProps
                             </div>
                             <div className="tp-studio-testimonial-user-info-box d-flex align-items-center">
                               <div className="tp-studio-testimonial-user-info">
-                                <h4 className="tp-studio-testimonial-user-name">
+                                <p className="tp-studio-testimonial-user-name">
                                   {item.name}
-                                </h4>
+                                </p>
                                 <span>{item.designation}</span>
                               </div>
                               <div className="tp-studio-testimonial-line d-none d-md-block">

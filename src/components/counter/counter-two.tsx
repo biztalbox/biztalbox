@@ -27,17 +27,17 @@ export default function CounterTwo() {
       {counter_data.map((item) => (
         <div key={item.id} className="col-xl col-lg col-md col-sm-4 col-6">
           <div className="tp-studio-funfact-item text-start text-md-center">
-            <h4 className="tp-studio-funfact-title">
+            <p className="tp-studio-funfact-title">
               <CounterItem min={0} max={item.count} suffix={item.suffix} />
               {/* <span>{item.suffix}</span> */}
-            </h4>
+            </p>
             <span>{item.title}</span>
           </div>
         </div>
       ))}
       <div className="col-xl col-lg col-md col-sm-4 col-6">
         <div className="tp-studio-funfact-item text-start text-md-center">
-          <h4 className="tp-studio-funfact-title text-white"><i className="infinity_ashish">∞</i></h4>
+          <p className="tp-studio-funfact-title text-white"><i className="infinity_ashish">∞</i></p>
           <span>Coffee Beans Roasted</span>
         </div>
       </div>

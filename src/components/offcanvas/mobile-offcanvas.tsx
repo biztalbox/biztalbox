@@ -89,7 +89,7 @@ export default function MobileOffcanvas({
               </div>
             </div>
             <div className="tp-offcanvas-contact">
-              <h3 className="tp-offcanvas-title sm">Get in Touch</h3>
+              <p className="tp-offcanvas-title sm"><span style={{ fontWeight: 'bold' }}>Get in Touch</span></p>
 
               <ul>
                 <li>
@@ -108,7 +108,7 @@ export default function MobileOffcanvas({
               </ul>
             </div>
             <div className="tp-offcanvas-social">
-              <h3 className="tp-offcanvas-title sm">Follow Us</h3>
+              <p className="tp-offcanvas-title sm"><span style={{ fontWeight: 'bold' }}>Follow Us</span></p>
               <ul>
                 <li>
                   <Link

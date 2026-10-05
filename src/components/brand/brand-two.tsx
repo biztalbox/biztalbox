@@ -131,9 +131,9 @@ const BrandTwo = () => {
                 </span>
                 Our Awards
               </span>
-              <h4 className="tp-section-title-40 font-style-2">
+              <p className="tp-section-title-40 font-style-2">
                 Celebrating Excellence: Our Award-Winning Achievements
-              </h4>
+              </p>
             </div>
           </div>
         </div>
