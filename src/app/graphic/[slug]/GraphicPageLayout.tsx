@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useTheme } from "next-themes";
@@ -1136,7 +1136,13 @@ function ProcessArrowIcon() {
   );
 }
 
-export default function GraphicPageLayout({ data }: { data: GraphicPageData }) {
+export default function GraphicPageLayout({
+  data,
+  countyList,
+}: {
+  data: GraphicPageData;
+  countyList?: ReactNode;
+}) {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
   const [hoveredWhyChoose, setHoveredWhyChoose] = useState<string | null>(null);
@@ -1521,6 +1527,8 @@ export default function GraphicPageLayout({ data }: { data: GraphicPageData }) {
 
           <GraphicQuoteSection isDark={isDark} />
         </main>
+        {countyList}
+        <FooterFour />
       </div>
     </Wrapper>
   );

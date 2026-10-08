@@ -1,6 +1,6 @@
 "use client";
 
-import type { CSSProperties } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Wrapper from "@/layouts/wrapper";
 import VideoPageHeader from "../VideoPageHeader";
@@ -284,7 +284,13 @@ function toStringArray(val: unknown): string[] {
   return [];
 }
 
-export default function VideoPageLayout({ data }: { data: Record<string, unknown> }) {
+export default function VideoPageLayout({
+  data,
+  countyList,
+}: {
+  data: Record<string, unknown>;
+  countyList?: ReactNode;
+}) {
   const heroObj = data.hero && typeof data.hero === "object" ? (data.hero as Record<string, unknown>) : null;
   
   const heroKicker =
@@ -679,6 +685,7 @@ export default function VideoPageLayout({ data }: { data: Record<string, unknown
           </div>
         </section>
         <VideoLetsTalkSection />
+        {countyList}
       </main>
 
       <FooterFour />

@@ -79,6 +79,43 @@ html[data-theme="light"] [data-graphic-page] .ab-logo-2 {
   color: royalblue !important;
 }
 
+[data-graphic-page] .county-list .tp-footer-3-title {
+  color: #18181b !important;
+}
+
+[data-theme="dark"] [data-graphic-page] .county-list .tp-footer-3-title,
+[data-theme="dark"] [data-graphic-page] .county-list .tp-footer-3-menu ul li a {
+  color: #f5f7f5 !important;
+}
+
+[data-graphic-page] .county-list .tp-footer-3-menu ul {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 100% !important;
+  gap: 1.2rem !important;
+  padding-left: 10px;
+  float: none;
+}
+
+[data-graphic-page] .county-list .tp-footer-3-menu ul li {
+  width: auto !important;
+  float: none;
+  list-style: disc;
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 767px) {
+  [data-graphic-page] .county-list .tp-footer-3-menu ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  [data-graphic-page] .county-list .tp-footer-3-menu ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 
 [data-theme="dark"] [data-graphic-page] p,
 [data-theme="dark"] [data-graphic-page] h2,
