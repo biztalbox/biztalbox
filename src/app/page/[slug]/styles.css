@@ -14,7 +14,7 @@ html[data-theme="light"] [data-cms-seo-page] .tp-inner-header-area .tp-inner-hea
 }
 
 html[data-theme="light"] [data-cms-seo-page] .tp-inner-header-area.transparent:not(.header-sticky) .tp-header-bar button span {
-  background-color: #ffffff !important;
+  background-color: #141414 !important;
 }
 
 html[data-theme="light"] [data-cms-seo-page] .header-sticky.tp-inner-header-area .tp-header-bar button span {

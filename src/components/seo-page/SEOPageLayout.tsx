@@ -214,7 +214,7 @@ export default function SEOPageLayout({ data, settings, countyList }: SEOPageLay
                           style={{ marginBottom: "0" }}
                         >
                           {data.hero_title && (
-                            <h1 className="text-white tp-char-animation">
+                            <h1 className="text-white">
                               {data.hero_title}
                             </h1>
                           )}
