@@ -248,9 +248,9 @@ function FaqItem({
         className="flex w-full cursor-pointer items-start justify-between gap-3 px-4 py-3.5 text-left sm:items-center sm:py-4"
         aria-expanded={isOpen}
       >
-        <span className="min-w-0 flex-1 text-[14px] font-semibold uppercase leading-snug tracking-wide   sm:text-[15px]">
+        <h3 className="m-0 min-w-0 flex-1 text-[14px] font-semibold uppercase leading-snug tracking-wide sm:text-[15px]">
           {question}
-        </span>
+        </h3>
         <span
           className="pointer-events-none mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-black text-white sm:mt-0"
           aria-hidden

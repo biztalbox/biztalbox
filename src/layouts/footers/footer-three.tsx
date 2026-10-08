@@ -90,14 +90,7 @@ export default function FooterThree() {
               <div className="tp-footer-2-widget footer-col-2-3">
                 <p className="tp-footer-2-widget-title">Office</p>
                 <div className="tp-footer-2-contact-item">
-                  <span>
-                    <a
-                      href="https://maps.app.goo.gl/XcgJQLkNL8vXPQa78"
-                      target="_blank"
-                    >
-                      A-11, 2nd Floor, sector 8 Dwarka 110077 New Delhi
-                    </a>
-                  </span>
+                  
                 </div>
                 <div className="tp-footer-2-contact-item">
                   <span>
