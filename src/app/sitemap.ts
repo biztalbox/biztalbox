@@ -84,16 +84,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }))
 
-  // Sitemap index references (sub-sitemaps)
+  // Location page sub-sitemaps (SEO / video / graphic: pages + countries + states)
   const sitemapRefs = [
     {
-      url: `${baseUrl}/usa-sitemap.xml`,
+      url: `${baseUrl}/page-sitemap.xml`,
       lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
+      changeFrequency: 'daily' as const,
       priority: 0.9,
     },
     {
-      url: `${baseUrl}/page-sitemap.xml`,
+      url: `${baseUrl}/video-page-sitemap.xml`,
+      lastModified: new Date(),
+      changeFrequency: 'daily' as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/graphic-sitemap.xml`,
       lastModified: new Date(),
       changeFrequency: 'daily' as const,
       priority: 0.9,

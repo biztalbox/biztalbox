@@ -93,7 +93,7 @@ export default function MobileOffcanvas({
 
               <ul>
                 <li>
-                  <Link href="tel:9485699709">+91 9485699709</Link>
+                  <Link href="tel:+919485699709">+91 9485699709</Link>
                 </li>
                 <li>
                   <Link href="mailto:info@biztalbox.com">
@@ -101,7 +101,7 @@ export default function MobileOffcanvas({
                   </Link>
                 </li>
                 <li>
-                  <Link href="#">
+                  <Link href="https://maps.app.goo.gl/R411GyAaGT459y4HA" target="_blank">
                     A-11, 2nd Floor, sector 8 Dwarka, New Delhi 110077
                   </Link>
                 </li>

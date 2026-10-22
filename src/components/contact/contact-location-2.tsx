@@ -114,10 +114,10 @@ const ContactLocationTwo = () => {
                     textAlign: "center",
                     
                   }}
-                  href="https://www.google.com/maps/@23.8223596,90.3656686,15z?entry=ttu"
-                  target="_blank"
+                 href="https://maps.app.goo.gl/R411GyAaGT459y4HA"
+                target="_blank"
                 >
-                  A-11, 2nd Floor, sector 8 Dwarka 110077 New Delhi
+                  A-11, 2nd Floor, sector 8 Dwarka, New Delhi 110077
                   </a>
               </div>
             </div>

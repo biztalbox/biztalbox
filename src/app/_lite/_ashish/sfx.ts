@@ -25,6 +25,8 @@ const scrubCueTimelines = new Set<gsap.core.Timeline>();
 
 let unlockInstalled = false;
 let sfxUnlocked = false;
+/** User mute — when true, play helpers no-op and active audio is paused. Default off. */
+let sfxMuted = true;
 let audioCtx: AudioContext | null = null;
 let audioSessionConfigured = false;
 
@@ -267,6 +269,32 @@ export function isLiteSfxUnlocked(): boolean {
   return sfxUnlocked;
 }
 
+export function isLiteSfxMuted(): boolean {
+  return sfxMuted;
+}
+
+/** Pause every cached HTMLAudio element (Web Audio one-shots are short-lived). */
+function pauseAllLiteAudio(): void {
+  audioBySrc.forEach((el, src) => {
+    clearStopTimerForSrc(src);
+    try {
+      el.pause();
+    } catch {
+      /* ignore */
+    }
+  });
+}
+
+export function setLiteSfxMuted(muted: boolean): void {
+  sfxMuted = muted;
+  if (muted) pauseAllLiteAudio();
+}
+
+export function toggleLiteSfxMuted(): boolean {
+  setLiteSfxMuted(!sfxMuted);
+  return sfxMuted;
+}
+
 function installUnlockListenersOnce(): void {
   if (typeof window === "undefined" || unlockInstalled) return;
   unlockInstalled = true;
@@ -292,6 +320,8 @@ function installUnlockListenersOnce(): void {
 }
 
 function runPlay(kind: LiteSfxKind, startSeconds?: number, durationSeconds?: number): void {
+  if (sfxMuted) return;
+
   const def = LITE_SFX_DEFAULTS[kind];
   const start = startSeconds ?? def.startTime;
   const duration = durationSeconds !== undefined ? durationSeconds : def.durationSec;
@@ -343,6 +373,7 @@ export function playLiteScanSfx(
   cueAt: number,
 ): void {
   if (typeof window === "undefined") return;
+  if (sfxMuted) return;
   if (!sfxUnlocked) return;
   if (kind === "print" && !isLiteReceiptSfxEnabled()) return;
 
@@ -361,6 +392,7 @@ export function playLiteSfx(
   durationSeconds?: number,
 ): void {
   if (typeof window === "undefined") return;
+  if (sfxMuted) return;
   if (!sfxUnlocked) return;
   if (kind === "bill" && !isLiteReceiptSfxEnabled()) return;
 
