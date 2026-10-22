@@ -1,0 +1,6 @@
+{
+  "_comment": "Single source of truth for the public URL base of each CMS location page type. To rename a folder (e.g. src/app/video -> src/app/video-services): rename the folder, change basePath here, and add the old base to legacyBasePaths so old URLs 301 to the new ones (next.config.mjs reads this file).",
+  "seo": { "basePath": "/seo-services", "legacyBasePaths": [] },
+  "video": { "basePath": "/video", "legacyBasePaths": [] },
+  "graphic": { "basePath": "/graphic", "legacyBasePaths": [] }
+}

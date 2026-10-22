@@ -1,64 +1,94 @@
-type CountyListKind = "seo" | "video" | "graphic";
+import {
+  CMS_API_URL,
+  LOCATION_PAGE_TYPES,
+  locationHref,
+  type LocationPageType,
+} from "@/lib/location-pages/config";
+import { humanizeSlug } from "@/lib/location-pages/breadcrumbs";
 
-const LIST_CONFIG: Record<
-  CountyListKind,
-  { endpoint: string; hrefPrefix: string; label: string }
-> = {
-  seo: {
-    endpoint: "pages",
-    hrefPrefix: "/page",
-    label: "SEO Services",
-  },
-  video: {
-    endpoint: "video-pages",
-    hrefPrefix: "/video",
-    label: "Video Editing Services",
-  },
-  graphic: {
-    endpoint: "graphic-pages",
-    hrefPrefix: "/graphic",
-    label: "Graphic Design Services",
-  },
+type CountyListKind = LocationPageType;
+
+const LABEL: Record<CountyListKind, string> = {
+  seo: "SEO Services",
+  video: "Video Editing Services",
+  graphic: "Graphic Design Services",
 };
 
+interface ListItem {
+  slug: string;
+  status?: string;
+  county?: string | null;
+  breadcrumb_label?: string | null;
+  title?: string | null;
+  country_name?: string | null;
+  state_name?: string | null;
+  location_path?: string | null;
+}
+
+/** Link to a page: its new location URL, or its old URL while the location is incomplete. */
+function itemHref(kind: CountyListKind, item: ListItem): string {
+  if (item.location_path) return locationHref(kind, item.location_path);
+  const safe = encodeURIComponent(item.slug);
+  if (kind === "seo") return `/page/${safe}`;
+  return `${LOCATION_PAGE_TYPES[kind].basePath}/${safe}`;
+}
+
+/**
+ * Other published pages in the same state (or same country for flat
+ * countries). Server-rendered so the links are in the page HTML.
+ * Pass countrySlug/stateSlug (new routes) or country/state ids (legacy).
+ */
 const CountyList = async ({
   excludeSlug,
   country,
   state,
+  countrySlug,
+  stateSlug,
   kind = "seo",
 }: {
   excludeSlug?: string;
-  country: number;
-  state: number;
+  country?: number;
+  state?: number;
+  countrySlug?: string | null;
+  stateSlug?: string | null;
   kind?: CountyListKind;
 }) => {
-  const config = LIST_CONFIG[kind];
-  const CMS_API_URL = (process.env.CMS_API_URL ?? "https://cms.biztalbox.com").replace(
-    /\/$/,
-    "",
-  );
-  const params = new URLSearchParams({
-    country_id: String(country),
-    state_id: String(state),
-  });
-  if (excludeSlug) params.set("excludeSlug", excludeSlug);
-
-  const res = await fetch(`${CMS_API_URL}/api/public/${config.endpoint}?${params.toString()}`, {
-    cache: "no-store",
-  });
-  if (!res.ok) {
-    console.error(`[CountyList] CMS API returned ${res.status}`);
+  const params = new URLSearchParams();
+  if (countrySlug) {
+    params.set("country_slug", countrySlug);
+    if (stateSlug) params.set("state_slug", stateSlug);
+  } else if (country && state) {
+    params.set("country_id", String(country));
+    params.set("state_id", String(state));
+  } else {
     return null;
   }
-  const raw: unknown = await res.json();
-  const data = Array.isArray(raw)
-    ? raw.filter(
-        (p: { status?: string; slug?: string }) =>
-          p.status === "published" && p.slug !== excludeSlug,
-      )
-    : [];
+  if (excludeSlug) params.set("excludeSlug", excludeSlug);
 
+  let raw: unknown;
+  try {
+    const res = await fetch(
+      `${CMS_API_URL}/api/public/${LOCATION_PAGE_TYPES[kind].cmsEndpoint}?${params.toString()}`,
+      { cache: "no-store" }
+    );
+    if (!res.ok) {
+      console.error(`[CountyList] CMS API returned ${res.status}`);
+      return null;
+    }
+    raw = await res.json();
+  } catch (err) {
+    // A related-links block must never take the whole page down.
+    console.error("[CountyList] CMS request failed", err);
+    return null;
+  }
+
+  const data: ListItem[] = Array.isArray(raw)
+    ? (raw as ListItem[]).filter((p) => p.status === "published" && p.slug !== excludeSlug)
+    : [];
   if (!data.length) return null;
+
+  const label = LABEL[kind];
+  const area = data[0].state_name || data[0].country_name || "";
 
   return (
     <div className="county-list tp-about-4-area pt-40 pb-40 p-relative">
@@ -67,14 +97,14 @@ const CountyList = async ({
           <div className="col-xl-12">
             <div className="tp-footer-3-widget mb-40">
               <h3 className="tp-footer-3-title">
-                {config.label} {data[0].state_name}
+                {label} {area}
               </h3>
               <div className="tp-footer-3-menu">
                 <ul>
-                  {data.map((item: { slug: string; county: string }) => (
+                  {data.map((item) => (
                     <li key={item.slug}>
-                      <a href={`${config.hrefPrefix}/${item.slug}`}>
-                        {config.label} {item.county}
+                      <a href={itemHref(kind, item)}>
+                        {label} {item.county || item.breadcrumb_label || humanizeSlug(item.slug)}
                       </a>
                     </li>
                   ))}

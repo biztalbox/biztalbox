@@ -25,7 +25,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/social-media-marketing',
     '/google-ads-service',
     '/facebook-ads-service',
-    '/analysis-algorithm'
+    '/analysis-algorithm',
+    '/locations',
   ].map((route) => ({
     // Construct the full URL for each route
     url: `${baseUrl}${route}`, // The full URL for the route

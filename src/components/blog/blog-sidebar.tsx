@@ -241,7 +241,7 @@ export default function BlogSidebar() {
           }}
         >
           <a
-            href="https://biztalbox.com/usa-sitemap.xml"
+            href="/locations"
             style={{
               flex: 1,
               padding: '12px 18px',
@@ -258,7 +258,7 @@ export default function BlogSidebar() {
             onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.25')}
             onMouseLeave={(e) => (e.currentTarget.style.opacity = '0')}
           >
-            USA County
+           Service Pages
           </a>
 
           <a

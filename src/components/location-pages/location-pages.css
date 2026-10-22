@@ -1,0 +1,194 @@
+/*
+ * Breadcrumbs + country/state listing pages for CMS location pages.
+ * Light theme is the base; html[data-theme="dark"] switches the tokens.
+ * Selectors start with html[data-theme] so page-level link rules
+ * (e.g. "[data-cms-seo-page] main li a") cannot override them.
+ */
+
+.bb-breadcrumb,
+.bb-hub {
+  --bb-text: #18181b;
+  --bb-muted: #52525b;
+  --bb-faint: #a1a1aa;
+  --bb-link: #18181b;
+  --bb-link-hover: #000000;
+  --bb-border: rgba(24, 24, 27, 0.12);
+  --bb-card: rgba(24, 24, 27, 0.03);
+  --bb-card-hover: rgba(24, 24, 27, 0.07);
+}
+
+html[data-theme="dark"] .bb-breadcrumb,
+html[data-theme="dark"] .bb-hub {
+  --bb-text: #fafafa;
+  --bb-muted: rgba(255, 255, 255, 0.68);
+  --bb-faint: rgba(255, 255, 255, 0.38);
+  --bb-link: rgba(255, 255, 255, 0.86);
+  --bb-link-hover: #ffffff;
+  --bb-border: rgba(255, 255, 255, 0.14);
+  --bb-card: rgba(255, 255, 255, 0.03);
+  --bb-card-hover: rgba(255, 255, 255, 0.08);
+}
+
+/* ---------------- Breadcrumbs ---------------- */
+
+.bb-breadcrumb {
+  position: relative;
+  z-index: 5;
+  background: transparent;
+  padding: 14px 0 6px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+html[data-theme] .bb-breadcrumb .bb-breadcrumb__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+html[data-theme] .bb-breadcrumb .bb-breadcrumb__item {
+  display: inline-flex;
+  align-items: center;
+  min-width: 0;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  color: var(--bb-muted);
+}
+
+/* !important: some pages force all links to a colour (e.g. graphic pages use royalblue). */
+html[data-theme] .bb-breadcrumb a.bb-breadcrumb__link {
+  color: var(--bb-link) !important;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+}
+
+html[data-theme] .bb-breadcrumb a.bb-breadcrumb__link:hover,
+html[data-theme] .bb-breadcrumb a.bb-breadcrumb__link:focus-visible {
+  color: var(--bb-link-hover) !important;
+  border-bottom-color: currentColor;
+}
+
+html[data-theme] .bb-breadcrumb a.bb-breadcrumb__link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+html[data-theme] .bb-breadcrumb .bb-breadcrumb__current {
+  color: var(--bb-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 60vw;
+}
+
+html[data-theme] .bb-breadcrumb .bb-breadcrumb__sep {
+  margin: 0 10px;
+  color: var(--bb-faint);
+  font-size: 12px;
+}
+
+@media (max-width: 575px) {
+  .bb-breadcrumb {
+    padding-top: 10px;
+    font-size: 13px;
+  }
+  html[data-theme] .bb-breadcrumb .bb-breadcrumb__sep {
+    margin: 0 7px;
+  }
+}
+
+/* ---------------- Country / state listing pages ---------------- */
+
+.bb-hub {
+  color: var(--bb-text);
+  padding: 32px 0 96px;
+  min-height: 50vh;
+}
+
+html[data-theme] .bb-hub .bb-hub__title {
+  color: var(--bb-text);
+  font-size: clamp(30px, 4.2vw, 56px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0 0 16px;
+}
+
+html[data-theme] .bb-hub .bb-hub__intro {
+  color: var(--bb-muted);
+  font-size: 17px;
+  max-width: 640px;
+  margin: 0 0 40px;
+}
+
+html[data-theme] .bb-hub .bb-hub__section {
+  margin: 0 0 48px;
+}
+
+html[data-theme] .bb-hub .bb-hub__section:last-child {
+  margin-bottom: 0;
+}
+
+html[data-theme] .bb-hub .bb-hub__section-title {
+  color: var(--bb-text);
+  font-size: clamp(22px, 2.8vw, 32px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  margin: 0 0 20px;
+}
+
+html[data-theme] .bb-hub .bb-hub__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+html[data-theme] .bb-hub .bb-hub__item {
+  margin: 0;
+}
+
+html[data-theme] .bb-hub a.bb-hub__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  height: 100%;
+  padding: 18px 20px;
+  border: 1px solid var(--bb-border);
+  border-radius: 10px;
+  background: var(--bb-card);
+  color: var(--bb-text) !important;
+  text-decoration: none;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+html[data-theme] .bb-hub a.bb-hub__link:hover,
+html[data-theme] .bb-hub a.bb-hub__link:focus-visible {
+  background: var(--bb-card-hover);
+  border-color: var(--bb-faint);
+}
+
+html[data-theme] .bb-hub .bb-hub__name {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+html[data-theme] .bb-hub .bb-hub__meta {
+  flex-shrink: 0;
+  color: var(--bb-muted);
+  font-size: 13px;
+  white-space: nowrap;
+}

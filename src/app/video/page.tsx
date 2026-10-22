@@ -1,16 +1,11 @@
 import { permanentRedirect } from "next/navigation";
-import type { Metadata } from "next";
+import { LOCATION_PAGE_TYPES } from "@/lib/location-pages/config";
 
-export const metadata: Metadata = {
-  title: "Biztalbox – Digital Marketing & SEO",
-  description: "Redirecting to Biztalbox home.",
-  robots: { index: false, follow: false },
-};
+// Dynamic so the 308 carries a real Location header (a statically built
+// redirect page only gets a meta refresh).
+export const dynamic = "force-dynamic";
 
-/**
- * /page (no slug) has no content; permanently redirect to home.
- * Using permanentRedirect (308) so search engines consolidate /page → / in the index.
- */
+/** The bare base path has no page of its own: send it where the breadcrumb points. */
 export default function Page() {
-  permanentRedirect("/");
+  permanentRedirect(LOCATION_PAGE_TYPES.video.breadcrumbHref);
 }

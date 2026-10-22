@@ -1,5 +1,32 @@
+import { readFileSync } from "node:fs";
+
+/**
+ * Base paths of the CMS location pages (seo / video / graphic). When a route
+ * folder is renamed, its old base goes into legacyBasePaths and every old URL
+ * 301s to the new base. See src/lib/location-pages/base-paths.json.
+ */
+const locationBasePaths = JSON.parse(
+    readFileSync(new URL("./src/lib/location-pages/base-paths.json", import.meta.url), "utf8")
+);
+
+function locationLegacyRedirects() {
+    const rules = [];
+    for (const [key, cfg] of Object.entries(locationBasePaths)) {
+        if (key.startsWith("_") || !cfg || !Array.isArray(cfg.legacyBasePaths)) continue;
+        for (const legacy of cfg.legacyBasePaths) {
+            if (!legacy || legacy === cfg.basePath) continue;
+            rules.push({ source: legacy, destination: cfg.basePath, permanent: true });
+            rules.push({ source: `${legacy}/:path*`, destination: `${cfg.basePath}/:path*`, permanent: true });
+        }
+    }
+    return rules;
+}
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    async redirects() {
+        return locationLegacyRedirects();
+    },
     images: {
         formats: ['image/avif', 'image/webp'],
         remotePatterns: [

@@ -16,7 +16,7 @@ export function str(obj: Record<string, unknown> | null, ...keys: string[]): str
   return "";
 }
 
-function unwrapPagePayload(raw: unknown): Record<string, unknown> | null {
+export function unwrapPagePayload(raw: unknown): Record<string, unknown> | null {
   const obj = asRecord(raw);
   if (!obj) return null;
   const page = asRecord(obj.data ?? obj.page ?? obj) ?? obj;

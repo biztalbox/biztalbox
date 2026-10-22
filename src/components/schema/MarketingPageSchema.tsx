@@ -34,11 +34,17 @@ export interface MarketingPageData {
 interface MarketingPageSchemaProps {
   pageData: MarketingPageData;
   currentUrl: string;
+  /**
+   * Optional full breadcrumb trail (name + absolute URL). When omitted the
+   * schema keeps its original two-item "Home > Page" breadcrumb.
+   */
+  breadcrumbItems?: { name: string; item: string }[];
 }
 
 export default function MarketingPageSchema({ 
   pageData, 
-  currentUrl 
+  currentUrl,
+  breadcrumbItems,
 }: MarketingPageSchemaProps) {
   const schemas: unknown[] = [];
   const baseUrl = "https://biztalbox.com";
@@ -146,20 +152,27 @@ export default function MarketingPageSchema({
   const breadcrumbSchema: BreadcrumbList = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: baseUrl
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: pageData.title,
-        item: currentUrl
-      }
-    ]
+    itemListElement: breadcrumbItems?.length
+      ? breadcrumbItems.map((b, i) => ({
+          "@type": "ListItem" as const,
+          position: i + 1,
+          name: b.name,
+          item: b.item,
+        }))
+      : [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "Home",
+          item: baseUrl
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: pageData.title,
+          item: currentUrl
+        }
+      ]
   };
   schemas.push(breadcrumbSchema);
 

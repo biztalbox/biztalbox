@@ -149,9 +149,11 @@ interface SEOPageLayoutProps {
   settings: CMSSettings;
   /** Rendered on the server (e.g. `<CountyList />` from `page.tsx`) so links appear in page source. */
   countyList?: React.ReactNode;
+  /** Optional breadcrumb trail rendered right below the header. */
+  breadcrumbs?: React.ReactNode;
 }
 
-export default function SEOPageLayout({ data, settings, countyList }: SEOPageLayoutProps) {
+export default function SEOPageLayout({ data, settings, countyList, breadcrumbs }: SEOPageLayoutProps) {
   useScrollSmooth();
   const [isMobile, setIsMobile] = useState(false);
 
@@ -200,6 +202,7 @@ export default function SEOPageLayout({ data, settings, countyList }: SEOPageLay
 
       <div id="smooth-wrapper page_content">
         <div id="smooth-content">
+          {breadcrumbs}
           <main style={{ overflow: "hidden" }}>
 
             {/* ── Hero ────────────────────────────────────────────── */}

@@ -1139,9 +1139,12 @@ function ProcessArrowIcon() {
 export default function GraphicPageLayout({
   data,
   countyList,
+  breadcrumbs,
 }: {
   data: GraphicPageData;
   countyList?: ReactNode;
+  /** Optional breadcrumb trail rendered right below the header. */
+  breadcrumbs?: ReactNode;
 }) {
   const { resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -1209,6 +1212,7 @@ export default function GraphicPageLayout({
     <Wrapper>
       <div data-graphic-page className="graphic-page overflow-x-hidden">
         <HeaderEleven transparent={isDark} cls={isDark ? "" : "tp-inner-header-border"} />
+        {breadcrumbs}
 
         <main>
           <section>

@@ -1,0 +1,81 @@
+
+
+.video_page a{
+    color: royalblue !important;
+}
+
+.video_page .county-list .tp-footer-3-title {
+    color: #18181b !important;
+}
+
+[data-theme="dark"] .video_page .county-list .tp-footer-3-title,
+[data-theme="dark"] .video_page .county-list .tp-footer-3-menu ul li a {
+    color: #f8f8f8 !important;
+}
+
+.video_page .county-list .tp-footer-3-menu ul {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    width: 100% !important;
+    gap: 1.2rem !important;
+    padding-left: 10px;
+    float: none;
+}
+
+.video_page .county-list .tp-footer-3-menu ul li {
+    width: auto !important;
+    float: none;
+    list-style: disc;
+    text-transform: capitalize;
+}
+
+@media screen and (max-width: 767px) {
+    .video_page .county-list .tp-footer-3-menu ul {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .video_page .county-list .tp-footer-3-menu ul {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+[data-theme="dark"] .video_page p,
+[data-theme="dark"] .video_page span,
+[data-theme="dark"] .video_page h1,
+[data-theme="dark"] .video_page h2,
+[data-theme="dark"] .video_page h3,
+[data-theme="dark"] .video_page h4,
+[data-theme="dark"] .video_page li,
+[data-theme="dark"] .video_page label {
+    color: #f8f8f8 !important;
+}
+
+/* Services grid: dark background so white text stays readable */
+[data-theme="dark"] .video_page [data-video-section="services"] {
+    background-color: #000000 !important;
+}
+
+/* Bouquet section: always keep light-theme look, even in dark mode */
+[data-theme="dark"] .video_page [data-video-section="bouquet"] {
+    background-color: #ffffff !important;
+    color: #18181b !important;
+}
+
+[data-theme="dark"] .video_page [data-video-section="bouquet"] h2,
+[data-theme="dark"] .video_page [data-video-section="bouquet"] h3 {
+    color: #18181b !important;
+}
+
+[data-theme="dark"] .video_page [data-video-section="bouquet"] p {
+    color: #71717a !important;
+}
+
+/* [data-theme="light"] .video_page p,
+[data-theme="light"] .video_page span
+[data-theme="light"] .video_page h2,
+[data-theme="light"] .video_page h3,
+[data-theme="light"] .video_page h4 {
+    color: #000 !important;
+} */

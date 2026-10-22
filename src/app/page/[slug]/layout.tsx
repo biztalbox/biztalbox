@@ -3,11 +3,25 @@ import { createFullUrl } from "@/utils/metadata";
 import MarketingPageSchema from "@/components/schema/MarketingPageSchema";
 import { createMarketingPageData } from "@/utils/marketing-page-data";
 import { fetchPage } from "@/lib/cms-api";
-import '@/app/page/[slug]/styles.css';
+import "@/components/seo-page/seo-page.css";
+import {
+  SEO_PAGE_AGGREGATE_RATING,
+  SEO_PAGE_SCHEMA_IMAGE,
+  SEO_PAGE_TESTIMONIALS,
+} from "@/data/seo-page-testimonials";
 
 export const dynamic = "force-dynamic";
 
 const DOMAIN = process.env.NEXT_PUBLIC_DOMAIN ?? "https://biztalbox.com";
+
+/** Next.js passes the segment still URL-encoded ("Austin%20SEO"). */
+function decodeSlug(raw: string): string {
+  try {
+    return decodeURIComponent(raw);
+  } catch {
+    return raw;
+  }
+}
 
 function renderJsonLdSchemas(schemas: unknown[]) {
   return (
@@ -25,44 +39,6 @@ function renderJsonLdSchemas(schemas: unknown[]) {
   );
 }
 
-// Hardcoded testimonial
-const testimonial = [
-  {
-    id: 1,
-    rating: 5,
-    name: "Laura M.",
-    designation: " Local Retailer",
-    desc: `"If I'm being honest, I wasn't convinced that SEO would help our small business. But in working with Biztalbox, my doubts were proven wrong. Within a few months, we started showing up in searches we didn’t even expect, and our website traffic actually feels meaningful now. Really appreciate the team’s transparency and patience with all my questions."`,
-  },
-  {
-    id: 2,
-    rating: 5,
-    name: "Raj P. ",
-    designation: "SaaS Founder",
-    desc: `"Biztalbox isn't your average SEO agency. They invested time in learning about our SaaS product and our customer base. The advice was concise, actionable, and we actually see leads coming in that convert. It feels like they're part of our team, not a vendor." "`,
-  },
-  {
-    id: 3,
-    rating: 5,
-    name: "Marcus L.",
-    designation: "Service Business Owner",
-    desc: `"I’ve worked with a few SEO companies before, and to be honest, the majority of them felt as if there was just a cookie cutter template they were using. Biztalbox felt completely custom. The team explained what they were doing without confusing jargon, and now our Google rankings are up, and calls are coming in steadily. It’s refreshing to finally feel confident in SEO."`,
-  },
-  {
-    id: 4,
-    rating: 5,
-    name: "Karen S.",
-    designation: "Manufacturing Director",
-    desc: `"We hired Biztalbox for our manufacturing site, and I’ll admit I didn’t expect much. But their approach was different — the audits, keyword strategy, and follow-ups actually made sense. Our website traffic increased, and more importantly, we’re seeing real inquiries from clients. Couldn’t be happier."`,
-  },
-  {
-    id: 5,
-    rating: 5,
-    name: "Maya L.",
-    designation: "SaaS Company",
-    desc: `"I wasn’t expecting SEO to be this… approachable. The team at Biztalbox communicated what was important, got our site issues resolved, and provided great actionable advice with content. Within months, we were seeing consistent leads. Real, actionable results."`,
-  },
-  ];
 
 /**
  * Dynamic metadata — title, description, and canonical URL all come from
@@ -73,7 +49,7 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
+  const slug = decodeSlug((await params).slug);
   const page = await fetchPage(slug);
   if (!page) return {};
 
@@ -81,12 +57,12 @@ export async function generateMetadata({
     title: page.title,
     description: page.description,
     alternates: {
-      canonical: `${DOMAIN}/page/${page.slug}`,
+      canonical: `${DOMAIN}/page/${encodeURIComponent(page.slug)}`,
     },
     openGraph: {
       title: page.title,
       description: page.description,
-      url: `${DOMAIN}/page/${page.slug}`,
+      url: `${DOMAIN}/page/${encodeURIComponent(page.slug)}`,
       siteName: "Biztalbox",
       type: "website",
     },
@@ -110,7 +86,7 @@ export default async function CMSPageLayout({
   children: React.ReactNode;
   params: Promise<{ slug: string }>;
 }) {
-  const { slug } = await params;
+  const slug = decodeSlug((await params).slug);
   const page = await fetchPage(slug);
 
   // If page doesn't exist the route's page.tsx will call notFound(); just
@@ -119,7 +95,7 @@ export default async function CMSPageLayout({
     return <>{children}</>;
   }
 
-  const path = `/page/${slug}`;
+  const path = `/page/${encodeURIComponent(page.slug)}`;
   const currentUrl = createFullUrl(path);
 
   // Derive a readable service type from the slug.
@@ -149,18 +125,13 @@ export default async function CMSPageLayout({
         question: f.question,
         answer: f.answer,
       })) ?? [],
-    reviews: testimonial.map((r) => ({
+    reviews: SEO_PAGE_TESTIMONIALS.map((r) => ({
       author: r.name,
       rating: r.rating,
       text: r.desc,
     })),
-    aggregateRating: {
-      rating: 4.9,
-      reviewCount: 156,
-      bestRating: 5,
-    },
-    image:
-      "https://biztalbox.com/_next/image?url=%2Fassets%2Fimg%2Fservices%2Fseo.webp&w=1080&q=75",
+    aggregateRating: SEO_PAGE_AGGREGATE_RATING,
+    image: SEO_PAGE_SCHEMA_IMAGE,
   });
 
   return (

@@ -3,14 +3,14 @@
 import type { CSSProperties, ReactNode } from "react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Wrapper from "@/layouts/wrapper";
-import VideoPageHeader from "../VideoPageHeader";
-import VideoTrustedMarquee from "../VideoTrustedMarquee";
-import VideoServicesSection from "../VideoServicesSection";
-import VideoContactSection from "../VideoContactSection";
-import VideoBouquetServicesSection from "../VideoBouquetServicesSection";
-import VideoClientIndustriesSection from "../VideoClientIndustriesSection";
-import VideoProcessSection from "../VideoProcessSection";
-import VideoLetsTalkSection from "../VideoLetsTalkSection";
+import VideoPageHeader from "./VideoPageHeader";
+import VideoTrustedMarquee from "./VideoTrustedMarquee";
+import VideoServicesSection from "./VideoServicesSection";
+import VideoContactSection from "./VideoContactSection";
+import VideoBouquetServicesSection from "./VideoBouquetServicesSection";
+import VideoClientIndustriesSection from "./VideoClientIndustriesSection";
+import VideoProcessSection from "./VideoProcessSection";
+import VideoLetsTalkSection from "./VideoLetsTalkSection";
 import FooterFour from "@/layouts/footers/footer-four";
 import ServiceThree from "@/components/service/service-three";
 import { str } from "@/lib/cms-video-pages";
@@ -287,9 +287,12 @@ function toStringArray(val: unknown): string[] {
 export default function VideoPageLayout({
   data,
   countyList,
+  breadcrumbs,
 }: {
   data: Record<string, unknown>;
   countyList?: ReactNode;
+  /** Optional breadcrumb trail rendered right below the header. */
+  breadcrumbs?: ReactNode;
 }) {
   const heroObj = data.hero && typeof data.hero === "object" ? (data.hero as Record<string, unknown>) : null;
   
@@ -393,6 +396,7 @@ export default function VideoPageLayout({
   return (
     <Wrapper>
       <VideoPageHeader />
+      {breadcrumbs}
 
       <main className="video_page">
         <section className="bg-zinc-50 py-10  dark:bg-[#121212] dark:text-white sm:py-12 lg:py-14">
