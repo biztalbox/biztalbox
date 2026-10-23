@@ -1370,7 +1370,7 @@ export default function GraphicPageLayout({
                 className="graphic-section-title text-[1.65rem] font-light leading-tight tracking-tight sm:text-[2rem] md:text-[2.35rem]"
                 
               >
-                Why Choose Creative Biztalbox
+                Why Choose Creative biztalbox?
               </h2>
               <div
                 className="graphic-divider mt-5 h-px w-full"
