@@ -424,7 +424,7 @@ export default function BlogClassicArea({
             title: decodedTitle,
             date: formattedDate,
             category: category,
-            author: "Biztal Box",
+            author: "biztal box",
             desc: decodedContent,
             img: featuredImageUrl as any, // Using 'any' here as a workaround for StaticImageData
             featuredImage: featuredImageUrl,

@@ -60,7 +60,7 @@ function build(title: string, description: string, canonical: string): Metadata 
     title,
     description,
     alternates: { canonical },
-    openGraph: { title, description, url: canonical, siteName: "Biztalbox", type: "website" },
+    openGraph: { title, description, url: canonical, siteName: "biztalbox", type: "website" },
     twitter: { card: "summary_large_image", title, description },
   };
 }
@@ -73,8 +73,8 @@ export function locationMetadata(type: LocationPageType, route: LocationRoute): 
   if (route.kind === "country") {
     const { country } = route.data;
     return build(
-      `${cfg.serviceName} in ${country.name} | Biztalbox`,
-      `Biztalbox ${cfg.serviceName.toLowerCase()} across ${country.name}. Choose your location to see how we help local businesses grow.`,
+      `${cfg.serviceName} in ${country.name} | biztalbox`,
+      `biztalbox ${cfg.serviceName.toLowerCase()} across ${country.name}. Choose your location to see how we help local businesses grow.`,
       canonical
     );
   }
@@ -82,14 +82,14 @@ export function locationMetadata(type: LocationPageType, route: LocationRoute): 
   if (route.kind === "state") {
     const { country, state } = route.data;
     return build(
-      `${cfg.serviceName} in ${state.name}, ${country.name} | Biztalbox`,
-      `Biztalbox ${cfg.serviceName.toLowerCase()} in ${state.name}, ${country.name}. Choose your area to see how we help local businesses grow.`,
+      `${cfg.serviceName} in ${state.name}, ${country.name} | biztalbox`,
+      `biztalbox ${cfg.serviceName.toLowerCase()} in ${state.name}, ${country.name}. Choose your area to see how we help local businesses grow.`,
       canonical
     );
   }
 
   const raw = (route.raw.data ?? route.raw.page ?? route.raw) as Record<string, unknown>;
-  const title = str(raw, "title", "meta_title") || `${route.meta.slug} | Biztalbox`;
+  const title = str(raw, "title", "meta_title") || `${route.meta.slug} | biztalbox`;
   const description = str(raw, "description", "meta_description");
   return build(title, description, canonical);
 }

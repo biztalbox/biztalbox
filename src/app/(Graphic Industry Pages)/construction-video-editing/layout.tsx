@@ -5,8 +5,8 @@ import { createMarketingPageData } from "@/utils/marketing-page-data";
 import "@/app/(Graphic Industry Pages)/styles.css";
 
 const baseMetadata: Metadata = {
-  title: "Graphic Design & Video Editing Services for Construction Industry | Biztalbox",
-  description: "Win more construction projects with professional graphic design and video editing services from Biztalbox. Showcase your work, build client trust, and strengthen your construction brand with impactful visual content.",
+  title: "Graphic Design & Video Editing Services for Construction Industry | biztalbox",
+  description: "Win more construction projects with professional graphic design and video editing services from biztalbox. Showcase your work, build client trust, and strengthen your construction brand with impactful visual content.",
 };
 
 export const metadata = createMetadata(baseMetadata, "/construction-video-editing");

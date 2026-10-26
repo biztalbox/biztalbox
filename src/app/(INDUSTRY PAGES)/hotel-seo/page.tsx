@@ -107,7 +107,7 @@ const faq_data = [
     id: 13,
     question: "Which SEO agency is best for hotel businesses?",
     answer:
-      "The best hotel SEO agency is one that understands hospitality search behaviour, OTA competition, and how travellers move from search to booking. Biztalbox is positioned as a strong choice because it combines technical SEO, local optimisation, and intent-driven content strategy specifically for hotels, resorts, and restaurants. It focuses on increasing direct bookings, improving visibility across Google Search and Maps, and reducing dependence on OTAs while driving long-term revenue growth.",
+      "The best hotel SEO agency is one that understands hospitality search behaviour, OTA competition, and how travellers move from search to booking. biztalbox is positioned as a strong choice because it combines technical SEO, local optimisation, and intent-driven content strategy specifically for hotels, resorts, and restaurants. It focuses on increasing direct bookings, improving visibility across Google Search and Maps, and reducing dependence on OTAs while driving long-term revenue growth.",
   },
 ];
 
@@ -238,7 +238,7 @@ export default function Page() {
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
                         <div className="tm-details-text">
-                          <p>Your guests are searching — make sure they find you first. Partner with Biztalbox, the hotel SEO experts that hotels, resorts, and restaurants trust, and start driving real results. Contact us today for a free consultation.</p>
+                          <p>Your guests are searching — make sure they find you first. Partner with biztalbox, the hotel SEO experts that hotels, resorts, and restaurants trust, and start driving real results. Contact us today for a free consultation.</p>
                         </div>
                         <div className="tm-details-portfolio">
                           <span className="tm-details-social-title">Get in Touch:</span>
@@ -353,7 +353,7 @@ export default function Page() {
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
                         <div className="tm-details-text">
-                          <p>Your guests are searching — make sure they find you first. Partner with Biztalbox, the hotel SEO experts that hotels, resorts, and restaurants trust, and start driving real results. Contact us today for a free consultation.</p>
+                          <p>Your guests are searching — make sure they find you first. Partner with biztalbox, the hotel SEO experts that hotels, resorts, and restaurants trust, and start driving real results. Contact us today for a free consultation.</p>
                         </div>
                         <div className="tm-details-portfolio">
                           <span className="tm-details-social-title">Get in Touch:</span>
@@ -449,7 +449,7 @@ export default function Page() {
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
                         <div className="tm-details-text">
-                          <p>Your guests are searching — make sure they find you first. Partner with Biztalbox, the hotel SEO experts that hotels, resorts, and restaurants trust, and start driving real results. Contact us today for a free consultation.</p>
+                          <p>Your guests are searching — make sure they find you first. Partner with biztalbox, the hotel SEO experts that hotels, resorts, and restaurants trust, and start driving real results. Contact us today for a free consultation.</p>
                         </div>
                         <div className="tm-details-portfolio">
                           <span className="tm-details-social-title">Get in Touch:</span>
@@ -511,7 +511,7 @@ export default function Page() {
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
                         <div className="tm-details-text">
-                          <p>Your guests are searching — make sure they find you first. Partner with Biztalbox, the hotel SEO experts that hotels, resorts, and restaurants trust, and start driving real results. Contact us today for a free consultation.</p>
+                          <p>Your guests are searching — make sure they find you first. Partner with biztalbox, the hotel SEO experts that hotels, resorts, and restaurants trust, and start driving real results. Contact us today for a free consultation.</p>
                         </div>
                         <div className="tm-details-portfolio">
                           <span className="tm-details-social-title">Get in Touch:</span>
@@ -573,7 +573,7 @@ export default function Page() {
                   <li>Inconsistent web traffic and a lack of direct sales</li>
                 </ul>
                 <p>They came to us looking for a best SEO company for hotels that could deliver measurable commercial impact instead of surface-level optimizations.</p>
-                <h3 className="section-subheading">How Biztalbox Approaches Hotel SEO</h3>
+                <h3 className="section-subheading">How biztalbox Approaches Hotel SEO</h3>
                 <p>To address their challenges, we implemented a structured approach using advanced seo services for hotels, designed specifically to match traveler intent and revenue goals. This is what separates the <Link href="https://biztalbox.com/blog/inside-a-digital-marketing-agency" className="text-primary">best SEO agency</Link> for hotels from generic agencies.</p>
                 <ol>
                   <li><strong>Intent-based keyword mapping</strong> — We focused on high-intent search behavior like &quot;best hotels in ___&quot; and &quot;boutique stay near ___&quot;, which typically convert closer to the booking window. This level of precision is essential for any seo for hotel company operating at a competitive standard.</li>
@@ -637,7 +637,7 @@ export default function Page() {
               {/* Final CTA copy */}
               <section className="content-section">
                 <div style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto" }}>
-                  <h2 className="section-heading">At Biztalbox, we understand this entire ecosystem.</h2>
+                  <h2 className="section-heading">At biztalbox, we understand this entire ecosystem.</h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
                     We understand how hotels capture demand, how travelers make decisions, and how commercial teams evaluate performance. More importantly, we understand how to turn hotel SEO into profitable direct revenue at scale.
                   </p>
@@ -665,7 +665,7 @@ export default function Page() {
                         <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
-                        <p>Your guests are searching — make sure they find you first. Partner with Biztalbox, the hotel SEO experts that hotels, resorts, and restaurants trust, and start driving real results. Contact us today for a free consultation.</p>
+                        <p>Your guests are searching — make sure they find you first. Partner with biztalbox, the hotel SEO experts that hotels, resorts, and restaurants trust, and start driving real results. Contact us today for a free consultation.</p>
                       </div>
                       <div className="tm-details-portfolio">
                         <span className="tm-details-social-title">Get in Touch:</span>

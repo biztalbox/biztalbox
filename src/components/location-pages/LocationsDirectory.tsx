@@ -34,7 +34,7 @@ export default function LocationsDirectory({ sections }: { sections: LocationSer
           <div className="container">
             <h1 className="bb-hub__title">Service Locations</h1>
             <p className="bb-hub__intro">
-              Explore the countries where Biztalbox offers SEO, video editing, and graphic design
+              Explore the countries where biztalbox offers SEO, video editing, and graphic design
               services. Pick a service, then choose your country.
             </p>
 

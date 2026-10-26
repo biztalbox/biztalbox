@@ -24,7 +24,7 @@ export default async function VideoContent({ route, crumbs, path }: ContentRende
         }))
     : [];
   const pageData = createMarketingPageData({
-    title: str(page, "title", "meta_title") || `${slug} | Biztalbox`,
+    title: str(page, "title", "meta_title") || `${slug} | biztalbox`,
     description: str(page, "description", "meta_description"),
     path,
     serviceType: "Video Editing Services",

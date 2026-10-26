@@ -25,7 +25,7 @@ export default function StateHub({
   return (
     <HubPage
       title={`${cfg.serviceName} in ${state.name}, ${country.name}`}
-      intro={`Choose your area in ${state.name} to see how Biztalbox helps local businesses grow.`}
+      intro={`Choose your area in ${state.name} to see how biztalbox helps local businesses grow.`}
       links={links}
       crumbs={crumbs}
       path={path}

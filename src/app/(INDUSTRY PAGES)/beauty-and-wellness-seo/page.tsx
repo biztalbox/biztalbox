@@ -216,11 +216,11 @@ export default function Page() {
                     <div className="col-xl-6 col-lg-6 col-md-7">
                       <div className="tm-details-content-wrap z-index-5" style={{ padding: "30px 0" }}>
                         <div className="tm-details-title-box mb-20">
-                          <span className="tm-hero-subtitle">Build Your Beauty & Wellness Success Story with Biztalbox</span>
+                          <span className="tm-hero-subtitle">Build Your Beauty & Wellness Success Story with biztalbox</span>
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
                         <div className="tm-details-text">
-                          <p>If you&apos;re ready to strengthen your digital footprint and attract qualified clients, Biztalbox is your trusted partner. Our beauty and wellness SEO experts deliver strategies that not only rank — they perform, engage, and grow your business for the long run.</p>
+                          <p>If you&apos;re ready to strengthen your digital footprint and attract qualified clients, biztalbox is your trusted partner. Our beauty and wellness SEO experts deliver strategies that not only rank — they perform, engage, and grow your business for the long run.</p>
                         </div>
                         <div className="tm-details-portfolio">
                           <span className="tm-details-social-title">Get in Touch:</span>
@@ -329,7 +329,7 @@ export default function Page() {
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
                         <div className="tm-details-text">
-                          <p>Your customers are searching — make sure they find you first. Partner with Biztalbox, the beauty and wellness SEO experts that salons, spas, and med spas trust, and start driving real results. Contact us today for a free consultation.</p>
+                          <p>Your customers are searching — make sure they find you first. Partner with biztalbox, the beauty and wellness SEO experts that salons, spas, and med spas trust, and start driving real results. Contact us today for a free consultation.</p>
                         </div>
                         <div className="tm-details-portfolio">
                           <span className="tm-details-social-title">Get in Touch:</span>
@@ -363,9 +363,9 @@ export default function Page() {
                 <p>With the right professional SEO services for salons, spas, and med spas, your online presence becomes a measurable growth engine, driving bookings, improving trust signals, and ensuring your business thrives in 2026 and beyond.</p>
               </section>
 
-              {/* Why Choose Biztalbox — full prose */}
+              {/* Why Choose biztalbox — full prose */}
               <section className="content-section content-prose">
-                <h2 className="section-heading">Why Choose Biztalbox for Expert SEO in the Beauty and Wellness Industry</h2>
+                <h2 className="section-heading">Why Choose biztalbox for Expert SEO in the Beauty and Wellness Industry</h2>
                 <p>Selecting an SEO partner is ultimately a decision about trust, intelligence, and long-term growth. It&apos;s not about hiring someone who can &quot;optimize keywords.&quot; It&apos;s about aligning with a team that understands how real clients discover you, evaluate you, and decide whether you&apos;re worth their time, money, and trust.</p>
                 <p>A specialist salon SEO agency or med spa SEO specialists must operate with category fluency, strategic depth, and a sense of nuance that generic marketing agencies simply can&apos;t offer. That is where we stand out.</p>
                 <h3 className="section-subheading">1. Industry Intelligence That Shapes Smart Strategy</h3>
@@ -373,13 +373,13 @@ export default function Page() {
                 <p>We study demand patterns, seasonal spikes, competitive gaps, and service psychology. This depth of understanding allows us to craft strategies that feel natural, contextually relevant, and perfectly aligned with how your ideal clients make decisions.</p>
                 <h3 className="section-subheading">2. A Trust-Driven Approach Designed for High-Intent Clients</h3>
                 <p>For salons and spas, visibility is important. For med spas, trust is everything. People need reassurance before choosing Botox, laser treatments, or microneedling.</p>
-                <p>This is why a med spa SEO agency must be able to balance clinical accuracy, search expertise, and on-page transparency. It is also why we use YMYL-aligned approaches when shaping a medical spa SEO strategy that covers treatment education, practitioner credibility, and results-driven content. Biztalbox helps you build credibility on search engines and foster trust with clients at the same time.</p>
+                <p>This is why a med spa SEO agency must be able to balance clinical accuracy, search expertise, and on-page transparency. It is also why we use YMYL-aligned approaches when shaping a medical spa SEO strategy that covers treatment education, practitioner credibility, and results-driven content. biztalbox helps you build credibility on search engines and foster trust with clients at the same time.</p>
                 <h3 className="section-subheading">3. Precision for Every Service You Offer</h3>
                 <p>No salon or med spa succeeds with a one-size-fits-all SEO plan. Balayage clients search differently from hydrafacial clients; Botox clients behave differently from massage or keratin clients. A specialist hair salon SEO company or best medical spa SEO agency creates depth, not generic pages.</p>
-                <p>The seasoned seo experts at Biztalbox ensure that each service receives its own strategy, keyword profile, format, and conversion journey. This level of granularity ensures that every treatment becomes its own traffic and revenue driver, instead of getting lost in broad local SEO efforts.</p>
+                <p>The seasoned seo experts at biztalbox ensure that each service receives its own strategy, keyword profile, format, and conversion journey. This level of granularity ensures that every treatment becomes its own traffic and revenue driver, instead of getting lost in broad local SEO efforts.</p>
                 <h3 className="section-subheading">4. Optimization Built Around How People Book in 2026</h3>
                 <p>Client journeys today are nonlinear. Someone might discover you on Google Maps, verify credibility on Instagram, read reviews on a third platform, then visit your website before booking.</p>
-                <p>As a reliable seo company for med spa, Biztalbox understands this multi-touch reality. We design for the entire booking path — Maps visibility, AI Overview readiness, social proof integration, service clarity, fast mobile experience, and a booking flow that removes friction. When each step reinforces the next, your brand becomes the obvious choice.</p>
+                <p>As a reliable seo company for med spa, biztalbox understands this multi-touch reality. We design for the entire booking path — Maps visibility, AI Overview readiness, social proof integration, service clarity, fast mobile experience, and a booking flow that removes friction. When each step reinforces the next, your brand becomes the obvious choice.</p>
                 <h3 className="section-subheading">5. A Long-Term Growth System, Not One-Off Tasks</h3>
                 <p>The best med spa <Link href="https://biztalbox.com/best-seo-agency" className="text-primary">SEO</Link> specialists build systems, not checklists.</p>
                 <p>Instead of chasing short-term actions, we invest in long-term engines that unify technical refinement, authority development, and strategic content around your highest-value services. Over time, this creates a compounding effect: stronger credibility, higher visibility, rising branded searches, and a more predictable flow of appointments.</p>
@@ -387,13 +387,13 @@ export default function Page() {
                 <h3 className="section-subheading">Why Waiting Costs More Than Investing</h3>
                 <p>Your <Link href="https://biztalbox.com/blog/seo-competitor-analysis-checklist" className="text-primary">competitors</Link> are already optimizing, ranking, and attracting the clients who should be choosing you. The gap widens every month, and catching up becomes harder the longer you delay. And closing it requires expertise, not trial and error.</p>
                 <p>If you&apos;re looking to work with an expert salon and spa SEO company that values precision and long-term growth, this is the right place to start.</p>
-                <p>Reach out to Biztalbox today to see exactly what search opportunities you&apos;re missing out on, and how we turn visibility into qualified leads.</p>
+                <p>Reach out to biztalbox today to see exactly what search opportunities you&apos;re missing out on, and how we turn visibility into qualified leads.</p>
               </section>
 
               {/* Final CTA copy */}
               <section className="content-section">
                 <div style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto" }}>
-                  <h2 className="section-heading">At Biztalbox, we understand the beauty and wellness ecosystem.</h2>
+                  <h2 className="section-heading">At biztalbox, we understand the beauty and wellness ecosystem.</h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
                     We understand how salons, spas, and med spas capture demand, how clients make decisions, and how to turn visibility into qualified leads and long-term growth.
                   </p>
@@ -421,7 +421,7 @@ export default function Page() {
                         <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
-                        <p>Your customers are searching — make sure they find you first. Partner with Biztalbox, the beauty and wellness SEO experts that salons, spas, and med spas trust, and start driving real results. Contact us today for a free consultation.</p>
+                        <p>Your customers are searching — make sure they find you first. Partner with biztalbox, the beauty and wellness SEO experts that salons, spas, and med spas trust, and start driving real results. Contact us today for a free consultation.</p>
                       </div>
                       <div className="tm-details-portfolio">
                         <span className="tm-details-social-title">Get in Touch:</span>

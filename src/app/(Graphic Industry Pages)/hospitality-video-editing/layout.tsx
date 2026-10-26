@@ -6,9 +6,9 @@ import "@/app/(Graphic Industry Pages)/styles.css";
 
 const baseMetadata: Metadata = {
   title:
-    "Graphic Design & Video Editing Services for Hospitality Brands | Biztalbox",
+    "Graphic Design & Video Editing Services for Hospitality Brands | biztalbox",
   description:
-    "Enhance your hospitality brand with professional graphic design and video editing services from Biztalbox. Create stunning visual content that improves first impressions, attracts guests, and increases hotel bookings.",
+    "Enhance your hospitality brand with professional graphic design and video editing services from biztalbox. Create stunning visual content that improves first impressions, attracts guests, and increases hotel bookings.",
 };
 
 export const metadata = createMetadata(

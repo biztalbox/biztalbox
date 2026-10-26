@@ -6,7 +6,7 @@ import "@/app/(Graphic Industry Pages)/styles.css";
 
 const baseMetadata: Metadata = {
   title: "How Graphic Design and Video Editing Services Help Movers and Packers Build Instant Trust",
-  description: "Build instant trust for your movers and packers business with professional graphic design and video editing services from Biztalbox. Create engaging visuals that attract customers and strengthen your brand reputation.",
+  description: "Build instant trust for your movers and packers business with professional graphic design and video editing services from biztalbox. Create engaging visuals that attract customers and strengthen your brand reputation.",
 };
 
 export const metadata = createMetadata(baseMetadata, "/packers-movers-video-editing");

@@ -22,7 +22,7 @@ export default function HeroBannerThree() {
                   </h1>
                   <p>
                     Getting clicks is easy; turning them into clients is an art.
-                    At Biztalbox, we combine data, creativity, and local
+                    At biztalbox, we combine data, creativity, and local
                     insights to make your Indianapolis business impossible to
                     ignore online.
                   </p>

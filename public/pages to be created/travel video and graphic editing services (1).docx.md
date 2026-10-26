@@ -1,8 +1,8 @@
 **Url:- https://biztalbox.com/travel-video-ediitng**
 
-**Meta title:- Graphic Design & Video Editing Services for Travel Industry | Biztalbox**
+**Meta title:- Graphic Design & Video Editing Services for Travel Industry | biztalbox**
 
-**Meta desc:- Boost your travel brand visibility with professional graphic design and video editing services by Biztalbox. Create engaging visual content that attracts travelers, builds trust, and increases bookings.**
+**Meta desc:- Boost your travel brand visibility with professional graphic design and video editing services by biztalbox. Create engaging visual content that attracts travelers, builds trust, and increases bookings.**
 
 **Graphic Design and Video Editing Services for Travel Industry: Improving Travel Brand Visibility Through Visual Content**
 
@@ -82,7 +82,7 @@ A strong creative partner understands how travel audiences behave online. They k
 
 This is where structured execution of travel graphic design and video editing services becomes critical. It is not about decoration. It is about influencing perception at the right moment.
 
-**Why Travel Brands Choose Biztalbox for Graphic Design and Video Editing Services**
+**Why Travel Brands Choose biztalbox for Graphic Design and Video Editing Services**
 
 1\. Travel-Focused Creative Approach  
 We understand how travel audiences respond to visual storytelling and digital inspiration.
@@ -116,5 +116,5 @@ In this environment, travel graphic design services and [video editing services]
 
 Brands that invest in structured visual storytelling do not just attract attention. They create desire, and in travel, desire is what drives every decision.
 
-Connect with Biztalbox for graphic design and video editing services for the travel industry to create content that inspires travellers and drives meaningful engagement.
+Connect with biztalbox for graphic design and video editing services for the travel industry to create content that inspires travellers and drives meaningful engagement.
 

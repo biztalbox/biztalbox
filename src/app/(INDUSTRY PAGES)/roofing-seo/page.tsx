@@ -328,7 +328,7 @@ export default function Page() {
                         </div>
                         <div className="tm-details-text">
                           <p>
-                            Partner with Biztalbox and turn search visibility into calls, consultations, and booked roofing projects.
+                            Partner with biztalbox and turn search visibility into calls, consultations, and booked roofing projects.
                           </p>
                         </div>
                         <div className="tm-details-portfolio">
@@ -842,13 +842,13 @@ export default function Page() {
                 </p>
               </section>
 
-              {/* Why Biztalbox */}
+              {/* Why biztalbox */}
               <section className="content-section content-prose">
                 <h2 className="section-heading">
-                  Why Choose Biztalbox: SEO Agency for Roofers Delivering Tangible Leads
+                  Why Choose biztalbox: SEO Agency for Roofers Delivering Tangible Leads
                 </h2>
                 <p>
-                  At Biztalbox, we specialize in SEO for roofing companies, not generic{" "}
+                  At biztalbox, we specialize in SEO for roofing companies, not generic{" "}
                   <Link
                     href="https://biztalbox.com/blog/marketing-ideas-that-actually-work"
                     className="text-primary"
@@ -880,7 +880,7 @@ export default function Page() {
                   Ongoing Optimization for Shifting Demand
                 </h3>
                 <p>
-                  Roofing searches shift depending on the weather, seasons and the needs of the customer. This is why the roofing SEO specialists at Biztalbox ensure that your business is optimized to capture the opportunities that come with the changes.
+                  Roofing searches shift depending on the weather, seasons and the needs of the customer. This is why the roofing SEO specialists at biztalbox ensure that your business is optimized to capture the opportunities that come with the changes.
                 </p>
                 <p>
                   We continually monitor trends, update content, refresh roofing contractor SEO keywords, and optimize local listings. Such a proactive move ensures that your roofing business shows up when it matters most.
@@ -917,7 +917,7 @@ export default function Page() {
                   Search is where your roofing business meets its next customer. Every call, consultation, and booked project starts online, and your website often makes the first impression.
                 </p>
                 <p>
-                  Our roofing SEO specialists at Biztalbox work as an extension of your team, learning your services, your market, and your goals. We turn your search visibility into calls, consultations, and projects by combining content, local SEO, and technical expertise.
+                  Our roofing SEO specialists at biztalbox work as an extension of your team, learning your services, your market, and your goals. We turn your search visibility into calls, consultations, and projects by combining content, local SEO, and technical expertise.
                 </p>
                 <p>
                   With the help of our expert roofing{" "}
@@ -930,7 +930,7 @@ export default function Page() {
                   , your website is no longer just a digital presence – it becomes a valuable resource to homeowners and property managers in your community.
                 </p>
                 <p>
-                  Connect with Biztalbox today to create a roofing SEO strategy that consistently brings in high-intent leads, builds lasting trust, and supports sustainable growth for your business.
+                  Connect with biztalbox today to create a roofing SEO strategy that consistently brings in high-intent leads, builds lasting trust, and supports sustainable growth for your business.
                 </p>
               </section>
 
@@ -957,7 +957,7 @@ export default function Page() {
                         </div>
                         <div className="tm-details-text">
                           <p>
-                            Connect with Biztalbox today to create a roofing SEO strategy that consistently brings in high-intent leads, builds lasting trust, and supports sustainable growth for your business.
+                            Connect with biztalbox today to create a roofing SEO strategy that consistently brings in high-intent leads, builds lasting trust, and supports sustainable growth for your business.
                           </p>
                         </div>
                         <div className="tm-details-portfolio">

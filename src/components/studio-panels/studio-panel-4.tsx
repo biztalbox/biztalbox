@@ -27,21 +27,21 @@ const testimonial_data = [
     logo: logo,
     name: "Sarah M.",
     designation: "Local Retailer",
-    desc: `"We were buried on page three before working with Biztalbox. Within months, our site started showing up for searches that actually mattered. The extra traffic from Indianapolis alone has been a game-changer for our sales pipeline."`,
+    desc: `"We were buried on page three before working with biztalbox. Within months, our site started showing up for searches that actually mattered. The extra traffic from Indianapolis alone has been a game-changer for our sales pipeline."`,
   },
   {
     id: 2,
     logo: logo,
     name: "James R.",
     designation: "SaaS Founder",
-    desc: `"If I had to single out one thing that stood out to me the most, it was how the team at Biztalbox explained everything without jargon. Our team now has a clear understanding of what drivers leads to our success. It's refreshing to work with an organization who acts like a partner and truly cares about our growth as much as we do."`,
+    desc: `"If I had to single out one thing that stood out to me the most, it was how the team at biztalbox explained everything without jargon. Our team now has a clear understanding of what drivers leads to our success. It's refreshing to work with an organization who acts like a partner and truly cares about our growth as much as we do."`,
   },
   {
     id: 3,
     logo: logo,
     name: "Linda T.",
     designation: "Small Business Owner",
-    desc: `"I run a small plumbing business, and I honestly thought SEO was just for big companies. Biztalbox proved me wrong. Now my phone rings every week with new leads from nearby customers."`,
+    desc: `"I run a small plumbing business, and I honestly thought SEO was just for big companies. biztalbox proved me wrong. Now my phone rings every week with new leads from nearby customers."`,
   },
   {
     id: 4,
@@ -55,7 +55,7 @@ const testimonial_data = [
     logo: logo,
     name: "Priya K.",
     designation: "Café Owner",
-    desc: `"Being a new café in Indianapolis, we needed people to find us quickly. Biztalbox got us showing up in Google Maps searches almost immediately. We see more foot traffic and regulars now than ever before."`,
+    desc: `"Being a new café in Indianapolis, we needed people to find us quickly. biztalbox got us showing up in Google Maps searches almost immediately. We see more foot traffic and regulars now than ever before."`,
   },
 ];
 

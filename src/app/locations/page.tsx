@@ -9,9 +9,9 @@ export const dynamic = "force-dynamic";
 
 const SERVICE_ORDER: LocationPageType[] = ["seo", "video", "graphic"];
 
-const TITLE = "Service Locations | Biztalbox";
+const TITLE = "Service Locations | biztalbox";
 const DESCRIPTION =
-  "Browse every country where Biztalbox offers SEO, video editing, and graphic design services. Find your location and see how we help local businesses grow.";
+  "Browse every country where biztalbox offers SEO, video editing, and graphic design services. Find your location and see how we help local businesses grow.";
 const CANONICAL = absoluteUrl("/locations");
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     title: TITLE,
     description: DESCRIPTION,
     url: CANONICAL,
-    siteName: "Biztalbox",
+    siteName: "biztalbox",
     type: "website",
   },
   twitter: {

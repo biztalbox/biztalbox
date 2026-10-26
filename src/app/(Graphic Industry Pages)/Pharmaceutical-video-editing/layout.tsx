@@ -6,9 +6,9 @@ import "@/app/(Graphic Industry Pages)/styles.css";
 
 const baseMetadata: Metadata = {
   title:
-    "Pharmaceutical Graphic Design & Video Editing Services | Biztalbox",
+    "Pharmaceutical Graphic Design & Video Editing Services | biztalbox",
   description:
-    "Build trust in the pharmaceutical industry with professional graphic design and video editing services from Biztalbox. Create compliant, engaging visual content that strengthens brand credibility and audience engagement.",
+    "Build trust in the pharmaceutical industry with professional graphic design and video editing services from biztalbox. Create compliant, engaging visual content that strengthens brand credibility and audience engagement.",
 };
 
 export const metadata = createMetadata(

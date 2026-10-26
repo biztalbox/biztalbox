@@ -35,7 +35,7 @@ export default function TeamDetailsArea({ item }: IProps) {
               <div className="tm-details-text">
                 <p>
                   If you’re waiting for clients to stumble across your website,
-                  you’re already behind. Let Biztalbox, your trusted SEO Agency
+                  you’re already behind. Let biztalbox, your trusted SEO Agency
                   Indiana, craft a strategy that makes your Indianapolis
                   business unavoidable online—get your free consultation now.
                 </p>

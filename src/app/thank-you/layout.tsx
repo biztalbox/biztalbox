@@ -6,9 +6,9 @@ import { createMetadata } from "@/utils/metadata";
 import { Metadata } from "next";
 
 const baseMetadata: Metadata = {
-    title: "Thank You | Biztal Box",
+    title: "Thank You | biztal box",
     description:
-      "Thank you for contacting Biztal Box. We appreciate your interest and will get back to you shortly.",
+      "Thank you for contacting biztal box. We appreciate your interest and will get back to you shortly.",
   };
   
   export const metadata = createMetadata(baseMetadata, "/thank-you");

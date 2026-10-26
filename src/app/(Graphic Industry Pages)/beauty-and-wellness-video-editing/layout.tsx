@@ -6,7 +6,7 @@ import "@/app/(Graphic Industry Pages)/styles.css";
 
 const baseMetadata: Metadata = {
   title:
-    "Why Beauty & Wellness Brands Need Strong Visual Design & Video Editing | Biztalbox",
+    "Why Beauty & Wellness Brands Need Strong Visual Design & Video Editing | biztalbox",
   description:
     "Discover how strong visual design and professional video editing help beauty and wellness brands grow online, attract customers, build trust, and increase engagement with impactful digital content.",
 };

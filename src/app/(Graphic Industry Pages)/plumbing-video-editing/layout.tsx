@@ -5,9 +5,9 @@ import { createMarketingPageData } from "@/utils/marketing-page-data";
 import "@/app/(Graphic Industry Pages)/styles.css";
 
 const baseMetadata: Metadata = {
-  title: "Graphic Design & Video Editing Services for Plumbers | Biztalbox",
+  title: "Graphic Design & Video Editing Services for Plumbers | biztalbox",
   description:
-    "Enhance your plumbing business with professional graphic design and video editing services from Biztalbox. Build trust, improve branding, and increase online visibility with engaging visual content.",
+    "Enhance your plumbing business with professional graphic design and video editing services from biztalbox. Build trust, improve branding, and increase online visibility with engaging visual content.",
 };
 
 export const metadata = createMetadata(baseMetadata, "/plumbing-video-editing");

@@ -1315,7 +1315,7 @@ export default function Page() {
                       >
                         <div className="tm-details-title-box mb-20">
                           <span className="tm-hero-subtitle">
-                            Build a Stronger Admissions Pipeline with Biztalbox
+                            Build a Stronger Admissions Pipeline with biztalbox
                           </span>
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
@@ -1331,7 +1331,7 @@ export default function Page() {
                             A generic agency will optimise pages. A specialised
                             SEO agency for education will understand student
                             intent, decision timelines, and trust factors. That
-                            difference shows up in results. At Biztalbox, we
+                            difference shows up in results. At biztalbox, we
                             focus on building SEO strategies that attract the
                             right students, not just more traffic.
                           </p>
@@ -1354,13 +1354,13 @@ export default function Page() {
 
               <section className="content-section">
                 <h2 className="section-heading">
-                  What Makes Biztalbox the Right Choice for Education SEO
+                  What Makes biztalbox the Right Choice for Education SEO
                 </h2>
                 <div className="content-grid-2">
                   <div className="content-card">
                     <h3 className="section-subheading">1. Complete Transparency</h3>
                     <p>
-                      At Biztalbox, you always know what is happening and why.
+                      At biztalbox, you always know what is happening and why.
                       We provide clear reporting on rankings, traffic quality,
                       and lead intent. As a SEO agency for higher education, we
                       avoid vague metrics and focus on data that actually
@@ -1372,7 +1372,7 @@ export default function Page() {
                     <h3 className="section-subheading">2. An Extension of Your Team</h3>
                     <p>
                       SEO needs to align with admissions and marketing to deliver
-                      results. Biztalbox integrates with your internal teams to
+                      results. biztalbox integrates with your internal teams to
                       ensure messaging, course priorities, and goals stay
                       consistent. Whether you are a SEO agency for schools or a
                       large institution, this alignment ensures SEO contributes
@@ -1385,7 +1385,7 @@ export default function Page() {
                     </h3>
                     <p>
                       Education decisions are not immediate. Students research,
-                      compare, and revisit options before applying. Biztalbox
+                      compare, and revisit options before applying. biztalbox
                       builds strategies around this behavior. As a SEO agency for
                       colleges, we focus on search intent across the entire
                       journey, so your institution appears when students are
@@ -1397,7 +1397,7 @@ export default function Page() {
                       4. Focus on Meaningful Metrics, Not Vanity Numbers
                     </h3>
                     <p>
-                      At Biztalbox, we don’t chase numbers that look good on
+                      At biztalbox, we don’t chase numbers that look good on
                       reports but mean nothing for admissions. High traffic alone
                       does not translate into applications. What matters is
                       relevance. We focus on attracting users who are actually
@@ -1413,7 +1413,7 @@ export default function Page() {
                     </h3>
                     <p>
                       Search is evolving. Students now rely on AI tools,
-                      comparisons, and quick summaries. Biztalbox continuously
+                      comparisons, and quick summaries. biztalbox continuously
                       updates strategies to stay aligned with these changes. This
                       ensures your visibility remains strong across platforms,
                       whether you are focused on SEO for coaching or broader
@@ -1423,7 +1423,7 @@ export default function Page() {
                   <div className="content-card">
                     <h3 className="section-subheading">6. Continuous Optimisation</h3>
                     <p>
-                      SEO performance cannot remain static. Biztalbox tracks data,
+                      SEO performance cannot remain static. biztalbox tracks data,
                       identifies gaps, and refines strategies regularly. This
                       ensures consistent growth across admission cycles. Whether
                       you are scaling an institution or working on SEO for
@@ -1436,11 +1436,11 @@ export default function Page() {
               <section className="content-section">
                 <div style={{ textAlign: "center", maxWidth: "900px", margin: "0 auto" }}>
                   <h2 className="section-heading">
-                    Build a Stronger Admissions Pipeline with Biztalbox
+                    Build a Stronger Admissions Pipeline with biztalbox
                   </h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
                     In education, SEO is not just a marketing activity. It is a
-                    long-term growth system. And at Biztalbox, we focus on
+                    long-term growth system. And at biztalbox, we focus on
                     building that system with precision.
                   </p>
                   <p

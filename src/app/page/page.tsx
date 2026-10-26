@@ -2,8 +2,8 @@ import { permanentRedirect } from "next/navigation";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Biztalbox – Digital Marketing & SEO",
-  description: "Redirecting to Biztalbox home.",
+  title: "biztalbox – Digital Marketing & SEO",
+  description: "Redirecting to biztalbox home.",
   robots: { index: false, follow: false },
 };
 

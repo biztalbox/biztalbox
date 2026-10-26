@@ -5,9 +5,9 @@ import type { Metadata } from "next";
 import JobList from "@/components/career/JobList";
 
 const careerMetadata: Metadata = {
-  title: "Careers | Biztalbox",
+  title: "Careers | biztalbox",
   description:
-    "Join Biztalbox. Build your future with our team of digital architects—where innovation meets opportunity.",
+    "Join biztalbox. Build your future with our team of digital architects—where innovation meets opportunity.",
 };
 
 export const metadata = createMetadata(careerMetadata, "/career");

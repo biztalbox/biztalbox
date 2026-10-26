@@ -332,7 +332,7 @@ export default function Page() {
                       >
                         <div className="tm-details-title-box mb-20">
                           <span className="tm-hero-subtitle">
-                            Build Your HVAC Success Story with Biztalbox
+                            Build Your HVAC Success Story with biztalbox
                           </span>
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
@@ -340,7 +340,7 @@ export default function Page() {
                           <p>
                             If you&apos;re ready to strengthen your digital
                             footprint and attract qualified service enquiries,
-                            Biztalbox is your trusted partner. Our HVAC SEO
+                            biztalbox is your trusted partner. Our HVAC SEO
                             experts deliver strategies that not only rank — they
                             generate calls, consultations, and long-term growth.
                           </p>
@@ -1198,10 +1198,10 @@ export default function Page() {
                 </p>
               </section>
 
-              {/* Why Biztalbox */}
+              {/* Why biztalbox */}
               <section className="content-section content-prose">
                 <h2 className="section-heading">
-                  Why Partner With Biztalbox: Trusted HVAC{" "}
+                  Why Partner With biztalbox: Trusted HVAC{" "}
                   <Link
                     href="https://biztalbox.com/best-seo-agency"
                     className="text-primary"
@@ -1218,13 +1218,13 @@ export default function Page() {
                   in-depth knowledge and expertise within this field.
                 </p>
                 <p>
-                  At Biztalbox, we provide our clients with quality service,
+                  At biztalbox, we provide our clients with quality service,
                   helping them attract more clients and grow consistently.
-                  Here’s why HVAC companies trust Biztalbox as their SEO partner.
+                  Here’s why HVAC companies trust biztalbox as their SEO partner.
                 </p>
                 <h3 className="section-subheading">1. Transparent Process and Clear Communication</h3>
                 <p>
-                  Successful SEO requires trust and clarity. At Biztalbox, every
+                  Successful SEO requires trust and clarity. At biztalbox, every
                   project is handled with full transparency. Every step is
                   visible—from keyword research to technical fixes to performance
                   tracking. You know what&apos;s being done and why.
@@ -1242,7 +1242,7 @@ export default function Page() {
                   actually search for services. Our team understands the dynamics
                   of the HVAC industry like emergency repair searches, seasonal
                   demand, and location-based service queries. This understanding
-                  helps Biztalbox create SEO strategies for HVAC companies rather
+                  helps biztalbox create SEO strategies for HVAC companies rather
                   than applying general SEO techniques.
                 </p>
                 <h3 className="section-subheading">
@@ -1250,7 +1250,7 @@ export default function Page() {
                 </h3>
                 <p>
                   Search engines reward credibility and consistency over
-                  shortcuts. Biztalbox follows strictly ethical optimization
+                  shortcuts. biztalbox follows strictly ethical optimization
                   methods that strengthen long-term visibility. From content
                   development to link building, our SEO service for HVAC
                   businesses focuses on sustainable improvements that protect
@@ -1262,7 +1262,7 @@ export default function Page() {
                 <p>
                   Search algorithms, user behavior, and competition constantly
                   evolve. SEO cannot remain static. Therefore, we are committed
-                  to continuous improvement of our SEO techniques. Biztalbox
+                  to continuous improvement of our SEO techniques. biztalbox
                   continuously monitors website performance, search trends, and
                   keyword opportunities to refine strategies over time. This
                   helps our clients to stay ahead of the competition and continue
@@ -1270,7 +1270,7 @@ export default function Page() {
                 </p>
                 <h3 className="section-subheading">4. A True Extension of Your Team</h3>
                 <p>
-                  Biztalbox works closely with your team to understand your
+                  biztalbox works closely with your team to understand your
                   services, service areas, and growth priorities. It’s more
                   collaborative and aligned this way. This makes the results
                   stronger over time.
@@ -1280,7 +1280,7 @@ export default function Page() {
                 </h3>
                 <p>
                   The objective of any search engine optimization strategy is to
-                  drive growth for a business. At Biztalbox, we are committed to
+                  drive growth for a business. At biztalbox, we are committed to
                   driving more qualified traffic, increasing online visibility,
                   and generating service inquiries for HVAC contractors.
                 </p>
@@ -1317,7 +1317,7 @@ export default function Page() {
                       color: "#fff",
                     }}
                   >
-                    Let Biztalbox Strengthen Your HVAC SEO Strategy
+                    Let biztalbox Strengthen Your HVAC SEO Strategy
                   </p>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
                     If your business is aiming for stronger visibility and a more
@@ -1325,14 +1325,14 @@ export default function Page() {
                     easier.
                   </p>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    Biztalbox combines industry-focused expertise with structured
+                    biztalbox combines industry-focused expertise with structured
                     HVAC SEO services designed specifically for heating and
                     cooling contractors. Our team develops strategies that help
                     HVAC companies compete effectively in local search and stay
                     visible as search technology continues evolving.
                   </p>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    Connect with Biztalbox today to start building a stronger SEO
+                    Connect with biztalbox today to start building a stronger SEO
                     foundation for your HVAC business.
                   </p>
                 </div>
@@ -1363,7 +1363,7 @@ export default function Page() {
                       <div className="tm-details-text">
                         <p>
                           Your customers are searching — make sure they find you
-                          first. Partner with Biztalbox, the HVAC SEO experts that
+                          first. Partner with biztalbox, the HVAC SEO experts that
                           contractors trust, and start driving real results.
                           Contact us today for a free consultation.
                         </p>

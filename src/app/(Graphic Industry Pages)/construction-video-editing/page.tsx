@@ -155,7 +155,7 @@ export default function Page() {
 
               <section className="content-section">
                 <h2 className="section-heading">
-                  Why Construction Companies Choose Biztalbox for Graphic Design
+                  Why Construction Companies Choose biztalbox for Graphic Design
                   and{" "}
                   <Link
                     href="https://biztalbox.com/blog/best-video-editing-agency-in-the-usa"
@@ -182,7 +182,7 @@ export default function Page() {
                     <h3 className="section-subheading">
                       3. Practical Video Editing Strategy
                     </h3>
-                    <p>Biztalbox offers construction video editing services that highlight site progress, execution quality, architecture, transformations, and on-ground activity in a way that feels natural and professional.</p>
+                    <p>biztalbox offers construction video editing services that highlight site progress, execution quality, architecture, transformations, and on-ground activity in a way that feels natural and professional.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">
@@ -194,7 +194,7 @@ export default function Page() {
                     <h3 className="section-subheading">
                       5. Strong Visual Consistency
                     </h3>
-                    <p>Biztalbox helps construction brands maintain a unified look across every client touchpoint.</p>
+                    <p>biztalbox helps construction brands maintain a unified look across every client touchpoint.</p>
                   </div>
                 </div>
               </section>
@@ -240,7 +240,7 @@ export default function Page() {
                         </div>
                         <div className="tm-details-text">
                           <p>
-                            Connect with Biztalbox for graphic design and video editing services for your construction business that help you showcase projects clearly, build stronger trust, and attract better-quality clients.
+                            Connect with biztalbox for graphic design and video editing services for your construction business that help you showcase projects clearly, build stronger trust, and attract better-quality clients.
                           </p>
                         </div>
                         <div className="tm-details-portfolio">
@@ -271,7 +271,7 @@ export default function Page() {
                     Ready to grow your construction company with better branding and videos?
                   </h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    Connect with Biztalbox for graphic design and{" "}
+                    Connect with biztalbox for graphic design and{" "}
                     <Link
                       href="https://biztalbox.com/blog/best-video-editing-agency-in-the-usa"
                       className="text-primary"
@@ -290,7 +290,7 @@ export default function Page() {
                       color: "#fff",
                     }}
                   >
-                    Get in touch with Biztalbox today and elevate your construction brand online.
+                    Get in touch with biztalbox today and elevate your construction brand online.
                   </p>
                 </div>
               </section>

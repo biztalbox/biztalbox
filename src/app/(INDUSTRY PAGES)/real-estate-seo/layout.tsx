@@ -16,7 +16,7 @@ const REAL_ESTATE_SEO_SCHEMA = {
     {
       "@type": "ProfessionalService",
       "@id": "https://biztalbox.com/#organization",
-      name: "Biztalbox",
+      name: "biztalbox",
       url: "https://biztalbox.com/",
       logo: "https://biztalbox.com/_next/static/media/black.e66748b8.png",
       image: "https://biztalbox.com/_next/static/media/black.e66748b8.png",
@@ -48,9 +48,9 @@ const REAL_ESTATE_SEO_SCHEMA = {
         "Keyword Research",
       ],
       sameAs: [
-        "https://www.facebook.com/BiztalBox",
+        "https://www.facebook.com/biztalbox",
         "https://www.instagram.com/biztalbox",
-        "https://x.com/BiztalBox",
+        "https://x.com/biztalbox",
         "https://www.linkedin.com/company/biztalbox",
         "https://www.youtube.com/@biztalboxofficial",
         "https://in.pinterest.com/biztalbox/",
@@ -60,7 +60,7 @@ const REAL_ESTATE_SEO_SCHEMA = {
       "@type": "WebSite",
       "@id": "https://biztalbox.com/#website",
       url: "https://biztalbox.com/",
-      name: "Biztalbox",
+      name: "biztalbox",
       publisher: { "@id": "https://biztalbox.com/#organization" },
     },
     {
@@ -412,7 +412,7 @@ const REAL_ESTATE_SEO_SCHEMA = {
           name: "How do I choose the right SEO partner for my real estate business?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "You should choose an SEO partner that understands market cycles, micro-location dynamics, buyer psychology, and developer reputation rather than relying on generic templates and surface-level optimisation. A specialised partner like Biztalbox combines real estate market intelligence with tailored SEO strategies to drive stronger visibility, better-quality leads, and long-term growth.",
+            text: "You should choose an SEO partner that understands market cycles, micro-location dynamics, buyer psychology, and developer reputation rather than relying on generic templates and surface-level optimisation. A specialised partner like biztalbox combines real estate market intelligence with tailored SEO strategies to drive stronger visibility, better-quality leads, and long-term growth.",
           },
         },
       ],

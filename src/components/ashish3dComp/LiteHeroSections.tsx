@@ -26,7 +26,7 @@ export default function LiteHeroSections() {
                     Creative Souls, Strategic Minds
                   </p>
 
-                  <h1 className="font-century-gothic">biztalbox</h1>
+                  <h1 className="font-century-gothic"><span className="bb-brand">biztalbox</span></h1>
                   {/* <span className="h-[1px] w-40 mx-auto bg-black"></span> */}
 
                   <h3 className="text-[16px] md:!text-[22px]">Breakthrough Marketing Solutions</h3>
@@ -70,7 +70,7 @@ export default function LiteHeroSections() {
             {/* Bottom two columns + CTA */}
             <div className="mx-auto mt-16 grid  gap-10 sm:mt-20 lg:mt-28 lg:grid-cols-2 lg:gap-14">
               <p>
-                Biztal Box is a marketing agency that enhances brand&apos;s online presence through a range of services including SEO optimization, web development, graphic design, and more. Our dynamic agency crafts strategies that stick while bringing every client&apos;s unique perspective to life.            </p>
+                <span className="bb-brand">biztalbox</span> is a marketing agency that enhances brand&apos;s online presence through a range of services including SEO optimization, web development, graphic design, and more. Our dynamic agency crafts strategies that stick while bringing every client&apos;s unique perspective to life.            </p>
               <div className="flex flex-col lg:items-start">
                 <p>
                   We understand a brand’s goals and ideas to the finest detail by immersing ourselves in its unique vision. By brainstorming creative solutions, we improve visibility and ensure that every interaction with your audience leaves a memorable mark.              </p>
@@ -137,7 +137,7 @@ export default function LiteHeroSections() {
               <LiteServiceParagraphs
                 first={
                   <p>
-                    At Biztalbox, we approach SEO as a long-term system that begins with a thorough audit. We understand how your website performs on search engines, where it falls short, and how it compares within its competitive space. This allows every subsequent step to remain grounded and precise.
+                    At <span className="bb-brand">biztalbox</span>, we approach SEO as a long-term system that begins with a thorough audit. We understand how your website performs on search engines, where it falls short, and how it compares within its competitive space. This allows every subsequent step to remain grounded and precise.
 
 
                     We prioritize search intent, focusing on behavioural patterns beyond just keywords. Then we refine the technical foundation of your website, bringing greater coherence to its structure, speed, and internal movement.
@@ -145,11 +145,11 @@ export default function LiteHeroSections() {
                 }
                 second={
                   <p>
-                    Content at Biztalbox is crafted with patience. It connects with your audience, builds trust and builds authority over time. Our Off-page SEO services add another layer by strengthening your overall brand reputation.
+                    Content at <span className="bb-brand">biztalbox</span> is crafted with patience. It connects with your audience, builds trust and builds authority over time. Our Off-page SEO services add another layer by strengthening your overall brand reputation.
 
                     Our SEO experts revisit and refine the work regularly as search behaviour continues to evolve.  We always keep the client in the loop with clear reporting so that they have a clear view of progress and business growth.
 
-                    Biztalbox builds an online presence that leads to tangible business growth.
+                    <span className="bb-brand">biztalbox</span> builds an online presence that leads to tangible business growth.
 
                   </p>
                 }
@@ -230,7 +230,7 @@ export default function LiteHeroSections() {
               <LiteServiceParagraphs
                 first={
                   <p>
-                    The social media team at Biztalbox, we begin by understanding your brand, your audience, and how your competitors are positioning themselves. This helps us set a clear direction before we put anything out in the world. Then we create content calendars that bring structure and consistency to your social presence.
+                    The social media team at <span className="bb-brand">biztalbox</span>, we begin by understanding your brand, your audience, and how your competitors are positioning themselves. This helps us set a clear direction before we put anything out in the world. Then we create content calendars that bring structure and consistency to your social presence.
 
                     We don&apos;t just chase trends or push for viral moments. The focus stays on building a presence that feels true to your brand. We focus on making content that fits your brand and makes sense to your audience.
                   </p>
@@ -240,7 +240,7 @@ export default function LiteHeroSections() {
 
                     Over time, this builds familiarity. Your brand starts to feel recognisable, not because of one post, but because of consistent presence.
 
-                    Biztalbox aims to make your brand feel active, relevant, and easy to connect with.
+                    <span className="bb-brand">biztalbox</span> aims to make your brand feel active, relevant, and easy to connect with.
 
                   </p>
                 }
@@ -301,7 +301,7 @@ export default function LiteHeroSections() {
               <LiteServiceParagraphs
                 first={
                   <p>
-                    At Biztalbox, we believe a website should make things easier for your users, not more complicated. Our web development approach reflects that thinking.
+                    At <span className="bb-brand">biztalbox</span>, we believe a website should make things easier for your users, not more complicated. Our web development approach reflects that thinking.
 
                     We begin with understanding what the business actually needs the website to carry. What should be seen first, what should be understood next, and what should lead a user toward action? This thinking sets the foundation before any layout is discussed.
 
@@ -315,7 +315,7 @@ export default function LiteHeroSections() {
 
                     Our web development firm takes pride in the quality of our execution. Clean development practices, consistent responsiveness, and reliable performance are maintained across every project.
 
-                    Lastly, Biztalbox always ensure the website remains manageable after it goes live.
+                    Lastly, <span className="bb-brand">biztalbox</span> always ensure the website remains manageable after it goes live.
 
                   </p>
                 }
@@ -376,7 +376,7 @@ export default function LiteHeroSections() {
               <LiteServiceParagraphs
                 first={
                   <p>
-                    At Biztalbox, we understand that visual design plays a defining role in how a brand is interpreted and remembered. We treat graphic design as a connected system rather than standalone visuals. Every piece we create works with the next one. This makes the brand feel consistent wherever it shows up.
+                    At <span className="bb-brand">biztalbox</span>, we understand that visual design plays a defining role in how a brand is interpreted and remembered. We treat graphic design as a connected system rather than standalone visuals. Every piece we create works with the next one. This makes the brand feel consistent wherever it shows up.
 
 
                     We focus on how information is perceived. Typography, spacing, colour, and layout are crafted so that the design feels easy to read and naturally organised.
@@ -388,7 +388,7 @@ export default function LiteHeroSections() {
                     We keep attention where it matters. Important information is made clear at first glance. Supporting elements stay in the background without distracting from the message.
                     We stay consistent across every asset we create. So your brand does not feel different on each platform. It feels like one identity, carried forward with discipline.
 
-                    Each design decision at Biztalbox is made with one goal in mind: To make your brand easier to recognise, easier to understand, and harder to forget.
+                    Each design decision at <span className="bb-brand">biztalbox</span> is made with one goal in mind: To make your brand easier to recognise, easier to understand, and harder to forget.
 
 
                   </p>
@@ -450,9 +450,9 @@ export default function LiteHeroSections() {
               <LiteServiceParagraphs
                 first={
                   <p>
-                    At Biztalbox, we turn to motion graphics when a message is too layered to be understood in a single static frame.
+                    At <span className="bb-brand">biztalbox</span>, we turn to motion graphics when a message is too layered to be understood in a single static frame.
 
-                    Motion graphic designers at Biztalbox approach motion as a way to sharpen brand communication. We start by looking at how your brand currently shows up visually and where its communication weakens.
+                    Motion graphic designers at <span className="bb-brand">biztalbox</span> approach motion as a way to sharpen brand communication. We start by looking at how your brand currently shows up visually and where its communication weakens.
 
 
                     This helps us decide the structure, sequence, and emphasis each part needs.
@@ -464,7 +464,7 @@ export default function LiteHeroSections() {
 
                     Our motion graphics agency brings consistency to every layer, from typography to transitions to rhythm. Everything works together, so the viewer is not interpreting multiple signals at once.
 
-                    Biztalbox keeps motion purposeful. It exists only to make the idea easier to follow and quicker to absorb. Every piece is designed to support how your brand is perceived.
+                    <span className="bb-brand">biztalbox</span> keeps motion purposeful. It exists only to make the idea easier to follow and quicker to absorb. Every piece is designed to support how your brand is perceived.
 
 
                   </p>
@@ -526,10 +526,10 @@ export default function LiteHeroSections() {
               <LiteServiceParagraphs
                 first={
                   <p>
-                    At Biztalbox, we see copywriting as the layer that decides how your brand is experienced.
+                    At <span className="bb-brand">biztalbox</span>, we see copywriting as the layer that decides how your brand is experienced.
 
 
-                    Biztalbox&apos;s copywriting services have helped brands improve how they express value and position themselves. This has led to clearer responses, stronger engagement, and more confident decision-making.
+                    <span className="bb-brand">biztalbox</span>&apos;s copywriting services have helped brands improve how they express value and position themselves. This has led to clearer responses, stronger engagement, and more confident decision-making.
 
                     Our copywriting experts begin by understanding how your audience evaluates a brand like yours. What they compare. What they doubt. What they need to take you seriously.
                   </p>
@@ -538,7 +538,7 @@ export default function LiteHeroSections() {
                   <p>
                     From there, we focus on the decision-making process. Copy is written to reduce hesitation, close interpretation gaps, and bring clarity to what would otherwise feel uncertain or incomplete.
 
-                    The same offering can feel ordinary or credible depending on how it is expressed. And Biztalbox’s content plays a direct role in that shift.
+                    The same offering can feel ordinary or credible depending on how it is expressed. And <span className="bb-brand">biztalbox</span>’s content plays a direct role in that shift.
 
 
 
@@ -606,7 +606,7 @@ export default function LiteHeroSections() {
                 first={
                   <div className="flex flex-col">
                     <p>
-                      Biztalbox views Performance marketing as a revenue system first. Every part of it supports a clear commercial outcome.
+                      <span className="bb-brand">biztalbox</span> views Performance marketing as a revenue system first. Every part of it supports a clear commercial outcome.
 
                       We begin by looking at how growth is currently being generated and where it is breaking down. Then we figure out the real constraints, not just the visible symptoms.
 
@@ -617,7 +617,7 @@ export default function LiteHeroSections() {
                 second={
                   <div className="flex flex-col">
                     <p>
-                      Biztalbox evaluates performance beyond surface metrics. We consider lead quality, drop-off behaviour, and consistency of results over time. These patterns show what is working and what is not.
+                      <span className="bb-brand">biztalbox</span> evaluates performance beyond surface metrics. We consider lead quality, drop-off behaviour, and consistency of results over time. These patterns show what is working and what is not.
 
                       The goal of our performance marketing services is to generate meaningful actions that contribute to business growth. This includes audience targeting, messaging, creative direction, landing experience, and tracking. If even one of these is misaligned, performance stays capped regardless of spend.
 
@@ -674,7 +674,7 @@ export default function LiteHeroSections() {
         <div className="flex flex-col gap-1 w-44 xl:w-[12rem] divide-y-2 divide-x-0 divide-dashed text-sm font-thin font-mono">
 
           <div className="flex justify-between">
-            <span>BIZTALBOX</span>
+            <span><span className="bb-brand">biztalbox</span></span>
             <span>{formatReceiptDate(new Date())}</span>
           </div>
 
@@ -731,7 +731,7 @@ export default function LiteHeroSections() {
           {/* contact email and no. */}
           <div className="flex flex-col">
 
-            <span>info@biztalbox.com</span>
+            <span>info@<span className="bb-brand">biztalbox</span>.com</span>
             <span>PHONE: +91 9485699709</span>
           </div>
 

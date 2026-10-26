@@ -1162,7 +1162,7 @@ export default function Page() {
                   to the wrong places or the wrong queries.
                 </p>
                 <p>
-                  That&apos;s the approach Biztalbox follows to support your
+                  That&apos;s the approach biztalbox follows to support your
                   business growth.
                 </p>
               </section>
@@ -1184,13 +1184,13 @@ export default function Page() {
                       >
                         <div className="tm-details-title-box mb-20">
                           <span className="tm-hero-subtitle">
-                            Why Partner with Biztalbox?
+                            Why Partner with biztalbox?
                           </span>
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
                         <div className="tm-details-text">
                           <p>
-                            Biztalbox builds a stable SEO system so your company
+                            biztalbox builds a stable SEO system so your company
                             is consistently aligned with real-world energy demand.
                           </p>
                         </div>
@@ -1211,7 +1211,7 @@ export default function Page() {
               </div>
 
               <section className="content-section">
-                <h2 className="section-heading">Why Partner with Biztalbox?</h2>
+                <h2 className="section-heading">Why Partner with biztalbox?</h2>
                 <div className="content-grid-2">
                   <div className="content-card">
                     <h3 className="section-subheading">1. Industry Knowledge</h3>
@@ -1219,7 +1219,7 @@ export default function Page() {
                       We understand that energy search is driven by urgency and
                       necessity, not exploration. Users come in with specific
                       needs: outages, billing confusion, new connections, or
-                      switching providers. At Biztalbox, as a renewable energy SEO
+                      switching providers. At biztalbox, as a renewable energy SEO
                       company, we map SEO strategy directly to these high-intent
                       scenarios so visibility aligns with actual service demand,
                       not just keyword volume.
@@ -1242,7 +1242,7 @@ export default function Page() {
                       We don&apos;t operate like an external vendor. We integrate
                       with how your business actually functions. We understand
                       service zones, infrastructure constraints, and customer
-                      categories. Biztalbox&apos;s SEO experts for energy industry
+                      categories. biztalbox&apos;s SEO experts for energy industry
                       align strategy with operational reality, ensuring SEO
                       supports actual service delivery instead of sitting
                       parallel to it.
@@ -1274,7 +1274,7 @@ export default function Page() {
                       </Link>
                     </p>
                     <p>
-                      At Biztalbox, we avoid shortcuts that create unstable
+                      At biztalbox, we avoid shortcuts that create unstable
                       visibility. In energy, where trust and reliability are
                       critical, short-term ranking tactics often collapse under
                       algorithm changes. Our renewable energy SEO services focuses
@@ -1288,7 +1288,7 @@ export default function Page() {
                       Search is shifting toward AI summaries, zero-click results,
                       and intent-based ranking systems. We proactively adjust
                       strategy instead of reacting late. As a SEO consultant for
-                      energy industry, Biztalbox ensures your visibility is
+                      energy industry, biztalbox ensures your visibility is
                       structured to remain relevant even as search engines change
                       how results are delivered.
                     </p>
@@ -1309,7 +1309,7 @@ export default function Page() {
                     system for demand capture.
                   </p>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    Biztalbox builds that system so your company is consistently
+                    biztalbox builds that system so your company is consistently
                     aligned with real-world energy demand.
                   </p>
                   <p

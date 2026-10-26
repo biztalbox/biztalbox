@@ -329,13 +329,13 @@ export default function Page() {
 
               <section className="content-section">
                 <h2 className="section-heading">
-                  Why Pet Care Brands Choose Biztalbox for Creative Growth
+                  Why Pet Care Brands Choose biztalbox for Creative Growth
                 </h2>
                 <p className="content-prose">
                   Choosing a creative partner is not only about output. It is
                   about understanding how trust actually forms in this industry,
                   slowly and through repeated clarity. Here are some reasons to
-                  choose Biztalbox for pet care video and graphic editing
+                  choose biztalbox for pet care video and graphic editing
                   services:
                 </p>
 
@@ -390,7 +390,7 @@ export default function Page() {
 
               <section className="content-section content-prose">
                 <h2 className="section-heading">
-                  Ready to Elevate Your Pet Care Marketing With Biztalbox?
+                  Ready to Elevate Your Pet Care Marketing With biztalbox?
                 </h2>
                 <p>
                   Pet care growth depends on how clearly a brand communicates
@@ -423,13 +423,13 @@ export default function Page() {
                         <div className="tm-details-title-box mb-20">
                           <span className="tm-hero-subtitle">
                             Ready to Elevate Your Pet Care Marketing With
-                            Biztalbox?
+                            biztalbox?
                           </span>
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
                         <div className="tm-details-text">
                           <p>
-                            Connect with Biztalbox today to create visuals that
+                            Connect with biztalbox today to create visuals that
                             make your brand instantly connect with pet owners!
                           </p>
                         </div>
@@ -458,10 +458,10 @@ export default function Page() {
                   }}
                 >
                   <h2 className="section-heading">
-                    Ready to Elevate Your Pet Care Marketing With Biztalbox?
+                    Ready to Elevate Your Pet Care Marketing With biztalbox?
                   </h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    Connect with Biztalbox today to create visuals that make
+                    Connect with biztalbox today to create visuals that make
                     your brand instantly connect with pet owners!
                   </p>
                 </div>

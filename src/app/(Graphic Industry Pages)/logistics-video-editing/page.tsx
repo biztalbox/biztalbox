@@ -156,7 +156,7 @@ export default function Page() {
 
               <section className="content-section">
                 <h2 className="section-heading">
-                  Why Logistics Businesses Choose Biztalbox for Graphic Design and Video Editing Services
+                  Why Logistics Businesses Choose biztalbox for Graphic Design and Video Editing Services
                 </h2>
 
                 <div className="content-grid-2">
@@ -164,7 +164,7 @@ export default function Page() {
                     <h3 className="section-subheading">
                       1. Industry-Focused Creative Understanding
                     </h3>
-                    <p>At Biztalbox, we understand how logistics businesses compete for credibility and visibility online.</p>
+                    <p>At biztalbox, we understand how logistics businesses compete for credibility and visibility online.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">
@@ -182,7 +182,7 @@ export default function Page() {
                     <h3 className="section-subheading">
                       4. Platform-Optimized Content
                     </h3>
-                    <p>The team at Biztalbox develops content specifically for LinkedIn, websites, YouTube, Instagram, and B2B marketing campaigns.</p>
+                    <p>The team at biztalbox develops content specifically for LinkedIn, websites, YouTube, Instagram, and B2B marketing campaigns.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">
@@ -234,7 +234,7 @@ export default function Page() {
                         </div>
                         <div className="tm-details-text">
                           <p>
-                            Connect with Biztalbox to create visual content that helps your logistics business communicate reliability, showcase operational strength, and attract better-quality business inquiries.
+                            Connect with biztalbox to create visual content that helps your logistics business communicate reliability, showcase operational strength, and attract better-quality business inquiries.
                           </p>
                         </div>
                         <div className="tm-details-portfolio">
@@ -265,7 +265,7 @@ export default function Page() {
                     Ready to elevate your logistics brand presence?
                   </h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    Connect with Biztalbox for graphic design and{" "}
+                    Connect with biztalbox for graphic design and{" "}
                     <Link
                       href="https://biztalbox.com/blog/best-video-editing-agency-in-the-usa"
                       className="text-primary"
@@ -284,7 +284,7 @@ export default function Page() {
                       color: "#fff",
                     }}
                   >
-                    Get in touch with Biztalbox today and elevate your logistics brand online.
+                    Get in touch with biztalbox today and elevate your logistics brand online.
                   </p>
                 </div>
               </section>

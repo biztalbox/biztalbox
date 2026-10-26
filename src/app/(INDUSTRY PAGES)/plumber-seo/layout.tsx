@@ -3,9 +3,9 @@ import { createMetadata } from "@/utils/metadata";
 import "@/app/(INDUSTRY PAGES)/styles.css";
 
 const baseMetadata: Metadata = {
-  title: "Plumbing SEO Agency | Biztalbox – Get More Local Leads",
+  title: "Plumbing SEO Agency | biztalbox – Get More Local Leads",
   description:
-    "Biztalbox helps plumbing companies rank higher, generate high-intent local leads, and reduce ad spend with proven SEO strategies. Book a free consult today.",
+    "biztalbox helps plumbing companies rank higher, generate high-intent local leads, and reduce ad spend with proven SEO strategies. Book a free consult today.",
 };
 
 export const metadata = createMetadata(baseMetadata, "/plumber-seo");
@@ -16,7 +16,7 @@ const PLUMBER_SEO_SCHEMA = {
     {
       "@type": "ProfessionalService",
       "@id": "https://biztalbox.com/#organization",
-      "name": "Biztalbox",
+      "name": "biztalbox",
       "url": "https://biztalbox.com/",
       "logo": "https://biztalbox.com/_next/static/media/black.e66748b8.png",
       "image": "https://biztalbox.com/_next/static/media/black.e66748b8.png",
@@ -42,9 +42,9 @@ const PLUMBER_SEO_SCHEMA = {
         ]
       },
       "sameAs": [
-        "https://www.facebook.com/BiztalBox",
+        "https://www.facebook.com/biztalbox",
         "https://www.instagram.com/biztalbox",
-        "https://x.com/BiztalBox",
+        "https://x.com/biztalbox",
         "https://www.linkedin.com/company/biztalbox",
         "https://www.youtube.com/@biztalboxofficial",
         "https://in.pinterest.com/biztalbox/"
@@ -54,7 +54,7 @@ const PLUMBER_SEO_SCHEMA = {
       "@type": "WebSite",
       "@id": "https://biztalbox.com/#website",
       "url": "https://biztalbox.com/",
-      "name": "Biztalbox",
+      "name": "biztalbox",
       "publisher": {
         "@id": "https://biztalbox.com/#organization"
       }
@@ -63,9 +63,9 @@ const PLUMBER_SEO_SCHEMA = {
       "@type": "WebPage",
       "@id": "https://biztalbox.com/plumber-seo#webpage",
       "url": "https://biztalbox.com/plumber-seo",
-      "name": "Plumbing SEO Agency | Biztalbox – Get More Local Leads",
+      "name": "Plumbing SEO Agency | biztalbox – Get More Local Leads",
       "headline": "Plumbing SEO That Turns Local Searches Into Booked Appointments Without the Guesswork",
-      "description": "Biztalbox helps plumbing companies rank higher, generate high-intent local leads, and reduce ad spend with proven SEO strategies. Book a free consult today.",
+      "description": "biztalbox helps plumbing companies rank higher, generate high-intent local leads, and reduce ad spend with proven SEO strategies. Book a free consult today.",
       "inLanguage": "en",
       "isPartOf": {
         "@id": "https://biztalbox.com/#website"

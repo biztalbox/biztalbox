@@ -5,8 +5,8 @@ import { createMarketingPageData } from "@/utils/marketing-page-data";
 import "@/app/(Graphic Industry Pages)/styles.css";
 
 const baseMetadata: Metadata = {
-  title: "Graphic Design & Video Editing Services for Pest Control | Biztalbox",
-  description: "Improve customer trust and grow your pest control business with professional graphic design and video editing services from Biztalbox. Create engaging visual content that boosts visibility and attracts more customers.",
+  title: "Graphic Design & Video Editing Services for Pest Control | biztalbox",
+  description: "Improve customer trust and grow your pest control business with professional graphic design and video editing services from biztalbox. Create engaging visual content that boosts visibility and attracts more customers.",
 };
 
 export const metadata = createMetadata(baseMetadata, "/pest-control-video-editing");

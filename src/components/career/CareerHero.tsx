@@ -5,12 +5,12 @@ export default function CareerHero() {
   return (
     <section className={styles.hero} aria-labelledby="career-hero-heading">
       <div className={styles.inner}>
-        <span className={styles.badge}>JOIN THE Biztal</span>
+        <span className={styles.badge}>JOIN THE biztal</span>
         <h1 id="career-hero-heading" className={styles.title}>
         We couldn&apos;t think of a creative tagline... come join us and suggest one!
         </h1>
         <p className={styles.subtitle}>
-        Biztalbox is for the imaginative and curious.
+        biztalbox is for the imaginative and curious.
 
 Create bold digital experiences. Grow through real challenges, meaningful projects, and ideas that leave a mark.
         </p>

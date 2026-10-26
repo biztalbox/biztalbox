@@ -147,7 +147,7 @@ export async function GET(request: NextRequest) {
         title: decodedTitle,
         date: formattedDate,
         category: category,
-        author: "Biztal Box",
+        author: "biztal box",
         desc: decodedContent,
         img: featuredImageUrl,
         featuredImage: featuredImageUrl,

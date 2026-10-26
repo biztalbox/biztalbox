@@ -31,6 +31,11 @@
   @apply text-[11px] leading-normal uppercase font-thin;
   font-family: "Century Gothic Local" !important;
 }
+
+/* Brand stays "biztalbox" even inside uppercase paragraphs. */
+#litePage .bb-brand {
+  text-transform: lowercase !important;
+}
 #litePage li,
 #litePage a {
   font-family: "Century Gothic Local" !important;

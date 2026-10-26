@@ -139,11 +139,11 @@ export default function Page() {
                     <div className="col-xl-6 col-lg-6 col-md-7">
                       <div className="tm-details-content-wrap z-index-5" style={{ padding: "30px 0" }}>
                         <div className="tm-details-title-box mb-20">
-                          <span className="tm-hero-subtitle">Build Your Plumbing Success Story with Biztalbox</span>
+                          <span className="tm-hero-subtitle">Build Your Plumbing Success Story with biztalbox</span>
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
                         <div className="tm-details-text">
-                          <p>If you&apos;re ready to strengthen your digital footprint and attract qualified customers, Biztalbox is your trusted partner. Our plumbing SEO experts deliver strategies that not only rank — they perform, engage, and grow your business for the long run.</p>
+                          <p>If you&apos;re ready to strengthen your digital footprint and attract qualified customers, biztalbox is your trusted partner. Our plumbing SEO experts deliver strategies that not only rank — they perform, engage, and grow your business for the long run.</p>
                         </div>
                         <div className="tm-details-portfolio">
                           <span className="tm-details-social-title">Get in Touch:</span>
@@ -280,7 +280,7 @@ export default function Page() {
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
                         <div className="tm-details-text">
-                          <p>Your customers are searching — make sure they find you first. Partner with Biztalbox, the plumbing SEO experts that plumbing companies trust, and start driving real results. Contact us today for a free consultation.</p>
+                          <p>Your customers are searching — make sure they find you first. Partner with biztalbox, the plumbing SEO experts that plumbing companies trust, and start driving real results. Contact us today for a free consultation.</p>
                         </div>
                         <div className="tm-details-portfolio">
                           <span className="tm-details-social-title">Get in Touch:</span>
@@ -294,36 +294,36 @@ export default function Page() {
                 </div>
               </div>
 
-              {/* What Makes Biztalbox the Right SEO Company — full prose */}
+              {/* What Makes biztalbox the Right SEO Company — full prose */}
               <section className="content-section content-prose">
-                <h2 className="section-heading">What Makes Biztalbox the Right SEO Company for Plumbing Services?</h2>
-                <p>Biztalbox operates as a specialist plumber SEO services company, not a generalist provider using templates. Our approach reflects how plumbing businesses actually function. Here are some reasons that make Biztalbox the ideal choice for our SEO partner.</p>
+                <h2 className="section-heading">What Makes biztalbox the Right SEO Company for Plumbing Services?</h2>
+                <p>biztalbox operates as a specialist plumber SEO services company, not a generalist provider using templates. Our approach reflects how plumbing businesses actually function. Here are some reasons that make biztalbox the ideal choice for our SEO partner.</p>
                 <h3 className="section-subheading">Deep Plumbing Industry Understanding, Not Generic SEO Templates</h3>
                 <p>Plumbing is a real-world, time-sensitive service – it&apos;s not something that people shop for leisurely. People search when something has already gone wrong, and they need reassurance and clarity fast. Treating plumbing like a slow decision industry leads to weak visibility and poor conversions.</p>
-                <p>Most SEO agencies apply the same frameworks across industries and change only the wording. At Biztalbox, however, we provide plumbing SEO services that are built around urgency, trust and on-the-spot decision making. We follow search behaviors to real life plumbing situations, like pipes bursting, breakdowns, and urgent repairs, so your business shows up when customers are ready to call, not just when they are researching.</p>
+                <p>Most SEO agencies apply the same frameworks across industries and change only the wording. At biztalbox, however, we provide plumbing SEO services that are built around urgency, trust and on-the-spot decision making. We follow search behaviors to real life plumbing situations, like pipes bursting, breakdowns, and urgent repairs, so your business shows up when customers are ready to call, not just when they are researching.</p>
                 <h3 className="section-subheading">Ongoing Optimization: Staying Ahead of Shifting Demand in The Plumbing Industry</h3>
                 <p>Search behavior in plumbing is never static. Seasonal spikes, urgent repairs, and evolving customer questions continuously shift what prospects seek. Businesses that fail to adapt risk losing visibility precisely when it matters most.</p>
-                <p>But at Biztalbox, our plumbing SEO service continually evolves based on real-time data and the latest trends. <Link href="https://biztalbox.com/blog/outdated-content" className="text-primary">We also fine-tune content</Link>, refresh keywords and optimize local listings to capture timely demand. This type of proactive approach ensures your business can be easily discovered and trusted when prospective customers look for you.</p>
+                <p>But at biztalbox, our plumbing SEO service continually evolves based on real-time data and the latest trends. <Link href="https://biztalbox.com/blog/outdated-content" className="text-primary">We also fine-tune content</Link>, refresh keywords and optimize local listings to capture timely demand. This type of proactive approach ensures your business can be easily discovered and trusted when prospective customers look for you.</p>
                 <h3 className="section-subheading">Tailored SEO Services for Plumbing Contractors</h3>
-                <p>At Biztalbox, our plumbing company SEO services are tailored to the specific challenges and opportunities in the plumbing industry, because we know that each plumbing business is unique. From emergency repairs and scheduled maintenance, to full installations, and every local market has its own dynamics.</p>
+                <p>At biztalbox, our plumbing company SEO services are tailored to the specific challenges and opportunities in the plumbing industry, because we know that each plumbing business is unique. From emergency repairs and scheduled maintenance, to full installations, and every local market has its own dynamics.</p>
                 <p>Our strategies capture the right customers at the right moment, converting searches into actionable leads and steady growth.</p>
                 <p>We closely collaborate with your team to really understand how you work, what&apos;s most important to you and what services you offer, ensuring every optimization directly supports your business goals. From local search listings to content addressing actual customer concerns, our SEO services for plumbing contractors strengthen visibility, credibility, and trust—delivering measurable, long-term results rather than chasing short-lived ranking spikes.</p>
                 <h3 className="section-subheading">Transparency and Reporting</h3>
-                <p>At Biztalbox, every action we take is fully visible to our clients. We offer detailed reporting for our plumbing SEO, so you know where and how your site appears in the SERPs, how many customers are seeing you locally, and what they&apos;re doing on your website. This allows you to keep tabs on how your investment is turning into calls, bookings, and leads.</p>
+                <p>At biztalbox, every action we take is fully visible to our clients. We offer detailed reporting for our plumbing SEO, so you know where and how your site appears in the SERPs, how many customers are seeing you locally, and what they&apos;re doing on your website. This allows you to keep tabs on how your investment is turning into calls, bookings, and leads.</p>
                 <p>Armed with a clear vision, plumbing companies can act decisively, without guesswork or relying on vague metrics.</p>
                 <p>We believe that trust is built on transparency. By sharing results, strategies, and optimization plans in an understandable way, our <Link href="https://biztalbox.com/blog/top-rated-seo-company-for-u-s-brands-what-sets-biztalbox-apart" className="text-primary">SEO services</Link> for plumbing contractors empower companies to see progress in real time. This approach ensures every effort directly contributes to growth, giving plumbing businesses the clarity and confidence they need to succeed online.</p>
                 <h3 className="section-subheading">Expert Plumbing SEO That Respects Your Budget</h3>
-                <p>SEO should fuel growth, not drain resources. At Biztalbox, our SEO services for plumbing contractors prioritize strategies that deliver measurable results, more leads, higher visibility, and tangible business outcomes. Every effort is intentional, focused on what actually moves the needle.</p>
+                <p>SEO should fuel growth, not drain resources. At biztalbox, our SEO services for plumbing contractors prioritize strategies that deliver measurable results, more leads, higher visibility, and tangible business outcomes. Every effort is intentional, focused on what actually moves the needle.</p>
                 <p>We ensure your plumbing SEO service investment is efficient and effective. By aligning actions with real business goals, we help plumbing companies achieve steady, sustainable growth without unnecessary spend or distractions.</p>
                 <h3 className="section-subheading">Ready to Turn Search Demand into Real Plumbing Leads?</h3>
-                <p>Search visibility without tangible results is wasted effort. Biztalbox turns every search into a client opportunity, making your plumbing services the natural choice.</p>
-                <p><strong>Build trust, command authority, and capture demand with strategies that actually work. Partner with Biztalbox and watch your plumbing business lead the way in your service segment.</strong></p>
+                <p>Search visibility without tangible results is wasted effort. biztalbox turns every search into a client opportunity, making your plumbing services the natural choice.</p>
+                <p><strong>Build trust, command authority, and capture demand with strategies that actually work. Partner with biztalbox and watch your plumbing business lead the way in your service segment.</strong></p>
               </section>
 
               {/* Final CTA copy */}
               <section className="content-section">
                 <div style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto" }}>
-                  <h2 className="section-heading">At Biztalbox, we understand the plumbing ecosystem.</h2>
+                  <h2 className="section-heading">At biztalbox, we understand the plumbing ecosystem.</h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
                     We understand how plumbing companies capture demand, how customers make decisions, and how to turn visibility into qualified leads and long-term growth.
                   </p>
@@ -351,7 +351,7 @@ export default function Page() {
                         <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
-                        <p>Your customers are searching — make sure they find you first. Partner with Biztalbox, the plumbing SEO experts that plumbing companies trust, and start driving real results. Contact us today for a free consultation.</p>
+                        <p>Your customers are searching — make sure they find you first. Partner with biztalbox, the plumbing SEO experts that plumbing companies trust, and start driving real results. Contact us today for a free consultation.</p>
                       </div>
                       <div className="tm-details-portfolio">
                         <span className="tm-details-social-title">Get in Touch:</span>

@@ -1189,7 +1189,7 @@ export default function Page() {
                       >
                         <div className="tm-details-title-box mb-20">
                           <span className="tm-hero-subtitle">
-                            Why Partner With Biztalbox for Movers and Packers SEO
+                            Why Partner With biztalbox for Movers and Packers SEO
                           </span>
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
@@ -1202,7 +1202,7 @@ export default function Page() {
                             forward without much delay.
                           </p>
                           <p>
-                            At Biztalbox, we approach this with clarity on what
+                            At biztalbox, we approach this with clarity on what
                             actually influences that decision and how a business
                             positions itself to get chosen.
                           </p>
@@ -1225,7 +1225,7 @@ export default function Page() {
 
               <section className="content-section">
                 <h2 className="section-heading">
-                  Why Partner With Biztalbox for Movers and Packers SEO
+                  Why Partner With biztalbox for Movers and Packers SEO
                 </h2>
                 <div className="content-grid-2">
                   <div className="content-card">
@@ -1253,7 +1253,7 @@ export default function Page() {
                   <div className="content-card">
                     <h3 className="section-subheading">3. Transparent Execution</h3>
                     <p>
-                      Clarity is a core part of how we work at Biztalbox. Every
+                      Clarity is a core part of how we work at biztalbox. Every
                       action is tied to a purpose, and every update is structured
                       so it is easy to understand what is changing and why.
                       Working with our packers and movers services SEO agency
@@ -1309,7 +1309,7 @@ export default function Page() {
                     platforms.
                   </p>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    At Biztalbox, we build systems that turn search visibility
+                    At biztalbox, we build systems that turn search visibility
                     into consistent moving requests.
                   </p>
                   <p
@@ -1321,7 +1321,7 @@ export default function Page() {
                     }}
                   >
                     If you want predictable bookings instead of irregular demand,
-                    reach out to Biztalbox and let’s get it in place.
+                    reach out to biztalbox and let’s get it in place.
                   </p>
                 </div>
               </section>

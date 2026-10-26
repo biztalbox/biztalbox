@@ -18,29 +18,29 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     if (!blog) {
       console.warn(`Blog post not found for slug: ${params.slug}`);
       return createMetadata({
-        title: 'Blog post not found - Biztal Box',
+        title: 'Blog post not found - biztal box',
         description: 'The requested blog post could not be found. Please check the URL or browse our other blog posts.',
       }, '/blog/not-found');
     }
     
     // Use RankMath data if available, otherwise fall back to blog post data
     const baseMetadata = rankMathData.title || rankMathData.description 
-      ? createMetadataFromRankMath(rankMathData, blog.title?.rendered || 'Blog Post - Biztal Box')
+      ? createMetadataFromRankMath(rankMathData, blog.title?.rendered || 'Blog Post - biztal box')
       : {
-          title: blog.title?.rendered || `Blog Post - Biztal Box`,
+          title: blog.title?.rendered || `Blog Post - biztal box`,
           description: blog.excerpt?.rendered ? blog.excerpt.rendered.replace(/<[^>]*>/g, '').slice(0, 160) : 
-                      'Read this blog post on Biztal Box - Your digital marketing partner'
+                      'Read this blog post on biztal box - Your digital marketing partner'
         };
     
     return createMetadata(baseMetadata, `/blog/${params.slug}`);
-    // return createMetadataFromRankMath(rankMathData, blog.title?.rendered || 'Blog Post - Biztal Box');
+    // return createMetadataFromRankMath(rankMathData, blog.title?.rendered || 'Blog Post - biztal box');
   } catch (error) {
     console.error(`Error generating metadata for blog post ${params.slug}:`, error);
     
     // Fallback metadata in case of API failure
     return createMetadata({
-      title: 'Blog Post - Biztal Box',
-      description: 'Discover insights and expertise from Biztal Box - Your trusted digital marketing partner.',
+      title: 'Blog Post - biztal box',
+      description: 'Discover insights and expertise from biztal box - Your trusted digital marketing partner.',
     }, `/blog/${params.slug}`);
   }
 }
@@ -85,7 +85,7 @@ export default async function BlogDetailsPage({params}:{params:{slug:string}}) {
       featuredImage: blog._embedded?.['wp:featuredmedia']?.[0]?.source_url || 
                     '/assets/img/inner-blog/blog-details/blog-details-1.jpg',
       category: 'Blog',
-      author: 'Biztal Box',
+      author: 'biztal box',
       desc: blog.content.rendered,
       categories: blog.categories || []
     };

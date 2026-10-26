@@ -99,7 +99,7 @@ const faq_data = [
     id: 12,
     question: "How do I choose the right SEO partner for my real estate business?",
     answer:
-      "You should choose an SEO partner that understands market cycles, micro-location dynamics, buyer psychology, and developer reputation rather than relying on generic templates and surface-level optimisation. A specialised partner like Biztalbox combines real estate market intelligence with tailored SEO strategies to drive stronger visibility, better-quality leads, and long-term growth.",
+      "You should choose an SEO partner that understands market cycles, micro-location dynamics, buyer psychology, and developer reputation rather than relying on generic templates and surface-level optimisation. A specialised partner like biztalbox combines real estate market intelligence with tailored SEO strategies to drive stronger visibility, better-quality leads, and long-term growth.",
   },
 ];
 
@@ -333,7 +333,7 @@ export default function Page() {
                       <div className="tm-details-content-wrap z-index-5" style={{ padding: "30px 0" }}>
                         <div className="tm-details-title-box mb-20">
                           <span className="tm-hero-subtitle">
-                            Build Your Real Estate Success Story with Biztalbox
+                            Build Your Real Estate Success Story with biztalbox
                           </span>
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
@@ -341,7 +341,7 @@ export default function Page() {
                           <p>
                             If you&apos;re ready to strengthen your digital
                             footprint and attract qualified buyers and sellers,
-                            Biztalbox is your trusted partner. Our real estate SEO
+                            biztalbox is your trusted partner. Our real estate SEO
                             experts deliver strategies that not only rank — they
                             perform, engage, and grow your business for the long
                             run.
@@ -1248,7 +1248,7 @@ export default function Page() {
                         <div className="tm-details-text">
                           <p>
                             Your customers are searching — make sure they find you
-                            first. Partner with Biztalbox, the real estate SEO
+                            first. Partner with biztalbox, the real estate SEO
                             experts that agents, brokers, and real estate
                             businesses trust, and start driving real results.
                             Contact us today for a free consultation.
@@ -1302,7 +1302,7 @@ export default function Page() {
                   trust drives conversions.
                 </p>
                 <p>
-                  Here is what sets Biztalbox apart from generic
+                  Here is what sets biztalbox apart from generic
                   real estate seo companies:
                 </p>
                 <h3 className="section-subheading">
@@ -1424,7 +1424,7 @@ export default function Page() {
                     Most real estate brands don&apos;t lose buyers because
                     of poor offerings, but because they aren&apos;t visible
                     when decisions are being made. The impact is subtle, yet
-                    it compounds over time. Biztalbox delivers real estate
+                    it compounds over time. biztalbox delivers real estate
                     SEO services that place you where intent is strongest
                     and attention is highest. If you want to work with a top
                     real estate SEO company that values precision and
@@ -1460,7 +1460,7 @@ export default function Page() {
                       <div className="tm-details-text">
                         <p>
                           Your customers are searching — make sure they find you
-                          first. Partner with Biztalbox, the real estate SEO
+                          first. Partner with biztalbox, the real estate SEO
                           experts that agents, brokers, and real estate
                           businesses trust, and start driving real results.
                           Contact us today for a free consultation.

@@ -5,7 +5,7 @@ import ContactPageSchema from "@/components/schema/ContactPageSchema";
 import "./styles.css";
 
 const baseMetadata: Metadata = {
-  title: "Contact Us - Biztal Box",
+  title: "Contact Us - biztal box",
   description:
     "Get in touch with our team for personalized digital marketing and web development solutions. We're here to answer your questions and help your business grow.",
 };

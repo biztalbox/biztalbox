@@ -215,13 +215,13 @@ export default function BlogSidebar() {
         <h3 className="sidebar__widget-title">Follow More</h3>
         <div className="sidebar__widget-content">
           <div className="sidebar__social">
-            <a href="https://www.facebook.com/BiztalBox" target="_blank">
+            <a href="https://www.facebook.com/biztalbox" target="_blank">
               <i className="fa-brands fa-facebook"></i>
             </a>
             <a href="https://www.instagram.com/biztalbox" target="_blank">
               <i className="fa-brands fa-instagram"></i>
             </a>
-            <a href="https://x.com/BiztalBox" target="_blank">
+            <a href="https://x.com/biztalbox" target="_blank">
               <i className="fa-brands fa-twitter"></i>
             </a>
             <a href="https://www.linkedin.com/company/biztal" target="_blank">

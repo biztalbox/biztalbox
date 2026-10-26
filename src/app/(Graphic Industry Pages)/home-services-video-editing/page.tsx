@@ -171,7 +171,7 @@ export default function Page() {
 
               <section className="content-section">
                 <h2 className="section-heading">
-                  Why Home Service Businesses Choose Biztalbox for Graphic Design and Video Editing Services
+                  Why Home Service Businesses Choose biztalbox for Graphic Design and Video Editing Services
                 </h2>
 
                 <div className="content-grid-2">
@@ -185,7 +185,7 @@ export default function Page() {
                     <h3 className="section-subheading">
                       2. Professional Branding
                     </h3>
-                    <p>Biztalbox&apos;s home services graphic design helps businesses look more organized, recognizable, and reliable across platforms.</p>
+                    <p>biztalbox&apos;s home services graphic design helps businesses look more organized, recognizable, and reliable across platforms.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">
@@ -197,7 +197,7 @@ export default function Page() {
                     <h3 className="section-subheading">
                       4. Platform-Optimized Marketing Content
                     </h3>
-                    <p>The team at Biztalbox develops visuals specifically for Google Business, Instagram, Facebook, YouTube, and local advertising campaigns.</p>
+                    <p>The team at biztalbox develops visuals specifically for Google Business, Instagram, Facebook, YouTube, and local advertising campaigns.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">
@@ -255,7 +255,7 @@ export default function Page() {
                         </div>
                         <div className="tm-details-text">
                           <p>
-                            Connect with Biztalbox to create visual content that helps your home service business build stronger credibility, improve online presentation, and attract better-quality local inquiries.
+                            Connect with biztalbox to create visual content that helps your home service business build stronger credibility, improve online presentation, and attract better-quality local inquiries.
                           </p>
                         </div>
                         <div className="tm-details-portfolio">
@@ -286,7 +286,7 @@ export default function Page() {
                     Looking for Graphic Design and Video Editing Services for your Home Services business?
                   </h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    Connect with Biztalbox for graphic design and{" "}
+                    Connect with biztalbox for graphic design and{" "}
                     <Link
                       href="https://biztalbox.com/blog/best-video-editing-agency-in-the-usa"
                       className="text-primary"
@@ -305,7 +305,7 @@ export default function Page() {
                       color: "#fff",
                     }}
                   >
-                    Get in touch with Biztalbox today and elevate your home services brand online.
+                    Get in touch with biztalbox today and elevate your home services brand online.
                   </p>
                 </div>
               </section>

@@ -19,7 +19,7 @@ export default function AboutTwo() {
           <div className="col-xl-10 col-md-10">
             <div className="tp-about-4-title-box tp_fade_bottom">
               <h4 className="tp-about-4-title">
-              Why Biztalbox is Your Trusted SEO Partner
+              Why biztalbox is Your Trusted SEO Partner
               </h4>
             </div>
           </div>

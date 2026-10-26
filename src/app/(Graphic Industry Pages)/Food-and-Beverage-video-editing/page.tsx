@@ -330,7 +330,7 @@ export default function Page() {
 
               <section className="content-section">
                 <h2 className="section-heading">
-                  Why Food and Beauty Brands Choose Biztalbox for Marketing
+                  Why Food and Beauty Brands Choose biztalbox for Marketing
                   Creatives
                 </h2>
 
@@ -391,7 +391,7 @@ export default function Page() {
                       Consistent Brand Communication
                     </h3>
                     <p>
-                      At Biztalbox, we ensure consistency across every
+                      At biztalbox, we ensure consistency across every
                       touchpoint through food and beverage content creation
                       services, so your brand feels stable, familiar, and easy
                       to remember over time.
@@ -470,7 +470,7 @@ export default function Page() {
                         </div>
                         <div className="tm-details-text">
                           <p>
-                            Connect with Biztalbox for food and beverage graphic
+                            Connect with biztalbox for food and beverage graphic
                             design services and video editing services that help
                             your brand turn everyday attention into real
                             customer action.
@@ -505,7 +505,7 @@ export default function Page() {
                     online?
                   </h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    Connect with Biztalbox for food and beverage graphic design
+                    Connect with biztalbox for food and beverage graphic design
                     services and video editing services that help your brand
                     turn everyday attention into real customer action.
                   </p>

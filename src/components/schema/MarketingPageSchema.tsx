@@ -94,7 +94,7 @@ export default function MarketingPageSchema({
       {
         "@type": "LocalBusiness",
         "@id": localBusinessId,
-        name: "Biztalbox",
+        name: "biztalbox",
         url: organizationData.url,
         image: pageData.image || organizationData.logo,
         telephone: organizationData.telephone,
@@ -190,7 +190,7 @@ export default function MarketingPageSchema({
       "@context": "https://schema.org",
       "@id": `${baseUrl}/#website`,
       url: baseUrl,
-      name: "Biztalbox",
+      name: "biztalbox",
       description: organizationData.description,
       publisher: {
         "@type": "Organization",

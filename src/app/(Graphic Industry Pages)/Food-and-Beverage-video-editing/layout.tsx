@@ -6,9 +6,9 @@ import "@/app/(Graphic Industry Pages)/styles.css";
 
 const baseMetadata: Metadata = {
   title:
-    "Food & Beverage Graphic Design and Video Editing Services | Biztalbox",
+    "Food & Beverage Graphic Design and Video Editing Services | biztalbox",
   description:
-    "Strengthen your food and beverage brand with professional graphic design and video editing services from Biztalbox. Create visually engaging content that attracts customers, builds trust, and boosts brand recognition.",
+    "Strengthen your food and beverage brand with professional graphic design and video editing services from biztalbox. Create visually engaging content that attracts customers, builds trust, and boosts brand recognition.",
 };
 
 export const metadata = createMetadata(

@@ -286,11 +286,11 @@ export default function Page() {
 
               <section className="content-section">
                 <h2 className="section-heading">
-                  Why Choose Biztalbox for Real Estate Graphic Design and Video
+                  Why Choose biztalbox for Real Estate Graphic Design and Video
                   Editing Services
                 </h2>
                 <p className="content-prose">
-                  Biztalbox works on video editing and graphic design services
+                  biztalbox works on video editing and graphic design services
                   for{" "}
                   <Link
                     href="https://biztalbox.com/real-estate-seo"
@@ -345,7 +345,7 @@ export default function Page() {
                       recognizable across all listings and platforms.
                     </p>
                     <p>
-                      At Biztalbox, we do not just create visuals. We help
+                      At biztalbox, we do not just create visuals. We help
                       properties communicate value clearly in a market where
                       attention is limited and competition is high.
                     </p>
@@ -402,7 +402,7 @@ export default function Page() {
                         </div>
                         <div className="tm-details-text">
                           <p>
-                            Connect with Biztalbox for graphic design and{" "}
+                            Connect with biztalbox for graphic design and{" "}
                             <Link
                               href="https://biztalbox.com/blog/best-video-editing-agency-in-the-usa"
                               className="text-primary"

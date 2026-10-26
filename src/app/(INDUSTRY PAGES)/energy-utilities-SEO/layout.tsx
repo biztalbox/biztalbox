@@ -16,7 +16,7 @@ const ENERGY_UTILITIES_SEO_SCHEMA = {
     {
       "@type": "ProfessionalService",
       "@id": "https://biztalbox.com/#organization",
-      "name": "Biztalbox",
+      "name": "biztalbox",
       "url": "https://biztalbox.com/",
       "logo": "https://biztalbox.com/_next/static/media/black.e66748b8.png",
       "image": "https://biztalbox.com/_next/static/media/black.e66748b8.png",
@@ -42,9 +42,9 @@ const ENERGY_UTILITIES_SEO_SCHEMA = {
         ]
       },
       "sameAs": [
-        "https://www.facebook.com/BiztalBox",
+        "https://www.facebook.com/biztalbox",
         "https://www.instagram.com/biztalbox",
-        "https://x.com/BiztalBox",
+        "https://x.com/biztalbox",
         "https://www.linkedin.com/company/biztalbox",
         "https://www.youtube.com/@biztalboxofficial",
         "https://in.pinterest.com/biztalbox/"
@@ -54,7 +54,7 @@ const ENERGY_UTILITIES_SEO_SCHEMA = {
       "@type": "WebSite",
       "@id": "https://biztalbox.com/#website",
       "url": "https://biztalbox.com/",
-      "name": "Biztalbox",
+      "name": "biztalbox",
       "publisher": {
         "@id": "https://biztalbox.com/#organization"
       }

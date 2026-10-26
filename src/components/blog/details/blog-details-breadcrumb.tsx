@@ -60,7 +60,7 @@ export default function BlogDetailsBreadcrumb({ title, image, date }: BlogDetail
                 {/* <div className="blog-details-top-author d-flex align-items-center">
                   <Image src={avatar} alt="avatar" />
                   <span>
-                    <Link href="/blog">Biztal Box</Link> / <i>Blog</i>
+                    <Link href="/blog">biztal box</Link> / <i>Blog</i>
                   </span>
                 </div> */}
               </div>

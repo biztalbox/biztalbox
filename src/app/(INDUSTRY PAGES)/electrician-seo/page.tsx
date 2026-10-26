@@ -230,7 +230,7 @@ export default function Page() {
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
                         <div className="tm-details-text">
-                          <p>Don&apos;t let your competitors win the call. Build a dominant search presence for your electrical firm with Biztalbox.</p>
+                          <p>Don&apos;t let your competitors win the call. Build a dominant search presence for your electrical firm with biztalbox.</p>
                         </div>
                         <div className="tm-details-portfolio">
                           <span className="tm-details-social-title">Get in Touch:</span>
@@ -404,7 +404,7 @@ export default function Page() {
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
                         <div className="tm-details-text">
-                          <p>Don&apos;t let your competitors win the call. Build a dominant search presence for your electrical firm with Biztalbox.</p>
+                          <p>Don&apos;t let your competitors win the call. Build a dominant search presence for your electrical firm with biztalbox.</p>
                         </div>
                         <div className="tm-details-portfolio">
                           <span className="tm-details-social-title">Get in Touch:</span>
@@ -537,11 +537,11 @@ export default function Page() {
                 </div>
               </section>
 
-              {/* Why Choose Biztalbox */}
+              {/* Why Choose biztalbox */}
               <section className="content-section">
-                <h2 className="section-heading">Why Choose Biztalbox for Electrician SEO Services</h2>
+                <h2 className="section-heading">Why Choose biztalbox for Electrician SEO Services</h2>
                 <div className="content-prose">
-                  <p>Your business deserves more than generic promises. It deserves an SEO partner who knows the electrician industry, anticipates changes, and turns searches into real customers. Biztalbox isn’t just another provider—it’s a trusted electrician SEO agency that creates strategies that work, adapt, and grow with your business. Here’s why companies choose us for results that actually matter:</p>
+                  <p>Your business deserves more than generic promises. It deserves an SEO partner who knows the electrician industry, anticipates changes, and turns searches into real customers. biztalbox isn’t just another provider—it’s a trusted electrician SEO agency that creates strategies that work, adapt, and grow with your business. Here’s why companies choose us for results that actually matter:</p>
                 </div>
                 <div className="content-grid-2 mt-30">
                   <div className="content-card">
@@ -561,15 +561,15 @@ export default function Page() {
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">4. Expert-Led Optimisation</h3>
-                    <p>At Biztalbox, our team includes experienced electrician <Link href="https://biztalbox.com/best-seo-agency" className="text-primary">SEO experts</Link> who understand how search engines evaluate local service businesses and apply proven methods that help your business appear more prominently in relevant search results.</p>
+                    <p>At biztalbox, our team includes experienced electrician <Link href="https://biztalbox.com/best-seo-agency" className="text-primary">SEO experts</Link> who understand how search engines evaluate local service businesses and apply proven methods that help your business appear more prominently in relevant search results.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">5. An Extension of Your Team</h3>
-                    <p>Working with Biztalbox means having a partner who is genuinely invested in your growth. Not distant. Not transactional. We function as an extension of your team, taking care of your online presence end-to-end while you focus on delivering excellent electrical work.</p>
+                    <p>Working with biztalbox means having a partner who is genuinely invested in your growth. Not distant. Not transactional. We function as an extension of your team, taking care of your online presence end-to-end while you focus on delivering excellent electrical work.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">6. Complete Transparency</h3>
-                    <p>At Biztalbox, we believe you should always understand the work being done for your business. Every recommendation is explained clearly. You will know what changes are being made and why they matter. Also, the SEO team at biztalbox also keeps you in the loop about how each improvement strengthens your search visibility.</p>
+                    <p>At biztalbox, we believe you should always understand the work being done for your business. Every recommendation is explained clearly. You will know what changes are being made and why they matter. Also, the SEO team at biztalbox also keeps you in the loop about how each improvement strengthens your search visibility.</p>
                   </div>
                 </div>
               </section>
@@ -578,8 +578,8 @@ export default function Page() {
               <section className="content-section content-prose">
                 <h2 className="section-heading">Ready to Grow Your Electrical Business?</h2>
                 <p>Homeowners and businesses search for electricians every day. The question is whether they find your company or your competitors.</p>
-                <p>With Biztalbox’s electrician SEO services, your business gains the visibility it needs to reach customers who are already looking for help. Our strategies focus on meaningful results — more calls, more enquiries, and stronger local recognition.</p>
-                <p>If you’re prepared to collaborate with an electrician SEO expert who knows your industry inside and out, Biztalbox is here to propel you forward. Contact us today, and let’s craft a strategy that transforms searches into real electrical jobs.</p>
+                <p>With biztalbox’s electrician SEO services, your business gains the visibility it needs to reach customers who are already looking for help. Our strategies focus on meaningful results — more calls, more enquiries, and stronger local recognition.</p>
+                <p>If you’re prepared to collaborate with an electrician SEO expert who knows your industry inside and out, biztalbox is here to propel you forward. Contact us today, and let’s craft a strategy that transforms searches into real electrical jobs.</p>
               </section>
 
               {/* Final CTA */}

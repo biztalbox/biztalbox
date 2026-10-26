@@ -469,14 +469,14 @@ export default function Page() {
                       <div className="tm-details-content-wrap z-index-5" style={{ padding: "30px 0" }}>
                         <div className="tm-details-title-box mb-20">
                           <span className="tm-hero-subtitle">
-                            Build Your Travel Success Story with Biztalbox
+                            Build Your Travel Success Story with biztalbox
                           </span>
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
                         <div className="tm-details-text">
                           <p>
                             If you&apos;re ready to strengthen your digital
-                            footprint and attract qualified travellers, Biztalbox
+                            footprint and attract qualified travellers, biztalbox
                             is your trusted partner. Our travel SEO experts
                             deliver strategies that not only rank — they perform,
                             engage, and grow your business for the long run.
@@ -1370,7 +1370,7 @@ export default function Page() {
                         <div className="tm-details-text">
                           <p>
                             Your customers are searching — make sure they find you
-                            first. Partner with Biztalbox, the travel SEO experts
+                            first. Partner with biztalbox, the travel SEO experts
                             that travel agencies, tour operators, and travel
                             businesses trust, and start driving real results.
                             Contact us today for a free consultation.
@@ -1515,10 +1515,10 @@ export default function Page() {
                 </p>
                 <h3 className="section-subheading">
                   Why Travel Agencies and Tour Operators Choose
-                  Biztalbox
+                  biztalbox
                 </h3>
                 <p>
-                  Here&apos;s where Biztalbox makes a noticeable
+                  Here&apos;s where biztalbox makes a noticeable
                   difference. We do not measure success by vanity
                   metrics or short bursts of traffic that do not
                   lead anywhere. Our approach to seo services for
@@ -1542,7 +1542,7 @@ export default function Page() {
                 </p>
                 <p>
                   <strong>Tailored, Experience-Driven Strategies</strong>{" "}
-                  - At Biztalbox, we plan everything according to
+                  - At biztalbox, we plan everything according to
                   your destinations, target audiences, and goals. No
                   copy-paste frameworks or generic templates. Just a
                   real, grounded strategy aligned with your growth
@@ -1565,7 +1565,7 @@ export default function Page() {
                   impactful.
                 </p>
                 <p>
-                  At Biztalbox, your website isn&apos;t just a click
+                  At biztalbox, your website isn&apos;t just a click
                   magnet. We turn it into a steady, reliable revenue
                   source that reduces your dependency on OTAs and
                   puts your brand in control.
@@ -1574,11 +1574,11 @@ export default function Page() {
                   And if what you are after is tangible ROI,
                   long-term rankings, and a solid digital presence,
                   then teaming up with a seasoned travel SEO company
-                  like Biztalbox ensures your platform becomes the
+                  like biztalbox ensures your platform becomes the
                   go-to option for travellers.
                 </p>
                 <p>
-                  Get in touch with Biztalbox today to unlock the
+                  Get in touch with biztalbox today to unlock the
                   hidden potential in your Travel SEO strategy and
                   accelerate your journey toward lasting, tangible
                   growth!
@@ -1593,7 +1593,7 @@ export default function Page() {
                   </h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
                     Your customers are searching — make sure they find you
-                    first. Partner with Biztalbox, the travel SEO experts
+                    first. Partner with biztalbox, the travel SEO experts
                     that travel agencies, tour operators, and travel
                     businesses trust, and start driving real results.
                   </p>
@@ -1625,7 +1625,7 @@ export default function Page() {
                       <div className="tm-details-text">
                         <p>
                           Your customers are searching — make sure they find you
-                          first. Partner with Biztalbox, the travel SEO experts
+                          first. Partner with biztalbox, the travel SEO experts
                           that travel agencies, tour operators, and travel
                           businesses trust, and start driving real results.
                           Contact us today for a free consultation.

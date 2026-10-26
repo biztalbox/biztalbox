@@ -2,11 +2,11 @@
 
 ### **Meta Title**
 
-Pharmaceutical Graphic Design & Video Editing Services | Biztalbox
+Pharmaceutical Graphic Design & Video Editing Services | biztalbox
 
 ### **Meta Description**
 
-Build trust in the pharmaceutical industry with professional graphic design and video editing services from Biztalbox. Create compliant, engaging visual content that strengthens brand credibility and audience engagement.
+Build trust in the pharmaceutical industry with professional graphic design and video editing services from biztalbox. Create compliant, engaging visual content that strengthens brand credibility and audience engagement.
 
 **Pharmaceutical Graphic Design Services and Video Editing Services: Building Trust in a Highly Regulated Market**
 
@@ -84,9 +84,9 @@ That is why pharmaceutical brands need more than just creative execution. They n
 
 The right team knows how to simplify technical information without making it feel diluted. They understand the balance between clarity, professionalism, compliance, and trust. Good creative partner for pharmaceutical brands, helping people understand information clearly while making the brand feel more dependable at the same time.
 
-**Why Choose Biztalbox for Pharmaceutical Video Editing and Graphic Design Services**
+**Why Choose biztalbox for Pharmaceutical Video Editing and Graphic Design Services**
 
-At Biztalbox, we understand that pharmaceutical communication cannot feel careless or exaggerated. People expect clarity, structure, and accuracy from healthcare brands. And visuals play a major role in that. 
+At biztalbox, we understand that pharmaceutical communication cannot feel careless or exaggerated. People expect clarity, structure, and accuracy from healthcare brands. And visuals play a major role in that. 
 
 Here are some reasons you should choose us for graphic design and video editing services for pharmaceutical brands: 
 
@@ -96,11 +96,11 @@ Our approach is to turn the complex nature of pharmaceuticals into a neat, easil
 
 2\. Compliance-Sensitive Communication
 
-At Biztalbox, we understand that pharmaceutical communication cannot feel careless or overly promotional. Our approach keeps branding and communication accurate. We always stay aligned with the standards healthcare industries expect.
+At biztalbox, we understand that pharmaceutical communication cannot feel careless or overly promotional. Our approach keeps branding and communication accurate. We always stay aligned with the standards healthcare industries expect.
 
 3\. Product-Focused Video Editing
 
-The creative team at Biztalbox develops pharmaceutical video editing services that explain products, processes, and usage information in a more visual and digestible format.
+The creative team at biztalbox develops pharmaceutical video editing services that explain products, processes, and usage information in a more visual and digestible format.
 
 4\. Consistent Pharmaceutical Branding
 

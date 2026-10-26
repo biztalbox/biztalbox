@@ -294,11 +294,11 @@ export default function Page() {
 
               <section className="content-section">
                 <h2 className="section-heading">
-                  Why Choose Biztalbox for Pharmaceutical Video Editing and
+                  Why Choose biztalbox for Pharmaceutical Video Editing and
                   Graphic Design Services
                 </h2>
                 <p className="content-prose">
-                  At Biztalbox, we understand that pharmaceutical communication
+                  At biztalbox, we understand that pharmaceutical communication
                   cannot feel careless or exaggerated. People expect clarity,
                   structure, and accuracy from healthcare brands. And visuals
                   play a major role in that.
@@ -325,7 +325,7 @@ export default function Page() {
                       2. Compliance-Sensitive Communication
                     </h3>
                     <p>
-                      At Biztalbox, we understand that pharmaceutical
+                      At biztalbox, we understand that pharmaceutical
                       communication cannot feel careless or overly promotional.
                       Our approach keeps branding and communication accurate.
                       We always stay aligned with the standards healthcare
@@ -337,7 +337,7 @@ export default function Page() {
                       3. Product-Focused Video Editing
                     </h3>
                     <p>
-                      The creative team at Biztalbox develops pharmaceutical
+                      The creative team at biztalbox develops pharmaceutical
                       video editing services that explain products, processes,
                       and usage information in a more visual and digestible
                       format.
@@ -424,7 +424,7 @@ export default function Page() {
                         </div>
                         <div className="tm-details-text">
                           <p>
-                            Connect with Biztalbox for pharmaceutical graphic
+                            Connect with biztalbox for pharmaceutical graphic
                             design services, pharmaceutical video editing
                             services, and trust-oriented creative support built
                             for healthcare communication.

@@ -180,7 +180,7 @@ export default function BlogDetailsAreaTwo() {
                     </div>
                   </div>
                   {/* blog details author */}
-                  <BlogDetailsAuthor author="Biztal Box" />
+                  <BlogDetailsAuthor author="biztal box" />
                   {/* blog details author */}
 
                   {/* blog details navigation */}

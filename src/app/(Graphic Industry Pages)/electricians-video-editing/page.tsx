@@ -169,7 +169,7 @@ export default function Page() {
 
               <section className="content-section">
                 <h2 className="section-heading">
-                  Why Electrical Businesses Choose Biztalbox for Graphic Design and Video Editing Services
+                  Why Electrical Businesses Choose biztalbox for Graphic Design and Video Editing Services
                 </h2>
 
                 <div className="content-grid-2">
@@ -195,7 +195,7 @@ export default function Page() {
                     <h3 className="section-subheading">
                       4. We create platform-specific content
                     </h3>
-                    <p>The team at Biztalbox develops content for Google Business, Instagram, Facebook, YouTube, websites, and local advertising campaigns.</p>
+                    <p>The team at biztalbox develops content for Google Business, Instagram, Facebook, YouTube, websites, and local advertising campaigns.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">
@@ -260,7 +260,7 @@ export default function Page() {
                         </div>
                         <div className="tm-details-text">
                           <p>
-                            Connect with Biztalbox to create visual content that helps your electrical business look more professional, communicate expertise more clearly, and attract better-quality local inquiries.
+                            Connect with biztalbox to create visual content that helps your electrical business look more professional, communicate expertise more clearly, and attract better-quality local inquiries.
                           </p>
                         </div>
                         <div className="tm-details-portfolio">
@@ -291,7 +291,7 @@ export default function Page() {
                     Looking for Graphic Design and Video Editing Services for Electricians?
                   </h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    Connect with Biztalbox for graphic design and{" "}
+                    Connect with biztalbox for graphic design and{" "}
                     <Link
                       href="https://biztalbox.com/blog/best-video-editing-agency-in-the-usa"
                       className="text-primary"
@@ -310,7 +310,7 @@ export default function Page() {
                       color: "#fff",
                     }}
                   >
-                    Get in touch with Biztalbox today and elevate your electrical brand online.
+                    Get in touch with biztalbox today and elevate your electrical brand online.
                   </p>
                 </div>
               </section>

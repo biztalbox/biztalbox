@@ -2,7 +2,7 @@ export const HOME_ORGANIZATION_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "@id": "https://biztalbox.com/#organization",
-  name: "BiztalBox",
+  name: "biztalbox",
   url: "https://biztalbox.com/",
   logo: {
     "@type": "ImageObject",
@@ -40,9 +40,9 @@ export const HOME_ORGANIZATION_SCHEMA = {
     "Data Analysis",
   ],
   sameAs: [
-    "https://www.facebook.com/BiztalBox",
+    "https://www.facebook.com/biztalbox",
     "https://www.instagram.com/biztalbox",
-    "https://x.com/BiztalBox",
+    "https://x.com/biztalbox",
     "https://www.linkedin.com/company/biztalbox",
     "https://m.youtube.com/@biztalboxofficial",
     "https://in.pinterest.com/biztalbox/",
@@ -53,7 +53,7 @@ export const HOME_LOCAL_BUSINESS_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "@id": "https://biztalbox.com/#localbusiness",
-  name: "BiztalBox",
+  name: "biztalbox",
   url: "https://biztalbox.com/",
   image: "https://biztalbox.com/_next/static/media/black.e66748b8.png",
   telephone: "+91-9485699709",
@@ -98,7 +98,7 @@ export const HOME_WEBSITE_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "@id": "https://biztalbox.com/#website",
-  name: "BiztalBox",
+  name: "biztalbox",
   url: "https://biztalbox.com/",
   description:
     "Best Digital Marketing Agency offering SEO, Web Development, Social Media Marketing and more.",
@@ -121,7 +121,7 @@ export const HOME_WEBPAGE_SCHEMA = {
   "@type": "WebPage",
   "@id": "https://biztalbox.com/#webpage",
   url: "https://biztalbox.com/",
-  name: "Best Digital Marketing Agency | Website Development - BiztalBox",
+  name: "Best Digital Marketing Agency | Website Development - biztalbox",
   description:
     "Get a great website for your business! Our agency builds easy, attractive sites that help you reach more customers.",
   inLanguage: "en-US",
@@ -138,7 +138,7 @@ export const HOME_WEBPAGE_SCHEMA = {
 export const HOME_SERVICES_ITEM_LIST_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "BiztalBox Services",
+  name: "biztalbox Services",
   url: "https://biztalbox.com/services",
   numberOfItems: 10,
   itemListElement: [
@@ -334,42 +334,42 @@ export const HOME_FAQ_SCHEMA = {
   mainEntity: [
     {
       "@type": "Question",
-      name: "What services does BiztalBox offer?",
+      name: "What services does biztalbox offer?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "BiztalBox offers SEO, Social Media Marketing, Web Development, App Development, Graphic Designing, Motion Graphics, Content Marketing, Google Ads, Meta Ads, and Analysis Algorithm services.",
+        text: "biztalbox offers SEO, Social Media Marketing, Web Development, App Development, Graphic Designing, Motion Graphics, Content Marketing, Google Ads, Meta Ads, and Analysis Algorithm services.",
       },
     },
     {
       "@type": "Question",
-      name: "Is BiztalBox available 24/7?",
+      name: "Is biztalbox available 24/7?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No, BiztalBox is not available 24/7. Our working hours are 10:00 AM to 7:00 PM.",
+        text: "No, biztalbox is not available 24/7. Our working hours are 10:00 AM to 7:00 PM.",
       },
     },
     {
       "@type": "Question",
-      name: "Where is BiztalBox located?",
+      name: "Where is biztalbox located?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "BiztalBox is located at A-11, 2nd Floor, Sector 8 Dwarka, New Delhi 110077, India.",
+        text: "biztalbox is located at A-11, 2nd Floor, Sector 8 Dwarka, New Delhi 110077, India.",
       },
     },
     {
       "@type": "Question",
-      name: "How can I contact BiztalBox?",
+      name: "How can I contact biztalbox?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "You can contact BiztalBox by phone at +91-9485699709, by email at info@biztalbox.com, or via WhatsApp at the same number.",
+        text: "You can contact biztalbox by phone at +91-9485699709, by email at info@biztalbox.com, or via WhatsApp at the same number.",
       },
     },
     {
       "@type": "Question",
-      name: "Does BiztalBox serve international clients?",
+      name: "Does biztalbox serve international clients?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes, BiztalBox serves clients in the USA, UK, Australia, Canada, UAE, New Zealand, Singapore, and India.",
+        text: "Yes, biztalbox serves clients in the USA, UK, Australia, Canada, UAE, New Zealand, Singapore, and India.",
       },
     },
   ],

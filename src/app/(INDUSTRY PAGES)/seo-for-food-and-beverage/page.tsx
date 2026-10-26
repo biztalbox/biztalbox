@@ -117,7 +117,7 @@ const faq_data = [
     id: 15,
     question: "How do I choose the right SEO partner for my travel business?",
     answer:
-      "The partner you choose must not only have theoretical knowledge of SEO for the travel industry but should also be able to demonstrate real-world execution. The right travel SEO agency understands traveller search behaviour, focuses on high-intent keywords, creates content that helps travellers decide, and prioritizes technical performance, local visibility, and seamless user experience. Biztalbox is an SEO agency that fulfills all these criteria.",
+      "The partner you choose must not only have theoretical knowledge of SEO for the travel industry but should also be able to demonstrate real-world execution. The right travel SEO agency understands traveller search behaviour, focuses on high-intent keywords, creates content that helps travellers decide, and prioritizes technical performance, local visibility, and seamless user experience. biztalbox is an SEO agency that fulfills all these criteria.",
   },
   {
     id: 16,
@@ -660,14 +660,14 @@ export default function Page() {
                         <div className="tm-details-title-box mb-20">
                           <span className="tm-hero-subtitle">
                             Build Your Food & Beverage Success Story with
-                            Biztalbox
+                            biztalbox
                           </span>
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
                         <div className="tm-details-text">
                           <p>
                             If you&apos;re ready to strengthen your digital
-                            footprint and attract qualified customers, Biztalbox is
+                            footprint and attract qualified customers, biztalbox is
                             your trusted partner. Our food and beverage SEO
                             experts deliver strategies that not only rank — they
                             perform, engage, and grow your business for the long
@@ -1121,7 +1121,7 @@ export default function Page() {
                         <div className="tm-details-text">
                           <p>
                             Your customers are searching — make sure they find you
-                            first. Partner with Biztalbox, the food and beverage
+                            first. Partner with biztalbox, the food and beverage
                             SEO experts that restaurants, cafes, and F&B brands
                             trust, and start driving real results. Contact us today
                             for a free consultation.
@@ -1143,10 +1143,10 @@ export default function Page() {
                 </div>
               </div>
 
-              {/* Why Choose BiztalBox */}
+              {/* Why Choose biztalbox */}
               <section className="content-section content-prose">
                 <h2 className="section-heading">
-                  Why Choose BiztalBox as Your Food and Beverage SEO
+                  Why Choose biztalbox as Your Food and Beverage SEO
                   Agency
                 </h2>
                 <h3 className="section-subheading">
@@ -1165,7 +1165,7 @@ export default function Page() {
                 <p>
                   We build our campaigns on insights, not instincts.
                   By studying competitors, search trends and audience
-                  intent, BiztalBox ensures that your brand is
+                  intent, biztalbox ensures that your brand is
                   always placed a step ahead of the curve,
                   positioning us as one of the best restaurant SEO
                   companies.
@@ -1184,7 +1184,7 @@ export default function Page() {
                   Insights That Drive Real Results
                 </h3>
                 <p>
-                  Working with BiztalBox as your restaurant SEO
+                  Working with biztalbox as your restaurant SEO
                   agency means you get insights beyond just numbers.
                   Our dashboards and reports focus on the metrics
                   that actually have a real impact on your business,
@@ -1217,7 +1217,7 @@ export default function Page() {
               <section className="content-section">
                 <div style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto" }}>
                   <h2 className="section-heading">
-                    Take the next step with BiztalBox. Scale your
+                    Take the next step with biztalbox. Scale your
                     restaurant&apos;s visibility with a strategy built for
                     real-world growth.
                   </h2>
@@ -1249,7 +1249,7 @@ export default function Page() {
                       <div className="tm-details-text">
                         <p>
                           Your customers are searching — make sure they find you
-                          first. Partner with Biztalbox, the food and beverage
+                          first. Partner with biztalbox, the food and beverage
                           SEO experts that restaurants, cafes, and F&B brands
                           trust, and start driving real results. Contact us today
                           for a free consultation.

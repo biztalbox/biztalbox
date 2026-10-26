@@ -37,8 +37,8 @@ export default function CountryHub({
       title={`${cfg.serviceName} in ${country.name}`}
       intro={
         isFlat
-          ? `Choose your location in ${country.name} to see how Biztalbox helps local businesses grow.`
-          : `Choose a state to see the areas in ${country.name} where Biztalbox offers ${cfg.serviceName.toLowerCase()}.`
+          ? `Choose your location in ${country.name} to see how biztalbox helps local businesses grow.`
+          : `Choose a state to see the areas in ${country.name} where biztalbox offers ${cfg.serviceName.toLowerCase()}.`
       }
       links={links}
       crumbs={crumbs}

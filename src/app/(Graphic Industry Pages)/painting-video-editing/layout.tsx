@@ -5,7 +5,7 @@ import { createMarketingPageData } from "@/utils/marketing-page-data";
 import "@/app/(Graphic Industry Pages)/styles.css";
 
 const baseMetadata: Metadata = {
-  title: "Graphic Design & Video Editing Services for Painting Companies | Biztalbox",
+  title: "Graphic Design & Video Editing Services for Painting Companies | biztalbox",
   description: "Discover how painting service providers use graphic design and video editing services to attract customers, showcase projects, build trust, and grow their business with creative visual marketing.",
 };
 

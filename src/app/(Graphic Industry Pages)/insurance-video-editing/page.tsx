@@ -168,7 +168,7 @@ export default function Page() {
 
               <section className="content-section">
                 <h2 className="section-heading">
-                  Why Insurance Businesses Choose Biztalbox
+                  Why Insurance Businesses Choose biztalbox
                 </h2>
 
                 <div className="content-grid-2">
@@ -176,7 +176,7 @@ export default function Page() {
                     <h3 className="section-subheading">
                       1. We understand how trust works in insurance marketing
                     </h3>
-                    <p>The team at Biztalbox understands how strongly visual presentation affects client confidence in insurance businesses online.</p>
+                    <p>The team at biztalbox understands how strongly visual presentation affects client confidence in insurance businesses online.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">
@@ -194,7 +194,7 @@ export default function Page() {
                     <h3 className="section-subheading">
                       4. We create content for modern insurance platforms
                     </h3>
-                    <p>Biztalbox develops visuals and videos for websites, LinkedIn, Instagram, YouTube, Google Business, presentations, and digital advertising campaigns.</p>
+                    <p>biztalbox develops visuals and videos for websites, LinkedIn, Instagram, YouTube, Google Business, presentations, and digital advertising campaigns.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">
@@ -252,7 +252,7 @@ export default function Page() {
                         </div>
                         <div className="tm-details-text">
                           <p>
-                            Connect with Biztalbox for graphic design and video editing services for insurance industry that help your business look more professional, explain services more clearly, and build stronger client trust online.
+                            Connect with biztalbox for graphic design and video editing services for insurance industry that help your business look more professional, explain services more clearly, and build stronger client trust online.
                           </p>
                         </div>
                         <div className="tm-details-portfolio">
@@ -283,7 +283,7 @@ export default function Page() {
                     Ready to Grow Your Insurance Business With Graphic Design and Video Editing Services?
                   </h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    Connect with Biztalbox for graphic design and{" "}
+                    Connect with biztalbox for graphic design and{" "}
                     <Link
                       href="https://biztalbox.com/blog/best-video-editing-agency-in-the-usa"
                       className="text-primary"
@@ -302,7 +302,7 @@ export default function Page() {
                       color: "#fff",
                     }}
                   >
-                    Get in touch with Biztalbox today and elevate your insurance brand online.
+                    Get in touch with biztalbox today and elevate your insurance brand online.
                   </p>
                 </div>
               </section>

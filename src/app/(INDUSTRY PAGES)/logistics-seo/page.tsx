@@ -160,7 +160,7 @@ export default function Page() {
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
                         <div className="tm-details-text">
-                          <p>Don&apos;t let your competitors take the lead. Build a dominant search presence for your logistics firm with Biztalbox.</p>
+                          <p>Don&apos;t let your competitors take the lead. Build a dominant search presence for your logistics firm with biztalbox.</p>
                         </div>
                         <div className="tm-details-portfolio">
                           <span className="tm-details-social-title">Get in Touch:</span>
@@ -481,16 +481,16 @@ export default function Page() {
                 <p>In logistics, local visibility mirrors operational presence. If your trucks run there, your search visibility should too.</p>
               </section>
 
-              {/* Why Choose Biztalbox */}
+              {/* Why Choose biztalbox */}
               <section className="content-section content-prose">
-                <h2 className="section-heading">Why Choose Biztalbox as Your Logistics SEO Partner?</h2>
+                <h2 className="section-heading">Why Choose biztalbox as Your Logistics SEO Partner?</h2>
                 <p>
-                  Logistics is operational, time-sensitive, and performance-driven. Ranking on search engines is only valuable if it brings the right enquiries from the right regions. Biztalbox approaches this with industry focus and practical execution, not generic templates.
+                  Logistics is operational, time-sensitive, and performance-driven. Ranking on search engines is only valuable if it brings the right enquiries from the right regions. biztalbox approaches this with industry focus and practical execution, not generic templates.
                 </p>
 
                 <h3 className="section-subheading">1. Industry-Focused Strategy from a Specialized Logistics SEO Company</h3>
                 <p>
-                  Biztalbox is not a broad <Link href="https://biztalbox.com/blog/digital-marketing-vs-performance-marketing-vs-growth-marketing" className="text-primary">marketing</Link> firm experimenting without a thorough understanding of different industries. As a logistics SEO company, we have extensive knowledge of freight cycles, trade lanes, warehousing capacity, and transport networks.
+                  biztalbox is not a broad <Link href="https://biztalbox.com/blog/digital-marketing-vs-performance-marketing-vs-growth-marketing" className="text-primary">marketing</Link> firm experimenting without a thorough understanding of different industries. As a logistics SEO company, we have extensive knowledge of freight cycles, trade lanes, warehousing capacity, and transport networks.
                 </p>
                 <p>
                   Whether you want a reliable SEO agency for transportation or full freight website SEO services, we design strategies specific to your logistics operations that lead to long-term growth.
@@ -498,7 +498,7 @@ export default function Page() {
 
                 <h3 className="section-subheading">2. Execution-Led Approach from an Experienced Logistics SEO Agency</h3>
                 <p>
-                  Many agencies focus on traffic volume. Biztalbox focuses on relevance. As a performance-driven logistics SEOagency, we prioritize high-intent searches that connect to real shipment demand.
+                  Many agencies focus on traffic volume. biztalbox focuses on relevance. As a performance-driven logistics SEOagency, we prioritize high-intent searches that connect to real shipment demand.
                 </p>
                 <p>
                   We optimise service pages around fleet capability, port access, cross-border expertise, and industry specialization. This ensures your visibility grows where it matters most, among decision-makers evaluating logistics partners.
@@ -506,7 +506,7 @@ export default function Page() {
 
                 <h3 className="section-subheading">3. Continuous Optimization That Moves With the Market</h3>
                 <p>
-                  Logistics demand always experiences constant changes. Trade volumes shift, new regulations appear, and customer priorities change. Biztalbox keeps refining strategy so your visibility matches current demand.
+                  Logistics demand always experiences constant changes. Trade volumes shift, new regulations appear, and customer priorities change. biztalbox keeps refining strategy so your visibility matches current demand.
                 </p>
                 <p>
                   Whether you are expanding routes or strengthening core services, guarantees your business will achieve sustainable growth while maintaining market competitiveness which an innovative SEO agency for transportation should deliver.
@@ -514,12 +514,12 @@ export default function Page() {
 
                 <h3 className="section-subheading">4. An Extension of Your Team</h3>
                 <p>
-                  Biztalbox works alongside your logistics business, not outside it. We take time to understand your routes, services, capacity, and growth plans before building a strategy. The goal is simple. Your online presence should reflect how strong your operations actually are. That is how a serious logistics SEO company should operate, connected to your real business and not guessing from a distance.
+                  biztalbox works alongside your logistics business, not outside it. We take time to understand your routes, services, capacity, and growth plans before building a strategy. The goal is simple. Your online presence should reflect how strong your operations actually are. That is how a serious logistics SEO company should operate, connected to your real business and not guessing from a distance.
                 </p>
 
                 <h3 className="section-subheading">5. Clear Communication and Full Transparency</h3>
                 <p>
-                  You should never feel unsure about what is happening with your marketing. Biztalbox keeps everything straightforward. You know what is being improved, what results are coming in, and how those results connect to enquiries and revenue. As a dependable logistics <Link href="https://biztalbox.com/best-seo-agenc" className="text-primary">SEO agency</Link>, we focus on clarity, accountability, and steady progress you can actually see.
+                  You should never feel unsure about what is happening with your marketing. biztalbox keeps everything straightforward. You know what is being improved, what results are coming in, and how those results connect to enquiries and revenue. As a dependable logistics <Link href="https://biztalbox.com/best-seo-agenc" className="text-primary">SEO agency</Link>, we focus on clarity, accountability, and steady progress you can actually see.
                 </p>
               </section>
 

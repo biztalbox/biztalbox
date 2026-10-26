@@ -69,7 +69,7 @@ export default function AboutUsHero() {
                 About Us
               </h1>
               <p>
-              Biztal Box is a marketing agency that enhances brands&apos; online presence through a range of services including SEO optimization, web development, graphic design, and more. Our dynamic agency crafts strategies that stick while bringing every client&#39; unique perspective to life.</p>
+              <span className="bb-brand">biztalbox</span> is a marketing agency that enhances brands&apos; online presence through a range of services including SEO optimization, web development, graphic design, and more. Our dynamic agency crafts strategies that stick while bringing every client&#39; unique perspective to life.</p>
             </div>
           </div>
         </div>

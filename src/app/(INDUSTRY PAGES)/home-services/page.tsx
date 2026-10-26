@@ -243,11 +243,11 @@ export default function Page() {
                     <div className="col-xl-6 col-lg-6 col-md-7">
                       <div className="tm-details-content-wrap z-index-5" style={{ padding: "30px 0" }}>
                         <div className="tm-details-title-box mb-20">
-                          <span className="tm-hero-subtitle">Build Your Home Services Success Story with Biztalbox</span>
+                          <span className="tm-hero-subtitle">Build Your Home Services Success Story with biztalbox</span>
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
                         <div className="tm-details-text">
-                          <p>If you&apos;re ready to strengthen your digital footprint and attract qualified homeowners, Biztalbox is your trusted partner. Our home services SEO experts deliver strategies that not only rank — they perform, engage, and grow your business for the long run.</p>
+                          <p>If you&apos;re ready to strengthen your digital footprint and attract qualified homeowners, biztalbox is your trusted partner. Our home services SEO experts deliver strategies that not only rank — they perform, engage, and grow your business for the long run.</p>
                         </div>
                         <div className="tm-details-portfolio">
                           <span className="tm-details-social-title">Get in Touch:</span>
@@ -358,7 +358,7 @@ export default function Page() {
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
                         <div className="tm-details-text">
-                          <p>Your customers are searching — make sure they find you first. Partner with Biztalbox, the home services SEO experts that contractors and home service businesses trust, and start driving real results. Contact us today for a free consultation.</p>
+                          <p>Your customers are searching — make sure they find you first. Partner with biztalbox, the home services SEO experts that contractors and home service businesses trust, and start driving real results. Contact us today for a free consultation.</p>
                         </div>
                         <div className="tm-details-portfolio">
                           <span className="tm-details-social-title">Get in Touch:</span>
@@ -409,7 +409,7 @@ export default function Page() {
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
                         <div className="tm-details-text">
-                          <p>Your customers are searching — make sure they find you first. Partner with Biztalbox, the home services SEO experts that contractors and home service businesses trust, and start driving real results. Contact us today for a free consultation.</p>
+                          <p>Your customers are searching — make sure they find you first. Partner with biztalbox, the home services SEO experts that contractors and home service businesses trust, and start driving real results. Contact us today for a free consultation.</p>
                         </div>
                         <div className="tm-details-portfolio">
                           <span className="tm-details-social-title">Get in Touch:</span>
@@ -423,9 +423,9 @@ export default function Page() {
                 </div>
               </div>
 
-              {/* Why Choose Biztalbox — full prose */}
+              {/* Why Choose biztalbox — full prose */}
               <section className="content-section content-prose">
-                <h2 className="section-heading">Why Biztalbox is The Best Home Services SEO Agency</h2>
+                <h2 className="section-heading">Why biztalbox is The Best Home Services SEO Agency</h2>
                 <p>Choosing an SEO partner in the home services space is not about finding a vendor who can &quot;do SEO.&quot; It is about working with a team that understands how local demand behaves, how bookings are generated, and how visibility translates into real jobs. As a home services SEO company with deep experience in service-based businesses, we approach SEO as a growth system built around how homeowners actually search and choose providers.</p>
                 <h3 className="section-subheading">1. Industry-Specific Home Services SEO</h3>
                 <p>Home service SEO only works when it respects operational limits. Coverage areas, response time, and local competition define what visibility is useful and what is wasted. As a home service SEO company, we structure SEO to generate calls within the right service radius and at the right moment, ensuring our home services SEO services support day-to-day revenue rather than abstract rankings.</p>
@@ -445,19 +445,19 @@ export default function Page() {
                 <p>We believe trust is earned through clear ownership and honest communication. As a professional home services SEO company, we define what success looks like upfront, set timelines that reflect real market conditions, and report performance without ambiguity. Progress is tied to metrics that impact revenue and operations, empowering clients to make decisions based on data rather than guesswork.</p>
               </section>
 
-              {/* Partner with Biztalbox */}
+              {/* Partner with biztalbox */}
               <section className="content-section content-prose">
-                <h2 className="section-heading">Partner with Biztalbox, a Home Services SEO Company That Delivers Real Growth</h2>
-                <p>As a leading home services SEO provider, Biztalbox goes beyond improving rankings. We create extensive SEO strategies that turn your website into an asset capable of attracting qualified leads and generating measurable revenue. Our SEO approach for the home services industry is meticulous, data-driven and results-oriented, which means every campaign we execute works toward tangible business success. With deep insight into how service-based customers research, compare, and buy, Biztalbox enables you to acquire the right demand at the right time.</p>
-                <p>We combine industry expertise, proven methodology, and relentless optimization to create an online presence that consistently outperforms competitors. From boosting exposure to building credibility – every aspect of what Biztalbox does is designed to boost your bookings, calls and sales.</p>
-                <p>Don&apos;t settle for uncertainty or short-term tactics. Unlock the full potential of your digital footprint with Biztalbox, where every <Link href="https://biztalbox.com/best-seo-agency" className="text-primary">SEO</Link> plan is specifically tailored to accelerate business growth.</p>
+                <h2 className="section-heading">Partner with biztalbox, a Home Services SEO Company That Delivers Real Growth</h2>
+                <p>As a leading home services SEO provider, biztalbox goes beyond improving rankings. We create extensive SEO strategies that turn your website into an asset capable of attracting qualified leads and generating measurable revenue. Our SEO approach for the home services industry is meticulous, data-driven and results-oriented, which means every campaign we execute works toward tangible business success. With deep insight into how service-based customers research, compare, and buy, biztalbox enables you to acquire the right demand at the right time.</p>
+                <p>We combine industry expertise, proven methodology, and relentless optimization to create an online presence that consistently outperforms competitors. From boosting exposure to building credibility – every aspect of what biztalbox does is designed to boost your bookings, calls and sales.</p>
+                <p>Don&apos;t settle for uncertainty or short-term tactics. Unlock the full potential of your digital footprint with biztalbox, where every <Link href="https://biztalbox.com/best-seo-agency" className="text-primary">SEO</Link> plan is specifically tailored to accelerate business growth.</p>
                 <p>Reach out today and take the first step toward turning your website into a high-performing growth engine.</p>
               </section>
 
               {/* Final CTA copy */}
               <section className="content-section">
                 <div style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto" }}>
-                  <h2 className="section-heading">At Biztalbox, we understand the home services ecosystem.</h2>
+                  <h2 className="section-heading">At biztalbox, we understand the home services ecosystem.</h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
                     We understand how contractors and home service businesses capture demand, how homeowners make decisions, and how to turn visibility into qualified leads and long-term growth.
                   </p>
@@ -485,7 +485,7 @@ export default function Page() {
                         <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
-                        <p>Your customers are searching — make sure they find you first. Partner with Biztalbox, the home services SEO experts that contractors and home service businesses trust, and start driving real results. Contact us today for a free consultation.</p>
+                        <p>Your customers are searching — make sure they find you first. Partner with biztalbox, the home services SEO experts that contractors and home service businesses trust, and start driving real results. Contact us today for a free consultation.</p>
                       </div>
                       <div className="tm-details-portfolio">
                         <span className="tm-details-social-title">Get in Touch:</span>

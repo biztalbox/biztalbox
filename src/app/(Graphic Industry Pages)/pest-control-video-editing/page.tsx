@@ -168,7 +168,7 @@ export default function Page() {
 
               <section className="content-section">
                 <h2 className="section-heading">
-                  Why Pest Control Businesses Choose Biztalbox for Graphic Design and Video Editing Services
+                  Why Pest Control Businesses Choose biztalbox for Graphic Design and Video Editing Services
                 </h2>
 
                 <div className="content-grid-2">
@@ -182,7 +182,7 @@ export default function Page() {
                     <h3 className="section-subheading">
                       2. Professional Pest Control Graphic Design
                     </h3>
-                    <p>Biztalbox&apos;s graphic design services make pest control businesses appear more reliable and legitimate. Well-designed graphics make it easier for consumers to choose you over competitors.</p>
+                    <p>biztalbox&apos;s graphic design services make pest control businesses appear more reliable and legitimate. Well-designed graphics make it easier for consumers to choose you over competitors.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">
@@ -194,7 +194,7 @@ export default function Page() {
                     <h3 className="section-subheading">
                       4. Platform-Optimized Marketing Content
                     </h3>
-                    <p>The team at Biztalbox develops visual content specifically for Google Business, Instagram, Facebook, YouTube, and local advertising campaigns.</p>
+                    <p>The team at biztalbox develops visual content specifically for Google Business, Instagram, Facebook, YouTube, and local advertising campaigns.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">
@@ -206,7 +206,7 @@ export default function Page() {
                     <h3 className="section-subheading">
                       6. Conversion-Focused Communication
                     </h3>
-                    <p>The creative strategy at Biztalbox focuses on improving trust, engagement, and inquiry quality instead of relying on generic promotional messaging.</p>
+                    <p>The creative strategy at biztalbox focuses on improving trust, engagement, and inquiry quality instead of relying on generic promotional messaging.</p>
                   </div>
                 </div>
               </section>
@@ -251,7 +251,7 @@ export default function Page() {
                         </div>
                         <div className="tm-details-text">
                           <p>
-                            Connect with Biztalbox to create visual content that helps your pest control business look more credible, explain services more clearly, and attract better-quality customer inquiries.
+                            Connect with biztalbox to create visual content that helps your pest control business look more credible, explain services more clearly, and attract better-quality customer inquiries.
                           </p>
                         </div>
                         <div className="tm-details-portfolio">
@@ -282,7 +282,7 @@ export default function Page() {
                     Ready to upgrade your pest control branding and videos?
                   </h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    Connect with Biztalbox for graphic design and{" "}
+                    Connect with biztalbox for graphic design and{" "}
                     <Link
                       href="https://biztalbox.com/blog/best-video-editing-agency-in-the-usa"
                       className="text-primary"
@@ -301,7 +301,7 @@ export default function Page() {
                       color: "#fff",
                     }}
                   >
-                    Get in touch with Biztalbox today and elevate your pest control brand online.
+                    Get in touch with biztalbox today and elevate your pest control brand online.
                   </p>
                 </div>
               </section>

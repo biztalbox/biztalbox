@@ -5,8 +5,8 @@ import { createMarketingPageData } from "@/utils/marketing-page-data";
 import "@/app/(Graphic Industry Pages)/styles.css";
 
 const baseMetadata: Metadata = {
-  title: "Graphic Design & Video Editing Services for Energy & Utilities Industry | Biztalbox",
-  description: "Make complex energy and utility services easier to understand with professional graphic design and video editing services from Biztalbox. Build trust, improve communication, and strengthen your brand visibility with engaging visual content.",
+  title: "Graphic Design & Video Editing Services for Energy & Utilities Industry | biztalbox",
+  description: "Make complex energy and utility services easier to understand with professional graphic design and video editing services from biztalbox. Build trust, improve communication, and strengthen your brand visibility with engaging visual content.",
 };
 
 export const metadata = createMetadata(baseMetadata, "/energy-utilities-video-editing");

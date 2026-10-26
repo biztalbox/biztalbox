@@ -156,7 +156,7 @@ const DEFAULT_HERO_HEADING =
   "Graphic Designing Services in Gibraltar UK.";
 
 const DEFAULT_HERO_PARAGRAPH =
-  "Bring your content to new heights using professional graphic design solutions made for business makers, creators, and brands. Biztalbox assists in transforming ideas into engaging visual stories that boost customer engagement, establish trust, and help support the long-term growth of businesses.";
+  "Bring your content to new heights using professional graphic design solutions made for business makers, creators, and brands. biztalbox assists in transforming ideas into engaging visual stories that boost customer engagement, establish trust, and help support the long-term growth of businesses.";
 
 const DEFAULT_HOW_WE_WORK = {
   subtitle: "HOW WE WORK",

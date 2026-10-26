@@ -1192,7 +1192,7 @@ export default function Page() {
                             actually built over time.
                           </p>
                           <p>
-                            At Biztalbox, we don’t treat SEO as scattered tasks.
+                            At biztalbox, we don’t treat SEO as scattered tasks.
                             We build it as a structured system, designed to
                             support long-term, compliant growth.
                           </p>
@@ -1215,7 +1215,7 @@ export default function Page() {
 
               <section className="content-section content-prose">
                 <h2 className="section-heading">
-                  Why Partner with Biztalbox for Pharmaceutical Industry SEO
+                  Why Partner with biztalbox for Pharmaceutical Industry SEO
                 </h2>
                 <div className="content-grid-2">
                   <div className="content-card">
@@ -1223,7 +1223,7 @@ export default function Page() {
                       1. Industry Expertise That Goes Beyond Surface-Level SEO
                     </h3>
                     <p>
-                      At Biztalbox, we understand the pharmaceutical space
+                      At biztalbox, we understand the pharmaceutical space
                       deeply. Products, regulations, user behaviour: all of it.
                       Our pharmaceutical seo company don’t just chase keywords.
                       We align strategy with how people actually search for
@@ -1321,7 +1321,7 @@ export default function Page() {
                       color: "#fff",
                     }}
                   >
-                    Work with Biztalbox. Let&apos;s create an SEO system that
+                    Work with biztalbox. Let&apos;s create an SEO system that
                     aligns with how pharmaceutical users search, evaluate, and
                     trust.
                   </p>

@@ -64,12 +64,12 @@ export default function ContactSection() {
         <div className="d-flex flex-column gap-5 header_content_links order-1 order-xl-2 fs-5 fs-md-4 text-black align-items-xl-end">
           <div className="d-flex flex-column gap-0 align-items-xl-end">
             <span>DROP US A LINE AT</span>
-            <Link href="mailto:info@biztalbox.com" target="_blank" rel="noopener noreferrer nofollow">INFO@BIZTALBOX.COM</Link>
+            <Link href="mailto:info@biztalbox.com" target="_blank" rel="noopener noreferrer nofollow">INFO@biztalbox.COM</Link>
           </div>
           <div className="social-links d-flex flex-row flex-wrap gap-2 gap-md-3">
             <Link href="https://www.instagram.com/biztalbox" target="_blank" rel="noopener noreferrer nofollow">Instagram</Link>
-            <Link href="https://www.facebook.com/BiztalBox" target="_blank" rel="noopener noreferrer nofollow">Facebook</Link>
-            <Link href="https://x.com/BiztalBox" target="_blank" rel="noopener noreferrer nofollow">Twitter</Link>
+            <Link href="https://www.facebook.com/biztalbox" target="_blank" rel="noopener noreferrer nofollow">Facebook</Link>
+            <Link href="https://x.com/biztalbox" target="_blank" rel="noopener noreferrer nofollow">Twitter</Link>
             <Link href="https://www.linkedin.com/company/biztalbox" target="_blank" rel="noopener noreferrer nofollow">LinkedIn</Link>
           </div>
         </div>

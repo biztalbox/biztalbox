@@ -180,7 +180,7 @@ export default function Page() {
 
               <section className="content-section">
                 <h2 className="section-heading">
-                  Why HVAC Businesses Choose Biztalbox for Graphic Design and Video Editing Services
+                  Why HVAC Businesses Choose biztalbox for Graphic Design and Video Editing Services
                 </h2>
 
                 <div className="content-grid-2">
@@ -206,7 +206,7 @@ export default function Page() {
                     <h3 className="section-subheading">
                       4. Platform-Optimized Marketing Content
                     </h3>
-                    <p>The team at Biztalbox develops content specifically for Google Business, Instagram, Facebook, YouTube, and local advertising campaigns.</p>
+                    <p>The team at biztalbox develops content specifically for Google Business, Instagram, Facebook, YouTube, and local advertising campaigns.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">
@@ -264,7 +264,7 @@ export default function Page() {
                         </div>
                         <div className="tm-details-text">
                           <p>
-                            Connect with Biztalbox to create visual content that helps your HVAC business build stronger trust, improve online presentation, and attract better-quality local inquiries.
+                            Connect with biztalbox to create visual content that helps your HVAC business build stronger trust, improve online presentation, and attract better-quality local inquiries.
                           </p>
                         </div>
                         <div className="tm-details-portfolio">
@@ -295,7 +295,7 @@ export default function Page() {
                     Ready to make your HVAC business look more trusted online?
                   </h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    Connect with Biztalbox for graphic design and{" "}
+                    Connect with biztalbox for graphic design and{" "}
                     <Link
                       href="https://biztalbox.com/blog/best-video-editing-agency-in-the-usa"
                       className="text-primary"
@@ -314,7 +314,7 @@ export default function Page() {
                       color: "#fff",
                     }}
                   >
-                    Get in touch with Biztalbox today and elevate your HVAC brand online.
+                    Get in touch with biztalbox today and elevate your HVAC brand online.
                   </p>
                 </div>
               </section>

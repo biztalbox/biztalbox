@@ -77,7 +77,7 @@ export function normalizePageData(raw: unknown, fallbackSlug: string): CMSPageDa
 
   return {
   slug,
-  title: str(page, "title") || `${fallbackSlug} | Biztalbox`,
+  title: str(page, "title") || `${fallbackSlug} | biztalbox`,
   description: str(page, "description", "meta_description"),
   hero_title: str(page, "hero_title", "heroTitle"),
   hero_paragraph_1: str(page, "hero_paragraph_1", "heroParagraph1", "hero_paragraph1"),

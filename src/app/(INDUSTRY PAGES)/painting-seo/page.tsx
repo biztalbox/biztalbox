@@ -1293,7 +1293,7 @@ export default function Page() {
                       >
                         <div className="tm-details-title-box mb-20">
                           <span className="tm-hero-subtitle">
-                            Why You Should Choose Biztalbox for Painting SEO
+                            Why You Should Choose biztalbox for Painting SEO
                           </span>
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
@@ -1313,7 +1313,7 @@ export default function Page() {
                             execution from meaningful results.
                           </p>
                           <p>
-                            Biztalbox operates with that standard in mind. Here
+                            biztalbox operates with that standard in mind. Here
                             are just a few compelling reasons to choose us:
                           </p>
                         </div>
@@ -1334,7 +1334,7 @@ export default function Page() {
               </div>
 
               <section className="content-section">
-                <h2 className="section-heading">What Sets Biztalbox Apart</h2>
+                <h2 className="section-heading">What Sets biztalbox Apart</h2>
                 <div className="content-grid-2">
                   <div className="content-card">
                     <h3 className="section-subheading">1. Industry Expertise</h3>
@@ -1343,7 +1343,7 @@ export default function Page() {
                       planned from day one. The way users search for painters is
                       different from other services. It is urgent, location-based,
                       and trust-heavy. The painting company SEO experts at
-                      Biztalbox understand how to map this behaviour into search
+                      biztalbox understand how to map this behaviour into search
                       visibility instead of relying on broad SEO templates.
                     </p>
                   </div>
@@ -1351,7 +1351,7 @@ export default function Page() {
                     <h3 className="section-subheading">2. Focus on Tangible Results</h3>
                     <p>
                       We believe that SEO only matters if it leads to real
-                      enquiries, not just traffic reports. So at Biztalbox, The
+                      enquiries, not just traffic reports. So at biztalbox, The
                       focus stays on leads from local searches, high-intent
                       queries, and service-specific pages that actually convert.
                       We deliver measurable business outcomes, not just improved
@@ -1371,7 +1371,7 @@ export default function Page() {
                   <div className="content-card">
                     <h3 className="section-subheading">4. Embedded Partnership</h3>
                     <p>
-                      The painting industry SEO experts at Biztalbox work as part
+                      The painting industry SEO experts at biztalbox work as part
                       of your business, not outside it. We participate in
                       decisions, understanding priorities, constraints, and what
                       actually needs attention at any given stage.
@@ -1385,7 +1385,7 @@ export default function Page() {
                   <div className="content-card">
                     <h3 className="section-subheading">5. Adaptive Execution</h3>
                     <p>
-                      Biztalbox does not treat SEO as a fixed roadmap. We
+                      biztalbox does not treat SEO as a fixed roadmap. We
                       understand that local demand, competition dynamics, and
                       search behaviour are continuously evolving variables. So
                       our Strategy is adjusted based on what is actually working
@@ -1428,7 +1428,7 @@ export default function Page() {
                     inconsistent and dependent on referrals or timing.
                   </p>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    At Biztalbox, we build search systems that bring consistent
+                    At biztalbox, we build search systems that bring consistent
                     business opportunities for painting companies.
                   </p>
                   <p
@@ -1439,7 +1439,7 @@ export default function Page() {
                       color: "#fff",
                     }}
                   >
-                    If you’re ready for that shift, connect with Biztalbox
+                    If you’re ready for that shift, connect with biztalbox
                     today!
                   </p>
                 </div>

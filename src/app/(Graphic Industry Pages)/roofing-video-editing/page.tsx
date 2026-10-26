@@ -304,7 +304,7 @@ export default function Page() {
 
               <section className="content-section">
                 <h2 className="section-heading">
-                  Why Roofing Businesses Choose Biztalbox for Graphic Design and
+                  Why Roofing Businesses Choose biztalbox for Graphic Design and
                   Video Editing Services
                 </h2>
 
@@ -314,7 +314,7 @@ export default function Page() {
                       1. We understand how homeowners choose roofing companies
                     </h3>
                     <p>
-                      The team at Biztalbox knows that most customers decide how
+                      The team at biztalbox knows that most customers decide how
                       they feel about a roofing business before they ever make
                       contact. That first impression usually comes from visuals,
                       communication, and how professional the company feels
@@ -326,7 +326,7 @@ export default function Page() {
                       2. We help roofing businesses look more established
                     </h3>
                     <p>
-                      A good presentation creates confidence. Biztalbox helps
+                      A good presentation creates confidence. biztalbox helps
                       roofing companies build that through clean graphic design,
                       organized branding, and visuals that make the business feel
                       reliable across websites, social media, quotations, and
@@ -338,7 +338,7 @@ export default function Page() {
                       3. Our videos focus on real work, not forced marketing
                     </h3>
                     <p>
-                      At Biztalbox, we create roofing video editing services
+                      At biztalbox, we create roofing video editing services
                       that showcase actual inspections, repairs, installations,
                       transformations, and project progress. The content feels
                       natural because customers respond better to authenticity
@@ -350,7 +350,7 @@ export default function Page() {
                       4. We create content for where customers already spend time
                     </h3>
                     <p>
-                      The team at Biztalbox develops content for Google
+                      The team at biztalbox develops content for Google
                       Business, Instagram, Facebook, YouTube, websites, and local
                       advertising campaigns. We understand that every platform
                       works differently, so the communication should too.
@@ -374,7 +374,7 @@ export default function Page() {
                     </h3>
                     <p>
                       A good-looking visual means very little if it does not build
-                      confidence. That is why Biztalbox focuses on communication
+                      confidence. That is why biztalbox focuses on communication
                       that improves trust, strengthens engagement, and helps
                       roofing businesses attract better-quality inquiries instead
                       of empty attention.
@@ -436,7 +436,7 @@ export default function Page() {
                         </div>
                         <div className="tm-details-text">
                           <p>
-                            Connect with Biztalbox to create visual content that
+                            Connect with biztalbox to create visual content that
                             helps your roofing business build stronger trust,
                             improve online presentation, and attract
                             better-quality local inquiries.
@@ -481,7 +481,7 @@ export default function Page() {
                     Content?
                   </h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    Connect with Biztalbox to create visual content that helps
+                    Connect with biztalbox to create visual content that helps
                     your roofing business build stronger trust, improve online
                     presentation, and attract better-quality local inquiries.
                   </p>
@@ -493,7 +493,7 @@ export default function Page() {
                       color: "#fff",
                     }}
                   >
-                    Ready to elevate your brand presence? Connect with Biztalbox
+                    Ready to elevate your brand presence? Connect with biztalbox
                     today.
                   </p>
                 </div>

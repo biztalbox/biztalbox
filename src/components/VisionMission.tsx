@@ -27,7 +27,7 @@ export default function VisionMission() {
             <h4 className="ab-brand-title mb-10">Mission</h4>
             <div className="ab-brand-content tp_title_anim">
               <p>
-                Biztalbox strives to foster sincere connections with a brand’s
+                biztalbox strives to foster sincere connections with a brand’s
                 prospective audience by making them more relatable and
                 unforgettable. Our agency is not only up-to-the-minute when it
                 comes to trends but also delivers quantifiable results. We pull

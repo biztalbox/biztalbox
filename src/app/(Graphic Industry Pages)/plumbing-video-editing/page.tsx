@@ -294,7 +294,7 @@ export default function Page() {
 
               <section className="content-section">
                 <h2 className="section-heading">
-                  Why Plumbing Businesses Choose Biztalbox for Graphic Design and
+                  Why Plumbing Businesses Choose biztalbox for Graphic Design and
                   Video Editing Services
                 </h2>
 
@@ -304,7 +304,7 @@ export default function Page() {
                       1. We Understand How Local Service Businesses Build Trust
                     </h3>
                     <p>
-                      At Biztalbox, we understand how quickly people form opinions
+                      At biztalbox, we understand how quickly people form opinions
                       online, especially in home service industries like plumbing.
                     </p>
                   </div>
@@ -333,7 +333,7 @@ export default function Page() {
                       4. We Tailor Content for Each Platform
                     </h3>
                     <p>
-                      Biztalbox creates tailored content according to different
+                      biztalbox creates tailored content according to different
                       platforms like Instagram, Facebook, Google Business, YouTube
                       and local ads. This fosters a deeper connection and
                       encourages more active participation.
@@ -344,7 +344,7 @@ export default function Page() {
                       5. We Help Businesses Stay Visually Consistent
                     </h3>
                     <p>
-                      Biztalbox focuses on consistent branding, which makes
+                      biztalbox focuses on consistent branding, which makes
                       plumbing businesses feel more established over time.
                       Customers remember businesses that look connected
                       everywhere.
@@ -355,7 +355,7 @@ export default function Page() {
                       6. We Focus On Communication That Feels Clear
                     </h3>
                     <p>
-                      Biztalbox creates graphics and videos that help plumbing
+                      biztalbox creates graphics and videos that help plumbing
                       businesses feel more trustworthy, professional, and easier
                       to understand online.
                     </p>
@@ -419,7 +419,7 @@ export default function Page() {
                         </div>
                         <div className="tm-details-text">
                           <p>
-                            Connect with Biztalbox for graphic design and video
+                            Connect with biztalbox for graphic design and video
                             editing services for plumbers that help your business
                             look more professional, build stronger customer trust,
                             and stand out across local platforms.
@@ -453,7 +453,7 @@ export default function Page() {
                     Ready to Make Your Plumbing Business Stand Out Online?
                   </h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    Connect with Biztalbox for graphic design and{" "}
+                    Connect with biztalbox for graphic design and{" "}
                     <Link
                       href="https://biztalbox.com/blog/best-video-editing-agency-in-the-usa"
                       className="text-primary"
@@ -472,7 +472,7 @@ export default function Page() {
                       color: "#fff",
                     }}
                   >
-                    Get in touch with Biztalbox today and elevate your plumbing
+                    Get in touch with biztalbox today and elevate your plumbing
                     brand online.
                   </p>
                 </div>

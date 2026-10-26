@@ -306,7 +306,7 @@ export default function Page() {
 
               <section className="content-section">
                 <h2 className="section-heading">
-                  Why Automotive Brands Choose Biztalbox for Graphic Design and
+                  Why Automotive Brands Choose biztalbox for Graphic Design and
                   Video Editing Services
                 </h2>
 
@@ -355,7 +355,7 @@ export default function Page() {
                       5. Consistent Brand Communication
                     </h3>
                     <p>
-                      Biztalbox assists brands in maintaining consistency in
+                      biztalbox assists brands in maintaining consistency in
                       their visual communication across social media platforms,
                       campaigns, websites, and digital graphics.
                     </p>
@@ -377,7 +377,7 @@ export default function Page() {
                     <p>
                       Every automotive brand communicates differently. An EV
                       startup speaks differently from a luxury dealership.
-                      Biztalbox cuztomizes graphics and videos according to
+                      biztalbox cuztomizes graphics and videos according to
                       brand goals, campaigns, audience type, and positioning.
                     </p>
                   </div>
@@ -443,7 +443,7 @@ export default function Page() {
                             the right creative support.
                           </p>
                           <p>
-                            Connect with Biztalbox for the best graphic design
+                            Connect with biztalbox for the best graphic design
                             and{" "}
                             <Link
                               href="https://biztalbox.com/blog/best-video-editing-agency-in-the-usa"
@@ -496,7 +496,7 @@ export default function Page() {
                       color: "#fff",
                     }}
                   >
-                    Connect with Biztalbox for the best graphic design and
+                    Connect with biztalbox for the best graphic design and
                     video editing services designed for modern automotive
                     brands.
                   </p>

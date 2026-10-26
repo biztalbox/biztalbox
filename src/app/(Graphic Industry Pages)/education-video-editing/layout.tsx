@@ -6,9 +6,9 @@ import "@/app/(Graphic Industry Pages)/styles.css";
 
 const baseMetadata: Metadata = {
   title:
-    "Graphic Design & Video Editing Services for Education Industry | Biztalbox",
+    "Graphic Design & Video Editing Services for Education Industry | biztalbox",
   description:
-    "Enhance student engagement with professional graphic design and video editing services from Biztalbox. Create impactful visual content for schools, colleges, and online education brands.",
+    "Enhance student engagement with professional graphic design and video editing services from biztalbox. Create impactful visual content for schools, colleges, and online education brands.",
 };
 
 export const metadata = createMetadata(baseMetadata, "/education-video-editing");

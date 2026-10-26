@@ -5,7 +5,7 @@ import { createMetadata, createSchemaProps, createFullUrl } from "@/utils/metada
 import SchemaProvider from "@/components/schema/SchemaProvider";
 
 const baseMetadata: Metadata = {
-  title: "Our Services | Digital Marketing & Web Development - Biztalbox",
+  title: "Our Services | Digital Marketing & Web Development - biztalbox",
   description: "Discover our comprehensive range of digital marketing and web development services designed to help your business grow online."
 };
 

@@ -307,7 +307,7 @@ export default function Page() {
 
               <section className="content-section">
                 <h2 className="section-heading">
-                  Why Choose Biztalbox for Ecommerce Graphic Design and{" "}
+                  Why Choose biztalbox for Ecommerce Graphic Design and{" "}
                   <Link
                     href="https://biztalbox.com/blog/best-video-editing-agency-in-the-usa"
                     className="text-primary"
@@ -331,7 +331,7 @@ export default function Page() {
                       Professional Branding Solutions
                     </h3>
                     <p>
-                      Biztalbox&apos;s ecommerce graphic design services focus
+                      biztalbox&apos;s ecommerce graphic design services focus
                       on building clarity, consistency, and recognition across
                       all platforms.
                     </p>
@@ -351,7 +351,7 @@ export default function Page() {
                       Platform-Optimized Content
                     </h3>
                     <p>
-                      Biztalbox designs marketing creatives specifically for
+                      biztalbox designs marketing creatives specifically for
                       ads, social media, websites, and performance campaigns.
                     </p>
                   </div>
@@ -434,7 +434,7 @@ export default function Page() {
                         <div className="tm-details-text">
                           <p>
                             Are you ready to elevate your Ecommerce brand?
-                            Connect with Biztalbox for ecommerce graphic design
+                            Connect with biztalbox for ecommerce graphic design
                             services and start turning your product visuals into
                             real sales-driving assets.
                           </p>
@@ -467,7 +467,7 @@ export default function Page() {
                     Ready to elevate your Ecommerce brand?
                   </h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    Connect with Biztalbox for ecommerce graphic design services
+                    Connect with biztalbox for ecommerce graphic design services
                     and start turning your product visuals into real
                     sales-driving assets.
                   </p>

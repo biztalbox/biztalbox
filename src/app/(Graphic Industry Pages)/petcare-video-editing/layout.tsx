@@ -6,9 +6,9 @@ import "@/app/(Graphic Industry Pages)/styles.css";
 
 const baseMetadata: Metadata = {
   title:
-    "Graphic Design & Video Editing Services for Pet Care Industry | Biztalbox",
+    "Graphic Design & Video Editing Services for Pet Care Industry | biztalbox",
   description:
-    "Enhance your pet care brand visibility with professional graphic design and video editing services from Biztalbox. Create engaging visual content that builds trust, attracts pet owners, and increases customer engagement.",
+    "Enhance your pet care brand visibility with professional graphic design and video editing services from biztalbox. Create engaging visual content that builds trust, attracts pet owners, and increases customer engagement.",
 };
 
 export const metadata = createMetadata(baseMetadata, "/petcare-video-editing");

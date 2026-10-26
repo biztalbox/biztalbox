@@ -172,7 +172,7 @@ export default function Page() {
 
               <section className="content-section">
                 <h2 className="section-heading">
-                  Why Choose Biztalbox for Graphic Design and Video Editing Services for Painting Businesses
+                  Why Choose biztalbox for Graphic Design and Video Editing Services for Painting Businesses
                 </h2>
 
                 <div className="content-grid-2">
@@ -180,7 +180,7 @@ export default function Page() {
                     <h3 className="section-subheading">
                       1. Industry-Focused Creative Understanding
                     </h3>
-                    <p>At Biztalbox, we understand how painting businesses attract customers in digitally competitive local markets.</p>
+                    <p>At biztalbox, we understand how painting businesses attract customers in digitally competitive local markets.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">
@@ -209,7 +209,7 @@ export default function Page() {
                     <h3 className="section-subheading">
                       4. Platform-Optimized Content Creation
                     </h3>
-                    <p>The creative team at Biztalbox develops visuals specifically designed for Instagram Reels, Facebook campaigns, YouTube content, websites, and local search visibility.</p>
+                    <p>The creative team at biztalbox develops visuals specifically designed for Instagram Reels, Facebook campaigns, YouTube content, websites, and local search visibility.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">
@@ -267,7 +267,7 @@ export default function Page() {
                         </div>
                         <div className="tm-details-text">
                           <p>
-                            Connect with Biztalbox to create visuals and videos for your painting service that improve presentation, strengthen customer trust, and help your business attract more serious inquiries online.
+                            Connect with biztalbox to create visuals and videos for your painting service that improve presentation, strengthen customer trust, and help your business attract more serious inquiries online.
                           </p>
                         </div>
                         <div className="tm-details-portfolio">
@@ -298,7 +298,7 @@ export default function Page() {
                     Ready to Make Your Painting Brand Stand Out Online?
                   </h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    Connect with Biztalbox for graphic design and{" "}
+                    Connect with biztalbox for graphic design and{" "}
                     <Link
                       href="https://biztalbox.com/blog/best-video-editing-agency-in-the-usa"
                       className="text-primary"
@@ -317,7 +317,7 @@ export default function Page() {
                       color: "#fff",
                     }}
                   >
-                    Get in touch with Biztalbox today and elevate your painting brand online.
+                    Get in touch with biztalbox today and elevate your painting brand online.
                   </p>
                 </div>
               </section>

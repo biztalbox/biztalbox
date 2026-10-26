@@ -1300,7 +1300,7 @@ export default function Page() {
                           <p>
                             Visibility in healthcare is not just about showing
                             up. It&apos;s about showing up the right way. At
-                            Biztalbox, we build healthcare SEO strategies that
+                            biztalbox, we build healthcare SEO strategies that
                             support both discovery and decision-making.
                           </p>
                           <p>
@@ -1339,7 +1339,7 @@ export default function Page() {
                   <p>
                     This space does not allow guesswork. It requires clarity,
                     consistency, and a strong understanding of how healthcare
-                    search actually works. At Biztalbox, we approach healthcare
+                    search actually works. At biztalbox, we approach healthcare
                     SEO with that level of focus.
                   </p>
                 </div>
@@ -1378,7 +1378,7 @@ export default function Page() {
                       care.
                     </p>
                     <p>
-                      At Biztalbox, every decision, from content structure to
+                      At biztalbox, every decision, from content structure to
                       messaging, is made with these requirements in mind.
                     </p>
                   </div>
@@ -1418,7 +1418,7 @@ export default function Page() {
                       A Collaborative Working Approach
                     </h3>
                     <p>
-                      We work as an extension of your team. At Biztalbox, we
+                      We work as an extension of your team. At biztalbox, we
                       don’t operate in isolation or just send reports.
                     </p>
                     <p>
@@ -1436,7 +1436,7 @@ export default function Page() {
                       Search behaviour in healthcare keeps evolving. Search
                       engine algorithms evolve, user behaviour shifts in how
                       people search and decide, and competitors keep updating
-                      their strategies and visibility. At Biztalbox, we stay on
+                      their strategies and visibility. At biztalbox, we stay on
                       top of these changes and adapt your healthcare SEO
                       strategies so your presence remains consistent and
                       competitive.
@@ -1462,7 +1462,7 @@ export default function Page() {
                 </h2>
                 <p>
                   Visibility in healthcare is not just about showing up.
-                  It&apos;s about showing up the right way. At Biztalbox, we
+                  It&apos;s about showing up the right way. At biztalbox, we
                   build healthcare SEO strategies that support both discovery
                   and decision-making.
                 </p>

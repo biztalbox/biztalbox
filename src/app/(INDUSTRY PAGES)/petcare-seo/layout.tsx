@@ -19,7 +19,7 @@ const PETCARE_SEO_SCHEMA = {
     {
       "@type": "ProfessionalService",
       "@id": "https://biztalbox.com/#organization",
-      name: "Biztalbox",
+      name: "biztalbox",
       url: "https://biztalbox.com/",
       logo: "https://biztalbox.com/_next/static/media/black.e66748b8.png",
       image: "https://biztalbox.com/_next/static/media/black.e66748b8.png",
@@ -34,9 +34,9 @@ const PETCARE_SEO_SCHEMA = {
         addressCountry: "IN",
       },
       sameAs: [
-        "https://www.facebook.com/BiztalBox",
+        "https://www.facebook.com/biztalbox",
         "https://www.instagram.com/biztalbox",
-        "https://x.com/BiztalBox",
+        "https://x.com/biztalbox",
         "https://www.linkedin.com/company/biztalbox",
         "https://www.youtube.com/@biztalboxofficial",
         "https://in.pinterest.com/biztalbox/",
@@ -46,7 +46,7 @@ const PETCARE_SEO_SCHEMA = {
       "@type": "WebSite",
       "@id": "https://biztalbox.com/#website",
       url: "https://biztalbox.com/",
-      name: "Biztalbox",
+      name: "biztalbox",
       publisher: { "@id": "https://biztalbox.com/#organization" },
       inLanguage: "en",
     },
@@ -256,10 +256,10 @@ const PETCARE_SEO_SCHEMA = {
         },
         {
           "@type": "Question",
-          name: "What makes Biztalbox the right SEO company for pet care businesses?",
+          name: "What makes biztalbox the right SEO company for pet care businesses?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "Biztalbox is a specialist pet SEO company that focuses on industry-specific strategies, local demand, and long-term visibility. It combines continuous optimization, transparency, and tailored SEO approaches to help pet businesses grow through sustained search presence and high-intent leads.",
+            text: "biztalbox is a specialist pet SEO company that focuses on industry-specific strategies, local demand, and long-term visibility. It combines continuous optimization, transparency, and tailored SEO approaches to help pet businesses grow through sustained search presence and high-intent leads.",
           },
         },
       ],

@@ -317,7 +317,7 @@ export default function Page() {
 
               <section className="content-section">
                 <h2 className="section-heading">
-                  Why Travel Brands Choose Biztalbox for Graphic Design and
+                  Why Travel Brands Choose biztalbox for Graphic Design and
                   Video Editing Services
                 </h2>
 
@@ -452,7 +452,7 @@ export default function Page() {
                         </div>
                         <div className="tm-details-text">
                           <p>
-                            Connect with Biztalbox for graphic design and video
+                            Connect with biztalbox for graphic design and video
                             editing services for the travel industry to create
                             content that inspires travellers and drives
                             meaningful engagement.

@@ -278,7 +278,7 @@ export default function Page() {
                       >
                         <div className="tm-details-title-box mb-20">
                           <span className="tm-hero-subtitle">
-                            Build Your Automotive Success Story with Biztalbox
+                            Build Your Automotive Success Story with biztalbox
                           </span>
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
@@ -286,7 +286,7 @@ export default function Page() {
                           <p>
                             If you&apos;re ready to strengthen your digital footprint
                             and attract qualified buyers and service enquiries,
-                            Biztalbox is your trusted partner. Our automotive SEO
+                            biztalbox is your trusted partner. Our automotive SEO
                             experts deliver strategies that not only rank — they
                             convert and grow your business for the long run.
                           </p>
@@ -1149,7 +1149,7 @@ export default function Page() {
                         <div className="tm-details-text">
                           <p>
                             Your customers are searching — make sure they find you first.
-                            Partner with Biztalbox, the automotive SEO experts that
+                            Partner with biztalbox, the automotive SEO experts that
                             dealerships, repair shops, and auto businesses trust, and start
                             driving real results. Contact us today for a free consultation.
                           </p>
@@ -1167,7 +1167,7 @@ export default function Page() {
               </div>
 
               <section className="content-section content-prose">
-                <h2 className="section-heading">Why Partner with Biztalbox for Automotive SEO</h2>
+                <h2 className="section-heading">Why Partner with biztalbox for Automotive SEO</h2>
                 <p>
                   Not all SEO agencies understand what it takes to grow an automotive business. Most treat
                   every industry the same. They use templates, generic keyword lists, and guesswork. That’s
@@ -1175,7 +1175,7 @@ export default function Page() {
                 </p>
                 <p>
                   From a customer looking for a reliable repair shop to someone comparing SUVs before
-                  purchase, intent is clear, and decisions are high-stakes. At Biztalbox, we don’t just
+                  purchase, intent is clear, and decisions are high-stakes. At biztalbox, we don’t just
                   improve rankings; we build visibility, trust, and a measurable pipeline of customers ready
                   to act.
                 </p>
@@ -1189,7 +1189,7 @@ export default function Page() {
                   comparing sedans isn’t curious—they are weighing options.
                 </p>
                 <p>
-                  Biztalbox analyzes search patterns, local demand, and automotive trends to create
+                  biztalbox analyzes search patterns, local demand, and automotive trends to create
                   strategies that reach the right people at the right moment. This is how our automotive SEO
                   agency drives results that convert, not just clicks.
                 </p>
@@ -1201,7 +1201,7 @@ export default function Page() {
                 </p>
                 <h3 className="section-subheading">Local Visibility Where Decisions Happen</h3>
                 <p>
-                  Most automotive searches are local. Customers want services near them. Biztalbox makes sure
+                  Most automotive searches are local. Customers want services near them. biztalbox makes sure
                   your business dominates maps, directories, and local listings, so you are visible exactly
                   where buyers are looking.
                 </p>
@@ -1219,7 +1219,7 @@ export default function Page() {
                 </p>
                 <h3 className="section-subheading">Extension of Your Team</h3>
                 <p>
-                  When you work with Biztalbox, you gain more than an agency—you gain a strategic partner. We
+                  When you work with biztalbox, you gain more than an agency—you gain a strategic partner. We
                   become an extension of your marketing and sales team, handling everything from content and
                   technical SEO to off-page strategies.
                 </p>
@@ -1229,7 +1229,7 @@ export default function Page() {
                 </p>
                 <p>
                   We have a thorough understanding of automotive customer behaviour, local demand, and
-                  market nuance, which is rare to get from Generic agencies. With Biztalbox, you get a
+                  market nuance, which is rare to get from Generic agencies. With biztalbox, you get a
                   dedicated automotive{" "}
                   <Link
                     href="https://biztalbox.com/blog/top-rated-seo-company-for-u-s-brands-what-sets-biztalbox-apart"
@@ -1242,7 +1242,7 @@ export default function Page() {
                 </p>
                 <h3 className="section-subheading">Accelerate Your Automotive Business Growth Today</h3>
                 <p>
-                  Biztalbox is the automotive SEO marketing agency that puts your business ahead of
+                  biztalbox is the automotive SEO marketing agency that puts your business ahead of
                   competitors. Appear in the right searches, attract high-intent customers, and convert leads
                   faster.
                 </p>
@@ -1256,7 +1256,7 @@ export default function Page() {
                 <div style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto" }}>
                   <h2 className="section-heading">Accelerate Your Automotive Business Growth Today</h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    Biztalbox is the automotive SEO marketing agency that puts your business ahead of
+                    biztalbox is the automotive SEO marketing agency that puts your business ahead of
                     competitors. Appear in the right searches, attract high-intent customers, and convert
                     leads faster.
                   </p>
@@ -1286,7 +1286,7 @@ export default function Page() {
                       <div className="tm-details-text">
                         <p>
                           Your customers are searching — make sure they find you first. Partner with
-                          Biztalbox and start driving real results. Contact us today for a free consultation.
+                          biztalbox and start driving real results. Contact us today for a free consultation.
                         </p>
                       </div>
                       <div className="tm-details-portfolio">

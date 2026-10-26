@@ -112,7 +112,7 @@ export default function MobileOffcanvas({
               <ul>
                 <li>
                   <Link
-                    href="https://www.facebook.com/BiztalBox"
+                    href="https://www.facebook.com/biztalbox"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                   >
@@ -131,7 +131,7 @@ export default function MobileOffcanvas({
 
                 <li>
                   <Link
-                    href="https://x.com/BiztalBox"
+                    href="https://x.com/biztalbox"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                   >

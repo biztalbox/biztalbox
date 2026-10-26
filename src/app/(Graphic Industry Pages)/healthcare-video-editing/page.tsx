@@ -300,20 +300,20 @@ export default function Page() {
 
               <section className="content-section">
                 <h2 className="section-heading">
-                  Why Choose Biztalbox for Healthcare Graphic Design and Video
+                  Why Choose biztalbox for Healthcare Graphic Design and Video
                   Editing Services
                 </h2>
 
                 <div className="content-grid-2">
                   <div className="content-card">
                     <h3 className="section-subheading">
-                      1. Biztalbox Understands How Patients Judge Healthcare
+                      1. biztalbox Understands How Patients Judge Healthcare
                       Brands Online
                     </h3>
                     <p>
                       Patients notice much more than medical qualifications. They
                       notice presentation, clarity, organization, and communication
-                      style. Biztalbox creates healthcare visuals around how
+                      style. biztalbox creates healthcare visuals around how
                       patients actually build trust online.
                     </p>
                   </div>
@@ -323,7 +323,7 @@ export default function Page() {
                     </h3>
                     <p>
                       Medical information can feel overwhelming quickly.
-                      Biztalbox&apos;s healthcare graphic design services help
+                      biztalbox&apos;s healthcare graphic design services help
                       clinics, hospitals, and healthcare brands explain services,
                       systems, and patient processes in a way that feels easier to
                       understand.
@@ -356,7 +356,7 @@ export default function Page() {
                       5. We Help Healthcare Brands Stay Visually Consistent
                     </h3>
                     <p>
-                      The creative team at Biztalbox makes sure your branding stays
+                      The creative team at biztalbox makes sure your branding stays
                       consistent across every touchpoint to make healthcare
                       businesses appear more professional.
                     </p>
@@ -366,7 +366,7 @@ export default function Page() {
                       6. We Focus On Communication That Builds Patient Confidence
                     </h3>
                     <p>
-                      Biztalbox creates healthcare content designed to improve
+                      biztalbox creates healthcare content designed to improve
                       trust, strengthen engagement, and help healthcare providers
                       communicate more clearly online.
                     </p>
@@ -428,7 +428,7 @@ export default function Page() {
                         </div>
                         <div className="tm-details-text">
                           <p>
-                            Connect with Biztalbox for graphic design and video
+                            Connect with biztalbox for graphic design and video
                             editing services for healthcare industry that help your
                             healthcare business communicate more clearly, build
                             stronger patient trust, and create a more professional
@@ -463,7 +463,7 @@ export default function Page() {
                     Ready To Strengthen Your Healthcare Brand Online?
                   </h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    Connect with Biztalbox for graphic design and{" "}
+                    Connect with biztalbox for graphic design and{" "}
                     <Link
                       href="https://biztalbox.com/blog/best-video-editing-agency-in-the-usa"
                       className="text-primary"
@@ -482,7 +482,7 @@ export default function Page() {
                       color: "#fff",
                     }}
                   >
-                    Get in touch with Biztalbox today and elevate your healthcare
+                    Get in touch with biztalbox today and elevate your healthcare
                     brand online.
                   </p>
                 </div>

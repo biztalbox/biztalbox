@@ -1263,7 +1263,7 @@ export default function Page() {
                       >
                         <div className="tm-details-title-box mb-20">
                           <span className="tm-hero-subtitle">
-                            Why Choose Biztalbox for Construction SEO
+                            Why Choose biztalbox for Construction SEO
                           </span>
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
@@ -1282,12 +1282,12 @@ export default function Page() {
                             leads that actually convert.
                           </p>
                           <p>
-                            At Biztalbox, we don’t approach SEO as a checklist.
+                            At biztalbox, we don’t approach SEO as a checklist.
                             We build structured systems aligned with how
                             construction buyers think, search, and make
                             decisions.
                           </p>
-                          <p>What sets Biztalbox apart:</p>
+                          <p>What sets biztalbox apart:</p>
                         </div>
                         <div className="tm-details-portfolio">
                           <span className="tm-details-social-title">
@@ -1306,7 +1306,7 @@ export default function Page() {
               </div>
 
               <section className="content-section">
-                <h2 className="section-heading">What sets Biztalbox apart</h2>
+                <h2 className="section-heading">What sets biztalbox apart</h2>
                 <div className="content-grid-2">
                   <div className="content-card">
                     <h3 className="section-subheading">1. Industry-Focused Approach</h3>
@@ -1327,7 +1327,7 @@ export default function Page() {
                   <div className="content-card">
                     <h3 className="section-subheading">2. Revenue-Focused Execution</h3>
                     <p>
-                      At Biztalbox, we believe that traffic without intent has no
+                      At biztalbox, we believe that traffic without intent has no
                       value. Our focus stays on leads that turn into projects. So
                       we prioritize high-intent keywords, optimising service
                       pages, and aligning content with decision-stage queries. Our
@@ -1340,7 +1340,7 @@ export default function Page() {
                     <p>
                       SEO should not feel complicated or unclear. You must always
                       understand what is going on and why. This is precisely why
-                      the reporting process at Biztalbox remains uncomplicated and
+                      the reporting process at biztalbox remains uncomplicated and
                       straightforward. We keep you in the loop about the areas
                       that need improvement, how your business is growing, and
                       what the next steps are.
@@ -1375,7 +1375,7 @@ export default function Page() {
                     <h3 className="section-subheading">6. Built for Long-Term Growth</h3>
                     <p>
                       Quick wins are temporary, but only strong systems last. At
-                      Biztalbox, we build systems that compound over time: strong
+                      biztalbox, we build systems that compound over time: strong
                       service pages, consistent content, and authority in your
                       niche. We offer the best construction SEO services that
                       focus on creating a presence that keeps bringing in leads
@@ -1404,7 +1404,7 @@ export default function Page() {
                       color: "#fff",
                     }}
                   >
-                    Partner with Biztalbox today and make your business
+                    Partner with biztalbox today and make your business
                     impossible to ignore online.
                   </p>
                 </div>

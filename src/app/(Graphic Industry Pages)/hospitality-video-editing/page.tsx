@@ -269,7 +269,7 @@ export default function Page() {
 
               <section className="content-section">
                 <h2 className="section-heading">
-                  Why Choose Biztalbox for Hospitality Graphic Design and{" "}
+                  Why Choose biztalbox for Hospitality Graphic Design and{" "}
                   <Link
                     href="https://biztalbox.com/blog/best-video-editing-agency-in-the-usa"
                     className="text-primary"
@@ -293,7 +293,7 @@ export default function Page() {
                       Brand Identity Consistency
                     </h3>
                     <p>
-                      At Biztalbox, our hotel branding and design services
+                      At biztalbox, our hotel branding and design services
                       ensure strong and recognizable identity across all
                       platforms.
                     </p>
@@ -398,7 +398,7 @@ export default function Page() {
                         </div>
                         <div className="tm-details-text">
                           <p>
-                            Partner with Biztalbox for hospitality graphic
+                            Partner with biztalbox for hospitality graphic
                             design services and improve how guests perceive your
                             property online.
                           </p>
@@ -431,7 +431,7 @@ export default function Page() {
                     Ready to Upgrade Your Hospitality Marketing?
                   </h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    Partner with Biztalbox for hospitality graphic design
+                    Partner with biztalbox for hospitality graphic design
                     services and improve how guests perceive your property
                     online.
                   </p>

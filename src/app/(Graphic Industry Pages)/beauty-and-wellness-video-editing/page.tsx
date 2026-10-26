@@ -322,11 +322,11 @@ export default function Page() {
 
               <section className="content-section">
                 <h2 className="section-heading">
-                  Why Biztalbox is Trusted for Beauty and Wellness Graphic
+                  Why biztalbox is Trusted for Beauty and Wellness Graphic
                   Design and Video Editing Services
                 </h2>
                 <p className="content-prose">
-                  Here are some reasons you should partner with Biztalbox for
+                  Here are some reasons you should partner with biztalbox for
                   video editing and graphic design services for the beauty and
                   wellness industry:
                 </p>
@@ -374,7 +374,7 @@ export default function Page() {
                       5. Growth-Driven Content Approach
                     </h3>
                     <p>
-                      Biztalbox doesn&apos;t just focus on content creation. It
+                      biztalbox doesn&apos;t just focus on content creation. It
                       is helping beauty brands get more visibility, bookings,
                       and customer trust.
                     </p>
@@ -456,7 +456,7 @@ export default function Page() {
                     Ready to Elevate Your Beauty Brand?
                   </h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    Connect with Biztalbox today for a visual identity that
+                    Connect with biztalbox today for a visual identity that
                     makes you stand out online.
                   </p>
                 </div>

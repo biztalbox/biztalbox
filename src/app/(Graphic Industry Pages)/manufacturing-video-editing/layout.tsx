@@ -6,9 +6,9 @@ import "@/app/(Graphic Industry Pages)/styles.css";
 
 const baseMetadata: Metadata = {
   title:
-    "Graphic Design & Video Editing Services for Manufacturing Industry | Biztalbox",
+    "Graphic Design & Video Editing Services for Manufacturing Industry | biztalbox",
   description:
-    "Enhance your manufacturing brand with professional graphic design and video editing services from Biztalbox. Communicate product value clearly, improve brand visibility, and engage industrial buyers effectively.",
+    "Enhance your manufacturing brand with professional graphic design and video editing services from biztalbox. Communicate product value clearly, improve brand visibility, and engage industrial buyers effectively.",
 };
 
 export const metadata = createMetadata(

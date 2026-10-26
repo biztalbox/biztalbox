@@ -47,7 +47,7 @@ export async function fetchRankMathData(
       },
       headers: {
         'Accept': 'application/json',
-        'User-Agent': 'BiztalBox-Website/1.0'
+        'User-Agent': 'biztalbox-Website/1.0'
       },
       signal: AbortSignal.timeout(30000) // 30 second timeout
     });
@@ -243,7 +243,7 @@ export function createDefaultArticleSchema(
   description: string,
   url: string,
   image?: string,
-  author: string = 'Biztal Box',
+  author: string = 'biztal box',
   datePublished?: string
 ): any {
   return {
@@ -259,7 +259,7 @@ export function createDefaultArticleSchema(
     },
     publisher: {
       '@type': 'Organization',
-      name: 'Biztal Box',
+      name: 'biztal box',
       logo: {
         '@type': 'ImageObject',
         url: 'https://biztalbox.com/logo.png'
@@ -319,7 +319,7 @@ function decodeHtmlEntities(html: string): string {
  */
 export function createMetadataFromRankMath(
   rankMathData: FormattedRankMathData,
-  fallbackTitle: string = 'Biztal Box',
+  fallbackTitle: string = 'biztal box',
   fallbackDescription: string = 'Your digital marketing partner'
 ): any {
   const metadata: any = {
@@ -335,7 +335,7 @@ export function createMetadataFromRankMath(
       images: rankMathData.ogImage ? [{ url: rankMathData.ogImage }] : undefined,
       type: rankMathData.ogType || 'website',
       locale: rankMathData.ogLocale || 'en_US',
-      siteName: rankMathData.ogSiteName || 'Biztalbox',
+      siteName: rankMathData.ogSiteName || 'biztalbox',
     };
   }
 
@@ -355,13 +355,13 @@ export function createMetadataFromRankMath(
   }
 
  
-  metadata.authors = 'Biztalbox';
+  metadata.authors = 'biztalbox';
 
   // Add publisher meta tags
   metadata.other = {
-    'publisher': 'Biztalbox',
+    'publisher': 'biztalbox',
     'article:publisher': 'https://www.facebook.com/biztalbox',
-    'article:author': 'Biztalbox',
+    'article:author': 'biztalbox',
   };
   return metadata;
 

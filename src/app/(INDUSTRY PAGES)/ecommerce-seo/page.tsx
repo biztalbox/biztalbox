@@ -141,7 +141,7 @@ export default function Page() {
                           <h3 className="tm-details-title">Drive More Sales with Expert SEO</h3>
                         </div>
                         <div className="tm-details-text">
-                          <p>Turn search demand into a reliable stream of revenue. Partner with Biztalbox to build a dominant presence in the ecommerce landscape.</p>
+                          <p>Turn search demand into a reliable stream of revenue. Partner with biztalbox to build a dominant presence in the ecommerce landscape.</p>
                         </div>
                         <div className="tm-details-portfolio">
                           <span className="tm-details-social-title">Get in Touch:</span>
@@ -300,7 +300,7 @@ export default function Page() {
                           <h3 className="tm-details-title">Drive More Sales with Expert SEO</h3>
                         </div>
                         <div className="tm-details-text">
-                          <p>Turn search demand into a reliable stream of revenue. Partner with Biztalbox to build a dominant presence in the ecommerce landscape.</p>
+                          <p>Turn search demand into a reliable stream of revenue. Partner with biztalbox to build a dominant presence in the ecommerce landscape.</p>
                         </div>
                         <div className="tm-details-portfolio">
                           <span className="tm-details-social-title">Get in Touch:</span>
@@ -447,13 +447,13 @@ export default function Page() {
                 <p>For a good e-commerce SEO company, these are the non-negotiables.</p>
               </section>
 
-              {/* Why Choose Biztalbox */}
+              {/* Why Choose biztalbox */}
               <section className="content-section">
-                <h2 className="section-heading">Why Choose Biztalbox as Your e-commerce SEO Company</h2>
+                <h2 className="section-heading">Why Choose biztalbox as Your e-commerce SEO Company</h2>
                 <div className="content-grid-2">
                   <div className="content-card">
                     <h3 className="section-subheading">1. An e-commerce SEO Company Built for Sales, Not Vanity Metrics</h3>
-                    <p>Unlike many e-commerce SEO companies that concentrate on attracting traffic, we focus on transactions. Biztalbox is a conversion-oriented e-commerce SEO company with extensive knowledge of product discovery, comparison &amp; pricing psychology, and checkout behaviour. Every SEO decision we make is tied to one outcome: profitable sales. Rankings that do not move revenue are ignored. Visibility that does not convert is rebuilt.</p>
+                    <p>Unlike many e-commerce SEO companies that concentrate on attracting traffic, we focus on transactions. biztalbox is a conversion-oriented e-commerce SEO company with extensive knowledge of product discovery, comparison &amp; pricing psychology, and checkout behaviour. Every SEO decision we make is tied to one outcome: profitable sales. Rankings that do not move revenue are ignored. Visibility that does not convert is rebuilt.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">2. The Best e-commerce <Link href="https://biztalbox.com/best-seo-agency" className="text-primary">SEO Agency</Link> that Understands Buyer-Intent Search</h3>
@@ -461,37 +461,37 @@ export default function Page() {
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">3. Strategic Site Architecture for B2B e-commerce SEO</h3>
-                    <p>True e-commerce growth depends on structure. As a specialist e-commerce SEO agency, Biztalbox builds scalable site architecture that supports thousands of products without dilution. Clean category hierarchies, optimised filters, internal linking logic, and crawl efficiency are treated as revenue levers. This is how leading e-commerce SEO agencies dominate competitive verticals while others struggle with index bloat and wasted authority.</p>
+                    <p>True e-commerce growth depends on structure. As a specialist e-commerce SEO agency, biztalbox builds scalable site architecture that supports thousands of products without dilution. Clean category hierarchies, optimised filters, internal linking logic, and crawl efficiency are treated as revenue levers. This is how leading e-commerce SEO agencies dominate competitive verticals while others struggle with index bloat and wasted authority.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">4. We Drive Compounding SEO Growth That Strengthens Over Time</h3>
-                    <p>Paid ads stop the moment you pause spending. SEO should not. As one of the best e-commerce SEO company, Biztalbox focuses on compounding visibility that grows stronger month after month. As category authority grows, opportunities for product discovery broaden, leading to an increase in purchase queries. This approach reduces dependence on paid <Link href="https://biztalbox.com/blog/what-is-ad-fatigue" className="text-primary">advertising</Link>, helps to stabilize customer acquisition costs and builds an organic sales asset that competitors that is hard for competitors to replicate.</p>
+                    <p>Paid ads stop the moment you pause spending. SEO should not. As one of the best e-commerce SEO company, biztalbox focuses on compounding visibility that grows stronger month after month. As category authority grows, opportunities for product discovery broaden, leading to an increase in purchase queries. This approach reduces dependence on paid <Link href="https://biztalbox.com/blog/what-is-ad-fatigue" className="text-primary">advertising</Link>, helps to stabilize customer acquisition costs and builds an organic sales asset that competitors that is hard for competitors to replicate.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">5. We Continuously Optimise Your SEO Based on Market Demand</h3>
-                    <p>e-commerce search behaviour evolves swiftly. New products become successful, prices are modified and competitors refine their strategies. From a performance-led e-commerce SEO agency perspective, we&apos;re always tracking monitor search demand, conversion paths, and category performance. When buyers shift toward new variants, features, or price points, your SEO strategy adapts immediately. e-commerce SEO experts at Biztalbox show real-time response to the market, always keeping your business ahead.</p>
+                    <p>e-commerce search behaviour evolves swiftly. New products become successful, prices are modified and competitors refine their strategies. From a performance-led e-commerce SEO agency perspective, we&apos;re always tracking monitor search demand, conversion paths, and category performance. When buyers shift toward new variants, features, or price points, your SEO strategy adapts immediately. e-commerce SEO experts at biztalbox show real-time response to the market, always keeping your business ahead.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">6. We Think Like Your Personal e-commerce SEO Consultant, Not a Typical Agency</h3>
-                    <p>Biztalbox does not operate behind closed doors. We function as an embedded e-commerce SEO consultant within your growth ecosystem. We align SEO with inventory cycles, launches, promotions, and expansion plans. Communication is direct, strategy is transparent, and execution adapts as your business evolves. This collaboration is why brands stay with us while they move away from generic e-commerce SEO agencies.</p>
+                    <p>biztalbox does not operate behind closed doors. We function as an embedded e-commerce SEO consultant within your growth ecosystem. We align SEO with inventory cycles, launches, promotions, and expansion plans. Communication is direct, strategy is transparent, and execution adapts as your business evolves. This collaboration is why brands stay with us while they move away from generic e-commerce SEO agencies.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">7. Full Transparency From Keywords to Revenue</h3>
-                    <p>Trust is built through clarity. As an accountable e-commerce SEO agency, Biztalbox delivers reporting that connects rankings to traffic, traffic to conversions, and conversions to revenue. You see exactly which categories grow, which products gain traction, and where optimisation creates commercial impact. Biztalbox&apos;s clear and straightforward insights empower confident decision-making, eliminating vague dashboards and confusing jargon.</p>
+                    <p>Trust is built through clarity. As an accountable e-commerce SEO agency, biztalbox delivers reporting that connects rankings to traffic, traffic to conversions, and conversions to revenue. You see exactly which categories grow, which products gain traction, and where optimisation creates commercial impact. biztalbox&apos;s clear and straightforward insights empower confident decision-making, eliminating vague dashboards and confusing jargon.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">8. We Deliver e-commerce SEO That’s Affordable and Profitable</h3>
-                    <p>SEO must grow revenue without damaging profitability. Biztalbox delivers affordable e-commerce SEO that prioritises high-impact actions over inflated retainers. We focus on what moves revenue, not what pads reports. This philosophy drives us to be a better partner for brands looking for sustainable growth, realistic timelines and an SEO investment that mirrors operational realities.</p>
+                    <p>SEO must grow revenue without damaging profitability. biztalbox delivers affordable e-commerce SEO that prioritises high-impact actions over inflated retainers. We focus on what moves revenue, not what pads reports. This philosophy drives us to be a better partner for brands looking for sustainable growth, realistic timelines and an SEO investment that mirrors operational realities.</p>
                   </div>
                 </div>
               </section>
 
               {/* Closing */}
               <section className="content-section content-prose">
-                <h2 className="section-heading">Scale Your Business With Biztalbox</h2>
-                <p>Brands choose Biztalbox over other e-commerce SEO companies because we do not sell promises. We build systems. Our strategies are commercial, defensible, and designed to outperform competitors who rely on surface-level optimisation. When brands are serious about organic growth, they partner with e-commerce SEO experts who understand how e-commerce truly works.</p>
+                <h2 className="section-heading">Scale Your Business With biztalbox</h2>
+                <p>Brands choose biztalbox over other e-commerce SEO companies because we do not sell promises. We build systems. Our strategies are commercial, defensible, and designed to outperform competitors who rely on surface-level optimisation. When brands are serious about organic growth, they partner with e-commerce SEO experts who understand how e-commerce truly works.</p>
                 <h3 className="section-subheading">Get in Touch With Us Today</h3>
-                <p>Generic SEO brings visitors; we bring buyers. We optimize your e-commerce store to help you achieve better conversion rates by appearing during critical times in the buying journey. Partner with Biztalbox today for sustained revenue growth!</p>
+                <p>Generic SEO brings visitors; we bring buyers. We optimize your e-commerce store to help you achieve better conversion rates by appearing during critical times in the buying journey. Partner with biztalbox today for sustained revenue growth!</p>
               </section>
 
               {/* Final CTA */}
@@ -507,7 +507,7 @@ export default function Page() {
                     <div className="col-xl-6 col-lg-6 col-md-7">
                       <div className="tm-details-content-wrap z-index-5" style={{ padding: "30px 0" }}>
                         <div className="tm-details-title-box mb-20">
-                          <span className="tm-hero-subtitle">Scale Your Business with Biztalbox</span>
+                          <span className="tm-hero-subtitle">Scale Your Business with biztalbox</span>
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
                         <div className="tm-details-text">

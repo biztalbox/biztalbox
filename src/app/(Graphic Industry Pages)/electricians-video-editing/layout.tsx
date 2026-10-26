@@ -5,8 +5,8 @@ import { createMarketingPageData } from "@/utils/marketing-page-data";
 import "@/app/(Graphic Industry Pages)/styles.css";
 
 const baseMetadata: Metadata = {
-  title: "Graphic Design & Video Editing Services for Electricians | Biztalbox",
-  description: "Help your electrical business look more reliable online with professional graphic design and video editing services from Biztalbox. Create engaging visual content that builds trust, attracts local customers, and grows your business.",
+  title: "Graphic Design & Video Editing Services for Electricians | biztalbox",
+  description: "Help your electrical business look more reliable online with professional graphic design and video editing services from biztalbox. Create engaging visual content that builds trust, attracts local customers, and grows your business.",
 };
 
 export const metadata = createMetadata(baseMetadata, "/electricians-video-editing");

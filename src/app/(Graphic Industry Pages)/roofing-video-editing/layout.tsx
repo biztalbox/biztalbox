@@ -6,9 +6,9 @@ import "@/app/(Graphic Industry Pages)/styles.css";
 
 const baseMetadata: Metadata = {
   title:
-    "Graphic Design & Video Editing Services for Roofing Industry | Biztalbox",
+    "Graphic Design & Video Editing Services for Roofing Industry | biztalbox",
   description:
-    "Boost your roofing brand visibility with professional graphic design and video editing services from Biztalbox. Create engaging visual content that attracts homeowners, builds trust, and drives more inquiries.",
+    "Boost your roofing brand visibility with professional graphic design and video editing services from biztalbox. Create engaging visual content that attracts homeowners, builds trust, and drives more inquiries.",
 };
 
 export const metadata = createMetadata(baseMetadata, "/roofing-video-editing");

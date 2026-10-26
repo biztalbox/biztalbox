@@ -13,7 +13,7 @@ export async function generateMetadata({
   const { page, category, search } = searchParams;
   
   let title = "Digital Marketing Blog | SEO, Web Design & Business Growth Tips";
-  let description = "Stay updated with the latest digital marketing insights, SEO tips, web design trends, and business growth strategies from Biztalbox experts.";
+  let description = "Stay updated with the latest digital marketing insights, SEO tips, web design trends, and business growth strategies from biztalbox experts.";
   
   if (category) {
     title = `${category.charAt(0).toUpperCase() + category.slice(1)} Blog Posts | Digital Marketing Blog`;
@@ -41,7 +41,7 @@ export default function BlogPage({
       schemaProps={schemaProps}
       currentUrl={createFullUrl('/blog')}
       title="Digital Marketing Blog | SEO, Web Design & Business Growth Tips"
-      description="Stay updated with the latest digital marketing insights, SEO tips, web design trends, and business growth strategies from Biztalbox experts."
+      description="Stay updated with the latest digital marketing insights, SEO tips, web design trends, and business growth strategies from biztalbox experts."
     >
       <BlogClassicMain searchParams={searchParams} />
     </SchemaProvider>

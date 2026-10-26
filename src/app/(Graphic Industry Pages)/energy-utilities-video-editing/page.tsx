@@ -153,7 +153,7 @@ export default function Page() {
 
               <section className="content-section">
                 <h2 className="section-heading">
-                  Why Energy and Utility Companies Choose Biztalbox for Graphic Design and Video Editing Services
+                  Why Energy and Utility Companies Choose biztalbox for Graphic Design and Video Editing Services
                 </h2>
 
                 <div className="content-grid-2">
@@ -231,7 +231,7 @@ export default function Page() {
                         </div>
                         <div className="tm-details-text">
                           <p>
-                            Connect with Biztalbox for graphic design and video editing services for energy and utilities industry that help simplify complex communication, strengthen credibility, and make your operations easier to understand online.
+                            Connect with biztalbox for graphic design and video editing services for energy and utilities industry that help simplify complex communication, strengthen credibility, and make your operations easier to understand online.
                           </p>
                         </div>
                         <div className="tm-details-portfolio">
@@ -262,7 +262,7 @@ export default function Page() {
                     Ready to make your energy and utilities business look more trusted online?
                   </h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    Connect with Biztalbox for graphic design and{" "}
+                    Connect with biztalbox for graphic design and{" "}
                     <Link
                       href="https://biztalbox.com/blog/best-video-editing-agency-in-the-usa"
                       className="text-primary"
@@ -281,7 +281,7 @@ export default function Page() {
                       color: "#fff",
                     }}
                   >
-                    Get in touch with Biztalbox today and elevate your energy and utilities brand online.
+                    Get in touch with biztalbox today and elevate your energy and utilities brand online.
                   </p>
                 </div>
               </section>

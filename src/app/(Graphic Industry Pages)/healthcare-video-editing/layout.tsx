@@ -6,7 +6,7 @@ import "@/app/(Graphic Industry Pages)/styles.css";
 
 const baseMetadata: Metadata = {
   title:
-    "How Graphic Design & Video Editing Services Help Healthcare Businesses Grow | Biztalbox",
+    "How Graphic Design & Video Editing Services Help Healthcare Businesses Grow | biztalbox",
   description:
     "Discover how graphic design and video editing services help healthcare businesses build trust, educate patients, strengthen branding, and grow their online presence with engaging visual content.",
 };

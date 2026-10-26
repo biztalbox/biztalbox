@@ -18,7 +18,7 @@ export default async function GraphicContent({ route, crumbs, path }: ContentRen
 
   const cmsSchemas = cmsSchemasWithBreadcrumb(data.structured_data, crumbs, path);
   const pageData = createMarketingPageData({
-    title: data.title || `${slug} | Biztalbox`,
+    title: data.title || `${slug} | biztalbox`,
     description: data.description,
     path,
     serviceType: "Graphic Design Services",

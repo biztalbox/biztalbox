@@ -269,7 +269,7 @@ export default function Page() {
 
               <section className="content-section">
                 <h2 className="section-heading">
-                  Why Partner with Biztalbox for Education Industry Graphic
+                  Why Partner with biztalbox for Education Industry Graphic
                   Design and{" "}
                   <Link
                     href="https://biztalbox.com/blog/best-video-editing-agency-in-the-usa"
@@ -398,7 +398,7 @@ export default function Page() {
                         </div>
                         <div className="tm-details-text">
                           <p>
-                            Reach out to Biztalbox for exceptional marketing
+                            Reach out to biztalbox for exceptional marketing
                             creatives to make your educational institution stand
                             out online.
                           </p>
@@ -432,7 +432,7 @@ export default function Page() {
                     and video?
                   </h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    Reach out to Biztalbox for exceptional marketing creatives
+                    Reach out to biztalbox for exceptional marketing creatives
                     to make your educational institution stand out online.
                   </p>
                 </div>

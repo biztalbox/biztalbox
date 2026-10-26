@@ -5,8 +5,8 @@ import { createMarketingPageData } from "@/utils/marketing-page-data";
 import "@/app/(Graphic Industry Pages)/styles.css";
 
 const baseMetadata: Metadata = {
-  title: "Graphic Design & Video Editing Services for HVAC Industry | Biztalbox",
-  description: "Help your HVAC business build trust online with professional graphic design and video editing services from Biztalbox. Create impactful visual content that attracts customers and strengthens your brand presence.",
+  title: "Graphic Design & Video Editing Services for HVAC Industry | biztalbox",
+  description: "Help your HVAC business build trust online with professional graphic design and video editing services from biztalbox. Create impactful visual content that attracts customers and strengthens your brand presence.",
 };
 
 export const metadata = createMetadata(baseMetadata, "/hvac-video-editing");

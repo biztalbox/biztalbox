@@ -153,7 +153,7 @@ export default function Page() {
 
               <section className="content-section">
                 <h2 className="section-heading">
-                  Why Movers and Packers Businesses Choose Biztalbox for Graphic
+                  Why Movers and Packers Businesses Choose biztalbox for Graphic
                   Design and{" "}
                   <Link
                     href="https://biztalbox.com/blog/best-video-editing-agency-in-the-usa"
@@ -168,7 +168,7 @@ export default function Page() {
                     <h3 className="section-subheading">
                       1. We understand how trust influences customer decisions
                     </h3>
-                    <p>Most people decide how they feel about a movers and packers company long before making contact. At Biztalbox, we understand how branding, visuals, and communication influence that first impression.</p>
+                    <p>Most people decide how they feel about a movers and packers company long before making contact. At biztalbox, we understand how branding, visuals, and communication influence that first impression.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">
@@ -197,13 +197,13 @@ export default function Page() {
                     <h3 className="section-subheading">
                       4. We create tailored content for each platform
                     </h3>
-                    <p>The team at Biztalbox develops platform-specific content for Google Business, Instagram, Facebook, YouTube, websites, and local advertising campaigns.</p>
+                    <p>The team at biztalbox develops platform-specific content for Google Business, Instagram, Facebook, YouTube, websites, and local advertising campaigns.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">
                       5. We help businesses maintain visual consistency
                     </h3>
-                    <p>At Biztalbox, we make your business look visually aligned across all digital and offline touchpoints, helping customers recognize and trust your brand more easily over time.</p>
+                    <p>At biztalbox, we make your business look visually aligned across all digital and offline touchpoints, helping customers recognize and trust your brand more easily over time.</p>
                   </div>
                   <div className="content-card">
                     <h3 className="section-subheading">
@@ -255,7 +255,7 @@ export default function Page() {
                         </div>
                         <div className="tm-details-text">
                           <p>
-                            Connect with Biztalbox for graphic design and video editing services for movers and packers to make your business appear trustworthy, professional, and easy for customers to connect with.
+                            Connect with biztalbox for graphic design and video editing services for movers and packers to make your business appear trustworthy, professional, and easy for customers to connect with.
                           </p>
                         </div>
                         <div className="tm-details-portfolio">
@@ -286,7 +286,7 @@ export default function Page() {
                     Ready to Build Trust for Your Movers and Packers Business?
                   </h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    Connect with Biztalbox for graphic design and{" "}
+                    Connect with biztalbox for graphic design and{" "}
                     <Link
                       href="https://biztalbox.com/blog/best-video-editing-agency-in-the-usa"
                       className="text-primary"
@@ -305,7 +305,7 @@ export default function Page() {
                       color: "#fff",
                     }}
                   >
-                    Get in touch with Biztalbox today and elevate your movers and packers brand online.
+                    Get in touch with biztalbox today and elevate your movers and packers brand online.
                   </p>
                 </div>
               </section>

@@ -9115,7 +9115,7 @@
                   "width": 40,
                   "height": 40
                 },
-                "snippet": "<a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://www.facebook.com/BiztalBox\">",
+                "snippet": "<a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://www.facebook.com/biztalbox\">",
                 "nodeLabel": "div.tp-offcanvas-social > ul > li > a",
                 "explanation": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
               }
@@ -9153,7 +9153,7 @@
                   "width": 40,
                   "height": 40
                 },
-                "snippet": "<a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://x.com/BiztalBox\">",
+                "snippet": "<a target=\"_blank\" rel=\"noopener noreferrer nofollow\" href=\"https://x.com/biztalbox\">",
                 "nodeLabel": "div.tp-offcanvas-social > ul > li > a",
                 "explanation": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
               }
@@ -9210,7 +9210,7 @@
                   "width": 44,
                   "height": 44
                 },
-                "snippet": "<a href=\"https://x.com/BiztalBox\" target=\"_blank\">",
+                "snippet": "<a href=\"https://x.com/biztalbox\" target=\"_blank\">",
                 "nodeLabel": "div.tp-footer-3-widget > div.tp-footer-3-logo-box > div.tp-footer-3-social > a",
                 "explanation": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
               }
@@ -9229,7 +9229,7 @@
                   "width": 44,
                   "height": 44
                 },
-                "snippet": "<a href=\"https://www.facebook.com/BiztalBox\" target=\"_blank\">",
+                "snippet": "<a href=\"https://www.facebook.com/biztalbox\" target=\"_blank\">",
                 "nodeLabel": "div.tp-footer-3-widget > div.tp-footer-3-logo-box > div.tp-footer-3-social > a",
                 "explanation": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
               }

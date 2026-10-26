@@ -6,9 +6,9 @@ import "@/app/(Graphic Industry Pages)/styles.css";
 
 const baseMetadata: Metadata = {
   title:
-    "Graphic Design & Video Editing Services for Real Estate Industry | Biztalbox",
+    "Graphic Design & Video Editing Services for Real Estate Industry | biztalbox",
   description:
-    "Enhance your real estate marketing with professional graphic design and video editing services from Biztalbox. Showcase properties with engaging visual content that attracts buyers and boosts conversions.",
+    "Enhance your real estate marketing with professional graphic design and video editing services from biztalbox. Showcase properties with engaging visual content that attracts buyers and boosts conversions.",
 };
 
 export const metadata = createMetadata(

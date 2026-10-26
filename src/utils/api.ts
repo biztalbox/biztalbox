@@ -45,7 +45,7 @@ export async function getBlogPostBySlug(slug: string, retryCount = 0): Promise<W
       },
       headers: {
         'Accept': 'application/json',
-        'User-Agent': 'BiztalBox-Website/1.0'
+        'User-Agent': 'biztalbox-Website/1.0'
       },
       // Add timeout to prevent hanging requests
       signal: AbortSignal.timeout(30000) // 30 second timeout

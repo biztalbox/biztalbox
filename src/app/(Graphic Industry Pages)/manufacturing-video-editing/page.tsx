@@ -291,7 +291,7 @@ export default function Page() {
 
               <section className="content-section content-prose">
                 <h2 className="section-heading">
-                  Why Biztalbox Is Trusted for Manufacturing Graphic Design and
+                  Why biztalbox Is Trusted for Manufacturing Graphic Design and
                   Video Editing
                 </h2>
                 <p>
@@ -322,7 +322,7 @@ export default function Page() {
                   different role in your sales journey.
                 </p>
                 <p>
-                  And every project at Biztalbox is tailored. No fixed
+                  And every project at biztalbox is tailored. No fixed
                   templates. Different industries inside manufacturing need
                   different communication styles.
                 </p>
@@ -373,7 +373,7 @@ export default function Page() {
                         </div>
                         <div className="tm-details-text">
                           <p>
-                            Connect with Biztalbox for manufacturing industry
+                            Connect with biztalbox for manufacturing industry
                             graphic design services, manufacturing{" "}
                             <Link
                               href="https://biztalbox.com/blog/best-video-editing-agency-in-the-usa"
@@ -413,7 +413,7 @@ export default function Page() {
                     Ready to Communicate Your Manufacturing Capability Clearly?
                   </h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
-                    Connect with Biztalbox for manufacturing industry graphic
+                    Connect with biztalbox for manufacturing industry graphic
                     design services, manufacturing video editing services, and
                     practical creative support built for industrial
                     communication.

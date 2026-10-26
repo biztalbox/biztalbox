@@ -101,9 +101,9 @@ const faq_data = [
   },
   {
     id: 12,
-    question: "What makes Biztalbox the right SEO company for pet care businesses?",
+    question: "What makes biztalbox the right SEO company for pet care businesses?",
     answer:
-      "Biztalbox is a specialist pet SEO company that focuses on industry-specific strategies, local demand, and long-term visibility. It combines continuous optimization, transparency, and tailored SEO approaches to help pet businesses grow through sustained search presence and high-intent leads.",
+      "biztalbox is a specialist pet SEO company that focuses on industry-specific strategies, local demand, and long-term visibility. It combines continuous optimization, transparency, and tailored SEO approaches to help pet businesses grow through sustained search presence and high-intent leads.",
   },
 ];
 
@@ -238,11 +238,11 @@ export default function Page() {
                     <div className="col-xl-6 col-lg-6 col-md-7">
                       <div className="tm-details-content-wrap z-index-5" style={{ padding: "30px 0" }}>
                         <div className="tm-details-title-box mb-20">
-                          <span className="tm-hero-subtitle">Build Your Pet Care Success Story with Biztalbox</span>
+                          <span className="tm-hero-subtitle">Build Your Pet Care Success Story with biztalbox</span>
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
                         <div className="tm-details-text">
-                          <p>If you&apos;re ready to strengthen your digital footprint and attract qualified pet owners, Biztalbox is your trusted partner. Our pet care SEO experts deliver strategies that not only rank — they perform, engage, and grow your business for the long run.</p>
+                          <p>If you&apos;re ready to strengthen your digital footprint and attract qualified pet owners, biztalbox is your trusted partner. Our pet care SEO experts deliver strategies that not only rank — they perform, engage, and grow your business for the long run.</p>
                         </div>
                         <div className="tm-details-portfolio">
                           <span className="tm-details-social-title">Get in Touch:</span>
@@ -380,7 +380,7 @@ export default function Page() {
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
                         <div className="tm-details-text">
-                          <p>Your customers are searching — make sure they find you first. Partner with Biztalbox, the pet care SEO experts that veterinary clinics, groomers, and pet businesses trust, and start driving real results. Contact us today for a free consultation.</p>
+                          <p>Your customers are searching — make sure they find you first. Partner with biztalbox, the pet care SEO experts that veterinary clinics, groomers, and pet businesses trust, and start driving real results. Contact us today for a free consultation.</p>
                         </div>
                         <div className="tm-details-portfolio">
                           <span className="tm-details-social-title">Get in Touch:</span>
@@ -427,7 +427,7 @@ export default function Page() {
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>
                         <div className="tm-details-text">
-                          <p>Your customers are searching — make sure they find you first. Partner with Biztalbox, the pet care SEO experts that veterinary clinics, groomers, and pet businesses trust, and start driving real results. Contact us today for a free consultation.</p>
+                          <p>Your customers are searching — make sure they find you first. Partner with biztalbox, the pet care SEO experts that veterinary clinics, groomers, and pet businesses trust, and start driving real results. Contact us today for a free consultation.</p>
                         </div>
                         <div className="tm-details-portfolio">
                           <span className="tm-details-social-title">Get in Touch:</span>
@@ -441,11 +441,11 @@ export default function Page() {
                 </div>
               </div>
 
-              {/* What SEO Services Are Offered / Why Biztalbox — full prose */}
+              {/* What SEO Services Are Offered / Why biztalbox — full prose */}
               <section className="content-section content-prose">
                 <h2 className="section-heading">What SEO Services Are Offered by Pet Industry SEO Companies and Veterinary SEO Experts?</h2>
                 <p>In the pet care ecosystem, <Link href="https://biztalbox.com/blog/white-hat-seo-vs-black-hat-seo-vs-grey-hat-seo" className="text-primary">SEO</Link> is not a support function. It directly influences how businesses are discovered, trusted, and contacted. Pet owners do not browse casually. They search with intent, urgency, and responsibility. That reality demands a very different level of execution than generic SEO.</p>
-                <p>This is where working with a specialised pet industry SEO company matters. At Biztalbox, SEO is approached as an operational layer that supports visibility, credibility, and sustained demand across the pet sector.</p>
+                <p>This is where working with a specialised pet industry SEO company matters. At biztalbox, SEO is approached as an operational layer that supports visibility, credibility, and sustained demand across the pet sector.</p>
                 <p>As a focused pet SEO agency, we work with clinics, hospitals, service providers, and pet brands that understand the cost of getting search wrong.</p>
                 <h2 className="section-heading">The Cost of Getting SEO Wrong in Pet Care</h2>
                 <p>In pet care, poor SEO decisions carry consequences that go beyond lost rankings:</p>
@@ -453,21 +453,21 @@ export default function Page() {
                 <p><strong>2. Lost local demand</strong> - Without strong local visibility, high-intent searches are missed entirely. Clinics and service providers often lose nearby demand to competitors or aggregators simply because their search presence is fragmented or outdated.</p>
                 <p><strong>3. Dependence on paid platforms and aggregators</strong> - Without robust organic visibility, businesses are forced to lean on paid advertising and third party intermediaries. This dependence also raises acquisition costs and erodes direct customer relationships, particularly for clinics and essential services.</p>
                 <p><strong>4. Erosion of trust before first contact</strong> - Inconsistent information, thin content, or weak authority signals reduce confidence before a call is ever made. In pet care, trust is formed early and lost silently. For experienced pet SEO experts, this is why SEO is treated as risk management as much as a growth strategy.</p>
-                <h3 className="section-heading">What Makes Biztalbox the Right SEO Company for Pet Services?</h3>
-                <p>Biztalbox operates as a specialist pet <Link href="https://biztalbox.com/blog/top-rated-seo-company-for-u-s-brands-what-sets-biztalbox-apart" className="text-primary">SEO services company</Link>, not a generalist provider adapting templates. Our approach reflects how pet businesses actually function.</p>
-                <p><strong>Deep Industry Understanding, Not Category Guesswork</strong> - Pet care is not a single market. Search behaviour differs sharply between veterinary clinics, pet services, and product-led brands. A grooming enquiry does not behave like an emergency consultation. A nutrition search does not convert like an accessory purchase. Biztalbox operates with this separation in mind. Our experience across veterinary SEO marketing and SEO for pet services allows us to design strategies that reflect real workflows, real concerns, and real customer behaviour rather than generic assumptions.</p>
-                <p><strong>Compounding Value Through Search, Not Short-Lived Gains</strong> - In the pet care industry, SEO works best when it builds momentum over time. As a specialist pet sector SEO company, Biztalbox focuses on creating search visibility that strengthens with every interaction, from local discovery to repeat research. This approach allows pet SEO service providers to create steady demand, reduce the need for constant rework, and support long-term growth rather than short-term ranking fluctuations.</p>
+                <h3 className="section-heading">What Makes biztalbox the Right SEO Company for Pet Services?</h3>
+                <p>biztalbox operates as a specialist pet <Link href="https://biztalbox.com/blog/top-rated-seo-company-for-u-s-brands-what-sets-biztalbox-apart" className="text-primary">SEO services company</Link>, not a generalist provider adapting templates. Our approach reflects how pet businesses actually function.</p>
+                <p><strong>Deep Industry Understanding, Not Category Guesswork</strong> - Pet care is not a single market. Search behaviour differs sharply between veterinary clinics, pet services, and product-led brands. A grooming enquiry does not behave like an emergency consultation. A nutrition search does not convert like an accessory purchase. biztalbox operates with this separation in mind. Our experience across veterinary SEO marketing and SEO for pet services allows us to design strategies that reflect real workflows, real concerns, and real customer behaviour rather than generic assumptions.</p>
+                <p><strong>Compounding Value Through Search, Not Short-Lived Gains</strong> - In the pet care industry, SEO works best when it builds momentum over time. As a specialist pet sector SEO company, biztalbox focuses on creating search visibility that strengthens with every interaction, from local discovery to repeat research. This approach allows pet SEO service providers to create steady demand, reduce the need for constant rework, and support long-term growth rather than short-term ranking fluctuations.</p>
                 <h3 className="section-subheading">Ongoing Optimization: Adapting to Changing Search Behaviour</h3>
                 <p>Search behaviour in pet care is dynamic, influenced by seasonal demands and emerging trends and emerging concerns of pet owners. Continual optimisation is important to keep your website visible and relevant. For example, if a veterinary clinic notices more queries for &quot;emergency vet services&quot; than planned, the strategy can pivot to optimize those pages and capture that demand.</p>
                 <p>Regularly updating content, keywords, and local listings helps seo for veterinary clinics and pet services. SEO captures timely demand, builds trust, and converts searches into bookings.</p>
                 <h3 className="section-subheading">An extension of your team</h3>
-                <p>SEO works best when it reflects real decisions inside the business. Biztalbox collaborates closely with internal teams, sharing insights, aligning priorities, and adjusting execution as services, locations, or capacity change.</p>
+                <p>SEO works best when it reflects real decisions inside the business. biztalbox collaborates closely with internal teams, sharing insights, aligning priorities, and adjusting execution as services, locations, or capacity change.</p>
                 <p>As a specialised pet SEO service provider, we keep communication open and strategy transparent. This is what makes us SEO experts for veterinarian services, where coordination directly affects outcomes.</p>
                 <h3 className="section-subheading">Transparency and Reporting</h3>
-                <p>Clarity is vital in the pet care sector. Biztalbox, as an expert pet SEO agency ensures every phase of the strategy is clearly communicated and understandable. By delivering a detailed account of search performance, local visibility, and user interactions, we make sure that our veterinary SEO clients can see exactly how their websites are driving appointments, inquiries and trust.</p>
+                <p>Clarity is vital in the pet care sector. biztalbox, as an expert pet SEO agency ensures every phase of the strategy is clearly communicated and understandable. By delivering a detailed account of search performance, local visibility, and user interactions, we make sure that our veterinary SEO clients can see exactly how their websites are driving appointments, inquiries and trust.</p>
                 <p>This level of transparency helps in sound decision-making and ensures every activity is working toward achieving your business goals, and helping SEO deliver measurable impact.</p>
                 <h3 className="section-subheading">Expert Pet Care SEO That Respects Your Budget</h3>
-                <p>For most pet businesses, SEO has to make sense financially before anything else. At Biztalbox, we focus on affordable SEO for pet professionals that delivers steady results without unnecessary spend or inflated retainers.</p>
+                <p>For most pet businesses, SEO has to make sense financially before anything else. At biztalbox, we focus on affordable SEO for pet professionals that delivers steady results without unnecessary spend or inflated retainers.</p>
                 <p>Our cost-effective veterinary SEO approach focuses on prioritizing actions that actually move the needle, so clinics and pet brands don&apos;t end up investing in growth that is unsustainable, unrealistic, or out of step with their day-to-day operations.</p>
               </section>
 
@@ -476,17 +476,17 @@ export default function Page() {
                 <h2 className="section-heading">Choosing the Right SEO Partner in the Pet Care Industry</h2>
                 <p>In pet care, search drives both visibility and brand trust. It is how trust is formed before the first call, how urgency-driven decisions are made, and how businesses are shortlisted.</p>
                 <p>That is why SEO in this industry carries more responsibility than in most.</p>
-                <p>Biztalbox works with pet businesses that want search visibility to translate into real outcomes. Our SEO packages for pet professionals are built around how veterinary clinics, service providers, and pet brands actually acquire customers, not how generic SEO frameworks are sold.</p>
-                <p>Biztalbox is a reliable veterinary clinics SEO agency that focuses on accuracy, local demand, and credibility. When it comes to veterinary SEO marketing, we understand that health-related queries require clarity and consistency. Our SEO goals are not limited to traffic volume, but relevance and confidence at the moment a potential customer is ready to take an action.</p>
-                <p>Rather than celebrating short-term ranking gains, our veterinary website SEO services are designed to support consistent, compounding demand. In veterinary care, search behaviour shifts with seasonality, urgency, location, and treatment type, and SEO has to account for all of it. Biztalbox works as SEO experts for veterinarian services who understand how trust is established before first contact, how clinics operate day to day, and how search visibility must align with real appointment capacity.</p>
+                <p>biztalbox works with pet businesses that want search visibility to translate into real outcomes. Our SEO packages for pet professionals are built around how veterinary clinics, service providers, and pet brands actually acquire customers, not how generic SEO frameworks are sold.</p>
+                <p>biztalbox is a reliable veterinary clinics SEO agency that focuses on accuracy, local demand, and credibility. When it comes to veterinary SEO marketing, we understand that health-related queries require clarity and consistency. Our SEO goals are not limited to traffic volume, but relevance and confidence at the moment a potential customer is ready to take an action.</p>
+                <p>Rather than celebrating short-term ranking gains, our veterinary website SEO services are designed to support consistent, compounding demand. In veterinary care, search behaviour shifts with seasonality, urgency, location, and treatment type, and SEO has to account for all of it. biztalbox works as SEO experts for veterinarian services who understand how trust is established before first contact, how clinics operate day to day, and how search visibility must align with real appointment capacity.</p>
                 <p>The result is an <Link href="https://biztalbox.com/blog/types-of-seo-and-why-you-need-an-agency-to-do-it" className="text-primary">SEO strategy</Link> that stands the test of time, brings in the right cases to your door, and allows for strategic growth rather than temporary spikes.</p>
-                <p style={{ fontSize: "18px", fontWeight: "bold" }}>Start a conversation with Biztalbox and explore how a focused, industry-specific SEO strategy can support sustainable growth for your pet business.</p>
+                <p style={{ fontSize: "18px", fontWeight: "bold" }}>Start a conversation with biztalbox and explore how a focused, industry-specific SEO strategy can support sustainable growth for your pet business.</p>
               </section>
 
               {/* Final CTA copy */}
               <section className="content-section">
                 <div style={{ textAlign: "center", maxWidth: "800px", margin: "0 auto" }}>
-                  <h2 className="section-heading">At Biztalbox, we understand the pet care ecosystem.</h2>
+                  <h2 className="section-heading">At biztalbox, we understand the pet care ecosystem.</h2>
                   <p className="content-prose" style={{ marginTop: "1.25rem" }}>
                     We understand how veterinary clinics, groomers, and pet businesses capture demand, how pet owners make decisions, and how to turn visibility into qualified leads and long-term growth.
                   </p>
@@ -514,7 +514,7 @@ export default function Page() {
                         <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
-                        <p>Your customers are searching — make sure they find you first. Partner with Biztalbox, the pet care SEO experts that veterinary clinics, groomers, and pet businesses trust, and start driving real results. Contact us today for a free consultation.</p>
+                        <p>Your customers are searching — make sure they find you first. Partner with biztalbox, the pet care SEO experts that veterinary clinics, groomers, and pet businesses trust, and start driving real results. Contact us today for a free consultation.</p>
                       </div>
                       <div className="tm-details-portfolio">
                         <span className="tm-details-social-title">Get in Touch:</span>

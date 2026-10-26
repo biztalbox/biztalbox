@@ -1315,7 +1315,7 @@ export default function Page() {
                   A weak SEO approach costs more than it seems. It attracts the wrong audience, creates confusion through poor content, and fails to build credibility in a high-stakes, YMYL category. The result is simple—lost leads, low conversions, and missed opportunities. Choosing the right insurance seo agency is not optional. It directly impacts revenue.
                 </p>
 
-                <h2 className="section-heading">What Sets Biztalbox Apart</h2>
+                <h2 className="section-heading">What Sets biztalbox Apart</h2>
 
                 <h3 className="section-subheading">
                   Deep Understanding of Insurance and Search Intent
@@ -1355,12 +1355,12 @@ export default function Page() {
                   That Builds Long-Term Growth
                 </h3>
                 <p>
-                  We strongly believe that shortcuts do not work in insurance. They damage trust and create long-term risks. Biztalbox follows clean, compliant SEO practices that align with industry standards. Whether you are looking for home insurance seo agency support or broader services, our focus stays on sustainable growth.
+                  We strongly believe that shortcuts do not work in insurance. They damage trust and create long-term risks. biztalbox follows clean, compliant SEO practices that align with industry standards. Whether you are looking for home insurance seo agency support or broader services, our focus stays on sustainable growth.
                 </p>
 
                 <h3 className="section-subheading">Conversion-Focused Execution</h3>
                 <p>
-                  Visibility without action has no value. Converting that traffic is what matters. At Biztalbox, everything from content structure to user flow is designed to reduce friction and guide users toward enquiry. This is what makes our approach effective for businesses looking for consistent lead generation.
+                  Visibility without action has no value. Converting that traffic is what matters. At biztalbox, everything from content structure to user flow is designed to reduce friction and guide users toward enquiry. This is what makes our approach effective for businesses looking for consistent lead generation.
                 </p>
 
                 <h3 className="section-subheading">
@@ -1385,7 +1385,7 @@ export default function Page() {
                   If you want better leads, stronger visibility, and measurable growth, the approach needs to be precise.
                 </p>
                 <p>
-                  Partner with Biztalbox. Let&apos;s build an SEO strategy that aligns with how insurance customers actually search and decide.
+                  Partner with biztalbox. Let&apos;s build an SEO strategy that aligns with how insurance customers actually search and decide.
                 </p>
                 <p>
                   Request a consultation with us and fix the gaps that are stopping your insurance website from getting the right visibility and enquiries online!
@@ -1415,7 +1415,7 @@ export default function Page() {
                         </div>
                         <div className="tm-details-text">
                           <p>
-                            Partner with Biztalbox and build an SEO strategy that aligns with how insurance customers actually search and decide.
+                            Partner with biztalbox and build an SEO strategy that aligns with how insurance customers actually search and decide.
                           </p>
                         </div>
                         <div className="tm-details-portfolio">

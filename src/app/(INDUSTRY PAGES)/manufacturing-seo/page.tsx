@@ -444,7 +444,7 @@ export default function Page() {
                       >
                         <div className="tm-details-title-box mb-20">
                           <span className="tm-hero-subtitle">
-                            Build Your Manufacturing Lead Engine with Biztalbox
+                            Build Your Manufacturing Lead Engine with biztalbox
                           </span>
                           <h3 className="tm-details-title">Get Started Today</h3>
                         </div>

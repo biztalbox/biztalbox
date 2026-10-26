@@ -63,7 +63,7 @@ export async function generateMetadata({
       title: page.title,
       description: page.description,
       url: `${DOMAIN}/page/${encodeURIComponent(page.slug)}`,
-      siteName: "Biztalbox",
+      siteName: "biztalbox",
       type: "website",
     },
     twitter: {

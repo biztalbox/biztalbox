@@ -816,11 +816,11 @@ export default function Page() {
                 </div>
 
                 <div className="content-prose mt-40">
-                  <h3 className="section-subheading">Why Biztalbox Stands Out as the Top SEO Agency for Pest Control</h3>
+                  <h3 className="section-subheading">Why biztalbox Stands Out as the Top SEO Agency for Pest Control</h3>
                   <p>
                     When homeowners discover pests in their homes, they need help fast.
                     Your online presence shouldn’t just sit there—it should actually drive
-                    calls, bookings, and trust. Biztalbox is the best pest control SEO
+                    calls, bookings, and trust. biztalbox is the best pest control SEO
                     company for businesses that want results that matter. We don’t just
                     chase rankings; we turn searches into paying customers who are ready to
                     act.
@@ -829,37 +829,37 @@ export default function Page() {
 
                 <div className="content-grid-2">
                   <div className="content-card">
-                    <p><strong>1. Continuous Optimization:</strong> At Biztalbox, we keep a close eye on search trends and seasonal pest activity. Termite season in summer, rodents in winter – we adjust in real-time. It’s not glamorous work, but this continuous optimization ensures that your business appears at times when it is needed the most by the people. Missing a spike in demand? Never on our watch!</p>
+                    <p><strong>1. Continuous Optimization:</strong> At biztalbox, we keep a close eye on search trends and seasonal pest activity. Termite season in summer, rodents in winter – we adjust in real-time. It’s not glamorous work, but this continuous optimization ensures that your business appears at times when it is needed the most by the people. Missing a spike in demand? Never on our watch!</p>
                   </div>
                   <div className="content-card">
-                    <p><strong>2. Industry-Specific Knowledge:</strong> Pest control is…well, complicated. Homeowners want fast solutions and they want to trust the company they hire. Biztalbox combines deep industry know-how with proven SEO strategies for pest control companies. We know how people search, what builds confidence, and which services are urgent. That way, your business reaches the right audience at the right time.</p>
+                    <p><strong>2. Industry-Specific Knowledge:</strong> Pest control is…well, complicated. Homeowners want fast solutions and they want to trust the company they hire. biztalbox combines deep industry know-how with proven SEO strategies for pest control companies. We know how people search, what builds confidence, and which services are urgent. That way, your business reaches the right audience at the right time.</p>
                   </div>
                   <div className="content-card">
-                    <p><strong>3. Transparency:</strong> We don’t hide behind jargon. Biztalbox gives clear explanations of every action, why it matters, and how it impacts your business. You’ll always know how your <Link href="https://biztalbox.com/blog/marketing-books-cmos-are-reading" className="text-primary">marketing</Link> is performing and which strategies actually move the needle.</p>
+                    <p><strong>3. Transparency:</strong> We don’t hide behind jargon. biztalbox gives clear explanations of every action, why it matters, and how it impacts your business. You’ll always know how your <Link href="https://biztalbox.com/blog/marketing-books-cmos-are-reading" className="text-primary">marketing</Link> is performing and which strategies actually move the needle.</p>
                   </div>
                   <div className="content-card">
                     <p><strong>4. Extension of Your Team:</strong> We’re not just another vendor, but a much-needed extension to the client’s business. Our team provides guidance as pest control SEO experts while running campaigns, letting you focus on helping customers while we handle the rest.</p>
                   </div>
                   <div className="content-card" style={{ gridColumn: isMobile ? "span 1" : "span 2" }}>
-                    <p><strong>5. Tailored Approach:</strong> No two pest control companies are the same. Biztalbox builds fully customized strategies, be it through local SEO services for pest control, content planning, or link-building. Working with an SEO company for pest control like Biztalbox, ensures your business stands out, both locally and nationally.</p>
+                    <p><strong>5. Tailored Approach:</strong> No two pest control companies are the same. biztalbox builds fully customized strategies, be it through local SEO services for pest control, content planning, or link-building. Working with an SEO company for pest control like biztalbox, ensures your business stands out, both locally and nationally.</p>
                   </div>
                 </div>
 
                 <div className="content-prose mt-40">
                   <p>
-                    By partnering with Biztalbox, your digital footprint ceases to be passive. Every search, click, and lead is captured. With our expertise as an SEO agency for pest control, your website becomes a lead-generating engine that works as hard as you do—even when you’re busy in the field.
+                    By partnering with biztalbox, your digital footprint ceases to be passive. Every search, click, and lead is captured. With our expertise as an SEO agency for pest control, your website becomes a lead-generating engine that works as hard as you do—even when you’re busy in the field.
                   </p>
                   <p>
                     <strong>Ready to Grow Your Pest Control Business?</strong>
                   </p>
                   <p>
-                    Every homeowner with a pest problem is searching right now. Biztalbox
+                    Every homeowner with a pest problem is searching right now. biztalbox
                     makes sure they find your business first. Our pest control SEO experts
                     build strategies that actually work—no fluff, no empty promises
                   </p>
                   <p>
                     This is your chance to turn those searches into real connections. Every
-                    call, booking and lead is important. Reach out to Biztalbox today and
+                    call, booking and lead is important. Reach out to biztalbox today and
                     make sure your business is the one people trust when it counts.
                   </p>
                 </div>
@@ -919,14 +919,14 @@ export default function Page() {
                     >
                       <div className="tm-details-title-box mb-20">
                         <span className="tm-hero-subtitle">
-                          Dominate Local Pest Control Search with Biztalbox
+                          Dominate Local Pest Control Search with biztalbox
                         </span>
                         <h3 className="tm-details-title">Get Started Today</h3>
                       </div>
                       <div className="tm-details-text">
                         <p>
                           If you’re ready to turn emergency searches into calls and
-                          booked jobs, Biztalbox is your trusted partner. Our pest
+                          booked jobs, biztalbox is your trusted partner. Our pest
                           control SEO experts deliver strategies that perform,
                           engage, and grow your business for the long run.
                         </p>

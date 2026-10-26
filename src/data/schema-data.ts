@@ -9,15 +9,15 @@ import {
 
 // Base organization data
 export const organizationData = {
-  name: "Biztalbox Marketing and Business Consulting Private Ltd.",
-  legalName: "Biztalbox Marketing and Business Consulting Private Ltd.",
+  name: "biztalbox Marketing and Business Consulting Private Ltd.",
+  legalName: "biztalbox Marketing and Business Consulting Private Ltd.",
   url: "https://biztalbox.com/",
   logo: "https://biztalbox.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwhite.607cd96d.png&w=750&q=75",
   telephone: "+91 9485699709",
   email: "info@biztalbox.com",
   foundingDate: "2017",
   founder: "Ish Thakral, Saksham",
-  description: "Biztalbox is a full-service digital marketing agency offering 360-degree marketing solutions, including SEO, PPC, social media marketing, web design, content strategy, and more to help businesses grow online.",
+  description: "biztalbox is a full-service digital marketing agency offering 360-degree marketing solutions, including SEO, PPC, social media marketing, web design, content strategy, and more to help businesses grow online.",
   address: {
     streetAddress: "A-11, 2nd Floor, Sector 8",
     addressLocality: "Dwarka",
@@ -32,8 +32,8 @@ export const organizationData = {
     closes: "19:00"
   },
   socialMedia: [
-    "https://www.facebook.com/BiztalBox",
-    "https://x.com/BiztalBox", 
+    "https://www.facebook.com/biztalbox",
+    "https://x.com/biztalbox", 
     "https://www.linkedin.com/company/biztal",
     "https://www.youtube.com/@biztalboxofficial",
     "https://www.instagram.com/biztalbox/"
@@ -79,7 +79,7 @@ export const servicesData = {
     faqs: [
       {
         question: "Where is your SEO firm located?",
-        answer: "Our SEO firm, Biztalbox, is located in Dwarka, New Delhi, India. We serve clients across the globe, including the USA, UK, Australia, and more."
+        answer: "Our SEO firm, biztalbox, is located in Dwarka, New Delhi, India. We serve clients across the globe, including the USA, UK, Australia, and more."
       },
       {
         question: "How do you measure success?", 
@@ -91,7 +91,7 @@ export const servicesData = {
       },
       {
         question: "Should I invest in SEO services in the USA or go abroad?",
-        answer: "It depends on your goals and budget. While USA-based agencies may offer local expertise, outsourcing SEO to reliable firms like Biztalbox can provide high-quality, cost-effective services tailored for international markets."
+        answer: "It depends on your goals and budget. While USA-based agencies may offer local expertise, outsourcing SEO to reliable firms like biztalbox can provide high-quality, cost-effective services tailored for international markets."
       },
       {
         question: "What are SEO services?",
@@ -110,7 +110,7 @@ export const servicesData = {
       {
         author: "Priya",
         rating: 5,
-        text: "Biztalbox's social media team helped us grow followers and engagement with content that actually connects. Great communication and results!"
+        text: "biztalbox's social media team helped us grow followers and engagement with content that actually connects. Great communication and results!"
       }
     ],
     faqs: [
@@ -147,7 +147,7 @@ export const servicesData = {
       {
         author: "Ravi Kumar",
         rating: 5,
-        text: "Our new website is lightning-fast, beautifully designed, and optimized for SEO. Biztalbox delivered more than we expected."
+        text: "Our new website is lightning-fast, beautifully designed, and optimized for SEO. biztalbox delivered more than we expected."
       }
     ],
     faqs: [
@@ -184,7 +184,7 @@ export const servicesData = {
       {
         author: "Sneha Mehta", 
         rating: 5,
-        text: "Biztalbox created an intuitive and scalable mobile app for our startup. Their UX and backend execution were impressive."
+        text: "biztalbox created an intuitive and scalable mobile app for our startup. Their UX and backend execution were impressive."
       }
     ],
     faqs: [
@@ -221,7 +221,7 @@ export const servicesData = {
       {
         author: "Nikhil Raj",
         rating: 5,
-        text: "Biztalbox produced incredible animated videos for our product launch. They nailed the transitions, style, and pacing."
+        text: "biztalbox produced incredible animated videos for our product launch. They nailed the transitions, style, and pacing."
       }
     ],
     faqs: [
@@ -258,7 +258,7 @@ export const servicesData = {
       {
         author: "Aarti Jain",
         rating: 5,
-        text: "We love the branding and graphic materials Biztalbox delivered. From logos to banners, everything was polished and professional."
+        text: "We love the branding and graphic materials biztalbox delivered. From logos to banners, everything was polished and professional."
       }
     ],
     faqs: [
@@ -295,7 +295,7 @@ export const servicesData = {
       {
         author: "Sahil Sharma",
         rating: 5,
-        text: "The copywriting team at Biztalbox nailed our brand voice and delivered high-converting content across all touchpoints."
+        text: "The copywriting team at biztalbox nailed our brand voice and delivered high-converting content across all touchpoints."
       }
     ],
     faqs: [
@@ -332,7 +332,7 @@ export const servicesData = {
       {
         author: "Ritika Arora",
         rating: 5,
-        text: "Biztalbox helped us scale our ROAS with targeted Google and Meta ad campaigns. Highly analytical and responsive team."
+        text: "biztalbox helped us scale our ROAS with targeted Google and Meta ad campaigns. Highly analytical and responsive team."
       }
     ],
     faqs: [
@@ -369,7 +369,7 @@ export const servicesData = {
       {
         author: "Manoj Desai",
         rating: 5,
-        text: "Biztalbox delivered a 5X ROAS with our Meta Ads campaigns. Their ad creatives, audience targeting, and funnel setup were excellent."
+        text: "biztalbox delivered a 5X ROAS with our Meta Ads campaigns. Their ad creatives, audience targeting, and funnel setup were excellent."
       }
     ],
     faqs: [
@@ -402,12 +402,12 @@ export const mainReviews: ReviewData[] = [
   {
     author: "Kim Verma",
     rating: 5,
-    text: "I had an insightful consultation with the Biztalbox team regarding marketing support for my new brand — and it exceeded expectations. They were generous with advice, genuinely interested in our goals, and transparent about our current fit. No pressure, just valuable guidance. Highly recommend Biztalbox to anyone serious about scaling. Truly an A+ experience!"
+    text: "I had an insightful consultation with the biztalbox team regarding marketing support for my new brand — and it exceeded expectations. They were generous with advice, genuinely interested in our goals, and transparent about our current fit. No pressure, just valuable guidance. Highly recommend biztalbox to anyone serious about scaling. Truly an A+ experience!"
   },
   {
     author: "Charlie Martin", 
     rating: 5,
-    text: "Biztalbox was extremely professional and played a key role in helping us surpass our marketing goals. As someone new to digital marketing, I appreciated how clearly they explained everything. The team was knowledgeable, approachable, and fully committed throughout our campaign."
+    text: "biztalbox was extremely professional and played a key role in helping us surpass our marketing goals. As someone new to digital marketing, I appreciated how clearly they explained everything. The team was knowledgeable, approachable, and fully committed throughout our campaign."
   }
 ];
 

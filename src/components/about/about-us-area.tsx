@@ -53,7 +53,7 @@ export default function AboutUsArea() {
                 Hi!
               </span>
               <p className="tp-dropcap tp_fade_bottom">
-              Biztalbox flourishes because of the digital alchemists behind it- creative storytellers, visionary strategists, expert marketers, meticulous technicians, and imaginative designers.
+              biztalbox flourishes because of the digital alchemists behind it- creative storytellers, visionary strategists, expert marketers, meticulous technicians, and imaginative designers.
               </p>
             </div>
           </div>

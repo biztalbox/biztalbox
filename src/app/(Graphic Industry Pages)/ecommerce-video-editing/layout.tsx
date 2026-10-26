@@ -5,9 +5,9 @@ import { createMarketingPageData } from "@/utils/marketing-page-data";
 import "@/app/(Graphic Industry Pages)/styles.css";
 
 const baseMetadata: Metadata = {
-  title: "Ecommerce Graphic Design & Video Editing Services | Biztalbox",
+  title: "Ecommerce Graphic Design & Video Editing Services | biztalbox",
   description:
-    "Enhance customer experience and grow your ecommerce brand with professional graphic design and video editing services from Biztalbox. Create engaging visuals that increase trust, conversions, and sales.",
+    "Enhance customer experience and grow your ecommerce brand with professional graphic design and video editing services from biztalbox. Create engaging visuals that increase trust, conversions, and sales.",
 };
 
 export const metadata = createMetadata(baseMetadata, "/ecommerce-video-editing");
