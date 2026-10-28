@@ -194,9 +194,9 @@ export default function ProjectFour({ style_2 = false }: IProps) {
 
                   <div className="col-xl-4 col-lg-4 col-md-12 order-1 order-lg-0">
                     <div className="tp-project-3-content text-center">
-                      <h4 className="tp-project-3-title-sm">
+                      <h2 className="tp-project-3-title-sm">
                         {item.title}
-                      </h4>
+                      </h2>
                       <span className="tp-project-3-meta">{item.desc} </span>
                       <Link
                         className="tp-btn-project-sm"
