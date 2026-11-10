@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useCallback, memo } from 'react';
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
+import { isWebGLAvailable } from '@/utils/webgl';
 
 // Extend Window interface to include lastScrollTime
 declare global {
@@ -322,6 +323,8 @@ const EyeBall: React.FC = memo(() => {
 
   useEffect(() => {
     if (!canvasRef.current || typeof window === 'undefined') return;
+    // No WebGL (e.g. Googlebot): skip the 3D eye instead of crashing the page.
+    if (!isWebGLAvailable()) return;
     
     const currentCanvasRef = canvasRef.current;
     let width = window.innerWidth;
@@ -341,13 +344,19 @@ const EyeBall: React.FC = memo(() => {
     cameraRef.current = camera;
 
     // Renderer setup with mobile-optimized settings
-    const renderer = new THREE.WebGLRenderer({ 
-      antialias: width > 767, // Disable antialiasing on mobile for better performance
-      alpha: true,
-      powerPreference: "high-performance",
-      stencil: false,
-      depth: true
-    });
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ 
+        antialias: width > 767, // Disable antialiasing on mobile for better performance
+        alpha: true,
+        powerPreference: "high-performance",
+        stencil: false,
+        depth: true
+      });
+    } catch (error) {
+      console.warn('EyeBall: WebGL unavailable, skipping 3D eye', error);
+      return;
+    }
     
     // Mobile-optimized pixel ratio
     const pixelRatio = width <= 767 ? Math.min(window.devicePixelRatio, 1.5) : Math.min(window.devicePixelRatio, 2);

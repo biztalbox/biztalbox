@@ -6,6 +6,7 @@ import { Suspense, useEffect, useLayoutEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import * as THREE from "three";
 import Ashish3dScene from "./scene";
+import WebGLGuard from "./WebGLGuard";
 import DartScene from "./DartScene";
 
 /** Tweaks perspective camera on resize so the scene reads on phones and tablets. */
@@ -77,6 +78,7 @@ export default function Ashish3dCanvas() {
   if (!showCanvas) return null;
 
   const canvas = (
+    <WebGLGuard>
     <Canvas
       className="!fixed z-10 inset-0 h-full w-full pointer-events-none"
       style={{
@@ -100,6 +102,7 @@ export default function Ashish3dCanvas() {
       </Suspense>
       <Environment files="/assets/hdr/scene.hdr" resolution={1024} backgroundIntensity={1}/>
     </Canvas>
+    </WebGLGuard>
   );
 
   const host =

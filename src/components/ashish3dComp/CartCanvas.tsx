@@ -7,6 +7,7 @@ import * as THREE from "three";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import CartBoxScene from "./CartBoxScene";
+import WebGLGuard from "./WebGLGuard";
 import Link from "next/link";
 import SocialLinks from "@/components/social/SocialLinks";
 
@@ -106,6 +107,7 @@ export default function CartCanvas() {
   return (
     <section id="ctaSection" ref={sectionRef} className="pt-10 pb-5 relative">
       {canvasReady && (
+        <WebGLGuard>
         <Canvas
           className="!absolute inset-0 h-full w-full pointer-events-none"
           gl={{
@@ -128,6 +130,7 @@ export default function CartCanvas() {
             backgroundIntensity={1}
           />
         </Canvas>
+        </WebGLGuard>
       )}
       <div className="container flex flex-col gap-2 overflow-hidden relative z-10">
         <div id="ctaScrollAnchor" className="h-[48vh] md:h-[60vh] 2xl:h-[35rem]" />
