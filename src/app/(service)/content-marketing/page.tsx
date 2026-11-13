@@ -82,7 +82,7 @@ const ContentMarketingPage = () => {
                     className="project-details-1-subtitle"
                     style={{ lineHeight: 1.4 }}
                   >
-                    Persuasive Copywriting Services to Engage and Convert
+                    Persuasive Copywriting & Content Writing Services to Engage and Convert
                   </h1>
                   <h2
                     className="project-details-1"
