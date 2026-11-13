@@ -37,7 +37,14 @@ const ModelGLB: React.FC<ModelGLBProps> = ({
     // ── Renderer ───────────────────────────────────────────────────────────
     // outputColorSpace set BEFORE any texture upload prevents
     // GL_INVALID_OPERATION: glTexStorage2D: Texture is immutable
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    // No WebGL (e.g. Googlebot): skip the 3D model instead of crashing the page.
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    } catch (error) {
+      console.warn('ModelGLB: WebGL unavailable, skipping 3D model', error);
+      return;
+    }
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     renderer.setClearColor(0x000000, 0);
     renderer.outputColorSpace = THREE.SRGBColorSpace;

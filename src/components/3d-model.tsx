@@ -69,7 +69,14 @@ const Model3D: React.FC<Model3DProps> = ({ className, modelPath }) => {
     cameraRef.current = camera;
 
     // Renderer setup
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    // No WebGL (e.g. Googlebot): skip the 3D model instead of crashing the page.
+    let renderer: THREE.WebGLRenderer;
+    try {
+      renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    } catch (error) {
+      console.warn('Model3D: WebGL unavailable, skipping 3D model', error);
+      return;
+    }
     renderer.setSize(width, height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
     renderer.setClearColor(0x000000, 0);
