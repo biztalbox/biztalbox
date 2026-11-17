@@ -15,7 +15,7 @@ import smo from "@/assets/image/new_avatar/smo.webp";
 import google from "@/assets/image/new_avatar/google.webp";
 import meta from "@/assets/image/new_avatar/meta.webp";
 import appdev from "@/assets/image/new_avatar/appdev.webp";
-
+import profile_cta from "@/assets/image/profile_cta.png";
 import MobileMenus from "./mobile-menus";
 import HomeLink from "@/components/HomeLink";
 import Link from "next/link";
@@ -86,6 +86,18 @@ export default function MobileOffcanvas({
                     </div>
                   </div>
                 ))}
+                <div className="col-md-6 col-6">
+                    <div className="fix">
+                      <Link href={`//profile.biztalbox.com`} target="_blank">
+                        <Image
+                          src={profile_cta}
+                          alt="company profile biztalbox"
+                          width={172}
+                          height={104}
+                        />
+                      </Link>
+                    </div>
+                  </div>
               </div>
             </div>
             <div className="tp-offcanvas-contact">
